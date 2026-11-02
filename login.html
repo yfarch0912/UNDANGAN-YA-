@@ -233,7 +233,10 @@
         { type: 'standard', theme: 'outline', size: 'large', text: 'continue_with', shape: 'pill', width: 280 });
     }
     init();
-  }).catch(function () {});
+  }).catch(function () {
+    document.getElementById('gBtn').hidden = true;
+    document.getElementById('authDivider').hidden = true;
+  });
 
   var y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());
