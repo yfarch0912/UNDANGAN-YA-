@@ -1,0 +1,387 @@
+/* UndangYa! — Palace Garden Gate · 2D murni: HTML/CSS/SVG + GSAP. Tanpa 3D/WebGL.
+   Keadaan default CSS = komposisi FINAL yang terlihat penuh (aman tanpa JS/GSAP).
+   Animasi masuk memakai GSAP .from() dan kelas .js-anim hanya saat aman. */
+:root{
+  --pink:#EEB0D0; --pink-soft:#F7DCEA; --cream:#FDF8EC; --cream2:#F8F0DD;
+  --stone:#9AA0A3; --bronze:#8A6742; --terra:#B97E4E; --sage:#68745D;
+  --magenta:#C2185B; --gold:#8A6D3B; --gold2:#C9A24B; --ink:#473B34; --ink-soft:#6B5138;
+  /* Token usulan master prompt, diselaraskan tanpa mengecat ulang identitas tema */
+  --ivory:#F6F0E6; --terra-rose:#B96D69; --gold-soft:#D9BE8F;
+}
+.skip-link{position:fixed;top:-60px;left:12px;z-index:120;background:#472B3A;color:#FBEFD8;
+  padding:.6rem 1rem;border-radius:999px;font-size:.85rem;text-decoration:none;transition:top .25s ease}
+.skip-link:focus{top:10px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;color:var(--ink);font-family:"Jost",sans-serif;font-weight:300;overflow-x:hidden;
+  background:#5C4453 url("assets/undangya/palace-garden-gate/scenes/texture-pink-wash.webp") center/cover fixed,
+             linear-gradient(#7A5A6B,#4E3844)}
+body.locked{overflow:hidden}
+.backlink{position:fixed;top:10px;left:max(10px,calc(50vw - 230px));z-index:90;color:var(--cream);text-decoration:none;font-size:.85rem;
+  background:rgba(74,40,54,.85);border:1px solid rgba(201,162,75,.75);padding:.45rem .8rem;border-radius:999px;backdrop-filter:blur(4px)}
+.hidden{display:none!important}
+img{max-width:100%}
+
+/* ===== PANGGUNG ===== */
+.stage{position:relative;width:min(100vw,480px);height:100svh;min-height:560px;margin:0 auto;overflow:hidden;
+  background:var(--cream);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.bg-scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+/* Sumbu simetri lukisan eksterior TERUKUR 50,1% dari kanvas (uji cermin piksel 2026-10-29) — TIDAK ada geser horizontal: adegan, jahitan gerbang & bukaan gapura semuanya tepat di 50% panggung. Kompensasi lama (cover-world +2% & bg -1,5%) justru menaruh kusen di 52% layar. */
+.cover-world .bg-scene{transform:scale(1.05)}
+.hero-world,.cover,.cover-world{position:absolute;inset:0}
+.hero-world{z-index:1}
+.cover{z-index:10}
+.cover-world{transform-origin:50% 46%;will-change:transform,opacity}
+
+/* Gerbang cover: dua daun menutup bukaan lengkung (diperbesar atas permintaan user) */
+.gate{position:absolute;top:15%;height:72%;width:40%;object-fit:cover;z-index:4;will-change:transform,opacity;
+  filter:drop-shadow(0 6px 10px rgba(74,52,35,.35))}
+.gate-l{left:10%;transform-origin:left center;object-position:right center}
+.gate-r{right:10%;transform-origin:right center;object-position:left center}
+.crest{position:absolute;top:10.5%;left:50%;transform:translateX(-50%);width:28%;z-index:5;
+  filter:drop-shadow(0 3px 6px rgba(74,52,35,.3))}
+/* Gapura: lengkung batu paling depan — gerbang membuka di balik bukaannya */
+.gapura{position:absolute;top:0;left:-12%;width:124%;height:100%;object-fit:cover;object-position:50% 50%;
+  z-index:6;pointer-events:none;filter:drop-shadow(0 10px 24px rgba(74,52,35,.35))}
+.cover-branch{position:absolute;top:0;width:36%;z-index:8;pointer-events:none;transform-origin:50% 92%;animation:sway 2.4s cubic-bezier(.45,.05,.55,.95) infinite alternate}
+.cover-branch.bl{left:-4%}.cover-branch.br{right:-4%}
+.cover-sage{position:absolute;bottom:16%;width:22%;z-index:8;opacity:.9;transform-origin:50% 92%;animation:sway 2.6s cubic-bezier(.45,.05,.55,.95) infinite alternate}
+.sage-l{left:-3%}
+.sage-r{right:-3%;transform:scaleX(-1);animation-delay:-1.5s}
+
+.cover-card{position:absolute;left:50%;bottom:max(3.5%,78px);transform:translateX(-50%);z-index:8;width:min(86%,360px);
+  text-align:center;padding:.9rem 1.1rem .8rem;border-radius:18px;
+  background:linear-gradient(165deg,rgba(253,248,236,.97),rgba(248,240,221,.94));
+  border:1px solid var(--gold2);box-shadow:inset 0 0 0 3px rgba(253,248,236,.9),inset 0 0 0 4px rgba(201,162,75,.4),0 14px 30px rgba(60,30,40,.35)}
+.cover-divider{width:150px;max-width:60%;display:block;margin:0 auto .15rem}
+.cover-label{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.42em;text-transform:uppercase;
+  font-size:.78rem;color:var(--gold);margin:.1em 0 0;text-indent:.42em}
+.cover-names{font-family:"Great Vibes",cursive;font-size:2rem;color:var(--bronze);margin:.05em 0 .1em;line-height:1.15}
+.cover-guest{font-size:.92rem;line-height:1.55;color:var(--ink-soft);margin:.35em 0 .7em}
+.cover-guest b{color:var(--ink);font-weight:500}
+.cover-note{font-size:.68rem;color:#7C5F3E;margin:.55em 0 0}
+
+/* Hero final: flora + judul */
+.rococo{position:absolute;top:3.5%;left:19.5%;width:61%;max-height:52%;object-fit:contain;z-index:2;opacity:.95}
+.lantern{position:absolute;top:46.5%;width:8%;z-index:3;filter:drop-shadow(0 0 12px rgba(255,205,110,.55))}
+.lantern-l{left:18.5%}.lantern-r{right:18.5%}
+.flora{position:absolute;z-index:5;pointer-events:none;filter:drop-shadow(0 3px 6px rgba(74,52,35,.18))}
+.flora.side{top:36%;width:31%}
+.flora.side2{top:57%;width:26%;z-index:6}
+.flora.mid{top:14%;width:25%;z-index:4}
+.flora.lily{top:46%;width:21%;z-index:4}
+.flora.branch-top{top:-1%;width:40%;z-index:6}
+.flora.ground{bottom:9%;width:47%;z-index:6}
+.flora.bottom-band{bottom:-1%;left:0;width:100%;height:15%;object-fit:cover;z-index:7}
+.flora,.flora.side2,.flora.mid,.flora.lily,.flora.branch-top,.flora.ground,.flora.bottom-band{z-index:9}
+.side-l{left:-4%}.side-r{right:-4%}
+.branch-top-l{left:-5%}.branch-top-r{right:-5%}
+.ground-l{left:-3%}.ground-r{right:-3%}
+.sway{transform-origin:50% 92%;animation:sway 2.2s cubic-bezier(.45,.05,.55,.95) infinite alternate}
+.side-r.sway,.branch-top-r.sway{animation-delay:-1.7s}
+.flora.lily.sway{animation-delay:-.8s}
+.flora.ground.sway{animation-delay:-2.4s}
+@keyframes sway{from{rotate:-9deg;translate:-14px 0}to{rotate:11deg;translate:17px -4px}}
+
+.title-block{position:absolute;top:13.5%;left:0;width:100%;text-align:center;z-index:8;padding:0 14%;}
+.title-block::before{content:"";position:absolute;inset:-16% -14%;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 88% 78% at 50% 46%,rgba(253,246,230,.62),rgba(253,246,230,.3) 55%,rgba(253,246,230,0) 78%)}
+.title-block{
+  background:none}
+.opening-label{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.42em;text-transform:uppercase;
+  font-size:clamp(.8rem,3.6vw,1rem);color:var(--gold);margin:0;text-indent:.42em;
+  text-shadow:0 0 8px rgba(253,248,236,.95),0 1px 2px rgba(253,248,236,.9)}
+.names{font-family:"Great Vibes",cursive;font-weight:400;color:var(--bronze);margin:.08em 0 0;line-height:1.12;
+  font-size:clamp(2.9rem,15vw,4.2rem);
+  text-shadow:0 0 8px rgba(253,248,236,.98),0 0 20px rgba(253,248,236,.85),0 2px 3px rgba(253,248,236,.9)}
+.names .name{display:block}
+.names .amp{display:block;font-size:.5em;line-height:.85;color:var(--gold2)}
+.date-pill{display:inline-block;font-family:"Cormorant Garamond",serif;font-weight:700;letter-spacing:.08em;
+  font-size:clamp(.95rem,4.2vw,1.08rem);color:#5C3A1E;margin:.8em 0 0;padding:.34em 1.1em;border-radius:999px;
+  background:rgba(253,248,236,.97);border:1.5px solid var(--gold2);
+  box-shadow:0 5px 14px rgba(74,52,35,.3),inset 0 0 0 3px rgba(253,248,236,.9)}
+.replay-ctl{margin-top:.8rem}
+
+.petals{position:absolute;inset:0;z-index:7;pointer-events:none;opacity:0;transition:opacity 1.2s ease}
+.petals.on{opacity:1}
+.petal{position:absolute;top:-6%;pointer-events:none;opacity:0;animation:petalFall cubic-bezier(.4,.1,.6,.9) infinite}
+@keyframes petalFall{0%{transform:translate(0,0) rotate(0);opacity:0}
+  8%{opacity:.95}30%{transform:translate(calc(var(--drift,-40px) * .55),30svh) rotate(140deg)}
+  55%{transform:translate(var(--drift,-40px),55svh) rotate(235deg)}
+  78%{transform:translate(calc(var(--drift,-40px) * .7),80svh) rotate(315deg)}
+  100%{transform:translate(calc(var(--drift,-40px) * 1.3),108svh) rotate(395deg);opacity:0}}
+
+/* Kilau putih transisi antar-adegan intro */
+.white-flash{position:absolute;inset:0;z-index:24;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at 50% 46%,#FFFDF6 20%,#FDEFF6 78%,#FBE3EE)}
+
+/* Foto pasangan tampil setelah masuk gerbang */
+.hero-photo{position:absolute;top:48%;left:29%;width:42%;z-index:8;margin:0;text-align:center}
+.hero-photo::before{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-9px;width:118%;height:20px;z-index:2;
+  background:linear-gradient(180deg,#E7D09B,#B78F49 55%,#8F6A2D);border-radius:11px 11px 5px 5px;
+  box-shadow:inset 0 2px 3px rgba(255,246,220,.85),inset 0 -3px 5px rgba(74,52,20,.4)}
+.hero-photo::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-24px;width:132%;height:24px;z-index:-1;
+  background:radial-gradient(ellipse at center,rgba(43,28,18,.5),rgba(43,28,18,0) 68%);filter:blur(2px)}
+.hero-photo img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 18%;
+  border-radius:999px 999px 14px 14px;border:3px solid var(--gold2);
+  box-shadow:0 0 0 5px rgba(253,248,236,.92),0 0 0 6.5px rgba(201,162,75,.55),0 16px 30px rgba(60,30,40,.42);background:#EAD9C2}
+.hero-photo-tag{position:absolute;right:6px;bottom:12px;z-index:3;display:inline-block;font-size:.6rem;font-weight:500;letter-spacing:.2em;
+  color:#8C2D4F;background:rgba(249,220,232,.95);border:1px solid #D98CAE;border-radius:999px;padding:.2rem .6rem}
+
+.ctl{min-height:44px;padding:.5rem .95rem;border-radius:999px;border:1px solid rgba(201,162,75,.85);cursor:pointer;
+  background:rgba(74,40,54,.88);color:#FBEFD8;font-family:"Jost",sans-serif;font-size:.85rem;backdrop-filter:blur(3px)}
+.skip-ctl{position:absolute;top:12px;right:12px;z-index:30}
+.scroll-hint{position:absolute;bottom:78px;left:50%;transform:translateX(-50%);z-index:20;color:#FBEFD8;
+  text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.1em;background:rgba(74,40,54,.88);
+  border:1px solid rgba(201,162,75,.85);padding:.38rem .95rem;border-radius:999px;box-shadow:0 4px 12px rgba(60,30,40,.4)}
+.stage::after{content:"";position:absolute;inset:0;z-index:15;pointer-events:none;
+  box-shadow:inset 0 0 80px rgba(120,60,80,.20),inset 0 -40px 60px rgba(120,60,80,.14)}
+.cover::after{content:none}
+
+/* ===== TOMBOL & UMUM ===== */
+.btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.72rem 1.5rem;border-radius:999px;cursor:pointer;
+  background:linear-gradient(160deg,#A4713F,#8A6742);border:1px solid var(--gold2);color:#FFF8EA;
+  font-family:"Jost",sans-serif;font-size:.98rem;letter-spacing:.05em;text-decoration:none;
+  box-shadow:0 6px 16px rgba(138,103,66,.4)}
+.btn-soft{background:linear-gradient(160deg,#FDF8EC,#F3E7CB);color:var(--bronze);border-color:var(--gold2)}
+.btn-ico{width:18px;height:18px}
+.btn .btn-ico{filter:brightness(0) invert(1)}
+.btn-soft .btn-ico{filter:none}
+.sec-kicker{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.05rem;color:var(--magenta);margin:0}
+.sec-divider{display:block;width:min(280px,78%);margin:.4rem auto 1.1rem;opacity:.95}
+
+/* ===== ISI ===== */
+main{width:min(100vw,480px);margin:0 auto;background:var(--cream);color:var(--ink);
+  background-image:url("assets/undangya/palace-garden-gate/scenes/texture-paper.webp");background-size:340px;
+  padding-bottom:0;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.sec{padding:2.7rem 1.6rem 2.4rem;text-align:center;position:relative;overflow:hidden;
+  border-top:1px solid rgba(201,162,75,.4)}
+.sec h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.9rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--bronze);margin:.15em 0 .1em}
+.sec h2::before,.sec h2::after{content:"";display:inline-block;width:34px;height:1px;vertical-align:middle;margin:0 .6rem .3rem;
+  background:linear-gradient(90deg,transparent,var(--gold2))}
+.sec h2::after{background:linear-gradient(90deg,var(--gold2),transparent)}
+.body-text{font-size:1.05rem;font-weight:400;line-height:1.78;max-width:44ch;margin:0 auto;color:var(--ink-soft);text-wrap:balance}
+.guest-line{font-family:"Cormorant Garamond",serif;letter-spacing:.1em;font-size:.95rem;color:var(--gold);margin:0 auto .8rem;line-height:1.7}
+.guest-line b{color:var(--magenta);font-size:1.1rem}
+.sec-corner{position:absolute;width:64px;opacity:.8;pointer-events:none}
+.sec-corner.tl{top:8px;left:8px}.sec-corner.tr{top:8px;right:8px}
+.sec-corner.bl{bottom:8px;left:8px}.sec-corner.br{bottom:8px;right:8px}
+.quote{margin:1.6rem auto 0;max-width:42ch;padding:1.1rem 1.2rem;border:1px solid rgba(201,162,75,.6);border-radius:14px;
+  background:rgba(255,253,246,.75);box-shadow:inset 0 0 0 3px rgba(253,248,236,.8),inset 0 0 0 4px rgba(201,162,75,.3)}
+.quote p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.18rem;line-height:1.6;color:var(--bronze);margin:0}
+.quote cite{display:block;margin-top:.55rem;font-family:"Jost",sans-serif;font-style:normal;font-size:.72rem;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+
+/* Countdown + kalender */
+.countdown{display:flex;gap:.55rem;justify-content:center;margin-top:1.6rem;flex-wrap:wrap}
+.countdown div{background:linear-gradient(160deg,#FDF3D9,#F3E3BC);border:1px solid var(--gold2);border-radius:12px;
+  padding:.6rem .35rem;min-width:62px;box-shadow:inset 0 0 0 3px #FDF8EC,inset 0 0 0 4px rgba(201,162,75,.45),0 6px 14px rgba(138,103,66,.18)}
+.countdown b{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--bronze);display:block}
+.countdown small{letter-spacing:.14em;text-transform:uppercase;font-size:.64rem;color:var(--gold)}
+.cd-note{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.1rem;color:var(--magenta);margin:1rem auto 0}
+.mini-cal{margin:1.5rem auto 1.3rem;max-width:320px;background:linear-gradient(160deg,#FFFDF6,#FBF3DF);
+  border:1px solid var(--gold2);border-radius:16px;padding:1rem 1.05rem;color:var(--ink);
+  box-shadow:inset 0 0 0 3px #FDF8EC,inset 0 0 0 4px rgba(201,162,75,.35),0 10px 22px rgba(138,103,66,.16)}
+.mini-cal .cal-head{font-family:"Cormorant Garamond",serif;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--bronze);margin:0 0 .5rem;font-size:1rem}
+.mini-cal table{width:100%;border-collapse:collapse;font-size:.86rem}
+.mini-cal th{color:var(--gold);font-weight:500;padding:.2rem 0;font-size:.76rem}
+.mini-cal td{padding:.22rem 0;text-align:center;color:var(--ink-soft)}
+.mini-cal td.dim{opacity:.48}
+.mini-cal td .d-day{display:inline-flex;width:1.95em;height:1.95em;align-items:center;justify-content:center;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#F6D98B,#C9A24B);color:#5C3A1E;font-weight:700;
+  box-shadow:0 0 0 2px rgba(201,162,75,.4),0 2px 6px rgba(138,103,66,.35)}
+.mini-cal .cal-note{margin:.55rem 0 0;font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--ink-soft);font-size:.98rem}
+
+/* Banner & mempelai */
+.sec-banner{margin:-3rem -1.6rem 1.8rem;height:170px;overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent);mask-image:linear-gradient(to bottom,#000 72%,transparent)}
+.sec-banner img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
+.couple-sec{background-image:url("assets/undangya/palace-garden-gate/scenes/texture-pink-wash.webp");background-size:cover}
+.couple-grid{display:grid;gap:1.1rem;position:relative}
+.cp-card{position:relative;background:rgba(255,253,246,.9);border:1px solid rgba(201,162,75,.7);border-radius:16px;
+  padding:1.4rem 1.15rem 1.05rem;box-shadow:inset 0 0 0 4px #FDF8EC,inset 0 0 0 5px rgba(201,162,75,.35),0 10px 22px rgba(138,103,66,.14)}
+.cp-photo{width:118px;height:148px;object-fit:cover;border-radius:50%/46%;display:block;margin:0 auto .5rem;
+  border:2px solid var(--gold2);box-shadow:0 0 0 4px #FDF8EC,0 0 0 5px rgba(201,162,75,.6),0 8px 16px rgba(138,103,66,.3);background:#EAD9C2}
+.cp-role{display:block;font-family:"Cormorant Garamond",serif;font-size:.72rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.cp-card h3{font-family:"Great Vibes",cursive;font-weight:400;font-size:2rem;color:var(--bronze);margin:.12em 0 .05em;line-height:1.1}
+.cp-card p{color:var(--ink-soft);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.05rem;margin:.1em 0}
+.demo-tag{position:absolute;top:10px;right:10px;font-size:.6rem;font-weight:500;letter-spacing:.18em;color:#8C2D4F;
+  background:#F9DCE8;border:1px solid #D98CAE;border-radius:999px;padding:.22rem .55rem}
+.cp-amp{display:flex;justify-content:center;margin:-.2rem 0}
+.cp-amp img{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FDF3D9,#EFD9A0);
+  border:1px solid var(--gold2);padding:9px;box-shadow:0 4px 12px rgba(138,103,66,.3)}
+.monogram-img{width:74px;margin:1.4rem auto 0;display:block;opacity:.9}
+
+/* Love story */
+.story-list{display:grid;gap:1rem;text-align:left;max-width:400px;margin:0 auto}
+.story-list article{position:relative;background:rgba(255,253,246,.9);border:1px solid rgba(201,162,75,.55);
+  border-left:4px solid var(--magenta);border-radius:12px;padding:1rem 1.1rem .85rem;
+  box-shadow:0 6px 16px rgba(138,103,66,.1);display:flex;gap:.95rem;align-items:flex-start}
+.story-thumb{flex:0 0 auto;width:62px;height:62px;border-radius:50%;object-fit:cover;background:#FBF1DC;
+  border:1.5px solid var(--gold2);box-shadow:0 0 0 3px #FDF8EC,0 4px 10px rgba(138,103,66,.25);padding:3px}
+.story-body{min-width:0}
+.story-list .yr{font-family:"Cormorant Garamond",serif;font-weight:700;letter-spacing:.2em;color:var(--gold);font-size:.85rem}
+.story-list h3{font-family:"Cormorant Garamond",serif;font-size:1.35rem;color:var(--bronze);margin:.05em 0 .2em}
+.story-list p{color:var(--ink-soft);line-height:1.65;margin:0;font-size:.99rem}
+
+/* Jadwal & lokasi */
+.date-big{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.3rem;letter-spacing:.06em;color:var(--magenta);margin:.2em 0 .4em}
+.sched{display:grid;gap:.9rem;margin:1rem 0 .4rem}
+.sched article{background:linear-gradient(160deg,#FDF3D9,#F5E7C6);border:1px solid var(--gold2);border-radius:14px;
+  padding:1rem 1rem .7rem;box-shadow:inset 0 0 0 3px #FDF8EC,inset 0 0 0 4px rgba(201,162,75,.4),0 8px 18px rgba(138,103,66,.15)}
+.sched article::after{content:"❦";display:block;color:var(--gold2);margin-top:.28rem}
+.sched .ev-label{font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.sched b{font-family:"Cormorant Garamond",serif;font-size:1.45rem;color:var(--bronze);letter-spacing:.04em;display:block}
+.sched .ev-time{font-weight:500;letter-spacing:.08em;color:var(--ink)}
+.sched small{color:var(--ink-soft);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1rem}
+.venue-frame{width:min(430px,94%);display:block;margin:0 auto 1rem;border:3px solid rgba(201,162,75,.8);border-radius:16px;box-shadow:0 10px 24px rgba(138,103,66,.28)}
+.venue{font-size:1.05rem;color:var(--ink-soft);line-height:1.65}
+.venue b{font-family:"Cormorant Garamond",serif;letter-spacing:.04em;color:var(--bronze);font-size:1.35rem}
+
+/* Galeri */
+.gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.55rem}
+.gallery button{padding:5px 5px 0;border:0;cursor:pointer;border-radius:12px;min-height:44px;
+  background:linear-gradient(150deg,#F6E8C8,#EBD9AC);box-shadow:inset 0 0 0 1px rgba(201,162,75,.75)}
+.gallery img{width:100%;height:112px;object-fit:cover;display:block;border-radius:7px 7px 3px 3px;background:#EAD9C2}
+.gallery button:first-child{grid-column:span 2}
+.gallery button:first-child img{height:150px}
+.gallery button:last-child{grid-column:span 2}
+.gal-cap{display:block;padding:.42rem .15rem .5rem;font-family:"Cormorant Garamond",serif;font-weight:600;
+  font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--bronze);text-align:center}
+
+/* RSVP */
+form{display:grid;gap:.75rem;text-align:left;max-width:400px;margin:0 auto;background:rgba(255,253,246,.95);
+  border:1px solid rgba(201,162,75,.6);border-radius:18px;padding:1.15rem;
+  box-shadow:inset 0 0 0 4px #FDF8EC,inset 0 0 0 5px rgba(201,162,75,.3),0 8px 20px rgba(138,103,66,.12)}
+label{display:grid;gap:.35rem;font-size:.76rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:#77592C}
+input::placeholder,textarea::placeholder{color:#A68A66;opacity:1;text-transform:none;letter-spacing:0}
+input,select,textarea{font:inherit;padding:.7rem .8rem;border-radius:10px;border:1px solid rgba(201,162,75,.65);background:#FFFDF6;color:var(--ink)}
+input:focus,select:focus,textarea:focus{border-color:var(--gold2);box-shadow:0 0 0 3px rgba(201,162,75,.28);outline:none}
+.form-msg{min-height:1.2em;color:var(--magenta);text-align:center;margin:0}
+.wishes{list-style:none;padding:0;display:grid;gap:.6rem;max-width:400px;margin:1.2rem auto 0;text-align:left}
+.wishes li{background:rgba(255,253,246,.95);border:1px solid rgba(201,162,75,.45);border-left:4px solid var(--gold2);border-radius:12px;padding:.7rem .9rem}
+.wishes li b{color:var(--bronze)}
+.wishes li .w-meta{font-size:.78rem;color:var(--gold);letter-spacing:.05em}
+.wishes-empty{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--ink-soft);margin:1rem auto 0}
+.demo-note{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:.95rem;color:#7C5F3E;text-align:center;margin-top:1rem}
+
+/* Amplop digital */
+.gift-ico{width:56px;margin:0 auto .4rem;display:block}
+.gift-list{display:grid;gap:.9rem;max-width:400px;margin:1.2rem auto 0}
+.gift-card{background:linear-gradient(160deg,#FDF3D9,#F5E7C6);border:1px solid var(--gold2);border-radius:14px;padding:1rem;
+  box-shadow:inset 0 0 0 3px #FDF8EC,inset 0 0 0 4px rgba(201,162,75,.4)}
+.gift-card .g-bank{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.15rem;color:var(--bronze);letter-spacing:.05em}
+.gift-card .g-num{font-size:1.35rem;font-weight:500;letter-spacing:.14em;color:var(--ink);margin:.25em 0 .1em}
+.gift-card .g-holder{color:var(--ink-soft);font-family:"Cormorant Garamond",serif;font-style:italic}
+.gift-card .btn{margin-top:.7rem;padding:.55rem 1.2rem;min-height:44px}
+.copy-msg{font-size:.85rem;color:var(--sage);min-height:1.1em;margin:.4em 0 0;font-weight:500}
+
+/* Penutup */
+.closing-sec{color:var(--ink);background:#FBF3E2;padding-bottom:7.5rem}
+.closing-bg{position:absolute;inset:0;z-index:0}
+.closing-bg img{width:100%;height:100%;object-fit:cover}
+.closing-sec>*{position:relative;z-index:2}
+.closing-sec::before{content:"";position:absolute;inset:0;z-index:1;background:none}
+.flora-overlay{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;opacity:.5}
+.sec-kicker.light{color:var(--gold);text-shadow:none}
+.closing-sec h2.light{color:var(--burgundy);text-shadow:none}
+.body-text.light{color:var(--ink-soft);text-shadow:none}
+.brand{text-shadow:none}
+.sign{font-family:"Great Vibes",cursive;font-size:2.6rem;color:var(--burgundy2);margin:.35em 0 .15em;text-shadow:none}
+.brand{letter-spacing:.18em;font-size:.72rem;color:var(--gold);text-transform:uppercase}
+.site-footer{width:min(100vw,480px);margin:0 auto;text-align:center;padding:1rem 1rem 92px;background:#472B3A;color:#EFD9C8;font-size:.85rem}
+.site-footer b{color:#F3D9A4}
+
+/* Navigasi bawah + musik */
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);z-index:70;width:min(100vw,480px);
+  display:flex;justify-content:space-around;background:rgba(253,248,236,.96);border-top:1px solid rgba(201,162,75,.7);
+  box-shadow:0 -6px 20px rgba(80,45,55,.18);backdrop-filter:blur(5px);padding:.35rem .2rem calc(.35rem + env(safe-area-inset-bottom))}
+.bottom-nav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:.05rem;text-decoration:none;color:var(--bronze);
+  font-size:.68rem;letter-spacing:.06em;padding:.3rem 0;border-radius:10px;min-height:44px;justify-content:center}
+.bottom-nav a:active,.bottom-nav a:hover{background:#F7EBCE}
+.nav-ico{font-size:1.05rem;line-height:1;color:var(--gold)}
+/* Musik kini item navigasi bawah — tidak lagi melayang menimpa konten */
+.bottom-nav .music-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:.05rem;justify-content:center;
+  background:none;border:0;cursor:pointer;color:var(--bronze);font-family:"Jost",sans-serif;
+  font-size:.68rem;letter-spacing:.06em;padding:.3rem 0;border-radius:10px;min-height:44px}
+.bottom-nav .music-btn:active,.bottom-nav .music-btn:hover{background:#F7EBCE}
+.music-btn img{width:20px;height:20px}
+.music-btn .music-fallback{display:none;color:var(--gold);font-size:1.05rem;line-height:1}
+.music-btn.noicon img{display:none}
+.music-btn.noicon .music-fallback{display:block}
+.music-btn.on{background:#F7EBCE;box-shadow:inset 0 0 0 1.5px var(--gold2)}
+
+/* Scroll reveal — hanya aktif bila JS + IO tersedia (kelas ditambah JS) */
+.js-anim .sec>*{opacity:0;transform:translateY(24px);filter:blur(5px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1),filter .8s ease}
+.js-anim .sec.in>*{opacity:1;transform:none;filter:blur(0)}
+.js-anim .sec.in>*:nth-child(2){transition-delay:.07s}.js-anim .sec.in>*:nth-child(3){transition-delay:.14s}
+.js-anim .sec.in>*:nth-child(4){transition-delay:.21s}.js-anim .sec.in>*:nth-child(5){transition-delay:.28s}
+.js-anim .sec.in>*:nth-child(6){transition-delay:.35s}.js-anim .sec.in>*:nth-child(7){transition-delay:.42s}
+.js-anim .sec.in>*:nth-child(8){transition-delay:.49s}.js-anim .sec.in>*:nth-child(9){transition-delay:.56s}
+.js-anim .sec.in>*:nth-child(10){transition-delay:.63s}
+
+/* Animasi elemen dalam — kartu & kotak muncul berjenjang saat section masuk layar */
+.js-anim .sec .couple-grid>*,.js-anim .sec .story-list>*,.js-anim .sec .sched>*,
+.js-anim .sec .gift-list>*,.js-anim .sec .gallery>*,.js-anim .sec .countdown>div{
+  opacity:0;transform:translateY(26px) scale(.96);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js-anim .sec.in .couple-grid>*,.js-anim .sec.in .story-list>*,.js-anim .sec.in .sched>*,
+.js-anim .sec.in .gift-list>*,.js-anim .sec.in .gallery>*,.js-anim .sec.in .countdown>div{
+  opacity:1;transform:none}
+.js-anim .sec.in .couple-grid>*:nth-child(2),.js-anim .sec.in .story-list>*:nth-child(2),
+.js-anim .sec.in .sched>*:nth-child(2),.js-anim .sec.in .gift-list>*:nth-child(2),
+.js-anim .sec.in .gallery>*:nth-child(2),.js-anim .sec.in .countdown>*:nth-child(2){transition-delay:.12s}
+.js-anim .sec.in .couple-grid>*:nth-child(3),.js-anim .sec.in .story-list>*:nth-child(3),
+.js-anim .sec.in .sched>*:nth-child(3),.js-anim .sec.in .gift-list>*:nth-child(3),
+.js-anim .sec.in .gallery>*:nth-child(3),.js-anim .sec.in .countdown>*:nth-child(3){transition-delay:.24s}
+.js-anim .sec.in .story-list>*:nth-child(4),.js-anim .sec.in .sched>*:nth-child(4),
+.js-anim .sec.in .gift-list>*:nth-child(4),.js-anim .sec.in .gallery>*:nth-child(4),
+.js-anim .sec.in .countdown>*:nth-child(4){transition-delay:.36s}
+.js-anim .sec.in .gallery>*:nth-child(5),.js-anim .sec.in .gift-list>*:nth-child(5){transition-delay:.48s}
+.js-anim .sec.in .gallery>*:nth-child(6){transition-delay:.6s}
+/* Banner section: zoom-out sinematik saat masuk */
+.js-anim .sec .sec-banner img{transform:scale(1.14);transition:transform 2.4s cubic-bezier(.2,.7,.2,1)}
+.js-anim .sec.in .sec-banner img{transform:scale(1)}
+
+/* Siluet latar istana samar di semua section (seperti halaman awal) — tidak polos */
+.sec{isolation:isolate}
+.sec::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.12;
+  background-image:url("assets/undangya/palace-garden-gate/scenes/exterior-full.webp");
+  background-size:cover;background-position:50% 22%}
+#salam::before{background-position:50% 16%}
+#mempelai::before{background-position:50% 42%}
+#cerita::before{background-position:50% 62%}
+#jadwal::before{background-position:50% 30%}
+#lokasi::before{background-position:50% 50%}
+#galeri::before{background-position:50% 55%}
+#rsvp::before{background-position:50% 45%}
+#amplop::before{background-position:50% 35%}
+#penutup::before{background-position:50% 68%;opacity:.09}
+
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(30,16,22,.93);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem}
+.lightbox img{max-width:92vw;max-height:82svh;border-radius:14px;opacity:0;transition:opacity .45s ease}
+.lightbox img.lb-ready{opacity:1}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;background:#FFF6E6;color:var(--bronze);font-size:1.3rem;line-height:1}
+.lb-nav.prev{left:12px}.lb-nav.next{right:12px}
+.lightbox p{color:#FBEFD8;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.05rem;margin:0}
+.lightbox button{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;background:#FFF6E6;color:var(--bronze);font-size:1.1rem}
+:focus-visible{outline:2px solid var(--gold2);outline-offset:2px}
+/* Jeda animasi dekoratif saat tab tidak aktif (hemat baterai perangkat lemah) */
+body.paused .petal,body.paused .sway{animation-play-state:paused}
+@media (max-width:380px){ .names{font-size:2.6rem} .gallery img{height:96px} }
+@media (max-width:340px){
+  .cover-names{font-size:1.65rem} .cover-card{padding:.8rem .8rem .7rem}
+  .countdown{gap:.4rem} .countdown div{min-width:56px}
+  .names{font-size:2.35rem} .date-pill{font-size:.88rem}
+  .bottom-nav a,.bottom-nav .music-btn{font-size:.62rem}
+}
+@media (max-height:720px){
+  .hero-photo{top:49%;left:33.5%;width:33%}
+  .title-block{top:11.5%}
+  .cover-card{bottom:max(3%,70px)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}

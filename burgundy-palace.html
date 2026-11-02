@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Burgundy Royal Palace · Meyzsa &amp; Fahrezzi — UndangYa!</title>
+<meta name="description" content="Undangan digital Burgundy Royal Palace — tirai velvet burgundy, tangga istana, merak merah dan air mancur emas. Sampel UndangYa!">
+<link rel="icon" href="assets/undangya/burgundy-palace/ornaments/monogram.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="burgundy-palace.css">
+</head>
+<body data-state="cover">
+
+<div class="page-gutter" aria-hidden="true"></div>
+
+<main class="column" id="top">
+
+  <!-- ================= STAGE / COVER + HERO ================= -->
+  <section class="stage" id="stage" aria-label="Sampul undangan">
+    <!-- Layer 1: istana -->
+    <img class="lyr palace" src="assets/undangya/burgundy-palace/stage/palace-bg.webp" alt="Ilustrasi istana dengan tangga ganda berkarpet merah" fetchpriority="high">
+    <!-- Layer 2: chandelier -->
+    <!-- Layer 3: bunga menjuntai sudut atas -->
+    <img class="lyr blossom bl-l" src="assets/undangya/burgundy-palace/flowers/blossom-branch.webp" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    <img class="lyr blossom bl-r" src="assets/undangya/burgundy-palace/flowers/blossom-branch-flip.webp" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    <!-- Layer 4: merak sepasang -->
+    <img class="lyr peacock pk-l" src="assets/undangya/burgundy-palace/stage/peacock-left.webp" alt="Merak merah di sisi kiri tangga" >
+    <img class="lyr peacock pk-r" src="assets/undangya/burgundy-palace/stage/peacock-right.webp" alt="Merak merah di sisi kanan tangga">
+    <!-- Layer 5: candelabra -->
+    <img class="lyr candelabra cd-l" src="assets/undangya/burgundy-palace/stage/candelabra.webp" alt="" aria-hidden="true" onerror="this.onerror=null;this.src='assets/undangya/burgundy-palace/stage/candelabra-crop-left.webp'">
+    <img class="lyr candelabra cd-r" src="assets/undangya/burgundy-palace/stage/candelabra-flip.webp" alt="" aria-hidden="true" onerror="this.onerror=null;this.src='assets/undangya/burgundy-palace/stage/candelabra-crop-right.webp'">
+    <!-- Layer 6: air mancur -->
+    <img class="lyr fountain" src="assets/undangya/burgundy-palace/stage/fountain.webp" alt="Air mancur emas tiga tingkat">
+    <div class="fountain-shimmer" aria-hidden="true"></div>
+    <div class="ripples" aria-hidden="true"><span></span><span></span></div>
+    <!-- Layer 7: hamparan mawar foreground -->
+    <img class="lyr roses-fg" src="assets/undangya/burgundy-palace/flowers/roses-strip-tall.webp" alt="" aria-hidden="true" onerror="this.onerror=null;this.src='assets/undangya/burgundy-palace/flowers/roses-strip-dense.webp'">
+    <img class="lyr roses-fg roses-fg2" src="assets/undangya/burgundy-palace/flowers/roses-strip-tall.webp" alt="" aria-hidden="true" onerror="this.onerror=null;this.src='assets/undangya/burgundy-palace/flowers/roses-strip.webp'">
+    <!-- Layer 8: efek hidup (diisi JS: kupu-kupu, burung, sparkle, kelopak) -->
+    <div class="fx-layer" id="fxLayer" aria-hidden="true"></div>
+    <!-- Layer 9: judul -->
+    <div class="title-block" id="titleBlock">
+      <p class="title-eyebrow">The Wedding of</p>
+      <h1 class="title-names"><span data-bind="brideShort">Meyzsa</span><span class="amp">&amp;</span><span data-bind="groomShort">Fahrezzi</span></h1>
+      <p class="date-pill" data-bind="dateLabel">Sabtu, 12 Juni 2027</p>
+    </div>
+    <!-- Layer 9b: foto prewed cutout (tanpa background) di bawah judul -->
+    <img class="hero-couple" id="heroCouple" src="assets/undangya/burgundy-palace/photos/couple-cutout.webp" alt="Foto prewedding Meyzsa &amp; Fahrezzi" aria-hidden="false">
+    <!-- Layer 10: tirai -->
+    <img class="lyr drape drape-l" src="assets/undangya/burgundy-palace/curtains/drape-left.webp" alt="" aria-hidden="true">
+    <img class="lyr drape drape-r" src="assets/undangya/burgundy-palace/curtains/drape-right.webp" alt="" aria-hidden="true">
+    <div class="cc-half cc-l" id="ccL" aria-hidden="true"><img class="cc-img" src="assets/undangya/burgundy-palace/curtains/curtain-closed.webp" alt=""></div>
+    <div class="cc-half cc-r" id="ccR" aria-hidden="true"><img class="cc-img" src="assets/undangya/burgundy-palace/curtains/curtain-closed.webp" alt=""></div>
+    <img class="lyr valance" src="assets/undangya/burgundy-palace/curtains/curtain-valance.webp" alt="" aria-hidden="true">
+    <div class="curtain-shade" aria-hidden="true"></div>
+
+    <!-- Kontrol panggung -->
+    <div class="stage-controls">
+      <button class="ctl-btn" id="replayBtn" type="button" title="Putar ulang animasi tirai" hidden>↺ Putar Ulang</button>
+      <button class="ctl-btn" id="skipBtn" type="button" title="Lewati animasi" hidden>Lewati ▸</button>
+    </div>
+
+    <!-- Kartu cover (di atas tirai tertutup) -->
+    <div class="cover-card" id="coverCard">
+      <img class="cover-monogram" src="assets/undangya/burgundy-palace/ornaments/monogram.svg" alt="Monogram M &amp; M">
+      <p class="cover-eyebrow">The Wedding of</p>
+      <p class="cover-names"><span data-bind="brideShort">Meyzsa</span> &amp; <span data-bind="groomShort">Fahrezzi</span></p>
+      <p class="cover-date" data-bind="dateLabel">Sabtu, 12 Juni 2027</p>
+      <img class="cover-divider" src="assets/undangya/burgundy-palace/ornaments/divider.svg" alt="" aria-hidden="true">
+      <p class="cover-to-label">Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+      <p class="cover-guest" id="guestName">Tamu Undangan</p>
+      <button class="btn-gold" id="openBtn" type="button">
+        <img src="assets/undangya/burgundy-palace/icons/envelope.svg" alt="" aria-hidden="true"> Buka Undangan
+      </button>
+      <p class="cover-note">*Mohon maaf apabila terdapat kesalahan penulisan nama &amp; gelar</p>
+      <button class="cover-skip" id="coverSkip" type="button">Lewati Animasi ▸</button>
+    </div>
+
+    <!-- Petunjuk scroll (setelah dibuka) -->
+    <div class="scroll-hint" id="scrollHint" hidden>
+      <span>Geser ke bawah</span><span class="scroll-arrow">⌄</span>
+    </div>
+  </section>
+
+  <!-- ================= SALAM & AYAT ================= -->
+  <section class="sec sec-cream reveal" id="salam">
+    <h2 class="sec-title" data-bind="salam">Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+    <p class="verse" data-bind="verse"></p>
+    <p class="verse-src" data-bind="verseSource"></p>
+    <img class="sec-divider" src="assets/undangya/burgundy-palace/ornaments/flourish-scroll.svg" alt="" aria-hidden="true">
+    <p class="body-text" data-bind="intro"></p>
+
+    <div class="countdown-wrap">
+      <p class="count-label">Menghitung Hari Bahagia</p>
+      <div class="countdown" id="countdown" role="timer" aria-label="Hitung mundur hari pernikahan">
+        <div class="count-box"><span class="count-num" id="cd-d">–</span><span class="count-unit">Hari</span></div>
+        <div class="count-box"><span class="count-num" id="cd-h">–</span><span class="count-unit">Jam</span></div>
+        <div class="count-box"><span class="count-num" id="cd-m">–</span><span class="count-unit">Menit</span></div>
+        <div class="count-box"><span class="count-num" id="cd-s">–</span><span class="count-unit">Detik</span></div>
+      </div>
+      <p class="count-passed" id="countPassed" hidden>Alhamdulillah, hari bahagia telah tiba. Terima kasih atas doa restunya.</p>
+      <div class="mini-cal" id="miniCal" aria-label="Kalender bulan pernikahan"></div>
+    </div>
+  </section>
+
+  <!-- ================= MEMPELAI ================= -->
+  <section class="sec sec-burgundy reveal" id="mempelai">
+    <p class="sec-eyebrow">Mempelai</p>
+    <h2 class="sec-title light">Dua Hati, Satu Istana</h2>
+    <img class="sec-divider" src="assets/undangya/burgundy-palace/ornaments/divider.svg" alt="" aria-hidden="true">
+
+    <article class="couple-card">
+      <div class="portrait-wrap">
+        <img class="portrait-frame" src="assets/undangya/burgundy-palace/frames/oval-frame.svg" alt="" aria-hidden="true">
+        <img class="portrait-photo" id="bridePhoto" src="" alt="Foto mempelai wanita (demo)" loading="lazy" decoding="async">
+      </div>
+      <h3 class="couple-name" data-bind="brideFull"></h3>
+      <p class="couple-parents">Putri dari<br><span data-bind="brideFather"></span><br>&amp; <span data-bind="brideMother"></span></p>
+      <p class="couple-ig" data-bind="brideIg"></p>
+    </article>
+
+    <div class="amp-medallion" aria-hidden="true">&amp;</div>
+
+    <article class="couple-card">
+      <div class="portrait-wrap">
+        <img class="portrait-frame" src="assets/undangya/burgundy-palace/frames/oval-frame.svg" alt="" aria-hidden="true">
+        <img class="portrait-photo" id="groomPhoto" src="" alt="Foto mempelai pria (demo)" loading="lazy" decoding="async">
+      </div>
+      <h3 class="couple-name" data-bind="groomFull"></h3>
+      <p class="couple-parents">Putra dari<br><span data-bind="groomFather"></span><br>&amp; <span data-bind="groomMother"></span></p>
+      <p class="couple-ig" data-bind="groomIg"></p>
+    </article>
+
+    <figure class="couple-wide">
+      <img id="couplePhoto" src="" alt="Foto pasangan mempelai di tangga istana (demo)" loading="lazy" decoding="async">
+      <figcaption>Foto fiksi untuk demo tampilan — ganti dengan foto asli di config.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ================= ACARA ================= -->
+  <section class="sec sec-cream reveal" id="acara">
+    <p class="sec-eyebrow dark">Save the Date</p>
+    <h2 class="sec-title">Rangkaian Acara</h2>
+    <img class="sec-divider" src="assets/undangya/burgundy-palace/ornaments/flourish-scroll.svg" alt="" aria-hidden="true">
+    <div id="eventCards"></div>
+  </section>
+
+  <!-- ================= GALERI ================= -->
+  <section class="sec sec-burgundy reveal" id="galeri">
+    <p class="sec-eyebrow">Galeri</p>
+    <h2 class="sec-title light">Galeri Istana</h2>
+    <img class="sec-divider" src="assets/undangya/burgundy-palace/ornaments/divider.svg" alt="" aria-hidden="true">
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <p class="demo-note light">Foto pasangan pada galeri ini adalah foto fiksi untuk demo.</p>
+  </section>
+
+  <!-- ================= RSVP & UCAPAN ================= -->
+  <section class="sec sec-cream reveal" id="rsvp">
+    <p class="sec-eyebrow dark">RSVP &amp; Ucapan</p>
+    <h2 class="sec-title">Kehadiran &amp; Doa</h2>
+
+    <form class="rsvp-form" id="rsvpForm" novalidate>
+      <label>Nama
+        <input type="text" id="rsvpName" maxlength="60" placeholder="Nama Anda" autocomplete="name" required>
+      </label>
+      <label>Konfirmasi Kehadiran
+        <select id="rsvpAttend">
+          <option value="hadir">Hadir, insya Allah</option>
+          <option value="ragu">Masih ragu</option>
+          <option value="berhalangan">Berhalangan hadir</option>
+        </select>
+      </label>
+      <label>Jumlah Tamu
+        <select id="rsvpCount">
+          <option value="1">1 orang</option>
+          <option value="2">2 orang</option>
+        </select>
+      </label>
+      <label>Ucapan &amp; Doa
+        <textarea id="rsvpWish" rows="3" maxlength="500" placeholder="Tuliskan doa terbaik untuk kedua mempelai…"></textarea>
+      </label>
+      <p class="form-error" id="rsvpError" hidden>Nama wajib diisi (minimal 2 huruf).</p>
+      <p class="form-status" id="rsvpStatus" role="status" aria-live="polite" hidden></p>
+      <button class="btn-burgundy" type="submit">Kirim RSVP &amp; Ucapan</button>
+      <p class="demo-note">Mode demo: RSVP &amp; ucapan tersimpan hanya di perangkat ini (localStorage), belum terhubung ke server.</p>
+    </form>
+
+    <div class="wish-list" id="wishList"></div>
+  </section>
+
+  <!-- ================= AMPLOP DIGITAL ================= -->
+  <section class="sec sec-burgundy reveal" id="amplop">
+    <img class="sec-icon" src="assets/undangya/burgundy-palace/icons/gift.svg" alt="" aria-hidden="true">
+    <h2 class="sec-title light">Amplop Digital</h2>
+    <p class="body-text light">Doa restu Anda adalah hadiah terindah. Namun apabila berkenan memberi tanda kasih, kami sediakan dengan penuh terima kasih:</p>
+    <div id="giftCards"></div>
+    <p class="demo-note light" data-bind="giftNote"></p>
+  </section>
+
+  <!-- ================= PENUTUP ================= -->
+  <section class="sec sec-closing reveal" id="penutup">
+    <img class="closing-bg" src="assets/undangya/burgundy-palace/backgrounds/closing-ballroom.webp" alt="" aria-hidden="true">
+    <img class="closing-fountain" src="assets/undangya/burgundy-palace/stage/fountain.webp" alt="" aria-hidden="true">
+    <p class="body-text light" data-bind="closingText"></p>
+    <img class="sec-divider" src="assets/undangya/burgundy-palace/ornaments/divider.svg" alt="" aria-hidden="true">
+    <p class="closing-sign-label">Kami yang berbahagia,</p>
+    <p class="closing-names"><span data-bind="brideShort">Meyzsa</span> &amp; <span data-bind="groomShort">Fahrezzi</span></p>
+    <p class="body-text light" data-bind="closingSalam"></p>
+    <img class="cover-monogram small" src="assets/undangya/burgundy-palace/ornaments/monogram.svg" alt="" aria-hidden="true">
+  </section>
+
+  <footer class="site-footer">
+    <p>Dibuat dengan ♥ oleh <strong>UndangYa!</strong> · Tema Burgundy Royal Palace</p>
+    <p class="footer-sub">Sampel digital — seluruh data contoh dapat diganti di burgundy-palace-config.js</p>
+  </footer>
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-label="Lihat foto">
+  <button class="lb-close" id="lbClose" type="button" aria-label="Tutup">✕</button>
+  <img id="lbImg" src="" alt="">
+  <p id="lbCaption"></p>
+</div>
+
+<!-- Musik -->
+<button class="music-btn" id="musicBtn" type="button" aria-label="Musik hidup/mati" hidden>
+  <img src="assets/undangya/burgundy-palace/icons/music.svg" alt="" aria-hidden="true"><span class="music-state">♪</span>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="burgundy-palace-config.js"></script>
+<script src="burgundy-palace.js"></script>
+</body>
+</html>

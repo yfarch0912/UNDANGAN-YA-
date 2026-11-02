@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahrezzi &amp; Meyzsa — Ivory Botanical · UndangYa!</title>
+<meta name="description" content="Undangan digital 2D Ivory Botanical — Fahrezzi & Meyzsa, 20 Desember 2026, The Botanical Garden.">
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ivory.css">
+</head>
+<body>
+
+<!-- ===== LAPISAN DEKORASI: kelopak melayang (2D, PNG transparan) ===== -->
+<div class="petals" aria-hidden="true">
+  <img class="petal p1" src="assets/undangya/ivory-botanical/flowers/petal-1.webp" alt="">
+  <img class="petal p2" src="assets/undangya/ivory-botanical/flowers/petal-2.webp" alt="">
+  <img class="petal p3" src="assets/undangya/ivory-botanical/flowers/petal-3.webp" alt="">
+  <img class="petal p4" src="assets/undangya/ivory-botanical/flowers/petal-1.webp" alt="">
+  <img class="petal p5" src="assets/undangya/ivory-botanical/flowers/petal-2.webp" alt="">
+  <img class="petal p6" src="assets/undangya/ivory-botanical/flowers/petal-3.webp" alt="">
+</div>
+
+<!-- ===== SCENE 1 · SAMPUL ===== -->
+<section id="cover" aria-label="Sampul undangan">
+  <img class="cover-bg" src="assets/undangya/ivory-botanical/backgrounds/botanical-garden-frame.webp" alt="" fetchpriority="high">
+  <img class="cover-flower tl" src="assets/undangya/ivory-botanical/flowers/corner-top-left.webp" alt="" aria-hidden="true">
+  <img class="cover-flower br" src="assets/undangya/ivory-botanical/flowers/corner-bottom-right.webp" alt="" aria-hidden="true">
+  <div class="cover-inner">
+    <img class="cover-monogram reveal-item" src="assets/undangya/ivory-botanical/ornaments/monogram.svg" alt="Monogram A dan N" width="118" height="71">
+    <p class="cover-kicker reveal-item" id="coverType">Wedding Celebration</p>
+    <svg class="draw-line reveal-item" viewBox="0 0 320 28" aria-hidden="true"><use href="#dividerPaths"/></svg>
+    <h1 class="cover-names reveal-item"><span id="groomNick">Fahrezzi</span> <span class="amp">&amp;</span> <span id="brideNick">Meyzsa</span></h1>
+    <p class="cover-date reveal-item" id="coverDate">20 · 12 · 2026</p>
+    <div class="cover-guest reveal-item">
+      <p>Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+      <p class="guest-name" id="guestName">Tamu Undangan</p>
+    </div>
+    <button id="openBtn" class="btn-gold reveal-item" type="button">
+      <svg width="15" height="12" viewBox="0 0 15 12" aria-hidden="true"><rect x="0.7" y="0.7" width="13.6" height="10.6" rx="1.5" fill="none" stroke="currentColor"/><path d="M1 1.5 L7.5 7 L14 1.5" fill="none" stroke="currentColor"/></svg>
+      Buka Undangan
+    </button>
+    <p class="cover-brand reveal-item">UndangYa! · Ivory Botanical</p>
+  </div>
+</section>
+
+<!-- ===== SCENE 3 · ISI UNDANGAN ===== -->
+<main id="content" hidden>
+  <section class="sec hero-sec reveal">
+    <img class="side-flower left" src="assets/undangya/ivory-botanical/flowers/eucalyptus-leaves.webp" alt="" aria-hidden="true">
+    <p class="kicker">Dengan penuh sukacita</p>
+    <h2 class="script" id="heroNames">Fahrezzi &amp; Meyzsa</h2>
+    <img class="divider" src="assets/undangya/ivory-botanical/ornaments/botanical-divider.svg" alt="" width="240" height="21">
+    <p class="lead" id="greetingText">Dengan penuh sukacita, kami mengundang Anda untuk merayakan hari istimewa kami.</p>
+    <figure class="hero-photo">
+      <img src="assets/undangya/ivory-botanical/photos/couple-garden-portrait.webp" alt="Potret Fahrezzi dan Meyzsa di taman mawar putih" id="heroPhoto">
+      <img class="photo-flower" src="assets/undangya/ivory-botanical/flowers/blush-pink-flowers.webp" alt="" aria-hidden="true">
+    </figure>
+  </section>
+
+  <section class="sec reveal">
+    <img class="orn-small" src="assets/undangya/ivory-botanical/ornaments/gold-ornament.svg" alt="" width="54" height="54">
+    <h3 class="sec-title">Mempelai</h3>
+    <div class="couple-grid">
+      <article class="person">
+        <h4 class="script-sm" id="groomFull">Fahrezzi Pradana Wijaya, S.T.</h4>
+        <p id="groomParents">Putra dari Bapak Agus Wijaya &amp; Ibu Dewi Wijaya</p>
+      </article>
+      <span class="amp-big" aria-hidden="true">&amp;</span>
+      <article class="person">
+        <h4 class="script-sm" id="brideFull">Meyzsa Ayu Kirana, S.E.</h4>
+        <p id="brideParents">Putri dari Bapak Bambang Kirana &amp; Ibu Sari Kirana</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec reveal">
+    <h3 class="sec-title">Save the Date</h3>
+    <div class="date-wrap">
+      <img class="date-frame" src="assets/undangya/ivory-botanical/frames/date-frame.svg" alt="" aria-hidden="true">
+      <div class="date-core">
+        <p class="date-day" id="dateLabel">Minggu, 20 Desember 2026</p>
+        <p class="date-venue"><span id="venueName">The Botanical Garden</span><br><span id="venueAddr">Jl. Kebun Raya No. 20, Jakarta</span></p>
+      </div>
+    </div>
+    <div class="countdown" role="timer" aria-label="Hitung mundur menuju acara">
+      <div><b id="cd-d">–</b><span>Hari</span></div>
+      <div><b id="cd-h">–</b><span>Jam</span></div>
+      <div><b id="cd-m">–</b><span>Menit</span></div>
+      <div><b id="cd-s">–</b><span>Detik</span></div>
+    </div>
+    <div class="schedule" id="scheduleList"></div>
+    <a class="btn-gold btn-link" id="mapsBtn" href="#" target="_blank" rel="noopener">Lihat Lokasi</a>
+  </section>
+
+  <section class="sec reveal">
+    <h3 class="sec-title">Galeri</h3>
+    <img class="divider" src="assets/undangya/ivory-botanical/ornaments/section-separator.svg" alt="" width="240" height="15">
+    <div class="gallery" id="gallery"></div>
+    <p class="hint">Ketuk foto untuk melihat lebih besar.</p>
+  </section>
+
+  <section class="sec reveal" id="rsvpSec">
+    <img class="side-flower right" src="assets/undangya/ivory-botanical/flowers/olive-branch.webp" alt="" aria-hidden="true">
+    <h3 class="sec-title">RSVP &amp; Doa</h3>
+    <p class="lead-sm">Konfirmasi kehadiran dan titipkan doa terbaik Anda.</p>
+    <form id="rsvpForm" novalidate>
+      <label>Nama tamu
+        <input type="text" id="rsvpName" autocomplete="name" placeholder="Nama Anda" required>
+      </label>
+      <label>Kehadiran
+        <select id="rsvpAttend" required>
+          <option value="">— Pilih —</option>
+          <option value="Hadir">Hadir, insya Allah</option>
+          <option value="Tidak hadir">Maaf, belum bisa hadir</option>
+          <option value="Masih ragu">Masih ragu</option>
+        </select>
+      </label>
+      <label>Jumlah tamu
+        <select id="rsvpCount">
+          <option>1</option><option>2</option><option>3</option><option>4</option>
+        </select>
+      </label>
+      <label>Ucapan &amp; doa (opsional)
+        <textarea id="rsvpMsg" rows="3" placeholder="Tulis doa untuk kedua mempelai…"></textarea>
+      </label>
+      <p class="form-error" id="formError" role="alert" hidden>Mohon isi nama dan pilihan kehadiran terlebih dahulu.</p>
+      <button class="btn-gold" type="submit">Kirim Konfirmasi</button>
+      <p class="demo-note">Mode demo — konfirmasi tersimpan hanya di perangkat ini (localStorage), bukan server.</p>
+    </form>
+    <div class="wishes" id="wishes"></div>
+  </section>
+
+  <section class="sec closing reveal">
+    <img class="closing-flower" src="assets/undangya/ivory-botanical/flowers/ivory-arrangement.webp" alt="" aria-hidden="true">
+    <p class="lead" id="closingText"></p>
+    <h2 class="script">Fahrezzi &amp; Meyzsa</h2>
+    <img class="divider" src="assets/undangya/ivory-botanical/ornaments/botanical-divider.svg" alt="" width="240" height="21">
+    <p class="credit">UndangYa! · Tema 2D “Ivory Botanical” — tanpa 3D/WebGL · <a href="index.html">Kembali ke Katalog</a></p>
+  </section>
+</main>
+
+<!-- lightbox galeri -->
+<div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto galeri diperbesar">
+  <button id="lbClose" type="button" aria-label="Tutup">×</button>
+  <img id="lbImg" src="" alt="">
+</div>
+
+<!-- definisi SVG bersama: garis divider yang digambar (stroke animation) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="dividerPaths">
+      <g stroke="#B28A4A" stroke-width="1.2" stroke-linecap="round" fill="none">
+        <path class="draw-path" d="M6 14 H118"/><path class="draw-path" d="M202 14 H314"/>
+        <path class="draw-path" d="M132 14 C140 5 150 4 156 8 C150 13 140 15 132 14Z"/>
+        <path class="draw-path" d="M188 14 C180 23 170 24 164 20 C170 15 180 13 188 14Z"/>
+      </g>
+      <path d="M160 6 L166 14 L160 22 L154 14 Z" fill="#C7A166"/>
+    </g>
+  </defs>
+</svg>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="ivory-config.js"></script>
+<script src="ivory.js"></script>
+</body>
+</html>

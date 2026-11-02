@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" fill="none" stroke="#C7A166" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ornamen botanical garis emas">
+  <path d="M18 302C52 220 92 156 164 104C214 68 258 44 302 34" opacity=".9"/>
+  <path d="M42 268C76 250 104 218 112 176C78 184 52 218 42 268Z"/>
+  <path d="M55 252C76 224 94 204 108 184"/>
+  <path d="M74 220C104 207 126 181 132 143C99 152 77 182 74 220Z"/>
+  <path d="M88 203C108 181 120 164 128 148"/>
+  <path d="M112 164C145 158 168 139 180 108C147 111 122 133 112 164Z"/>
+  <path d="M126 151C148 137 163 125 174 112"/>
+  <path d="M154 120C186 121 212 108 230 82C199 78 171 94 154 120Z"/>
+  <path d="M169 115C193 106 208 97 222 86"/>
+  <path d="M196 84C224 90 249 84 270 62C242 51 215 60 196 84Z"/>
+  <path d="M211 80C232 76 247 70 261 62"/>
+  <path d="M238 55C254 42 275 38 294 45C286 63 264 70 246 64"/>
+  <path d="M18 302C75 286 126 282 184 292" opacity=".45"/>
+  <path d="M30 282C58 272 78 254 88 228" opacity=".5"/>
+  <circle cx="267" cy="48" r="3" fill="#C7A166" stroke="none" opacity=".8"/>
+  <circle cx="229" cy="91" r="2.5" fill="#C7A166" stroke="none" opacity=".65"/>
+  <circle cx="181" cy="128" r="2.5" fill="#C7A166" stroke="none" opacity=".65"/>
+  <circle cx="132" cy="177" r="2.5" fill="#C7A166" stroke="none" opacity=".65"/>
+</svg>

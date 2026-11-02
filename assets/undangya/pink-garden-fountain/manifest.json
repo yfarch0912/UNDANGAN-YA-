@@ -1,0 +1,453 @@
+[
+ {
+  "id": "PGF-01",
+  "file": "layers/bg-garden.webp",
+  "size": [
+   900,
+   1800
+  ],
+  "bytes": 132364,
+  "desc": "Taman penuh: gunung, cemara, pohon putih, tangga, jalan, halaman kosong di tengah",
+  "method": "AI orisinal, resize+optimasi"
+ },
+ {
+  "id": "PGF-02",
+  "file": "layers/fountain-gown.webp",
+  "size": [
+   1100,
+   901
+  ],
+  "bytes": 82974,
+  "desc": "Air mancur + sosok gaun-air (elemen penentu)",
+  "method": "AI orisinal + rembg u2netp, alpha terverifikasi utuh"
+ },
+ {
+  "id": "PGF-03",
+  "file": "layers/flowers-foreground.webp",
+  "size": [
+   1400,
+   420
+  ],
+  "bytes": 465742,
+  "desc": "Hamparan bunga foreground multikolor",
+  "method": "AI + ekstraksi white-unmultiply (rembg gagal 1,3%)"
+ },
+ {
+  "id": "PGF-04",
+  "file": "layers/canopy-top.webp",
+  "size": [
+   1400,
+   578
+  ],
+  "bytes": 471536,
+  "desc": "Kanopi daun plum pojok atas L+R",
+  "method": "AI + white-unmultiply"
+ },
+ {
+  "id": "PGF-05",
+  "file": "layers/flowers-left.webp",
+  "size": [
+   900,
+   270
+  ],
+  "bytes": 197734,
+  "desc": "Cluster bunga kiri",
+  "method": "Crop PGF-03"
+ },
+ {
+  "id": "PGF-06",
+  "file": "layers/flowers-right.webp",
+  "size": [
+   900,
+   270
+  ],
+  "bytes": 197950,
+  "desc": "Cluster bunga kanan",
+  "method": "Crop PGF-03"
+ },
+ {
+  "id": "PGF-07",
+  "file": "layers/canopy-left.webp",
+  "size": [
+   900,
+   372
+  ],
+  "bytes": 202878,
+  "desc": "Kanopi kiri",
+  "method": "Crop PGF-04"
+ },
+ {
+  "id": "PGF-08",
+  "file": "layers/canopy-right.webp",
+  "size": [
+   900,
+   372
+  ],
+  "bytes": 201296,
+  "desc": "Kanopi kanan",
+  "method": "Crop PGF-04"
+ },
+ {
+  "id": "PGF-09",
+  "file": "layers/white-tree.webp",
+  "size": [
+   560,
+   1000
+  ],
+  "bytes": 70926,
+  "desc": "Pohon putih bercahaya kiri, tepi kabut",
+  "method": "Crop bg + feather mask"
+ },
+ {
+  "id": "PGF-10",
+  "file": "layers/stairs-urn.webp",
+  "size": [
+   560,
+   1000
+  ],
+  "bytes": 73196,
+  "desc": "Tangga batu + urn mawar kanan, tepi kabut",
+  "method": "Crop bg + feather mask"
+ },
+ {
+  "id": "PGF-11",
+  "file": "layers/mountains-mist.webp",
+  "size": [
+   1000,
+   520
+  ],
+  "bytes": 41068,
+  "desc": "Gunung berkabut + cemara",
+  "method": "Crop bg + feather mask"
+ },
+ {
+  "id": "PGF-12",
+  "file": "layers/fountain-figure.webp",
+  "size": [
+   800,
+   1007
+  ],
+  "bytes": 53070,
+  "desc": "Sosok gaun-air saja (tanpa bibir kolam penuh)",
+  "method": "Crop PGF-02"
+ },
+ {
+  "id": "PGF-13",
+  "file": "banners/hero-poster.webp",
+  "size": [
+   900,
+   1600
+  ],
+  "bytes": 193258,
+  "desc": "Komposit hero final (poster/fallback bila aset layer gagal)",
+  "method": "Komposit factory dari PGF-01..04"
+ },
+ {
+  "id": "BANNER_GREETING",
+  "file": "banners/banner-greeting.webp",
+  "size": [
+   1200,
+   800
+  ],
+  "bytes": 22818,
+  "desc": "Banner salam: langit + gunung berkabut",
+  "method": "Crop/grade dari aset orisinal"
+ },
+ {
+  "id": "BANNER_COUPLE",
+  "file": "banners/banner-couple.webp",
+  "size": [
+   1200,
+   800
+  ],
+  "bytes": 69992,
+  "desc": "Banner mempelai: pohon putih + jalan",
+  "method": "Crop/grade dari aset orisinal"
+ },
+ {
+  "id": "BANNER_STORY",
+  "file": "banners/banner-story.webp",
+  "size": [
+   1200,
+   800
+  ],
+  "bytes": 66174,
+  "desc": "Banner cerita: tangga batu + cemara",
+  "method": "Crop/grade dari aset orisinal"
+ },
+ {
+  "id": "BANNER_SCHEDULE",
+  "file": "banners/banner-schedule.webp",
+  "size": [
+   1200,
+   800
+  ],
+  "bytes": 81022,
+  "desc": "Banner jadwal: halaman + jalan tengah",
+  "method": "Crop/grade dari aset orisinal"
+ },
+ {
+  "id": "BANNER_VENUE",
+  "file": "banners/banner-venue.webp",
+  "size": [
+   1200,
+   900
+  ],
+  "bytes": 110016,
+  "desc": "Banner lokasi: taman penuh",
+  "method": "Crop/grade dari aset orisinal"
+ },
+ {
+  "id": "BANNER_GALLERY",
+  "file": "banners/banner-gallery.webp",
+  "size": [
+   1200,
+   800
+  ],
+  "bytes": 66976,
+  "desc": "Banner galeri: mawar bawah",
+  "method": "Crop/grade dari aset orisinal"
+ },
+ {
+  "id": "BANNER_RSVP",
+  "file": "banners/banner-rsvp.webp",
+  "size": [
+   1200,
+   800
+  ],
+  "bytes": 76182,
+  "desc": "Banner RSVP: bunga multikolor",
+  "method": "Crop/grade dari aset orisinal"
+ },
+ {
+  "id": "BANNER_GIFT",
+  "file": "banners/banner-gift.webp",
+  "size": [
+   1200,
+   800
+  ],
+  "bytes": 63264,
+  "desc": "Banner amplop: kanopi plum",
+  "method": "Crop/grade dari aset orisinal"
+ },
+ {
+  "id": "BANNER_CLOSING",
+  "file": "banners/banner-closing.webp",
+  "size": [
+   1200,
+   900
+  ],
+  "bytes": 113622,
+  "desc": "Banner penutup: taman digrade senja lebih hangat",
+  "method": "Crop/grade dari aset orisinal"
+ },
+ {
+  "id": "HERO_DESKTOP",
+  "file": "banners/hero-desktop.webp",
+  "size": [
+   1920,
+   1080
+  ],
+  "bytes": 143106,
+  "desc": "Backdrop desktop melebar",
+  "method": "Crop cover bg"
+ },
+ {
+  "id": "GAL-1",
+  "file": "gallery/gallery-1.webp",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 27440,
+  "desc": "Galeri 1",
+  "method": "Crop bg"
+ },
+ {
+  "id": "GAL-2",
+  "file": "gallery/gallery-2.webp",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 54808,
+  "desc": "Galeri 2",
+  "method": "Crop bg"
+ },
+ {
+  "id": "GAL-3",
+  "file": "gallery/gallery-3.webp",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 57664,
+  "desc": "Galeri 3",
+  "method": "Crop bg"
+ },
+ {
+  "id": "GAL-4",
+  "file": "gallery/gallery-4.webp",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 29690,
+  "desc": "Galeri 4: gaun air",
+  "method": "Crop PGF-12 di atas latar pink"
+ },
+ {
+  "id": "GAL-5",
+  "file": "gallery/gallery-5.webp",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 47244,
+  "desc": "Galeri 5: hamparan bunga",
+  "method": "Crop flower-border"
+ },
+ {
+  "id": "GAL-6",
+  "file": "gallery/gallery-6.webp",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 36490,
+  "desc": "Galeri 6: kanopi plum",
+  "method": "Crop canopy"
+ },
+ {
+  "id": "PHOTO-COUPLE",
+  "file": "photos/couple-illustration.webp",
+  "size": [
+   1000,
+   1250
+  ],
+  "bytes": 131522,
+  "desc": "Ilustrasi pasangan (air mancur gaun) — CONTOH, bukan foto asli",
+  "method": "Komposit hero crop"
+ },
+ {
+  "id": "PHOTO-BRIDE",
+  "file": "photos/bride-illustration.webp",
+  "size": [
+   800,
+   1000
+  ],
+  "bytes": 31916,
+  "desc": "Ilustrasi mempelai wanita (sosok gaun-air) — CONTOH",
+  "method": "PGF-12 di latar kabut pink"
+ },
+ {
+  "id": "PHOTO-GROOM",
+  "file": "photos/groom-illustration.webp",
+  "size": [
+   800,
+   1000
+  ],
+  "bytes": 63794,
+  "desc": "Ilustrasi pendamping mempelai pria (cemara + pohon payung taman) — CONTOH",
+  "method": "Crop bg"
+ },
+ {
+  "id": "PHOTO-VENUE",
+  "file": "photos/venue-garden.webp",
+  "size": [
+   1200,
+   900
+  ],
+  "bytes": 110016,
+  "desc": "Ilustrasi venue taman — CONTOH",
+  "method": "Crop bg"
+ },
+ {
+  "id": "PAT-PAPER",
+  "file": "patterns/paper-texture.webp",
+  "size": [
+   600,
+   600
+  ],
+  "bytes": 39640,
+  "desc": "Tekstur kertas halus",
+  "method": "Prosedural numpy noise"
+ },
+ {
+  "id": "PAT-FLORAL",
+  "file": "patterns/floral-tile.webp",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 33586,
+  "desc": "Tile bunga samar untuk latar section",
+  "method": "Turunan PGF-03 opacity 35%"
+ },
+ {
+  "id": "PAT-MIST",
+  "file": "patterns/mist-gradient.png",
+  "size": [
+   256,
+   512
+  ],
+  "bytes": 1686,
+  "desc": "Gradasi kabut vertikal",
+  "method": "Prosedural"
+ },
+ {
+  "id": "PAT-SPARKLE",
+  "file": "patterns/sparkle-sprite.png",
+  "size": [
+   128,
+   128
+  ],
+  "bytes": 2729,
+  "desc": "Sprite sparkle 4 sudut",
+  "method": "Digambar PIL"
+ },
+ {
+  "id": "FX-MIST",
+  "file": "effects/mist-overlay.png",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 90528,
+  "desc": "Overlay kabut radial tengah",
+  "method": "Prosedural"
+ },
+ {
+  "id": "FX-GLOW",
+  "file": "effects/glow-gold.png",
+  "size": [
+   600,
+   600
+  ],
+  "bytes": 76184,
+  "desc": "Glow emas radial untuk kolam",
+  "method": "Prosedural"
+ },
+ {
+  "id": "FX-BOKEH",
+  "file": "effects/bokeh-pink.png",
+  "size": [
+   800,
+   800
+  ],
+  "bytes": 58087,
+  "desc": "Bokeh pink lembut",
+  "method": "Prosedural"
+ },
+ {
+  "id": "FX-VIGNETTE",
+  "file": "effects/vignette.png",
+  "size": [
+   800,
+   1200
+  ],
+  "bytes": 53369,
+  "desc": "Vignette burgundy tepi panggung",
+  "method": "Prosedural"
+ }
+]

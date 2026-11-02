@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 300">
+  <!-- Lengkung emas + untaian manik + lentera — digambar tangan (SVG asli UndangYa!).
+       Dipakai dua kali; sisi kanan dicerminkan lewat CSS scaleX(-1). -->
+  <path d="M14 296 C14 150 70 44 196 30" fill="none" stroke="#D9A92F" stroke-width="9" stroke-linecap="round"/>
+  <path d="M14 296 C14 150 70 44 196 30" fill="none" stroke="#F2CE6B" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- untaian manik menggantung dari busur -->
+  <g stroke="#D9A92F" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 13">
+    <path d="M48 168 L48 236"/><path d="M76 116 L76 208"/><path d="M106 82 L106 186"/>
+    <path d="M136 58 L136 160"/><path d="M164 40 L164 128"/>
+  </g>
+  <g fill="#B8860B">
+    <circle cx="48" cy="244" r="4.5"/><circle cx="76" cy="216" r="4.5"/><circle cx="106" cy="194" r="4.5"/>
+    <circle cx="136" cy="168" r="4.5"/><circle cx="164" cy="136" r="4.5"/>
+  </g>
+  <!-- lentera di ujung dalam busur -->
+  <g transform="translate(196 30)">
+    <path d="M0 0 L0 14" stroke="#B8860B" stroke-width="3.5"/>
+    <path d="M-13 30 L0 14 L13 30 L9 58 L-9 58 Z" fill="#E9BC45" stroke="#A8741A" stroke-width="2.5"/>
+    <path d="M-9 58 L9 58 L5 76 L-5 76 Z" fill="#D9A92F" stroke="#A8741A" stroke-width="2"/>
+    <path d="M0 76 L0 92 M-5 76 L-7 88 M5 76 L7 88" stroke="#A8741A" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="0" cy="42" r="5" fill="#FFF3C4"/>
+  </g>
+</svg>

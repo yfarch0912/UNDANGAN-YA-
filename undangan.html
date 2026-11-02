@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Meyzsa &amp; Fahrezzi — Undangan Pernikahan 3D</title>
+<meta name="description" content="Undangan pernikahan digital 3D Meyzsa & Fahrezzi — Sabtu, 12 Juni 2027, Jakarta. Buka undangan, lihat cincin emas 3D melayang, countdown, RSVP & amplop digital.">
+<meta property="og:title" content="The Wedding of Meyzsa & Fahrezzi">
+<meta property="og:description" content="Sabtu, 12 Juni 2027 · Jakarta. Kepada Yth. tamu undangan — silakan buka undangan 3D kami.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Dancing+Script:wght@500;700&family=Parisienne&family=Pinyon+Script&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== LATAR 3D (Three.js) ===== -->
+<canvas id="scene3d" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div id="burst" aria-hidden="true"></div>
+
+<!-- ===== SAMPUL / COVER ===== -->
+<section id="cover" class="cover">
+  <div class="gate gate-left" aria-hidden="true"><span>🌺</span></div>
+  <div class="gate gate-right" aria-hidden="true"><span>🌺</span></div>
+  <div class="cover-card tilt" id="coverCard">
+    <div class="cover-orn">✦ &nbsp;✦&nbsp; ✦</div>
+    <p class="concept-badge" id="conceptBadge" hidden></p>
+    <p class="cover-kicker">The Wedding Of</p>
+    <h1 class="script couple-names">Meyzsa <span>&amp;</span> Fahrezzi</h1>
+    <p class="cover-date">Sabtu, 12 · 06 · 2027</p>
+    <div class="cover-divider"><span></span>❖<span></span></div>
+    <p class="cover-to-label">Kepada Yth.<br>Bapak / Ibu / Saudara/i</p>
+    <p class="cover-guest" id="guestName">Tamu Undangan</p>
+    <p class="cover-note">*Mohon maaf apabila terdapat kesalahan penulisan nama &amp; gelar</p>
+    <button id="openBtn" class="btn-gold" type="button">
+      <span class="btn-seal">N·B</span> Buka Undangan
+    </button>
+    <p class="cover-hint">Gerakkan kursor / miringkan HP — cincin emasnya hidup dalam 3D</p>
+    <p class="cover-hint">Ada <b>13 tema 3D</b> di dalam undangan — termasuk Adat Jawa, Sunda &amp; Bali — semua bisa diganti langsung di dalam undangan ini</p>
+  </div>
+</section>
+
+<!-- ===== ISI UNDANGAN ===== -->
+<main id="content" class="content locked" aria-hidden="true">
+
+  <header class="hero reveal">
+    <p class="arabic">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+    <p class="muted" id="salamLine">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
+    <blockquote class="quote">
+      “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan pasangan-pasangan untukmu
+      agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”
+      <cite>— QS. Ar-Rum : 21</cite>
+    </blockquote>
+    <h2 class="script big">Meyzsa &amp; Fahrezzi</h2>
+    <p class="muted">Dengan memohon rahmat &amp; ridha Allah SWT, kami mengundang Anda pada pernikahan kami.</p>
+
+    <div class="countdown" id="countdown" aria-label="Hitung mundur menuju hari pernikahan">
+      <div class="cd-cell tilt-mini"><strong id="cd-d">00</strong><span>Hari</span></div>
+      <div class="cd-cell tilt-mini"><strong id="cd-h">00</strong><span>Jam</span></div>
+      <div class="cd-cell tilt-mini"><strong id="cd-m">00</strong><span>Menit</span></div>
+      <div class="cd-cell tilt-mini"><strong id="cd-s">00</strong><span>Detik</span></div>
+    </div>
+    <a class="btn-outline" id="gcalBtn" target="_blank" rel="noopener">＋ Simpan ke Google Calendar</a>
+  </header>
+
+  <section class="section reveal" id="tema">
+    <p class="kicker">Pilih Tema 3D</p>
+    <h3 class="section-title">13 Tema, <em>Satu Undangan</em></h3>
+    <p class="muted center">Sentuh salah satu tema — warna, font, cincin &amp; benda melayang 3D-nya langsung berganti. Tema adat (Jawa, Sunda, Bali) juga mengganti salam pembuka dengan salam khas daerahnya. Pilihanmu tersimpan dan ikut di link (<code>?tema=…</code>).</p>
+    <div class="theme-grid" id="themeGrid"></div>
+  </section>
+
+  <section class="section reveal" id="mempelai">
+    <p class="kicker">Kedua Mempelai</p>
+    <h3 class="section-title">Pengantin <em>Kami</em></h3>
+    <div class="couple-grid">
+      <article class="person-card tilt">
+        <div class="person-photo"><img id="bridePhoto" alt="Foto mempelai wanita" loading="lazy"></div>
+        <h4 class="script person-name" id="brideFull"></h4>
+        <p class="muted" id="brideParents"></p>
+        <p class="ig" id="brideIg"></p>
+      </article>
+      <div class="ampersand script">&amp;</div>
+      <article class="person-card tilt">
+        <div class="person-photo"><img id="groomPhoto" alt="Foto mempelai pria" loading="lazy"></div>
+        <h4 class="script person-name" id="groomFull"></h4>
+        <p class="muted" id="groomParents"></p>
+        <p class="ig" id="groomIg"></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section reveal" id="acara">
+    <p class="kicker">Save The Date</p>
+    <h3 class="section-title">Akad &amp; <em>Resepsi</em></h3>
+    <div class="event-grid" id="eventGrid"></div>
+    <div class="dresscode">
+      <span>Dress code:</span>
+      <span id="dressChips"></span>
+    </div>
+  </section>
+
+  <section class="section reveal" id="cerita">
+    <p class="kicker">Our Love Story</p>
+    <h3 class="section-title">Kisah <em>Kami</em></h3>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section class="section reveal" id="galeri">
+    <p class="kicker">Gallery</p>
+    <h3 class="section-title">Galeri <em>Momen</em></h3>
+    <p class="muted center">Sentuh foto untuk memperbesar. Foto contoh — ganti dengan foto prewedding Anda di <code>config.js</code>.</p>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <section class="section reveal" id="amplop">
+    <p class="kicker">Wedding Gift</p>
+    <h3 class="section-title">Amplop <em>Digital</em></h3>
+    <p class="muted center">Doa restu Anda adalah hadiah terindah. Bila ingin berbagi tanda kasih:</p>
+    <div class="gift-grid" id="giftGrid"></div>
+    <article class="gift-card tilt">
+      <p class="gift-bank">Kirim Hadiah Fisik</p>
+      <p class="gift-addr" id="giftAddress"></p>
+      <button class="btn-small copy-btn" data-copy-target="giftAddress" type="button">Salin Alamat</button>
+    </article>
+  </section>
+
+  <section class="section reveal" id="rsvp">
+    <p class="kicker">RSVP</p>
+    <h3 class="section-title">Konfirmasi &amp; <em>Ucapan</em></h3>
+    <form id="rsvpForm" class="rsvp-form tilt">
+      <label>Nama
+        <input name="name" required maxlength="60" placeholder="Nama Anda">
+      </label>
+      <label>Kehadiran
+        <select name="attend">
+          <option value="Hadir">Hadir, insyaAllah</option>
+          <option value="Ragu">Masih ragu</option>
+          <option value="Tidak hadir">Berhalangan hadir</option>
+        </select>
+      </label>
+      <label>Jumlah tamu
+        <select name="guests"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+      </label>
+      <label class="full">Ucapan &amp; doa
+        <textarea name="message" rows="3" maxlength="300" placeholder="Barakallahu lakuma wa baraka 'alaikuma…"></textarea>
+      </label>
+      <button class="btn-gold full" type="submit">Kirim RSVP &amp; Ucapan</button>
+      <p class="form-note" id="rsvpCount"></p>
+    </form>
+    <div class="wishes" id="wishes"></div>
+  </section>
+
+  <section class="section reveal" id="generator">
+    <p class="kicker">Untuk Mempelai</p>
+    <h3 class="section-title">Generator Link <em>Tamu</em></h3>
+    <p class="muted center">Buat link personal seperti repo-repo undangan populer: nama tamu tampil otomatis di sampul.</p>
+    <div class="gen-box">
+      <input id="genInput" placeholder="Nama tamu, mis. Keluarga Besar Pratama" maxlength="80">
+      <button class="btn-gold" id="genBtn" type="button">Buat Link</button>
+      <p class="gen-result" id="genResult"></p>
+      <div class="gen-actions">
+        <button class="btn-small" id="genCopy" type="button" disabled>Salin Link</button>
+        <a class="btn-small as-link" id="genWa" target="_blank" rel="noopener" aria-disabled="true">Kirim via WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer reveal">
+    <p class="muted">Merupakan kehormatan &amp; kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+    <h4 class="script big">Meyzsa &amp; Fahrezzi</h4>
+    <p class="muted">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+    <p class="credit">UNDANGAN-YA! 3D · Tema <span id="creditTheme">“Senja Emas”</span> — dibuat dengan Three.js · Data contoh, edit di <code>config.js</code></p>
+  </footer>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" hidden>
+  <button id="lbClose" aria-label="Tutup">✕</button>
+  <button id="lbPrev" aria-label="Sebelumnya">‹</button>
+  <img id="lbImg" alt="Foto galeri diperbesar">
+  <button id="lbNext" aria-label="Berikutnya">›</button>
+</div>
+
+<!-- Musik -->
+<button id="musicBtn" class="music-btn" type="button" aria-label="Hidup/matikan musik latar" title="Musik latar">♪</button>
+<div id="toast" class="toast" role="status"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="config.js"></script>
+<script src="themes.js"></script>
+<script src="three-scene.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

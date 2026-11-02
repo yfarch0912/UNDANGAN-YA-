@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meyzsa &amp; Fahrezzi — Bali Pastel Romance · UndangYa!</title>
+<meta name="description" content="Undangan digital 2D Bali Pastel Romance — taman bunga Bali pastel pink & lavender, candi bentar, meru, dan danau teratai. Tema orisinal UndangYa!.">
+<meta property="og:title" content="Meyzsa & Fahrezzi — Bali Pastel Romance">
+<meta property="og:description" content="Sabtu, 15 Mei 2027 · Ubud, Bali. Undangan digital UndangYa! (data contoh).">
+<meta property="og:image" content="assets/undangya/bali-pastel/panel-01-floral-gate.webp">
+<link rel="icon" href="assets/undangya/bali-pastel/panel-01-floral-gate.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="bali.css">
+</head>
+<body>
+<h1 class="sr" style="position:absolute;left:-9999px">Undangan Pernikahan Meyzsa dan Fahrezzi — Bali Pastel Romance</h1>
+
+<!-- COVER · Living Scene — taman Bali berlapis yang bergerak (pola referensi video) -->
+<div id="cover" role="dialog" aria-label="Sampul undangan">
+  <div class="scene" id="scene" aria-hidden="true">
+    <img class="sc-bg" src="assets/undangya/bali-pastel/cover2/scene-bg.webp" alt="">
+    <img class="sc-bale" src="assets/undangya/bali-pastel/cover2/bale.webp" alt="">
+    <img class="sc-bouq bq-l" src="assets/undangya/bali-pastel/cover2/bouquet.webp" alt="">
+    <img class="sc-bouq bq-r" src="assets/undangya/bali-pastel/cover2/bouquet.webp" alt="">
+    <img class="sc-flora fl-branch" src="assets/undangya/bali-pastel/cover2/branch-frangipani.webp" alt="">
+    <img class="sc-flora fl-wist" src="assets/undangya/bali-pastel/cover2/wisteria.webp" alt="">
+    <img class="sc-arch" src="assets/undangya/bali-pastel/cover2/arch.webp" alt="">
+    <img class="sc-birds" src="assets/undangya/bali-pastel/cover2/birds.webp" alt="">
+    <span class="sc-fly bf1"><img src="assets/undangya/bali-pastel/cover2/butterfly-lilac.webp" alt=""></span>
+    <span class="sc-fly bf2"><img src="assets/undangya/bali-pastel/cover2/butterfly-pink.webp" alt=""></span>
+    <div class="sc-mist"></div>
+    <div id="petalBurst"></div>
+  </div>
+  <div class="cover-ui">
+    <div class="cover-title" id="coverTitle">
+      <p class="cover-eyebrow">The Wedding Of</p>
+      <h1 id="coverNames">Meyzsa &amp; Fahrezzi</h1>
+      <p class="date-pill" id="coverDate">Sabtu, 15 Mei 2027</p>
+    </div>
+    <figure class="couple-photo cover-photo" id="coverPhotoFig"><img id="coverPhoto" alt="Foto pasangan Meyzsa dan Fahrezzi (foto contoh fiktif)"><span class="foto-tag">Foto Contoh</span></figure>
+    <div class="cover-meta" id="coverMeta">
+      <p class="guest">Kepada Yth. Bapak/Ibu/Saudara/i<br><strong id="guestName">Tamu Undangan</strong></p>
+      <p class="guest-note">*Mohon maaf apabila terdapat kesalahan penulisan nama &amp; gelar</p>
+      <button class="btn" id="openBtn" type="button"><img class="ic" src="assets/undangya/bali-pastel/icons/icon-envelope.webp" alt="" aria-hidden="true">Buka Undangan</button>
+    </div>
+  </div>
+</div>
+
+<main id="main" hidden>
+  <!-- HERO · Panel 2 The Romantic Garden -->
+  <section class="sec" id="beranda" data-panel="garden">
+    <div class="sec-bg"></div><div class="mist"></div>
+    <img class="sprig sp-l" src="assets/undangya/bali-pastel/library/sprigs/sprig-left-wisteria.webp" alt="" aria-hidden="true">
+    <img class="sprig sp-r" src="assets/undangya/bali-pastel/library/sprigs/sprig-right-orchid.webp" alt="" aria-hidden="true">
+    <div class="inner">
+      <p class="script rv" style="font-size:1.95rem">Om Swastiastu</p>
+      <p class="eyebrow rv">The Wedding Of</p>
+      <h2 class="hero-names rv" id="heroNames">Meyzsa &amp; Fahrezzi</h2>
+      <p class="rv"><span class="date-pill" id="heroDate">Sabtu, 15 Mei 2027</span></p>
+      <figure class="couple-photo hero-photo rv"><img id="heroPhoto" alt="Foto pasangan Meyzsa dan Fahrezzi di depan candi bentar (foto contoh fiktif)"><span class="foto-tag">Foto Contoh</span></figure>
+      <div class="cd rv" id="countdown" aria-label="Hitung mundur">
+        <div><b data-cd="d"></b><span>Hari</span></div><div><b data-cd="h"></b><span>Jam</span></div>
+        <div><b data-cd="m"></b><span>Menit</span></div><div><b data-cd="s"></b><span>Detik</span></div>
+      </div>
+      <p class="rv cd-status" id="cdStatus" hidden></p>
+      <p class="scroll-hint rv" aria-hidden="true">Gulir ke Bawah<span class="chev"><img class="chev-ic" src="assets/undangya/bali-pastel/icons/icon-lotus.webp" alt="" aria-hidden="true"></span></p>
+      <p class="rv"><button class="replay-link" id="replayBtn" type="button">Putar Ulang Pembuka</button></p>
+    </div>
+  </section>
+
+  <!-- SALAM + KUTIPAN · Panel 6 The Greeting Garden -->
+  <section class="sec" id="salam" data-panel="greeting">
+    <div class="sec-bg"></div>
+    <div class="inner">
+      <div class="veil rv">
+        <img class="corner c-tl" src="assets/undangya/bali-pastel/library/corners/corner-06-tl.webp" alt="" aria-hidden="true" loading="lazy"><img class="corner c-br" src="assets/undangya/bali-pastel/library/corners/corner-06-br.webp" alt="" aria-hidden="true" loading="lazy">
+        <p class="divider"><img class="divider-ic" src="assets/undangya/bali-pastel/icons/icon-lotus.webp" alt="" aria-hidden="true"></p>
+        <p id="greetingText"></p>
+        <p class="script" style="font-size:1.5rem" id="quoteText"></p>
+        <p style="font-size:.8rem;opacity:.8" id="quoteSource"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMPELAI · Panel 5 The Flowering Pavilion -->
+  <section class="sec" id="mempelai" data-panel="pavilion">
+    <div class="sec-bg"></div><div class="mist"></div>
+    <div class="inner">
+      <p class="eyebrow rv">Mempelai</p><h2 class="rv">Dua Hati, Satu Taman</h2>
+      <div class="veil couple-card rv" id="brideCard"></div>
+      <div class="amp rv">&amp;</div>
+      <div class="veil couple-card rv" id="groomCard"></div>
+      <p style="font-size:.78rem;opacity:.75" class="rv">Foto pada halaman ini adalah foto contoh pasangan fiktif — akan diganti foto pasangan asli.</p>
+    </div>
+  </section>
+
+  <!-- KISAH · Panel 3 The Lake Garden -->
+  <section class="sec" id="kisah" data-panel="lake">
+    <div class="sec-bg"></div>
+    <div class="inner">
+      <p class="eyebrow rv">Love Story</p><h2 class="rv">Kisah di Tepi Danau</h2>
+      <div id="storyList"></div>
+    </div>
+  </section>
+
+  <!-- ACARA · Panel 4 Sacred Courtyard -->
+  <section class="sec" id="acara" data-panel="courtyard">
+    <div class="sec-bg"></div><div class="mist"></div>
+    <div class="inner">
+      <p class="eyebrow rv">Waktu &amp; Tempat</p><h2 class="rv">Rangkaian Acara</h2>
+      <div id="eventList"></div>
+      <button class="btn ghost rv" id="icsBtn" type="button"><img class="ic" src="assets/undangya/bali-pastel/icons/icon-calendar.webp" alt="" aria-hidden="true">Simpan Tanggal (Kalender)</button>
+    </div>
+  </section>
+
+  <!-- GALERI · Botanical Frame (crop panel) -->
+  <section class="sec" id="galeri" data-panel="gallery">
+    <div class="sec-bg"></div>
+    <div class="inner">
+      <p class="eyebrow rv">Galeri Ilustrasi</p><h2 class="rv">Bingkai Botanical</h2>
+      <p class="rv" style="font-size:.85rem">Galeri karya ilustrasi tema ini — bukan foto asli. Ketuk untuk memperbesar.</p>
+      <div class="gal rv" id="galGrid"></div>
+    </div>
+  </section>
+
+  <!-- LOKASI · Panel 3 Lake & Mountain -->
+  <section class="sec" id="lokasi" data-panel="location">
+    <div class="sec-bg"></div>
+    <div class="inner">
+      <div class="veil rv">
+        <img class="corner c-tl" src="assets/undangya/bali-pastel/library/corners/corner-02-tl.webp" alt="" aria-hidden="true" loading="lazy"><img class="corner c-br" src="assets/undangya/bali-pastel/library/corners/corner-02-br.webp" alt="" aria-hidden="true" loading="lazy">
+        <p class="eyebrow">Lokasi Acara</p><h2 id="locVenue"></h2>
+        <p id="locAddress"></p>
+        <a class="btn" id="mapsBtn" href="#" target="_blank" rel="noopener"><img class="ic" src="assets/undangya/bali-pastel/icons/icon-pin.webp" alt="" aria-hidden="true">Buka Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP · Panel 10 The Blessing Alcove -->
+  <section class="sec" id="rsvp" data-panel="rsvp">
+    <div class="sec-bg"></div>
+    <div class="inner">
+      <div class="veil rv">
+        <img class="corner c-tl" src="assets/undangya/bali-pastel/library/corners/corner-10-tl.webp" alt="" aria-hidden="true" loading="lazy"><img class="corner c-br" src="assets/undangya/bali-pastel/library/corners/corner-10-br.webp" alt="" aria-hidden="true" loading="lazy">
+        <p class="eyebrow">RSVP &amp; Buku Tamu</p><h2>Konfirmasi &amp; Ucapan</h2>
+        <p style="font-size:.85rem" id="rsvpDeadline"></p>
+        <div class="stats"><div><img class="stat-ic" src="assets/undangya/bali-pastel/icons/icon-check.webp" alt="" aria-hidden="true">Hadir: <b id="statHadir">0</b></div><div><img class="stat-ic" src="assets/undangya/bali-pastel/icons/icon-bud.webp" alt="" aria-hidden="true">Berhalangan: <b id="statTidak">0</b></div><div><img class="stat-ic" src="assets/undangya/bali-pastel/icons/icon-envelope.webp" alt="" aria-hidden="true">Ucapan: <b id="statTotal">0</b></div></div>
+        <form id="rsvpForm" novalidate>
+          <label for="fNama">Nama</label><input id="fNama" maxlength="60" autocomplete="name" placeholder="Nama Anda">
+          <label for="fStatus">Konfirmasi Kehadiran</label>
+          <select id="fStatus"><option value="hadir">Hadir, dengan senang hati</option><option value="tidak">Maaf, berhalangan</option><option value="ragu">Belum bisa memastikan</option></select>
+          <label for="fPesan">Ucapan &amp; Doa (maks. 300 karakter)</label>
+          <textarea id="fPesan" rows="3" maxlength="300" placeholder="Tulis ucapan untuk kedua mempelai…"></textarea>
+          <p style="font-size:.75rem;text-align:right"><span id="charCount">0</span>/300</p>
+          <button class="btn" type="submit" style="width:100%">Kirim Ucapan</button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+          <p style="font-size:.75rem;opacity:.75">Mode demo: ucapan tersimpan lokal di perangkat ini (localStorage), belum terkirim ke server.</p>
+        </form>
+        <div id="wishList"></div>
+        <button class="btn ghost" id="loadMore" type="button" hidden>Muat ucapan lainnya</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMPLOP · Panel 11 The Garden of Gifts -->
+  <section class="sec" id="amplop" data-panel="gift">
+    <div class="sec-bg"></div>
+    <div class="inner">
+      <div class="veil rv">
+        <img class="corner c-tl" src="assets/undangya/bali-pastel/library/corners/corner-01-tl.webp" alt="" aria-hidden="true" loading="lazy"><img class="corner c-br" src="assets/undangya/bali-pastel/library/corners/corner-01-br.webp" alt="" aria-hidden="true" loading="lazy">
+        <img class="sec-ic" src="assets/undangya/bali-pastel/icons/icon-gift.webp" alt="" aria-hidden="true"><p class="eyebrow">Amplop Digital</p><h2>Tanda Kasih</h2>
+        <p style="font-size:.9rem" id="giftInfo"></p>
+        <button class="btn ghost" id="copyBtn" type="button">Salin Nomor Rekening</button>
+        <p class="form-msg" id="copyMsg" role="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PENUTUP · Panel 9 The Eternal Bloom -->
+  <section class="sec" id="penutup" data-panel="closing">
+    <div class="sec-bg"></div>
+    <img class="sprig sp-l" src="assets/undangya/bali-pastel/library/sprigs/sprig-left-frangipani.webp" alt="" aria-hidden="true">
+    <img class="sprig sp-r" src="assets/undangya/bali-pastel/library/sprigs/sprig-right-frangipani.webp" alt="" aria-hidden="true"><div class="mist"></div>
+    <div class="inner">
+      <p class="script rv" style="font-size:2rem">Om Shanti Shanti Shanti Om</p>
+      <p class="rv">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih.</p>
+      <h2 class="rv" id="closingNames">Meyzsa &amp; Fahrezzi</h2>
+      <p class="divider rv"><img class="divider-ic" src="assets/undangya/bali-pastel/icons/icon-lotus.webp" alt="" aria-hidden="true"></p>
+      <p style="font-size:.75rem;opacity:.75" class="rv">Tema orisinal “Bali Pastel Romance” · UndangYa! · Seluruh data pada halaman ini adalah contoh.</p>
+    </div>
+  </section>
+</main>
+
+<nav id="bottomnav" aria-label="Navigasi undangan">
+  <a href="#beranda">Beranda</a><a href="#mempelai">Mempelai</a><a href="#acara">Acara</a><a href="#galeri">Galeri</a><a href="#rsvp">RSVP</a>
+</nav>
+<button id="musicBtn" type="button" aria-label="Musik latar" aria-pressed="false"><img class="music-ic" src="assets/undangya/bali-pastel/icons/icon-music.webp" alt="" aria-hidden="true"></button>
+
+<div id="lightbox" role="dialog" aria-label="Pratinjau galeri">
+  <img id="lbImg" alt="Ilustrasi galeri Bali Pastel Romance"><p id="lbCap"></p>
+  <div><button id="lbPrev" type="button">‹ Sebelumnya</button><button id="lbClose" type="button">Tutup</button><button id="lbNext" type="button">Berikutnya ›</button></div>
+</div>
+
+<script src="bali-config.js"></script>
+<script src="bali.js"></script>
+</body>
+</html>

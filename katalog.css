@@ -1,0 +1,142 @@
+/* ============================================================
+   UNDANGYA! — katalog.css
+   Halaman katalog khusus: heading ringkas, filter acara langsung
+   di bawah judul, grid template. Memakai token & komponen site.css.
+   ============================================================ */
+
+/* ---------- Header solid (di luar hero) ---------- */
+.katalog-head{position:relative;background:#2A0A12;border-bottom:1px solid rgba(199,161,102,.35)}
+.main-nav a.on{color:var(--gold);border-color:var(--gold)}
+
+/* ---------- Judul ringkas ---------- */
+.katalog-main{padding:34px 0 84px}
+.katalog-title h1{font-size:clamp(2rem,4.5vw,2.9rem);color:var(--burgundy);margin-top:6px}
+.katalog-sub{color:var(--ink-soft);max-width:56ch;margin:8px 0 0;font-size:1rem}
+
+/* ---------- Chip kategori acara ---------- */
+.cat-scroll{margin-top:22px}
+.katalog-page .chips{display:flex;gap:8px;flex-wrap:wrap}
+.katalog-page .chip{
+  border:1px solid var(--line-strong);background:var(--warm-white);border-radius:999px;
+  padding:9px 18px;font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.04em;
+  color:var(--ink);cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s;
+}
+.katalog-page .chip:hover{border-color:var(--gold-deep)}
+.katalog-page .chip[aria-pressed="true"]{background:var(--burgundy);color:var(--ivory);border-color:var(--burgundy)}
+
+/* ---------- Bar alat: cari + filter ---------- */
+.katalog-tools{margin-top:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.katalog-tools .search-box{flex:1 1 240px}
+.katalog-tools .search-box input{
+  width:100%;margin-top:6px;border:1px solid var(--line-strong);border-radius:999px;
+  padding:11px 18px;font:inherit;font-size:.95rem;background:var(--warm-white);color:var(--ink);
+}
+.katalog-tools .search-box input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.filter-open{position:relative}
+.filter-badge{
+  display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;
+  border-radius:50%;background:var(--burgundy);color:var(--ivory);font-size:.7rem;font-weight:600;
+  padding:0 5px;margin-left:7px;vertical-align:1px;
+}
+.filter-panel{display:none;width:100%;order:3;gap:14px;flex-wrap:wrap;
+  background:var(--warm-white);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.filter-panel.open{display:flex}
+.f-group{display:flex;flex-direction:column;gap:6px;flex:1 1 150px}
+.f-group label{font-size:.66rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint)}
+.f-group select{
+  border:1px solid var(--line-strong);border-radius:999px;padding:10px 14px;font:inherit;font-size:.9rem;
+  background:#fff;color:var(--ink);cursor:pointer;width:100%;
+}
+.f-actions{display:flex;gap:10px;align-items:flex-end;width:100%}
+@media (min-width:1024px){
+  .filter-open{display:none}
+  .filter-panel{display:flex;background:transparent;border:none;padding:0;order:2;width:auto;flex:1 1 520px;align-items:flex-end}
+  .f-actions{width:auto}
+  .f-actions .btn-line{display:none}
+}
+
+/* ---------- Grid template ---------- */
+.katalog-page .count-line{margin-top:22px}
+.kgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}
+@media (min-width:901px){.kgrid{grid-template-columns:repeat(3,1fr);gap:22px}}
+@media (min-width:1280px){.kgrid{grid-template-columns:repeat(4,1fr)}}
+
+.kcard{
+  background:var(--warm-white);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.kcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(199,161,102,.55)}
+.kcard-art{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--cream);display:block}
+.kcard-art img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.kcard:hover .kcard-art img{transform:scale(1.045)}
+.kcard-acara{
+  position:absolute;top:10px;left:10px;background:rgba(33,20,15,.78);color:var(--ivory);
+  font-size:.64rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  padding:5px 11px;border-radius:999px;backdrop-filter:blur(3px);
+}
+.kcard-body{padding:15px 16px 17px;display:flex;flex-direction:column;gap:7px;flex:1}
+.kcard-name{font-family:var(--serif);font-size:1.42rem;font-weight:600;line-height:1.12;color:var(--burgundy);margin:0}
+.kcard-meta{font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin:0}
+.kcard-tag{color:var(--ink-soft);font-size:.9rem;line-height:1.5;margin:0}
+.k-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.k-tags span{
+  border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:.72rem;
+  color:var(--ink-soft);background:rgba(237,224,201,.35);white-space:nowrap;
+}
+.k-dots{display:inline-flex;gap:5px;align-items:center}
+.k-dots i{width:13px;height:13px;border-radius:50%;border:1px solid rgba(0,0,0,.16);display:inline-block}
+.k-price{margin-top:auto;padding-top:9px;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-soft)}
+.k-price b{color:var(--burgundy);font-weight:600}
+.k-actions{display:flex;gap:8px;margin-top:10px}
+.k-actions .btn{flex:1;text-align:center;padding-left:6px;padding-right:6px}
+.k-note{font-size:.8rem;color:var(--ink-faint);margin:0}
+
+/* ---------- Mobile: chip bisa digeser, filter jadi drawer ---------- */
+@media (max-width:640px){
+  .katalog-main{padding-top:26px}
+  .cat-scroll{overflow-x:auto;margin-left:-18px;margin-right:-18px;padding:2px 18px 8px;scrollbar-width:none}
+  .cat-scroll::-webkit-scrollbar{display:none}
+  .katalog-page .chips{flex-wrap:nowrap;width:max-content}
+  .k-actions .btn{font-size:.7rem}
+  .kcard-name{font-size:1.22rem}
+  .kcard-body{padding:12px 12px 14px}
+}
+
+/* ---------- Intro v2 + kartu koleksi format ---------- */
+.katalog-title .micro{letter-spacing:.28em;text-transform:uppercase}
+.collections{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.ccard{
+  text-align:left;background:var(--warm-white);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  padding:0;cursor:pointer;display:flex;flex-direction:column;font:inherit;color:var(--ink);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.ccard:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(199,161,102,.55)}
+.ccard[aria-pressed="true"]{border-color:var(--burgundy);box-shadow:0 0 0 2px var(--burgundy) inset}
+.ccard-art{display:block;aspect-ratio:16/9;overflow:hidden;background:var(--cream)}
+.ccard-art img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.ccard-body{display:flex;flex-direction:column;gap:4px;padding:13px 15px 15px}
+.ccard-name{font-family:var(--serif);font-size:1.28rem;font-weight:600;color:var(--burgundy);line-height:1.1}
+.ccard-tag{font-size:.84rem;color:var(--ink-soft);line-height:1.45}
+.ccard-foot{display:flex;justify-content:space-between;align-items:baseline;margin-top:8px;padding-top:9px;border-top:1px solid var(--line)}
+.ccard-foot b{color:var(--burgundy);font-size:.92rem}
+.ccard-foot i{font-style:normal;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep)}
+@media (max-width:1023px){.collections{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+  .collections{display:flex;overflow-x:auto;margin-left:-18px;margin-right:-18px;padding:2px 18px 10px;scrollbar-width:none}
+  .collections::-webkit-scrollbar{display:none}
+  .ccard{flex:0 0 238px}
+}
+
+/* ---------- Chip filter aktif ---------- */
+.active-filters{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;align-items:center}
+.active-filters[hidden]{display:none}
+.af-chip{
+  border:1px solid var(--burgundy);background:rgba(65,13,25,.06);color:var(--burgundy);border-radius:999px;
+  padding:5px 12px;font:inherit;font-size:.76rem;cursor:pointer;
+}
+.af-chip:hover{background:rgba(65,13,25,.12)}
+.af-clear{background:none;border:none;color:var(--gold-deep);font:inherit;font-size:.78rem;cursor:pointer;text-decoration:underline;padding:4px 2px}
+
+/* ---------- Harga kartu v2 ---------- */
+.k-price{font-size:.92rem}
+.k-price b{font-size:1.06rem}

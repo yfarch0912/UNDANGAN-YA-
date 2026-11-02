@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Engraved Highland — Fahrezzi &amp; Meyzsa · UndangYa!</title>
+<meta name="description" content="Undangan pernikahan digital Engraved Highland — ilustrasi ukiran antik pegunungan, rumah kayu dan bunga. Fahrezzi & Meyzsa.">
+<link rel="icon" type="image/svg+xml" href="assets/undangya/engraved-highland/ornaments/crest-house.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="engraved.css">
+</head>
+<body class="locked">
+<div class="page-gutter" aria-hidden="true"></div>
+
+<!-- ============ HERO / INTRO (rekonstruksi video referensi) ============ -->
+<header class="stage" id="stage">
+  <div class="world" id="world">
+    <div class="bg-stack" aria-hidden="true">
+      <img src="assets/undangya/engraved-highland/backgrounds/scene-top.webp" alt="">
+      <img src="assets/undangya/engraved-highland/backgrounds/scene-mid.webp" alt="">
+      <img src="assets/undangya/engraved-highland/backgrounds/scene-bottom.webp" alt="">
+    </div>
+    <img class="layer birds" src="assets/undangya/engraved-highland/ornaments/birds-flock.svg" alt="">
+    <img class="layer tree-side tree-pine-l" src="assets/undangya/engraved-highland/trees/tree-pine.webp" alt="">
+    <img class="layer tree-side tree-willow-r" src="assets/undangya/engraved-highland/trees/tree-willow-tall.webp" alt="">
+    <div class="ground-shadow" aria-hidden="true"></div>
+    <img class="layer house" id="houseImg" src="assets/undangya/engraved-highland/house/house-main.webp" alt="Ilustrasi ukiran rumah kayu tradisional dengan tangga kembar">
+    <img class="layer orchid orchid-l" src="assets/undangya/engraved-highland/flowers/flower-orchid.webp" alt="">
+    <img class="layer orchid orchid-r" src="assets/undangya/engraved-highland/flowers/flower-orchid-mirror.webp" alt="">
+    <img class="layer flower-bed" src="assets/undangya/engraved-highland/flowers/flower-bed-full.webp" alt="">
+    <img class="layer garden-strip" src="assets/undangya/engraved-highland/flowers/garden-strip.webp" alt="">
+    <img class="layer hanging hanging-l" src="assets/undangya/engraved-highland/flowers/hanging-flowers.webp" alt="">
+    <img class="layer hanging hanging-r" src="assets/undangya/engraved-highland/flowers/hanging-flowers.webp" alt="">
+  </div>
+  <div class="intro-canopy" id="introCanopy" aria-hidden="true"></div>
+  <img class="songket" id="songket" src="assets/undangya/engraved-highland/ornaments/songket-gold.svg" alt="">
+  <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+
+  <div class="title-block" id="titleBlock">
+    <p class="event-title" id="eventTitle">The Wedding of</p>
+    <h1 class="names" id="names" aria-label="Fahrezzi dan Meyzsa"></h1>
+    <div class="date-pill" id="datePill"></div>
+    <p class="guest-line" id="guestLine"></p>
+    <button class="btn-open" id="btnOpen" type="button">
+      <img src="assets/undangya/engraved-highland/ornaments/icon-envelope.svg" alt="" width="20" height="20"> Buka Undangan
+    </button>
+  </div>
+
+  <div class="stage-controls">
+    <button class="pill-btn" id="btnSkip" type="button">Lewati Intro</button>
+    <button class="pill-btn" id="btnReplay" type="button">↻ Putar Ulang</button>
+  </div>
+  <p class="scroll-hint" id="scrollHint">⌄ Gulir ke bawah</p>
+</header>
+
+<!-- ============ ISI UNDANGAN ============ -->
+<main class="content" id="content">
+  <section class="sec sec-cream reveal" id="salam">
+    <img class="scene-continue" src="assets/undangya/engraved-highland/backgrounds/scene-continue.webp" alt="Lanjutan taman bunga dari sampul">
+    <img class="divider" src="assets/undangya/engraved-highland/ornaments/divider-songket.svg" alt="">
+    <p class="arab" id="verseArab"></p>
+    <p class="verse-arti" id="verseArti"></p>
+    <p class="verse-src" id="verseSrc"></p>
+    <p class="greeting" id="greeting"></p>
+    <p class="cd-caption">Menghitung mundur ke <b id="cdDateLabel"></b></p>
+    <div class="countdown" id="countdown" aria-label="Hitung mundur">
+      <div class="cd-box"><span id="cdD">–</span><small>Hari</small></div>
+      <div class="cd-box"><span id="cdH">–</span><small>Jam</small></div>
+      <div class="cd-box"><span id="cdM">–</span><small>Menit</small></div>
+      <div class="cd-box"><span id="cdS">–</span><small>Detik</small></div>
+    </div>
+    <div class="calendar-card">
+      <p class="cal-title" id="calTitle"></p>
+      <div class="cal-grid" id="calGrid"></div>
+      <p class="cal-caption" id="calCaption"></p>
+    </div>
+  </section>
+
+  <section class="sec sec-dark reveal" id="mempelai">
+    <img class="divider" src="assets/undangya/engraved-highland/ornaments/divider-floral.svg" alt="">
+    <h2>Mempelai</h2>
+    <div class="couple-photo">
+      <img id="couplePhoto" src="" alt="">
+    </div>
+    <div class="person-card" id="groomCard"></div>
+    <div class="amp-medal">&amp;</div>
+    <div class="person-card" id="brideCard"></div>
+    <p class="demo-note">Foto &amp; nama lengkap di bagian ini adalah contoh ilustrasi — diganti foto dan data asli pasangan.</p>
+  </section>
+
+  <section class="sec sec-cream reveal" id="jadwal">
+    <h2>Waktu &amp; Tempat</h2>
+    <img class="banner-img" src="assets/undangya/engraved-highland/backgrounds/valley-zoom.webp" alt="Lembah pegunungan sepia">
+    <div id="scheduleList"></div>
+    <p class="venue-name" id="venueName"></p>
+    <p class="venue-addr" id="venueAddr"></p>
+    <div class="btn-row">
+      <a class="btn" id="btnMaps" href="#" target="_blank" rel="noopener"><img src="assets/undangya/engraved-highland/ornaments/icon-pin.svg" alt="" width="18" height="18"> Buka Google Maps</a>
+      <button class="btn btn-ghost" id="btnIcs" type="button"><img src="assets/undangya/engraved-highland/ornaments/icon-calendar.svg" alt="" width="18" height="18"> Simpan Tanggal</button>
+    </div>
+  </section>
+
+  <section class="sec sec-dark reveal" id="galeri">
+    <img class="divider" src="assets/undangya/engraved-highland/ornaments/divider-floral.svg" alt="">
+    <h2>Galeri</h2>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <section class="sec sec-cream reveal" id="rsvp">
+    <img class="divider" src="assets/undangya/engraved-highland/ornaments/divider-songket.svg" alt="">
+    <h2>RSVP &amp; Doa Restu</h2>
+    <form id="rsvpForm" novalidate>
+      <label>Nama<input id="fName" type="text" maxlength="60" placeholder="Nama Anda" required></label>
+      <label>Kehadiran
+        <select id="fAttend"><option value="Hadir">Hadir</option><option value="Berhalangan">Berhalangan</option><option value="Masih ragu">Masih ragu</option></select>
+      </label>
+      <label>Ucapan<textarea id="fMsg" rows="3" maxlength="400" placeholder="Tulis doa &amp; ucapan…"></textarea></label>
+      <button class="btn" type="submit">Kirim Ucapan</button>
+      <p class="form-result" id="formResult" role="status"></p>
+    </form>
+    <div class="wishes" id="wishes"></div>
+    <p class="demo-note">Mode demo: ucapan tersimpan hanya di perangkat ini (localStorage), belum terkirim ke server.</p>
+  </section>
+
+  <section class="sec sec-cream reveal" id="amplop">
+    <h2>Amplop Digital</h2>
+    <div id="giftList"></div>
+    <p class="demo-note">Nomor di atas adalah contoh DEMO — bukan rekening asli.</p>
+  </section>
+
+  <section class="sec sec-dark reveal" id="penutup">
+    <img class="divider" src="assets/undangya/engraved-highland/ornaments/divider-songket.svg" alt="">
+    <p class="closing" id="closingText"></p>
+    <img class="monogram" src="assets/undangya/engraved-highland/ornaments/monogram-pt.svg" alt="Monogram P dan T">
+    <p class="sign-names" id="signNames"></p>
+    <div class="closing-scene">
+      <img class="closing-tree" src="assets/undangya/engraved-highland/trees/tree-pine.webp" alt="">
+      <img class="house-mini" src="assets/undangya/engraved-highland/house/house-roof.webp" alt="">
+      <img class="closing-tree" src="assets/undangya/engraved-highland/trees/tree-willow-tall.webp" alt="">
+      <img class="closing-orchid" src="assets/undangya/engraved-highland/flowers/flower-orchid.webp" alt="">
+    </div>
+  </section>
+  <footer class="footer">UndangYa! · Tema Engraved Highland — ilustrasi orisinal, bukan salinan referensi</footer>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" hidden>
+  <button class="lb-close" id="lbClose" type="button" aria-label="Tutup">✕</button>
+  <img id="lbImg" src="" alt=""><p id="lbCap"></p>
+</div>
+<button class="music-btn" id="musicBtn" type="button" aria-label="Musik"><img src="assets/undangya/engraved-highland/ornaments/icon-music.svg" alt="" width="20" height="20"></button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="engraved-config.js"></script>
+<script src="engraved.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <!-- Bingkai oval ukiran — digambar tangan (SVG asli UndangYa!). Tengah kosong:
+       foto dipasang HTML di belakang SVG ini (z-index lebih rendah). -->
+  <ellipse cx="200" cy="250" rx="188" ry="238" fill="none" stroke="#5E4630" stroke-width="26"/>
+  <ellipse cx="200" cy="250" rx="188" ry="238" fill="none" stroke="#C9A35F" stroke-width="22" stroke-dasharray="0.1 16.5" stroke-linecap="round"/>
+  <ellipse cx="200" cy="250" rx="172" ry="222" fill="none" stroke="#8A6B3F" stroke-width="5"/>
+  <ellipse cx="200" cy="250" rx="160" ry="210" fill="none" stroke="#E7D3A8" stroke-width="2.5"/>
+  <!-- mahkota atas & bawah -->
+  <g fill="#7A5A30" stroke="#4E3822" stroke-width="2">
+    <path d="M200 -2 C210 16 226 24 214 40 C206 50 194 50 186 40 C174 24 190 16 200 -2 Z" transform="translate(0 6)"/>
+    <path d="M200 502 C210 484 226 476 214 460 C206 450 194 450 186 460 C174 476 190 484 200 502 Z" transform="translate(0 -6)"/>
+  </g>
+  <g fill="#A37F45">
+    <circle cx="164" cy="18" r="6"/><circle cx="236" cy="18" r="6"/>
+    <circle cx="164" cy="482" r="6"/><circle cx="236" cy="482" r="6"/>
+    <circle cx="14" cy="250" r="6"/><circle cx="386" cy="250" r="6"/>
+  </g>
+</svg>

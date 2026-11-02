@@ -1,0 +1,34 @@
+/* ============================================================
+   UNDANGYA! — auth.css
+   Halaman Masuk (login Google) & Dashboard. Memakai token site.css.
+   ============================================================ */
+.auth-main{padding:56px 18px 84px;display:flex;justify-content:center}
+.auth-card{
+  background:var(--warm-white);border:1px solid var(--line);border-radius:18px;
+  max-width:430px;width:100%;padding:38px 34px 30px;text-align:center;
+  box-shadow:var(--shadow);
+}
+.auth-logo{height:58px;width:auto;margin:0 auto 14px;display:block}
+.auth-card h1{font-size:1.9rem;color:var(--burgundy);margin:0 0 8px}
+.auth-sub{color:var(--ink-soft);font-size:.95rem;line-height:1.55;margin:0}
+.g-btn{display:flex;justify-content:center;margin:26px 0 6px;min-height:44px}
+.auth-note{
+  margin:16px 0 0;padding:11px 14px;border:1px solid var(--line-strong);border-radius:10px;
+  background:rgba(237,224,201,.4);color:var(--ink);font-size:.86rem;line-height:1.5;
+}
+.auth-fine{margin:20px 0 0;font-size:.76rem;color:var(--ink-faint);line-height:1.55}
+
+.dash-main{display:block}
+.dash-head{display:flex;gap:18px;align-items:center;margin-bottom:28px}
+.dash-avatar{width:72px;height:72px;border-radius:50%;border:2px solid var(--gold);object-fit:cover}
+.dash-head h1{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--burgundy);margin:2px 0 0}
+.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.dash-grid{grid-template-columns:1fr}}
+.dash-card{
+  background:var(--warm-white);border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;
+  text-decoration:none;display:block;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+a.dash-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:rgba(199,161,102,.55)}
+.dash-card h2{font-family:var(--serif);font-size:1.35rem;color:var(--burgundy);margin:0 0 7px}
+.dash-card p{color:var(--ink-soft);font-size:.9rem;line-height:1.55;margin:0}
+.dash-link{display:inline-block;margin-top:13px;font-size:.8rem;font-weight:500;letter-spacing:.06em;color:var(--gold-deep)}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Taman Rahasia — Undangan Interaktif Meyzsa &amp; Fahrezzi</title>
+<meta name="description" content="Undangan pernikahan interaktif bertema taman: kelopak bunga yang bereaksi pada sentuhan, kupu-kupu beterbangan, mode pagi/senja/malam, countdown flip, dan Kebun Doa tempat tamu menanam bunga dari ucapannya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Parisienne&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="garden.css">
+</head>
+<body data-mode="senja" class="lock-scroll">
+
+<canvas id="petals" aria-hidden="true"></canvas>
+<div id="butterflies" aria-hidden="true"></div>
+
+<!-- Sulur progres scroll -->
+<div class="vine" aria-hidden="true">
+  <svg viewBox="0 0 40 600" preserveAspectRatio="none">
+    <path id="vinePath" d="M20,0 C35,80 5,140 20,220 C35,300 5,360 20,440 C32,510 10,560 20,600" fill="none" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <span class="vine-flower" id="vineFlower">🌸</span>
+</div>
+
+<!-- ===== SAMPUL ===== -->
+<section id="gCover" class="g-cover">
+  <div class="arch" data-plx="0.04">
+    <p class="g-kicker">The Wedding Of</p>
+    <h1 class="g-script">Meyzsa <span>&amp;</span> Fahrezzi</h1>
+    <p class="g-date">Sabtu, 12 · 06 · 2027</p>
+    <div class="g-orn">🌿 🌸 🌿</div>
+    <p class="g-to">Kepada Yth.<br>Bapak / Ibu / Saudara/i</p>
+    <p class="g-guest" id="gGuest">Tamu Undangan</p>
+    <button id="gOpen" class="g-btn" type="button">🌸 Buka Taman Undangan</button>
+    <p class="g-hint">Sentuh layar — kelopaknya beterbangan mengikuti jarimu.<br>Kupu-kupu juga suka mendekat kalau kamu diam sebentar.</p>
+  </div>
+</section>
+
+<!-- ===== ISI ===== -->
+<main id="gContent" class="g-content locked" aria-hidden="true">
+
+  <div class="mode-bar" role="group" aria-label="Ganti suasana taman">
+    <span>Suasana taman:</span>
+    <button type="button" data-setmode="pagi">🌤️ Pagi</button>
+    <button type="button" data-setmode="senja" class="on">🌇 Senja</button>
+    <button type="button" data-setmode="malam">🌙 Malam</button>
+  </div>
+
+  <header class="g-hero reveal">
+    <div class="plx-leaf leaf-a" data-plx="0.10" aria-hidden="true">🌿</div>
+    <div class="plx-leaf leaf-b" data-plx="-0.07" aria-hidden="true">🍃</div>
+    <p class="g-salam">Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
+    <p class="g-mute">Di taman kecil ini, dua hati tumbuh ke arah cahaya yang sama.<br>Kami mengundang Anda merayakan hari mekar kami.</p>
+    <h2 class="g-script g-big">Meyzsa &amp; Fahrezzi</h2>
+
+    <p class="g-kicker">Menghitung Hari Mekar</p>
+    <div class="flip-row" id="flipRow">
+      <div class="flip" data-unit="d"><div class="flip-card"><span>00</span></div><label>Hari</label></div>
+      <div class="flip" data-unit="h"><div class="flip-card"><span>00</span></div><label>Jam</label></div>
+      <div class="flip" data-unit="m"><div class="flip-card"><span>00</span></div><label>Menit</label></div>
+      <div class="flip" data-unit="s"><div class="flip-card"><span>00</span></div><label>Detik</label></div>
+    </div>
+  </header>
+
+  <section class="g-section reveal">
+    <p class="g-kicker">Kedua Mempelai</p>
+    <h3 class="g-title">Yang Akan <em>Mekar Bersama</em></h3>
+    <div class="g-couple">
+      <article class="g-person tilt">
+        <div class="g-photo"><img id="pBride" alt="Mempelai wanita" loading="lazy"></div>
+        <h4 class="g-script g-pname" id="nBride"></h4>
+        <p class="g-mute" id="parBride"></p>
+      </article>
+      <div class="g-amp">&amp;</div>
+      <article class="g-person tilt">
+        <div class="g-photo"><img id="pGroom" alt="Mempelai pria" loading="lazy"></div>
+        <h4 class="g-script g-pname" id="nGroom"></h4>
+        <p class="g-mute" id="parGroom"></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="g-section reveal">
+    <p class="g-kicker">Save The Date</p>
+    <h3 class="g-title">Hari <em>Mekar Kami</em></h3>
+    <div class="g-events" id="gEvents"></div>
+  </section>
+
+  <section class="g-section reveal">
+    <p class="g-kicker">Gallery</p>
+    <h3 class="g-title">Galeri <em>Taman Kami</em></h3>
+    <p class="g-mute center">Geser / seret strip foto ini — seperti berjalan menyusuri taman.</p>
+    <div class="strip" id="gStrip"></div>
+  </section>
+
+  <section class="g-section reveal">
+    <p class="g-kicker">Wedding Gift</p>
+    <h3 class="g-title">Amplop <em>Digital</em></h3>
+    <div class="g-events" id="gGifts"></div>
+  </section>
+
+  <section class="g-section reveal">
+    <p class="g-kicker">Interaktif</p>
+    <h3 class="g-title">Kebun <em>Doa</em> 🌸</h3>
+    <p class="g-mute center">Setiap ucapanmu mekar jadi bunga di kebun ini.<br><b>Klik tanah kosong di kebun</b> untuk menanam bunga, atau kirim ucapan lewat formulir — bungamu tumbuh lengkap dengan namamu.</p>
+    <div class="plot" id="plot" title="Klik untuk menanam bunga">
+      <span class="plot-sun" aria-hidden="true">☀️</span>
+      <span class="plot-hint" id="plotHint">🌱 Klik di sini untuk menanam bunga pertamamu</span>
+    </div>
+    <form id="wishForm" class="g-form">
+      <input name="name" required maxlength="50" placeholder="Namamu">
+      <select name="attend">
+        <option value="Hadir">Hadir, insyaAllah 🌿</option>
+        <option value="Ragu">Masih ragu</option>
+        <option value="Tidak hadir">Berhalangan</option>
+      </select>
+      <textarea name="message" rows="2" maxlength="240" placeholder="Ucapan & doa terbaikmu…" class="full"></textarea>
+      <button class="g-btn full" type="submit">🌷 Tanam Ucapan</button>
+    </form>
+    <div class="g-wishes" id="gWishes"></div>
+  </section>
+
+  <footer class="g-footer reveal">
+    <p class="g-mute">Merupakan kehormatan &amp; kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restu.</p>
+    <h4 class="g-script g-big">Meyzsa &amp; Fahrezzi</h4>
+    <p class="g-mute">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+    <p class="g-credit">Taman Rahasia · Tema interaktif UNDANGAN-YA! · <a href="index.html">← Kembali ke Katalog</a> · <a href="undangan.html">Undangan 3D</a></p>
+  </footer>
+</main>
+
+<div id="gLightbox" class="g-lightbox" hidden>
+  <button id="glClose" aria-label="Tutup">✕</button>
+  <img id="glImg" alt="Foto galeri diperbesar">
+</div>
+
+<button id="gMusic" class="g-music" type="button" aria-label="Musik latar">♪</button>
+<div id="gToast" class="g-toast" role="status"></div>
+
+<script src="config.js"></script>
+<script src="garden.js"></script>
+</body>
+</html>

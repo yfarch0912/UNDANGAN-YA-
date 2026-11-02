@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pink Garden Fountain — Fahrezzi &amp; Meyzsa · UndangYa!</title>
+<meta name="description" content="Undangan digital Pink Garden Fountain — taman watercolor pink, air mancur gaun-air, loop sinematik 16 detik. Fahrezzi & Meyzsa, 11 Desember 2026 (data contoh).">
+<link rel="icon" href="assets/undangya/pink-garden-fountain/ornaments/envelope-seal.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pink-garden.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="pink-garden-config.js"></script>
+</head>
+<body class="locked">
+<div class="page-bg" aria-hidden="true"></div>
+
+<!-- ══════════ STAGE / COVER / HERO ══════════ -->
+<header class="stage" id="stage" aria-label="Sampul undangan Pink Garden Fountain">
+ <div class="pwrap" id="pwrap">
+  <div class="world" id="world">
+    <img class="layer layer-bg" src="assets/undangya/pink-garden-fountain/layers/bg-garden.webp" alt="Ilustrasi taman watercolor pink: gunung berkabut, cemara Italia, pohon putih bercahaya, tangga batu dan jalan setapak" fetchpriority="high">
+    <img class="layer layer-fountain" src="assets/undangya/pink-garden-fountain/layers/fountain-gown.webp" alt="Air mancur batu bundar dengan sosok bergaun putih — pancuran airnya membentuk rok gaun pengantin">
+    <div class="ripples" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="glints" id="glints" aria-hidden="true"></div>
+    <img class="layer layer-mistpuff" src="assets/undangya/pink-garden-fountain/effects/mist-overlay.png" alt="" aria-hidden="true">
+    <img class="layer layer-mist" src="assets/undangya/pink-garden-fountain/effects/mist-overlay.png" alt="" aria-hidden="true">
+    <img class="layer layer-glow" src="assets/undangya/pink-garden-fountain/effects/glow-gold.png" alt="" aria-hidden="true">
+    <img class="layer layer-flowers fl-a" src="assets/undangya/pink-garden-fountain/layers/flowers-foreground-a.webp" alt="" aria-hidden="true">
+    <img class="layer layer-flowers fl-b" src="assets/undangya/pink-garden-fountain/layers/flowers-foreground-b.webp" alt="" aria-hidden="true">
+    <img class="layer layer-canopy ca-a" src="assets/undangya/pink-garden-fountain/layers/canopy-top-a.webp" alt="" aria-hidden="true">
+    <img class="layer layer-canopy ca-b" src="assets/undangya/pink-garden-fountain/layers/canopy-top-b.webp" alt="" aria-hidden="true">
+    <div class="branch-wide" aria-hidden="true"><img src="assets/undangya/pink-garden-fountain/layers/branch-hanging.webp" alt=""></div>
+    <div class="branch-corner-w bc-l" aria-hidden="true"><img src="assets/undangya/pink-garden-fountain/layers/branch-corner.webp" alt=""></div>
+    <div class="branch-corner-w bc-r" aria-hidden="true"><img src="assets/undangya/pink-garden-fountain/layers/branch-corner.webp" alt=""></div>
+    <img class="varied varied-a" src="assets/undangya/pink-garden-fountain/layers/flowers-varied-a.webp" alt="" aria-hidden="true">
+    <img class="varied varied-b" src="assets/undangya/pink-garden-fountain/layers/flowers-varied-b.webp" alt="" aria-hidden="true">
+    <img class="varied varied-c" src="assets/undangya/pink-garden-fountain/layers/flowers-varied-c.webp" alt="" aria-hidden="true">
+    <img class="layer layer-bokeh" src="assets/undangya/pink-garden-fountain/effects/bokeh-pink.png" alt="" aria-hidden="true">
+    <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+    <img class="layer layer-vignette" src="assets/undangya/pink-garden-fountain/effects/vignette.png" alt="" aria-hidden="true">
+    <img class="cluster cluster-bl" src="assets/undangya/pink-garden-fountain/layers/flowers-left.webp" alt="" aria-hidden="true">
+    <img class="cluster cluster-br" src="assets/undangya/pink-garden-fountain/layers/flowers-right.webp" alt="" aria-hidden="true">
+    <div class="blooms" id="blooms" aria-hidden="true"></div>
+    <div class="vines" id="vines" aria-hidden="true"></div>
+  </div>
+ </div>
+ <canvas id="petalCanvas" aria-hidden="true"></canvas>
+
+  <div class="title-block" id="titleBlock">
+    <p class="t-line t-eyebrow" data-line>The Wedding of</p>
+    <h1 class="names">
+      <span class="t-line name" data-line id="nameGroom">Fahrezzi</span>
+      <span class="t-line amp" data-line>&amp;</span>
+      <span class="t-line name" data-line id="nameBride">Meyzsa</span>
+    </h1>
+    <p class="t-line t-date" data-line id="dateShort">11 . 12 . 26</p>
+  </div>
+
+  <div class="stage-ui">
+    <div class="cover-card" id="coverCard">
+      <img class="seal" src="assets/undangya/pink-garden-fountain/ornaments/envelope-seal.svg" alt="" width="52" height="52">
+      <p class="cover-to">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+      <p class="guest" id="guestName">Tamu Undangan</p>
+      <button class="btn-open" id="btnOpen" type="button">Buka Undangan</button>
+      <p class="cover-note">Klik untuk membuka — animasi taman tetap berputar di atas.</p>
+    </div>
+    <div class="stage-controls">
+      <button class="pill" id="btnSkip" type="button">Lewati Intro</button>
+      <button class="pill hidden" id="btnReplay" type="button">↻ Putar Ulang</button>
+      <button class="pill" id="btnMusic" type="button" aria-pressed="false">♪ Musik: Mati</button>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="content" aria-hidden="true">
+
+  <section class="sec" id="salam">
+    <div class="sec-inner reveal">
+      <h2>Sugeng Rawuh</h2>
+      <img class="divider" src="assets/undangya/pink-garden-fountain/ornaments/divider-flourish.svg" alt="" loading="lazy">
+      <p class="greeting" id="greetingText"></p>
+      <blockquote class="verse">
+        <p id="verseText"></p>
+        <cite id="verseSource"></cite>
+      </blockquote>
+      <div class="countdown-wrap">
+        <h3>Menghitung Hari</h3>
+        <div class="countdown" id="countdown" role="timer">
+          <div class="cd-box"><span id="cdD">–</span><small>Hari</small></div>
+          <div class="cd-box"><span id="cdH">–</span><small>Jam</small></div>
+          <div class="cd-box"><span id="cdM">–</span><small>Menit</small></div>
+          <div class="cd-box"><span id="cdS">–</span><small>Detik</small></div>
+        </div>
+        <p class="cd-passed hidden" id="cdPassed">Hari bahagia telah tiba — terima kasih atas doa restunya.</p>
+        <div class="mini-cal" id="miniCal" aria-label="Kalender bulan acara"></div>
+        <button class="btn-soft" id="btnIcs" type="button">＋ Simpan ke Kalender</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt" id="mempelai">
+    <div class="sec-inner reveal">
+      <h2>Mempelai</h2>
+      <img class="divider" src="assets/undangya/pink-garden-fountain/ornaments/divider-diamond.svg" alt="" loading="lazy">
+      <figure class="couple-photo">
+        <img id="couplePhoto" src="assets/undangya/pink-garden-fountain/photos/couple-illustration.webp" alt="" loading="lazy">
+        <img class="arch" src="assets/undangya/pink-garden-fountain/ornaments/arch-frame.svg" alt="" aria-hidden="true">
+        <figcaption>Ilustrasi contoh — bukan foto pasangan asli. Ganti lewat config.</figcaption>
+      </figure>
+      <div class="couple-grid">
+        <article class="person">
+          <img class="avatar" id="groomPhoto" src="" alt="" loading="lazy">
+          <p class="role">Mempelai Pria</p>
+          <h3 id="groomFull"></h3>
+          <p class="parents" id="groomParents"></p>
+        </article>
+        <img class="rings" src="assets/undangya/pink-garden-fountain/ornaments/rings.svg" alt="" aria-hidden="true">
+        <article class="person">
+          <img class="avatar" id="bridePhoto" src="" alt="" loading="lazy">
+          <p class="role">Mempelai Wanita</p>
+          <h3 id="brideFull"></h3>
+          <p class="parents" id="brideParents"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="cerita">
+    <div class="sec-inner reveal">
+      <h2>Kisah Kami</h2>
+      <img class="divider" src="assets/undangya/pink-garden-fountain/ornaments/divider-flourish.svg" alt="" loading="lazy">
+      <div id="storyList" class="story-list"></div>
+    </div>
+  </section>
+
+  <section class="sec flip alt" id="acara">
+    <div class="sec-inner reveal">
+      <h2>Waktu &amp; Tempat</h2>
+      <img class="divider" src="assets/undangya/pink-garden-fountain/ornaments/divider-diamond.svg" alt="" loading="lazy">
+      <p class="date-label" id="dateLabel"></p>
+      <div id="scheduleList" class="schedule-list"></div>
+      <div class="loc-card">
+        <p class="loc-title">Denah Lokasi</p>
+        <a class="map-frame" id="mapLink" href="#" target="_blank" rel="noopener" aria-label="Buka lokasi di Google Maps">
+          <img src="assets/undangya/pink-garden-fountain/scenes/venue-map.webp" alt="Ilustrasi peta lokasi taman — contoh" loading="lazy">
+          <span class="map-chip">📍 Ketuk untuk membuka peta</span>
+        </a>
+        <p class="venue-name" id="venueName"></p>
+        <p class="address" id="venueAddress"></p>
+        <a class="btn-soft" id="mapsLink" href="#" target="_blank" rel="noopener">📍 Buka di Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec flip" id="galeri">
+    <div class="sec-inner reveal">
+      <h2>Galeri Taman</h2>
+      <img class="divider" src="assets/undangya/pink-garden-fountain/ornaments/divider-flourish.svg" alt="" loading="lazy">
+      <p class="sec-note">Galeri ilustrasi tema — ganti dengan foto prewedding asli lewat config.</p>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <section class="sec flip alt" id="amplop">
+    <div class="sec-inner reveal">
+      <h2>Amplop Digital</h2>
+      <img class="divider" src="assets/undangya/pink-garden-fountain/ornaments/divider-diamond.svg" alt="" loading="lazy">
+      <div id="giftList" class="gift-list"></div>
+      <p class="sec-note" id="giftNote"></p>
+    </div>
+  </section>
+
+  <section class="sec" id="rsvp">
+    <div class="sec-inner reveal">
+      <h2>RSVP &amp; Doa</h2>
+      <img class="divider" src="assets/undangya/pink-garden-fountain/ornaments/divider-flourish.svg" alt="" loading="lazy">
+      <form id="rsvpForm" novalidate>
+        <label>Nama
+          <input id="fName" type="text" maxlength="60" placeholder="Nama Anda" autocomplete="name">
+        </label>
+        <label>Konfirmasi Kehadiran
+          <select id="fAttend">
+            <option value="hadir">Hadir, dengan senang hati</option>
+            <option value="ragu">Masih ragu</option>
+            <option value="berhalangan">Berhalangan hadir</option>
+          </select>
+        </label>
+        <label>Ucapan &amp; Doa
+          <textarea id="fMsg" rows="3" maxlength="400" placeholder="Tulis doa terbaik untuk kedua mempelai…"></textarea>
+        </label>
+        <p class="form-error hidden" id="formError">Mohon isi nama dan ucapan terlebih dahulu.</p>
+        <button class="btn-open" type="submit">Kirim Doa 🌸</button>
+        <p class="demo-note">Mode demo: RSVP &amp; doa tersimpan hanya di perangkat ini (localStorage), belum terkirim ke server.</p>
+      </form>
+      <div class="wishes" id="wishes"></div>
+    </div>
+  </section>
+
+  <section class="sec flip closing" id="penutup">
+    <div class="sec-inner reveal">
+      <h2>Terima Kasih</h2>
+      <img class="divider" src="assets/undangya/pink-garden-fountain/ornaments/divider-diamond.svg" alt="" loading="lazy">
+      <p id="closingText"></p>
+      <p class="sign-names"><span id="signGroom"></span> &amp; <span id="signBride"></span></p>
+      <img class="butterfly" src="assets/undangya/pink-garden-fountain/ornaments/butterfly.svg" alt="" aria-hidden="true">
+      <footer class="brand">
+        <p>UNDANG<strong>YA!</strong> — Pink Garden Fountain</p>
+        <p class="brand-sub">Tema 2D orisinal dari referensi video · Semua data di halaman ini adalah contoh editable.</p>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<nav class="bottom-nav" id="bottomNav" aria-label="Navigasi undangan">
+  <a href="#salam">Salam</a><a href="#mempelai">Mempelai</a><a href="#acara">Acara</a><a href="#galeri">Galeri</a><a href="#rsvp">RSVP</a>
+</nav>
+
+<div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Penampil gambar galeri">
+  <button class="lb-close" id="lbClose" type="button" aria-label="Tutup">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Foto sebelumnya">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Foto berikutnya">›</button>
+  <p id="lbCap"></p>
+</div>
+<noscript><style>.title-block .t-line{opacity:1!important;transform:none!important}body{overflow:auto!important}.content{visibility:visible!important}</style></noscript>
+<script src="pink-garden.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+  <!-- Gunungan wayang — digambar tangan (SVG asli UndangYa!), krem bertekstur kawung & emas antik -->
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F5EACF"/><stop offset="1" stop-color="#DEC79C"/>
+    </linearGradient>
+    <pattern id="kawung" width="34" height="34" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#C4A468" stroke-width="1.6" opacity=".55">
+        <circle cx="17" cy="17" r="11"/><circle cx="0" cy="0" r="11"/><circle cx="34" cy="0" r="11"/>
+        <circle cx="0" cy="34" r="11"/><circle cx="34" cy="34" r="11"/>
+      </g>
+    </pattern>
+    <clipPath id="gclip">
+      <path d="M150 6 C168 60 226 96 252 160 C278 224 268 322 224 372 C196 404 168 414 150 414 C132 414 104 404 76 372 C32 322 22 224 48 160 C74 96 132 60 150 6 Z"/>
+    </clipPath>
+  </defs>
+  <path d="M150 6 C168 60 226 96 252 160 C278 224 268 322 224 372 C196 404 168 414 150 414 C132 414 104 404 76 372 C32 322 22 224 48 160 C74 96 132 60 150 6 Z"
+        fill="url(#gg)" stroke="#8A6B3F" stroke-width="5"/>
+  <g clip-path="url(#gclip)"><rect width="300" height="420" fill="url(#kawung)"/></g>
+  <path d="M150 30 C164 76 210 108 232 164 C254 220 246 306 208 350 C186 376 164 386 150 386 C136 386 114 376 92 350 C54 306 46 220 68 164 C90 108 136 76 150 30 Z"
+        fill="none" stroke="#A37F45" stroke-width="2.5"/>
+  <path d="M150 48 C161 86 198 114 216 162 C234 212 228 288 198 328" fill="none" stroke="#B98A4A" stroke-width="1.6" opacity=".8"/>
+  <path d="M150 48 C139 86 102 114 84 162 C66 212 72 288 102 328" fill="none" stroke="#B98A4A" stroke-width="1.6" opacity=".8"/>
+  <!-- pohon hayat -->
+  <path d="M150 372 C150 320 150 268 150 214" stroke="#7A5A30" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M150 300 C124 282 104 282 84 296 M150 300 C176 282 196 282 216 296 M150 252 C128 236 112 236 94 246 M150 252 C172 236 188 236 206 246 M150 330 C132 318 118 318 102 326 M150 330 C168 318 182 318 198 326" stroke="#7A5A30" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <g fill="#B98A4A" stroke="#7A5A30" stroke-width="2">
+    <circle cx="150" cy="196" r="17"/><circle cx="106" cy="238" r="12"/><circle cx="194" cy="238" r="12"/>
+    <circle cx="84" cy="290" r="11"/><circle cx="216" cy="290" r="11"/><circle cx="150" cy="140" r="10"/>
+    <circle cx="102" cy="322" r="9"/><circle cx="198" cy="322" r="9"/>
+  </g>
+  <g fill="#EFE0BC" stroke="#7A5A30" stroke-width="1.6">
+    <circle cx="150" cy="196" r="7"/><circle cx="106" cy="238" r="5"/><circle cx="194" cy="238" r="5"/>
+    <circle cx="84" cy="290" r="5"/><circle cx="216" cy="290" r="5"/>
+  </g>
+  <!-- sulur sudut bawah -->
+  <path d="M60 356 C84 344 92 328 84 310 C98 322 100 344 84 362 C74 372 62 368 60 356 Z" fill="#A37F45"/>
+  <path d="M240 356 C216 344 208 328 216 310 C202 322 200 344 216 362 C226 372 238 368 240 356 Z" fill="#A37F45"/>
+  <path d="M150 66 C158 84 158 96 150 110 C142 96 142 84 150 66 Z" fill="#8E1F2F"/>
+  <circle cx="150" cy="140" r="4" fill="#8E1F2F"/>
+  <circle cx="150" cy="372" r="5" fill="#8E1F2F"/>
+</svg>

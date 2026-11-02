@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>UndangYa! — Palace Garden Gate · Meyzsa &amp; Fahrezzi</title>
+<meta name="description" content="Undangan pernikahan digital Palace Garden Gate UndangYa!: gerbang istana taman watercolor Eropa yang terbuka lapis demi lapis — Meyzsa & Fahrezzi.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Casamento — Meyzsa & Fahrezzi · Palace Garden Gate">
+<meta property="og:image" content="assets/undangya/palace-garden-gate/scenes/exterior-full.webp">
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="preload" as="image" href="assets/undangya/palace-garden-gate/scenes/interior-full.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/undangya/palace-garden-gate/layers/rococo-frame.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="palace-gate.css?v=20261030-10">
+</head>
+<body>
+<a class="skip-link" href="#konten">Lewati ke isi undangan</a>
+<a class="backlink" href="https://undangan-3d.vercel.app/katalog.html">← Katalog UndangYa!</a>
+
+<!-- ============ PANGGUNG / HERO ============ -->
+<header class="stage" id="stage" aria-label="Sampul undangan Palace Garden Gate">
+  <!-- Lapisan hero (keadaan final): interior taman istana -->
+  <div class="hero-world" id="heroWorld">
+    <img class="bg-scene" id="interiorScene" src="assets/undangya/palace-garden-gate/scenes/interior-full.webp" alt="Ilustrasi interior taman istana dengan lengkung terracotta, gerbang pucat, dan air mancur">
+    <img class="rococo" id="rococoFrame" src="assets/undangya/palace-garden-gate/layers/rococo-frame.webp" alt="" aria-hidden="true">
+    <img class="lantern lantern-l" src="assets/undangya/palace-garden-gate/layers/lantern-left.webp" alt="" aria-hidden="true">
+    <img class="lantern lantern-r" src="assets/undangya/palace-garden-gate/layers/lantern-right.webp" alt="" aria-hidden="true">
+    <img class="flora branch-top branch-top-l sway" src="assets/undangya/palace-garden-gate/flora/branch-terracotta.webp" alt="" aria-hidden="true">
+    <img class="flora branch-top branch-top-r sway" src="assets/undangya/palace-garden-gate/flora/branch-terracotta-flip.webp" alt="" aria-hidden="true">
+    <img class="flora side side-l peony-l sway" src="assets/undangya/palace-garden-gate/flora/peony-magenta.webp" alt="" aria-hidden="true">
+    <img class="flora side side-r peony-r sway" src="assets/undangya/palace-garden-gate/flora/peony-magenta-flip.webp" alt="" aria-hidden="true">
+    <img class="flora side2 side-l calla-l sway" src="assets/undangya/palace-garden-gate/flora/calla.webp" alt="" aria-hidden="true">
+    <img class="flora side2 side-r calla-r sway" src="assets/undangya/palace-garden-gate/flora/calla-flip.webp" alt="" aria-hidden="true">
+    <img class="flora mid side-l roses-l sway" src="assets/undangya/palace-garden-gate/flora/roses-white.webp" alt="" aria-hidden="true">
+    <img class="flora mid side-r roses-r sway" src="assets/undangya/palace-garden-gate/flora/roses-white-flip.webp" alt="" aria-hidden="true">
+    <img class="flora lily lily-l sway" src="assets/undangya/palace-garden-gate/flora/lily-pink.webp" alt="" aria-hidden="true">
+    <img class="flora lily lily-r sway" src="assets/undangya/palace-garden-gate/flora/lily-pink-flip.webp" alt="" aria-hidden="true">
+    <img class="flora ground ground-l sway" src="assets/undangya/palace-garden-gate/flora/ground-left.webp" alt="" aria-hidden="true">
+    <img class="flora ground ground-r sway" src="assets/undangya/palace-garden-gate/flora/ground-right.webp" alt="" aria-hidden="true">
+
+    <div class="title-block" id="titleBlock">
+      <p class="opening-label" id="openingLabel">Casamento</p>
+      <h1 class="names"><span class="name" id="brideNick">Meyzsa</span><span class="amp" aria-hidden="true">&amp;</span><span class="name" id="groomNick">Fahrezzi</span></h1>
+      <p class="date-pill" id="datePill">—</p>
+      <button type="button" class="ctl replay-ctl hidden" id="replayBtn">↻ Putar Ulang Intro</button>
+    </div>
+    <figure class="hero-photo" id="heroPhoto">
+      <img id="couplePhoto" alt="">
+      <figcaption class="hero-photo-tag">Foto Contoh</figcaption>
+    </figure>
+  </div>
+
+  <!-- Lapisan kelopak jatuh (aktif setelah dibuka) -->
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <!-- Lapisan cover (keadaan awal): eksterior + gerbang tertutup -->
+  <div class="cover" id="cover">
+    <div class="cover-world" id="coverWorld">
+      <img class="bg-scene" src="assets/undangya/palace-garden-gate/scenes/exterior-full.webp" alt="Ilustrasi gerbang istana taman dengan lengkung batu dan langit pink" fetchpriority="high">
+      <img class="cover-branch bl sway" src="assets/undangya/palace-garden-gate/flora/branch-terracotta.webp" alt="" aria-hidden="true">
+      <img class="cover-branch br sway" src="assets/undangya/palace-garden-gate/flora/branch-terracotta-flip.webp" alt="" aria-hidden="true">
+      <img class="crest" src="assets/undangya/palace-garden-gate/layers/crest-medallion.webp" alt="" aria-hidden="true">
+      <img class="gate gate-l" id="gateLeft" src="assets/undangya/palace-garden-gate/layers/gate-left.webp" alt="" aria-hidden="true">
+      <img class="gate gate-r" id="gateRight" src="assets/undangya/palace-garden-gate/layers/gate-right.webp" alt="" aria-hidden="true">
+      <img class="gapura" id="gapuraLayer" src="assets/undangya/palace-garden-gate/layers/gapura.webp" alt="" aria-hidden="true">
+      <img class="cover-sage sage-l" src="assets/undangya/palace-garden-gate/flora/sage-sprig.webp" alt="" aria-hidden="true">
+      <img class="cover-sage sage-r" src="assets/undangya/palace-garden-gate/flora/sage-sprig.webp" alt="" aria-hidden="true">
+    </div>
+    <div class="cover-card" id="coverCard">
+      <img class="cover-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+      <p class="cover-label" id="coverLabel">Casamento</p>
+      <p class="cover-names"><span id="coverBride">Meyzsa</span> &amp; <span id="coverGroom">Fahrezzi</span></p>
+      <p class="cover-guest">Kepada Yth.<br>Bapak/Ibu/Saudara/i<br><b id="guestName">Tamu Undangan</b></p>
+      <a class="btn" id="openBtn" href="#salam">
+        <img class="btn-ico" src="assets/undangya/palace-garden-gate/ornaments/icon-envelope.svg" alt="" aria-hidden="true">
+        Buka Undangan
+      </a>
+      <p class="cover-note">*Mohon maaf apabila terdapat kesalahan penulisan nama &amp; gelar</p>
+    </div>
+  </div>
+  <div class="white-flash" id="whiteFlash" aria-hidden="true"></div>
+  <button type="button" class="ctl skip-ctl hidden" id="skipBtn">Lewati Intro ⏭</button>
+
+  <a class="scroll-hint hidden" id="scrollHint" href="#salam">Gulir ke bawah <span aria-hidden="true">⌄</span></a>
+</header>
+
+<!-- ============ ISI UNDANGAN ============ -->
+<main id="konten">
+
+  <section class="sec salam-sec" id="salam">
+    <img class="sec-corner tl" src="assets/undangya/palace-garden-gate/ornaments/corner-tl.svg" alt="" aria-hidden="true">
+    <img class="sec-corner tr" src="assets/undangya/palace-garden-gate/ornaments/corner-tr.svg" alt="" aria-hidden="true">
+    <img class="sec-corner bl" src="assets/undangya/palace-garden-gate/ornaments/corner-bl.svg" alt="" aria-hidden="true">
+    <img class="sec-corner br" src="assets/undangya/palace-garden-gate/ornaments/corner-br.svg" alt="" aria-hidden="true">
+    <p class="sec-kicker">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    <h2>Salam &amp; Sapaan</h2>
+    <img class="sec-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+    <p id="guestLine" class="guest-line" hidden></p>
+    <p class="body-text" id="greetingText"></p>
+    <blockquote class="quote"><p id="quoteText"></p><cite id="quoteSource"></cite></blockquote>
+
+    <div class="countdown" id="countdown" role="timer" aria-label="Hitung mundur acara">
+      <div><b id="cdD">–</b><small>Hari</small></div><div><b id="cdH">–</b><small>Jam</small></div>
+      <div><b id="cdM">–</b><small>Menit</small></div><div><b id="cdS">–</b><small>Detik</small></div>
+    </div>
+    <p class="cd-note" id="cdNote" hidden>Hari Bahagia Telah Tiba ✦ Terima kasih atas doa restu Anda.</p>
+    <div class="mini-cal" id="miniCal" aria-label="Kalender bulan acara"></div>
+    <button type="button" class="btn btn-soft" id="icsBtn">
+      <img class="btn-ico" src="assets/undangya/palace-garden-gate/ornaments/icon-calendar.svg" alt="" aria-hidden="true">
+      Simpan Tanggal (.ics)
+    </button>
+  </section>
+
+  <section class="sec couple-sec" id="mempelai">
+    <div class="sec-banner"><img src="assets/undangya/palace-garden-gate/scenes/fountain-scene.webp" alt="Air mancur taman istana" loading="lazy" decoding="async"></div>
+    <p class="sec-kicker">Dua Hati, Satu Taman</p>
+    <h2>Mempelai</h2>
+    <img class="sec-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+    <div class="couple-grid">
+      <article class="cp-card">
+        <span class="demo-tag">FOTO DEMO</span>
+        <img class="cp-photo" id="bridePhoto" alt="" loading="lazy" decoding="async">
+        <span class="cp-role">Mempelai Wanita</span>
+        <h3 id="brideFull"></h3>
+        <p id="brideParents"></p>
+      </article>
+      <div class="cp-amp" aria-hidden="true"><img src="assets/undangya/palace-garden-gate/ornaments/icon-ring.svg" alt=""></div>
+      <article class="cp-card">
+        <span class="demo-tag">FOTO DEMO</span>
+        <img class="cp-photo" id="groomPhoto" alt="" loading="lazy" decoding="async">
+        <span class="cp-role">Mempelai Pria</span>
+        <h3 id="groomFull"></h3>
+        <p id="groomParents"></p>
+      </article>
+    </div>
+    <img class="monogram-img" src="assets/undangya/palace-garden-gate/ornaments/monogram.svg" alt="" aria-hidden="true">
+  </section>
+
+  <section class="sec story-sec" id="cerita">
+    <p class="sec-kicker">Perjalanan Kami</p>
+    <h2>Love Story</h2>
+    <img class="sec-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+    <div class="story-list" id="storyList"></div>
+  </section>
+
+  <section class="sec sched-sec" id="jadwal">
+    <div class="sec-banner"><img src="assets/undangya/palace-garden-gate/scenes/palace-vista.webp" alt="Panorama taman istana" loading="lazy" decoding="async"></div>
+    <p class="sec-kicker">Save the Date</p>
+    <h2>Jadwal Acara</h2>
+    <img class="sec-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+    <p class="date-big" id="dateBig">—</p>
+    <div class="sched" id="schedList"></div>
+  </section>
+
+  <section class="sec venue-sec" id="lokasi">
+    <div class="sec-banner"><img src="assets/undangya/palace-garden-gate/scenes/exterior-full.webp" alt="Eksterior istana taman tempat acara" loading="lazy" decoding="async"></div>
+    <p class="sec-kicker">Tempat Berlangsung</p>
+    <h2>Lokasi</h2>
+    <img class="sec-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+    <img class="venue-frame" src="assets/undangya/palace-garden-gate/scenes/venue-path.webp" alt="Jalan taman berbunga menuju tempat acara" loading="lazy" decoding="async">
+    <p class="venue"><b id="venueName"></b><br><span id="venueAddr"></span></p>
+    <a class="btn" id="mapsBtn" target="_blank" rel="noopener">
+      <img class="btn-ico" src="assets/undangya/palace-garden-gate/ornaments/icon-map-pin.svg" alt="" aria-hidden="true">
+      Buka Google Maps
+    </a>
+  </section>
+
+  <section class="sec gallery-sec" id="galeri">
+    <p class="sec-kicker">Momen di Taman</p>
+    <h2>Galeri</h2>
+    <img class="sec-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+    <div class="gallery" id="gallery"></div>
+    <p class="demo-note">Galeri berisi ilustrasi suasana tema (demo) — ganti dengan foto pasangan di file config.</p>
+  </section>
+
+  <section class="sec rsvp-sec" id="rsvp">
+    <p class="sec-kicker">Konfirmasi &amp; Doa</p>
+    <h2>RSVP &amp; Buku Tamu</h2>
+    <img class="sec-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+    <form id="rsvpForm" novalidate>
+      <label>Nama <input name="nama" required autocomplete="name" placeholder="Nama Anda"></label>
+      <label>Kehadiran
+        <select name="hadir"><option value="Hadir">Hadir</option><option value="Tidak hadir">Tidak hadir</option><option value="Masih ragu">Masih ragu</option></select>
+      </label>
+      <label>Jumlah Tamu
+        <select name="jumlah"><option value="1">1 orang</option><option value="2">2 orang</option><option value="3">3 orang</option><option value="4">4 orang</option></select>
+      </label>
+      <label>Ucapan &amp; Doa <textarea name="ucapan" rows="3" placeholder="Tulis doa & ucapan untuk kedua mempelai…"></textarea></label>
+      <button class="btn" type="submit">Kirim RSVP</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
+    <ul class="wishes" id="wishList"></ul>
+    <p class="wishes-empty" id="wishesEmpty">Belum ada ucapan. Jadilah yang pertama memberi doa ✦</p>
+    <p class="demo-note">— MODE DEMO: RSVP &amp; ucapan tersimpan hanya di perangkat Anda (localStorage), belum terkirim ke server —</p>
+  </section>
+
+  <section class="sec gift-sec" id="amplop">
+    <p class="sec-kicker">Tanda Kasih</p>
+    <h2>Amplop Digital</h2>
+    <img class="sec-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+    <img class="gift-ico" src="assets/undangya/palace-garden-gate/ornaments/icon-gift.svg" alt="" aria-hidden="true">
+    <p class="body-text" id="giftNote"></p>
+    <div class="gift-list" id="giftList"></div>
+    <p class="demo-note">— DATA REKENING DI ATAS ADALAH CONTOH (DEMO) — bukan rekening asli —</p>
+  </section>
+
+  <section class="sec closing-sec" id="penutup">
+    <p class="sec-kicker light">Terima Kasih</p>
+    <h2 class="light">Penutup</h2>
+    <img class="sec-divider" src="assets/undangya/palace-garden-gate/ornaments/divider.svg" alt="" aria-hidden="true">
+    <p class="body-text light" id="closingText"></p>
+    <p class="sign"><span id="signBride"></span> &amp; <span id="signGroom"></span></p>
+    <p class="brand">UndangYa! · Palace Garden Gate</p>
+  </section>
+</main>
+
+<footer class="site-footer">Dibuat dengan ♥ oleh <b>UndangYa!</b> — Palace Garden Gate</footer>
+
+<!-- ============ NAVIGASI BAWAH ============ -->
+<nav class="bottom-nav" aria-label="Navigasi undangan">
+  <a href="#stage"><span class="nav-ico" aria-hidden="true">⌂</span><small>Beranda</small></a>
+  <a href="#mempelai"><span class="nav-ico" aria-hidden="true">♥</span><small>Mempelai</small></a>
+  <a href="#jadwal"><span class="nav-ico" aria-hidden="true">▦</span><small>Jadwal</small></a>
+  <a href="#galeri"><span class="nav-ico" aria-hidden="true">❏</span><small>Galeri</small></a>
+  <a href="#rsvp"><span class="nav-ico" aria-hidden="true">✎</span><small>RSVP</small></a>
+  <button type="button" class="music-btn" id="musicBtn" aria-label="Putar musik latar" aria-pressed="false" title="Musik latar">
+    <img src="assets/undangya/palace-garden-gate/ornaments/icon-music.svg" alt="" aria-hidden="true">
+    <span class="music-fallback" aria-hidden="true">♪</span>
+    <small>Musik</small>
+  </button>
+</nav>
+
+<div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau foto">
+  <button type="button" id="lbClose" aria-label="Tutup">✕</button>
+  <button type="button" class="lb-nav prev" id="lbPrev" aria-label="Foto sebelumnya">‹</button>
+  <img id="lbImg" alt="">
+  <button type="button" class="lb-nav next" id="lbNext" aria-label="Foto berikutnya">›</button>
+  <p id="lbCap"></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="palace-gate-config.js"></script>
+<script src="palace-gate.js?v=20261029-8"></script>
+</body>
+</html>

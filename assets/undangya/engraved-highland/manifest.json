@@ -1,0 +1,404 @@
+[
+ {
+  "file": "backgrounds/cloud-sepia.webp",
+  "size": "1120x448",
+  "alpha": "-",
+  "bytes": 4078
+ },
+ {
+  "file": "backgrounds/mountains-full.webp",
+  "size": "1120x2240",
+  "alpha": "-",
+  "bytes": 645472
+ },
+ {
+  "file": "backgrounds/mountains-wide.webp",
+  "size": "1120x1164",
+  "alpha": "-",
+  "bytes": 381860
+ },
+ {
+  "file": "backgrounds/plain-sepia.webp",
+  "size": "900x900",
+  "alpha": "-",
+  "bytes": 92312
+ },
+ {
+  "file": "backgrounds/ridge-detail.webp",
+  "size": "1120x761",
+  "alpha": "-",
+  "bytes": 238312
+ },
+ {
+  "file": "backgrounds/section-mountains-small.webp",
+  "size": "380x760",
+  "alpha": "-",
+  "bytes": 49716
+ },
+ {
+  "file": "backgrounds/valley-zoom.webp",
+  "size": "896x986",
+  "alpha": "-",
+  "bytes": 350484
+ },
+ {
+  "file": "house/house-balcony.webp",
+  "size": "319x252",
+  "alpha": "corner 254",
+  "bytes": 31928
+ },
+ {
+  "file": "house/house-main.webp",
+  "size": "724x838",
+  "alpha": "corner 0",
+  "bytes": 167386
+ },
+ {
+  "file": "house/house-mono.webp",
+  "size": "724x838",
+  "alpha": "corner 0",
+  "bytes": 178310
+ },
+ {
+  "file": "house/house-roof.webp",
+  "size": "724x377",
+  "alpha": "corner 0",
+  "bytes": 53642
+ },
+ {
+  "file": "house/house-stairs.webp",
+  "size": "724x378",
+  "alpha": "corner 0",
+  "bytes": 98038
+ },
+ {
+  "file": "trees/branches-hanging.webp",
+  "size": "371x445",
+  "alpha": "corner 0",
+  "bytes": 84334
+ },
+ {
+  "file": "trees/canopy-full.webp",
+  "size": "1100x800",
+  "alpha": "corner 0",
+  "bytes": 139080
+ },
+ {
+  "file": "trees/canopy-top.webp",
+  "size": "540x348",
+  "alpha": "corner 0",
+  "bytes": 74698
+ },
+ {
+  "file": "trees/tree-oak.webp",
+  "size": "521x515",
+  "alpha": "corner 0",
+  "bytes": 129344
+ },
+ {
+  "file": "trees/tree-pine.webp",
+  "size": "370x528",
+  "alpha": "corner 0",
+  "bytes": 72610
+ },
+ {
+  "file": "trees/tree-round-canopy.webp",
+  "size": "540x562",
+  "alpha": "corner 0",
+  "bytes": 113040
+ },
+ {
+  "file": "trees/tree-sapling-light.webp",
+  "size": "515x623",
+  "alpha": "corner 0",
+  "bytes": 129476
+ },
+ {
+  "file": "trees/tree-willow-mirror.webp",
+  "size": "498x561",
+  "alpha": "corner 0",
+  "bytes": 112330
+ },
+ {
+  "file": "trees/tree-willow-tall.webp",
+  "size": "371x636",
+  "alpha": "corner 0",
+  "bytes": 113848
+ },
+ {
+  "file": "trees/tree-willow-wide.webp",
+  "size": "498x561",
+  "alpha": "corner 0",
+  "bytes": 111840
+ },
+ {
+  "file": "flowers/flower-bed-alt.webp",
+  "size": "1500x476",
+  "alpha": "corner 0",
+  "bytes": 269518
+ },
+ {
+  "file": "flowers/flower-bed-full.webp",
+  "size": "1500x476",
+  "alpha": "corner 0",
+  "bytes": 271118
+ },
+ {
+  "file": "flowers/flower-bed-left.webp",
+  "size": "652x422",
+  "alpha": "corner 0",
+  "bytes": 88856
+ },
+ {
+  "file": "flowers/flower-bed-right.webp",
+  "size": "652x422",
+  "alpha": "corner 0",
+  "bytes": 88912
+ },
+ {
+  "file": "flowers/flower-delphinium.webp",
+  "size": "321x581",
+  "alpha": "corner 0",
+  "bytes": 78268
+ },
+ {
+  "file": "flowers/flower-lily-orange.webp",
+  "size": "518x547",
+  "alpha": "corner 0",
+  "bytes": 82222
+ },
+ {
+  "file": "flowers/flower-lily-red.webp",
+  "size": "502x569",
+  "alpha": "corner 0",
+  "bytes": 96686
+ },
+ {
+  "file": "flowers/flower-orchid-mirror.webp",
+  "size": "538x458",
+  "alpha": "corner 0",
+  "bytes": 75496
+ },
+ {
+  "file": "flowers/flower-orchid.webp",
+  "size": "538x458",
+  "alpha": "corner 0",
+  "bytes": 75522
+ },
+ {
+  "file": "flowers/flower-poppy.webp",
+  "size": "458x536",
+  "alpha": "corner 0",
+  "bytes": 72298
+ },
+ {
+  "file": "flowers/flower-rose-white.webp",
+  "size": "459x485",
+  "alpha": "corner 0",
+  "bytes": 75286
+ },
+ {
+  "file": "flowers/leaf-sprig.png",
+  "size": "142x150",
+  "alpha": "corner 0",
+  "bytes": 32138
+ },
+ {
+  "file": "flowers/petal-lily.png",
+  "size": "140x110",
+  "alpha": "corner 0",
+  "bytes": 34491
+ },
+ {
+  "file": "flowers/petal-orchid.png",
+  "size": "140x106",
+  "alpha": "corner 107",
+  "bytes": 37087
+ },
+ {
+  "file": "photos/couple-illustration.webp",
+  "size": "550x1100",
+  "alpha": "-",
+  "bytes": 255214
+ },
+ {
+  "file": "photos/gallery-couple-close.webp",
+  "size": "784x1456",
+  "alpha": "-",
+  "bytes": 461914
+ },
+ {
+  "file": "photos/gallery-flowers-sheet.webp",
+  "size": "1920x1280",
+  "alpha": "-",
+  "bytes": 242804
+ },
+ {
+  "file": "photos/gallery-house-mono.webp",
+  "size": "1600x1600",
+  "alpha": "-",
+  "bytes": 392070
+ },
+ {
+  "file": "photos/gallery-trees-sheet.webp",
+  "size": "1920x1280",
+  "alpha": "-",
+  "bytes": 424894
+ },
+ {
+  "file": "photos/portrait-left.webp",
+  "size": "560x2240",
+  "alpha": "-",
+  "bytes": 424444
+ },
+ {
+  "file": "photos/portrait-right.webp",
+  "size": "560x2240",
+  "alpha": "-",
+  "bytes": 422268
+ },
+ {
+  "file": "textures/paper-grain.webp",
+  "size": "700x700",
+  "alpha": "-",
+  "bytes": 7428
+ },
+ {
+  "file": "textures/paper-sepia-gradient.webp",
+  "size": "700x1200",
+  "alpha": "-",
+  "bytes": 2938
+ },
+ {
+  "file": "textures/particle-gold-dot.png",
+  "size": "90x90",
+  "alpha": "corner 0",
+  "bytes": 313
+ },
+ {
+  "file": "textures/particle-sparkle.png",
+  "size": "120x120",
+  "alpha": "corner 0",
+  "bytes": 586
+ },
+ {
+  "file": "textures/vignette-overlay.png",
+  "size": "700x1200",
+  "alpha": "corner 0",
+  "bytes": 5941
+ },
+ {
+  "file": "ornaments/birds-flock.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 321
+ },
+ {
+  "file": "ornaments/corner-flourish.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 281
+ },
+ {
+  "file": "ornaments/corner-songket.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 436
+ },
+ {
+  "file": "ornaments/crest-house.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 364
+ },
+ {
+  "file": "ornaments/divider-floral.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 486
+ },
+ {
+  "file": "ornaments/divider-songket.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 482
+ },
+ {
+  "file": "ornaments/frame-oval-gold.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 403
+ },
+ {
+  "file": "ornaments/frame-rect-engraved.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 413
+ },
+ {
+  "file": "ornaments/icon-calendar.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 307
+ },
+ {
+  "file": "ornaments/icon-clock.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 218
+ },
+ {
+  "file": "ornaments/icon-envelope.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 242
+ },
+ {
+  "file": "ornaments/icon-gift.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 328
+ },
+ {
+  "file": "ornaments/icon-music.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 256
+ },
+ {
+  "file": "ornaments/icon-pin.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 261
+ },
+ {
+  "file": "ornaments/icon-ring.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 236
+ },
+ {
+  "file": "ornaments/monogram-pt.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 364
+ },
+ {
+  "file": "ornaments/songket-cream.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 5653
+ },
+ {
+  "file": "ornaments/songket-gold.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 5653
+ },
+ {
+  "file": "ornaments/songket-maroon.svg",
+  "size": "svg",
+  "alpha": "-",
+  "bytes": 5653
+ }
+]

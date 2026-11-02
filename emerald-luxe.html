@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Emerald Luxe 3D — Fahrezzi & Meyzsa | UndangYa!</title>
+<meta name="description" content="Undangan digital HTML5 dengan Three.js dan aset AI — Emerald Luxe 3D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#F8F1E6;--cream:#EDE0C9;--gold:#C7A166;--burgundy:#07301F;--ink:#21140F;--sage:#1E5C40}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#04150D;color:var(--ink);font-family:Inter,system-ui,sans-serif}
+.stage{max-width:430px;margin:0 auto;background:var(--ivory);min-height:100dvh;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(0,0,0,.5)}
+#three{position:absolute;inset:0;width:100%;height:520px;z-index:1;pointer-events:none}
+.cover{position:fixed;inset:0;max-width:430px;margin:auto;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:28px 22px 38px;color:#fff;text-align:center;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(7,48,31,.78)),url('assets/undangya/emerald-luxe/hero-bg.webp') center/cover}
+.cover.hide{opacity:0;pointer-events:none;transition:.8s}
+.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:.68rem;font-weight:700}
+h1,h2{font-family:"Cormorant Garamond",serif;margin:.3em 0}
+h1{font-size:3rem;line-height:.95}h2{font-size:2rem;color:var(--burgundy)}
+.btn{background:var(--gold);color:#21140F;border:0;border-radius:999px;padding:13px 22px;font-weight:700;cursor:pointer}
+.btn:active{transform:scale(.98)}
+.hero{position:relative;padding:18px 20px 28px;text-align:center;background:linear-gradient(180deg,rgba(248,241,230,.2),var(--ivory) 78%),url('assets/undangya/emerald-luxe/hero-bg.webp') center top/cover;min-height:640px}
+.hero-inner{position:relative;z-index:2;margin-top:330px;background:rgba(248,241,230,.9);backdrop-filter:blur(6px);border:1px solid #e7d3a8;border-radius:24px;padding:18px}
+.datepill{display:inline-block;background:var(--burgundy);color:#fff;padding:8px 14px;border-radius:999px;font-weight:700;font-size:.82rem}
+.portrait{width:150px;height:190px;object-fit:cover;border-radius:80px 80px 14px 14px;border:3px solid var(--gold)}
+.couple{width:258px;height:340px;object-fit:cover;border-radius:160px 160px 18px 18px;border:4px solid var(--gold);display:block;margin:16px auto}
+section{padding:34px 22px;text-align:center}
+.card{background:#fff;border:1px solid #eadfc6;border-radius:20px;padding:20px;margin:12px 0;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.count b{display:block;font-size:1.5rem;color:var(--burgundy)}
+.count span{background:#fff;border:1px solid #eadfc6;border-radius:14px;padding:10px 4px;font-size:.72rem}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}.gallery img{width:100%;height:210px;object-fit:cover;border-radius:16px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:12px;margin:6px 0;font:inherit}
+.nav{position:sticky;bottom:0;z-index:20;background:rgba(7,48,31,.96);color:#fff;display:flex;justify-content:space-around;padding:10px 4px;font-size:.68rem}
+.nav a{color:#fff;text-decoration:none}
+small.demo{color:#8a6d3b;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+footer{padding:28px 22px 90px;text-align:center;background:var(--burgundy);color:#fff}
+.music{position:fixed;right:calc(50% - 200px);bottom:76px;z-index:30;width:44px;height:44px;border-radius:50%;border:0;background:var(--gold);font-size:18px}
+@media(max-width:380px){h1{font-size:2.5rem}.music{right:14px}}
+.lightbox{position:fixed;inset:0;z-index:60;background:rgba(4,21,13,.92);display:none;align-items:center;justify-content:center;padding:20px}.lightbox.open{display:flex}.lightbox img{max-width:100%;max-height:86dvh;border-radius:16px;border:3px solid var(--gold)}
+/* === ANIMASI TRANSISI (ditambah 2026-10-30: reveal scroll, cascade, shine, float) === */
+:root{--ease:cubic-bezier(.22,.75,.25,1)}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv[data-rv="left"]{transform:translateX(-30px)}
+.js .rv[data-rv="right"]{transform:translateX(30px)}
+.js .rv[data-rv="zoom"]{transform:scale(.92)}
+.js .rv.in{opacity:1;transform:none}
+section h2{position:relative}
+section h2::after{content:"";display:block;height:2px;width:56%;margin:6px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform 1s var(--ease) .2s}
+section.in h2::after{transform:scaleX(1)}
+.card{transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(7,48,31,.13)}
+.gallery img{transition:transform .6s var(--ease),box-shadow .6s var(--ease);cursor:pointer}
+.gallery img:hover{transform:scale(1.04);box-shadow:0 14px 30px rgba(7,48,31,.25)}
+.nav a{position:relative;padding:2px 4px;opacity:.75;transition:opacity .4s,color .4s}
+.nav a::after{content:"";position:absolute;left:50%;bottom:-3px;width:0;height:2px;background:var(--gold);border-radius:2px;transition:width .45s var(--ease),left .45s var(--ease)}
+.nav a.active{opacity:1;color:var(--gold)}
+.nav a.active::after{width:70%;left:15%}
+.btn{position:relative;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(199,161,102,.45)}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.2s ease-in-out infinite}
+@keyframes shine{0%,55%{left:-80%}85%,100%{left:130%}}
+.cover{transition:opacity 1s var(--ease),transform 1s var(--ease),filter 1s var(--ease)}
+.cover.hide{transform:scale(1.07);filter:blur(6px)}
+.cover .eyebrow,.cover h1,.cover p,.cover .btn{animation:fadeUp 1s var(--ease) both}
+.cover h1{animation-delay:.12s}.cover p{animation-delay:.24s}.cover .btn{animation-delay:.38s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes zoomIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+.stage.opened .hero-inner{animation:fadeUp .9s var(--ease) .2s both}
+.stage.opened .couple{animation:zoomIn 1.1s var(--ease) .35s both,floatY 5.5s ease-in-out 1.5s infinite alternate}
+@keyframes floatY{from{transform:translateY(0)}to{transform:translateY(-9px)}}
+.count span b{display:inline-block}
+.count .pop b{animation:pop .5s var(--ease)}
+@keyframes pop{0%{transform:scale(1)}35%{transform:scale(1.22);color:var(--gold)}100%{transform:scale(1)}}
+.portrait{transition:transform .6s var(--ease)}
+.card:hover .portrait{transform:scale(1.03) rotate(-1deg)}
+.music{transition:transform .4s var(--ease)}
+.music.playing{animation:spinPulse 5s linear infinite}
+@keyframes spinPulse{0%{transform:rotate(0) scale(1)}50%{transform:rotate(180deg) scale(1.08)}100%{transform:rotate(360deg) scale(1)}}
+.lightbox.open img{animation:zoomIn .45s var(--ease)}
+input,select,textarea{transition:border-color .3s,box-shadow .3s}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(199,161,102,.25);outline:0}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="cover" id="cover">
+    <p class="eyebrow">Undangan Pernikahan</p>
+    <h1>Fahrezzi<br>&amp; Meyzsa</h1>
+    <p>Sabtu, 11 Desember 2027</p>
+    <p>Kepada Yth.<br><strong id="guest">Bapak/Ibu/Saudara/i Tamu Undangan</strong></p>
+    <button class="btn" id="openBtn">Buka Undangan</button>
+    <p><small>Tema: Emerald Luxe 3D • Three.js + AI Assets • HTML5</small></p>
+  </div>
+
+  <header class="hero" id="beranda">
+    <canvas id="three" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <p class="eyebrow" style="color:var(--burgundy)">The Wedding Of</p>
+      <h2>Fahrezzi &amp; Meyzsa</h2>
+      <span class="datepill">Sabtu · 11 Desember 2027</span>
+      <div style="position:relative;width:258px;margin:0 auto"><img class="couple" src="assets/undangya/emerald-luxe/couple.webp" alt="Foto contoh Fahrezzi dan Meyzsa" style="margin:16px auto 0"><span style="position:absolute;right:8px;bottom:10px;background:rgba(7,48,31,.85);color:#fff;font-size:.56rem;font-weight:700;letter-spacing:.06em;padding:4px 8px;border-radius:999px">FOTO CONTOH</span></div>
+      <p id="countLabel">Menghitung hari bahagia…</p>
+      <div class="count" id="count"></div>
+      <p>Scroll ke bawah ↓</p>
+    </div>
+  </header>
+
+  <section id="mempelai">
+    <small class="demo">Mempelai • Contoh</small>
+    <h2>Assalamu’alaikum</h2>
+    <p>Dengan memohon rahmat Allah SWT, kami mengundang Anda untuk hadir di pernikahan kami.</p>
+    <div class="card"><img class="portrait" src="assets/undangya/emerald-luxe/groom.webp" alt="Foto contoh mempelai pria"><br><strong>Fahrezzi Prasetyo</strong><br>Putra Bapak Contoh &amp; Ibu Contoh</div>
+    <div class="card"><img class="portrait" src="assets/undangya/emerald-luxe/bride.webp" alt="Foto contoh mempelai wanita"><br><strong>Meyzsa Maharani</strong><br>Putri Bapak Contoh &amp; Ibu Contoh</div>
+  </section>
+
+  <section id="acara" style="background:var(--cream)">
+    <h2>Rangkaian Acara</h2>
+    <div class="card"><strong>Akad Nikah</strong><br>Sabtu, 11 Desember 2027 • 08.00 WIB<br>Jakarta (contoh lokasi)<br><a class="btn" style="display:inline-block;margin-top:10px;text-decoration:none" href="https://maps.google.com/?q=Jakarta" target="_blank" rel="noopener">Buka Maps</a></div>
+    <div class="card"><strong>Resepsi</strong><br>Sabtu, 11 Desember 2027 • 11.00 WIB<br>Jakarta (contoh lokasi)</div>
+  </section>
+
+  <section id="galeri">
+    <h2>Galeri Prewedding</h2>
+    <p>Foto contoh fotorealistik hasil generate AI, dioptimasi Python (Pillow → WebP ≤97KB). Klik foto untuk memperbesar.</p>
+    <div class="gallery"><img src="assets/undangya/emerald-luxe/couple.webp" alt="Prewedding berdua di taman emerald"><img src="assets/undangya/emerald-luxe/candid.webp" alt="Prewedding candid tertawa berdua"><img src="assets/undangya/emerald-luxe/bride.webp" alt="Potret mempelai wanita"><img src="assets/undangya/emerald-luxe/groom.webp" alt="Potret mempelai pria"></div>
+  </section>
+
+  <section id="amplop" style="background:var(--cream)">
+    <h2>Amplop Digital</h2>
+    <p class="demo">Demo — tombol salin dinonaktifkan untuk nomor contoh</p>
+    <div class="card">BCA • 1234567890<br>a.n. Fahrezzi (contoh)<br><button class="btn" disabled>Salin (Demo)</button></div>
+  </section>
+
+  <section id="rsvp">
+    <h2>RSVP &amp; Ucapan</h2>
+    <form id="rsvpForm"><input id="nama" placeholder="Nama Anda" required><select id="hadir"><option>Hadir</option><option>Belum pasti</option><option>Tidak hadir</option></select><textarea id="ucapan" placeholder="Tulis ucapan…"></textarea><button class="btn" style="width:100%">Kirim (Demo Lokal)</button></form>
+    <div id="list"></div>
+  </section>
+
+  <footer>Terima kasih atas doa &amp; kehadirannya.<br><strong>Fahrezzi &amp; Meyzsa</strong><br><small>UndangYa! — Emerald Luxe 3D</small></footer>
+  <button class="music" id="musicBtn" title="Musik">♪</button>
+  <nav class="nav"><a href="#beranda">Beranda</a><a href="#mempelai">Mempelai</a><a href="#acara">Acara</a><a href="#galeri">Galeri</a><a href="#rsvp">RSVP</a></nav>
+<div class="lightbox" id="lightbox"><img id="lightboxImg" alt="Galeri diperbesar"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script>
+const CONFIG={couple:["Fahrezzi","Meyzsa"],date:"2027-12-11T08:00:00+07:00"};
+// ?to= personalization
+const to=new URLSearchParams(location.search).get("to"); if(to) document.getElementById("guest").textContent=to;
+document.getElementById("openBtn").onclick=()=>{document.getElementById("cover").classList.add("hide"); document.getElementById("stage").classList.add("opened"); document.getElementById("musicBtn").classList.add("playing"); startMusic();};
+// Countdown
+function tick(){const diff=new Date(CONFIG.date)-new Date(); const d=Math.max(0,Math.floor(diff/864e5)),h=Math.max(0,Math.floor(diff/36e5)%24),m=Math.max(0,Math.floor(diff/6e4)%60),s=Math.max(0,Math.floor(diff/1e3)%60); document.getElementById("count").innerHTML=[[d,"Hari"],[h,"Jam"],[m,"Menit"],[s,"Detik"]].map((x,i)=>`<span${i===3?' class="pop"':''}><b>${x[0]}</b>${x[1]}</span>`).join("")}
+tick(); setInterval(tick,1000);
+// RSVP localStorage demo
+const key="emerald-rsvp"; const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); const render=()=>{const data=JSON.parse(localStorage.getItem(key)||"[]"); document.getElementById("list").innerHTML=data.map(x=>`<div class="card"><strong>${esc(x.nama)}</strong> • ${esc(x.hadir)}<br>${esc(x.ucapan)}</div>`).join("")};
+document.getElementById("rsvpForm").onsubmit=e=>{e.preventDefault(); const data=JSON.parse(localStorage.getItem(key)||"[]"); data.unshift({nama:nama.value,hadir:hadir.value,ucapan:ucapan.value}); localStorage.setItem(key,JSON.stringify(data)); e.target.reset(); render();}; render();
+// WebAudio music (synth, no file)
+let ctx,playing=false; function startMusic(){ if(playing||!window.AudioContext) return; ctx=new AudioContext(); playing=true; const notes=[523,659,784,659]; notes.forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain(); o.frequency.value=f; g.gain.value=.04; o.connect(g).connect(ctx.destination); o.start(ctx.currentTime+i*.45); o.stop(ctx.currentTime+i*.45+.4);});}
+document.getElementById("musicBtn").onclick=()=>{startMusic(); document.getElementById("musicBtn").classList.add("playing");};
+// Animasi transisi — reveal elemen saat masuk layar (stagger per section) + nav aktif mengikuti scroll
+document.documentElement.classList.add("js");
+(function(){
+ const reduce=window.matchMedia ? matchMedia("(prefers-reduced-motion: reduce)").matches : false;
+ const targets=[];
+ document.querySelectorAll("section, footer").forEach(sec=>{
+   let cardIdx=0;
+   [...sec.children].forEach((el,i)=>{ el.classList.add("rv"); el.style.transitionDelay=Math.min(i*90,360)+"ms";
+     if(el.classList.contains("card")){ el.dataset.rv=(cardIdx++%2? "right":"left"); }
+     targets.push(el); });
+   targets.push(sec);
+ });
+ document.querySelectorAll(".gallery img").forEach((im,i)=>{ im.classList.add("rv"); im.dataset.rv="zoom"; im.style.transitionDelay=(i*110)+"ms"; targets.push(im); });
+ if("IntersectionObserver" in window && !reduce){
+   const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{threshold:.12});
+   targets.forEach(t=>io.observe(t));
+ } else { targets.forEach(t=>t.classList.add("in")); document.querySelectorAll("section").forEach(s=>s.classList.add("in")); }
+ // Nav aktif mengikuti posisi scroll
+ const links={}; document.querySelectorAll(".nav a").forEach(a=>links[a.getAttribute("href").slice(1)]=a);
+ if("IntersectionObserver" in window){
+   const spy=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ document.querySelectorAll(".nav a").forEach(a=>a.classList.remove("active")); const l=links[e.target.id]; if(l) l.classList.add("active"); } }),{rootMargin:"-40% 0px -55% 0px"});
+   document.querySelectorAll("header[id],section[id]").forEach(s=>spy.observe(s));
+ }
+})();
+// Lightbox galeri
+const lb=document.getElementById("lightbox"),lbi=document.getElementById("lightboxImg"); document.querySelectorAll(".gallery img").forEach(im=>im.onclick=()=>{lbi.src=im.src;lb.classList.add("open")}); lb.onclick=()=>lb.classList.remove("open");
+// Three.js scene — gold rings + particles + parallax, with fallback
+try{
+ const canvas=document.getElementById("three"), renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+ renderer.setSize(430,520); const scene=new THREE.Scene(), cam=new THREE.PerspectiveCamera(45,430/520,.1,100); cam.position.z=7;
+ const mat=new THREE.MeshStandardMaterial({color:0xC7A166,metalness:.9,roughness:.25});
+ const r1=new THREE.Mesh(new THREE.TorusGeometry(1.15,.09,16,80),mat), r2=r1.clone(); r1.position.x=-.7; r2.position.x=.7; scene.add(r1,r2);
+ scene.add(new THREE.PointLight(0xffe6b0,2,20)); scene.add(new THREE.AmbientLight(0xffffff,.7));
+ const N=420,pos=new Float32Array(N*3); for(let i=0;i<N;i++){pos[i*3]=(Math.random()-.5)*8;pos[i*3+1]=(Math.random()-.5)*6;pos[i*3+2]=(Math.random()-.5)*3}
+ const geo=new THREE.BufferGeometry(); geo.setAttribute("position",new THREE.BufferAttribute(pos,3));
+ scene.add(new THREE.Points(geo,new THREE.PointsMaterial({color:0xC7A166,size:.05,transparent:true,opacity:.9})));
+ let mx=0; addEventListener("pointermove",e=>mx=(e.clientX/innerWidth-.5));
+ (function anim(t){requestAnimationFrame(anim); r1.rotation.y=t*.0006; r2.rotation.y=-t*.0006; r1.position.y=Math.sin(t*.001)*.15; r2.position.y=Math.cos(t*.001)*.15; cam.position.x=mx*1.2; cam.lookAt(0,0,0); renderer.render(scene,cam)})(0);
+}catch(e){ document.getElementById("three").style.display="none"; }
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* UndangYa! — Engraved Highland v2
+   Design system: ivory paper · walnut · hairline antique gold · maroon langka.
+   Z-index hero: gunung 1 · rumah 4 · flower-bed 6 · canopy 8 · intro-canopy 20 · plakat 28 · songket 30 · kontrol 32 */
+:root{
+  --ivory:#F7F0DC; --paper:#EFE4CB; --cream2:#E9DFC9;
+  --walnut:#4A3220; --ink:#332417; --gold:#B08A4F; --copper:#A9713F;
+  --maroon:#7A2434; --sage:#5F7A58; --dark:#2B1D0F;
+  --sec-pad:3rem 1.4rem; --col:430px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.07rem;line-height:1.62;color:var(--ink);background:#241809 url("assets/undangya/engraved-highland/backgrounds/plain-sepia.webp") center/cover fixed}
+body.locked{overflow:hidden}
+.page-gutter{position:fixed;inset:0;background:rgba(30,19,7,.35);z-index:-1}
+.stage,.content,footer{max-width:var(--col);margin:0 auto;background:var(--cream2);box-shadow:0 0 60px rgba(0,0,0,.5)}
+img{user-select:none;-webkit-user-drag:none}
+
+/* ---------- HERO (6 layer bertujuan) ---------- */
+.stage{position:relative;height:100svh;min-height:600px;overflow:hidden;background:var(--cream2)}
+.world{position:absolute;inset:0;will-change:transform}
+.layer{position:absolute;pointer-events:none}
+/* Background 3 potongan bertumpuk mulus — resolusi staging jauh lebih tinggi, jendela vertikal dipilih agar sungai terlihat */
+.bg-stack{position:absolute;left:-7%;top:50%;width:114%;transform:translateY(-53%);z-index:1}
+.bg-stack img{display:block;width:100%}
+.birds{top:15%;left:6%;width:46%;z-index:2;opacity:.5;animation:drift 24s ease-in-out infinite alternate}
+.ground-shadow{position:absolute;left:50%;bottom:22.6%;width:74%;height:32px;transform:translateX(-50%);background:radial-gradient(ellipse at center,rgba(30,18,6,.52),transparent 68%);filter:blur(3px);z-index:3}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(30px) translateY(-9px)}}
+.tree-side{bottom:26%;width:26%;z-index:3;transform-origin:bottom center;animation:windSide 5.4s ease-in-out infinite}
+.tree-pine-l{left:-3.5%}
+.tree-willow-r{right:-4.5%;width:23%;animation-delay:-2.6s}
+@keyframes windSide{0%,100%{rotate:0deg;translate:0 0}12.5%{rotate:1.9deg;translate:4px 0}25%{rotate:2.6deg;translate:6px 0}37.5%{rotate:1.9deg;translate:4px 0}50%{rotate:0deg;translate:0 0}62.5%{rotate:-1.9deg;translate:-4px 0}75%{rotate:-2.6deg;translate:-6px 0}87.5%{rotate:-1.9deg;translate:-4px 0}}
+.house{left:50%;bottom:24.5%;width:67%;transform:translateX(-50%);z-index:4;filter:drop-shadow(0 12px 16px rgba(43,29,15,.35))}
+.orchid{bottom:27%;width:15.5%;z-index:6;transform-origin:bottom center;animation:windOrchid 4.4s ease-in-out infinite}
+.orchid-l{left:1%}
+.orchid-r{right:1%;animation-delay:-2.2s}
+@keyframes windOrchid{0%,100%{rotate:0deg;translate:0 0}12.5%{rotate:3.4deg;translate:6px -2px}25%{rotate:4.9deg;translate:8px -3px}37.5%{rotate:3.4deg;translate:6px -2px}50%{rotate:0deg;translate:0 0}62.5%{rotate:-3.4deg;translate:-6px -2px}75%{rotate:-4.9deg;translate:-8px -3px}87.5%{rotate:-3.4deg;translate:-6px -2px}}
+.flower-bed{left:50%;bottom:.5%;width:106%;transform:translateX(-50%);z-index:6;transform-origin:bottom center;animation:windBottom 5.8s ease-in-out infinite}
+.garden-strip{left:50%;bottom:-4.5%;width:104%;transform:translateX(-50%);z-index:7;transform-origin:bottom center;animation:windBottom 5.1s ease-in-out infinite;animation-delay:-1.9s}
+@keyframes windBottom{0%,100%{rotate:0deg;translate:0 0}12.5%{rotate:1deg;translate:5px 0}25%{rotate:1.4deg;translate:8px 0}37.5%{rotate:1deg;translate:5px 0}50%{rotate:0deg;translate:0 0}62.5%{rotate:-1deg;translate:-5px 0}75%{rotate:-1.4deg;translate:-8px 0}87.5%{rotate:-1deg;translate:-5px 0}}
+/* Bunga menjulur ke bawah di sudut atas (pengganti semak tajuk) */
+.hanging{top:-1%;width:25.5%;z-index:9;transform-origin:top center;animation:windTop 4.8s ease-in-out infinite}
+.hanging-l{left:-4%}
+.hanging-r{right:-4%;scale:-1 1;animation-delay:-2.4s}
+@keyframes windTop{0%,100%{rotate:0deg;translate:0 0}12.5%{rotate:3.3deg;translate:6px 1px}25%{rotate:4.8deg;translate:9px 2px}37.5%{rotate:3.3deg;translate:6px 1px}50%{rotate:0deg;translate:0 0}62.5%{rotate:-3.3deg;translate:-6px 1px}75%{rotate:-4.8deg;translate:-9px 2px}87.5%{rotate:-3.3deg;translate:-6px 1px}}
+.sparkles{position:absolute;inset:0;z-index:15;pointer-events:none}
+.sparkles i{position:absolute;width:15px;height:15px;background:url("assets/undangya/engraved-highland/textures/particle-sparkle.png") center/contain no-repeat;opacity:0;animation:twinkle 4.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.5) rotate(0deg)}50%{opacity:.8;transform:scale(1.1) rotate(40deg)}}
+/* Gerak ambien berhenti saat hero di luar layar & saat reduced-motion */
+.motion-paused .hanging,.motion-paused .tree-side,.motion-paused .orchid,.motion-paused .flower-bed,.motion-paused .garden-strip,.motion-paused .birds,.motion-paused .sparkles i{animation-play-state:paused !important}
+@media (prefers-reduced-motion: reduce){.hanging,.tree-side,.orchid,.flower-bed,.garden-strip,.birds,.sparkles i{animation:none !important}}
+.scene-continue{display:block;width:calc(100% + 2.8rem);height:150px;object-fit:cover;object-position:50% 62%;margin:-3rem -1.4rem 1.2rem;border-bottom:2px solid var(--gold)}
+.intro-canopy{position:absolute;inset:0;z-index:20;background:url("assets/undangya/engraved-highland/trees/canopy-full.webp") center 18%/cover no-repeat;pointer-events:none}
+.songket{position:absolute;top:0;left:0;width:100%;height:30px;object-fit:cover;z-index:30}
+
+/* Blok judul v3: tanpa kotak — halo cahaya krem lembut di belakang teks */
+.title-block{position:absolute;left:50%;transform:translateX(-50%);top:8%;width:min(92%,370px);z-index:28;text-align:center;padding:.6rem .5rem}
+.title-block::before{content:"";position:absolute;inset:-24% -20%;background:radial-gradient(ellipse at center,rgba(247,240,220,.8) 26%,rgba(247,240,220,.38) 56%,transparent 74%);z-index:-1;filter:blur(3px)}
+.event-title{font-family:"Playfair Display",serif;font-size:1.05rem;letter-spacing:.18em;text-transform:uppercase;color:var(--walnut);margin:0 0 .35em;text-shadow:0 1px 0 rgba(247,240,220,.9)}
+.names{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(2.7rem,12.5vw,3.4rem);line-height:1.12;color:#452A12;margin:0;text-shadow:0 2px 0 rgba(247,240,220,.95),0 0 18px rgba(247,240,220,.95),0 0 44px rgba(247,240,220,.8)}
+.names .ch{display:inline-block}
+.names .amp{display:block;font-size:1.35rem;font-style:italic;color:var(--maroon);line-height:1.1}
+.date-pill{display:inline-block;margin-top:.9em;padding:.38em 1.15em;background:var(--ivory);border:1.5px solid var(--gold);border-radius:999px;font-weight:700;letter-spacing:.05em;color:var(--maroon);font-size:.99rem}
+.guest-line{margin:.85em auto 0;max-width:320px;font-size:1.02rem;font-style:italic;color:var(--ink);background:rgba(247,240,220,.82);border-radius:12px;padding:.3em .7em}
+.btn-open{margin-top:.9em;display:inline-flex;gap:.5em;align-items:center;font-family:inherit;font-size:1.05rem;font-weight:700;letter-spacing:.03em;color:#FBF3DF;background:var(--walnut);border:1.5px solid var(--copper);border-radius:999px;padding:.6em 1.45em;cursor:pointer}
+.btn-open img{filter:invert(92%) sepia(20%)}
+.btn-open:active{transform:scale(.97)}
+.stage-controls{position:absolute;top:40px;right:10px;z-index:32;display:flex;gap:6px}
+.pill-btn{font-family:inherit;font-size:.84rem;font-weight:600;color:var(--walnut);background:rgba(247,240,220,.85);border:1px solid var(--gold);border-radius:999px;padding:.3em .85em;cursor:pointer}
+.scroll-hint{position:absolute;left:50%;transform:translateX(-50%);bottom:10px;z-index:32;margin:0;background:rgba(247,240,220,.92);color:var(--maroon);font-weight:700;border:1px solid var(--gold);border-radius:999px;padding:.28em .95em;font-size:.92rem;opacity:0;transition:opacity .6s}
+body:not(.locked) .scroll-hint{opacity:1}
+
+/* ---------- SECTIONS ---------- */
+.content{position:relative}
+.sec{padding:var(--sec-pad);text-align:center;position:relative}
+.sec-cream{background:var(--ivory) url("assets/undangya/engraved-highland/textures/paper-grain.webp") center/340px;color:var(--ink)}
+.sec-dark{background:linear-gradient(172deg,#3A2712,#251806);color:#EFE3C8}
+/* Background ilustrasi TAMAN penuh hasil generate AI sesuai konsep (lapisan krem/gelap menjaga keterbacaan) */
+#salam{background:linear-gradient(rgba(247,240,220,.9),rgba(247,240,220,.94)),url("assets/undangya/engraved-highland/backgrounds/bg-garden-valley.webp") center/cover}
+#mempelai{background:linear-gradient(rgba(38,26,15,.86),rgba(38,26,15,.9)),url("assets/undangya/engraved-highland/backgrounds/bg-garden-house.webp") center/cover}
+#waktu{background:linear-gradient(rgba(247,240,220,.89),rgba(247,240,220,.94)),url("assets/undangya/engraved-highland/backgrounds/bg-garden-gate.webp") center/cover}
+#galeri{background:linear-gradient(rgba(38,26,15,.85),rgba(38,26,15,.9)),url("assets/undangya/engraved-highland/backgrounds/bg-garden-pond.webp") center/cover}
+#rsvp{background:linear-gradient(rgba(247,240,220,.9),rgba(247,240,220,.95)),url("assets/undangya/engraved-highland/backgrounds/bg-garden-valley.webp") center bottom/cover}
+#amplop{background:linear-gradient(rgba(38,26,15,.87),rgba(38,26,15,.91)),url("assets/undangya/engraved-highland/backgrounds/bg-garden-gate.webp") center bottom/cover}
+#penutup{background:linear-gradient(rgba(59,39,20,.86),rgba(59,39,20,.9)),url("assets/undangya/engraved-highland/backgrounds/bg-garden-pond.webp") center bottom/cover}
+.sec h2{font-family:"Playfair Display",serif;font-size:1.5rem;letter-spacing:.05em;margin:.3em 0 1em;color:var(--walnut)}
+.sec h2::after{content:"";display:block;width:44px;height:2px;background:var(--gold);margin:.45em auto 0}
+.sec-dark h2{color:#EBCB8B}
+.divider{display:block;margin:0 auto .5rem;height:auto}
+#salam .divider,#penutup .divider{width:240px;opacity:.9}
+#mempelai .divider,#galeri .divider{width:180px;opacity:.85}
+.sec p{max-width:36ch;margin-left:auto;margin-right:auto}
+.arab{font-size:1.5rem;line-height:2.05;direction:rtl;color:var(--walnut);max-width:none}
+.verse-arti{font-style:italic}
+.verse-src{font-weight:700;color:var(--maroon)}
+.greeting{margin-top:1.15em}
+.cd-caption{margin:1.3em 0 .5em;font-style:italic}
+.cd-caption b{color:var(--maroon);font-style:normal}
+.countdown{display:flex;gap:.5rem;justify-content:center;margin:.4rem 0 1.3rem}
+.cd-box{background:var(--ivory);color:var(--walnut);border:1.5px solid var(--gold);border-radius:10px;min-width:63px;padding:.5rem .2rem .42rem}
+.cd-box span{display:block;font-family:"Playfair Display",serif;font-size:1.45rem;font-weight:700;line-height:1.15}
+.cd-box small{letter-spacing:.13em;font-size:.74rem;text-transform:uppercase;color:var(--copper)}
+.calendar-card{background:#FFFBF0;border:1.5px solid var(--gold);border-radius:12px;padding:1rem 1rem .8rem;max-width:318px;margin:0 auto}
+.cal-title{font-family:"Playfair Display",serif;font-weight:700;color:var(--maroon);margin:.1em 0 .6em}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-size:.97rem}
+.cal-grid b{color:var(--copper);font-size:.78rem;text-transform:uppercase}
+.cal-grid span{padding:.27em 0;border-radius:50%}
+.cal-grid span.mark{background:var(--maroon);color:#FFE9A8;font-weight:700;box-shadow:0 0 0 2px var(--gold)}
+.cal-caption{font-style:italic;margin:.6em 0 .2em;font-size:.98rem}
+.couple-photo{width:min(272px,76vw);margin:0 auto 1.15rem;border-radius:50%/42%;padding:6px;border:1.5px solid var(--gold);outline:1px solid rgba(176,138,79,.4);outline-offset:4px;background:var(--ivory)}
+.couple-photo img{width:100%;border-radius:50%/42%;display:block}
+.person-card{background:rgba(247,240,220,.06);border:1px solid rgba(176,138,79,.55);border-radius:14px;padding:1.05rem 1rem;margin:.75rem auto;max-width:338px}
+.person-card h3{font-family:"Playfair Display",serif;font-size:1.4rem;margin:.15em 0;color:#EBCB8B}
+.person-card .role{letter-spacing:.15em;text-transform:uppercase;font-size:.78rem;color:#C8A66B}
+.person-card p{margin:.3em 0;font-style:italic}
+.amp-medal{width:44px;height:44px;margin:.15rem auto;border-radius:50%;background:var(--maroon);color:#FFE9A8;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-size:1.25rem}
+.demo-note{font-size:.92rem;font-style:italic;opacity:.78;margin-top:1rem}
+.banner-img{width:100%;height:168px;object-fit:cover;border-radius:12px;border:1.5px solid var(--gold);margin-bottom:1.05rem}
+.sched-card{background:#FFFBF0;color:var(--ink);border:1.5px solid var(--gold);border-radius:14px;padding:1.05rem;margin:.65rem auto;max-width:338px}
+.sched-card h3{font-family:"Playfair Display",serif;margin:.1em 0;color:var(--walnut);font-size:1.28rem}
+.sched-card .time{font-weight:700;letter-spacing:.04em;color:var(--maroon)}
+.sched-card p{margin:.25em 0}
+.venue-name{font-family:"Playfair Display",serif;font-size:1.26rem;color:var(--maroon);margin:.9em 0 .2em}
+.venue-addr{margin:.1em 0 1em}
+.btn{display:inline-flex;gap:.45em;align-items:center;font-family:inherit;font-weight:700;font-size:1rem;color:#FBF3DF;background:var(--walnut);border:1.5px solid var(--copper);border-radius:999px;padding:.55em 1.25em;cursor:pointer;text-decoration:none}
+.btn img{filter:invert(92%) sepia(20%)}
+.btn-ghost{background:var(--ivory);color:var(--walnut);border-color:var(--gold)}
+.btn-ghost img{filter:none}
+.btn-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.gallery figure{margin:0;border:1.5px solid var(--gold);border-radius:10px;overflow:hidden;background:#1E1206;cursor:pointer}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.gallery figcaption{color:#EBCB8B;font-size:.94rem;padding:.32em .3em}
+form{display:grid;gap:.75rem;text-align:left;max-width:338px;margin:0 auto}
+form label{font-weight:700;letter-spacing:.04em;font-size:.97rem;color:var(--walnut)}
+form input,form select,form textarea{width:100%;margin-top:.3rem;font-family:inherit;font-size:1.04rem;padding:.55em .7em;border:1.5px solid var(--gold);border-radius:10px;background:#FFFBF0;color:var(--ink)}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--maroon);outline-offset:1px}
+.form-result{font-weight:700;color:var(--maroon);min-height:.4em;text-align:center;margin:.1em 0 0}
+.wishes{max-width:338px;margin:.55rem auto 0;display:grid;gap:.55rem;text-align:left}
+.wish{background:#FFFBF0;border:1px solid var(--gold);border-left:4px solid var(--maroon);border-radius:10px;padding:.55rem .75rem}
+.wish b{color:var(--maroon)} .wish small{opacity:.7} .wish p{margin:.25em 0 0;font-style:italic;max-width:none}
+.gift-card{position:relative;background:#FFFBF0;border:1.5px solid var(--gold);border-radius:14px;padding:1.15rem 1rem 1rem;max-width:338px;margin:.7rem auto}
+.gift-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--maroon);color:#FFE9A8;font-size:.72rem;font-weight:700;letter-spacing:.18em;padding:.22em .9em;border-radius:999px;border:1px solid var(--gold)}
+.gift-card .num{font-family:"Playfair Display",serif;font-size:1.28rem;letter-spacing:.08em;color:var(--walnut);opacity:.75}
+.closing{font-style:italic}
+.monogram{width:104px;margin:.5rem auto;display:block}
+.sign-names{font-family:"Playfair Display",serif;font-size:1.65rem;color:#EBCB8B;margin:.15em 0}
+.closing-scene{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:.4rem;margin-top:.8rem}
+.closing-tree{width:17%;opacity:.55}
+.house-mini{width:44%}
+.closing-orchid{position:absolute;right:2%;bottom:64%;width:52px;opacity:.9}
+.footer{padding:1.05rem;text-align:center;font-size:.92rem;font-style:italic;color:#8A7452;background:var(--cream2)}
+.lightbox{position:fixed;inset:0;z-index:90;background:rgba(20,12,4,.93);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:94vw;max-height:78vh;border:1.5px solid var(--gold);border-radius:10px}
+.lightbox p{color:#EBCB8B;font-family:"Playfair Display",serif}
+.lb-close{position:absolute;top:14px;right:16px;background:none;border:1px solid var(--gold);color:#EBCB8B;border-radius:50%;width:40px;height:40px;font-size:1.05rem;cursor:pointer}
+.music-btn{position:fixed;right:14px;bottom:14px;z-index:60;width:46px;height:46px;border-radius:50%;background:rgba(43,29,15,.88);border:1.5px solid var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.music-btn img{filter:invert(88%) sepia(25%)}
+.music-btn.playing{border-color:#EBCB8B;background:rgba(74,50,32,.95)}
+.js-anim .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+.js-anim .reveal.in{opacity:1;transform:none}
+@media (max-width:360px){
+  .names{font-size:2.25rem}
+  .house{width:64%}
+  .title-block{top:8%}
+  .cd-box{min-width:57px}
+  .sec{padding:2.5rem 1.1rem}
+}
+@media (min-width:768px){
+  .stage{height:min(94svh,920px)}
+  .sec{padding:3.4rem 1.6rem}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+}

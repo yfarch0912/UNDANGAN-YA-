@@ -1,0 +1,284 @@
+/* UndangYa! — Pink Garden Fountain · 2D layered theme
+   Palette measured from reference: base #F2D3D7, rose #DAA3A5, mauve #9D536F, text burgundy #581D31 */
+:root{
+  --base:#F2D3D7; --rose:#DAA3A5; --mauve:#9D536F; --burgundy:#581D31;
+  --cream:#FDF6F1; --ivory:#FFF9F4; --gold:#C8A66B; --pink:#C4708A;
+  --ink:#4A2434; --assets:"assets/undangya/pink-garden-fountain/";
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;color:var(--ink);background:var(--base);overflow-x:hidden}
+body.locked{overflow:hidden;height:100svh}
+img{display:block;max-width:100%}
+.hidden{display:none!important}
+button{font-family:inherit;cursor:pointer}
+
+/* desktop backdrop: widen the garden instead of stretching the stage */
+.page-bg{position:fixed;inset:0;z-index:-1;background:url("assets/undangya/pink-garden-fountain/banners/hero-desktop.webp") center/cover no-repeat;filter:brightness(1.04)}
+.page-bg::after{content:"";position:absolute;inset:0;background:rgba(242,211,215,.45)}
+
+/* ═══ STAGE ═══ */
+.stage{position:relative;width:min(100vw,480px);height:100svh;margin:0 auto;overflow:hidden;background:var(--base);box-shadow:0 0 60px rgba(88,29,49,.28)}
+.world{position:absolute;inset:0;transform-origin:50% 52%;will-change:transform}
+.layer{position:absolute;pointer-events:none}
+.layer-bg{inset:0;width:100%;height:100%;object-fit:cover}
+.layer-mountains{left:-4%;top:13%;width:108%;opacity:.85}
+.layer-whitetree{left:-7%;top:26%;height:52%;width:auto;opacity:.95}
+.layer-stairs{right:-7%;top:44%;height:52%;width:auto;opacity:.95}
+.layer-fountain{left:50%;bottom:24%;width:50%;transform:translateX(-50%)}
+.layer-mist{left:50%;top:15%;width:135%;transform:translateX(-50%);opacity:0}
+.layer-glow{left:50%;bottom:24%;width:44%;transform:translateX(-50%);opacity:.55;mix-blend-mode:screen}
+.layer-flowers{left:-15%;bottom:-1.5%;width:130%}
+.layer-canopy{left:-6%;top:-1.5%;width:112%;filter:brightness(.93) saturate(1.18)}
+.layer-bokeh{inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;mix-blend-mode:screen}
+.layer-vignette{inset:0;width:100%;height:100%;object-fit:cover;opacity:.8}
+.sparkles{position:absolute;inset:0}
+.sparkles i{position:absolute;width:15px;height:15px;background:url("assets/undangya/pink-garden-fountain/patterns/sparkle-sprite.png") center/contain no-repeat;animation:twinkle 2.8s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.1;transform:scale(.65) rotate(0deg)}50%{opacity:1;transform:scale(1.1) rotate(28deg)}}
+
+.title-block{position:absolute;left:0;right:0;top:23.5%;text-align:center;color:var(--burgundy);z-index:6;padding:0 20px}
+.title-block::before{content:"";position:absolute;inset:-64px -46px;background:radial-gradient(ellipse at center,rgba(253,246,241,.68) 0%,rgba(253,246,241,.34) 55%,transparent 78%);z-index:-1;filter:blur(3px)}
+.t-line{opacity:0}
+.t-eyebrow{font-family:'Cormorant Garamond',serif;font-size:.86rem;letter-spacing:.42em;text-transform:uppercase;font-weight:600;text-indent:.42em}
+.names{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.04;margin-top:.35rem}
+.names .name{display:block;font-size:2.75rem;letter-spacing:.14em;text-transform:uppercase;text-indent:.14em}
+.names .amp{display:block;font-size:1.5rem;margin:.1rem 0}
+.t-date{margin-top:.8rem;font-family:'Cormorant Garamond',serif;font-size:1.02rem;letter-spacing:.34em;font-weight:600;text-indent:.34em}
+.final-state .t-line{opacity:1!important;transform:none!important}
+
+.stage-ui{position:absolute;left:0;right:0;bottom:0;z-index:8;display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:0 18px calc(14px + env(safe-area-inset-bottom))}
+.cover-card{background:rgba(253,246,241,.88);backdrop-filter:blur(6px);border:1px solid rgba(200,166,107,.65);border-radius:18px;box-shadow:0 10px 30px rgba(88,29,49,.22), inset 0 0 0 4px rgba(255,255,255,.5);padding:.8rem 1.2rem .85rem;text-align:center;max-width:340px;width:100%}
+.cover-card .seal{margin:-30px auto 2px;width:52px;height:52px;filter:drop-shadow(0 4px 8px rgba(88,29,49,.35))}
+.cover-to{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mauve)}
+.guest{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:600;color:var(--burgundy);margin:.15rem 0 .55rem}
+.btn-open{background:linear-gradient(135deg,#7A2A44,var(--burgundy));color:#FBEEDD;border:1px solid var(--gold);border-radius:999px;padding:.62rem 1.7rem;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 6px 18px rgba(88,29,49,.35);transition:transform .2s, box-shadow .2s}
+.btn-open:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(88,29,49,.4)}
+.cover-note{font-size:.68rem;color:#8A5A6B;margin-top:.45rem;font-style:italic}
+.stage-controls{display:flex;gap:.45rem}
+.pill{background:rgba(88,29,49,.72);color:#F6E3D8;border:1px solid rgba(200,166,107,.8);border-radius:999px;padding:.34rem .85rem;font-size:.72rem;letter-spacing:.06em;backdrop-filter:blur(4px)}
+.pill:hover{background:rgba(88,29,49,.9)}
+
+/* ═══ CONTENT ═══ */
+.content{width:min(100vw,480px);margin:0 auto;background:var(--cream);visibility:hidden}
+body.opened .content{visibility:visible}
+.sec{padding:2.6rem 1.1rem 2.9rem;background:var(--cream) url("assets/undangya/pink-garden-fountain/patterns/floral-tile.webp") center/340px repeat;position:relative}
+.sec.alt{background-color:#F9E8EA}
+.sec.closing{background-color:#F3D9DE}
+.sec-inner{max-width:430px;margin:0 auto;text-align:center;position:relative;z-index:1}
+/* ═══ LATAR PEMANDANGAN TAMAN (menyambung dari Sugeng Rawuh s.d. penutup) ═══ */
+.sec::before{content:"";position:absolute;inset:0;background-size:cover;background-position:center;opacity:.44;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 13%,#000 87%,transparent);mask-image:linear-gradient(to bottom,transparent,#000 13%,#000 87%,transparent)}
+/* lapisan kabut ivory di balik teks agar tulisan selalu terbaca di atas lukisan */
+.sec-inner::before{content:"";position:absolute;inset:-16px -20px;z-index:-1;border-radius:44px;background:radial-gradient(125% 92% at 50% 42%,rgba(253,246,238,.9),rgba(253,246,238,.66) 55%,rgba(253,246,238,0) 79%)}
+.sec-inner h2,.sec-inner h3,.sec-inner h4,.sec-inner p{text-shadow:0 1px 2px rgba(253,246,238,.95),0 0 14px rgba(253,246,238,.9),0 0 30px rgba(253,246,238,.65)}
+/* penutup: lukisan senja lebih padat — redam lebih kuat + kabut lebih pekat */
+#penutup::before{opacity:.36}
+#penutup .sec-inner::before{background:radial-gradient(125% 92% at 50% 42%,rgba(253,246,238,.95),rgba(253,246,238,.78) 55%,rgba(253,246,238,0) 80%)}
+.sec.flip::before{transform:scaleX(-1)}
+#salam::before{background-image:url("assets/undangya/pink-garden-fountain/scenes/scene-altar.webp")}
+#mempelai::before{background-image:url("assets/undangya/pink-garden-fountain/scenes/scene-terrace.webp")}
+#cerita::before{background-image:url("assets/undangya/pink-garden-fountain/scenes/scene-pavilion.webp")}
+#acara::before{background-image:url("assets/undangya/pink-garden-fountain/scenes/scene-altar.webp")}
+#galeri::before{background-image:url("assets/undangya/pink-garden-fountain/scenes/scene-terrace.webp")}
+#amplop::before{background-image:url("assets/undangya/pink-garden-fountain/scenes/scene-pavilion.webp")}
+#rsvp::before{background-image:url("assets/undangya/pink-garden-fountain/scenes/scene-dusk.webp")}
+#penutup::before{background-image:url("assets/undangya/pink-garden-fountain/scenes/scene-dusk.webp")}
+.sec h2{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--burgundy)}
+.sec h3{font-family:'Cormorant Garamond',serif;color:var(--burgundy)}
+.divider{width:170px;margin:.55rem auto 1.1rem}
+.sec p{line-height:1.65;font-weight:300}
+.greeting{font-size:1rem}
+.verse{margin:1.4rem auto 0;background:rgba(255,249,244,.85);border:1px solid rgba(200,166,107,.5);border-radius:14px;padding:1.05rem 1.1rem}
+.verse p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.06rem;color:var(--burgundy)}
+.verse cite{display:block;margin-top:.55rem;font-size:.74rem;letter-spacing:.12em;color:var(--mauve);font-style:normal;text-transform:uppercase}
+
+.countdown-wrap{margin-top:1.8rem}
+.countdown{display:flex;gap:.5rem;justify-content:center;margin-top:.8rem}
+.cd-box{background:linear-gradient(160deg,#7A2A44,var(--burgundy));color:#FBEEDD;border:1px solid var(--gold);border-radius:12px;width:70px;padding:.55rem 0 .45rem;box-shadow:0 6px 14px rgba(88,29,49,.3)}
+.cd-box span{display:block;font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;line-height:1}
+.cd-box small{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose)}
+.cd-passed{margin-top:.8rem;font-style:italic;color:var(--mauve)}
+.mini-cal{margin:1.1rem auto 0;max-width:300px;background:rgba(255,249,244,.9);border:1px solid rgba(200,166,107,.55);border-radius:14px;padding:.8rem .9rem}
+.mini-cal h4{font-family:'Cormorant Garamond',serif;color:var(--burgundy);letter-spacing:.08em;margin-bottom:.5rem}
+.mini-cal table{width:100%;border-collapse:collapse;font-size:.78rem}
+.mini-cal th{color:var(--mauve);font-weight:500;padding:.18rem}
+.mini-cal td{padding:.18rem;color:#7A5566}
+.mini-cal td.mark{background:var(--burgundy);color:#FBEEDD;border-radius:50%;font-weight:600;box-shadow:0 0 0 2px var(--gold)}
+.btn-soft{display:inline-block;margin-top:1rem;background:rgba(255,249,244,.9);color:var(--burgundy);border:1px solid var(--gold);border-radius:999px;padding:.55rem 1.3rem;font-size:.82rem;letter-spacing:.08em;text-decoration:none;cursor:pointer}
+.btn-soft:hover{background:#fff}
+
+.couple-photo{position:relative;margin:0 auto 1.4rem;max-width:300px}
+.couple-photo>img:first-child{width:100%;border-radius:150px 150px 14px 14px;object-fit:cover;aspect-ratio:4/5}
+.couple-photo .arch{position:absolute;inset:-8px auto auto -8px;width:calc(100% + 16px);height:calc(100% + 16px);pointer-events:none}
+.couple-photo figcaption{font-size:.68rem;font-style:italic;color:#97707F;margin-top:.5rem}
+.couple-grid{display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.person{background:rgba(255,249,244,.88);border:1px solid rgba(200,166,107,.5);border-radius:16px;padding:1.05rem 1rem;width:100%}
+.person .avatar{width:118px;height:118px;border-radius:50%;object-fit:cover;margin:0 auto .6rem;border:3px solid var(--gold);box-shadow:0 6px 14px rgba(88,29,49,.25)}
+.person .role{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mauve)}
+.person h3{font-size:1.34rem;margin:.25rem 0}
+.person .parents{font-size:.86rem;color:#7A5566}
+.rings{width:52px;margin:.15rem auto}
+
+.story-list{display:flex;flex-direction:column;gap:.9rem;text-align:left}
+.story-item{background:rgba(255,249,244,.88);border-left:3px solid var(--pink);border-radius:0 14px 14px 0;padding:.95rem 1.05rem}
+.story-item .s-date{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mauve)}
+.story-item h3{font-size:1.22rem;margin:.2rem 0 .3rem}
+.story-item p{font-size:.92rem}
+
+.date-label{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--burgundy)}
+.schedule-list{display:flex;flex-direction:column;gap:.9rem;margin-top:1rem}
+.schedule-item{background:linear-gradient(160deg,#7A2A44,var(--burgundy));color:#FBEEDD;border:1px solid var(--gold);border-radius:16px;padding:1.05rem;box-shadow:0 8px 18px rgba(88,29,49,.28)}
+.schedule-item h3{color:#F6D9A8;font-size:1.35rem;letter-spacing:.06em}
+.schedule-item .s-time{font-size:1.02rem;margin:.25rem 0}
+.schedule-item .s-note{font-size:.84rem;color:var(--rose)}
+.venue-photo{margin:1.3rem auto 0}
+.venue-photo img{width:100%;height:190px;object-fit:cover;border-radius:16px;border:2px solid rgba(200,166,107,.55)}
+.venue-photo figcaption{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:600;color:var(--burgundy);margin-top:.6rem}
+/* ═══ KARTU LOKASI + PETA ILUSTRASI ═══ */
+.loc-card{margin:1.4rem auto 0;background:rgba(253,246,238,.88);border:1.5px solid rgba(200,166,107,.65);border-radius:20px;padding:1.1rem 1.1rem 1.25rem;box-shadow:0 12px 30px rgba(88,29,49,.16)}
+.loc-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--burgundy);letter-spacing:.04em;margin-bottom:.8rem}
+.map-frame{display:block;position:relative;border-radius:14px;overflow:hidden;border:2px solid rgba(200,166,107,.7);box-shadow:inset 0 0 0 4px rgba(253,246,238,.5),0 8px 20px rgba(88,29,49,.18)}
+.map-frame img{width:100%;height:250px;object-fit:cover;object-position:center 32%;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.map-frame:hover img,.map-frame:focus-visible img{transform:scale(1.045)}
+.map-chip{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:rgba(88,29,49,.88);color:#FBEEDD;font-size:.72rem;letter-spacing:.08em;padding:.42rem .85rem;border-radius:999px;border:1px solid rgba(200,166,107,.8);white-space:nowrap;animation:chipPulse 2.6s ease-in-out infinite}
+@keyframes chipPulse{0%,100%{box-shadow:0 0 0 0 rgba(88,29,49,.35)}50%{box-shadow:0 0 0 9px rgba(88,29,49,0)}}
+.venue-name{font-family:'Cormorant Garamond',serif;font-size:1.32rem;font-weight:600;color:var(--burgundy);margin-top:.95rem}
+.loc-card .address{margin-top:.3rem}
+.loc-card .btn-soft{margin-top:.9rem}
+.address{font-size:.9rem;color:#7A5566;max-width:340px;margin:.2rem auto 0}
+
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.gallery figure{border-radius:14px;overflow:hidden;border:2px solid rgba(200,166,107,.5);background:#fff;cursor:pointer}
+.gallery img{width:100%;height:132px;object-fit:cover;transition:transform .4s}
+.gallery figure:hover img{transform:scale(1.06)}
+.gallery figcaption{font-family:'Cormorant Garamond',serif;font-size:.92rem;color:var(--burgundy);padding:.35rem .2rem .45rem}
+.gallery figure:first-child{grid-column:span 2}
+.gallery figure:first-child img{height:170px}
+.sec-note{font-size:.76rem;font-style:italic;color:#97707F;margin:-.4rem auto .9rem;max-width:330px}
+
+.gift-list{display:flex;flex-direction:column;gap:.8rem}
+.gift-item{background:rgba(255,249,244,.92);border:1px solid rgba(200,166,107,.55);border-radius:14px;padding:.95rem 1rem}
+.gift-item .g-bank{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--burgundy)}
+.gift-item .g-num{font-size:1.06rem;letter-spacing:.12em;margin:.2rem 0}
+.gift-item .g-name{font-size:.8rem;color:#7A5566}
+.copy-btn{margin-top:.5rem;background:var(--burgundy);color:#FBEEDD;border:1px solid var(--gold);border-radius:999px;padding:.38rem 1.05rem;font-size:.74rem;letter-spacing:.08em}
+
+form{display:flex;flex-direction:column;gap:.85rem;text-align:left;background:rgba(255,249,244,.88);border:1px solid rgba(200,166,107,.5);border-radius:16px;padding:1.15rem}
+form label{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mauve);display:flex;flex-direction:column;gap:.35rem}
+form input,form select,form textarea{font-family:inherit;font-size:.95rem;color:var(--ink);background:#fff;border:1px solid #E4C4CE;border-radius:10px;padding:.6rem .75rem;text-transform:none;letter-spacing:normal}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.form-error{color:#A1263F;font-size:.84rem}
+.demo-note{font-size:.7rem;font-style:italic;color:#97707F;text-align:center}
+.wishes{margin-top:1.2rem;display:flex;flex-direction:column;gap:.65rem;text-align:left}
+.wish{background:rgba(255,249,244,.92);border:1px solid rgba(200,166,107,.4);border-radius:12px;padding:.75rem .95rem}
+.wish .w-head{display:flex;justify-content:space-between;gap:.6rem;align-items:baseline}
+.wish .w-name{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--burgundy);font-size:1.05rem}
+.wish .w-att{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mauve)}
+.wish p{font-size:.9rem;margin-top:.2rem}
+
+.sign-names{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:var(--burgundy);margin-top:1.1rem;letter-spacing:.06em}
+.butterfly{width:44px;margin:1rem auto 0;animation:flutter 5s ease-in-out infinite}
+@keyframes flutter{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-8px) rotate(5deg)}}
+.brand{margin-top:2rem;border-top:1px solid rgba(200,166,107,.5);padding-top:1.1rem}
+.brand p{font-size:.8rem;letter-spacing:.2em}
+.brand strong{color:var(--mauve)}
+.brand-sub{font-size:.68rem!important;letter-spacing:.04em!important;color:#7A5566;margin-top:.3rem}
+
+.bottom-nav{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(100vw,480px);z-index:20;display:none;background:rgba(88,29,49,.92);backdrop-filter:blur(6px);padding:.55rem .4rem calc(.55rem + env(safe-area-inset-bottom));justify-content:space-around}
+body.opened .bottom-nav{display:flex}
+.bottom-nav a{color:#F6E3D8;text-decoration:none;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.bottom-nav a:hover{color:#F6D9A8}
+
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(46,12,24,.93);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.2rem}
+.lightbox img{max-width:min(92vw,430px);max-height:76svh;border-radius:12px;border:2px solid var(--gold);object-fit:contain}
+.lightbox p{color:#F6E3D8;font-family:'Cormorant Garamond',serif;font-size:1.1rem;margin-top:.8rem}
+.lb-close{position:absolute;top:14px;right:16px;background:none;border:1px solid var(--gold);color:#F6E3D8;width:40px;height:40px;border-radius:50%;font-size:1.3rem}
+
+/* ═══ LIVING GARDEN (redesign gerak) ═══ */
+.pwrap{position:absolute;inset:0;will-change:transform}
+#petalCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:none}
+.ripples{position:absolute;left:50%;bottom:25.2%;width:36%;aspect-ratio:3.4;transform:translateX(-50%);pointer-events:none}
+.ripples i{position:absolute;inset:0;border:1.6px solid rgba(246,217,168,.85);border-radius:50%;opacity:0;animation:ripple 3.9s ease-out infinite}
+.ripples i:nth-child(2){animation-delay:1.3s}
+.ripples i:nth-child(3){animation-delay:2.6s}
+@keyframes ripple{0%{transform:scale(.32);opacity:0}22%{opacity:.75}100%{transform:scale(1);opacity:0}}
+.glints{position:absolute;left:50%;bottom:23.5%;width:40%;height:11%;transform:translateX(-50%);pointer-events:none}
+.glints i{position:absolute;width:13px;height:13px;background:url("assets/undangya/pink-garden-fountain/patterns/sparkle-sprite.png") center/contain no-repeat;animation:twinkle 3.1s ease-in-out infinite}
+.layer-mistpuff{left:50%;bottom:19%;width:74%;transform:translateX(-50%);opacity:.16;animation:mistbreath 7.5s ease-in-out infinite}
+@keyframes mistbreath{0%,100%{opacity:.12;transform:translateX(-50%) scale(1)}50%{opacity:.3;transform:translateX(-50%) scale(1.07)}}
+.cluster{position:absolute;bottom:-3.5%;width:54%;pointer-events:none;z-index:4}
+.cluster-bl{left:-11%;-webkit-mask-image:linear-gradient(to right,#000 70%,transparent 98%);mask-image:linear-gradient(to right,#000 70%,transparent 98%);transform-origin:6% 100%;animation:swayL 6.8s ease-in-out infinite alternate}
+.cluster-br{right:-11%;-webkit-mask-image:linear-gradient(to left,#000 70%,transparent 98%);mask-image:linear-gradient(to left,#000 70%,transparent 98%);transform-origin:94% 100%;animation:swayR 7.6s ease-in-out infinite alternate}
+@keyframes swayL{from{transform:rotate(-1.5deg)}to{transform:rotate(1.7deg) translateX(3px)}}
+@keyframes swayR{from{transform:rotate(1.6deg) translateX(-3px)}to{transform:rotate(-1.4deg)}}
+.blooms{position:absolute;inset:0;pointer-events:none;z-index:4}
+.bloom{position:absolute;width:36px;height:36px;transform:scale(0) rotate(-30deg);transition:transform 1.5s cubic-bezier(.34,1.45,.44,1);filter:drop-shadow(0 2px 5px rgba(88,29,49,.3))}
+.bloom.on{transform:scale(1) rotate(0deg)}
+.bloom svg{width:100%;height:100%}
+.vines{position:absolute;inset:0;pointer-events:none;z-index:3}
+.vine{position:absolute;top:0;height:64%;width:96px;overflow:visible}
+.vine-l{left:-6px}
+.vine-r{right:-6px;transform:scaleX(-1)}
+.vine path.stem{fill:none;stroke:#7A8B6F;stroke-width:2.6;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 2.6s ease .1s}
+.vine .leaf{opacity:0;transition:opacity .8s ease}
+.vines.grown .vine path.stem{stroke-dashoffset:0}
+.vines.grown .vine .leaf{opacity:1}
+/* ═══ ANGIN KENCANG: ranting gantung atas + bunga bawah beraneka ═══ */
+@keyframes windTop{0%{transform:rotate(-5.2deg) translateX(-6px)}25%{transform:rotate(0deg) translateX(0)}50%{transform:rotate(5.2deg) translateX(6px)}75%{transform:rotate(0deg) translateX(0)}100%{transform:rotate(-5.2deg) translateX(-6px)}}
+@keyframes windBot{0%{transform:rotate(-3.9deg) translateX(-5px) skewX(-1deg)}25%{transform:rotate(0deg) translateX(0) skewX(0deg)}50%{transform:rotate(3.9deg) translateX(5px) skewX(1deg)}75%{transform:rotate(0deg) translateX(0) skewX(0deg)}100%{transform:rotate(-3.9deg) translateX(-5px) skewX(-1deg)}}
+.branch-wide{position:absolute;top:-4%;left:-6%;width:112%;z-index:5;pointer-events:none;transform-origin:50% 0%;animation:windTop 5.8s cubic-bezier(.45,.02,.55,.98) infinite}
+.branch-wide img{width:100%;display:block}
+.branch-corner-w{position:absolute;top:-2%;width:44%;z-index:5;pointer-events:none}
+.branch-corner-w img{width:100%;display:block}
+.bc-l{left:-3%;transform-origin:6% 0%;animation:windTop 4.9s cubic-bezier(.45,.02,.55,.98) -1.2s infinite}
+.bc-r{right:-3%;transform-origin:94% 0%;animation:windTop 5.4s cubic-bezier(.45,.02,.55,.98) -2.8s infinite}
+.bc-r img{transform:scaleX(-1)}
+.varied{position:absolute;bottom:-4%;width:52%;z-index:5;pointer-events:none}
+.varied-a{left:-8%;transform-origin:12% 100%;animation:windBot 4.6s cubic-bezier(.45,.02,.55,.98) infinite}
+.varied-b{left:24%;transform-origin:50% 100%;animation:windBot 5.3s cubic-bezier(.45,.02,.55,.98) -1.7s infinite}
+.varied-c{right:-8%;transform-origin:88% 100%;animation:windBot 5s cubic-bezier(.45,.02,.55,.98) -.8s infinite}
+.blooms{z-index:6}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(88,29,49,.55);border:1px solid var(--gold);color:#F6E3D8;width:42px;height:42px;border-radius:50%;font-size:1.5rem;line-height:1;z-index:2}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-nav:hover{background:rgba(88,29,49,.85)}
+/* ═══ TRANSISI TULISAN ═══ */
+.js-anim .tx{opacity:0;transform:translateY(14px);filter:blur(5px);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1),filter .85s ease}
+.js-anim .tx.in{opacity:1;transform:none;filter:blur(0)}
+.sec-inner h2 .w-wrap{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.1em;margin-bottom:-.1em}
+.sec-inner h2 .w-in{display:inline-block;transform:translateY(112%);transition:transform .85s cubic-bezier(.2,.7,.2,1)}
+.js-anim .sec-inner h2.in .w-in{transform:translateY(0)}
+.cd-box span.pop{animation:cdPop .45s ease}
+@keyframes cdPop{35%{transform:scale(1.17);color:#F6D9A8}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.cover-card .seal{animation:fadeUp .8s .1s cubic-bezier(.2,.7,.2,1) backwards}
+.cover-card{animation:fadeUp .9s .3s cubic-bezier(.2,.7,.2,1) backwards}
+.cover-card .cover-note{animation:fadeUp 1s .55s cubic-bezier(.2,.7,.2,1) backwards}
+.btn{transition:transform .25s ease,background-color .3s ease,box-shadow .3s ease}
+.btn:active{transform:scale(.97)}
+.nav-btn{transition:background-color .3s ease,color .3s ease}
+.js-anim .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js-anim .rv.in{opacity:1;transform:none}
+.js-anim .story-item.rv:nth-child(odd){transform:translateX(-18px)}
+.js-anim .story-item.rv:nth-child(even){transform:translateX(18px)}
+.js-anim .story-item.rv.in{transform:none}
+.js-anim .person.rv{transform:translateY(14px) scale(.965)}
+.js-anim .person.rv.in{transform:none}
+
+/* scroll reveal (guarded: only when JS adds .js-anim) */
+.js-anim .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+.js-anim .reveal.in{opacity:1;transform:none}
+
+@media (max-width:360px){.names .name{font-size:2.55rem}.cd-box{width:62px}}
+@media (prefers-reduced-motion: reduce){
+  .sparkles i,.butterfly,.cluster,.ripples i,.glints i,.layer-mistpuff,.branch-wide,.branch-corner-w,.varied,.cover-card,.cover-card .seal,.cover-card .cover-note,.cd-box span.pop,.map-chip{animation:none!important}
+  .js-anim .tx,.sec-inner h2 .w-in{transition:none!important}
+  .bloom{transition:none}
+  .vine path.stem{transition:none;stroke-dashoffset:0}
+  .vine .leaf{opacity:1}
+  html{scroll-behavior:auto}
+}
+
+/* PREVIEW STAGING: strip bunga & kanopi dipecah 2 paruh crossfade (batas upload per-file) */
+.layer-flowers{width:71.5%}
+.fl-a{left:-15%}.fl-b{left:43.5%}
+.layer-canopy{width:61.6%}
+.ca-a{left:-6%}.ca-b{left:44.4%}
