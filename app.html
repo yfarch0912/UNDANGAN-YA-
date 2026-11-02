@@ -1191,7 +1191,31 @@ tailwind.config = { theme: { extend: {
       if (sb && sb.classList.contains("fixed")) toggleMobileSidebar();
     }
 
+    // ===== Aturan Paket Gratis: maksimal 1 proyek undangan =====
+    // Proyek gratis tetap bebas diedit dan diterbitkan (deploy) kapan saja hingga aktif.
+    // Batas hanya berlaku untuk MEMBUAT proyek baru (wizard maupun duplikat).
+    function uyIsFreeTier() {
+      const t = (UndangyaREA.agents.currentUser && UndangyaREA.agents.currentUser.tier) || "Gratis";
+      return String(t).trim().toLowerCase() === "gratis";
+    }
+    function uyProjectLimitReached() {
+      return uyIsFreeTier() && UndangyaREA.events.invitations.length >= 1;
+    }
+    function uyShowUpgradeModal() {
+      openModal(`
+        <div class="text-center space-y-3 py-2">
+          <div class="text-4xl" aria-hidden="true">🔒</div>
+          <h3 class="text-lg font-extrabold text-slate-900">Paket Gratis: 1 Proyek Undangan</h3>
+          <p class="text-sm text-slate-500 leading-relaxed">Akunmu memakai <strong class="text-slate-700">Paket Gratis</strong>, yang hanya mencakup <strong class="text-slate-700">1 proyek undangan</strong>. Proyek gratis yang sudah ada tetap bisa kamu edit dan <strong class="text-slate-700">terbitkan (deploy) kapan saja</strong> sampai aktif. Untuk membuat proyek baru, naik ke paket berbayar terlebih dahulu.</p>
+          <div class="flex gap-2 pt-1">
+            <button type="button" onclick="closeModal()" class="flex-1 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold text-xs transition">Nanti Saja</button>
+            <button type="button" onclick="closeModal(); navigateDash('paket')" class="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-600 hover:opacity-95 text-slate-950 font-extrabold text-xs shadow-md transition">Lihat Paket →</button>
+          </div>
+        </div>`);
+    }
+
     function startCreateInvitationWizard(preselectedTemplateId) {
+      if (uyProjectLimitReached()) { uyShowUpgradeModal(); return; }
       if (preselectedTemplateId) {
         wizardState.selectedTemplateId = preselectedTemplateId;
       }
@@ -1378,6 +1402,10 @@ tailwind.config = { theme: { extend: {
                     <span class="text-slate-300">Undangan aktif</span>
                     <span class="font-extrabold text-white">${stats.publishedCount}/1</span>
                   </div>
+                  <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/10">
+                    <span class="text-slate-300">Proyek undangan</span>
+                    <span class="font-extrabold text-white">${uyIsFreeTier() ? `${stats.totalInvitations}/1 (Gratis)` : `${stats.totalInvitations} (Paket ${u.tier})`}</span>
+                  </div>
                 </div>
                 <p class="text-[11px] text-slate-400 leading-relaxed">
                   Tanpa langganan. Isi Kredit Undangya sekarang atau bayar sekali per acara: Basic Rp50.000, Premium Rp110.000, Eksklusif Rp180.000, Luxury Rp280.000.
@@ -1513,6 +1541,7 @@ tailwind.config = { theme: { extend: {
     }
 
     function duplicateInvitation(invId) {
+      if (uyProjectLimitReached()) { uyShowUpgradeModal(); return; }
       const orig = REA_Repository.getInvitationById(invId);
       if (!orig) return;
       const copy = JSON.parse(JSON.stringify(orig));
@@ -1748,6 +1777,7 @@ tailwind.config = { theme: { extend: {
     }
 
     function confirmCreateNewInvitationFromWizard() {
+      if (uyProjectLimitReached()) { uyShowUpgradeModal(); return; }
       const newInv = JSON.parse(JSON.stringify(UndangyaREA.events.invitations[0]));
       newInv.id = "inv-" + Date.now();
       newInv.slug = Math.random().toString(16).slice(2, 10) + "-9422";
