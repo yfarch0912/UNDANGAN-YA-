@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Masuk — UNDANGYA!</title>
-<meta name="description" content="Masuk ke UndangYA! dengan akun Google untuk membuka dashboard undanganmu.">
+<title>Masuk &amp; Daftar — UNDANGYA!</title>
+<meta name="description" content="Masuk atau daftar UndangYa! gratis. Buat undangan digital pertamamu tanpa kartu kredit — bayar hanya saat publikasi.">
 <link rel="icon" type="image/png" href="assets/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,36 +28,194 @@
       <a href="index.html#harga">Harga</a>
       <a href="login.html" aria-current="page" class="on">Masuk</a>
     </nav>
-    <a class="btn btn-gold btn-sm head-cta" href="checkout.html">Buat Undangan</a>
+    <a class="btn btn-gold btn-sm head-cta" href="login.html?next=app.html">Buat Undangan Gratis</a>
   </div>
 </header>
 
 <main class="auth-main">
-  <div class="auth-card">
-    <img class="auth-logo" src="assets/logo-undangya-horizontal.webp" alt="UndangYA!" width="1800" height="466">
-    <h1>Masuk ke UndangYa!</h1>
-    <p class="auth-sub">Satu akun untuk semua undanganmu. Masuk hanya lewat Google — tanpa kata sandi baru.</p>
-    <div id="gBtn" class="g-btn"></div>
-    <p class="auth-note" id="authNote" hidden></p>
-    <p class="auth-fine">Dengan masuk, kamu menyetujui penggunaan akun Google-mu hanya untuk mengenali identitasmu di UndangYa!.</p>
+  <div class="auth-wrap">
+    <section class="auth-card auth-form-card">
+      <img class="auth-logo" src="assets/logo-undangya-horizontal.webp" alt="UndangYa!" width="1800" height="466">
+      <span class="free-badge">100% Gratis untuk Memulai</span>
+      <h1 id="authTitle">Selamat datang kembali</h1>
+      <p class="auth-sub" id="authSub">Masuk untuk membuka dashboard dan mengelola undanganmu.</p>
+
+      <div class="auth-tabs" role="tablist" aria-label="Masuk atau daftar">
+        <button type="button" class="auth-tab on" id="tabLogin" role="tab" aria-selected="true">Masuk</button>
+        <button type="button" class="auth-tab" id="tabRegister" role="tab" aria-selected="false">Daftar Gratis</button>
+      </div>
+
+      <div id="gBtn" class="g-btn"></div>
+      <div class="auth-divider" id="authDivider"><span>atau lanjutkan dengan email</span></div>
+
+      <form id="loginForm" class="auth-form" novalidate>
+        <label class="auth-field">
+          <span>Email</span>
+          <input type="email" id="loginEmail" autocomplete="email" placeholder="nama@email.com" required>
+        </label>
+        <label class="auth-field">
+          <span>Kata Sandi</span>
+          <span class="auth-pass">
+            <input type="password" id="loginPassword" autocomplete="current-password" placeholder="Kata sandimu" required>
+            <button type="button" class="auth-eye" data-eye="loginPassword" aria-label="Tampilkan kata sandi">Lihat</button>
+          </span>
+        </label>
+        <p class="auth-note" id="loginNote" hidden></p>
+        <button type="submit" class="btn btn-gold auth-submit" id="loginSubmit">Masuk ke Dashboard</button>
+        <p class="auth-switch">Belum punya akun? <a href="#" id="toRegister">Daftar gratis sekarang</a></p>
+      </form>
+
+      <form id="registerForm" class="auth-form" novalidate hidden>
+        <label class="auth-field">
+          <span>Nama Lengkap</span>
+          <input type="text" id="regName" autocomplete="name" placeholder="Namamu" required>
+        </label>
+        <label class="auth-field">
+          <span>Email</span>
+          <input type="email" id="regEmail" autocomplete="email" placeholder="nama@email.com" required>
+        </label>
+        <label class="auth-field">
+          <span>Kata Sandi</span>
+          <span class="auth-pass">
+            <input type="password" id="regPassword" autocomplete="new-password" placeholder="Minimal 8 karakter" required>
+            <button type="button" class="auth-eye" data-eye="regPassword" aria-label="Tampilkan kata sandi">Lihat</button>
+          </span>
+        </label>
+        <p class="auth-note" id="registerNote" hidden></p>
+        <button type="submit" class="btn btn-gold auth-submit" id="registerSubmit">Daftar &amp; Buat Undangan Gratis</button>
+        <p class="auth-free-line">Tanpa kartu kredit · Gratis membuat undangan pertamamu · Batalkan kapan saja</p>
+        <p class="auth-switch">Sudah punya akun? <a href="#" id="toLogin">Masuk di sini</a></p>
+      </form>
+
+      <p class="auth-fine">Dengan masuk atau daftar, kamu menyetujui Ketentuan Layanan dan Kebijakan Privasi UndangYa!. Kata sandi tersimpan terenkripsi (scrypt) — kami tidak pernah melihat kata sandi polosmu.</p>
+    </section>
+
+    <aside class="auth-perks">
+      <p class="micro gold">Kenapa UndangYa!?</p>
+      <h2>Undangan pertamamu, <em>gratis</em>.</h2>
+      <p class="auth-perks-lead">Desain undangan digital premium tanpa membayar di muka. Jelajahi semua template, isi data acaramu, dan pratinjau hasilnya — bayar hanya saat kamu siap mempublikasikan.</p>
+      <ul class="perk-list">
+        <li><strong>Gratis membuat 1 undangan pertama</strong> — semua fitur editor terbuka.</li>
+        <li><strong>10 template premium</strong> — Simple 2D, Motion 2D, Cinematic, sampai 3D Interactive.</li>
+        <li><strong>Foto &amp; teks bebas diganti</strong> — foto pengantin, galeri, cerita, amplop digital.</li>
+        <li><strong>RSVP &amp; buku tamu digital</strong> — konfirmasi kehadiran tercatat rapi di dashboard.</li>
+        <li><strong>Tanpa kartu kredit</strong> — daftar cukup dengan email atau Google.</li>
+      </ul>
+      <div class="perk-price">
+        <span class="perk-price-label">Paket publikasi mulai</span>
+        <span class="perk-price-value">Rp49rb</span>
+        <span class="perk-price-note">sekali bayar per undangan</span>
+      </div>
+    </aside>
   </div>
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
-    <p class="foot-bottom">© <span id="year">2026</span> UndangYA! — etalase demo. Semua nama pasangan, foto, dan data acara di situs ini adalah contoh fiktif untuk keperluan demo.</p>
+    <p class="foot-bottom">© <span id="year">2026</span> UndangYa! — etalase demo. Semua nama pasangan, foto, dan data acara di situs ini adalah contoh fiktif untuk keperluan demo.</p>
   </div>
 </footer>
 
 <script>
 (function () {
-  var note = document.getElementById('authNote');
-  function showNote(msg) { note.textContent = msg; note.hidden = false; }
-  // Sudah masuk? Langsung ke dashboard.
-  fetch('/api/auth/me').then(function (r) { if (r.ok) window.location.replace('dashboard.html'); }).catch(function () {});
+  var params = new URLSearchParams(window.location.search);
+  var next = params.get('next') || 'dashboard.html';
+  if (!/^[a-z0-9\-]+\.html(\?(tema|paket)=[a-z0-9\-]+(&(tema|paket)=[a-z0-9\-]+)?)?$/i.test(next)) next = 'dashboard.html';
+
+  var tabLogin = document.getElementById('tabLogin');
+  var tabRegister = document.getElementById('tabRegister');
+  var loginForm = document.getElementById('loginForm');
+  var registerForm = document.getElementById('registerForm');
+  var title = document.getElementById('authTitle');
+  var sub = document.getElementById('authSub');
+
+  function setMode(register) {
+    tabLogin.classList.toggle('on', !register);
+    tabRegister.classList.toggle('on', register);
+    tabLogin.setAttribute('aria-selected', String(!register));
+    tabRegister.setAttribute('aria-selected', String(register));
+    loginForm.hidden = register;
+    registerForm.hidden = !register;
+    title.textContent = register ? 'Buat akun gratis' : 'Selamat datang kembali';
+    sub.textContent = register
+      ? 'Daftar dalam waktu kurang dari semenit — undangan pertamamu gratis.'
+      : 'Masuk untuk membuka dashboard dan mengelola undanganmu.';
+  }
+  tabLogin.addEventListener('click', function () { setMode(false); });
+  tabRegister.addEventListener('click', function () { setMode(true); });
+  document.getElementById('toRegister').addEventListener('click', function (e) { e.preventDefault(); setMode(true); });
+  document.getElementById('toLogin').addEventListener('click', function (e) { e.preventDefault(); setMode(false); });
+  if (params.get('mode') === 'register') setMode(true);
+
+  document.querySelectorAll('.auth-eye').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var input = document.getElementById(btn.getAttribute('data-eye'));
+      var show = input.type === 'password';
+      input.type = show ? 'text' : 'password';
+      btn.textContent = show ? 'Sembunyi' : 'Lihat';
+    });
+  });
+
+  function showNote(id, msg) {
+    var n = document.getElementById(id);
+    n.textContent = msg; n.hidden = false;
+  }
+  function postJson(url, data) {
+    return fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, status: r.status, body: j }; });
+    });
+  }
+  function goNext() { window.location.replace(next); }
+
+  loginForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('loginSubmit');
+    btn.disabled = true; btn.textContent = 'Memproses…';
+    postJson('/api/auth/login', {
+      email: document.getElementById('loginEmail').value,
+      password: document.getElementById('loginPassword').value
+    }).then(function (res) {
+      if (res.ok) { goNext(); return; }
+      showNote('loginNote', (res.body && res.body.message) || 'Gagal masuk. Coba lagi sebentar.');
+      btn.disabled = false; btn.textContent = 'Masuk ke Dashboard';
+    }).catch(function () {
+      showNote('loginNote', 'Gagal terhubung ke server. Coba lagi sebentar.');
+      btn.disabled = false; btn.textContent = 'Masuk ke Dashboard';
+    });
+  });
+
+  registerForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('registerSubmit');
+    btn.disabled = true; btn.textContent = 'Memproses…';
+    postJson('/api/auth/register', {
+      name: document.getElementById('regName').value,
+      email: document.getElementById('regEmail').value,
+      password: document.getElementById('regPassword').value
+    }).then(function (res) {
+      if (res.ok) { goNext(); return; }
+      if (res.status === 409) setMode(false);
+      showNote(res.status === 409 ? 'loginNote' : 'registerNote',
+        (res.body && res.body.message) || 'Gagal mendaftar. Coba lagi sebentar.');
+      btn.disabled = false; btn.textContent = 'Daftar & Buat Undangan Gratis';
+    }).catch(function () {
+      showNote('registerNote', 'Gagal terhubung ke server. Coba lagi sebentar.');
+      btn.disabled = false; btn.textContent = 'Daftar & Buat Undangan Gratis';
+    });
+  });
+
+  // Sudah masuk? Langsung lanjut.
+  fetch('/api/auth/me').then(function (r) { if (r.ok) goNext(); }).catch(function () {});
+
+  // Tombol Google (bila Client ID terpasang di server).
   fetch('/api/auth/config').then(function (r) { return r.json(); }).then(function (cfg) {
     if (!cfg.googleClientId) {
-      showNote('Login Google belum diaktifkan di server ini — menunggu Client ID Google dipasang.');
+      document.getElementById('gBtn').hidden = true;
+      document.getElementById('authDivider').hidden = true;
       return;
     }
     function init() {
@@ -65,23 +223,25 @@
       google.accounts.id.initialize({
         client_id: cfg.googleClientId,
         callback: function (resp) {
-          fetch('/api/auth/google', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ credential: resp.credential })
-          }).then(function (r) {
-            if (r.ok) { window.location.replace('dashboard.html'); }
-            else { showNote('Gagal masuk. Coba lagi sebentar.'); }
-          }).catch(function () { showNote('Gagal terhubung ke server. Coba lagi sebentar.'); });
+          postJson('/api/auth/google', { credential: resp.credential }).then(function (res) {
+            if (res.ok) { goNext(); }
+            else { showNote('loginNote', 'Gagal masuk dengan Google. Coba lagi sebentar.'); }
+          }).catch(function () { showNote('loginNote', 'Gagal terhubung ke server. Coba lagi sebentar.'); });
         }
       });
       google.accounts.id.renderButton(document.getElementById('gBtn'),
-        { type: 'standard', theme: 'outline', size: 'large', text: 'signin_with', shape: 'pill', width: 280 });
+        { type: 'standard', theme: 'outline', size: 'large', text: 'continue_with', shape: 'pill', width: 280 });
     }
     init();
-  }).catch(function () { showNote('Tidak dapat memuat konfigurasi login.'); });
+  }).catch(function () {});
+
   var y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());
+  var t = document.getElementById('navToggle'), n = document.getElementById('mainNav');
+  if (t && n) t.addEventListener('click', function () {
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', String(open));
+  });
 })();
 </script>
 </body>

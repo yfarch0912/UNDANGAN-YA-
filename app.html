@@ -196,8 +196,37 @@ tailwind.config = { theme: { extend: {
     .font-dancing { font-family: 'Dancing Script', cursive; }
     .font-pinyon { font-family: 'Pinyon Script', cursive; }
   </style>
+  <style>
+    /* Gerbang sesi UndangYa! — dashboard hanya untuk pengguna yang sudah masuk. */
+    #uyVeil{position:fixed;inset:0;z-index:99999;background:#FBF7EF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-family:'Jost',sans-serif;color:#410D19}
+    #uyVeil .uy-veil-brand{font-family:'Cormorant Garamond',serif;font-size:2rem;letter-spacing:.14em}
+    #uyVeil .uy-veil-brand b{color:#A8823C}
+    #uyVeil p{font-size:.85rem;color:#7D6C52;letter-spacing:.05em;margin:0}
+  </style>
+  <script>
+    /* Gerbang sesi: periksa /api/auth/me SEBELUM dashboard dipakai.
+       Belum masuk -> alihkan ke login.html (kembali ke app.html setelah masuk). */
+    window.__uySession = fetch('/api/auth/me', { headers: { 'Accept': 'application/json' } })
+      .then(function (r) {
+        if (!r.ok) { window.location.replace('login.html?next=app.html'); return null; }
+        return r.json();
+      })
+      .then(function (d) {
+        if (!d || !d.user) return null;
+        window.__uyUser = d.user;
+        document.dispatchEvent(new CustomEvent('uy:session', { detail: d.user }));
+        var v = document.getElementById('uyVeil');
+        if (v) v.remove();
+        return d.user;
+      })
+      .catch(function () { window.location.replace('login.html?next=app.html'); });
+  </script>
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-indigo-600 selection:text-white">
+  <div id="uyVeil" role="status" aria-live="polite">
+    <div class="uy-veil-brand">UNDANG<b>YA!</b></div>
+    <p>Memeriksa sesi masuk…</p>
+  </div>
 
   <!-- Bar mode atas (Dasbor / Publik / REA) dihilangkan atas permintaan user (2026-11-01). Aplikasi langsung membuka Studio Dasbor. -->
   <!-- ========================================================================= -->
@@ -4417,6 +4446,35 @@ tailwind.config = { theme: { extend: {
       renderNotificationsList();
       renderDashboardView();
     });
+  </script>
+  <script>
+    /* Identitas sesi asli -> header & data pengguna aplikasi; tombol Keluar asli. */
+    function uyApplyUser(u) {
+      if (!u) return;
+      var name = u.name || 'Pengguna';
+      var hn = document.getElementById('header-user-name'); if (hn) hn.textContent = name;
+      var dn = document.getElementById('dropdown-user-name'); if (dn) dn.textContent = name;
+      var de = document.getElementById('dropdown-user-email'); if (de) de.textContent = u.email || '';
+      try {
+        if (typeof UndangyaREA !== 'undefined' && UndangyaREA.agents && UndangyaREA.agents.currentUser) {
+          UndangyaREA.agents.currentUser.name = name;
+          if (u.email) UndangyaREA.agents.currentUser.email = u.email;
+        }
+      } catch (e) {}
+      var fake = document.querySelector('button[onclick*="Sesi simulasi"]');
+      if (fake && !fake.dataset.uyLogout) {
+        fake.dataset.uyLogout = '1';
+        fake.removeAttribute('onclick');
+        fake.textContent = 'Keluar';
+        fake.addEventListener('click', function () {
+          fetch('/api/auth/logout', { method: 'POST' })
+            .then(function () { window.location.replace('index.html'); })
+            .catch(function () { window.location.replace('index.html'); });
+        });
+      }
+    }
+    if (window.__uyUser) uyApplyUser(window.__uyUser);
+    document.addEventListener('uy:session', function (e) { uyApplyUser(e.detail); });
   </script>
 </body>
 </html>

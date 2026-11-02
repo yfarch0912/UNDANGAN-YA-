@@ -62,6 +62,21 @@
   .b-ok{background:#2e7d32;color:#fff}.b-pending{background:#d9b45c;color:#3d2f05}.b-err{background:#fff;border:1px solid #d88a8a!important;color:#a33}
   footer{text-align:center;color:#7a7161;font-size:.85rem;margin-top:36px}
 </style>
+<script>
+/* Gerbang sesi: checkout hanya untuk pengguna yang sudah masuk.
+   Pilihan tema/paket diteruskan ke halaman login dan kembali ke sini setelah masuk. */
+(function () {
+  var q = new URLSearchParams(location.search);
+  var keep = [];
+  ['tema', 'paket'].forEach(function (k) {
+    var v = q.get(k);
+    if (v && /^[a-z0-9\-]+$/i.test(v)) keep.push(k + '=' + encodeURIComponent(v));
+  });
+  var nxt = 'checkout.html' + (keep.length ? '?' + keep.join('&') : '');
+  function toLogin() { location.replace('login.html?next=' + encodeURIComponent(nxt)); }
+  fetch('/api/auth/me').then(function (r) { if (!r.ok) toLogin(); }).catch(toLogin);
+})();
+</script>
 </head>
 <body>
 <div class="wrap">

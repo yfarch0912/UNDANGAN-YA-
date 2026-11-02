@@ -2,6 +2,7 @@
    verifikasi ke Google, lalu terbitkan cookie sesi UndangYa!.
    Env yang dibutuhkan: GOOGLE_CLIENT_ID, AUTH_SECRET. */
 const { issueSession, sessionCookie } = require("../../lib/session");
+const users = require("../../lib/users");
 
 function readBody(req) {
   if (req.body && typeof req.body === "object") return Promise.resolve(req.body);
@@ -40,7 +41,16 @@ module.exports = async (req, res) => {
     res.status(401).json({ error: "invalid_token" });
     return;
   }
-  const user = { sub: info.sub, email: info.email, name: info.name || "", picture: info.picture || "" };
+  const user = { sub: info.sub, email: info.email, name: info.name || "", picture: info.picture || "", provider: "google" };
+  // Catat akun di penyimpanan pengguna (penyatuan akun dgn login email); gagal catat tidak menggagalkan masuk.
+  if (users.configured()) {
+    try {
+      const existing = await users.getUser(info.email);
+      if (!existing) {
+        await users.createUser({ name: user.name, email: info.email, passwordHash: null, provider: "google" });
+      }
+    } catch (e) { /* abaikan */ }
+  }
   res.setHeader("Set-Cookie", sessionCookie(issueSession(user)));
   res.status(200).json({ ok: true, user: { email: user.email, name: user.name, picture: user.picture } });
 };

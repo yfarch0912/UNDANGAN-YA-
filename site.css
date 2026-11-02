@@ -130,6 +130,15 @@ h2{font-size:clamp(2.1rem,4.4vw,3.4rem);letter-spacing:.005em}
 .hero h1 em{font-style:italic;color:var(--gold)}
 .hero .lead{font-size:1.12rem;line-height:1.7;color:rgba(255,249,240,.82);max-width:52ch;margin:0 0 36px}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-free-note{margin:14px 0 0;font-size:.82rem;letter-spacing:.05em;color:rgba(255,249,240,.72)}
+.free-strip{
+  display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;
+  max-width:1060px;margin:0 auto 26px;position:relative;z-index:1;
+  background:rgba(251,247,239,.06);border:1px solid rgba(199,161,102,.55);border-radius:16px;padding:22px 26px;
+}
+.free-strip-txt p{margin:0;color:rgba(255,249,240,.85);line-height:1.6;font-size:.95rem;max-width:62ch}
+.free-strip-txt .p-name{font-family:var(--serif);font-size:1.3rem;color:var(--warm-white);margin:0 0 4px}
+.free-strip-amount{color:var(--gold);font-size:1.5rem;margin-left:8px}
 .benefits{
   list-style:none;display:flex;gap:0;margin:52px 0 0;padding:22px 0 0;
   border-top:1px solid rgba(255,249,240,.22);max-width:520px;

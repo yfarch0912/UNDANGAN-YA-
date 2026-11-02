@@ -4,5 +4,5 @@ const { readSession } = require("../../lib/session");
 module.exports = (req, res) => {
   const s = readSession(req);
   if (!s) { res.status(401).json({ error: "not_logged_in" }); return; }
-  res.status(200).json({ user: { email: s.email, name: s.name, picture: s.picture } });
+  res.status(200).json({ user: { email: s.email, name: s.name, picture: s.picture, provider: s.provider || "" } });
 };
