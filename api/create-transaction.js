@@ -13,7 +13,7 @@
    - Server Key HANYA dibaca dari environment variable, tidak pernah dikirim ke browser.
    - Harga diambil dari lib/pricing.js di server, bukan dari request browser.
 */
-const { PACKAGES, THEME_SLUGS } = require("../lib/pricing");
+const { PACKAGES, THEME_SLUGS } = require("./_lib/pricing");
 
 function readBody(req) {
   if (req.body && typeof req.body === "object") return Promise.resolve(req.body);

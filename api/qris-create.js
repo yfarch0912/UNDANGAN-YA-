@@ -18,8 +18,8 @@
      resmi user, mis. GoPay Merchant/GoBiz atau bank) -> MODE LIVE.
 */
 const crypto = require("crypto");
-const { PACKAGES, THEME_SLUGS } = require("../lib/pricing");
-const { injectAmount, getTag, buildDemoStaticPayload, isValidCrc } = require("../lib/qris");
+const { PACKAGES, THEME_SLUGS } = require("./_lib/pricing");
+const { injectAmount, getTag, buildDemoStaticPayload, isValidCrc } = require("./_lib/qris");
 
 function readBody(req) {
   if (req.body && typeof req.body === "object") return Promise.resolve(req.body);

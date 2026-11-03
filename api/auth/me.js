@@ -1,5 +1,5 @@
 /* GET /api/auth/me — kembalikan profil pengguna dari cookie sesi (401 bila belum masuk). */
-const { readSession } = require("../../lib/session");
+const { readSession } = require("../_lib/session");
 
 module.exports = (req, res) => {
   const s = readSession(req);

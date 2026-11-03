@@ -39,7 +39,7 @@
       <a href="index#harga">Harga</a>
       <a href="login" aria-current="page" class="on">Masuk</a>
     </nav>
-    <a class="btn btn-gold btn-sm head-cta" href="login?next=app">Buat Undangan Gratis</a>
+    <a class="btn btn-gold btn-sm head-cta" href="login?next=dashboard">Buat Undangan Gratis</a>
   </div>
 </header>
 
@@ -131,9 +131,9 @@
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
-  var next = params.get('next') || 'app';
+  var next = params.get('next') || 'dashboard';
   next = next.replace(/\.html(?=\?|$)/i, ''); // bookmark lama ber-.html tetap sah
-  if (!/^[a-z0-9\-]+(\?(tema|paket)=[a-z0-9\-]+(&(tema|paket)=[a-z0-9\-]+)?)?$/i.test(next)) next = 'app';
+  if (!/^[a-z0-9\-]+(\?(tema|paket)=[a-z0-9\-]+(&(tema|paket)=[a-z0-9\-]+)?)?$/i.test(next)) next = 'dashboard';
 
   var tabLogin = document.getElementById('tabLogin');
   var tabRegister = document.getElementById('tabRegister');

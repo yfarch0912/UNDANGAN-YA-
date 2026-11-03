@@ -1,8 +1,8 @@
 /* POST /api/auth/register — daftar akun email + kata sandi.
    Berhasil: cookie sesi langsung diterbitkan (pengguna langsung masuk).
    Env: AUTH_SECRET, BLOB_READ_WRITE_TOKEN. */
-const { issueSession, sessionCookie } = require("../../lib/session");
-const users = require("../../lib/users");
+const { issueSession, sessionCookie } = require("../_lib/session");
+const users = require("../_lib/users");
 
 function readBody(req) {
   if (req.body && typeof req.body === "object") return Promise.resolve(req.body);

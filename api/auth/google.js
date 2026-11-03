@@ -1,8 +1,8 @@
 /* POST /api/auth/google — terima ID token dari tombol "Sign in with Google",
    verifikasi ke Google, lalu terbitkan cookie sesi UndangYa!.
    Env yang dibutuhkan: GOOGLE_CLIENT_ID, AUTH_SECRET. */
-const { issueSession, sessionCookie } = require("../../lib/session");
-const users = require("../../lib/users");
+const { issueSession, sessionCookie } = require("../_lib/session");
+const users = require("../_lib/users");
 
 function readBody(req) {
   if (req.body && typeof req.body === "object") return Promise.resolve(req.body);

@@ -16,7 +16,7 @@
    lalu aktifkan undangan pembeli saat status menjadi "paid".
 */
 const crypto = require("crypto");
-const { PACKAGES } = require("../lib/pricing");
+const { PACKAGES } = require("./_lib/pricing");
 
 function readBody(req) {
   if (req.body && typeof req.body === "object") return Promise.resolve(req.body);

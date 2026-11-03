@@ -1,5 +1,5 @@
 /* POST /api/auth/logout — hapus cookie sesi. */
-const { clearCookie } = require("../../lib/session");
+const { clearCookie } = require("../_lib/session");
 
 module.exports = (req, res) => {
   res.setHeader("Set-Cookie", clearCookie());
