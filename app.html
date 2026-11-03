@@ -205,10 +205,10 @@ tailwind.config = { theme: { extend: {
   </style>
   <script>
     /* Gerbang sesi: periksa /api/auth/me SEBELUM dashboard dipakai.
-       Belum masuk -> alihkan ke login.html (kembali ke app.html setelah masuk). */
+       Belum masuk -> alihkan ke login (kembali ke app setelah masuk). */
     window.__uySession = fetch('/api/auth/me', { headers: { 'Accept': 'application/json' } })
       .then(function (r) {
-        if (!r.ok) { window.location.replace('login.html?next=app.html'); return null; }
+        if (!r.ok) { window.location.replace('login?next=app'); return null; }
         return r.json();
       })
       .then(function (d) {
@@ -219,7 +219,7 @@ tailwind.config = { theme: { extend: {
         if (v) v.remove();
         return d.user;
       })
-      .catch(function () { window.location.replace('login.html?next=app.html'); });
+      .catch(function () { window.location.replace('login?next=app'); });
   </script>
 </head>
 <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-indigo-600 selection:text-white">
@@ -4498,8 +4498,8 @@ tailwind.config = { theme: { extend: {
         fake.textContent = 'Keluar';
         fake.addEventListener('click', function () {
           fetch('/api/auth/logout', { method: 'POST' })
-            .then(function () { window.location.replace('index.html'); })
-            .catch(function () { window.location.replace('index.html'); });
+            .then(function () { window.location.replace('index'); })
+            .catch(function () { window.location.replace('index'); });
         });
       }
     }

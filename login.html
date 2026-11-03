@@ -13,12 +13,12 @@
 <link rel="stylesheet" href="katalog.css">
 <link rel="stylesheet" href="auth.css">
 <script src="https://accounts.google.com/gsi/client" async defer></script>
-<link rel="canonical" href="https://undangya.web.id/login.html">
+<link rel="canonical" href="https://undangya.web.id/login">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="UNDANGYA!">
 <meta property="og:title" content="Masuk & Daftar — UNDANGYA!">
 <meta property="og:description" content="Masuk atau daftar UndangYa! gratis. Buat undangan digital pertamamu tanpa kartu kredit — bayar hanya saat publikasi.">
-<meta property="og:url" content="https://undangya.web.id/login.html">
+<meta property="og:url" content="https://undangya.web.id/login">
 <meta property="og:image" content="https://undangya.web.id/assets/hero-envelope.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Masuk & Daftar — UNDANGYA!">
@@ -29,17 +29,17 @@
 
 <header class="site-head katalog-head">
   <div class="wrap head-in">
-    <a class="brand-plaque" href="index.html" aria-label="UNDANGYA! — kembali ke beranda">
+    <a class="brand-plaque" href="index" aria-label="UNDANGYA! — kembali ke beranda">
       <img class="brand-full" src="assets/logo-undangya-horizontal.webp" alt="UndangYA!" width="1800" height="466">
     </a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Buka menu navigasi">☰</button>
     <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
-      <a href="index.html">Beranda</a>
-      <a href="katalog.html">Katalog</a>
-      <a href="index.html#harga">Harga</a>
-      <a href="login.html" aria-current="page" class="on">Masuk</a>
+      <a href="index">Beranda</a>
+      <a href="katalog">Katalog</a>
+      <a href="index#harga">Harga</a>
+      <a href="login" aria-current="page" class="on">Masuk</a>
     </nav>
-    <a class="btn btn-gold btn-sm head-cta" href="login.html?next=app.html">Buat Undangan Gratis</a>
+    <a class="btn btn-gold btn-sm head-cta" href="login?next=app">Buat Undangan Gratis</a>
   </div>
 </header>
 
@@ -98,7 +98,7 @@
         <p class="auth-switch">Sudah punya akun? <a href="#" id="toLogin">Masuk di sini</a></p>
       </form>
 
-      <p class="auth-fine">Dengan masuk atau daftar, kamu menyetujui <a href="syarat-ketentuan.html">Syarat &amp; Ketentuan</a> dan <a href="kebijakan-privasi.html">Kebijakan Privasi</a> UndangYa!. Kata sandi tersimpan terenkripsi (scrypt) — kami tidak pernah melihat kata sandi polosmu.</p>
+      <p class="auth-fine">Dengan masuk atau daftar, kamu menyetujui <a href="syarat-ketentuan">Syarat &amp; Ketentuan</a> dan <a href="kebijakan-privasi">Kebijakan Privasi</a> UndangYa!. Kata sandi tersimpan terenkripsi (scrypt) — kami tidak pernah melihat kata sandi polosmu.</p>
     </section>
 
     <aside class="auth-perks">
@@ -123,7 +123,7 @@
 
 <footer class="site-foot">
   <div class="wrap">
-    <p class="foot-legal"><a href="kebijakan-privasi.html">Kebijakan Privasi</a> · <a href="syarat-ketentuan.html">Syarat &amp; Ketentuan</a></p>
+    <p class="foot-legal"><a href="kebijakan-privasi">Kebijakan Privasi</a> · <a href="syarat-ketentuan">Syarat &amp; Ketentuan</a></p>
     <p class="foot-bottom">© <span id="year">2026</span> UndangYa! — etalase demo. Semua nama pasangan, foto, dan data acara di situs ini adalah contoh fiktif untuk keperluan demo.</p>
   </div>
 </footer>
@@ -131,8 +131,9 @@
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
-  var next = params.get('next') || 'app.html';
-  if (!/^[a-z0-9\-]+\.html(\?(tema|paket)=[a-z0-9\-]+(&(tema|paket)=[a-z0-9\-]+)?)?$/i.test(next)) next = 'app.html';
+  var next = params.get('next') || 'app';
+  next = next.replace(/\.html(?=\?|$)/i, ''); // bookmark lama ber-.html tetap sah
+  if (!/^[a-z0-9\-]+(\?(tema|paket)=[a-z0-9\-]+(&(tema|paket)=[a-z0-9\-]+)?)?$/i.test(next)) next = 'app';
 
   var tabLogin = document.getElementById('tabLogin');
   var tabRegister = document.getElementById('tabRegister');

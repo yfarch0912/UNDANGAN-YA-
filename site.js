@@ -75,7 +75,7 @@
   var WEB_FEATS = ['Countdown real-time, galeri foto & lightbox', 'RSVP, buku tamu & amplop digital (demo lokal)', 'Link tamu personal (?to=Nama) siap kirim via WhatsApp'];
 
   /* Tema Web 3D (dari themes.js) DIHAPUS dari katalog atas permintaan user 2026-10-29.
-     Halaman undangan.html & checkout tetap melayani tema-tema itu via tautan langsung. */
+     Halaman undangan & checkout tetap melayani tema-tema itu via tautan langsung. */
   var ENTRIES = [];
 
   ENTRIES.push({
@@ -93,8 +93,8 @@
       'Kebun Doa — klik tanah untuk menanam bunga; ucapan tamu mekar sebagai bunga bernama pengirimnya',
       'Galeri geser dengan lightbox'
     ].concat(WEB_FEATS),
-    preview: 'taman-rahasia.html?to=Tamu%20Undangan',
-    order: 'checkout.html?tema=taman-rahasia&paket=platinum',
+    preview: 'taman-rahasia?to=Tamu%20Undangan',
+    order: 'checkout?tema=taman-rahasia&paket=platinum',
     rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
   });
 
@@ -115,8 +115,8 @@
       'RSVP & buku tamu (demo lokal)',
       'Link tamu personal (?to=Nama) siap kirim via WhatsApp'
     ],
-    preview: 'javanese-illustrated.html?to=Tamu%20Undangan',
-    order: 'checkout.html?tema=javanese-illustrated',
+    preview: 'javanese-illustrated?to=Tamu%20Undangan',
+    order: 'checkout?tema=javanese-illustrated',
     rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
   });
 
@@ -135,8 +135,8 @@
       'Galeri foto dengan lightbox',
       'RSVP & buku tamu (demo lokal)'
     ],
-    preview: 'masjid-bunga.html',
-    order: 'checkout.html?tema=masjid-bunga',
+    preview: 'masjid-bunga',
+    order: 'checkout?tema=masjid-bunga',
     rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
   });
   ENTRIES.push({
@@ -154,8 +154,8 @@
       'Galeri foto dengan lightbox',
       'RSVP & buku tamu (demo lokal)'
     ],
-    preview: 'pink-garden-fountain.html',
-    order: 'checkout.html?tema=pink-garden-fountain',
+    preview: 'pink-garden-fountain',
+    order: 'checkout?tema=pink-garden-fountain',
     rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
   });
   ENTRIES.push({
@@ -174,8 +174,8 @@
       'RSVP (demo lokal) & salin nomor amplop digital',
       'Link tamu personal (?to=Nama) siap kirim via WhatsApp'
     ],
-    preview: 'bali-pastel.html?to=Tamu%20Undangan',
-    order: 'checkout.html?tema=bali-pastel',
+    preview: 'bali-pastel?to=Tamu%20Undangan',
+    order: 'checkout?tema=bali-pastel',
     rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
   });
   ENTRIES.push({
@@ -192,8 +192,8 @@
       'Galeri foto dengan lightbox',
       'RSVP & buku tamu (demo lokal)'
     ],
-    preview: 'burgundy-palace.html',
-    order: 'checkout.html?tema=burgundy-palace',
+    preview: 'burgundy-palace',
+    order: 'checkout?tema=burgundy-palace',
     rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
   });
   ENTRIES.push({
@@ -211,8 +211,8 @@
       'Musik latar setelah undangan dibuka',
       'RSVP (demo lokal) & link tamu personal (?to=Nama)'
     ],
-    preview: 'palace-garden-gate.html?to=Tamu%20Undangan',
-    order: 'checkout.html?tema=palace-garden-gate',
+    preview: 'palace-garden-gate?to=Tamu%20Undangan',
+    order: 'checkout?tema=palace-garden-gate',
     rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
   });
   ENTRIES.push({
@@ -230,8 +230,8 @@
       'Galeri foto dengan lightbox',
       'RSVP (demo lokal)'
     ],
-    preview: 'engraved-highland.html',
-    order: 'checkout.html?tema=engraved-highland',
+    preview: 'engraved-highland',
+    order: 'checkout?tema=engraved-highland',
     rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
   });
   ENTRIES.push({
@@ -248,8 +248,8 @@
       'Galeri foto dengan lightbox',
       'RSVP & buku tamu (demo lokal)'
     ],
-    preview: 'ivory-botanical.html',
-    order: 'checkout.html?tema=ivory-botanical',
+    preview: 'ivory-botanical',
+    order: 'checkout?tema=ivory-botanical',
     rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
   });
 
@@ -269,8 +269,8 @@
       'Musik latar sintesis WebAudio setelah undangan dibuka',
       'RSVP & buku tamu (demo lokal)'
     ].concat(WEB_FEATS),
-    preview: 'emerald-luxe.html?to=Tamu%20Undangan',
-    order: 'checkout.html?tema=emerald-luxe&paket=platinum',
+    preview: 'emerald-luxe?to=Tamu%20Undangan',
+    order: 'checkout?tema=emerald-luxe&paket=platinum',
     rec: '<b>Rekomendasi paket:</b> tema interaktif 3D termasuk di <b>Paket Platinum</b> (Rp399.000).'
   });
 
@@ -291,7 +291,7 @@
       'Deliverable berupa file video — bukan halaman web'
     ],
     preview: null,
-    order: 'checkout.html?paket=platinum',
+    order: 'checkout?paket=platinum',
     rec: '<b>Rekomendasi paket:</b> video undangan adalah deliverable <b>Paket Platinum</b> (Rp399.000).'
   });
 
