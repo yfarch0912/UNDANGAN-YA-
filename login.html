@@ -131,8 +131,8 @@
 <script>
 (function () {
   var params = new URLSearchParams(window.location.search);
-  var next = params.get('next') || 'dashboard.html';
-  if (!/^[a-z0-9\-]+\.html(\?(tema|paket)=[a-z0-9\-]+(&(tema|paket)=[a-z0-9\-]+)?)?$/i.test(next)) next = 'dashboard.html';
+  var next = params.get('next') || 'app.html';
+  if (!/^[a-z0-9\-]+\.html(\?(tema|paket)=[a-z0-9\-]+(&(tema|paket)=[a-z0-9\-]+)?)?$/i.test(next)) next = 'app.html';
 
   var tabLogin = document.getElementById('tabLogin');
   var tabRegister = document.getElementById('tabRegister');
