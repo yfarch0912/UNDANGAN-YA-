@@ -1,7 +1,8 @@
 /* lib/session.js — Sesi login UndangYa!
    Cookie sesi = payload base64url + tanda tangan HMAC-SHA256.
    Kunci tanda tangan HANYA dari env AUTH_SECRET (tidak pernah ke browser).
-   Tanpa database: sesi bersifat stateless, masa berlaku 7 hari. */
+   Sesi bersifat stateless, masa berlaku 7 hari; setiap token membawa jti
+   unik agar bisa dicabut saat logout lewat deny-list di _lib/users.js. */
 const crypto = require("crypto");
 
 const COOKIE_NAME = "uy_session";
@@ -54,6 +55,7 @@ function issueSession(user) {
   return sign({
     sub: user.sub, email: user.email, name: user.name || "", picture: user.picture || "",
     provider: user.provider || "",
+    jti: crypto.randomBytes(16).toString("hex"),
     iat: now, exp: now + MAX_AGE_S
   });
 }

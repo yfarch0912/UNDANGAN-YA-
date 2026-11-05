@@ -116,9 +116,34 @@ async function rateLimitReset(key) {
   await blobPut(path, JSON.stringify({ count: 0, windowStart: Date.now() }));
 }
 
+/* ---- Daftar cabut sesi (deny-list) ----
+   Token sesi bersifat stateless, jadi logout saja tidak cukup: token lama
+   tetap lolos verifikasi tanda tangan. Setiap token membawa jti unik;
+   saat logout, jti dicatat di auth/revoked/<jti>.json = {exp} dan
+   /api/auth/me menolak jti yang tercantum. Token lama tanpa jti tidak
+   dapat dicabut satu-satu dan kedaluwarsa sendiri (maks. 7 hari). */
+function revokedPath(jti) { return "auth/revoked/" + String(jti) + ".json"; }
+async function revokeSession(jti, exp) {
+  if (!jti) return;
+  await blobPut(revokedPath(jti), JSON.stringify({ exp: exp || 0, revokedAt: new Date().toISOString() }));
+}
+async function isSessionRevoked(jti) {
+  if (!jti) return false;
+  try {
+    const t = await blobGet(revokedPath(jti));
+    return !!t;
+  } catch (e) {
+    /* Blob tak terjangkau: jangan kunci semua pengguna keluar.
+       Pencabutan adalah lapisan tambahan; sesi tetap diverifikasi
+       tanda tangan + kedaluwarsanya. */
+    return false;
+  }
+}
+
 module.exports = {
   configured, normalizeEmail, validEmail,
   getUser, putUser, createUser,
   hashPassword, verifyPassword,
   rateLimitCheck, rateLimitReset,
+  revokeSession, isSessionRevoked,
 };
