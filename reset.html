@@ -134,7 +134,7 @@
     e.preventDefault();
     var btn = document.getElementById('requestSubmit');
     btn.disabled = true; btn.textContent = 'Mengirim…';
-    postJson('/api/auth/forgot', {
+    postJson('/api/auth/recovery', {
       email: document.getElementById('resetEmail').value
     }).then(function (res) {
       showNote('requestNote', (res.body && res.body.message) ||
@@ -154,7 +154,7 @@
     if (pw !== pw2) { showNote('setNote', 'Kedua kata sandi tidak sama. Periksa lagi, ya.'); return; }
     var btn = document.getElementById('setSubmit');
     btn.disabled = true; btn.textContent = 'Menyimpan…';
-    postJson('/api/auth/reset', { token: token, password: pw }).then(function (res) {
+    postJson('/api/auth/recovery', { token: token, password: pw }).then(function (res) {
       if (res.ok) {
         showNote('setNote', 'Kata sandi berhasil diubah dan kamu sudah masuk. Mengalihkan ke dashboard…');
         setTimeout(function () { window.location.replace('dashboard'); }, 1200);

@@ -1,8 +1,15 @@
-/* POST /api/auth/forgot — minta tautan atur ulang kata sandi.
-   Respons SELALU generik (200) agar tidak membocorkan email mana yang
-   terdaftar. Token diterbitkan hanya untuk akun yang ada, dibatasi
-   5x per jam per email+IP, dan dikirim via email bila provider aktif
-   (env RESEND_API_KEY + MAIL_FROM). Env: AUTH_SECRET, BLOB_READ_WRITE_TOKEN. */
+/* POST /api/auth/recovery — lupa kata sandi UndangYa! (satu fungsi
+   serverless untuk dua langkah, demi batas jumlah fungsi paket Hobby):
+   - Body {email}            -> minta tautan atur ulang. Respons SELALU
+     generik (200) agar tidak membocorkan email mana yang terdaftar.
+     Token hanya diterbitkan untuk akun yang ada, dibatasi 5x per jam
+     per email+IP, dikirim via email bila provider aktif (env
+     RESEND_API_KEY + MAIL_FROM).
+   - Body {token, password}  -> pasang kata sandi baru. Token sekali
+     pakai, berlaku 1 jam (lihat _lib/users.js). Berhasil: kata sandi
+     terganti + sesi langsung diterbitkan (pengguna langsung masuk).
+   Env: AUTH_SECRET, BLOB_READ_WRITE_TOKEN. */
+const { issueSession, sessionCookie } = require("../_lib/session");
 const users = require("../_lib/users");
 const { mailConfigured, sendMail } = require("../_lib/mail");
 
@@ -30,13 +37,7 @@ function siteOrigin(req) {
   return "https://www.undangya.web.id";
 }
 
-module.exports = async (req, res) => {
-  if (req.method !== "POST") { res.status(405).json({ error: "method_not_allowed" }); return; }
-  if (!process.env.AUTH_SECRET || !users.configured()) {
-    res.status(503).json({ error: "auth_not_configured" });
-    return;
-  }
-  const body = await readBody(req);
+async function handleForgot(req, res, body) {
   const email = users.normalizeEmail(body.email);
   if (!users.validEmail(email)) {
     // Tetap generik: format buruk pun tidak dibedakan responsnya.
@@ -75,4 +76,44 @@ module.exports = async (req, res) => {
     /* Kegagalan penyimpanan/email tidak dibocorkan ke pemanggil. */
   }
   res.status(200).json(GENERIC);
+}
+
+async function handleReset(req, res, body) {
+  const token = String(body.token || "");
+  const password = String(body.password || "");
+  if (password.length < 8) {
+    res.status(400).json({ error: "weak_password", message: "Kata sandi minimal 8 karakter." });
+    return;
+  }
+  try {
+    if (await users.rateLimitCheck("reset:" + clientIp(req), 20, 60 * 60 * 1000)) {
+      res.status(429).json({ error: "too_many_attempts", message: "Terlalu banyak percobaan. Coba lagi nanti." });
+      return;
+    }
+    const passwordHash = await users.hashPassword(password);
+    const user = await users.consumePasswordReset(token, passwordHash);
+    if (!user) {
+      res.status(400).json({
+        error: "invalid_or_expired_token",
+        message: "Tautan atur ulang tidak berlaku atau sudah kedaluwarsa. Minta tautan baru.",
+      });
+      return;
+    }
+    const sessionUser = { sub: "email:" + user.email, email: user.email, name: user.name || "", picture: "", provider: "email" };
+    res.setHeader("Set-Cookie", sessionCookie(issueSession(sessionUser)));
+    res.status(200).json({ ok: true, user: { email: user.email, name: sessionUser.name, picture: "" } });
+  } catch (e) {
+    res.status(502).json({ error: "store_failed", message: "Server penyimpanan tidak merespons. Coba lagi sebentar." });
+  }
+}
+
+module.exports = async (req, res) => {
+  if (req.method !== "POST") { res.status(405).json({ error: "method_not_allowed" }); return; }
+  if (!process.env.AUTH_SECRET || !users.configured()) {
+    res.status(503).json({ error: "auth_not_configured" });
+    return;
+  }
+  const body = await readBody(req);
+  if (body && body.token) { await handleReset(req, res, body); return; }
+  await handleForgot(req, res, body);
 };

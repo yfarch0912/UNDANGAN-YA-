@@ -34,6 +34,17 @@ function readBody(req) {
 function sanitize(s, max) { return String(s || "").trim().slice(0, max || 100); }
 
 module.exports = async function handler(req, res) {
+  /* Mode config (bekas fungsi /api/qris-config, digabung demi batas
+     jumlah fungsi serverless; URL lama dipertahankan lewat rewrite
+     di vercel.json -> /api/qris-create?mode=config):
+     "live" bila payload statis merchant terpasang, selain itu "demo".
+     Payload statis TIDAK PERNAH dikirim ke browser. */
+  if (req.query && req.query.mode === "config") {
+    if (req.method !== "GET") { res.status(405).json({ error: "Method not allowed" }); return; }
+    res.setHeader("Cache-Control", "no-store");
+    res.status(200).json({ mode: process.env.QRIS_STATIC_PAYLOAD ? "live" : "demo" });
+    return;
+  }
   if (req.method !== "POST") { res.status(405).json({ error: "Method not allowed" }); return; }
 
   const body = await readBody(req);

@@ -1,5 +1,8 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/api/qris-config", "destination": "/api/qris-create?mode=config" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
