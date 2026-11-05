@@ -140,10 +140,61 @@ async function isSessionRevoked(jti) {
   }
 }
 
+/* ---- Token atur ulang kata sandi (lupa sandi) ----
+   Token mentah (32 byte acak) HANYA ada di tautan email; yang disimpan
+   di Blob adalah sha256-nya: auth/resets/<sha256(token)>.json =
+   {email, exp, used}. Masa berlaku 1 jam, sekali pakai. Penunjuk token
+   terakhir per pengguna (auth/reset-latest/<sha256(email)>.json) membuat
+   permintaan baru membatalkan tautan lama. */
+const RESET_TTL_MS = 60 * 60 * 1000;
+function resetPath(tokenHash) { return "auth/resets/" + tokenHash + ".json"; }
+function resetLatestPath(email) { return "auth/reset-latest/" + sha256(normalizeEmail(email)) + ".json"; }
+
+async function createPasswordReset(email) {
+  const token = crypto.randomBytes(32).toString("hex");
+  const tokenHash = sha256(token);
+  try {
+    const prev = await blobGet(resetLatestPath(email));
+    if (prev) {
+      const p = JSON.parse(prev);
+      if (p && p.tokenHash && p.tokenHash !== tokenHash) {
+        await blobPut(resetPath(p.tokenHash), JSON.stringify({ invalidated: true, exp: 0 }));
+      }
+    }
+  } catch (e) { /* penunjuk lama tak terbaca: lanjut, token baru tetap terbit */ }
+  await blobPut(resetPath(tokenHash), JSON.stringify({
+    email: normalizeEmail(email),
+    exp: Date.now() + RESET_TTL_MS,
+    createdAt: new Date().toISOString(),
+    used: false,
+  }));
+  await blobPut(resetLatestPath(email), JSON.stringify({ tokenHash: tokenHash }));
+  return token;
+}
+
+async function consumePasswordReset(token, newPasswordHash) {
+  if (!/^[a-f0-9]{64}$/.test(String(token || ""))) return null;
+  const tokenHash = sha256(String(token));
+  const t = await blobGet(resetPath(tokenHash));
+  if (!t) return null;
+  let rec;
+  try { rec = JSON.parse(t); } catch (e) { return null; }
+  if (!rec || rec.used || rec.invalidated || !rec.exp || Date.now() > rec.exp || !rec.email) return null;
+  const user = await getUser(rec.email);
+  if (!user) return null;
+  user.passwordHash = newPasswordHash;
+  await putUser(user);
+  await blobPut(resetPath(tokenHash), JSON.stringify({
+    used: true, usedAt: new Date().toISOString(), email: rec.email,
+  }));
+  return user;
+}
+
 module.exports = {
   configured, normalizeEmail, validEmail,
   getUser, putUser, createUser,
   hashPassword, verifyPassword,
   rateLimitCheck, rateLimitReset,
   revokeSession, isSessionRevoked,
+  createPasswordReset, consumePasswordReset,
 };
