@@ -129,15 +129,24 @@ async function revokeSession(jti, exp) {
 }
 async function isSessionRevoked(jti) {
   if (!jti) return false;
-  try {
-    const t = await blobGet(revokedPath(jti));
-    return !!t;
-  } catch (e) {
-    /* Blob tak terjangkau: jangan kunci semua pengguna keluar.
-       Pencabutan adalah lapisan tambahan; sesi tetap diverifikasi
-       tanda tangan + kedaluwarsanya. */
-    return false;
+  /* Baca dengan pengulangan (keputusan user 2026-11-06): gangguan sesaat
+     di Blob — error baca maupun 404 semu sesaat setelah PUT logout —
+     beberapa kali meloloskan token yang sudah dicabut (audit 2026-11-06
+     09:05 & 21:05). Hingga 3 percobaan (jeda 150ms lalu 400ms); berhenti
+     begitu catatan cabut ketemu. Gangguan yang teramati bersifat acak
+     per-permintaan, jadi peluang lolos turun pangkat tiga.
+     Tetap fail-open bila semua percobaan gagal: jangan kunci semua
+     pengguna keluar. Pencabutan adalah lapisan tambahan; sesi tetap
+     diverifikasi tanda tangan + kedaluwarsanya. */
+  const delays = [0, 150, 400];
+  for (let i = 0; i < delays.length; i++) {
+    if (delays[i]) await new Promise((r) => setTimeout(r, delays[i]));
+    try {
+      const t = await blobGet(revokedPath(jti));
+      if (t) return true;
+    } catch (e) { /* coba lagi; fail-open hanya setelah percobaan terakhir */ }
   }
+  return false;
 }
 
 /* ---- Token atur ulang kata sandi (lupa sandi) ----
