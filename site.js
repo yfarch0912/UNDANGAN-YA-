@@ -283,7 +283,7 @@
   });
 
   ENTRIES.push({
-    slug: 'bioskop-mini', name: 'Bioskop Mini',
+    slug: 'bioskop-mini', name: 'Bioskop Mini', pos: '50% 62%',
     tagline: 'Premier film pribadi — poster sinematik, opening trailer, galeri filmstrip & RSVP tiket yang disobek',
     cat: 'ilustrasi',
     bg: 'linear-gradient(170deg,#0d0d10,#2a0a12 55%,#17110d)',
@@ -466,9 +466,7 @@
     var num = ('0' + (i + 1)).slice(-2);
     var artInner = e.cat === 'video'
       ? '<span class="a-film" aria-hidden="true"><img src="assets/video-1.jpg" alt="" loading="lazy"><img src="assets/video-2.jpg" alt="" loading="lazy"><img src="assets/video-3.jpg" alt="" loading="lazy"></span>'
-      : '<span class="a-orn" aria-hidden="true">' + e.orn + '</span>' +
-        '<span class="a-shape" aria-hidden="true" style="color:' + e.ring2 + '">' + SHAPE_GLYPH[e.shape] + '</span>' +
-        '<span class="rings" aria-hidden="true"><i style="border-color:' + e.ring + '"></i><i style="border-color:' + e.ring2 + '"></i></span>';
+      : '<img class="a-img" src="assets/katalog/' + e.slug + '.webp" alt="Cuplikan desain ' + e.name + '" width="640" height="800" loading="lazy"' + (e.pos ? ' style="object-position:' + e.pos + '"' : '') + '>';
     return '<article class="card' + (i % 5 === 4 ? ' wide' : '') + '">' +
       '<div><p class="c-num"><span>Nº ' + num + '</span><span class="c-cat">' + CAT_LABEL[e.cat] + '</span></p>' +
       '<button type="button" class="card-art" data-qv="' + e.slug + '" style="background:' + e.bg + '" aria-label="Lihat detail ' + e.name + '">' + artInner + '</button></div>' +
@@ -552,9 +550,7 @@
         '<figure><img src="assets/video-3.jpg" alt=""></figure></div>' +
         '<button type="button" class="qv-close" data-close aria-label="Tutup detail">✕</button>';
     } else {
-      artInner = '<span class="a-orn" aria-hidden="true">' + e.orn + '</span>' +
-        '<span class="a-shape" aria-hidden="true" style="color:' + e.ring2 + '">' + SHAPE_GLYPH[e.shape] + '</span>' +
-        '<span class="rings" aria-hidden="true"><i style="border-color:' + e.ring + '"></i><i style="border-color:' + e.ring2 + '"></i></span>' +
+      artInner = '<img class="qv-img" src="assets/katalog/' + e.slug + '.webp" alt="Cuplikan desain ' + e.name + '" width="640" height="800"' + (e.pos ? ' style="object-position:' + e.pos + '"' : '') + '>' +
         '<button type="button" class="qv-close" data-close aria-label="Tutup detail">✕</button>';
     }
     qvContent.innerHTML =

@@ -319,6 +319,7 @@ h2{font-size:clamp(2.1rem,4.4vw,3.4rem);letter-spacing:.005em}
 .card-art .a-shape{position:absolute;top:12px;right:14px;font-size:.95rem}
 .card-art .a-film{position:absolute;inset:0;display:flex}
 .card-art .a-film img{width:33.334%;height:100%;object-fit:cover}
+.card-art .a-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .card-body{padding:16px 2px 0;display:flex;flex-direction:column;flex:1}
 .card-name{font-size:2rem;line-height:1.15;color:var(--ink);text-align:left;padding:0;transition:color .2s}
 .card-name:hover{color:var(--burgundy-2)}
@@ -533,6 +534,7 @@ h2{font-size:clamp(2.1rem,4.4vw,3.4rem);letter-spacing:.005em}
 .qv-art .a-orn{position:absolute;top:16px;left:20px;font-size:1.4rem;color:var(--ink-soft)}
 .qv-art .a-shape{position:absolute;top:16px;right:20px}
 .qv-art .filmstrip{padding:0}
+.qv-art .qv-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .qv-close{
   position:absolute;top:10px;right:10px;z-index:2;width:42px;height:42px;border-radius:50%;
   background:var(--warm-white);border:1px solid var(--line-strong);font-size:1.05rem;line-height:1;
