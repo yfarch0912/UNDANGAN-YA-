@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Surat Hidup — Meyzsa &amp; Fahrezzi · UndangYa!</title>
+<meta name="description" content="Undangan pernikahan digital tema Surat Hidup: surat cinta yang hidup — segel lilin yang pecah, taman kertas yang tumbuh mengikuti scroll. Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Italianno&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f0e1; --paper-2:#f1e6cf; --paper-3:#e9dcbf;
+  --ink:#4a3421; --ink-soft:#7a5c3e; --ink-faint:#a08059;
+  --burgundy:#7e2233; --seal:#8c2438; --seal-dark:#5f1626;
+  --sage:#7d8b6a; --olive:#5f7052; --gold:#b98e46; --gold-soft:#d3af6d;
+  --dark:#161009; --dark-2:#241a10;
+  --shadow:0 18px 44px rgba(30,18,6,.35);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --hand:'Great Vibes',cursive;
+  --hand2:'Italianno',cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--serif); color:var(--ink); background:var(--dark);
+  background-image:radial-gradient(1200px 700px at 50% -10%,#33241280,transparent 60%),
+                   radial-gradient(900px 600px at 85% 110%,#3d241333,transparent 60%);
+  min-height:100vh;
+}
+body.locked{overflow:hidden}
+/* ===== Kolom HP ===== */
+.phone{
+  position:relative; max-width:430px; margin:0 auto; min-height:100vh;
+  background:
+    radial-gradient(ellipse 340px 120px at 12% 4%, #e6d3ab55, transparent 70%),
+    radial-gradient(ellipse 300px 160px at 88% 32%, #dfc99e40, transparent 70%),
+    radial-gradient(ellipse 380px 140px at 8% 68%, #e6d3ab4d, transparent 70%),
+    linear-gradient(175deg,var(--paper) 0%,var(--paper-2) 55%,var(--paper) 100%);
+  box-shadow:0 0 0 1px #00000055, 0 0 70px #000000a0;
+  overflow:hidden;
+}
+.paper-grain{position:absolute; inset:0; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.34 0 0 0 0 0.18 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");}
+/* ===== Taman kertas tumbuh (tepi halaman) ===== */
+.garden{position:fixed; top:0; bottom:0; width:min(430px,100vw); left:50%; transform:translateX(-50%);
+  pointer-events:none; z-index:5; overflow:hidden}
+.garden svg{position:absolute; bottom:0; height:100%; width:64px}
+.garden .vine-l{left:-6px}.garden .vine-r{right:-6px; transform:scaleX(-1)}
+.vine-stem{fill:none; stroke:var(--olive); stroke-width:2.6; stroke-linecap:round}
+.vine-leaf{fill:var(--sage); transform-box:fill-box; transform-origin:bottom center; transform:scale(0); transition:transform .8s cubic-bezier(.34,1.56,.64,1)}
+.vine-leaf.on{transform:scale(1)}
+.vine-bloom{transform-box:fill-box; transform-origin:center; transform:scale(0); transition:transform .9s cubic-bezier(.34,1.8,.64,1)}
+.vine-bloom.on{transform:scale(1)}
+/* ===== Kupu-kupu kertas ===== */
+.butterfly{position:fixed; z-index:6; width:30px; height:24px; pointer-events:none; opacity:.9}
+.butterfly .wing{transform-box:fill-box; animation:flap .34s ease-in-out infinite alternate}
+.butterfly .wing.l{transform-origin:right center}.butterfly .wing.r{transform-origin:left center}
+@keyframes flap{from{transform:scaleX(.35)}to{transform:scaleX(1)}}
+/* ===== Cover / Amplop Premium ===== */
+.cover{position:fixed; inset:0; z-index:60; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:min(430px,100vw); margin:0 auto; padding:22px 14px; overflow:hidden;
+  background:radial-gradient(760px 520px at 50% 32%,#3d2a13,transparent 70%),linear-gradient(180deg,#1f150a,#110b05);
+  transition:opacity .9s ease, visibility .9s}
+.cover.done{opacity:0; visibility:hidden; pointer-events:none}
+.cover-flora{position:absolute; width:104px; opacity:.38; pointer-events:none}
+.cover-flora.cf-tl{top:12px; left:8px; transform:rotate(10deg)}
+.cover-flora.cf-br{bottom:10px; right:6px; transform:rotate(178deg)}
+.cover-top{position:relative; z-index:2; color:#e9dcc0; text-align:center; margin-bottom:4px}
+.cover-top .brand{letter-spacing:.42em; font-size:11px; text-transform:uppercase; color:var(--gold-soft)}
+.cover-orn{display:block; margin:9px auto 1px; width:124px}
+.cover-top h1{font-family:var(--hand); font-weight:400; font-size:43px; color:#f3e7cd; margin-top:4px; line-height:1.1}
+.cover-top p{font-style:italic; color:#c9b28a; font-size:15px; margin-top:3px}
+/* Panggung meja: tumpukan kertas + doily di bawah amplop */
+.env-stage{position:relative; z-index:2; width:min(384px,97vw); display:flex; justify-content:center; padding:26px 6px 22px}
+.env-stage::before{content:""; position:absolute; inset:4% 0; background:radial-gradient(closest-side,#d3af6d26,transparent 72%); filter:blur(5px)}
+.desk{position:absolute; left:50%; top:50%; width:min(338px,87vw); height:230px; border-radius:8px; box-shadow:0 16px 30px rgba(0,0,0,.35)}
+.desk.p1{transform:translate(-53%,-47%) rotate(-4.6deg); background:linear-gradient(160deg,#ead9b4,#dcc79c)}
+.desk.p2{transform:translate(-47%,-53%) rotate(3.2deg); background:linear-gradient(160deg,#f1e4c3,#e5d1a7)}
+.doily{position:absolute; left:50%; bottom:-34px; transform:translateX(-50%); width:292px; height:292px; border-radius:50%;
+  background-image:radial-gradient(circle,#f3e9d2 4.6px, rgba(0,0,0,0) 5.7px); background-size:19px 19px; background-position:-9px -9px; opacity:.32}
+.envelope{position:relative; width:min(356px,90vw); height:252px; perspective:1000px; filter:drop-shadow(0 26px 24px rgba(0,0,0,.5))}
+.env-back{position:absolute; inset:0; border-radius:10px; z-index:1;
+  background:linear-gradient(165deg,#f3e8cc,#e7d4ac);
+  box-shadow:inset 0 0 0 1px #c9ae76, inset 0 0 0 5px #f5ecd4, inset 0 0 0 6px #dbc894, inset 0 -18px 30px rgba(160,128,89,.20)}
+.env-letter{position:absolute; left:20px; right:20px; top:12px; height:196px; border-radius:5px; z-index:2;
+  background-image:repeating-linear-gradient(180deg, rgba(0,0,0,0) 0 25px, rgba(160,128,89,.15) 25px 26px), linear-gradient(180deg,#fdf9ef,#f7edd7);
+  box-shadow:0 3px 10px rgba(74,52,33,.22), inset 0 0 0 1px #e3d3ab;
+  transition:transform 1s cubic-bezier(.22,.9,.3,1) .95s}
+.env-letter::before{content:""; position:absolute; top:30px; left:30px; right:30px; height:6px;
+  border-top:1.6px solid rgba(185,142,70,.65); border-bottom:.8px solid rgba(185,142,70,.5)}
+.env-letter .motif{position:absolute; left:50%; top:102px; transform:translateX(-50%); width:126px}
+.envelope.opening .env-letter{transform:translateY(-56%) scale(1.03)}
+.env-pocket{position:absolute; inset:0; border-radius:10px; z-index:3;
+  background:linear-gradient(205deg,#f2e6c7 0%,#e4d0a4 100%);
+  clip-path:polygon(0 30%,50% 62%,100% 30%,100% 100%,0 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.55), inset 0 -14px 22px rgba(160,128,89,.16)}
+/* Flap: sisi depan kertas tepi foil emas + liner floral burgundy */
+.env-flap-wrap{position:absolute; left:0; right:0; top:0; height:42%; z-index:4;
+  transform-origin:top center; transform-style:preserve-3d; transition:transform .8s ease .45s}
+.envelope.opening .env-flap-wrap{transform:rotateX(178deg); z-index:1}
+.flap-face{position:absolute; inset:0; clip-path:polygon(0 0,100% 0,50% 100%); backface-visibility:hidden; -webkit-backface-visibility:hidden}
+.flap-front{background:linear-gradient(180deg,#efdfba,#dec698)}
+.flap-front::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg,#dcbd7a,#b98e46); clip-path:polygon(0 0,100% 0,50% 100%)}
+.flap-front::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,#f1e2bd,#e3ce9f); clip-path:polygon(1.8% 4.5%,98.2% 4.5%,50% 95%)}
+.flap-liner{transform:rotateX(180deg); background-color:#7c2233;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44'%3E%3Cg fill='none' stroke='%23d3af6d' stroke-opacity='.45' stroke-width='1.1'%3E%3Cpath d='M22 34 C22 26 22 20 22 12'/%3E%3Cpath d='M22 24 C17 24 14 21 13 16 C18 17 21 19 22 24 Z' fill='%23d3af6d' fill-opacity='.18'/%3E%3Cpath d='M22 20 C27 20 30 17 31 12 C26 13 23 15 22 20 Z' fill='%23d3af6d' fill-opacity='.18'/%3E%3Ccircle cx='22' cy='9' r='2.4' fill='%23d3af6d' fill-opacity='.5' stroke='none'/%3E%3C/g%3E%3C/svg%3E"), radial-gradient(circle at 50% 0%, #9c3049, #671b2a 78%)}
+.flap-liner::after{content:""; position:absolute; left:50%; bottom:9px; width:20px; height:18px; transform:translateX(-50%); opacity:.92;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 20.5 C6 16.5 3.5 13 3.5 9.6 C3.5 7 5.5 5 8 5 C9.7 5 11.2 5.9 12 7.2 C12.8 5.9 14.3 5 16 5 C18.5 5 20.5 7 20.5 9.6 C20.5 13 18 16.5 12 20.5 Z' fill='%23d3af6d'/%3E%3C/svg%3E") center/contain no-repeat}
+/* Perangko besar bergerigi + cap pos + garis gelombang */
+.env-stamp{position:absolute; top:14px; right:14px; z-index:6; width:64px; height:78px; padding:6px; transform:rotate(4deg);
+  background-image:radial-gradient(circle, rgba(0,0,0,0) 3.3px, #fffdf4 4px); background-size:12px 12px; background-position:-6px -6px;
+  filter:drop-shadow(0 3px 5px rgba(60,38,14,.4))}
+.env-stamp img{width:100%; height:calc(100% - 13px); object-fit:cover; display:block; outline:1px solid #d8c69a}
+.env-stamp span{display:block; text-align:center; font-size:8px; letter-spacing:.16em; color:var(--ink-soft); margin-top:2px}
+.env-postmark{position:absolute; top:16px; right:86px; z-index:6; width:76px; height:76px; border:1.6px solid #7e223399;
+  border-radius:50%; transform:rotate(-13deg); color:#7e2233b8; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  font-size:7.8px; letter-spacing:.13em; text-transform:uppercase; text-align:center; line-height:1.55; background:rgba(247,240,225,.18)}
+.env-postmark::after{content:""; position:absolute; inset:5px; border:1px solid #7e223355; border-radius:50%}
+.env-waves{position:absolute; top:38px; right:148px; z-index:5; width:104px; height:30px; transform:rotate(-5deg); opacity:.5}
+.env-ribbon{position:absolute; left:8px; bottom:8px; z-index:6; width:76px; filter:drop-shadow(0 3px 4px rgba(60,20,20,.35))}
+/* Segel lilin kecil refined: blob SVG organik + monogram foil emas */
+.seal-wrap{position:absolute; left:50%; top:106px; transform:translate(-50%,-50%); z-index:7;
+  width:80px; height:80px; cursor:pointer; background:none; border:none; padding:0}
+.seal-wrap:focus-visible{outline:2px dashed var(--gold); outline-offset:4px; border-radius:50%}
+.envelope.opening .seal-wrap{pointer-events:none}
+.seal-svg{width:100%; height:100%; display:block; filter:drop-shadow(0 5px 9px rgba(40,8,16,.5))}
+.seal-half-svg{transform-box:fill-box; transform-origin:center; transition:transform .55s cubic-bezier(.5,0,.8,.4), opacity .55s}
+.envelope.opening .seal-half-svg.left{transform:translate(-25px,17px) rotate(-11deg) scale(.9); opacity:.94}
+.envelope.opening .seal-half-svg.right{transform:translate(25px,17px) rotate(10deg) scale(.9); opacity:.94}
+.seal-mono{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:2;
+  font-family:var(--serif); font-weight:600; font-size:19px; letter-spacing:.05em;
+  background:linear-gradient(160deg,#fae5ae,#dcb25e 58%,#f3d68b); -webkit-background-clip:text; background-clip:text; color:transparent;
+  transition:opacity .3s}
+.seal-mono small{font-size:12px; margin:0 2px}
+.envelope.opening .seal-mono{opacity:0}
+/* Aksesoris panggung */
+.acc-bouquet{position:absolute; left:-14px; bottom:0; z-index:5; width:92px; transform:rotate(-7deg); filter:drop-shadow(0 6px 8px rgba(0,0,0,.35))}
+.acc-quill{position:absolute; right:-12px; bottom:-2px; z-index:5; width:98px; transform:rotate(6deg); filter:drop-shadow(0 6px 8px rgba(0,0,0,.3))}
+/* Pelat nama tamu: terpisah, berbingkai emas + ornamen sudut */
+.guest-plate{position:relative; z-index:2; margin-top:24px; width:min(332px,88vw); text-align:center; padding:15px 24px 13px;
+  background:linear-gradient(180deg,#fdf8ec,#f3e8cf); border:1px solid #cbb27f; border-radius:4px;
+  box-shadow:0 16px 32px rgba(0,0,0,.45), inset 0 0 0 4px #faf3e0, inset 0 0 0 5px rgba(202,166,87,.55)}
+.plate-corner{position:absolute; width:25px; height:25px; color:var(--gold)}
+.plate-corner.tl{top:4px; left:4px}
+.plate-corner.tr{top:4px; right:4px; transform:scaleX(-1)}
+.plate-corner.bl{bottom:4px; left:4px; transform:scaleY(-1)}
+.plate-corner.br{bottom:4px; right:4px; transform:scale(-1)}
+.guest-plate .a1{font-size:12px; font-style:italic; color:var(--ink-soft); letter-spacing:.05em}
+.guest-plate .a2{font-family:var(--hand2); font-size:35px; line-height:1.12; color:var(--burgundy); margin:1px 0}
+.guest-plate .a3{font-size:12.5px; font-style:italic; color:var(--ink-soft)}
+.cover-hint{margin-top:20px; color:#d8c096; font-style:italic; font-size:15.5px; text-align:center; animation:hintpulse 2.4s ease-in-out infinite}
+@keyframes hintpulse{0%,100%{opacity:.55}50%{opacity:1}}
+.cover-from{margin-top:7px; color:#9a7f57; font-size:12.5px; letter-spacing:.18em; text-transform:uppercase}
+
+/* ===== Isi surat ===== */
+main{position:relative; z-index:2; padding:0 22px 120px}
+section{position:relative; padding:56px 0 8px}
+.kicker{text-align:center; font-size:11.5px; letter-spacing:.4em; text-transform:uppercase; color:var(--ink-faint)}
+h2.title{font-family:var(--hand); font-weight:400; font-size:41px; text-align:center; color:var(--burgundy); line-height:1.15; margin:6px 0 4px}
+.rule{display:flex; align-items:center; gap:10px; width:150px; margin:10px auto 22px}
+.rule::before,.rule::after{content:""; flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.rule i{width:7px; height:7px; background:var(--burgundy); transform:rotate(45deg); display:block}
+.letter-text{font-size:18.5px; line-height:1.65; text-align:center; color:var(--ink)}
+.letter-text em{color:var(--burgundy)}
+.date-line{text-align:right; font-style:italic; color:var(--ink-soft); font-size:16.5px; margin-bottom:8px}
+.dropcap::first-letter{font-family:var(--hand); font-size:52px; line-height:.8; color:var(--burgundy); padding-right:6px}
+/* Rangkaian tumbuh per section */
+.sprig{position:absolute; width:74px; height:150px; pointer-events:none; opacity:.95}
+.sprig.bl{left:-16px; bottom:-6px}
+.sprig.br{right:-16px; bottom:-6px; transform:scaleX(-1)}
+.sprig .stem{fill:none; stroke:var(--olive); stroke-width:2.4; stroke-linecap:round}
+.sprig .leaf{fill:var(--sage); transform-box:fill-box; transform-origin:bottom center; transform:scale(0); transition:transform .7s cubic-bezier(.34,1.56,.64,1)}
+.sprig .bloom{transform-box:fill-box; transform-origin:center; transform:scale(0); transition:transform .85s cubic-bezier(.34,1.8,.64,1)}
+section.grown .leaf{transform:scale(1)}
+section.grown .bloom{transform:scale(1)}
+/* Mempelai */
+.photo-frame{position:relative; margin:6px auto 20px; width:min(300px,84%); background:#fdfaf1; padding:10px 10px 34px;
+  box-shadow:0 12px 28px rgba(74,52,33,.3); transform:rotate(-1.6deg)}
+.photo-frame img{width:100%; display:block; aspect-ratio:3/4.1; object-fit:cover}
+.photo-frame figcaption{font-family:var(--hand2); font-size:25px; text-align:center; color:var(--ink-soft); margin-top:7px}
+.tape{position:absolute; width:86px; height:24px; background:#d9c48f99; box-shadow:0 1px 3px rgba(74,52,33,.2); z-index:2}
+.tape.tl{top:-10px; left:-24px; transform:rotate(-38deg)}
+.tape.tr{top:-10px; right:-24px; transform:rotate(38deg)}
+.person{text-align:center; padding:20px 4px 6px}
+.person .nick{font-family:var(--hand); font-size:44px; color:var(--ink); line-height:1}
+.person .full{font-size:20px; font-weight:600; letter-spacing:.02em; margin-top:2px}
+.person .parents{font-size:16.5px; font-style:italic; color:var(--ink-soft); line-height:1.5; margin-top:5px}
+.ig-link{display:inline-flex; align-items:center; gap:6px; margin-top:9px; padding:5px 14px; border:1px solid var(--gold);
+  border-radius:99px; color:var(--burgundy); text-decoration:none; font-size:15px; background:#fffdf6aa}
+.amp{text-align:center; font-family:var(--hand); font-size:40px; color:var(--gold); line-height:.6; padding:10px 0 0}
+/* Acara — kartu pos */
+.postcard{position:relative; background:linear-gradient(170deg,#fdf8ec,#f4ead2); border:1px solid #ddcda6; border-radius:6px;
+  box-shadow:0 10px 24px rgba(74,52,33,.22); padding:20px 18px 18px; margin:0 auto 22px; max-width:350px}
+.postcard::before{content:""; position:absolute; top:0; bottom:0; left:50%; width:1px; background:#d8c69a88}
+.postcard .pc-head{display:flex; justify-content:space-between; align-items:flex-start}
+.postcard h3{font-size:23px; font-weight:600; letter-spacing:.04em}
+.postcard .pc-stamp{width:40px; height:48px; background:#fdfaf1; padding:3px; border:1.4px dashed #b7a071; transform:rotate(4deg); flex:none}
+.postcard .pc-stamp img{width:100%; height:100%; object-fit:cover; display:block}
+.postcard .pc-when{font-size:18px; margin-top:6px}
+.postcard .pc-when b{color:var(--burgundy); font-weight:600}
+.postcard .pc-venue{font-size:17px; font-style:italic; color:var(--ink-soft); line-height:1.45; margin-top:2px}
+.maps-btn{display:inline-block; margin-top:12px; padding:7px 18px; border-radius:99px; background:var(--burgundy); color:#fdf3e0;
+  text-decoration:none; font-size:15.5px; letter-spacing:.05em; box-shadow:0 5px 12px rgba(126,34,51,.35)}
+.countdown{display:flex; justify-content:center; gap:9px; margin:4px 0 22px}
+.cd{min-width:66px; padding:10px 4px 8px; text-align:center; background:#fdf8ec; border:1px solid #ddcda6; border-radius:6px;
+  box-shadow:0 6px 14px rgba(74,52,33,.16)}
+.cd b{display:block; font-size:27px; font-weight:600; color:var(--burgundy); line-height:1}
+.cd span{font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-faint)}
+/* Galeri — perangko & kartu pos */
+.gallery{display:flex; flex-direction:column; gap:26px; align-items:center}
+.g-item{position:relative; background:#fdfaf1; padding:9px 9px 12px; box-shadow:0 12px 26px rgba(74,52,33,.28); max-width:330px; width:100%}
+.g-item:nth-child(odd){transform:rotate(-1.8deg)}
+.g-item:nth-child(even){transform:rotate(1.6deg)}
+.g-item img{width:100%; display:block; aspect-ratio:4/2.9; object-fit:cover}
+.g-item:first-child img{object-position:50% 8%}
+.g-item figcaption{display:flex; justify-content:space-between; align-items:baseline; padding:8px 4px 0}
+.g-item .cap{font-family:var(--hand2); font-size:24px; color:var(--ink-soft)}
+.g-item .nomor{font-size:11px; letter-spacing:.2em; color:var(--ink-faint)}
+.g-item .perfo{position:absolute; top:-7px; right:16px; background:var(--paper-2); color:var(--burgundy); font-size:10.5px;
+  letter-spacing:.18em; padding:3px 9px; border:1.4px dashed #b7a071; transform:rotate(3deg); text-transform:uppercase}
+/* RSVP — balas surat */
+.demo-badge{display:inline-block; margin:0 auto 14px; padding:4px 13px; border-radius:99px; border:1.4px dashed var(--burgundy);
+  color:var(--burgundy); font-size:13px; letter-spacing:.14em; text-transform:uppercase; background:#fff8}
+.center{text-align:center}
+form.reply{background:linear-gradient(180deg,#fdf8ec,#f6eed9); border:1px solid #ddcda6; border-radius:6px;
+  box-shadow:0 10px 24px rgba(74,52,33,.2); padding:40px 18px 20px; max-width:350px; margin:0 auto}
+form.reply label{display:block; font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-faint); margin:14px 0 6px}
+form.reply label:first-child{margin-top:0}
+form.reply input[type=text],form.reply select,form.reply textarea{
+  width:100%; font-family:var(--serif); font-size:17.5px; color:var(--ink); background:transparent;
+  border:none; border-bottom:1.6px solid #c9b384; padding:5px 2px; outline:none; border-radius:0}
+form.reply textarea{border:1.6px solid #c9b384; border-radius:4px; padding:8px; min-height:76px; resize:vertical;
+  background:repeating-linear-gradient(180deg,transparent 0 27px,#c9b38433 27px 28px)}
+form.reply input:focus,form.reply select:focus,form.reply textarea:focus{border-color:var(--burgundy)}
+.radio-row{display:flex; gap:10px}
+.radio-pill{flex:1}
+.radio-pill input{position:absolute; opacity:0; pointer-events:none}
+.radio-pill span{display:block; text-align:center; padding:9px 4px; border:1.4px solid #c9b384; border-radius:99px;
+  font-size:16.5px; cursor:pointer; background:#fffdf6}
+.radio-pill input:checked+span{background:var(--burgundy); border-color:var(--burgundy); color:#fdf3e0}
+.send-btn{width:100%; margin-top:20px; padding:12px; border:none; border-radius:99px; cursor:pointer;
+  background:linear-gradient(160deg,#96324a,var(--burgundy)); color:#fdf3e0; font-family:var(--serif);
+  font-size:18px; letter-spacing:.14em; box-shadow:0 8px 18px rgba(126,34,51,.35)}
+.reply-done{display:none; max-width:350px; margin:18px auto 0; background:#fdf8ec; border:1px solid #ddcda6; border-radius:6px;
+  padding:18px; text-align:center; box-shadow:0 10px 24px rgba(74,52,33,.2); position:relative}
+.reply-done.show{display:block}
+.reply-done .stamp-ok{position:absolute; top:-16px; right:-8px; transform:rotate(11deg); border:2px solid var(--burgundy);
+  color:var(--burgundy); border-radius:5px; padding:3px 10px; font-size:12.5px; letter-spacing:.2em; background:#fdf8ec}
+.reply-done h4{font-family:var(--hand); font-weight:400; font-size:30px; color:var(--burgundy)}
+.reply-done p{font-size:16.5px; line-height:1.55; color:var(--ink-soft)}
+.wishes{max-width:350px; margin:22px auto 0}
+.wishes h4{text-align:center; font-size:13px; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:10px}
+.wish{background:#fffdf6; border-left:3px solid var(--gold); padding:9px 13px; margin-bottom:9px; box-shadow:0 4px 10px rgba(74,52,33,.12)}
+.wish b{font-size:16.5px}
+.wish .att{font-size:12px; color:var(--olive); letter-spacing:.08em; text-transform:uppercase; margin-left:6px}
+.wish p{font-size:16px; font-style:italic; color:var(--ink-soft); line-height:1.45}
+/* Amplop digital */
+.acc-card{max-width:350px; margin:0 auto 16px; background:linear-gradient(150deg,#fdf8ec,#f1e4c6); border:1px solid #d8c69a;
+  border-radius:8px; padding:38px 18px 16px; box-shadow:0 8px 18px rgba(74,52,33,.18); position:relative; overflow:hidden}
+.acc-card::after{content:""; position:absolute; right:10px; bottom:-8px; font-size:44px; color:#b98e4622}
+.acc-card .bank{font-size:13px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); font-weight:600}
+.acc-card .num{font-size:24px; font-weight:600; letter-spacing:.06em; margin-top:3px}
+.acc-card .an{font-size:15.5px; font-style:italic; color:var(--ink-soft)}
+.copy-btn{margin-top:10px; padding:6px 16px; border-radius:99px; border:1.4px solid var(--burgundy); background:transparent;
+  color:var(--burgundy); font-family:var(--serif); font-size:15px; cursor:pointer}
+/* Penutup */
+.sign{font-family:var(--hand); font-size:42px; text-align:center; color:var(--ink); line-height:1.25}
+.postmark-big{width:132px; height:132px; margin:22px auto 4px; border:2.2px solid #7e2233aa; border-radius:50%;
+  transform:rotate(-11deg); color:#7e2233c4; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; line-height:1.7; position:relative}
+.postmark-big::after{content:""; position:absolute; inset:7px; border:1.2px solid #7e223366; border-radius:50%}
+.postmark-big b{font-size:14.5px}
+footer{position:relative; z-index:2; text-align:center; padding:26px 20px 118px; color:var(--ink-faint); font-size:13.5px; font-style:italic}
+/* ===== Nav bawah ===== */
+.bottom-nav{position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:min(430px,100vw); z-index:40;
+  display:flex; align-items:stretch; background:linear-gradient(180deg,#fdf8ecf2,#f3e9d2f8);
+  border-top:1px solid #d8c69a; box-shadow:0 -8px 22px rgba(30,18,6,.22); padding-bottom:env(safe-area-inset-bottom)}
+.bottom-nav a{flex:1; display:flex; flex-direction:column; align-items:center; gap:1px; padding:8px 2px 7px;
+  text-decoration:none; color:var(--ink-soft); font-size:11.5px; letter-spacing:.06em}
+.bottom-nav a svg{width:20px; height:20px; stroke:var(--ink-soft); fill:none; stroke-width:1.6}
+.bottom-nav a.active{color:var(--burgundy)}
+.bottom-nav a.active svg{stroke:var(--burgundy)}
+.music-btn{flex:0 0 52px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;
+  background:none; border:none; border-left:1px solid #d8c69a; cursor:pointer; color:var(--ink-soft);
+  font-family:var(--serif); font-size:11.5px}
+.music-btn .disc{width:22px; height:22px; border-radius:50%; border:1.8px solid var(--ink-soft); display:grid; place-items:center; font-size:11px}
+.music-btn.playing .disc{border-color:var(--burgundy); color:var(--burgundy); animation:spin 3.2s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .9s ease, transform .9s ease}
+section.grown .reveal{opacity:1; transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001s !important; transition-duration:.001s !important; scroll-behavior:auto !important}
+  .reveal{opacity:1; transform:none}
+  .sprig .leaf,.sprig .bloom,.vine-leaf,.vine-bloom{transform:scale(1) !important}
+}
+
+/* ================= V2 · PERKAYAAN VISUAL ================= */
+/* Latar kolom berlapis: titik tinta + sapuan cat air mawar/sage/emas */
+.phone::before{content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.55; mix-blend-mode:multiply;
+  background-image:
+    radial-gradient(circle, rgba(122,92,62,.20) 1.1px, rgba(0,0,0,0) 1.8px),
+    radial-gradient(ellipse 260px 150px at 90% 12%, rgba(210,157,171,.20), rgba(0,0,0,0) 70%),
+    radial-gradient(ellipse 280px 170px at 6% 46%, rgba(125,139,106,.16), rgba(0,0,0,0) 70%),
+    radial-gradient(ellipse 240px 150px at 88% 78%, rgba(185,142,70,.15), rgba(0,0,0,0) 70%);
+  background-size:26px 26px, 100% 100%, 100% 100%, 100% 100%}
+.flora-corner{position:absolute; z-index:1; width:90px; opacity:.5; pointer-events:none}
+.flora-corner.fc-tl{top:8px; left:2px}
+.flora-corner.fc-br{bottom:128px; right:2px; transform:rotate(180deg)}
+/* Tepi kertas sobek antar-section */
+main section ~ section::before{content:""; position:absolute; top:-5px; left:-22px; right:-22px; height:13px; pointer-events:none;
+  background:var(--paper-3); opacity:.38;
+  clip-path:polygon(0 55%,4% 30%,9% 60%,15% 35%,22% 62%,29% 32%,36% 58%,43% 34%,50% 60%,57% 33%,64% 59%,71% 31%,78% 61%,85% 36%,91% 58%,96% 33%,100% 55%,100% 100%,0 100%)}
+/* Ikon section & bunga pemisah */
+.sec-icon{display:block; margin:0 auto 3px; width:31px; height:31px; fill:none; stroke:var(--gold); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round}
+.rule{gap:8px}
+.rule i{display:none}
+.rule-flower{width:19px; height:19px; flex:none}
+/* Frame perangko bergerigi (konsisten) */
+.stampframe{display:block; padding:7px;
+  background-image:radial-gradient(circle, rgba(0,0,0,0) 3.4px, #fdfaf1 4.2px); background-size:13px 13px; background-position:-6.5px -6.5px}
+.stampframe img{outline:1px solid #e0d0a4}
+/* Foto mempelai: frame perangko + renda doily kertas + selotip washi berpola */
+.photo-frame{padding:8px 8px 32px}
+.photo-frame::before{content:""; position:absolute; inset:-7px; z-index:-1; border-radius:6px;
+  background-image:radial-gradient(circle,#fffdf6 2.8px, rgba(0,0,0,0) 3.7px); background-size:12px 12px; background-position:-6px -6px; opacity:.85}
+.photo-frame .stampframe img{aspect-ratio:3/4.1}
+.tape{background:repeating-linear-gradient(45deg,#d9c48f99 0 7px,#cdb77f99 7px 14px)}
+/* Kartu mempelai berbingkai renda/doily */
+.person{position:relative; max-width:352px; margin:14px auto 4px; padding:24px 16px 18px;
+  background:linear-gradient(180deg,rgba(255,253,246,.88),rgba(253,246,227,.88));
+  border-radius:4px; box-shadow:0 8px 18px rgba(74,52,33,.13)}
+.person::before{content:""; position:absolute; inset:-7px; z-index:-1; border-radius:6px;
+  background-image:radial-gradient(circle,#fffdf6 2.8px, rgba(0,0,0,0) 3.7px); background-size:12px 12px; background-position:-6px -6px; opacity:.85}
+.amp{padding:4px 0 0}
+/* Kartu pos acara: strip airmail + bingkai emas ganda + cap pos mini */
+.postcard{padding:26px 18px 18px;
+  background:repeating-linear-gradient(45deg,#7e2233 0 14px,#fdf8ec 14px 28px,#5f7052 28px 42px,#fdf8ec 42px 56px) 0 0/100% 9px no-repeat,
+             linear-gradient(170deg,#fdf8ec,#f4ead2);
+  box-shadow:0 10px 24px rgba(74,52,33,.22), inset 0 0 0 1px rgba(185,142,70,.35), inset 0 0 0 6px #fdf8ec, inset 0 0 0 7px rgba(185,142,70,.45)}
+.postcard::after{content:"SURAT\A CINTA"; white-space:pre; position:absolute; top:36px; right:68px; width:47px; height:47px;
+  border:1.4px solid rgba(126,34,51,.55); border-radius:50%; transform:rotate(-12deg); color:rgba(126,34,51,.66);
+  display:grid; place-items:center; text-align:center; font-size:6.4px; letter-spacing:.14em; line-height:1.5; background:rgba(253,248,236,.4)}
+.pc-stamp{background-color:transparent; border:none; padding:5px;
+  background-image:radial-gradient(circle, rgba(0,0,0,0) 2.7px, #fdfaf1 3.4px); background-size:10px 10px; background-position:-5px -5px;
+  filter:drop-shadow(0 2px 3px rgba(74,52,33,.3))}
+.cd{border:1.4px dashed #b7a071; background:linear-gradient(180deg,#fdf8ec,#f6ecd7)}
+/* Galeri: perangko melayang di atas kertas (perforasi terlihat dari siluet) */
+.g-item{background:transparent; box-shadow:none; padding:0; filter:drop-shadow(0 12px 15px rgba(74,52,33,.26))}
+.g-item figcaption{padding:8px 6px 0}
+/* Ornamen sudut gambar tangan: form RSVP, kartu terkirim, kartu amplop */
+form.reply{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='rotate(90 12 12)'%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='rotate(180 12 12)'%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='rotate(270 12 12)'%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"), linear-gradient(180deg,#fdf8ec,#f6eed9);
+  background-repeat:no-repeat; background-size:26px 26px,26px 26px,26px 26px,26px 26px,100% 100%;
+  background-position:7px 7px,calc(100% - 7px) 7px,calc(100% - 7px) calc(100% - 7px),7px calc(100% - 7px),0 0}
+.reply-done{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='rotate(90 12 12)'%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='rotate(180 12 12)'%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='rotate(270 12 12)'%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"), linear-gradient(180deg,#fdf8ec,#f6eed9);
+  background-repeat:no-repeat; background-size:26px 26px,26px 26px,26px 26px,26px 26px,100% 100%;
+  background-position:7px 7px,calc(100% - 7px) 7px,calc(100% - 7px) calc(100% - 7px),7px calc(100% - 7px),0 0}
+.acc-card{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='rotate(90 12 12)'%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='rotate(180 12 12)'%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg transform='rotate(270 12 12)'%3E%3Cpath d='M3 21C3 11 11 3 21 3' fill='none' stroke='%23b98e46' stroke-width='1.7'/%3E%3Cpath d='M3 21C3 15.5 5.6 10.4 10.6 6.8' fill='none' stroke='%23b98e46' stroke-opacity='.55' stroke-width='1'/%3E%3Ccircle cx='7.2' cy='7.2' r='2.1' fill='%237e2233'/%3E%3Ccircle cx='7.2' cy='7.2' r='.85' fill='%23d3af6d'/%3E%3C/g%3E%3C/svg%3E"), linear-gradient(150deg,#fdf8ec,#f1e4c6);
+  background-repeat:no-repeat; background-size:26px 26px,26px 26px,26px 26px,26px 26px,100% 100%;
+  background-position:7px 7px,calc(100% - 7px) 7px,calc(100% - 7px) calc(100% - 7px),7px calc(100% - 7px),0 0}
+.acc-card::after{content:""; width:46px; height:20px; right:12px; bottom:8px; font-size:0; opacity:.55;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 20'%3E%3Cpath d='M4 10h13M29 10h13' stroke='%23b98e46' stroke-width='1'/%3E%3Cpath d='M23 16.2C19.6 13.9 18 12.2 18 10.2 18 8.8 19.1 7.7 20.5 7.7c1 0 1.9.5 2.5 1.3.6-.8 1.5-1.3 2.5-1.3 1.4 0 2.5 1.1 2.5 2.5 0 2-1.6 3.7-5 6z' fill='%237e2233'/%3E%3C/svg%3E") center/contain no-repeat}
+/* Ikon kecil di tombol/tautan */
+.ig-link svg{flex:none}
+.maps-btn svg{margin-left:2px}
+.music-btn .disc svg{width:12px; height:12px; display:block}
+.music-btn.playing .disc{color:var(--burgundy)}
+
+</style>
+<link rel="canonical" href="https://undangya.web.id/surat-hidup">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Surat Hidup — Meyzsa & Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital surat cinta hidup: amplop segel lilin, taman kertas tumbuh mengikuti scroll — Surat Hidup">
+<meta property="og:url" content="https://undangya.web.id/surat-hidup">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/surat-hidup.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Surat Hidup — Meyzsa & Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital surat cinta hidup: amplop segel lilin, taman kertas tumbuh mengikuti scroll — Surat Hidup">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/surat-hidup.webp">
+</head>
+<body class="locked">
+
+<!-- ===== Simbol SVG taman kertas ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="leafS" viewBox="-3 -27 22 30">
+      <path d="M1,1 C10,-3 15,-14 12,-26 C3,-22 -3,-11 1,1 Z"/>
+      <path d="M1,0 C4,-8 7,-16 11,-24" fill="none" stroke="#5f7052" stroke-width="1.1"/>
+    </symbol>
+    <symbol id="flwP" viewBox="-22 -22 44 44">
+      <g fill="#d29dab">
+        <ellipse cx="0" cy="-11" rx="6" ry="11"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(288)"/>
+      </g>
+      <circle r="4.6" fill="#b98e46"/>
+    </symbol>
+    <symbol id="flwB" viewBox="-22 -22 44 44">
+      <g fill="#a03a4e">
+        <ellipse cx="0" cy="-11" rx="6" ry="11"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-11" rx="6" ry="11" transform="rotate(288)"/>
+      </g>
+      <circle r="4.6" fill="#d3af6d"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="phone" id="phone">
+  <div class="paper-grain"></div>
+  <svg class="flora-corner fc-tl" viewBox="0 0 100 120" fill="none" aria-hidden="true"><path d="M10 114 C22 78 46 44 86 20" stroke="#7d8b6a" stroke-width="2.2" stroke-linecap="round"/><path d="M28 88 C38 86 46 79 49 69 C39 70 31 77 28 88 Z" fill="#7d8b6a" opacity=".85"/><path d="M44 62 C54 62 62 56 66 47 C56 47 48 52 44 62 Z" fill="#5f7052" opacity=".85"/><g fill="#d29dab"><circle cx="86" cy="18" r="5.4"/><circle cx="79" cy="24" r="4.6"/><circle cx="93" cy="25" r="4.6"/><circle cx="82" cy="11" r="4.4"/><circle cx="90" cy="12" r="4.2"/></g><circle cx="86" cy="18" r="2.8" fill="#b98e46"/></svg>
+  <svg class="flora-corner fc-br" viewBox="0 0 100 120" fill="none" aria-hidden="true"><path d="M10 114 C22 78 46 44 86 20" stroke="#7d8b6a" stroke-width="2.2" stroke-linecap="round"/><path d="M28 88 C38 86 46 79 49 69 C39 70 31 77 28 88 Z" fill="#7d8b6a" opacity=".85"/><path d="M44 62 C54 62 62 56 66 47 C56 47 48 52 44 62 Z" fill="#5f7052" opacity=".85"/><g fill="#d29dab"><circle cx="86" cy="18" r="5.4"/><circle cx="79" cy="24" r="4.6"/><circle cx="93" cy="25" r="4.6"/><circle cx="82" cy="11" r="4.4"/><circle cx="90" cy="12" r="4.2"/></g><circle cx="86" cy="18" r="2.8" fill="#b98e46"/></svg>
+
+  <!-- Taman kertas di tepi halaman: tumbuh mengikuti scroll -->
+  <div class="garden" aria-hidden="true">
+    <svg class="vine-l" viewBox="0 0 64 800" preserveAspectRatio="none">
+      <path class="vine-stem" id="stemL" d="M34,806 C12,664 54,566 31,436 C14,342 52,238 33,128 C24,72 42,30 35,-6"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.06" fill="#7d8b6a" transform="translate(26,690) rotate(-38) scale(1.15)"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.22" fill="#5f7052" transform="translate(38,540) scale(-1.1,1.1) rotate(-26)"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.40" fill="#7d8b6a" transform="translate(24,392) rotate(-42)"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.58" fill="#5f7052" transform="translate(40,252) scale(-1,1) rotate(-30)"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.76" fill="#7d8b6a" transform="translate(28,120) rotate(-36) scale(1.1)"/>
+      <use href="#flwP" class="vine-bloom" data-p="0.30" x="-17" y="-17" width="34" height="34" transform="translate(31,452)"/>
+      <use href="#flwB" class="vine-bloom" data-p="0.66" x="-14" y="-14" width="28" height="28" transform="translate(35,168)"/>
+      <use href="#flwP" class="vine-bloom" data-p="0.92" x="-13" y="-13" width="26" height="26" transform="translate(34,26)"/>
+    </svg>
+    <svg class="vine-r" viewBox="0 0 64 800" preserveAspectRatio="none">
+      <path class="vine-stem" id="stemR" d="M34,806 C12,664 54,566 31,436 C14,342 52,238 33,128 C24,72 42,30 35,-6"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.14" fill="#5f7052" transform="translate(26,640) rotate(-38) scale(1.1)"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.34" fill="#7d8b6a" transform="translate(38,486) scale(-1.15,1.15) rotate(-26)"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.52" fill="#5f7052" transform="translate(24,330) rotate(-42)"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.70" fill="#7d8b6a" transform="translate(40,196) scale(-1,1) rotate(-30)"/>
+      <use href="#leafS" width="22" height="30" class="vine-leaf" data-p="0.86" fill="#5f7052" transform="translate(28,74) rotate(-36)"/>
+      <use href="#flwB" class="vine-bloom" data-p="0.46" x="-15" y="-15" width="30" height="30" transform="translate(30,372)"/>
+      <use href="#flwP" class="vine-bloom" data-p="0.82" x="-14" y="-14" width="28" height="28" transform="translate(33,104)"/>
+    </svg>
+  </div>
+
+    <!-- ===== COVER: amplop premium bersegel lilin ===== -->
+  <header class="cover" id="cover">
+    <span class="cover-flora cf-tl"><svg viewBox="0 0 100 120" fill="none" aria-hidden="true"><path d="M10 114 C22 78 46 44 86 20" stroke="#7d8b6a" stroke-width="2.2" stroke-linecap="round"/><path d="M28 88 C38 86 46 79 49 69 C39 70 31 77 28 88 Z" fill="#7d8b6a" opacity=".85"/><path d="M44 62 C54 62 62 56 66 47 C56 47 48 52 44 62 Z" fill="#5f7052" opacity=".85"/><g fill="#d29dab"><circle cx="86" cy="18" r="5.4"/><circle cx="79" cy="24" r="4.6"/><circle cx="93" cy="25" r="4.6"/><circle cx="82" cy="11" r="4.4"/><circle cx="90" cy="12" r="4.2"/></g><circle cx="86" cy="18" r="2.8" fill="#d3af6d"/><circle cx="60" cy="44" r="2" fill="#e9dcbf"/><circle cx="70" cy="34" r="1.7" fill="#e9dcbf"/><circle cx="50" cy="56" r="1.8" fill="#e9dcbf"/></svg></span>
+    <span class="cover-flora cf-br"><svg viewBox="0 0 100 120" fill="none" aria-hidden="true"><path d="M10 114 C22 78 46 44 86 20" stroke="#7d8b6a" stroke-width="2.2" stroke-linecap="round"/><path d="M28 88 C38 86 46 79 49 69 C39 70 31 77 28 88 Z" fill="#7d8b6a" opacity=".85"/><path d="M44 62 C54 62 62 56 66 47 C56 47 48 52 44 62 Z" fill="#5f7052" opacity=".85"/><g fill="#d29dab"><circle cx="86" cy="18" r="5.4"/><circle cx="79" cy="24" r="4.6"/><circle cx="93" cy="25" r="4.6"/><circle cx="82" cy="11" r="4.4"/><circle cx="90" cy="12" r="4.2"/></g><circle cx="86" cy="18" r="2.8" fill="#d3af6d"/><circle cx="60" cy="44" r="2" fill="#e9dcbf"/><circle cx="70" cy="34" r="1.7" fill="#e9dcbf"/><circle cx="50" cy="56" r="1.8" fill="#e9dcbf"/></svg></span>
+    <div class="cover-top">
+      <div class="brand">UndangYa! · Surat Hidup</div>
+      <svg class="cover-orn" viewBox="0 0 124 14" fill="none" aria-hidden="true"><path d="M4 7 H42" stroke="#b98e46" stroke-width="1"/><path d="M82 7 H120" stroke="#b98e46" stroke-width="1"/><circle cx="49" cy="7" r="1.9" fill="#d29dab"/><circle cx="75" cy="7" r="1.9" fill="#d29dab"/><path d="M62 1.5 L67.5 7 L62 12.5 L56.5 7 Z" fill="#7e2233" stroke="#d3af6d" stroke-width=".8"/></svg>
+      <h1>Sepucuk Surat Untukmu</h1>
+      <p>dengan cinta, dari kami yang berbahagia</p>
+    </div>
+    <div class="env-stage">
+      <div class="doily" aria-hidden="true"></div>
+      <div class="desk p2" aria-hidden="true"></div>
+      <div class="desk p1" aria-hidden="true"></div>
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="env-letter" aria-hidden="true">
+          <svg class="motif" viewBox="0 0 128 30" fill="none" aria-hidden="true">
+            <path d="M6 16 C22 7 38 8 50 13" stroke="#b98e46" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M78 13 C90 8 106 7 122 16" stroke="#b98e46" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M20 10 C25 9 29 6 31 2 C26 2 22 5 20 10 Z" fill="#7d8b6a"/>
+            <path d="M108 10 C103 9 99 6 97 2 C102 2 106 5 108 10 Z" fill="#7d8b6a"/>
+            <circle cx="34" cy="11" r="2.2" fill="#d29dab"/><circle cx="94" cy="11" r="2.2" fill="#d29dab"/>
+            <path d="M64 23 C58 18 54.5 14.8 54.5 11.4 C54.5 8.9 56.3 7.2 58.4 7.2 C60.1 7.2 61.9 8.2 64 10.4 C66.1 8.2 67.9 7.2 69.6 7.2 C71.7 7.2 73.5 8.9 73.5 11.4 C73.5 14.8 70 18 64 23 Z" fill="#a03a4e"/>
+          </svg>
+        </div>
+        <div class="env-pocket"></div>
+        <div class="env-flap-wrap"><div class="flap-face flap-front"></div><div class="flap-face flap-liner"></div></div>
+        <svg class="env-waves" viewBox="0 0 104 30" fill="none" aria-hidden="true"><path d="M2 6 C14 1 24 11 36 6 C48 1 58 11 70 6 C82 1 92 11 102 6" stroke="#7e2233" stroke-width="1.6"/><path d="M2 15 C14 10 24 20 36 15 C48 10 58 20 70 15 C82 10 92 20 102 15" stroke="#7e2233" stroke-width="1.6"/><path d="M2 24 C14 19 24 29 36 24 C48 19 58 29 70 24 C82 19 92 29 102 24" stroke="#7e2233" stroke-width="1.6"/></svg>
+        <div class="env-stamp"><img src="assets/undangya/surat-hidup/couple.webp" alt="Perangko bergambar Meyzsa &amp; Fahrezzi"><span>INDONESIA</span></div>
+        <div class="env-postmark">Surat Cinta<br>12 · 06 · 2027<br>Jakarta</div>
+        <svg class="env-ribbon" viewBox="0 0 84 54" fill="none" aria-hidden="true">
+          <path d="M40 25 L31 50 L39 43 L45 52 L45 26 Z" fill="#7e2233"/>
+          <path d="M46 25 L55 50 L47 43 L41 52 L41 26 Z" fill="#96324a"/>
+          <path d="M42 21 C28 5 8 6 10 20 C12 33 29 31 42 23 Z" fill="#8c2438" stroke="#d3af6d" stroke-width=".9"/>
+          <path d="M42 21 C56 5 76 6 74 20 C72 33 55 31 42 23 Z" fill="#8c2438" stroke="#d3af6d" stroke-width=".9"/>
+          <circle cx="42" cy="21" r="5.6" fill="#b98e46" stroke="#8a6a2f" stroke-width="1"/>
+        </svg>
+        <button class="seal-wrap" id="sealBtn" aria-label="Pecahkan segel lilin dan buka surat">
+          <svg class="seal-svg" viewBox="0 0 96 96" aria-hidden="true">
+            <defs>
+              <radialGradient id="sealGrad" cx="38%" cy="30%" r="80%">
+                <stop offset="0%" stop-color="#ba465f"/><stop offset="55%" stop-color="#8c2438"/><stop offset="100%" stop-color="#5c1524"/>
+              </radialGradient>
+              <clipPath id="clipL"><rect x="0" y="0" width="48" height="96"/></clipPath>
+              <clipPath id="clipR"><rect x="48" y="0" width="48" height="96"/></clipPath>
+            </defs>
+            <g class="seal-half-svg left" clip-path="url(#clipL)">
+              <path d="M48 5 C59 3 71 7 79 15 C88 23 92 35 90 47 C89 59 84 71 74 79 C64 87 52 91 40 89 C28 87 17 80 11 69 C5 58 4 45 8 34 C12 22 20 12 32 8 C37 6 42 6 48 5 Z" fill="url(#sealGrad)"/>
+              <circle cx="29" cy="86" r="4.4" fill="#8c2438"/><circle cx="64" cy="89" r="3.5" fill="#7e2233"/><circle cx="85" cy="61" r="3.3" fill="#8c2438"/>
+              <circle cx="48" cy="47" r="29.5" fill="none" stroke="#f6d68a" stroke-opacity=".4" stroke-width="1.5"/>
+              <circle cx="48" cy="47" r="25" fill="none" stroke="#000" stroke-opacity=".16" stroke-width="1"/>
+            </g>
+            <g class="seal-half-svg right" clip-path="url(#clipR)">
+              <path d="M48 5 C59 3 71 7 79 15 C88 23 92 35 90 47 C89 59 84 71 74 79 C64 87 52 91 40 89 C28 87 17 80 11 69 C5 58 4 45 8 34 C12 22 20 12 32 8 C37 6 42 6 48 5 Z" fill="url(#sealGrad)"/>
+              <circle cx="29" cy="86" r="4.4" fill="#8c2438"/><circle cx="64" cy="89" r="3.5" fill="#7e2233"/><circle cx="85" cy="61" r="3.3" fill="#8c2438"/>
+              <circle cx="48" cy="47" r="29.5" fill="none" stroke="#f6d68a" stroke-opacity=".4" stroke-width="1.5"/>
+              <circle cx="48" cy="47" r="25" fill="none" stroke="#000" stroke-opacity=".16" stroke-width="1"/>
+            </g>
+          </svg>
+          <span class="seal-mono">M<small>♥</small>F</span>
+        </button>
+      </div>
+      <svg class="acc-bouquet" viewBox="0 0 100 152" fill="none" aria-hidden="true">
+        <path d="M50 148 C47 118 40 92 30 62 M50 148 C51 114 50 84 46 46 M50 148 C54 116 60 88 70 60" stroke="#7d8b6a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M38 108 C30 106 24 100 22 92 C30 93 36 99 38 108 Z" fill="#7d8b6a"/>
+        <path d="M58 104 C66 103 72 97 74 89 C66 90 60 95 58 104 Z" fill="#5f7052"/>
+        <g fill="#e9dcbf"><circle cx="28" cy="58" r="3"/><circle cx="22" cy="50" r="2.4"/><circle cx="34" cy="48" r="2.4"/><circle cx="27" cy="40" r="2.2"/><circle cx="35" cy="58" r="2"/></g>
+        <g fill="#d29dab"><circle cx="46" cy="40" r="5.6"/><circle cx="39" cy="46" r="4.8"/><circle cx="53" cy="46" r="4.8"/><circle cx="42" cy="32" r="4.6"/><circle cx="51" cy="33" r="4.4"/></g>
+        <circle cx="46" cy="41" r="3" fill="#b98e46"/>
+        <g stroke="#caa657" stroke-width="1.8" stroke-linecap="round"><path d="M70 58 C74 46 75 36 73 26"/><path d="M70 58 C65 47 64 37 66 27"/><path d="M71 50 l7 -3 M70 42 l7 -4 M68 36 l6 -5"/></g>
+        <g fill="#a9b79a"><circle cx="80" cy="74" r="5"/><circle cx="74" cy="84" r="4.4"/><circle cx="83" cy="88" r="4"/></g>
+        <path d="M40 128 L60 128 L56 142 L44 142 Z" fill="#8c2438"/>
+        <path d="M50 128 C42 120 32 122 33 130 C34 137 44 136 50 131 C56 136 66 137 67 130 C68 122 58 120 50 128 Z" fill="#7e2233" stroke="#d3af6d" stroke-width=".8"/>
+        <circle cx="50" cy="129" r="3.4" fill="#b98e46"/>
+      </svg>
+      <svg class="acc-quill" viewBox="0 0 110 92" fill="none" aria-hidden="true">
+        <path d="M16 84 C32 52 60 22 102 6 C98 40 76 66 46 78 C32 84 22 87 16 84 Z" fill="#f4ead0" stroke="#b98e46" stroke-width="1"/>
+        <path d="M16 84 C36 58 64 30 100 9" stroke="#a87f36" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M36 62 l-9 3 M50 47 l-10 1 M64 33 l-9 -1 M78 21 l-8 -3" stroke="#caa657" stroke-width=".9" stroke-linecap="round"/>
+        <path d="M16 84 l-3 6 M14 86 l6 2" stroke="#4a3421" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="guest-plate">
+      <span class="plate-corner tl"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21 C3 11 11 3 21 3" stroke="currentColor" stroke-width="1.6"/><path d="M3 21 C3 15.5 5.6 10.4 10.6 6.8" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="7.2" cy="7.2" r="2.1" fill="#7e2233"/><circle cx="7.2" cy="7.2" r=".85" fill="#d3af6d"/></svg></span>
+      <span class="plate-corner tr"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21 C3 11 11 3 21 3" stroke="currentColor" stroke-width="1.6"/><path d="M3 21 C3 15.5 5.6 10.4 10.6 6.8" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="7.2" cy="7.2" r="2.1" fill="#7e2233"/><circle cx="7.2" cy="7.2" r=".85" fill="#d3af6d"/></svg></span>
+      <span class="plate-corner bl"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21 C3 11 11 3 21 3" stroke="currentColor" stroke-width="1.6"/><path d="M3 21 C3 15.5 5.6 10.4 10.6 6.8" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="7.2" cy="7.2" r="2.1" fill="#7e2233"/><circle cx="7.2" cy="7.2" r=".85" fill="#d3af6d"/></svg></span>
+      <span class="plate-corner br"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21 C3 11 11 3 21 3" stroke="currentColor" stroke-width="1.6"/><path d="M3 21 C3 15.5 5.6 10.4 10.6 6.8" stroke="currentColor" stroke-width="1" opacity=".55"/><circle cx="7.2" cy="7.2" r="2.1" fill="#7e2233"/><circle cx="7.2" cy="7.2" r=".85" fill="#d3af6d"/></svg></span>
+      <div class="a1">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+      <div class="a2" id="guestName">Tamu Undangan</div>
+      <div class="a3">di tempat</div>
+    </div>
+    <p class="cover-hint">Ketuk segel lilin untuk membuka surat</p>
+    <p class="cover-from">Dari Meyzsa &amp; Fahrezzi</p>
+  </header>
+
+<main id="main">
+    <!-- ===== 1 · Salam Pembuka ===== -->
+    <section id="beranda" data-sprig="bl">
+      <p class="date-line">Jakarta, 12 Juni 2027</p>
+      <p class="kicker">Salam Pembuka</p>
+      <h2 class="title">Surat Untukmu</h2>
+      <div class="rule"><i></i></div>
+      <div class="reveal">
+        <p class="letter-text">Bismillahirrahmanirrahim.<br>Assalamu’alaikum Warahmatullahi Wabarakatuh.</p>
+        <p class="letter-text dropcap" style="margin-top:14px;text-align:justify">Dengan memohon rahmat dan ridha Allah SWT, surat ini kami tulis dengan hati yang penuh syukur. Seperti taman yang tumbuh perlahan dari sebutir benih, kisah kami pun tumbuh — dari perjumpaan sederhana menjadi janji suci. Melalui surat ini, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan menjadi saksi hari bahagia kami.</p>
+        <p class="letter-text" style="margin-top:14px">Bacalah perlahan — <em>taman di tepi surat ini akan tumbuh menemanimu</em> sampai ke tanda tangan kami di halaman terakhir.</p>
+      </div>
+    </section>
+
+    <!-- ===== 2 · Mempelai ===== -->
+    <section id="mempelai" data-sprig="br">
+      <p class="kicker">Bab Dua</p>
+      <h2 class="title">Dua Nama di Akhir Surat</h2>
+      <div class="rule"><i></i></div>
+      <div class="reveal">
+        <figure class="photo-frame">
+          <span class="tape tl"></span><span class="tape tr"></span>
+          <span class="stampframe"><img src="assets/undangya/surat-hidup/couple.webp" alt="Ilustrasi cat air Meyzsa &amp; Fahrezzi di taman kertas"></span>
+          <figcaption>kami, dalam cat air &amp; cinta</figcaption>
+        </figure>
+        <div class="person">
+          <div class="nick" id="brideNick">Meyzsa</div>
+          <div class="full" id="brideFull"></div>
+          <p class="parents" id="brideParents"></p>
+          <a class="ig-link" id="brideIg" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--burgundy);fill:none;stroke-width:1.7"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.9" cy="7.1" r=".6" fill="var(--burgundy)"/></svg> <span></span></a>
+        </div>
+        <div class="amp">&amp;</div>
+        <div class="person">
+          <div class="nick" id="groomNick">Fahrezzi</div>
+          <div class="full" id="groomFull"></div>
+          <p class="parents" id="groomParents"></p>
+          <a class="ig-link" id="groomIg" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" style="width:15px;height:15px;stroke:var(--burgundy);fill:none;stroke-width:1.7"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.9" cy="7.1" r=".6" fill="var(--burgundy)"/></svg> <span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3 · Acara ===== -->
+    <section id="acara" data-sprig="bl">
+      <p class="kicker">Bab Tiga</p>
+      <h2 class="title">Kartu Pos Hari Bahagia</h2>
+      <div class="rule"><i></i></div>
+      <div class="reveal">
+        <div class="countdown" aria-label="Hitung mundur menuju hari bahagia">
+          <div class="cd"><b id="cdD">0</b><span>Hari</span></div>
+          <div class="cd"><b id="cdH">0</b><span>Jam</span></div>
+          <div class="cd"><b id="cdM">0</b><span>Menit</span></div>
+          <div class="cd"><b id="cdS">0</b><span>Detik</span></div>
+        </div>
+        <div id="eventsWrap"></div>
+        <p class="letter-text" style="font-size:16.5px">Simpan kartu pos ini baik-baik — kami menunggumu di alamat yang tertera.</p>
+      </div>
+    </section>
+
+    <!-- ===== 4 · Galeri ===== -->
+    <section id="galeri" data-sprig="br">
+      <p class="kicker">Bab Empat</p>
+      <h2 class="title">Perangko &amp; Kartu Pos</h2>
+      <div class="rule"><i></i></div>
+      <div class="reveal">
+        <p class="letter-text" style="margin-bottom:20px">Potongan-potongan kisah kami, kami tempel di halaman ini untukmu.</p>
+        <div class="gallery" id="galleryWrap"></div>
+      </div>
+    </section>
+
+    <!-- ===== 5 · RSVP ===== -->
+    <section id="rsvp" data-sprig="bl">
+      <p class="kicker">Bab Lima</p>
+      <h2 class="title">Balas Surat Ini</h2>
+      <div class="rule"><i></i></div>
+      <div class="reveal">
+        <div class="center"><span class="demo-badge">Mode Demo · RSVP contoh</span></div>
+        <form class="reply" id="rsvpForm" novalidate>
+          <label for="rsvpName">Nama pengirim</label>
+          <input type="text" id="rsvpName" name="nama" placeholder="Tulis namamu…" autocomplete="name" required>
+          <label>Bersediakah hadir?</label>
+          <div class="radio-row">
+            <label class="radio-pill" style="margin:0"><input type="radio" name="hadir" value="Hadir" checked><span><svg viewBox="0 0 24 24" style="width:15px;height:15px;vertical-align:-3px;stroke:currentColor;fill:none;stroke-width:1.7"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3.5 8l8.5 6 8.5-6"/></svg> Hadir, tentu!</span></label>
+            <label class="radio-pill" style="margin:0"><input type="radio" name="hadir" value="Berhalangan"><span>Berhalangan</span></label>
+          </div>
+          <label for="rsvpGuests">Jumlah tamu</label>
+          <select id="rsvpGuests" name="tamu">
+            <option value="1">1 orang</option>
+            <option value="2">2 orang</option>
+            <option value="3">3 orang</option>
+            <option value="4">4 orang</option>
+          </select>
+          <label for="rsvpMsg">Tulis balasanmu</label>
+          <textarea id="rsvpMsg" name="ucapan" placeholder="Doa &amp; ucapan untuk kedua mempelai…"></textarea>
+          <button class="send-btn" type="submit">Kirim Balasan <svg viewBox="0 0 24 24" style="width:16px;height:16px;vertical-align:-3px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linejoin:round"><path d="M21 3L10.2 13.8M21 3l-6.8 18-3.4-7.2L3.6 10.4z"/></svg></button>
+        </form>
+        <div class="reply-done" id="replyDone">
+          <span class="stamp-ok">TERKIRIM</span>
+          <h4>Terima kasih!</h4>
+          <p id="doneText">Balasanmu sudah kami terima.</p>
+          <p style="margin-top:6px;font-size:14px"><i>Catatan: ini mode demo — balasan tersimpan di perangkat ini saja dan tidak terkirim ke server.</i></p>
+        </div>
+        <div class="wishes" id="wishesWrap" style="display:none">
+          <h4>Balasan yang Masuk</h4>
+          <div id="wishList"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6 · Amplop Digital ===== -->
+    <section id="amplop" data-sprig="br">
+      <p class="kicker">Bab Enam</p>
+      <h2 class="title">Sisipkan ke Amplop Balasan</h2>
+      <div class="rule"><i></i></div>
+      <div class="reveal">
+        <p class="letter-text" style="margin-bottom:18px">Bila berkenan memberi tanda kasih, sisipkan ke dalam amplop balasan melalui:</p>
+        <div id="accountsWrap"></div>
+        <p class="letter-text" style="font-size:14.5px;color:var(--ink-faint)"><i>Nomor di atas adalah contoh/demo untuk tampilan tema.</i></p>
+      </div>
+    </section>
+
+    <!-- ===== 7 · Penutup ===== -->
+    <section id="penutup" data-sprig="bl">
+      <p class="kicker">Halaman Terakhir</p>
+      <h2 class="title">Dengan Cinta,</h2>
+      <div class="rule"><i></i></div>
+      <div class="reveal">
+        <p class="letter-text">Merupakan kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih.</p>
+        <p class="letter-text" style="margin-top:12px">Wassalamu’alaikum Warahmatullahi Wabarakatuh.</p>
+        <p class="letter-text" style="margin-top:20px;font-style:italic;color:var(--ink-soft)">Yang berbahagia,</p>
+        <p class="sign">Meyzsa &amp; Fahrezzi</p>
+        <p class="letter-text" style="font-size:15.5px;color:var(--ink-soft)">beserta keluarga besar kedua mempelai</p>
+        <div class="postmark-big">Surat ini<b>Terkirim</b>dengan Cinta<br>12 · 06 · 2027</div>
+      </div>
+    </section>
+  </main>
+
+  <footer><svg width="46" height="20" viewBox="0 0 46 20" style="display:block;margin:0 auto 8px" aria-hidden="true"><path d="M4 10h13M29 10h13" stroke="#b98e46" stroke-width="1"/><path d="M23 16.2C19.6 13.9 18 12.2 18 10.2 18 8.8 19.1 7.7 20.5 7.7c1 0 1.9.5 2.5 1.3.6-.8 1.5-1.3 2.5-1.3 1.4 0 2.5 1.1 2.5 2.5 0 2-1.6 3.7-5 6z" fill="#7e2233"/></svg>Surat Hidup — tema undangan digital UndangYa! · Contoh dengan data mempelai fiktif untuk demo.</footer>
+</div>
+
+<!-- ===== Nav bawah ===== -->
+<nav class="bottom-nav" id="bottomNav" aria-label="Navigasi undangan">
+  <a href="#beranda" data-nav="beranda" class="active">
+    <svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3.5 8l8.5 6 8.5-6"/><path d="M12 18.4c-1.5-1-2.4-1.9-2.4-2.9 0-.8.6-1.4 1.3-1.4.5 0 .9.2 1.1.6.2-.4.6-.6 1.1-.6.7 0 1.3.6 1.3 1.4 0 1-.9 1.9-2.4 2.9z"/></svg>Beranda</a>
+  <a href="#mempelai" data-nav="mempelai">
+    <svg viewBox="0 0 24 24"><circle cx="9.3" cy="14.5" r="5.3"/><circle cx="14.7" cy="14.5" r="5.3"/><path d="M12 2.8l2.1 2.5L12 7.8 9.9 5.3z"/><path d="M10.2 5.7l-.4 2.2M13.8 5.7l.4 2.2"/></svg>Mempelai</a>
+  <a href="#acara" data-nav="acara">
+    <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14.5" rx="1.6"/><path d="M15.6 7.6h3.2v4h-3.2z" stroke-dasharray="1.7 1.3"/><path d="M6.3 10.2h5.4M6.3 13.4h8.6M6.3 16.4h6"/></svg>Acara</a>
+  <a href="#galeri" data-nav="galeri">
+    <svg viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="15" stroke-dasharray="2.5 1.9"/><circle cx="12" cy="10.6" r="1.5"/><circle cx="12" cy="7.6" r="1.3"/><circle cx="12" cy="13.6" r="1.3"/><circle cx="9" cy="10.6" r="1.3"/><circle cx="15" cy="10.6" r="1.3"/><path d="M12 12.4v4.4M12 15c-1.8 0-2.8-.9-3-2.4 1.5.2 2.5 1 3 2.4zM12 15.8c1.8 0 2.8-.9 3-2.4-1.5.2-2.5 1-3 2.4z"/></svg>Galeri</a>
+  <a href="#rsvp" data-nav="rsvp">
+    <svg viewBox="0 0 24 24"><rect x="2.8" y="9.2" width="12.6" height="9.6" rx="1.6"/><path d="M3.4 10.8l5.7 4 5.7-4"/><path d="M20.8 3.2c-4.6.7-7.9 3.6-9.2 7.9l-1.9 6.7 2-1.7c4-1.4 7.3-5.4 9.1-12.9z"/><path d="M11.4 17.2C13.2 12.4 16.2 7.9 20.3 4.4"/></svg>RSVP</a>
+  <button class="music-btn" id="musicBtn" aria-label="Hidupkan atau matikan musik">
+    <span class="disc"><svg viewBox="0 0 24 24" style="fill:currentColor;stroke:none"><path d="M9 3v10.4a3.3 2.7 0 1 0 2 2.5V6.3l7-1.5v7.8a3.3 2.7 0 1 0 2 2.5V2L9 3z"/></svg></span>Musik
+  </button>
+</nav>
+
+<script>
+/* ============================================================
+   UndangYa! — Surat Hidup · SEMUA DATA CONTOH DIEDIT DI CONFIG
+   ============================================================ */
+const CONFIG = {
+  theme: { slug: "surat-hidup", name: "Surat Hidup" },
+  couple: {
+    bride: {
+      nick: "Meyzsa",
+      full: "Meyzsa Putri Ananda, S.Pd.",
+      parents: "Putri dari Bapak H. Muhammad Ridwan & Ibu Hj. Siti Aminah",
+      ig: "@meyzsa.contoh"
+    },
+    groom: {
+      nick: "Fahrezzi",
+      full: "Ahmad Fahrezzi Pratama, S.T.",
+      parents: "Putra dari Bapak H. Bambang Sutrisno & Ibu Hj. Ratna Dewi",
+      ig: "@fahrezzi.contoh"
+    }
+  },
+  events: [
+    {
+      name: "Akad Nikah",
+      dateLabel: "Sabtu, 12 Juni 2027",
+      time: "08.00 – 10.00 WIB",
+      venue: "Masjid Agung Al-Azhar",
+      city: "Jakarta Selatan",
+      maps: "https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Al-Azhar+Jakarta+Selatan"
+    },
+    {
+      name: "Resepsi",
+      dateLabel: "Sabtu, 12 Juni 2027",
+      time: "11.00 – 13.00 WIB",
+      venue: "The Ritz-Carlton Jakarta, Pacific Place",
+      city: "Jakarta Selatan",
+      maps: "https://www.google.com/maps/search/?api=1&query=The+Ritz-Carlton+Jakarta+Pacific+Place"
+    }
+  ],
+  countdown: "2027-06-12T08:00:00+07:00",
+  gallery: [
+    { src: "assets/undangya/surat-hidup/couple.webp",  alt: "Ilustrasi cat air Meyzsa & Fahrezzi di taman kertas", caption: "sejak surat pertama", label: "Perangko" },
+    { src: "assets/undangya/surat-hidup/galeri-1.webp", alt: "Ilustrasi kartu pos pasangan berjalan bergandengan di taman", caption: "berjalan ke arah yang sama", label: "Kartu Pos" },
+    { src: "assets/undangya/surat-hidup/galeri-2.webp", alt: "Ilustrasi cincin emas di atas surat tulisan tangan bersegel lilin hati", caption: "janji yang tersegel", label: "Perangko" },
+    { src: "assets/undangya/surat-hidup/galeri-3.webp", alt: "Ilustrasi kartu pos pelaminan taman dengan kubah masjid di kejauhan", caption: "alamat hari bahagia", label: "Kartu Pos" }
+  ],
+  accounts: [
+    { bank: "BCA",  number: "1234567890",    name: "Meyzsa Putri Ananda" },
+    { bank: "DANA", number: "0812-3456-7890", name: "Meyzsa Putri Ananda" }
+  ],
+  music: { enabled: true }
+};
+
+const $ = (id) => document.getElementById(id);
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Nama tamu dari ?to= ---------- */
+const guestParam = (new URLSearchParams(location.search).get("to") || "").trim();
+if (guestParam) {
+  $("guestName").textContent = guestParam;
+  $("rsvpName").value = guestParam;
+}
+
+/* ---------- Render mempelai ---------- */
+function fillPerson(prefix, p) {
+  $(prefix + "Full").textContent = p.full;
+  $(prefix + "Parents").textContent = p.parents;
+  const a = $(prefix + "Ig");
+  a.href = "https://www.instagram.com/" + p.ig.replace("@", "");
+  a.querySelector("span").textContent = p.ig;
+}
+fillPerson("bride", CONFIG.couple.bride);
+fillPerson("groom", CONFIG.couple.groom);
+
+/* ---------- Render acara (kartu pos) ---------- */
+$("eventsWrap").innerHTML = CONFIG.events.map(ev => `
+  <article class="postcard">
+    <div class="pc-head">
+      <h3>${ev.name}</h3>
+      <div class="pc-stamp"><img src="assets/undangya/surat-hidup/couple.webp" alt=""></div>
+    </div>
+    <p class="pc-when"><b>${ev.dateLabel}</b><br>${ev.time}</p>
+    <p class="pc-venue">${ev.venue}<br>${ev.city}</p>
+    <a class="maps-btn" href="${ev.maps}" target="_blank" rel="noopener">Lihat Lokasi <svg viewBox="0 0 24 24" style="width:14px;height:14px;vertical-align:-2px;stroke:currentColor;fill:none;stroke-width:1.8"><path d="M12 21s-6.5-5.4-6.5-10.4a6.5 6.5 0 0 1 13 0C18.5 15.6 12 21 12 21z"/><circle cx="12" cy="10.4" r="2.3"/></svg></a>
+  </article>`).join("");
+
+/* ---------- Render galeri ---------- */
+$("galleryWrap").innerHTML = CONFIG.gallery.map((g, i) => `
+  <figure class="g-item">
+    <span class="perfo">${g.label}</span>
+    <span class="stampframe"><img src="${g.src}" alt="${g.alt}" loading="lazy"></span>
+    <figcaption><span class="cap">${g.caption}</span><span class="nomor">No. 0${i + 1}</span></figcaption>
+  </figure>`).join("");
+
+/* ---------- Render amplop digital ---------- */
+$("accountsWrap").innerHTML = CONFIG.accounts.map(a => `
+  <div class="acc-card">
+    <div class="bank">${a.bank}</div>
+    <div class="num">${a.number}</div>
+    <div class="an">a.n. ${a.name}</div>
+    <button class="copy-btn" type="button" data-copy="${a.number}">Salin Nomor</button>
+  </div>`).join("");
+
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest("[data-copy]");
+  if (!btn) return;
+  const val = btn.getAttribute("data-copy");
+  try { await navigator.clipboard.writeText(val); }
+  catch (_) {
+    const ta = document.createElement("textarea");
+    ta.value = val; document.body.appendChild(ta); ta.select();
+    document.execCommand("copy"); ta.remove();
+  }
+  const old = btn.textContent;
+  btn.textContent = "Tersalin ✓";
+  setTimeout(() => { btn.textContent = old; }, 1600);
+});
+
+/* ---------- Rangkaian tumbuh per section ---------- */
+const SPRIG = `
+  <svg class="sprig {side}" viewBox="0 0 74 150" aria-hidden="true">
+    <path class="stem" pathLength="100" d="M37,150 C30,110 44,86 36,52 C32,34 38,16 37,2"/>
+    <use href="#leafS" width="22" height="30" class="leaf" fill="#7d8b6a" transform="translate(33,116) rotate(-40)" style="transition-delay:.45s"/>
+    <use href="#leafS" width="22" height="30" class="leaf" fill="#5f7052" transform="translate(40,82) scale(-1,1) rotate(-28)" style="transition-delay:.7s"/>
+    <use href="#leafS" width="22" height="30" class="leaf" fill="#7d8b6a" transform="translate(34,50) rotate(-42) scale(.9)" style="transition-delay:.95s"/>
+    <use href="#flwP" class="bloom" x="-16" y="-16" width="32" height="32" transform="translate(37,10)" style="transition-delay:1.15s"/>
+    <use href="#flwB" class="bloom" x="-11" y="-11" width="22" height="22" transform="translate(28,98)" style="transition-delay:1.35s"/>
+  </svg>`;
+document.querySelectorAll("[data-sprig]").forEach(sec => {
+  sec.insertAdjacentHTML("beforeend", SPRIG.replace("{side}", sec.dataset.sprig));
+});
+const sprigStyle = document.createElement("style");
+sprigStyle.textContent = `
+  .sprig .stem{stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1.5s ease .1s}
+  section.grown .sprig .stem{stroke-dashoffset:0}`;
+document.head.appendChild(sprigStyle);
+
+/* ---------- Ikon section & bunga pemisah (SVG gambar tangan) ---------- */
+const SEC_ICONS = {
+  beranda: '<rect x="4" y="9.5" width="16" height="10" rx="1.6"/><path d="M4 11l8-6.5L20 11"/><path d="M12 17.2c-1.3-.9-2.1-1.7-2.1-2.6 0-.7.5-1.2 1.1-1.2.4 0 .8.2 1 .5.2-.3.6-.5 1-.5.6 0 1.1.5 1.1 1.2 0 .9-.8 1.7-2.1 2.6z"/>',
+  mempelai: '<circle cx="9.3" cy="14.5" r="5.3"/><circle cx="14.7" cy="14.5" r="5.3"/><path d="M12 2.8l2.1 2.5L12 7.8 9.9 5.3z"/>',
+  acara: '<rect x="3.5" y="5.5" width="15" height="13.5" rx="1.6"/><circle cx="16.9" cy="9.3" r="2.5" stroke-dasharray="1.8 1.4"/><path d="M6.5 10.5h4.6M6.5 13.8h7.6M6.5 16.6h5.4"/>',
+  galeri: '<rect x="5" y="4.5" width="14" height="15" stroke-dasharray="2.5 1.9"/><circle cx="12" cy="10.4" r="1.5"/><circle cx="12" cy="7.4" r="1.3"/><circle cx="12" cy="13.4" r="1.3"/><circle cx="9" cy="10.4" r="1.3"/><circle cx="15" cy="10.4" r="1.3"/><path d="M12 12.2v4.4"/>',
+  rsvp: '<path d="M20.8 3.2c-4.6.7-7.9 3.6-9.2 7.9l-1.9 6.7 2-1.7c4-1.4 7.3-5.4 9.1-12.9z"/><path d="M11.4 17.2C13.2 12.4 16.2 7.9 20.3 4.4"/><path d="M4 21h12"/>',
+  amplop: '<rect x="3.5" y="6.5" width="17" height="12" rx="1.8"/><path d="M4 8.2l8 5.6 8-5.6"/><circle cx="12" cy="15.4" r="1.7"/>',
+  penutup: '<circle cx="12" cy="12" r="8.2" stroke-dasharray="2.6 2"/><path d="M12 15.8c-2.2-1.5-3.4-2.8-3.4-4.2 0-1 .8-1.9 1.8-1.9.7 0 1.3.3 1.6.9.3-.6.9-.9 1.6-.9 1 0 1.8.9 1.8 1.9 0 1.4-1.2 2.7-3.4 4.2z"/>'
+};
+Object.entries(SEC_ICONS).forEach(([id, paths]) => {
+  const sec = document.getElementById(id);
+  const k = sec && sec.querySelector(".kicker");
+  if (k) k.insertAdjacentHTML("beforebegin",
+    `<svg class="sec-icon" viewBox="0 0 24 24" aria-hidden="true">${paths}</svg>`);
+});
+document.querySelectorAll(".rule").forEach(r => {
+  r.insertAdjacentHTML("beforeend",
+    `<svg class="rule-flower" viewBox="-22 -22 44 44" aria-hidden="true"><g fill="#d29dab"><ellipse cx="0" cy="-10" rx="5.4" ry="10"/><ellipse cx="0" cy="-10" rx="5.4" ry="10" transform="rotate(72)"/><ellipse cx="0" cy="-10" rx="5.4" ry="10" transform="rotate(144)"/><ellipse cx="0" cy="-10" rx="5.4" ry="10" transform="rotate(216)"/><ellipse cx="0" cy="-10" rx="5.4" ry="10" transform="rotate(288)"/></g><circle r="4.2" fill="#b98e46"/></svg>`);
+});
+
+
+const growIO = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if (en.isIntersecting) { en.target.classList.add("grown"); growIO.unobserve(en.target); }
+  });
+}, { threshold: 0.18 });
+document.querySelectorAll("section").forEach(sec => {
+  if (reducedMotion) sec.classList.add("grown"); else growIO.observe(sec);
+});
+
+/* ---------- Taman tepi: tumbuh mengikuti scroll ---------- */
+const stems = [$("stemL"), $("stemR")].map(p => {
+  let len = 900;
+  try { len = p.getTotalLength() || 900; } catch (_) { /* SVG geometry API tak tersedia: pakai perkiraan */ }
+  p.style.strokeDasharray = len; p.style.strokeDashoffset = len;
+  return { p, len };
+});
+const vineBits = document.querySelectorAll(".vine-leaf, .vine-bloom");
+function updateGarden() {
+  const max = document.documentElement.scrollHeight - innerHeight;
+  const prog = max > 0 ? Math.min(1, scrollY / max) : 1;
+  stems.forEach(({ p, len }) => { p.style.strokeDashoffset = reducedMotion ? 0 : len * (1 - prog); });
+  vineBits.forEach(el => {
+    if (reducedMotion || prog >= parseFloat(el.dataset.p)) el.classList.add("on");
+  });
+}
+let ticking = false;
+addEventListener("scroll", () => {
+  if (!ticking) { ticking = true; requestAnimationFrame(() => { updateGarden(); ticking = false; }); }
+}, { passive: true });
+updateGarden();
+
+/* ---------- Scrollspy nav ---------- */
+const navIO = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if (en.isIntersecting) {
+      document.querySelectorAll(".bottom-nav a").forEach(a =>
+        a.classList.toggle("active", a.dataset.nav === en.target.id));
+    }
+  });
+}, { rootMargin: "-40% 0px -55% 0px" });
+["beranda", "mempelai", "acara", "galeri", "rsvp"].forEach(id => navIO.observe($(id)));
+
+/* ---------- Hitung mundur ---------- */
+const target = new Date(CONFIG.countdown).getTime();
+function tickCountdown() {
+  let diff = Math.max(0, target - Date.now());
+  const d = Math.floor(diff / 864e5), h = Math.floor(diff / 36e5) % 24,
+        m = Math.floor(diff / 6e4) % 60, s = Math.floor(diff / 1e3) % 60;
+  $("cdD").textContent = d; $("cdH").textContent = h;
+  $("cdM").textContent = m; $("cdS").textContent = s;
+}
+tickCountdown();
+setInterval(tickCountdown, 1000);
+
+/* ---------- Musik WebAudio ambient (buatan sendiri) ---------- */
+let actx = null, masterGain = null, melodyTimer = null, musicOn = false;
+const SCALE = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33];
+let noteIdx = 3;
+function buildAudio() {
+  actx = new (window.AudioContext || window.webkitAudioContext)();
+  masterGain = actx.createGain(); masterGain.gain.value = 0.0;
+  masterGain.connect(actx.destination);
+  // Pad lembut: dua osilator segitiga + lowpass
+  const padGain = actx.createGain(); padGain.gain.value = 0.045;
+  const lp = actx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 620;
+  [196.00, 246.94, 293.66].forEach(f => {
+    const o = actx.createOscillator(); o.type = "triangle"; o.frequency.value = f;
+    o.connect(lp); o.start();
+  });
+  lp.connect(padGain); padGain.connect(masterGain);
+  const lfo = actx.createOscillator(); lfo.frequency.value = 0.07;
+  const lfoG = actx.createGain(); lfoG.gain.value = 0.018;
+  lfo.connect(lfoG); lfoG.connect(padGain.gain); lfo.start();
+}
+function playNote() {
+  if (!actx || !musicOn) return;
+  noteIdx = Math.max(0, Math.min(SCALE.length - 1, noteIdx + [-2, -1, -1, 0, 1, 1, 2][Math.floor(Math.random() * 7)]));
+  const o = actx.createOscillator(); o.type = "sine";
+  o.frequency.value = SCALE[noteIdx];
+  const g = actx.createGain();
+  const t = actx.currentTime;
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(0.14, t + 0.03);
+  g.gain.exponentialRampToValueAtTime(0.0008, t + 1.5);
+  // gema sederhana
+  const dl = actx.createDelay(); dl.delayTime.value = 0.34;
+  const fb = actx.createGain(); fb.gain.value = 0.28;
+  const wet = actx.createGain(); wet.gain.value = 0.35;
+  o.connect(g); g.connect(masterGain);
+  g.connect(dl); dl.connect(fb); fb.connect(dl); dl.connect(wet); wet.connect(masterGain);
+  o.start(t); o.stop(t + 1.6);
+}
+function setMusic(on) {
+  musicOn = on;
+  $("musicBtn").classList.toggle("playing", on);
+  if (on) {
+    try {
+      if (!actx) buildAudio();
+      actx.resume();
+    } catch (_) { // Audio tak tersedia: surat tetap terbuka, musik dilewati
+      musicOn = false;
+      $("musicBtn").classList.remove("playing");
+      return;
+    }
+    masterGain.gain.cancelScheduledValues(actx.currentTime);
+    masterGain.gain.linearRampToValueAtTime(0.9, actx.currentTime + 1.2);
+    playNote();
+    melodyTimer = setInterval(playNote, 1500);
+  } else if (actx) {
+    masterGain.gain.cancelScheduledValues(actx.currentTime);
+    masterGain.gain.linearRampToValueAtTime(0.0, actx.currentTime + 0.4);
+    clearInterval(melodyTimer);
+  }
+}
+$("musicBtn").addEventListener("click", () => setMusic(!musicOn));
+
+/* ---------- Kupu-kupu kertas ---------- */
+let opened = false;
+function spawnButterfly() {
+  if (reducedMotion || document.hidden || !opened) return;
+  const el = document.createElement("div");
+  el.className = "butterfly";
+  el.innerHTML = `<svg viewBox="0 0 60 44" width="30" height="22">
+    <g class="wing l" fill="#a03a4e" opacity=".85">
+      <ellipse cx="16" cy="14" rx="14" ry="9" transform="rotate(-24 16 14)"/>
+      <ellipse cx="18" cy="32" rx="11" ry="7" transform="rotate(20 18 32)"/>
+    </g>
+    <g class="wing r" fill="#a03a4e" opacity=".85">
+      <ellipse cx="44" cy="14" rx="14" ry="9" transform="rotate(24 44 14)"/>
+      <ellipse cx="42" cy="32" rx="11" ry="7" transform="rotate(-20 42 32)"/>
+    </g>
+    <ellipse cx="30" cy="22" rx="2.6" ry="11" fill="#4a3421"/>
+  </svg>`;
+  document.body.appendChild(el);
+  if (typeof el.animate !== "function") { el.remove(); return; }
+  const colLeft = Math.max(0, (innerWidth - Math.min(430, innerWidth)) / 2);
+  const colW = Math.min(430, innerWidth);
+  const y0 = 60 + Math.random() * (innerHeight * 0.5);
+  const drift = 30 + Math.random() * 50;
+  const anim = el.animate([
+    { transform: `translate(${colLeft - 40}px, ${y0}px)` },
+    { transform: `translate(${colLeft + colW * 0.35}px, ${y0 - drift}px)`, offset: 0.35 },
+    { transform: `translate(${colLeft + colW * 0.7}px, ${y0 + drift * 0.6}px)`, offset: 0.7 },
+    { transform: `translate(${colLeft + colW + 40}px, ${y0 - drift * 0.4}px)` }
+  ], { duration: 9500, easing: "linear" });
+  anim.onfinish = () => el.remove();
+}
+setInterval(spawnButterfly, 14000);
+
+/* ---------- Buka surat: segel pecah ---------- */
+$("sealBtn").addEventListener("click", () => {
+  if (opened) return;
+  opened = true;
+  $("envelope").classList.add("opening");
+  if (CONFIG.music.enabled && !reducedMotion) setMusic(true);
+  setTimeout(spawnButterfly, 2600);
+  setTimeout(() => {
+    $("cover").classList.add("done");
+    document.body.classList.remove("locked");
+    updateGarden();
+    setTimeout(() => $("cover").remove(), 1000);
+  }, reducedMotion ? 60 : 2100);
+}, { once: true });
+
+/* ---------- RSVP: Balas Surat Ini (demo, tersimpan lokal) ---------- */
+const LS_KEY = "surat_hidup_rsvp";
+const SEED = [
+  { nama: "Keluarga Besar Ridwan", hadir: "Hadir", tamu: "4", ucapan: "Barakallah untuk Meyzsa & Fahrezzi, sampai jumpa di Jakarta!", contoh: true },
+  { nama: "Sahabat Kampus Fahrezzi", hadir: "Hadir", tamu: "2", ucapan: "Akhirnya surat ini sampai juga. Turut berbahagia untuk kalian berdua!", contoh: true }
+];
+function loadWishes() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY)) || []; }
+  catch (_) { return []; }
+}
+function renderWishes() {
+  const mine = loadWishes();
+  const all = [...mine.slice().reverse(), ...SEED];
+  $("wishesWrap").style.display = "block";
+  $("wishList").innerHTML = all.map(w => `
+    <div class="wish">
+      <b>${escapeHtml(w.nama)}</b><span class="att">${w.hadir}${w.contoh ? " · contoh" : ""}</span>
+      <p>“${escapeHtml(w.ucapan || "—")}”</p>
+    </div>`).join("");
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+renderWishes();
+
+$("rsvpForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const nama = $("rsvpName").value.trim();
+  if (!nama) { $("rsvpName").focus(); $("rsvpName").style.borderColor = "var(--burgundy)"; return; }
+  const data = {
+    nama,
+    hadir: document.querySelector('input[name="hadir"]:checked').value,
+    tamu: $("rsvpGuests").value,
+    ucapan: $("rsvpMsg").value.trim()
+  };
+  const list = loadWishes(); list.push(data);
+  try { localStorage.setItem(LS_KEY, JSON.stringify(list)); } catch (_) {}
+  renderWishes();
+  $("doneText").textContent = data.hadir === "Hadir"
+    ? `Terima kasih, ${nama}. Balasanmu sudah kami terima — sampai jumpa di hari bahagia, ya!`
+    : `Terima kasih, ${nama}. Sayang sekali belum bisa hadir; doa restumu tetap sampai kepada kami.`;
+  $("replyDone").classList.add("show");
+  $("replyDone").scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" });
+  $("rsvpMsg").value = "";
+});
+</script>
+</body>
+</html>

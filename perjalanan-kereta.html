@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Perjalanan Kereta — Meyzsa &amp; Fahrezzi | UndangYa!</title>
+<meta name="description" content="Undangan pernikahan digital tema Perjalanan Kereta modern: naik KRL cinta dari Stasiun Hati menuju Stasiun Selamanya. Meyzsa & Fahrezzi, Sabtu 12 Juni 2027.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%237a2230'/%3E%3Cg fill='none' stroke='%23fdf6df' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='3.5' width='14' height='13' rx='4'/%3E%3Cpath d='M5 10h14'/%3E%3Cpath d='M8.6 20.4 10.2 16.5M15.4 20.4 13.8 16.5'/%3E%3C/g%3E%3Ccircle cx='9' cy='13.4' r='1.05' fill='%23fdf6df'/%3E%3Ccircle cx='15' cy='13.4' r='1.05' fill='%23fdf6df'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f7f1e0; --paper:#fdfaf0; --paper2:#fffdf6;
+  --teal:#0e3a32; --teal-d:#0a2c26; --green:#1d6a54; --green-soft:#dcebe0;
+  --orange:#dd7733; --sunset:#e89b54; --burgundy:#7a2230; --burgundy2:#5e1a25;
+  --gold:#c9a24b; --gold-l:#e9c979;
+  --ink:#2e2a22; --ink-soft:#6d6455; --line:#ddd0b4;
+  --shadow:0 14px 30px rgba(14,58,50,.16);
+  --col:min(430px,100vw);
+}
+html,body{height:100%}
+body{margin:0;background:#0a1512;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);overflow:hidden}
+h1,h2,h3,h4,p,figure{margin:0}
+button{font-family:inherit}
+img{display:block;max-width:100%}
+a{color:var(--burgundy)}
+::selection{background:var(--sunset);color:#fff}
+.phone{max-width:430px;margin:0 auto;height:100dvh;display:flex;flex-direction:column;background-color:var(--cream);background-image:radial-gradient(rgba(20,83,45,.05) 1.1px,transparent 1.35px),linear-gradient(180deg,#f8f2e1,#f4ecd7);background-size:22px 22px,100% 100%;position:relative;overflow:hidden;box-shadow:0 0 60px rgba(0,0,0,.5)}
+h1,h2,.serif{font-family:'Playfair Display',serif}
+.icn{display:inline-block;vertical-align:-3px;flex:0 0 auto}
+
+/* ============ JENDELA KERETA MODERN (parallax, atas) ============ */
+.window-top{position:relative;flex:0 0 auto;height:clamp(76px,13.5dvh,126px);border-bottom:3px solid var(--teal-d);border-radius:0 0 18px 18px;overflow:hidden;background:linear-gradient(180deg,#f8bd76 0%,#f09a5c 36%,#dd7355 62%,#b85557 100%);box-shadow:0 8px 20px rgba(14,58,50,.22);z-index:5}
+.window-top::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,0) 42%);z-index:6;pointer-events:none}
+.window-top::after{content:"";position:absolute;inset:0;border-radius:0 0 16px 16px;box-shadow:inset 0 0 0 2px rgba(255,244,214,.30),inset 0 -14px 24px rgba(94,26,37,.22);pointer-events:none;z-index:6}
+.sky-layer{position:absolute;left:0;top:0;height:100%;width:230%;will-change:transform;pointer-events:none}
+.sky-layer svg{width:100%;height:100%;display:block}
+.sky-sun{position:absolute;top:12px;left:0;width:46px;height:46px;border-radius:50%;background:#ffd98a;box-shadow:0 0 0 7px rgba(255,217,138,.35),0 0 34px 12px rgba(255,190,90,.45);will-change:transform}
+.sky-layer svg.drift{animation:drift 26s ease-in-out infinite alternate}
+.sky-layer svg.drift2{animation:drift 19s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-16px)}}
+.window-caption{position:absolute;right:10px;top:8px;z-index:7;font-size:.56rem;letter-spacing:.22em;color:#fff7e0;text-shadow:0 1px 6px rgba(94,26,37,.6);font-weight:800}
+.window-route{position:absolute;left:12px;top:8px;z-index:7;font-size:.56rem;letter-spacing:.16em;color:#fff7e0;text-shadow:0 1px 6px rgba(94,26,37,.6);font-weight:800}
+
+/* kereta modern meluncur di jendela */
+.win-train{position:absolute;left:8px;bottom:5px;width:min(244px,60%);height:60px;z-index:4;pointer-events:none;will-change:transform}
+.win-train svg{width:100%;height:100%;display:block;overflow:visible}
+.win-train .wheel{transform-box:fill-box;transform-origin:center}
+.win-rail{position:absolute;left:-6px;right:-52px;bottom:0;height:4px;background:repeating-linear-gradient(90deg,rgba(10,44,38,.55) 0 10px,transparent 10px 19px);border-top:2px solid rgba(10,44,38,.85);opacity:.75}
+
+/* ============ PETA RUTE MODERN (gaya peta metro) ============ */
+.routemap{display:none}
+body.journey .routemap{display:block;flex:0 0 auto;background:linear-gradient(180deg,#fffdf6,var(--cream));border-bottom:1px solid var(--line);padding:7px 14px 6px;box-shadow:0 6px 14px rgba(14,58,50,.10);position:relative;z-index:6}
+.rm-board{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:7px}
+.rm-board-label{font-size:.52rem;letter-spacing:.22em;font-weight:800;color:var(--ink-soft);white-space:nowrap}
+.rm-now{font-family:'Playfair Display',serif;font-weight:700;font-size:.84rem;color:var(--burgundy);text-align:right;line-height:1.1}
+.rm-track{position:relative;height:20px;margin:0 12px}
+.rm-line{position:absolute;left:0;right:0;top:8px;height:3px;border-radius:2px;background:#d9cfb4}
+.rm-fill{position:absolute;left:0;top:8px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--burgundy),var(--orange));width:0}
+.rm-stop{position:absolute;top:9px;transform:translate(-50%,-50%);width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--teal);cursor:pointer;padding:0;z-index:2;-webkit-tap-highlight-color:transparent}
+.rm-stop.passed{border-color:var(--orange)}
+.rm-stop.on{background:var(--burgundy);border-color:#fff;transform:translate(-50%,-50%) scale(1.25);box-shadow:0 0 0 2.5px var(--burgundy)}
+.rm-train{position:absolute;top:-7px;left:0;transform:translateX(-50%);width:22px;height:22px;border-radius:50%;background:#fff;border:2px solid var(--burgundy);box-shadow:0 2px 6px rgba(0,0,0,.22);display:flex;align-items:center;justify-content:center;z-index:3;pointer-events:none;color:var(--burgundy)}
+.rm-labels{position:relative;height:24px;margin:0 12px}
+.rm-lab{position:absolute;transform:translateX(-50%);text-align:center;font-size:.5rem;font-weight:800;letter-spacing:.03em;color:var(--ink-soft);line-height:1.15;white-space:nowrap;cursor:pointer}
+.rm-lab small{display:block;font-size:.46rem;font-weight:700;color:var(--orange);letter-spacing:.05em}
+.rm-lab.on{color:var(--burgundy)}
+.rm-lab:first-child{transform:translateX(-6px)}
+.rm-lab:last-child{transform:translateX(calc(-100% + 6px))}
+
+/* ============ TREK HORIZONTAL & PANEL (TANPA SCROLL) ============ */
+.track-viewport{flex:1 1 auto;min-height:0;overflow:hidden;position:relative;touch-action:none}
+.track{display:flex;height:100%;will-change:transform}
+.panel{flex:0 0 100%;width:100%;height:100%;overflow:hidden;padding:12px 18px 14px;display:flex;flex-direction:column;box-sizing:border-box}
+.track.dragging .panel{pointer-events:none}
+.nav-arrow{display:flex;position:absolute;top:50%;transform:translateY(-50%);z-index:8;width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,247,224,.7);background:rgba(14,58,50,.42);color:#fdf6df;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.22);backdrop-filter:blur(3px);transition:opacity .3s;padding:0}
+.nav-arrow.prev{left:2px}
+.nav-arrow.next{right:2px}
+.nav-arrow.off{opacity:.2;pointer-events:none}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* kepala stasiun: signage modern */
+.st-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex:0 0 auto}
+.st-num{background:var(--burgundy);color:#fff;font-weight:800;font-size:.7rem;letter-spacing:.05em;padding:4px 9px;border-radius:7px}
+.st-name{font-weight:800;font-size:.92rem;color:var(--teal);letter-spacing:.01em;line-height:1.15}
+.st-head .line{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),rgba(201,162,75,0));border-radius:2px}
+.km{flex:0 0 auto;border:1.5px solid var(--teal);color:var(--teal);font-size:.54rem;font-weight:800;letter-spacing:.1em;padding:3px 8px;border-radius:99px}
+.sec-title{font-size:clamp(1.1rem,4.6vw,1.32rem);color:var(--teal);line-height:1.2;margin-bottom:6px}
+.sec-title em{color:var(--burgundy);font-style:italic}
+.sec-text{font-size:.8rem;line-height:1.6;color:#4c463c}
+.center{text-align:center}
+
+/* kartu modern: garis tipis + hairline emas */
+.card{background:linear-gradient(180deg,var(--paper2),#fdf8ea);border:1px solid #e2d7ba;border-radius:14px;box-shadow:0 8px 20px rgba(14,58,50,.07),inset 0 0 0 3px var(--paper2),inset 0 0 0 4px rgba(201,162,75,.32);padding:16px}
+.mod-frame{border:1.5px solid var(--teal);box-shadow:0 10px 22px rgba(14,58,50,.10),inset 0 0 0 2px var(--paper2),inset 0 0 0 3.5px rgba(201,162,75,.55)}
+.btn{display:inline-flex;align-items:center;gap:7px;background:var(--teal);color:#fdf6df;text-decoration:none;font-weight:700;font-size:.74rem;padding:9px 16px;border-radius:99px;box-shadow:0 8px 18px rgba(14,58,50,.22);border:none;cursor:pointer}
+.btn.orange{background:linear-gradient(180deg,var(--orange),#c65f22);color:#fff}
+
+/* ============ COVER: E-TIKET MODERN ============ */
+.cover{position:fixed;inset:0;left:50%;transform:translateX(-50%);width:var(--col);height:100dvh;z-index:60;background:radial-gradient(120% 55% at 50% -8%,rgba(232,155,84,.4) 0%,rgba(232,155,84,0) 58%),linear-gradient(168deg,#14453a 0%,#0e3a32 52%,#082620 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 18px calc(14px + env(safe-area-inset-bottom));transition:transform .9s cubic-bezier(.7,0,.25,1),opacity .9s;overflow:hidden;isolation:isolate}
+.cover.opened{transform:translateX(-50%) translateY(-102%);opacity:.4;pointer-events:none}
+.cover-art{position:absolute;left:0;right:0;bottom:0;width:100%;z-index:0;opacity:.16;pointer-events:none}
+.cover>*:not(.cover-art){position:relative;z-index:1}
+.cover-brand{color:#f3d9a4;letter-spacing:.4em;font-size:.6rem;font-weight:800;text-align:center}
+.cover-title{color:#fdf6df;font-size:clamp(1.6rem,7.4vw,1.95rem);text-align:center;line-height:1.15;margin:8px 0 2px;font-weight:800}
+.cover-title em{color:var(--sunset);font-style:italic}
+.cover-sub{color:#cfe3d2;font-size:.74rem;text-align:center;letter-spacing:.06em;margin-bottom:16px}
+.ticket{background:#fffdf8;width:100%;border-radius:16px;box-shadow:0 22px 44px rgba(0,0,0,.42),0 0 0 1px rgba(201,162,75,.55);position:relative;overflow:hidden}
+.ticket-head{background:linear-gradient(90deg,var(--burgundy),var(--burgundy2));color:#fdf3d8;padding:10px 16px;display:flex;justify-content:space-between;align-items:center}
+.ticket-head .ka{font-weight:800;letter-spacing:.12em;font-size:.78rem;display:flex;align-items:center;gap:8px}
+.ticket-head .cls{font-size:.58rem;font-weight:800;letter-spacing:.18em;border:1px solid rgba(253,243,216,.6);padding:3px 8px;border-radius:99px}
+.ticket-body{padding:14px 16px 4px}
+.route{display:flex;align-items:center;gap:10px}
+.route .st{flex:1;min-width:0}
+.route .st small{display:block;font-size:.54rem;letter-spacing:.18em;color:var(--ink-soft);font-weight:800}
+.route .st b{font-family:'Playfair Display',serif;font-size:1.02rem;color:var(--teal)}
+.route .mid{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--burgundy)}
+.route .mid .dash{width:52px;border-top:2px dashed #cbbd97}
+.ticket-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:10px 0 12px;border-top:1px solid #eee2c6;margin-top:12px}
+.ticket-meta small{display:block;font-size:.52rem;letter-spacing:.16em;color:var(--ink-soft);font-weight:800}
+.ticket-meta b{font-size:.78rem;color:var(--ink)}
+.ticket-perf{height:0;border-top:2px dashed #cbbd97;position:relative;margin:0 4px}
+.ticket-perf::before,.ticket-perf::after{content:"";position:absolute;top:-10px;width:20px;height:20px;border-radius:50%;background:#0c2f29}
+.ticket-perf::before{left:-15px}.ticket-perf::after{right:-15px}
+.ticket-guest{padding:10px 16px 2px;text-align:center}
+.ticket-guest small{display:block;font-size:.56rem;letter-spacing:.22em;color:var(--ink-soft);font-weight:800}
+.ticket-guest .gname{font-family:'Playfair Display',serif;font-size:1.22rem;color:var(--burgundy);margin-top:1px}
+.ticket-stub{padding:8px 16px 13px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ticket-stub .qr{flex:0 0 auto;line-height:0}
+.ticket-stub .codes{text-align:right}
+.ticket-stub .code{font-family:ui-monospace,Menlo,monospace;font-size:.86rem;color:var(--teal);letter-spacing:.08em}
+.ticket-stub .no{display:block;font-size:.56rem;letter-spacing:.18em;color:var(--ink-soft);font-weight:800;margin-top:2px}
+.ticket-stamp{position:absolute;right:8px;bottom:64px;width:78px;height:78px;transform:rotate(-11deg);opacity:.85;pointer-events:none;z-index:3}
+.btn-board{margin-top:18px;background:linear-gradient(180deg,var(--orange),#c65f22);color:#fff;border:none;font-weight:800;letter-spacing:.05em;font-size:.92rem;padding:13px 32px;border-radius:99px;cursor:pointer;box-shadow:0 12px 26px rgba(221,119,51,.45),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:9px}
+.btn-board:active{transform:scale(.96)}
+.cover-note{margin-top:12px;color:#9db8a6;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-align:center}
+
+/* ============ BERANDA ============ */
+#beranda{background:radial-gradient(125% 80% at 50% -6%,rgba(232,155,84,.22),rgba(232,155,84,0) 60%)}
+.hero-photo{border-radius:18px;overflow:hidden;position:relative;height:clamp(148px,29dvh,288px);flex:0 0 auto;box-shadow:0 0 0 3px var(--teal),0 0 0 5px rgba(201,162,75,.75),0 16px 30px rgba(14,58,50,.2)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 32%}
+.hero-photo .cap{position:absolute;left:10px;bottom:10px;background:rgba(10,38,32,.85);color:#f3d9a4;font-size:.54rem;letter-spacing:.2em;font-weight:800;padding:5px 11px;border-radius:99px;white-space:nowrap}
+.hero-kicker{margin-top:14px;font-size:.6rem;letter-spacing:.3em;font-weight:800;color:var(--orange);text-align:center}
+.hero-names{font-size:clamp(1.5rem,6.6vw,1.95rem);color:var(--teal);text-align:center;margin:4px 0 2px;line-height:1.15}
+.hero-names em{color:var(--burgundy)}
+.hero-date{text-align:center;letter-spacing:.28em;font-size:.68rem;font-weight:800;color:var(--orange)}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;flex:0 0 auto}
+.cd{background:var(--teal);color:#fdf6df;border-radius:11px;padding:9px 2px;text-align:center;box-shadow:0 8px 18px rgba(14,58,50,.18)}
+.cd b{display:block;font-size:1.18rem;font-weight:800;line-height:1}
+.cd small{font-size:.52rem;letter-spacing:.2em;color:#f3d9a4;font-weight:800}
+.cd-alt{background:var(--paper2);color:var(--teal);border:1.5px solid var(--teal);box-shadow:none}
+.cd-alt small{color:var(--orange)}
+
+/* ============ MEMPELAI: dua kartu berdampingan ============ */
+.couple-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:1 1 auto;min-height:0}
+.p-card{display:flex;flex-direction:column;padding:10px;overflow:hidden}
+.p-photo{height:clamp(82px,16.5dvh,148px);border-radius:10px;overflow:hidden;flex:0 0 auto;box-shadow:inset 0 0 0 2px rgba(255,244,214,.35)}
+.p-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.p-role{font-size:.54rem;letter-spacing:.16em;color:var(--orange);font-weight:800;margin-top:9px}
+.p-name{font-family:'Playfair Display',serif;font-size:.94rem;color:var(--teal);line-height:1.25;margin-top:2px}
+.p-parents{font-size:.64rem;line-height:1.5;color:#5c5546;margin-top:3px}
+.p-seat{color:var(--orange);font-weight:800;font-size:.58rem;letter-spacing:.07em;margin-top:5px}
+.ig{display:inline-flex;align-items:center;gap:5px;margin-top:auto;padding-top:8px;color:var(--teal);font-size:.68rem;font-weight:800;text-decoration:none}
+.ig span{background:var(--green-soft);padding:5px 10px;border-radius:99px;display:inline-flex;align-items:center;gap:5px}
+
+/* ============ ACARA: dua kartu berdampingan ============ */
+#eventCards{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:0 0 auto}
+.event{border-radius:14px;padding:20px 12px 12px;position:relative;overflow:hidden;display:flex;flex-direction:column;background:linear-gradient(180deg,var(--paper2),#fbf4e0)}
+.event::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--orange),var(--burgundy))}
+.event h3{font-size:.98rem;color:var(--burgundy);margin-bottom:3px}
+.event .when{font-weight:800;color:var(--teal);font-size:.72rem;line-height:1.45}
+.event .when span{display:block}
+.event .where{font-size:.67rem;color:#5c5546;line-height:1.5;margin-top:5px}
+.event .where b{color:var(--ink);font-size:.72rem}
+.event .btn{margin-top:auto;padding-top:0;position:relative;top:0}
+.event .btnwrap{margin-top:auto;padding-top:10px}
+
+/* ============ GALERI: kisi 2x2 terlihat semua ============ */
+.gallery{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;flex:1 1 auto;min-height:0}
+.win{border:5px solid #123c33;border-radius:16px;overflow:hidden;position:relative;background:#0e3a32;box-shadow:0 10px 20px rgba(14,58,50,.15)}
+.win img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.win figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2;background:linear-gradient(0deg,rgba(10,35,30,.85),rgba(10,35,30,0));color:#fdf6df;font-size:.6rem;font-weight:700;letter-spacing:.04em;padding:18px 8px 7px;text-align:center}
+.win::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 2px rgba(233,201,121,.4);border-radius:11px;pointer-events:none;z-index:1}
+
+/* ============ RSVP + AMPLOP (padat, satu layar) ============ */
+.field{margin-bottom:9px}
+.field label{display:block;font-size:.6rem;letter-spacing:.14em;font-weight:800;color:var(--teal);margin-bottom:4px}
+.field input[type=text],.field select,.field textarea{width:100%;box-sizing:border-box;border:1.5px solid var(--line);border-radius:9px;padding:9px 11px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;background:#fff;color:var(--ink);outline:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green)}
+.field textarea{resize:none;height:42px}
+.form-top{display:grid;grid-template-columns:1fr 92px;gap:10px;margin-bottom:9px}
+.intro{margin-bottom:10px}
+.cd2wrap{margin-top:12px}
+.kelas{display:flex;gap:7px}
+.kelas label{flex:1;border:1.5px solid var(--line);border-radius:10px;padding:7px 4px 6px;font-size:.66rem;font-weight:800;color:var(--ink);cursor:pointer;background:#fff;text-align:center;line-height:1.25;margin:0;letter-spacing:0}
+.kelas label small{display:block;font-weight:600;color:var(--ink-soft);font-size:.56rem;margin-top:1px}
+.kelas input{position:absolute;opacity:0;pointer-events:none}
+.kelas label:has(input:checked){border-color:var(--burgundy);background:#fdf1f0;color:var(--burgundy)}
+.demo-note{font-size:.62rem;color:var(--ink-soft);text-align:center;margin-top:8px;letter-spacing:.03em}
+#rsvpForm button[type="submit"]{margin-top:10px}
+.rsvp-result{display:none}
+.rsvp-result.show{display:block}
+.mini-ticket{background:var(--paper2);border:1.5px dashed var(--burgundy);border-radius:12px;padding:13px 14px;position:relative}
+.mini-ticket .stamp{position:absolute;right:10px;top:10px;border:2px solid var(--green);color:var(--green);font-weight:800;font-size:.56rem;letter-spacing:.12em;padding:3px 7px;border-radius:6px;transform:rotate(7deg);background:rgba(255,255,255,.8)}
+.mini-ticket h4{font-family:'Playfair Display',serif;color:var(--teal);font-size:1rem;margin:0 0 5px}
+.mini-ticket p{font-size:.74rem;line-height:1.6;color:#4c463c}
+.link-btn{background:none;border:none;color:var(--burgundy);font-weight:800;font-size:.7rem;cursor:pointer;padding:6px 0 0;text-decoration:underline}
+.sub-head{display:flex;align-items:center;gap:10px;margin:13px 0 8px;flex:0 0 auto}
+.sub-head h2{font-size:1.04rem;color:var(--teal)}
+.sub-head h2 em{color:var(--burgundy);font-style:italic}
+.sub-head .line{flex:1;height:2px;background:linear-gradient(90deg,var(--gold),rgba(201,162,75,0))}
+.acc{display:flex;align-items:center;gap:11px;border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;margin-bottom:8px;background:#fff}
+.acc:last-child{margin-bottom:0}
+.acc .logo{flex:0 0 auto;width:38px;height:38px;border-radius:10px;background:var(--teal);color:#f3d9a4;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:800;font-size:.68rem}
+.acc .logo.dana{background:var(--burgundy)}
+.acc b{font-size:.86rem;letter-spacing:.03em}
+.acc small{display:block;color:var(--ink-soft);font-size:.64rem}
+.acc button{margin-left:auto;flex:0 0 auto;background:var(--green-soft);color:var(--teal);border:none;font-weight:800;font-size:.66rem;padding:7px 12px;border-radius:99px;cursor:pointer}
+
+/* ============ PENUTUP ============ */
+.closing{margin:auto 0;background:linear-gradient(180deg,var(--teal),#0a2c26);border-radius:20px;padding:24px 20px;text-align:center;color:#e9e2cb;box-shadow:var(--shadow),inset 0 0 0 1px rgba(201,162,75,.5),inset 0 0 0 5px rgba(255,255,255,.03)}
+.closing h2{color:#fdf6df;font-size:1.38rem;margin-bottom:7px}
+.closing h2 em{color:var(--sunset)}
+.closing p{font-size:.8rem;line-height:1.7;color:#cfdcc9}
+.closing .sign{font-family:'Playfair Display',serif;font-style:italic;font-size:1.24rem;color:#f3d9a4;margin-top:12px}
+.credits{margin-top:15px;font-size:.56rem;letter-spacing:.24em;color:#8fae97;line-height:2}
+.closing-acc{display:flex;justify-content:center;align-items:center;gap:24px;margin:14px 0 2px;color:#f3d9a4;opacity:.92}
+
+/* ============ BOTTOM NAV (pengendali stasiun, di dalam alur) ============ */
+.bottomnav{flex:0 0 auto;background:rgba(14,58,50,.98);display:flex;justify-content:space-around;align-items:stretch;padding:7px 4px calc(7px + env(safe-area-inset-bottom));box-shadow:0 -8px 24px rgba(0,0,0,.28);border-top:3px solid var(--orange);position:relative;z-index:40}
+.bottomnav a,.bottomnav button{flex:1;background:none;border:none;color:#b9cfbc;text-decoration:none;font-size:.55rem;font-weight:700;letter-spacing:.05em;display:flex;flex-direction:column;align-items:center;gap:3px;padding:3px 0;cursor:pointer}
+.bottomnav .ic{display:flex;align-items:center;justify-content:center;line-height:1}
+.bottomnav a.on{color:#f3d9a4}
+#btnMusic .disc{display:inline-block}
+#btnMusic.playing .disc{animation:spin 3.2s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);background:var(--teal);color:#fdf6df;font-size:.72rem;font-weight:700;padding:10px 18px;border-radius:99px;z-index:70;opacity:0;pointer-events:none;transition:all .35s;box-shadow:0 12px 26px rgba(0,0,0,.3);white-space:nowrap;max-width:92vw}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* layar pendek: rapatkan jarak */
+@media (max-height:700px){
+  .window-top{height:74px}
+  .routemap{padding:5px 12px 4px}
+  .rm-board{margin-bottom:4px}
+  .rm-labels{height:21px}
+  .panel{padding:9px 15px 10px}
+  .st-head{margin-bottom:7px}
+  .card{padding:12px}
+  .hero-photo{height:23dvh}
+  .hero-kicker{margin-top:9px}
+  .field{margin-bottom:7px}
+  .sub-head{margin:9px 0 6px}
+  .closing{padding:18px 16px}
+  .intro{margin-bottom:6px}
+  .cd2wrap{margin-top:7px}
+  #eventCards{gap:8px}
+  .event{padding:16px 10px 10px}
+  /* st2 mempelai: foto & teks lebih ringkas */
+  .p-photo{height:12.5dvh}
+  .p-role{margin-top:6px}
+  .p-name{font-size:.88rem}
+  .p-parents{font-size:.6rem;line-height:1.45}
+  .ig{padding-top:4px}
+  /* st5 RSVP + amplop: mode padat */
+  .form-top{margin-bottom:7px}
+  .field input[type=text],.field select,.field textarea{padding:7px 10px}
+  .field textarea{height:36px}
+  .kelas label{padding:8px 4px}
+  .kelas label small{display:none}
+  .amplop-intro{display:none}
+  .acc{padding:7px 10px;margin-bottom:6px}
+  .acc .logo{width:32px;height:32px;font-size:.62rem}
+  .acc small{font-size:.58rem;white-space:nowrap}
+  .acc-note{display:none}
+  .demo-note{margin-top:5px}
+  #rsvpForm .demo-note{font-size:.58rem;white-space:nowrap}
+  /* st2 & st4: paragraf pembuka lebih ringkas */
+  #st2 .intro,#st4 .intro{font-size:.76rem;line-height:1.5}
+  .panel{padding-bottom:8px}
+  .st-head{margin-bottom:5px}
+  .card{padding:10px}
+  .form-top{margin-bottom:6px}
+  #rsvpForm .field textarea{height:32px}
+  #rsvpForm button[type="submit"]{padding-top:7px;padding-bottom:7px;margin-top:7px}
+  .sub-head h2{font-size:.95rem}
+  /* penutup: mode padat */
+  .closing p{font-size:.76rem;line-height:1.6}
+  .closing h2{font-size:1.18rem}
+  .closing .sign{margin-top:8px;font-size:1.08rem}
+  .closing-acc{margin:8px 0 0}
+  .credits{line-height:1.7;margin-top:10px}
+}
+/* layar sempit: keterangan jendela disembunyikan agar teks rute tidak bertumpuk */
+@media (max-width:400px){
+  .window-caption{display:none}
+}
+/* layar pendek: geser crop hero agar kedua wajah mempelai tetap terlihat */
+@media (max-height:700px){
+  .hero-photo img{object-position:50% 42%}
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .cover{transition:none}
+  #btnMusic.playing .disc{animation:none}
+  .sky-layer svg.drift,.sky-layer svg.drift2{animation:none}
+  .nav-arrow{transition:none}
+}
+</style>
+<link rel="canonical" href="https://undangya.web.id/perjalanan-kereta">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Perjalanan Kereta — Meyzsa & Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital perjalanan KRL modern: geser antar-stasiun, kereta berjalan mengikuti ritme, tanpa scroll — Perjalanan Kereta">
+<meta property="og:url" content="https://undangya.web.id/perjalanan-kereta">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/perjalanan-kereta.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Perjalanan Kereta — Meyzsa & Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital perjalanan KRL modern: geser antar-stasiun, kereta berjalan mengikuti ritme, tanpa scroll — Perjalanan Kereta">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/perjalanan-kereta.webp">
+</head>
+<body>
+<!-- Simbol kereta modern (dipakai ulang): KRL tampak samping & tampak depan -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="krlGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4f6f8"/><stop offset=".55" stop-color="#ccd5db"/><stop offset="1" stop-color="#e6ecef"/>
+    </linearGradient>
+    <symbol id="krlSide" viewBox="0 0 220 64">
+      <path d="M74 13 L84 4 H100 L108 13" fill="none" stroke="#33424c" stroke-width="2.4"/>
+      <path d="M8 14 H124 Q162 14 186 34 Q196 42 194 49 Q193 53 185 53 H8 Q4 53 4 48 V19 Q4 14 8 14 Z" fill="#cfd8dd" stroke="#7d8f98" stroke-width="1.4"/>
+      <path d="M10 20 H120 Q148 20 168 36 L170 41 H10 Z" fill="#1d2b33"/>
+      <path d="M4 40 H192 L190 45.5 H4 Z" fill="#7a2230"/>
+      <rect x="26" y="51" width="38" height="6" rx="3" fill="#22303a"/>
+      <rect x="128" y="51" width="42" height="6" rx="3" fill="#22303a"/>
+      <circle cx="188" cy="42" r="2.8" fill="#ffe9a8"/>
+    </symbol>
+    <symbol id="krlFront" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="3.5" width="14" height="13" rx="4"/>
+        <path d="M5 10h14"/>
+        <path d="M8.6 20.4 10.2 16.5M15.4 20.4 13.8 16.5"/>
+      </g>
+      <circle cx="9" cy="13.4" r="1.05" fill="currentColor"/>
+      <circle cx="15" cy="13.4" r="1.05" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+<div class="phone" id="phone">
+
+  <!-- COVER: E-TIKET MODERN -->
+  <div class="cover" id="cover" role="dialog" aria-label="Sampul undangan">
+    <svg class="cover-art" viewBox="0 0 430 150" preserveAspectRatio="none" aria-hidden="true"><circle cx="356" cy="30" r="19" fill="#f3d9a4"/><path d="M0 108 L84 82 L168 102 L258 76 L348 100 L430 84 L430 150 L0 150 Z" fill="#f3d9a4"/><path d="M0 128 L430 128" stroke="#f3d9a4" stroke-width="3"/><g fill="#f3d9a4"><path d="M52 122v-4q0-3 4-3h86q26 0 40 9l6 4v4z"/><rect x="66" y="105" width="10" height="7" rx="2"/><rect x="82" y="105" width="34" height="6" rx="3" opacity=".65"/></g><path d="M212 122V84M196 92h32M200 102h24" stroke="#f3d9a4" stroke-width="3.4" fill="none"/></svg>
+    <div class="cover-brand">UNDANGYA! · KERETA API CINTA</div>
+    <h1 class="cover-title">Perjalanan <em>Kereta</em></h1>
+    <p class="cover-sub">Satu tiket, dua penumpang, tujuan: selamanya.</p>
+    <div class="ticket">
+      <div class="ticket-head"><span class="ka"><svg class="icn" width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><use href="#krlFront"/></svg> KA CINTA ABADI</span><span class="cls">E-TIKET · 2027</span></div>
+      <div class="ticket-body">
+        <div class="route">
+          <div class="st"><small>DARI STASIUN</small><b>Hati</b></div>
+          <div class="mid"><span class="dash"></span><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><use href="#krlFront"/></svg><span class="dash"></span></div>
+          <div class="st" style="text-align:right"><small>TUJUAN</small><b>Selamanya</b></div>
+        </div>
+        <div class="ticket-meta">
+          <div><small>KEBERANGKATAN</small><b>12 Jun 2027</b></div>
+          <div><small>GERBONG</small><b>06 · Mempelai</b></div>
+          <div><small>KURSI</small><b>12A · Jendela</b></div>
+        </div>
+      </div>
+      <div class="ticket-perf"></div>
+      <div class="ticket-guest">
+        <small>TIKET ATAS NAMA</small>
+        <div class="gname" id="guestName">Tamu Undangan</div>
+      </div>
+      <div class="ticket-stub">
+        <span class="qr" aria-hidden="true"><svg width="52" height="52" viewBox="0 0 84 84"><rect x="0" y="0" width="84" height="84" fill="#fff"/><g fill="#0e3a32"><rect x="2" y="2" width="28" height="28"/><rect x="54" y="2" width="28" height="28"/><rect x="2" y="54" width="28" height="28"/><rect x="34" y="2" width="4" height="4"/><rect x="42" y="6" width="4" height="4"/><rect x="34" y="14" width="4" height="4"/><rect x="46" y="14" width="4" height="4"/><rect x="38" y="22" width="4" height="4"/><rect x="48" y="26" width="4" height="4"/><rect x="34" y="34" width="4" height="4"/><rect x="44" y="34" width="4" height="4"/><rect x="54" y="34" width="4" height="4"/><rect x="64" y="34" width="4" height="4"/><rect x="74" y="34" width="4" height="4"/><rect x="6" y="38" width="4" height="4"/><rect x="16" y="38" width="4" height="4"/><rect x="26" y="40" width="4" height="4"/><rect x="50" y="42" width="4" height="4"/><rect x="70" y="42" width="4" height="4"/><rect x="10" y="46" width="4" height="4"/><rect x="38" y="46" width="4" height="4"/><rect x="60" y="46" width="4" height="4"/><rect x="34" y="54" width="4" height="4"/><rect x="44" y="58" width="4" height="4"/><rect x="54" y="54" width="4" height="4"/><rect x="66" y="58" width="4" height="4"/><rect x="76" y="54" width="4" height="4"/><rect x="38" y="66" width="4" height="4"/><rect x="50" y="70" width="4" height="4"/><rect x="62" y="66" width="4" height="4"/><rect x="72" y="70" width="4" height="4"/><rect x="58" y="76" width="4" height="4"/><rect x="34" y="76" width="4" height="4"/></g><g fill="#fff"><rect x="6" y="6" width="20" height="20"/><rect x="58" y="6" width="20" height="20"/><rect x="6" y="58" width="20" height="20"/></g><g fill="#0e3a32"><rect x="10" y="10" width="12" height="12"/><rect x="62" y="10" width="12" height="12"/><rect x="10" y="62" width="12" height="12"/></g></svg></span>
+        <span class="codes"><span class="code">M&amp;F · 12062027</span><span class="no">NO. TIKET · UY-2027-0612</span></span>
+      </div>
+      <svg class="ticket-stamp" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="stampArc" d="M50 50 m -35 0 a35 35 0 1 1 70 0 a35 35 0 1 1 -70 0"/></defs><circle cx="50" cy="50" r="46.5" fill="none" stroke="#7a2230" stroke-width="2.6"/><circle cx="50" cy="50" r="28" fill="none" stroke="#7a2230" stroke-width="1.6"/><text font-size="10.5" letter-spacing="2.4" fill="#7a2230" font-weight="800" font-family="'Plus Jakarta Sans',sans-serif"><textPath href="#stampArc">STASIUN HATI · BERANGKAT ·</textPath></text><text x="50" y="47" text-anchor="middle" font-size="11.5" font-weight="800" fill="#7a2230" font-family="'Playfair Display',serif">12 JUN</text><text x="50" y="61" text-anchor="middle" font-size="11.5" font-weight="800" fill="#7a2230" font-family="'Playfair Display',serif">2027</text></svg>
+    </div>
+    <button class="btn-board" id="btnOpen" type="button"><svg class="icn" width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><use href="#krlFront"/></svg> Naik Kereta</button>
+    <p class="cover-note">MOHON TIKET DIBAWA SAMPAI STASIUN TUJUAN</p>
+  </div>
+
+  <!-- JENDELA KERETA MODERN: lanskap geometris + KRL meluncur -->
+  <div class="window-top" aria-hidden="true">
+    <div class="sky-sun" id="layerSun"></div>
+    <div class="sky-layer" id="layerFar">
+      <svg viewBox="0 0 1720 132" preserveAspectRatio="none"><path d="M0 100 L120 46 L240 92 L360 38 L480 88 L600 52 L730 94 L860 42 L990 90 L1110 50 L1240 96 L1360 44 L1490 90 L1610 54 L1720 92 L1720 132 L0 132 Z" fill="#c05f43" opacity=".8"/></svg>
+    </div>
+    <div class="sky-layer" id="layerClouds">
+      <svg class="drift" viewBox="0 0 1720 132" preserveAspectRatio="none" aria-hidden="true"><g fill="#fff6dd" opacity=".92"><rect x="86" y="22" width="104" height="15" rx="7.5"/><rect x="112" y="14" width="52" height="13" rx="6.5"/><rect x="478" y="13" width="88" height="13" rx="6.5"/><rect x="500" y="6" width="44" height="11" rx="5.5"/><rect x="838" y="27" width="112" height="15" rx="7.5"/><rect x="868" y="19" width="54" height="12" rx="6"/><rect x="1208" y="15" width="92" height="13" rx="6.5"/><rect x="1232" y="8" width="46" height="11" rx="5.5"/><rect x="1536" y="25" width="102" height="14" rx="7"/><rect x="1564" y="17" width="50" height="12" rx="6"/></g></svg>
+    </div>
+    <div class="sky-layer" id="layerBirds">
+      <svg class="drift2" viewBox="0 0 1720 132" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#5e1a25" stroke-width="2.2" stroke-linecap="round" opacity=".6"><path d="M196 30 q5 -6 10 0 q5 -6 10 0"/><path d="M238 40 q4 -5 8 0 q4 -5 8 0"/><path d="M590 22 q5 -6 10 0 q5 -6 10 0"/><path d="M972 30 q4 -5 8 0 q4 -5 8 0"/><path d="M1360 28 q5 -6 10 0 q5 -6 10 0"/><path d="M1596 42 q4 -5 8 0 q4 -5 8 0"/></g></svg>
+    </div>
+    <div class="sky-layer" id="layerNear">
+      <svg viewBox="0 0 1720 132" preserveAspectRatio="none"><path d="M0 114 L150 74 L310 106 L440 68 L610 110 L770 74 L930 112 L1090 70 L1250 108 L1410 76 L1570 110 L1720 80 L1720 132 L0 132 Z" fill="#0f5132"/></svg>
+    </div>
+    <div class="sky-layer" id="layerField">
+      <svg viewBox="0 0 1720 132" preserveAspectRatio="none"><path d="M0 121 L430 112 L860 120 L1290 113 L1720 118 L1720 132 L0 132 Z" fill="#0b3d2c"/><path d="M0 121 L430 112 L860 120 L1290 113 L1720 118" stroke="#e89b54" stroke-width="2.2" fill="none" opacity=".85"/></svg>
+    </div>
+    <div class="sky-layer" id="layerPoles">
+      <svg viewBox="0 0 1720 132" preserveAspectRatio="none" aria-hidden="true"><defs><g id="cmast"><path d="M0 132 V50 M0 57 L23 48 M0 66 L18 59" stroke="#0a2c26" stroke-width="4" fill="none"/></g></defs><path d="M0 57 Q430 70 860 57 T1720 57" fill="none" stroke="#0a2c26" stroke-width="2" opacity=".75"/><g opacity=".92"><use href="#cmast" x="60"/><use href="#cmast" x="275"/><use href="#cmast" x="490"/><use href="#cmast" x="705"/><use href="#cmast" x="920"/><use href="#cmast" x="1135"/><use href="#cmast" x="1350"/><use href="#cmast" x="1565"/></g></svg>
+    </div>
+    <div class="win-train" id="winTrain" aria-hidden="true">
+      <svg viewBox="0 0 244 62">
+        <defs><clipPath id="winClip"><path d="M6 15 H120 Q158 15 182 33 Q194 42 192 49 Q191 54 183 54 H6 Q2 54 2 49 V20 Q2 15 6 15 Z"/></clipPath></defs>
+        <g id="speedLines" opacity="0" stroke="#ffffff" stroke-width="3" stroke-linecap="round">
+          <path d="M2 24 H24"/><path d="M6 33 H30"/><path d="M2 42 H22"/>
+        </g>
+        <g transform="translate(36,2)">
+          <path d="M96 12 L106 4 H122 L130 12" fill="none" stroke="#33424c" stroke-width="2"/>
+          <circle id="pantoGlow" cx="114" cy="3" r="3.2" fill="#ffe9a8" opacity="0"/>
+          <path d="M6 15 H120 Q158 15 182 33 Q194 42 192 49 Q191 54 183 54 H6 Q2 54 2 49 V20 Q2 15 6 15 Z" fill="url(#krlGrad)" stroke="rgba(20,40,50,.35)" stroke-width="1"/>
+          <g clip-path="url(#winClip)">
+            <path d="M8 21 H124 Q152 21 170 37 L173 43 H8 Z" fill="#1d2b33"/>
+            <rect x="44" y="20" width="2.2" height="21" fill="#48565e" opacity=".6"/>
+            <rect x="80" y="20" width="2.2" height="21" fill="#48565e" opacity=".6"/>
+            <rect x="116" y="20" width="2.2" height="21" fill="#48565e" opacity=".6"/>
+            <rect x="0" y="42" width="200" height="5.5" fill="#7a2230"/>
+            <rect x="0" y="49" width="200" height="1.8" fill="#c9a24b"/>
+            <rect x="58" y="20" width="2" height="27" fill="#8fa2ab" opacity=".55"/>
+            <rect x="102" y="20" width="2" height="27" fill="#8fa2ab" opacity=".55"/>
+          </g>
+          <rect x="2" y="44" width="3" height="4.5" fill="#e5484d"/>
+          <circle id="ledGlow" cx="188" cy="44" r="7" fill="#ffe9a8" opacity=".3"/>
+          <circle cx="188" cy="44" r="3" fill="#ffe9a8"/>
+          <g fill="#22303a"><rect x="26" y="52" width="38" height="6" rx="3"/><rect x="126" y="52" width="42" height="6" rx="3"/></g>
+          <g class="wheel"><circle cx="37" cy="56" r="3.4" fill="#0d1418"/><path d="M37 52.6v6.8M33.6 56h6.8" stroke="#6b7c86" stroke-width="1"/></g>
+          <g class="wheel"><circle cx="53" cy="56" r="3.4" fill="#0d1418"/><path d="M53 52.6v6.8M49.6 56h6.8" stroke="#6b7c86" stroke-width="1"/></g>
+          <g class="wheel"><circle cx="138" cy="56" r="3.4" fill="#0d1418"/><path d="M138 52.6v6.8M134.6 56h6.8" stroke="#6b7c86" stroke-width="1"/></g>
+          <g class="wheel"><circle cx="156" cy="56" r="3.4" fill="#0d1418"/><path d="M156 52.6v6.8M152.6 56h6.8" stroke="#6b7c86" stroke-width="1"/></g>
+        </g>
+      </svg>
+      <div class="win-rail"></div>
+    </div>
+    <span class="window-route">STASIUN HATI ⟶ STASIUN SELAMANYA</span>
+    <span class="window-caption">KA CINTA ABADI · 2027</span>
+  </div>
+
+  <!-- PETA RUTE PERJALANAN -->
+  <div class="routemap" id="routemap" aria-label="Peta rute perjalanan — ketuk stasiun untuk melompat">
+    <div class="rm-board"><span class="rm-board-label">PETA RUTE · KA CINTA ABADI</span><span class="rm-now" id="rmNow">Stasiun Beranda</span></div>
+    <div class="rm-track" id="rmTrack">
+      <div class="rm-line"></div>
+      <div class="rm-fill" id="rmFill"></div>
+      <div class="rm-train" id="rmTrain"><svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#krlFront"/></svg></div>
+    </div>
+    <div class="rm-labels" id="rmLabels"></div>
+  </div>
+
+  <div class="track-viewport" id="viewport">
+   <div class="track" id="track">
+    <!-- BERANDA -->
+    <section class="station panel" id="beranda">
+      <div class="hero-photo reveal"><img src="assets/undangya/perjalanan-kereta/couple-hero.webp" alt="Meyzsa dan Fahrezzi duduk di gerbong kereta memandang keluar jendela"><span class="cap">KELAS EKSEKUTIF · JENDELA 06</span></div>
+      <p class="hero-kicker">UNDANGAN PERNIKAHAN</p>
+      <h2 class="hero-names">Meyzsa <em>&amp;</em> Fahrezzi</h2>
+      <p class="hero-date">SABTU · 12 JUNI 2027</p>
+      <div style="flex:1 1 auto"></div>
+      <div class="countdown" role="timer" aria-label="Hitung mundur hari bahagia">
+        <div class="cd"><b id="cd-d">–</b><small>HARI</small></div>
+        <div class="cd"><b id="cd-h">–</b><small>JAM</small></div>
+        <div class="cd"><b id="cd-m">–</b><small>MENIT</small></div>
+        <div class="cd"><b id="cd-s">–</b><small>DETIK</small></div>
+      </div>
+      <p class="center" style="font-size:.7rem;color:var(--ink-soft);margin-top:8px">Kereta berangkat menuju Stasiun Hari Bahagia dalam…</p>
+    </section>
+
+    <!-- STASIUN 01: PERTAMA BERTEMU -->
+    <section class="station panel" id="st1">
+      <div class="st-head"><span class="st-num">01</span><span class="st-name">Stasiun Pertama Bertemu</span><span class="line"></span><span class="km">KM 12</span></div>
+      <div class="card reveal">
+        <h2 class="sec-title">Assalamu'alaikum <em>Warahmatullahi Wabarakatuh</em></h2>
+        <p class="sec-text">Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk ikut naik kereta kebahagiaan kami. Perjalanan ini berangkat dari stasiun pertama kami bertemu — sebuah peron sederhana, dua orang asing, dan satu tujuan yang sama.</p>
+        <p class="sec-text" style="margin-top:9px;font-style:italic;color:var(--burgundy)">"Setiap perjalanan besar selalu dimulai dari satu langkah kecil di peron yang tepat."</p>
+        <p class="sec-text" style="margin-top:9px">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+      </div>
+    </section>
+
+    <!-- STASIUN 02: DUA PENUMPANG UTAMA -->
+    <section class="station panel" id="st2">
+      <div class="st-head"><span class="st-num">02</span><span class="st-name">Stasiun Dua Penumpang Utama</span><span class="line"></span><span class="km">KM 47</span></div>
+      <h2 class="sec-title">Dua Penumpang <em>Utama</em></h2>
+      <p class="sec-text intro">Di gerbong yang sama, duduk berdampingan — dua penumpang yang memutuskan untuk tidak pernah turun di stasiun yang berbeda.</p>
+      <div class="couple-grid reveal">
+        <div class="card mod-frame p-card" id="brideCard"></div>
+        <div class="card mod-frame p-card" id="groomCard"></div>
+      </div>
+    </section>
+
+    <!-- STASIUN 03: HARI BAHAGIA -->
+    <section class="station panel" id="st3">
+      <div class="st-head"><span class="st-num">03</span><span class="st-name">Pemberhentian Terakhir: Hari Bahagia</span><span class="line"></span><span class="km">KM 83</span></div>
+      <h2 class="sec-title">Jadwal <em>Keberangkatan</em></h2>
+      <p class="sec-text intro">Catat jadwalnya, jangan sampai tertinggal kereta — kereta ini hanya berangkat satu kali seumur hidup.</p>
+      <div id="eventCards" class="reveal"></div>
+      <div class="countdown cd2wrap">
+        <div class="cd cd-alt"><b id="cd2-d">–</b><small>HARI</small></div>
+        <div class="cd cd-alt"><b id="cd2-h">–</b><small>JAM</small></div>
+        <div class="cd cd-alt"><b id="cd2-m">–</b><small>MENIT</small></div>
+        <div class="cd cd-alt"><b id="cd2-s">–</b><small>DETIK</small></div>
+      </div>
+    </section>
+
+    <!-- STASIUN 04: GALERI DARI JENDELA -->
+    <section class="station panel" id="st4">
+      <div class="st-head"><span class="st-num">04</span><span class="st-name">Stasiun Pemandangan</span><span class="line"></span><span class="km">KM 120</span></div>
+      <h2 class="sec-title">Pemandangan dari <em>Jendela</em></h2>
+      <p class="sec-text intro">Sepanjang perjalanan, jendela gerbong kami membingkai pemandangan terindah — termasuk hari-hari yang telah kami lewati bersama.</p>
+      <div class="gallery reveal" id="galleryGrid"></div>
+    </section>
+
+    <!-- STASIUN 05: KONFIRMASI TIKET + AMPLOP -->
+    <section class="station panel" id="st5">
+      <div class="st-head"><span class="st-num">05</span><span class="st-name">Stasiun Konfirmasi Tiket</span><span class="line"></span><span class="km">KM 132</span></div>
+      <div class="card reveal">
+        <div id="rsvpFormWrap">
+        <form id="rsvpForm" novalidate>
+          <div class="form-top">
+            <div class="field" style="margin-bottom:0">
+              <label for="rsvpName">NAMA PENUMPANG</label>
+              <input type="text" id="rsvpName" name="nama" placeholder="Nama Anda" autocomplete="name" required>
+            </div>
+            <div class="field" style="margin-bottom:0">
+              <label for="rsvpCount">JUMLAH</label>
+              <select id="rsvpCount" name="jumlah">
+                <option value="1">1 orang</option>
+                <option value="2">2 orang</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>PILIH KELAS PERJALANAN</label>
+            <div class="kelas">
+              <label><input type="radio" name="kelas" value="Hadir — Kelas Bisnis" checked>Hadir · Bisnis<small>Siap hadir &amp; merayakan</small></label>
+              <label><input type="radio" name="kelas" value="Hadir — Kelas Ekonomi">Hadir · Ekonomi<small>Yang penting sampai!</small></label>
+              <label><input type="radio" name="kelas" value="Maaf, belum bisa ikut">Belum Bisa<small>Doa tetap sampai</small></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="rsvpMsg">PESAN &amp; DOA</label>
+            <textarea id="rsvpMsg" name="pesan" placeholder="Tulis doa & ucapan baik Anda…"></textarea>
+          </div>
+          <button class="btn orange" type="submit" style="width:100%;justify-content:center"><svg class="icn" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h11A2.5 2.5 0 0 1 20 8.5v1.7a3 3 0 0 0 0 5.6v1.7A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-1.7a3 3 0 0 0 0-5.6Z"/><path d="M14 7.5v1.8M14 11.1v1.8M14 14.7v1.8" stroke-dasharray="1.4 2.4"/></svg> Konfirmasi Tiket</button>
+          <p class="demo-note">RSVP mode demo — konfirmasi tersimpan di perangkat ini saja.</p>
+        </form>
+        </div>
+        <div class="rsvp-result" id="rsvpResult" aria-live="polite"></div>
+      </div>
+
+      <div class="sub-head"><h2>Isi Ulang <em>Saldo Perjalanan</em></h2><span class="line"></span></div>
+      <p class="sec-text amplop-intro" style="font-size:.74rem;margin-bottom:8px">Doa restu adalah tiket terbaik. Bila berkenan memberi tanda kasih, silakan "isi ulang" melalui:</p>
+      <div class="reveal" id="accountCards"></div>
+      <p class="demo-note acc-note" style="text-align:left">Nomor rekening &amp; e-wallet di atas adalah contoh untuk keperluan demo tema.</p>
+    </section>
+
+    <!-- PENUTUP -->
+    <section class="station panel" id="penutup">
+      <div class="closing reveal">
+        <p style="font-size:.58rem;letter-spacing:.3em;color:#f3d9a4;font-weight:800">STASIUN AKHIR</p>
+        <h2>Akhir Perjalanan, <em>Awal Selamanya</em></h2>
+        <p>Kereta ini memang berhenti di Stasiun Hari Bahagia — tetapi perjalanan kami sesungguhnya baru dimulai. Terima kasih atas kehadiran, doa, dan restu Bapak/Ibu/Saudara/i. Sampai jumpa di peron kebahagiaan!</p>
+        <p style="margin-top:10px">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+        <div class="sign">Meyzsa &amp; Fahrezzi</div>
+        <p style="font-size:.7rem;color:#9db8a6;margin-top:5px">beserta keluarga besar kedua mempelai</p>
+        <div class="closing-acc" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M4 13.5h16"/></svg><svg width="56" height="20" viewBox="0 0 220 64" aria-hidden="true"><use href="#krlSide"/></svg><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><use href="#krlFront"/></svg></div>
+        <div class="credits">DIBINTANGI OLEH · MEYZSA &amp; FAHREZZI<br>DISUTRADARAI OLEH · TAKDIR &amp; DOA RESTU<br>DIPRODUKSI OLEH · UNDANGYA! · KA CINTA ABADI © 2027</div>
+      </div>
+    </section>
+   </div>
+   <button class="nav-arrow prev off" id="btnPrev" type="button" aria-label="Stasiun sebelumnya"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4.5 7 12l7.5 7.5"/></svg></button>
+   <button class="nav-arrow next" id="btnNext" type="button" aria-label="Stasiun berikutnya"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 4.5 17 12l-7.5 7.5"/></svg></button>
+  </div>
+
+  <!-- BOTTOM NAV: pengendali stasiun -->
+  <nav class="bottomnav" aria-label="Navigasi undangan">
+    <a href="#beranda" data-nav="beranda" class="on"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5 12 3.5l8 7"/><path d="M6 9.5V20h12V9.5"/><path d="M10 20v-5.2h4V20"/><circle cx="12" cy="8.4" r="1.5"/></svg></span>Beranda</a>
+    <a href="#st2" data-nav="st2"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="14.6" r="5.1"/><circle cx="15.4" cy="14.6" r="5.1"/><path d="M12.2 3.6 10 6.5h4.4L12.2 3.6Z"/></svg></span>Mempelai</a>
+    <a href="#st3" data-nav="st3"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2.8h6"/><path d="M12 2.8v2.6"/><circle cx="12" cy="13.2" r="7.4"/><path d="M12 9.6v3.6l2.6 1.8"/></svg></span>Acara</a>
+    <a href="#st4" data-nav="st4"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-8.6a7 7 0 0 1 14 0V20"/><path d="M3.8 20h16.4"/><path d="M8.3 16.8 11 13.4l2.2 2.5 2-2.7 2.5 3.6"/><circle cx="15.9" cy="9.6" r="1.3" fill="currentColor" stroke="none"/></svg></span>Galeri</a>
+    <a href="#st5" data-nav="st5"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h11A2.5 2.5 0 0 1 20 8.5v1.7a3 3 0 0 0 0 5.6v1.7A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-1.7a3 3 0 0 0 0-5.6Z"/><path d="M14 7.5v1.8M14 11.1v1.8M14 14.7v1.8" stroke-dasharray="1.4 2.4"/></svg></span>RSVP</a>
+    <button type="button" id="btnMusic" aria-label="Nyalakan atau matikan musik"><span class="ic disc"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><circle cx="12" cy="12" r="4.4" opacity=".55"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></svg></span>Musik</button>
+  </nav>
+  <div class="toast" id="toast" role="status"></div>
+</div>
+<script>
+/* UndangYa! — Perjalanan Kereta — konfigurasi tunggal (data CONTOH, mudah diganti) */
+window.KERETA_CONFIG = {
+  couple: {
+    bride: { nick: "Meyzsa", full: "Meyzsa Putri Ananda, S.Pd.", father: "Bapak H. Muhammad Ridwan", mother: "Ibu Hj. Siti Aminah", photo: "assets/undangya/perjalanan-kereta/bride.webp", ig: "@meyzsa.contoh", seat: "Kursi 12A · Sisi Jendela" },
+    groom: { nick: "Fahrezzi", full: "Ahmad Fahrezzi Pratama, S.T.", father: "Bapak H. Bambang Sutrisno", mother: "Ibu Hj. Ratna Dewi", photo: "assets/undangya/perjalanan-kereta/groom.webp", ig: "@fahrezzi.contoh", seat: "Kursi 12B · Sisi Lorong" },
+    couplePhoto: "assets/undangya/perjalanan-kereta/couple-hero.webp",
+    monogram: "M · F"
+  },
+  dateLabel: "Sabtu, 12 Juni 2027",
+  countdownISO: "2027-06-12T08:00:00+07:00",
+  events: [
+    { key: "akad", name: "Akad Nikah", title: "Akad Nikah", dateLabel: "Sabtu, 12 Juni 2027", time: "08.00 – 10.00 WIB", venue: "Masjid Agung Al-Azhar", address: "Jl. Sisingamangaraiu No. 1, Kebayoran Baru, Jakarta Selatan", mapsQuery: "Masjid Agung Al-Azhar Jakarta Selatan", startISO: "2027-06-12T08:00:00+07:00", endISO: "2027-06-12T10:00:00+07:00" },
+    { key: "resepsi", name: "Resepsi", title: "Resepsi Pernikahan", dateLabel: "Sabtu, 12 Juni 2027", time: "11.00 – 13.00 WIB", venue: "The Ritz-Carlton Jakarta, Pacific Place", address: "Jl. Jend. Sudirman Kav. 52–53, SCBD, Jakarta Selatan", mapsQuery: "The Ritz-Carlton Jakarta Pacific Place", startISO: "2027-06-12T11:00:00+07:00", endISO: "2027-06-12T13:00:00+07:00" }
+  ],
+  gallery: [
+    { src: "assets/undangya/perjalanan-kereta/galeri-sawah.webp", cap: "KM 12 — Sawah Terasering Senja" },
+    { src: "assets/undangya/perjalanan-kereta/galeri-gunung.webp", cap: "KM 47 — Jembatan di Atas Kabut" },
+    { src: "assets/undangya/perjalanan-kereta/galeri-danau.webp", cap: "KM 83 — Danau Cermin Senja" },
+    { src: "assets/undangya/perjalanan-kereta/galeri-stasiun.webp", cap: "KM 120 — Stasiun Tujuan Terlihat" }
+  ],
+  accounts: [
+    { bank: "BCA", label: "Bank BCA (contoh)", number: "1234567890", holder: "a.n. Meyzsa Putri Ananda", dana: false },
+    { bank: "DANA", label: "DANA (contoh)", number: "0812-3456-7890", holder: "a.n. Meyzsa Putri Ananda", dana: true }
+  ],
+  rsvp: { storageKey: "undangya-perjalanan-kereta-rsvp-v1" },
+  music: { tempo: 0.42 }
+};
+</script>
+<script>
+(function(){
+"use strict";
+var C = window.KERETA_CONFIG;
+var $ = function(id){ return document.getElementById(id); };
+var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Nama tamu dari ?to= ---------- */
+var guest = "Tamu Undangan";
+try {
+  var q = new URLSearchParams(window.location.search).get("to");
+  if (q && q.trim()) guest = q.trim().slice(0, 60);
+} catch(e){}
+$("guestName").textContent = guest;
+$("rsvpName").value = (guest === "Tamu Undangan") ? "" : guest;
+
+/* ---------- Render mempelai (dua kartu berdampingan) ---------- */
+function passengerHTML(p, role, childWord){
+  return '<div class="p-photo"><img src="'+p.photo+'" alt="Foto '+role.toLowerCase()+' '+p.nick+'"></div>' +
+    '<span class="p-role">'+role+'</span><h3 class="p-name">'+p.full+'</h3>' +
+    '<p class="p-parents">'+childWord+' dari '+p.father+'<br>&amp; '+p.mother+'</p>' +
+    '<p class="p-seat">'+p.seat.toUpperCase()+'</p>' +
+    '<a class="ig" href="https://instagram.com/'+p.ig.replace("@","")+'" target="_blank" rel="noopener"><span><svg class="icn" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12.5" rx="2.5"/><circle cx="12" cy="13.2" r="3.4"/><path d="M8.5 7l1.2-2.2h4.6L15.5 7"/></svg> '+p.ig+'</span></a>';
+}
+$("brideCard").innerHTML = passengerHTML(C.couple.bride, "MEMPELAI WANITA", "Putri");
+$("groomCard").innerHTML = passengerHTML(C.couple.groom, "MEMPELAI PRIA", "Putra");
+
+/* ---------- Render acara (dua kartu berdampingan) ---------- */
+$("eventCards").innerHTML = C.events.map(function(ev){
+  var maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(ev.mapsQuery);
+  return '<div class="event card mod-frame"><h3>'+ev.title+'</h3><div class="when">'+ev.dateLabel+'<span>'+ev.time+'</span></div>' +
+    '<div class="where"><b>'+ev.venue+'</b><br>'+ev.address+'</div>' +
+    '<div class="btnwrap"><a class="btn" href="'+maps+'" target="_blank" rel="noopener"><svg class="icn" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s6.5-5.6 6.5-11A6.5 6.5 0 0 0 12 3.5 6.5 6.5 0 0 0 5.5 10c0 5.4 6.5 11 6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></svg> Buka Peta</a></div></div>';
+}).join("");
+
+/* ---------- Render galeri ---------- */
+$("galleryGrid").innerHTML = C.gallery.map(function(g){
+  return '<figure class="win"><img src="'+g.src+'" alt="'+g.cap+'" loading="lazy"><figcaption>'+g.cap+'</figcaption></figure>';
+}).join("");
+
+/* ---------- Render amplop digital ---------- */
+$("accountCards").innerHTML = C.accounts.map(function(a){
+  return '<div class="acc"><div class="logo'+(a.dana?" dana":"")+'">'+a.bank+'</div>' +
+    '<div><b>'+a.number+'</b><small>'+a.label+' · '+a.holder+'</small></div>' +
+    '<button type="button" data-copy="'+a.number+'">Salin</button></div>';
+}).join("");
+document.querySelectorAll("[data-copy]").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var txt = btn.getAttribute("data-copy");
+    function done(){ showToast("Nomor tersalin: " + txt); btn.textContent = "Tersalin ✓"; setTimeout(function(){ btn.textContent = "Salin"; }, 1800); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt).then(done).catch(function(){ fallback(); }); }
+    else fallback();
+    function fallback(){ var ta=document.createElement("textarea"); ta.value=txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); }catch(e){} document.body.removeChild(ta); done(); }
+  });
+});
+
+/* ---------- Toast ---------- */
+var toastTimer = null;
+function showToast(msg){
+  var t = $("toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer = setTimeout(function(){ t.classList.remove("show"); }, 2400);
+}
+
+/* ---------- Countdown ---------- */
+var target = new Date(C.countdownISO).getTime();
+function pad(n){ return String(n).padStart(2,"0"); }
+function tick(){
+  var diff = target - Date.now();
+  var d=0,h=0,m=0,s=0;
+  if (diff > 0){ d=Math.floor(diff/864e5); h=Math.floor(diff/36e5)%24; m=Math.floor(diff/6e4)%60; s=Math.floor(diff/1e3)%60; }
+  [["cd-d",d],["cd-h",h],["cd-m",m],["cd-s",s],["cd2-d",d],["cd2-h",h],["cd2-m",m],["cd2-s",s]].forEach(function(pair){
+    var el = $(pair[0]); if (el) el.textContent = pad(pair[1]);
+  });
+}
+tick(); setInterval(tick, 1000);
+
+/* ---------- Cover: Naik Kereta ---------- */
+$("btnOpen").addEventListener("click", function(){
+  $("cover").classList.add("opened");
+  document.body.classList.add("journey");
+  setTimeout(function(){ var c=$("cover"); if(c) c.style.display="none"; }, reduceMotion ? 60 : 980);
+  initJourney();
+  startMusic();
+  showToast("Selamat datang di KA Cinta Abadi");
+});
+
+/* ---------- Reveal saat panel terlihat ---------- */
+if ("IntersectionObserver" in window){
+  var revObs = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); revObs.unobserve(e.target); } }); }, { threshold: .12 });
+  document.querySelectorAll(".reveal").forEach(function(el){ revObs.observe(el); });
+} else {
+  document.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+}
+
+/* ================================================================
+   MESIN PERJALANAN MENYAMPING (v4 — kereta modern, tanpa scroll)
+   Satu nilai progres perjalanan menggerakkan serempak: trek panel,
+   lanskap jendela (7 lapisan parallax), kereta KRL di jendela
+   (roda bogie berputar, garis gerak & kilau listrik mengikuti
+   kecepatan), kereta kecil di peta rute, dan papan nama stasiun.
+   Kurva easeInOutCubic: berangkat → melaju → mengerem.
+   ================================================================ */
+var STATIONS = [
+  { id: "beranda", short: "Beranda",  name: "Stasiun Beranda",                    km: "",       nav: "beranda" },
+  { id: "st1",     short: "Sambutan", name: "Stasiun Pertama Bertemu",            km: "KM 12",  nav: "beranda" },
+  { id: "st2",     short: "Mempelai", name: "Stasiun Dua Penumpang Utama",        km: "KM 47",  nav: "st2" },
+  { id: "st3",     short: "Acara",    name: "Pemberhentian Terakhir: Hari Bahagia", km: "KM 83", nav: "st3" },
+  { id: "st4",     short: "Galeri",   name: "Stasiun Pemandangan",                km: "KM 120", nav: "st4" },
+  { id: "st5",     short: "RSVP",     name: "Stasiun Konfirmasi Tiket",           km: "KM 132", nav: "st5" },
+  { id: "penutup", short: "Akhir",    name: "Stasiun Akhir",                      km: "",       nav: "" }
+];
+var NST = STATIONS.length;
+var viewport = $("viewport"), track = $("track"), phoneEl = $("phone");
+var layers = [
+  { el: $("layerSun"), f: 0.35 },
+  { el: $("layerClouds"), f: 0.22 },
+  { el: $("layerFar"), f: 0.55 },
+  { el: $("layerBirds"), f: 0.45 },
+  { el: $("layerNear"), f: 0.85 },
+  { el: $("layerField"), f: 1.15 },
+  { el: $("layerPoles"), f: 1.35 }
+];
+var wheels = document.querySelectorAll(".win-train .wheel");
+var winTrain = $("winTrain"), speedLines = $("speedLines"), pantoGlow = $("pantoGlow"), ledGlow = $("ledGlow");
+var rmTrainEl = $("rmTrain"), rmFill = $("rmFill"), rmNow = $("rmNow");
+var stopEls = [], labEls = [];
+var navLinks = document.querySelectorAll(".bottomnav a[data-nav]");
+var cur = 0, curRp = 0, travelling = false, wheelRot = 0, journeyReady = false;
+
+function viewW(){ return (viewport && viewport.clientWidth) || (phoneEl && phoneEl.clientWidth) || 430; }
+function easeInOutCubic(t){ return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+function buildRouteMap(){
+  var rmTrack = $("rmTrack"), rmLabels = $("rmLabels");
+  STATIONS.forEach(function(st, i){
+    var pct = (i / (NST - 1)) * 100;
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "rm-stop"; b.style.left = pct + "%";
+    b.setAttribute("aria-label", "Ke " + st.name);
+    b.addEventListener("click", function(){ goTo(i); });
+    rmTrack.appendChild(b); stopEls.push(b);
+    var l = document.createElement("span");
+    l.className = "rm-lab"; l.style.left = pct + "%";
+    l.innerHTML = st.short + (st.km ? "<small>" + st.km + "</small>" : "<small>&nbsp;</small>");
+    l.addEventListener("click", function(){ goTo(i); });
+    rmLabels.appendChild(l); labEls.push(l);
+  });
+}
+
+function setProgress(rp){
+  curRp = rp;
+  var vw = viewW();
+  if (track) track.style.transform = "translate3d(" + (-rp * vw) + "px,0,0)";
+  var p = NST > 1 ? rp / (NST - 1) : 0;
+  if (!reduceMotion){
+    layers.forEach(function(L){
+      if (!L.el || L.el.id === "layerSun") return;
+      var range = vw * 1.3;
+      var x = -p * range * L.f;
+      L.el.style.transform = "translate3d(" + x + "px,0,0)";
+    });
+    var sun = $("layerSun");
+    if (sun) sun.style.transform = "translate3d(" + (10 + p * 240) + "px," + (p * 22) + "px,0)";
+  }
+  if (rmTrainEl) rmTrainEl.style.left = (p * 100) + "%";
+  if (rmFill) rmFill.style.width = (p * 100) + "%";
+}
+
+function updateUI(){
+  stopEls.forEach(function(b, i){
+    b.classList.toggle("on", i === cur);
+    b.classList.toggle("passed", i < cur);
+  });
+  labEls.forEach(function(l, i){ l.classList.toggle("on", i === cur); });
+  if (rmNow) rmNow.textContent = STATIONS[cur].name;
+  navLinks.forEach(function(a){ a.classList.toggle("on", !!STATIONS[cur].nav && a.getAttribute("data-nav") === STATIONS[cur].nav); });
+  var bp = $("btnPrev"), bn = $("btnNext");
+  if (bp) bp.classList.toggle("off", cur <= 0);
+  if (bn) bn.classList.toggle("off", cur >= NST - 1);
+  var panel = $(STATIONS[cur].id);
+  if (panel) panel.querySelectorAll(".reveal").forEach(function(el){ el.classList.add("in"); });
+}
+
+function applyWheels(){
+  wheels.forEach(function(w){ w.style.transform = "rotate(" + wheelRot + "deg)"; });
+}
+function applyFx(speed){
+  if (speedLines) speedLines.style.opacity = reduceMotion ? 0 : (speed * 0.9).toFixed(2);
+  if (pantoGlow) pantoGlow.style.opacity = reduceMotion ? 0 : (speed * (0.55 + 0.45 * Math.sin(performance.now() / 55))).toFixed(2);
+  if (ledGlow) ledGlow.style.opacity = 0.3 + speed * 0.45;
+}
+
+var animId = null;
+function animateJourney(from, to, dur, done){
+  if (animId){ cancelAnimationFrame(animId); animId = null; }
+  var dist = Math.abs(to - from);
+  if (reduceMotion || dur <= 0 || dist === 0){
+    travelling = false;
+    cur = Math.round(to); setProgress(cur); applyFx(0); updateUI();
+    if (done) done();
+    return;
+  }
+  travelling = true;
+  var dir = to > from ? 1 : -1;
+  var t0 = performance.now(), lastEp = 0;
+  function frame(now){
+    var t = Math.min(1, (now - t0) / dur);
+    var ep = easeInOutCubic(t);
+    var rp = from + (to - from) * ep;
+    setProgress(rp);
+    var dDist = Math.abs(ep - lastEp) * dist * viewW();
+    wheelRot += dDist * 1.5 * dir;
+    applyWheels();
+    var speed = Math.sin(Math.PI * t);
+    applyFx(speed);
+    if (winTrain){
+      var surge = speed * 20 * dir;
+      var bob = Math.sin(now / 110) * (t > 0 && t < 1 ? 0.8 : 0);
+      winTrain.style.transform = "translate(" + surge + "px," + bob + "px)";
+    }
+    lastEp = ep;
+    if (t < 1){ animId = requestAnimationFrame(frame); }
+    else {
+      animId = null;
+      travelling = false;
+      cur = Math.round(to); setProgress(cur);
+      if (winTrain) winTrain.style.transform = "";
+      applyFx(0);
+      updateUI();
+      if (done) done();
+    }
+  }
+  animId = requestAnimationFrame(frame);
+}
+
+function goTo(i, instant){
+  if (!journeyReady) return;
+  i = Math.max(0, Math.min(NST - 1, i));
+  if (i === cur && !instant) return;
+  var from = curRp, dist = Math.abs(i - from);
+  var dur = instant || window.KJ_TEST_INSTANT ? 0 : Math.min(2600, Math.round(900 + 650 * dist));
+  animateJourney(from, i, dur, function(){
+    if (dist >= 0.5) showToast("Tiba di " + STATIONS[cur].name);
+  });
+}
+function next(){ goTo(cur + 1); }
+function prev(){ goTo(cur - 1); }
+
+function initJourney(){
+  if (journeyReady) return;
+  journeyReady = true;
+  buildRouteMap();
+  setProgress(0);
+  updateUI();
+}
+
+/* tombol panah antar-stasiun */
+$("btnNext").addEventListener("click", function(){ next(); });
+$("btnPrev").addEventListener("click", function(){ prev(); });
+
+/* bottom nav = pengendali stasiun (bukan lompat scroll) */
+navLinks.forEach(function(a){
+  a.addEventListener("click", function(ev){
+    if (!journeyReady) return;
+    ev.preventDefault();
+    var key = a.getAttribute("data-nav");
+    for (var i = 0; i < NST; i++){ if (STATIONS[i].id === key){ goTo(i); break; } }
+  });
+});
+
+/* geser / seret horizontal antar-stasiun */
+var dragOn = false, dragX = 0, dragRp = 0, dragMoved = 0;
+viewport.addEventListener("pointerdown", function(e){
+  if (!journeyReady || travelling) return;
+  dragOn = true; dragX = e.clientX; dragRp = curRp; dragMoved = 0;
+});
+viewport.addEventListener("pointermove", function(e){
+  if (!dragOn) return;
+  var dx = e.clientX - dragX;
+  if (Math.abs(dx) > 6) track.classList.add("dragging");
+  dragMoved = dx;
+  if (Math.abs(dx) > 6){
+    var rp = Math.max(0, Math.min(NST - 1, dragRp - dx / viewW()));
+    wheelRot += (curRp - rp) * viewW() * 1.5 * -1;
+    setProgress(rp); applyWheels(); applyFx(Math.min(1, Math.abs(dx) / 160));
+  }
+});
+function dragEnd(){
+  if (!dragOn) return;
+  dragOn = false;
+  track.classList.remove("dragging");
+  applyFx(0);
+  var target = Math.round(curRp);
+  if (Math.abs(dragMoved) > 60) target = Math.round(dragRp) + (dragMoved < 0 ? 1 : -1);
+  target = Math.max(0, Math.min(NST - 1, target));
+  var dur = window.KJ_TEST_INSTANT ? 0 : Math.round(420 + 380 * Math.abs(target - curRp));
+  animateJourney(curRp, target, dur, function(){
+    if (Math.abs(target - Math.round(dragRp)) >= 1) showToast("Tiba di " + STATIONS[cur].name);
+  });
+}
+viewport.addEventListener("pointerup", dragEnd);
+viewport.addEventListener("pointercancel", dragEnd);
+viewport.addEventListener("click", function(e){ if (track.classList.contains("dragging")){ e.preventDefault(); e.stopPropagation(); } }, true);
+
+/* keyboard: panah kanan/kiri berpindah stasiun */
+document.addEventListener("keydown", function(e){
+  if (!journeyReady) return;
+  if (e.key === "ArrowRight") next();
+  else if (e.key === "ArrowLeft") prev();
+});
+window.addEventListener("resize", function(){ if (journeyReady) setProgress(curRp); });
+
+/* API internal (dipakai audit otomatis) */
+window.KeretaJourney = {
+  goTo: function(i){ goTo(i); },
+  next: next, prev: prev,
+  index: function(){ return cur; },
+  progress: function(){ return curRp; },
+  stations: STATIONS.map(function(s){ return s.id; })
+};
+
+/* ---------- RSVP: Konfirmasi Tiket (hasil MENGGANTIKAN form — tanpa scroll) ---------- */
+function renderResult(data){
+  var box = $("rsvpResult");
+  var hadir = data.kelas.indexOf("Hadir") === 0;
+  box.innerHTML = '<div class="mini-ticket"><span class="stamp">' + (hadir ? "TIKET SAH ✓" : "DICATAT ✓") + '</span>' +
+    '<h4>' + (hadir ? "Tiket Terkonfirmasi!" : "Terima Kasih, Sudah Kami Catat") + '</h4>' +
+    '<p><b>Penumpang:</b> ' + data.nama + '<br><b>Kelas:</b> ' + data.kelas + '<br><b>Jumlah:</b> ' + data.jumlah + ' orang<br><b>Rute:</b> Stasiun Hati ⟶ Stasiun Selamanya<br><b>Berangkat:</b> Sabtu, 12 Juni 2027 · 08.00 WIB</p>' +
+    (data.pesan ? '<p style="margin-top:5px"><i>"' + data.pesan + '"</i></p>' : '') +
+    '<p style="margin-top:7px;font-size:.64rem;color:var(--ink-soft)">Mode demo — data hanya tersimpan di perangkat ini.</p>' +
+    '<button type="button" class="link-btn" id="rsvpEdit">Ubah jawaban</button></div>';
+  box.classList.add("show");
+  $("rsvpFormWrap").style.display = "none";
+  $("rsvpEdit").addEventListener("click", function(){
+    box.classList.remove("show"); box.innerHTML = "";
+    $("rsvpFormWrap").style.display = "";
+  });
+}
+function esc(s){ var d=document.createElement("div"); d.textContent=s; return d.innerHTML; }
+try {
+  var saved = window.localStorage.getItem(C.rsvp.storageKey);
+  if (saved) renderResult(JSON.parse(saved));
+} catch(e){}
+$("rsvpForm").addEventListener("submit", function(ev){
+  ev.preventDefault();
+  var nama = $("rsvpName").value.trim();
+  if (!nama){ showToast("Isi dulu nama penumpangnya ya"); $("rsvpName").focus(); return; }
+  var kelasEl = document.querySelector('input[name="kelas"]:checked');
+  var data = {
+    nama: esc(nama), kelas: kelasEl ? kelasEl.value : "Hadir — Kelas Bisnis",
+    jumlah: $("rsvpCount").value, pesan: esc($("rsvpMsg").value.trim())
+  };
+  try { window.localStorage.setItem(C.rsvp.storageKey, JSON.stringify(data)); } catch(e){}
+  renderResult(data);
+  showToast("Tiket terkonfirmasi — sampai jumpa di stasiun!");
+});
+
+/* ---------- Musik WebAudio ambient (buatan sendiri) ---------- */
+var actx = null, master = null, musicOn = false, musicTimer = null, step = 0;
+var melody = [261.63, 329.63, 392.00, 523.25, 392.00, 329.63, 293.66, 329.63]; /* C E G C' G E D E */
+var bass = [130.81, 98.00, 110.00, 130.81];
+function ensureCtx(){
+  var AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return false;
+  if (!actx){ actx = new AC(); master = actx.createGain(); master.gain.value = 0.16; master.connect(actx.destination); }
+  if (actx.state === "suspended") actx.resume();
+  return true;
+}
+function tone(freq, t, dur, gainVal, type){
+  var o = actx.createOscillator(), g = actx.createGain();
+  o.type = type || "sine"; o.frequency.value = freq;
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(gainVal, t + 0.06);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  o.connect(g); g.connect(master); o.start(t); o.stop(t + dur + 0.05);
+}
+function playStep(){
+  if (!musicOn || !actx) return;
+  var t = actx.currentTime + 0.05;
+  tone(melody[step % melody.length], t, 1.5, 0.5, "sine");
+  tone(melody[step % melody.length] * 2, t, 0.9, 0.08, "triangle");
+  if (step % 2 === 0) tone(bass[(step / 2) % bass.length], t, 2.2, 0.35, "sine");
+  step++;
+  musicTimer = setTimeout(playStep, C.music.tempo * 1000);
+}
+function startMusic(){
+  if (musicOn) return;
+  if (!ensureCtx()){ showToast("Audio tidak didukung di perangkat ini"); return; }
+  musicOn = true; step = 0; playStep();
+  $("btnMusic").classList.add("playing");
+}
+function stopMusic(){
+  musicOn = false; clearTimeout(musicTimer);
+  $("btnMusic").classList.remove("playing");
+}
+$("btnMusic").addEventListener("click", function(){ musicOn ? stopMusic() : startMusic(); });
+})();
+</script>
+</body>
+</html>

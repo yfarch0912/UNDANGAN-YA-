@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Paspor Cinta — Meyzsa &amp; Fahrezzi | Republic of Love, 12 Juni 2027</title>
+<meta name="description" content="Undangan pernikahan digital berbentuk paspor perjalanan dua hati: Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#b98e3e; --gold-l:#dcb96e; --gold-pale:#eed9a4;
+  --burg:#7e1f2e; --burg-d:#4a0e17; --burg-m:#93262f;
+  --navy:#1d2c4e; --navy-d:#101a30;
+  --teal:#14707a;
+  --paper:#f7f0dc; --paper2:#f1e7cb; --paper-edge:#e3d5ae;
+  --ink:#2c2a24; --mut:#756c55; --line:rgba(125,31,46,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#07090f;font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.corm{font-family:'Cormorant Garamond',serif}
+.mono{font-family:'Courier Prime',monospace}
+.phone{max-width:430px;margin:0 auto;position:relative;background:radial-gradient(130% 55% at 50% 0%,#1a2438 0%,#0a0e17 58%);min-height:100dvh;overflow:clip;box-shadow:0 0 70px rgba(0,0,0,.9)}
+/* ================= COVER — BUKU PASPOR ================= */
+#cover{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:26px 20px;perspective:1200px}
+.passport-book{width:100%;max-width:372px;background:linear-gradient(150deg,#8c2733 0%,var(--burg) 34%,#5f1622 78%,var(--burg-d) 100%);border-radius:12px 20px 20px 12px;padding:30px 26px 24px;position:relative;color:#f3e3bb;box-shadow:inset 0 0 0 2px rgba(220,185,110,.55),inset 0 0 46px rgba(0,0,0,.42),inset 14px 0 26px -12px rgba(0,0,0,.55),0 30px 60px rgba(0,0,0,.6);transform-origin:left center;transition:transform 1s cubic-bezier(.5,.05,.3,1),opacity .8s ease}
+.passport-book::before{content:"";position:absolute;inset:10px;border:1.5px solid rgba(220,185,110,.5);border-radius:8px 14px 14px 8px;pointer-events:none}
+.passport-book.opening{transform:rotateY(-72deg) translateX(-30px);opacity:0}
+.pb-country{text-align:center;font-size:10.5px;letter-spacing:.34em;color:var(--gold-pale);text-transform:uppercase;line-height:1.9}
+.pb-country b{display:block;font-size:12px;letter-spacing:.44em;color:#fff3d6}
+.pb-emblem{width:86px;height:86px;margin:14px auto 4px;display:block}
+.pb-word{text-align:center;font-family:'Playfair Display',serif;font-weight:900;font-size:34px;letter-spacing:.3em;color:#f8ecc9;text-indent:.3em;margin-top:6px}
+.pb-word-sub{text-align:center;font-size:9.5px;letter-spacing:.5em;text-indent:.5em;color:var(--gold-pale);text-transform:uppercase;margin-top:4px}
+.pb-chip{width:44px;height:32px;margin:16px auto 0;border:1.5px solid var(--gold-l);border-radius:7px;position:relative;background:linear-gradient(135deg,rgba(220,185,110,.28),rgba(220,185,110,.06))}
+.pb-chip::before,.pb-chip::after{content:"";position:absolute;background:rgba(220,185,110,.75)}
+.pb-chip::before{left:0;right:0;top:50%;height:1.5px;transform:translateY(-50%)}
+.pb-chip::after{top:0;bottom:0;left:50%;width:1.5px;transform:translateX(-50%)}
+.pb-photos{display:flex;gap:14px;justify-content:center;margin-top:14px}
+.id-photo{width:104px;background:#fdfbf4;padding:5px 5px 7px;border-radius:3px;box-shadow:0 6px 16px rgba(0,0,0,.4);transform:rotate(-2deg)}
+.id-photo:last-child{transform:rotate(2deg)}
+.id-photo img{width:100%;height:118px;object-fit:cover;object-position:center 18%;display:block;border:1px solid #d9d2bd}
+.id-photo figcaption{text-align:center;font-family:'Courier Prime',monospace;font-size:8.5px;letter-spacing:.14em;color:#5c5540;margin-top:5px;text-transform:uppercase}
+.pb-holder{margin-top:22px;border:1.5px dashed rgba(220,185,110,.65);border-radius:10px;padding:13px 16px 12px;text-align:center;background:rgba(0,0,0,.16)}
+.pb-holder small{display:block;font-size:8.5px;letter-spacing:.3em;color:var(--gold-pale);text-transform:uppercase;line-height:1.8}
+.pb-holder .gname{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:#fff8e2;line-height:1.15;margin-top:3px}
+.pb-holder .gcode{font-family:'Courier Prime',monospace;font-size:10.5px;letter-spacing:.18em;color:rgba(243,227,187,.85);margin-top:5px}
+#btnOpen{margin:20px auto 0;display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,#e3c478,#b98e3e);color:#2c1c02;border:none;border-radius:999px;padding:14px 32px;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.22em;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.45),inset 0 1px 0 #ffefc2;transition:transform .25s ease}
+#btnOpen:active{transform:scale(.96)}
+.pb-note{text-align:center;margin-top:13px;font-size:10.5px;color:rgba(243,227,187,.75);letter-spacing:.06em;line-height:1.7}
+.pb-mrz{margin-top:16px;text-align:center;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.12em;color:rgba(243,227,187,.5);word-break:break-all;line-height:1.8}
+/* ================= ISI — HALAMAN PASPOR ================= */
+#content{display:none;padding:22px 14px 110px}
+#content.open{display:block}
+.page{background:
+  url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='400'%20height='560'%20viewBox='0%200%20400%20560'%20preserveAspectRatio='none'%3E%3Cg%20fill='none'%20stroke='%23b98e3e'%3E%3Crect%20x='10'%20y='10'%20width='380'%20height='540'%20stroke-opacity='.45'/%3E%3Cpath%20d='M10%2046V10h36M354%2010h36v36M390%20514v36h-36M46%20550H10v-36'%20stroke-width='3'%20stroke-opacity='.8'/%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat,
+  url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='220'%20viewBox='0%200%20220%20220'%3E%3Cg%20fill='none'%20stroke='%237e1f2e'%20stroke-opacity='.07'%3E%3Ccircle%20cx='110'%20cy='110'%20r='86'%20stroke-width='5'/%3E%3Ccircle%20cx='110'%20cy='110'%20r='69'%20stroke-width='2'/%3E%3C/g%3E%3Cpath%20d='M110%2084l7.6%2015.4%2017%202.5-12.3%2012%202.9%2016.9L110%20123l-15.2%207.8%202.9-16.9-12.3-12%2017-2.5z'%20fill='%237e1f2e'%20fill-opacity='.06'/%3E%3C/svg%3E") right -60px top -40px/220px 220px no-repeat,
+  url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='200'%20height='120'%20viewBox='0%200%20200%20120'%3E%3Cg%20fill='none'%20stroke='%231d2c4e'%20stroke-opacity='.15'%3E%3Cpath%20d='M8%20104C58%2042%20128%2098%20190%2024'%20stroke-width='2'%20stroke-dasharray='5%206'/%3E%3Ccircle%20cx='8'%20cy='104'%20r='4'/%3E%3Ccircle%20cx='190'%20cy='24'%20r='4'/%3E%3C/g%3E%3Cpath%20d='M146%2050l16-5-7%2015-3-6.4z'%20fill='%237e1f2e'%20fill-opacity='.16'/%3E%3C/svg%3E") right -14px bottom 12px/200px auto no-repeat,
+  linear-gradient(165deg,var(--paper) 0%,var(--paper2) 100%);border-radius:8px 14px 14px 8px;padding:34px 22px 30px 34px;position:relative;margin-bottom:22px;box-shadow:0 14px 34px rgba(0,0,0,.5),inset 0 0 60px rgba(185,142,62,.08);overflow:hidden}
+.page::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cg fill='none' stroke='%231d2c4e' stroke-opacity='0.055' stroke-width='1'%3E%3Ccircle cx='120' cy='120' r='34'/%3E%3Ccircle cx='120' cy='120' r='52'/%3E%3Ccircle cx='120' cy='120' r='72'/%3E%3Ccircle cx='120' cy='120' r='94'/%3E%3Cpath d='M0 120 Q60 84 120 120 T240 120'/%3E%3Cpath d='M0 132 Q60 96 120 132 T240 132'/%3E%3Cpath d='M120 0 Q84 60 120 120 T120 240'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.page::after{content:"";position:absolute;left:12px;top:0;bottom:0;width:10px;background-image:radial-gradient(circle at 50% 50%,rgba(44,42,36,.28) 2.4px,rgba(255,255,255,.5) 3.4px,transparent 4.4px);background-size:10px 34px;background-repeat:repeat-y;background-position:center 12px;pointer-events:none}
+.page>*{position:relative;z-index:1}
+.page-head{text-align:center;margin-bottom:22px}
+.page-no{font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.4em;color:var(--burg);text-transform:uppercase}
+.page-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--navy-d);margin-top:6px;line-height:1.2}
+.page-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mut);margin-top:4px}
+.rule{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:13px}
+.rule::before,.rule::after{content:"";height:1px;width:48px;background:linear-gradient(90deg,transparent,var(--gold));display:block}
+.rule::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.rule i{width:6px;height:6px;background:var(--burg);transform:rotate(45deg);display:block}
+p.body-txt{font-size:14px;line-height:1.85;color:#453f30;text-align:center}
+.opening-quote{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;line-height:1.65;text-align:center;color:var(--navy-d)}
+/* ================= STEMPEL / CAP ================= */
+.stamp{position:absolute;z-index:3;font-family:'Courier Prime',monospace;font-weight:700;text-transform:uppercase;text-align:center;opacity:0;pointer-events:none;mix-blend-mode:multiply;transform:scale(2.3) rotate(var(--rot,-8deg))}
+.stamp.on{animation:stampIn .5s cubic-bezier(.25,2.2,.45,1) forwards}
+@keyframes stampIn{0%{opacity:0;transform:scale(2.3) rotate(var(--rot,-8deg))}62%{opacity:1;transform:scale(.92) rotate(var(--rot,-8deg))}100%{opacity:.9;transform:scale(1) rotate(var(--rot,-8deg))}}
+.stamp--rect{border:3px solid currentColor;border-radius:7px;padding:7px 13px;font-size:13px;letter-spacing:.22em;line-height:1.45}
+.stamp--rect small{display:block;font-size:8.5px;letter-spacing:.3em;font-weight:400}
+.stamp--round{border:3px solid currentColor;border-radius:50%;width:118px;height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10.5px;letter-spacing:.16em;line-height:1.5;padding:10px;box-shadow:inset 0 0 0 2px var(--paper),inset 0 0 0 4px currentColor}
+.stamp--round b{font-size:12.5px}
+.stamp--teal{color:var(--teal)} .stamp--burg{color:var(--burg)} .stamp--gold{color:#9a742a} .stamp--navy{color:var(--navy)}
+.stamp--ondark{mix-blend-mode:normal;background:rgba(255,250,235,.16)}
+.stamp--lteal{color:#93dde2} .stamp--lgold{color:#f2d38a}
+/* ================= HALAMAN DATA ================= */
+.data-card{position:relative;border:1.5px solid rgba(29,44,78,.3);border-radius:10px;padding:18px 16px 74px;background-color:rgba(255,255,255,.35);background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='100'%20height='100'%20viewBox='0%200%20100%20100'%20preserveAspectRatio='none'%3E%3Cg%20fill='none'%20stroke='%231d2c4e'%20stroke-opacity='.55'%20stroke-width='2'%20vector-effect='non-scaling-stroke'%3E%3Cpath%20d='M3%2015V3h12M85%203h12v12M97%2085v12H85M15%2097H3V85'/%3E%3C/g%3E%3C/svg%3E");background-size:100% 100%;background-repeat:no-repeat;outline:1px solid rgba(185,142,62,.55);outline-offset:4px;margin-bottom:20px}
+.data-flex{display:flex;gap:15px}
+.data-photo{flex:0 0 108px}
+.data-photo img{width:108px;height:136px;object-fit:cover;object-position:center 16%;display:block;border:1.5px solid rgba(29,44,78,.45);border-radius:3px}
+.data-photo .pno{font-family:'Courier Prime',monospace;font-size:8.5px;letter-spacing:.1em;color:var(--navy);text-align:center;margin-top:6px}
+.data-fields{flex:1;min-width:0}
+.df{margin-bottom:9px}
+.df small{display:block;font-size:8px;letter-spacing:.26em;color:#8a7c58;text-transform:uppercase}
+.df b{display:block;font-size:13.5px;color:var(--navy-d);line-height:1.4;margin-top:1px}
+.df b.name{font-family:'Playfair Display',serif;font-size:16.5px;line-height:1.3}
+.ig-link{display:inline-block;margin-top:4px;font-size:11.5px;color:var(--burg);text-decoration:none;border:1px solid rgba(125,31,46,.4);border-radius:999px;padding:5px 12px;letter-spacing:.04em}
+.mrz{margin-top:14px;border-top:1.5px dashed rgba(29,44,78,.3);padding-top:11px;font-family:'Courier Prime',monospace;font-size:10.5px;letter-spacing:.06em;color:#3c465e;line-height:1.75;word-break:break-all}
+/* ================= VISA ================= */
+.visa{position:relative;border-radius:12px;padding:20px 18px 68px;margin-bottom:20px;color:#fdf6dd;overflow:hidden;box-shadow:0 12px 26px rgba(20,16,8,.35)}
+.visa--akad{background:linear-gradient(140deg,#175f68,#0f4049 70%)}
+.visa--resepsi{background:linear-gradient(140deg,#93262f,#5f1420 70%)}
+.visa::before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-70px;top:-80px;background:radial-gradient(circle,rgba(255,255,255,.22),rgba(255,255,255,0) 65%)}
+.visa::after{content:"";position:absolute;inset:7px;border:1px solid rgba(255,246,221,.4);border-radius:8px;pointer-events:none}
+.visa>*{position:relative;z-index:1}
+.visa .stamp{position:absolute;z-index:3}
+.visa-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.visa-kind{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+.visa-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-top:5px}
+.visa-emblem{font-size:22px;color:var(--gold-pale)}
+.visa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:15px;font-size:12px}
+.visa-grid small{display:block;font-size:8px;letter-spacing:.24em;text-transform:uppercase;opacity:.75}
+.visa-grid b{font-size:13px;line-height:1.45;display:block;margin-top:2px}
+.btn-row{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-size:11.5px;font-weight:600;letter-spacing:.08em;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,246,221,.75);color:#fdf6dd;background:transparent;cursor:pointer;font-family:'Inter',sans-serif}
+.btn.fill{background:linear-gradient(180deg,#e3c478,#b98e3e);color:#2c1c02;border:none}
+.countdown{display:flex;gap:8px;justify-content:center;margin:4px 0 22px}
+.cd-box{width:68px;background:linear-gradient(180deg,#fffdf4,#f3ead0);border:1.5px solid rgba(29,44,78,.35);border-radius:9px;padding:11px 0 8px;text-align:center;box-shadow:0 4px 10px rgba(20,16,8,.12)}
+.cd-box b{display:block;font-family:'Courier Prime',monospace;font-size:23px;color:var(--burg);line-height:1}
+.cd-box span{font-size:8.5px;letter-spacing:.24em;color:var(--mut);text-transform:uppercase;display:block;margin-top:5px}
+.cd-caption{text-align:center;font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.3em;color:var(--navy);text-transform:uppercase;margin-bottom:10px}
+</style>
+<style>
+/* ================= GALERI — CAP POS ================= */
+.gal-grid{display:flex;flex-direction:column;gap:26px}
+.gal-item{position:relative;background:#fffdf6;padding:9px 9px 12px;border-radius:4px;box-shadow:0 10px 22px rgba(20,16,8,.22);transform:rotate(var(--tilt,0deg))}
+.gal-item::before{content:"";position:absolute;inset:-6px;z-index:3;pointer-events:none;background:radial-gradient(circle at 50% 50%,#ecdfc0 3px,rgba(236,223,192,0) 4.2px) 0 0/15px 12px repeat-x,radial-gradient(circle at 50% 50%,#ecdfc0 3px,rgba(236,223,192,0) 4.2px) 0 100%/15px 12px repeat-x,radial-gradient(circle at 50% 50%,#ecdfc0 3px,rgba(236,223,192,0) 4.2px) 0 0/12px 15px repeat-y,radial-gradient(circle at 50% 50%,#ecdfc0 3px,rgba(236,223,192,0) 4.2px) 100% 0/12px 15px repeat-y}
+.gal-item img{width:100%;height:250px;object-fit:cover;display:block;border-radius:2px;cursor:pointer}
+.gal-cap{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 3px 0}
+.gal-cap .city{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:var(--navy-d)}
+.gal-cap .story{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.5px;color:var(--mut);text-align:right}
+.postmark{position:absolute;z-index:4;top:14px;right:14px;width:92px;height:92px;border:2.5px solid currentColor;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Courier Prime',monospace;font-weight:700;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;line-height:1.55;text-align:center;padding:8px;opacity:0;mix-blend-mode:multiply;transform:scale(2.3) rotate(var(--rot,-10deg));box-shadow:inset 0 0 0 1.5px var(--paper),inset 0 0 0 3px currentColor;background:rgba(255,255,255,.06);pointer-events:none;z-index:2}
+.postmark.on{animation:stampIn .5s cubic-bezier(.25,2.2,.45,1) forwards}
+.postmark b{font-size:10.5px}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(4,5,9,.94);z-index:95;display:none;align-items:center;justify-content:center;padding:22px}
+#lb.show{display:flex}
+#lb img{max-width:min(430px,100%);max-height:82dvh;border:4px solid #fffdf6;border-radius:4px}
+#lbCap{position:absolute;bottom:36px;left:0;right:0;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-pale);font-size:16px;padding:0 20px}
+/* ================= BOARDING PASS (RSVP) ================= */
+.bpass{position:relative;display:flex;border-radius:14px;border:1.5px solid rgba(29,44,78,.55);background:linear-gradient(130deg,#fffdf4,#f4ead0 65%,#ecdcae);color:#2c2410;box-shadow:0 16px 34px rgba(0,0,0,.35);overflow:visible;margin-top:6px}
+.bpass::before{content:"";position:absolute;inset:6px;border:1.5px dashed rgba(125,31,46,.35);border-radius:9px;pointer-events:none;z-index:0}
+.bp-main{flex:1;padding:18px 16px 16px;min-width:0;position:relative;z-index:1}
+.bp-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1.5px dashed rgba(44,36,16,.35);padding-bottom:10px}
+.bp-air{font-family:'Courier Prime',monospace;font-weight:700;font-size:11px;letter-spacing:.24em;color:var(--burg)}
+.bp-air small{display:block;font-size:8px;letter-spacing:.3em;color:#8a7c58;font-weight:400;margin-top:2px}
+.bp-class{font-size:9px;letter-spacing:.2em;background:var(--navy);color:#f3e9cd;border-radius:999px;padding:5px 10px;text-transform:uppercase}
+.bp-route{display:flex;align-items:center;gap:8px;margin-top:14px}
+.bp-code{font-family:'Playfair Display',serif;font-weight:900;font-size:27px;color:var(--navy-d);line-height:1}
+.bp-city{font-size:9.5px;letter-spacing:.1em;color:var(--mut);text-transform:uppercase;margin-top:3px;line-height:1.5}
+.bp-arrow{flex:1;text-align:center;color:var(--burg);font-size:15px;position:relative}
+.bp-arrow::before{content:"";position:absolute;left:2px;right:2px;top:50%;border-top:1.5px dashed rgba(125,31,46,.4)}
+.bp-arrow span{position:relative;background:#fdf8e9;padding:0 5px}
+.bp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px 10px;margin-top:14px;font-size:11px}
+.bp-grid small{display:block;font-size:7.5px;letter-spacing:.2em;color:#8a7c58;text-transform:uppercase}
+.bp-grid b{font-size:11.5px;line-height:1.4;display:block;margin-top:1px}
+.bp-stub{width:94px;flex:0 0 94px;border-left:2px dashed rgba(44,36,16,.45);padding:16px 8px 14px;text-align:center;position:relative;transition:transform .85s cubic-bezier(.25,.8,.3,1),opacity .85s}
+.bp-stub::before,.bp-stub::after{content:"";position:absolute;left:-11px;width:22px;height:22px;border-radius:50%;background:#ddd0a6;box-shadow:inset 0 0 0 22px rgba(0,0,0,0)}
+.bp-stub::before{top:-12px;background:#efe6cb}
+.bp-stub::after{bottom:-12px;background:#e9dcba}
+.bpass.done .bp-stub{transform:rotate(15deg) translate(14px,26px);opacity:.25}
+.bp-stub .seat{font-family:'Playfair Display',serif;font-weight:900;font-size:19px;color:var(--burg);margin-top:4px}
+.bp-stub small{font-size:7.5px;letter-spacing:.22em;color:#8a7c58;text-transform:uppercase;display:block}
+.barcode{margin:10px auto 0;width:66px;height:30px;background:repeating-linear-gradient(90deg,#2c2410 0 2px,transparent 2px 5px,#2c2410 5px 6px,transparent 6px 10px,#2c2410 10px 13px,transparent 13px 15px)}
+.bp-stamp{top:auto;bottom:-12px;left:auto;right:8px}
+/* form */
+form.rsvp{margin-top:22px}
+label.flabel{display:block;font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.26em;color:var(--burg);text-transform:uppercase;margin:15px 0 7px}
+input[type=text],textarea,select{width:100%;background:rgba(255,255,255,.55);border:1.5px solid rgba(29,44,78,.3);border-radius:9px;color:var(--navy-d);padding:12px 13px;font-size:14px;font-family:'Inter',sans-serif;outline:none}
+input[type=text]:focus,textarea:focus,select:focus{border-color:var(--burg)}
+.radio-row{display:flex;gap:9px}
+.radio-pill{flex:1;position:relative}
+.radio-pill input{position:absolute;opacity:0;pointer-events:none}
+.radio-pill span{display:block;text-align:center;padding:12px 5px;border:1.5px solid rgba(29,44,78,.3);border-radius:9px;font-size:12.5px;cursor:pointer;color:#5b5340;background:rgba(255,255,255,.4)}
+.radio-pill input:checked+span{background:var(--teal);border-color:var(--teal);color:#eafffb;font-weight:600}
+.radio-pill.no input:checked+span{background:#5d5648;border-color:#5d5648;color:#f3eede}
+#btnRsvp{width:100%;margin-top:20px;background:linear-gradient(180deg,#a32c40,var(--burg-d));color:#ffe9c9;border:none;border-radius:999px;padding:14px;font-size:13px;font-weight:700;letter-spacing:.16em;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 10px 22px rgba(125,31,46,.35)}
+#btnRsvp:active{transform:scale(.98)}
+.demo-note{margin-top:11px;font-size:11px;color:var(--mut);text-align:center;line-height:1.6}
+#rsvpDone{display:none;margin-top:16px;background:rgba(20,112,122,.1);border:1.5px solid rgba(20,112,122,.4);border-radius:11px;padding:15px;text-align:center;font-size:13.5px;line-height:1.75;color:#274b4f}
+#rsvpDone.show{display:block}
+#wishList{margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.wish{background:rgba(255,255,255,.5);border:1px solid rgba(29,44,78,.22);border-radius:10px;padding:12px 14px}
+.wish b{font-size:13px;color:var(--navy-d)}
+.wish .st{font-size:8.5px;letter-spacing:.12em;background:var(--teal);color:#eafffb;border-radius:999px;padding:3px 8px;margin-left:7px;text-transform:uppercase}
+.wish .st.no{background:#5d5648}
+.wish p{font-size:13px;color:#4d4636;line-height:1.65;margin-top:5px}
+/* ================= TRAVEL WALLET ================= */
+.wallet{background:linear-gradient(140deg,#24365f,var(--navy-d) 70%);border:1px solid var(--gold);border-radius:16px;padding:22px 18px;color:#f3e9cd;box-shadow:inset 0 0 36px rgba(185,142,62,.14),0 14px 30px rgba(0,0,0,.3);position:relative;overflow:hidden}
+.wallet .w-brand{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.34em;color:var(--gold-pale);text-transform:uppercase;text-align:center}
+.wallet p{font-size:12.5px;color:#cfc49c;line-height:1.75;text-align:center;margin-top:9px}
+.acct{background:rgba(0,0,0,.28);border:1px solid rgba(220,185,110,.35);border-radius:11px;padding:14px;margin-top:13px;text-align:center;position:relative;z-index:1}
+.acct small{font-size:8.5px;letter-spacing:.3em;color:var(--gold-pale);text-transform:uppercase}
+.acct .num{font-family:'Courier Prime',monospace;font-weight:700;font-size:19px;letter-spacing:.06em;color:#fff6da;margin-top:5px}
+.acct .an{font-size:11.5px;color:#bdb088;margin-top:3px}
+.acct button{margin-top:10px;background:none;border:1px solid var(--gold-l);color:var(--gold-pale);border-radius:999px;padding:7px 16px;font-size:11px;font-weight:600;letter-spacing:.1em;cursor:pointer;font-family:'Inter',sans-serif}
+/* ================= PENUTUP ================= */
+.big-stamp-wrap{position:relative;height:230px;display:flex;align-items:center;justify-content:center}
+.stamp--grand{position:relative;width:216px;height:216px;font-size:13px;letter-spacing:.2em;line-height:1.7}
+.stamp--grand b{font-size:16.5px}
+footer.site{text-align:center;padding:6px 24px 4px;font-size:10.5px;color:#8b93a8;line-height:1.9;letter-spacing:.05em}
+/* ================= BOTTOM NAV ================= */
+#bottomNav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:80;background:rgba(13,17,28,.94);backdrop-filter:blur(10px);border-top:1px solid rgba(220,185,110,.3);display:none;grid-template-columns:repeat(6,1fr);padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
+#bottomNav.show{display:grid}
+#bottomNav a,#bottomNav button{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:#98a0b5;font-size:9px;letter-spacing:.05em;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;padding:4px 0}
+#bottomNav svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6}
+#bottomNav a.active{color:var(--gold-pale)}
+#btnMusic.on{color:var(--gold-pale)}
+#btnMusic .eq{display:none;gap:2px;align-items:flex-end;height:20px}
+#btnMusic.on .eq{display:flex}
+#btnMusic.on .note-ic{display:none}
+.eq i{width:3px;background:var(--gold-pale);animation:eq .9s ease-in-out infinite}
+.eq i:nth-child(1){height:9px}.eq i:nth-child(2){height:15px;animation-delay:.25s}.eq i:nth-child(3){height:7px;animation-delay:.5s}
+@keyframes eq{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.15)}}
+.ic{stroke:currentColor;fill:none;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px}
+.pb-route{position:relative;margin-top:14px;height:36px}
+.pb-route .track{width:100%;height:36px;display:block}
+.pb-route-plane{position:absolute;right:4px;top:-3px;width:19px;height:19px;stroke:#eed9a4;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transform:rotate(14deg)}
+.acc-strip{display:flex;justify-content:space-between;gap:2px;margin-top:24px;padding:15px 2px 2px;border-top:1.5px dashed rgba(29,44,78,.25)}
+.acc{display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--navy);flex:1}
+.acc:nth-child(even){color:var(--burg)}
+.acc svg{width:25px;height:25px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.acc span{font-size:7px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);font-family:'Courier Prime',monospace;text-align:center}
+.w-plane{position:absolute;right:12px;bottom:2px;width:118px;height:118px;color:rgba(220,185,110,.14);transform:rotate(-16deg);pointer-events:none}
+.visa-emblem svg{width:31px;height:31px;stroke:var(--gold-pale);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;display:block}
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .85s ease,transform .85s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}
+  .reveal{opacity:1;transform:none}
+  .stamp,.postmark{opacity:.9}
+}
+</style>
+<link rel="canonical" href="https://undangya.web.id/paspor-cinta">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Paspor Cinta — Meyzsa & Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital buku paspor dua hati: cap visa tiap section, galeri cap kota & RSVP boarding pass — Paspor Cinta">
+<meta property="og:url" content="https://undangya.web.id/paspor-cinta">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/paspor-cinta.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paspor Cinta — Meyzsa & Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital buku paspor dua hati: cap visa tiap section, galeri cap kota & RSVP boarding pass — Paspor Cinta">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/paspor-cinta.webp">
+</head>
+<body>
+<div class="phone" id="phone">
+
+
+  <!-- ============ COVER — BUKU PASPOR ============ -->
+  <div id="cover">
+    <div class="passport-book" id="passportBook">
+      <div class="pb-country">Republik Cinta<b>Republic of Love</b></div>
+      <svg class="pb-emblem" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#dcb96e" stroke-width="2"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="#dcb96e" stroke-width="1" opacity=".6"/>
+        <path d="M50 66 C30 52 26 40 34 32 C41 25 50 30 50 38 C50 30 59 25 66 32 C74 40 70 52 50 66 Z" fill="#dcb96e"/>
+        <path d="M22 68 C30 74 40 77 50 77 C60 77 70 74 78 68" fill="none" stroke="#dcb96e" stroke-width="2" stroke-linecap="round"/>
+        <path d="M28 62 l-6 2 M72 62 l6 2 M32 70 l-5 4 M68 70 l5 4" stroke="#dcb96e" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="50" cy="20" r="2.4" fill="#dcb96e"/>
+      </svg>
+      <div class="pb-word">PASSPORT</div>
+      <div class="pb-word-sub">Paspor Perjalanan Dua Hati</div>
+      <div class="pb-chip" aria-hidden="true"></div>
+      <div class="pb-route" aria-hidden="true"><svg class="track" viewBox="0 0 340 36" preserveAspectRatio="none"><path d="M6 26C90 6 240 30 334 10" fill="none" stroke="#dcb96e" stroke-width="1.6" stroke-dasharray="4 5" opacity=".75"/><circle cx="6" cy="26" r="3" fill="#dcb96e"/><circle cx="334" cy="10" r="3" fill="#dcb96e"/></svg><svg class="pb-route-plane" viewBox="0 0 24 24"><path d="M3 11.5 21 3l-6.5 18-3.2-7.3L3 11.5z"/><path d="M11.3 13.7 21 3"/></svg></div>
+      <div class="pb-photos">
+        <figure class="id-photo"><img src="assets/undangya/paspor-cinta/paspor-meyzsa.webp" alt="Foto paspor Meyzsa Putri Ananda"><figcaption>Meyzsa • F</figcaption></figure>
+        <figure class="id-photo"><img src="assets/undangya/paspor-cinta/paspor-fahrezzi.webp" alt="Foto paspor Ahmad Fahrezzi Pratama"><figcaption>Fahrezzi • M</figcaption></figure>
+      </div>
+      <div class="pb-holder">
+        <small>Dokumen Ini Mengundang Dengan Hormat</small>
+        <div class="gname" id="guestName">Tamu Undangan</div>
+        <div class="gcode" id="guestCode">HOLDER / PEMEGANG UNDANGAN</div>
+      </div>
+      <button id="btnOpen" type="button">BUKA PASPOR <svg class="ic" viewBox="0 0 24 24" style="width:15px;height:15px;stroke-width:1.9"><path d="M3 11.5 21 3l-6.5 18-3.2-7.3L3 11.5z"/><path d="M11.3 13.7 21 3"/></svg></button>
+      <p class="pb-note">Paspor berlaku untuk satu perjalanan istimewa:<br>Sabtu, 12 Juni 2027 — Jakarta, Indonesia</p>
+      <div class="pb-mrz">P&lt;LOVMEYZSA&lt;&amp;&lt;FAHREZZI&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>12062027&lt;JKT&lt;&lt;MENUJU&lt;SEUMUR&lt;HIDUP&lt;&lt;&lt;&lt;</div>
+    </div>
+  </div>
+
+  <!-- ============ ISI ============ -->
+  <main id="content">
+
+    <!-- HALAMAN PEMBUKA -->
+    <section class="page" id="beranda">
+      <div class="page-head reveal">
+        <div class="page-no">Halaman 01 — Pembuka</div>
+        <h2 class="page-title">Selamat Datang, Penumpang Cinta</h2>
+        <div class="rule"><i></i></div>
+      </div>
+      <p class="opening-quote reveal">&ldquo;Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya.&rdquo;</p>
+      <p class="body-txt reveal" style="margin-top:14px;font-size:12px;color:var(--mut)">— QS. Ar-Rūm: 21 —</p>
+      <p class="body-txt reveal" style="margin-top:20px">Assalamu&rsquo;alaikum warahmatullahi wabarakatuh.<br><br>Dengan memohon rahmat dan ridha Allah SWT, kami menerbitkan paspor istimewa ini untuk mengundang Bapak/Ibu/Saudara/i menempuh perjalanan paling bahagia bersama kami — dari halaman pertama, menuju seumur hidup.</p>
+      <p class="body-txt reveal" style="margin-top:22px;font-size:12.5px;color:var(--mut)">Setiap halaman paspor ini akan menerima cap resmi saat Anda membacanya. Selamat menjelajah — jangan lupa siapkan hati Anda di pos pemeriksaan terakhir: hari bahagia kami.</p>
+      <div class="stamp stamp--rect stamp--teal" data-stamp style="position:relative;display:table;margin:22px auto 0">Welcome<small>Selamat Datang</small></div>
+      <div class="acc-strip reveal" aria-hidden="true">
+        <div class="acc"><svg viewBox="0 0 24 24"><path d="M12 3c1.7 1.2 2.6 3.2 2.6 5.8v3l5.4 3.7v2.7l-5.4-2v3.2l1.6 1.2v1.6L12 20.2l-4.2 1.1v-1.6l1.6-1.2v-3.2l-5.4 2v-2.7l5.4-3.7v-3C9.4 6.2 10.3 4.2 12 3z"/></svg><span>Terbang</span></div>
+        <div class="acc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><ellipse cx="12" cy="12" rx="3.8" ry="8.5"/><path d="M3.6 12h16.8M5.2 7.6h13.6M5.2 16.4h13.6"/></svg><span>Globe</span></div>
+        <div class="acc"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V6a3 3 0 0 1 6 0v2M9.5 12v4M14.5 12v4"/></svg><span>Koper</span></div>
+        <div class="acc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15.8 8.2 13.6 13.6 8.2 15.8 10.4 10.4z"/><circle cx="12" cy="12" r=".6"/></svg><span>Kompas</span></div>
+        <div class="acc"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="11" rx="2"/><circle cx="12" cy="13.5" r="3.4"/><path d="M8.6 8l1.1-2.4h4.6L15.4 8"/></svg><span>Kamera</span></div>
+        <div class="acc"><svg viewBox="0 0 24 24"><path d="M12 21s-6.3-5.4-6.3-10.2A6.3 6.3 0 0 1 12 4.6a6.3 6.3 0 0 1 6.3 6.1C18.3 15.6 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.3"/></svg><span>Pin Peta</span></div>
+        <div class="acc"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="1" stroke-dasharray="3 2.4"/><circle cx="12" cy="12" r="3.4"/></svg><span>Stempel</span></div>
+      </div>
+    </section>
+
+    <!-- HALAMAN DATA — MEMPELAI -->
+    <section class="page" id="mempelai">
+      <div class="page-head reveal">
+        <div class="page-no">Halaman 02 — Data Pemegang</div>
+        <h2 class="page-title">Data Paspor Dua Hati</h2>
+        <p class="page-sub">dua pemegang, satu tujuan</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div id="dataList"></div>
+    </section>
+
+    <!-- VISA — ACARA -->
+    <section class="page" id="acara">
+      <div class="page-head reveal">
+        <div class="page-no">Halaman 03 — Visa &amp; Ijin Masuk</div>
+        <h2 class="page-title">Visa Menuju Hari H</h2>
+        <p class="page-sub">kedua visa Anda telah diterbitkan</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="cd-caption reveal"><svg class="ic" viewBox="0 0 24 24" style="width:8px;height:8px;fill:currentColor;stroke:none"><path d="M12 3l4.5 9L12 21l-4.5-9z"/></svg> Masa Berlaku Menuju Hari H <svg class="ic" viewBox="0 0 24 24" style="width:8px;height:8px;fill:currentColor;stroke:none"><path d="M12 3l4.5 9L12 21l-4.5-9z"/></svg></div>
+      <div class="countdown reveal" aria-label="Hitung mundur menuju akad">
+        <div class="cd-box"><b id="cdD">00</b><span>Hari</span></div>
+        <div class="cd-box"><b id="cdH">00</b><span>Jam</span></div>
+        <div class="cd-box"><b id="cdM">00</b><span>Menit</span></div>
+        <div class="cd-box"><b id="cdS">00</b><span>Detik</span></div>
+      </div>
+      <div id="visaList" style="position:relative"></div>
+    </section>
+
+    <!-- GALERI — CAP PERJALANAN -->
+    <section class="page" id="galeri">
+      <div class="page-head reveal">
+        <div class="page-no">Halaman 04 — Cap Perjalanan</div>
+        <h2 class="page-title">Jejak Cap Kisah Kami</h2>
+        <p class="page-sub">kota-kota yang mencap paspor cinta ini — ketuk foto untuk memperbesar</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="gal-grid" id="galGrid"></div>
+    </section>
+
+    <!-- RSVP — BOARDING PASS -->
+    <section class="page" id="rsvp">
+      <div class="page-head reveal">
+        <div class="page-no">Halaman 05 — Boarding Pass</div>
+        <h2 class="page-title">Konfirmasi Keberangkatan</h2>
+        <p class="page-sub">check-in di bawah ini, boarding pass Anda akan dicap</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="bpass reveal" id="bpass">
+        <div class="bp-main">
+          <div class="bp-head">
+            <div class="bp-air">CINTA AIR <svg class="ic" viewBox="0 0 24 24" style="width:15px;height:15px;stroke-width:1.9"><path d="M3 11.5 21 3l-6.5 18-3.2-7.3L3 11.5z"/><path d="M11.3 13.7 21 3"/></svg><small>Boarding Pass • Republic of Love</small></div>
+            <span class="bp-class">First Love Class</span>
+          </div>
+          <div class="bp-route">
+            <div><div class="bp-code">JKT</div><div class="bp-city">Jakarta<br>Masa Lajang</div></div>
+            <div class="bp-arrow"><span><svg class="ic" viewBox="0 0 24 24" style="width:17px;height:17px;stroke-width:1.8"><path d="M3 11.5 21 3l-6.5 18-3.2-7.3L3 11.5z"/><path d="M11.3 13.7 21 3"/></svg></span></div>
+            <div style="text-align:right"><div class="bp-code">PLM</div><div class="bp-city">Pelaminan<br>Seumur Hidup</div></div>
+          </div>
+          <div class="bp-grid">
+            <div><small>Penumpang</small><b id="bpGuest">Tamu Undangan</b></div>
+            <div><small>Penerbangan</small><b>MF 1206</b></div>
+            <div><small>Tanggal</small><b>Sab, 12 Jun 2027</b></div>
+            <div><small>Boarding</small><b>07.30 WIB</b></div>
+            <div><small>Gate</small><b>Al-Azhar</b></div>
+            <div><small>Tujuan Akhir</small><b>Sakinah</b></div>
+          </div>
+        </div>
+        <div class="bp-stub" id="bpStub">
+          <small>Seat / Kursi</small>
+          <div class="seat" id="bpSeat">1A</div>
+          <small style="margin-top:8px">Gate<br><b style="font-size:11px;color:#2c2410">AL-AZHAR</b></small>
+          <div class="barcode"></div>
+          <small style="margin-top:7px">MF 1206</small>
+        </div>
+        <div class="stamp stamp--round stamp--teal bp-stamp" id="bpStamp" style="width:88px;height:88px;font-size:8.5px"><b style="font-size:10px;letter-spacing:.06em">Checked&#8209;In</b><span>12 Jun 2027</span><span>✦ JKT ✦</span></div>
+      </div>
+
+      <form class="rsvp reveal" id="rsvpForm" novalidate>
+        <label class="flabel" for="fNama">Nama Penumpang</label>
+        <input type="text" id="fNama" placeholder="Nama Anda" autocomplete="name">
+        <label class="flabel">Konfirmasi Keberangkatan</label>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="hadir" value="Hadir" checked><span>Siap Berangkat / Hadir</span></label>
+          <label class="radio-pill no"><input type="radio" name="hadir" value="Berhalangan"><span>Berhalangan</span></label>
+        </div>
+        <label class="flabel" for="fJumlah">Jumlah Penumpang</label>
+        <select id="fJumlah">
+          <option value="1">1 orang</option>
+          <option value="2">2 orang</option>
+          <option value="3">3 orang</option>
+          <option value="4">4 orang</option>
+        </select>
+        <label class="flabel" for="fUcapan">Pesan untuk Awak Kabin (Ucapan &amp; Doa)</label>
+        <textarea id="fUcapan" rows="3" placeholder="Tulis ucapan &amp; doa terbaik Anda…"></textarea>
+        <button id="btnRsvp" type="submit">CHECK-IN SEKARANG</button>
+        <p class="demo-note">Mode demo: RSVP &amp; ucapan tersimpan hanya di halaman ini (contoh tampilan, belum terkirim ke server).</p>
+      </form>
+      <div id="rsvpDone" role="status"></div>
+      <div id="wishList"></div>
+    </section>
+
+    <!-- AMPLOP — TRAVEL WALLET -->
+    <section class="page" id="amplop">
+      <div class="page-head reveal">
+        <div class="page-no">Halaman 06 — Travel Wallet</div>
+        <h2 class="page-title">Top-Up Travel Wallet</h2>
+        <p class="page-sub">tanda kasih untuk bekal perjalanan kedua mempelai</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="wallet reveal">
+        <svg class="w-plane" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.1" d="M12 3c1.7 1.2 2.6 3.2 2.6 5.8v3l5.4 3.7v2.7l-5.4-2v3.2l1.6 1.2v1.6L12 20.2l-4.2 1.1v-1.6l1.6-1.2v-3.2l-5.4 2v-2.7l5.4-3.7v-3C9.4 6.2 10.3 4.2 12 3z"/></svg>
+        <div class="w-brand"><svg class="ic" viewBox="0 0 24 24" style="width:8px;height:8px;fill:currentColor;stroke:none"><path d="M12 3l4.5 9L12 21l-4.5-9z"/></svg> LovePay Travel Wallet <svg class="ic" viewBox="0 0 24 24" style="width:8px;height:8px;fill:currentColor;stroke:none"><path d="M12 3l4.5 9L12 21l-4.5-9z"/></svg></div>
+        <p>Kehadiran Anda adalah bekal terindah. Namun bila berkenan menambah bekal perjalanan kami, silakan top-up melalui:</p>
+        <div id="acctList"></div>
+        <p class="demo-note" style="color:#bdb088;margin-top:13px">Nomor di atas adalah contoh/demo tampilan.</p>
+      </div>
+    </section>
+
+    <!-- PENUTUP -->
+    <section class="page" id="penutup">
+      <div class="page-head reveal">
+        <div class="page-no">Halaman Terakhir — Cap Keluar</div>
+        <h2 class="page-title">Terima Kasih</h2>
+        <div class="rule"><i></i></div>
+      </div>
+      <p class="body-txt reveal">Merupakan kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih yang sebesar-besarnya.<br><br>Wassalamu&rsquo;alaikum warahmatullahi wabarakatuh.</p>
+      <div class="big-stamp-wrap reveal">
+        <div class="stamp stamp--round stamp--burg stamp--grand" data-stamp><span style="font-size:10.5px;letter-spacing:.12em">✦ Republic of Love ✦</span><b>Selamat Menempuh<br>Hidup Baru</b><span>12 . 06 . 2027</span></div>
+      </div>
+      <p class="body-txt reveal" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17.5px;color:var(--navy-d)">Kami yang berbahagia,<br><b style="font-family:'Playfair Display',serif;font-style:normal;font-size:20px">Meyzsa &amp; Fahrezzi</b><br>beserta keluarga besar kedua mempelai.</p>
+    </section>
+
+    <footer class="site">© 2027 Meyzsa &amp; Fahrezzi — Paspor diterbitkan oleh Republic of Love via UndangYa!<br>Undangan digital tema &ldquo;Paspor Cinta&rdquo; • Sampel contoh</footer>
+  </main>
+
+  <!-- ============ BOTTOM NAV ============ -->
+  <nav id="bottomNav" aria-label="Navigasi undangan">
+    <a href="#beranda" data-nav="beranda" class="active"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z"/></svg>Beranda</a>
+    <a href="#mempelai" data-nav="mempelai"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7 21c.8-2.8 2.7-4.2 5-4.2s4.2 1.4 5 4.2"/></svg>Mempelai</a>
+    <a href="#acara" data-nav="acara"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Acara</a>
+    <a href="#galeri" data-nav="galeri"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="11" rx="2"/><circle cx="12" cy="13.5" r="3.4"/><path d="M8.6 8l1.1-2.4h4.6L15.4 8M18.4 11h.01"/></svg>Galeri</a>
+    <a href="#rsvp" data-nav="rsvp"><svg viewBox="0 0 24 24"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M13 6v2M13 11v2M13 16v2"/></svg>RSVP</a>
+    <button id="btnMusic" type="button" aria-label="Musik latar">
+      <svg class="note-ic" viewBox="0 0 24 24"><path d="M9 18V6l10-2v11"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="15" r="2.5"/></svg>
+      <span class="eq"><i></i><i></i><i></i></span>Musik
+    </button>
+  </nav>
+
+  <!-- lightbox -->
+  <div id="lb" aria-hidden="true"><img id="lbImg" alt="Foto perjalanan diperbesar"><div id="lbCap"></div></div>
+</div>
+
+<script>
+"use strict";
+/* ================= CONFIG (pola tema UndangYa!) ================= */
+const CONFIG = {
+  couple: {
+    bride: {
+      name: "Meyzsa Putri Ananda, S.Pd.", short: "Meyzsa", sex: "F / Wanita",
+      photo: "assets/undangya/paspor-cinta/paspor-meyzsa.webp", pno: "LOV 260611 F",
+      father: "H. Muhammad Ridwan", mother: "Hj. Siti Aminah",
+      instagram: "meyzsa.contoh",
+      mrz: ["P<LOVMEYZSA<<PUTRI<ANANDA<<<<<<<<<<<<<<<<<<<", "12062027<IDN<<<<<<<<<<<<S/D<SEUMUR<HIDUP<<<"]
+    },
+    groom: {
+      name: "Ahmad Fahrezzi Pratama, S.T.", short: "Fahrezzi", sex: "M / Pria",
+      photo: "assets/undangya/paspor-cinta/paspor-fahrezzi.webp", pno: "LOV 260612 M",
+      father: "H. Bambang Sutrisno", mother: "Hj. Ratna Dewi",
+      instagram: "fahrezzi.contoh",
+      mrz: ["P<LOVAHMAD<<FAHREZZI<PRATAMA<<<<<<<<<<<<<<<<", "12062027<IDN<<<<<<<<<<<<S/D<SEUMUR<HIDUP<<<"]
+    },
+    destination: "Sakinah, Mawaddah, Warahmah",
+    issued: "12 Juni 2027"
+  },
+  events: [
+    {
+      id: "akad", kind: "Visa Kunjungan Sakral — Single Entry Hati", name: "Akad Nikah",
+      stamp: "Approved", stampClass: "stamp--lteal stamp--ondark", visaClass: "visa--akad", emblem: '<svg viewBox="0 0 24 24"><path d="M12 2.6c2.1 2.3 3.6 4 3.6 6.4H8.4C8.4 6.6 9.9 4.9 12 2.6z" fill="currentColor" stroke="none"/><path d="M12 2.6V1.4M5.5 21v-4.6c0-1.2 1-2.2 2.2-2.2h8.6c1.2 0 2.2 1 2.2 2.2V21M3.5 21h17M3 21v-8.5M21 21v-8.5M3 12.5 4.3 10l1.3 2.5M21 12.5 19.7 10l-1.3 2.5M9.8 21v-3a2.2 2.2 0 0 1 4.4 0v3"/></svg>',
+      day: "Sabtu", date: "12 Juni 2027", time: "08.00 – 10.00 WIB",
+      venue: "Masjid Agung Al-Azhar", area: "Jakarta Selatan",
+      maps: "https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Al-Azhar+Jakarta+Selatan",
+      gcal: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Meyzsa+%26+Fahrezzi&dates=20270612T010000Z/20270612T030000Z&details=Akad+Nikah+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&location=Masjid+Agung+Al-Azhar,+Jakarta+Selatan"
+    },
+    {
+      id: "resepsi", kind: "Visa Perayaan — Pesta Rakyat Dua Keluarga", name: "Resepsi",
+      stamp: "Approved", stampClass: "stamp--lgold stamp--ondark", visaClass: "visa--resepsi", emblem: '<svg viewBox="0 0 24 24"><circle cx="9.3" cy="14.6" r="5"/><circle cx="14.7" cy="14.6" r="5"/><path d="M12 2.8 9.6 5.8h4.8L12 2.8zM9.6 5.8 12 8.6l2.4-2.8"/></svg>',
+      day: "Sabtu", date: "12 Juni 2027", time: "11.00 – 13.00 WIB",
+      venue: "The Ritz-Carlton Jakarta, Pacific Place", area: "Jakarta Selatan",
+      maps: "https://www.google.com/maps/search/?api=1&query=The+Ritz-Carlton+Jakarta+Pacific+Place",
+      gcal: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Meyzsa+%26+Fahrezzi&dates=20270612T040000Z/20270612T060000Z&details=Resepsi+Pernikahan+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&location=The+Ritz-Carlton+Jakarta,+Pacific+Place"
+    }
+  ],
+  countdownTo: "2027-06-12T08:00:00+07:00",
+  gallery: [
+    { src: "assets/undangya/paspor-cinta/galeri-jakarta.webp", city: "Jakarta", code: "JKT", date: "14 . 02 . 2021", story: "Pertama Bertemu", note: "Pertama bertemu — di bawah langit Jakarta, perjalanan ini dimulai.", color: "var(--burg)", tilt: "-1.2deg" },
+    { src: "assets/undangya/paspor-cinta/galeri-bandung.webp", city: "Bandung", code: "BDG", date: "03 . 07 . 2022", story: "Liburan Pertama", note: "Liburan pertama — kopi hangat, kabut pinus, dan tawa yang tak habis.", color: "var(--teal)", tilt: "1.1deg" },
+    { src: "assets/undangya/paspor-cinta/galeri-yogya.webp", city: "Yogyakarta", code: "JOG", date: "19 . 11 . 2023", story: "Menghadap Keluarga", note: "Menghadap keluarga — fajar di Borobudur, restu mulai terbit.", color: "#9a742a", tilt: "-1deg" },
+    { src: "assets/undangya/paspor-cinta/galeri-bali.webp", city: "Bali", code: "DPS", date: "25 . 12 . 2024", story: "Janji di Gerbang Surga", note: "Janji di gerbang surga — satu pertanyaan, satu jawaban: ya.", color: "var(--navy)", tilt: "1.3deg" }
+  ],
+  accounts: [
+    { bank: "BCA", number: "1234567890", holder: "Meyzsa Putri Ananda" },
+    { bank: "DANA", number: "0812-3456-7890", holder: "Meyzsa Putri Ananda" }
+  ],
+  music: { enabled: true }
+};
+
+/* ================= HELPERS ================= */
+const $ = (s, c) => (c || document).querySelector(s);
+const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
+const esc = s => String(s).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ================= TAMU (?to=) & KURSI ================= */
+const params = new URLSearchParams(location.search);
+const guest = (params.get("to") || "Tamu Undangan").trim().slice(0, 60) || "Tamu Undangan";
+function seatFor(name) {
+  let h = 0; for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+  const row = (h % 24) + 1, col = "ABCDEF"[h % 6];
+  return row + col;
+}
+const guestSeat = seatFor(guest);
+$("#guestName").textContent = guest;
+$("#guestCode").textContent = "HOLDER / PEMEGANG • SEAT " + guestSeat;
+$("#bpGuest").textContent = guest;
+$("#bpSeat").textContent = guestSeat;
+$("#fNama").value = guest === "Tamu Undangan" ? "" : guest;
+
+/* ================= RENDER: HALAMAN DATA ================= */
+function dataCard(p, role, stampText, stampClass) {
+  return `
+  <article class="data-card reveal">
+    <div class="data-flex">
+      <div class="data-photo">
+        <img src="${p.photo}" alt="Foto paspor ${esc(p.name)}">
+        <div class="pno">NO. ${p.pno}</div>
+      </div>
+      <div class="data-fields">
+        <div class="df"><small>${role} / Pemegang Paspor</small><b class="name">${p.name}</b></div>
+        <div class="df"><small>Jenis Kelamin / Sex</small><b>${p.sex}</b></div>
+        <div class="df"><small>Nama Ayah / Father</small><b>Bapak ${p.father}</b></div>
+        <div class="df"><small>Nama Ibu / Mother</small><b>Ibu ${p.mother}</b></div>
+        <div class="df"><small>Tujuan / Destination</small><b>${CONFIG.couple.destination}</b></div>
+        <a class="ig-link" href="https://instagram.com/${p.instagram}" target="_blank" rel="noopener">@${p.instagram}</a>
+      </div>
+    </div>
+    <div class="mrz">${esc(p.mrz[0])}<br>${esc(p.mrz[1])}</div>
+    <div class="stamp stamp--rect ${stampClass}" data-stamp style="bottom:8px;right:10px">${stampText}<small>Republic of Love</small></div>
+  </article>`;
+}
+$("#dataList").innerHTML =
+  dataCard(CONFIG.couple.bride, "Mempelai Wanita", "Verified", "stamp--burg") +
+  dataCard(CONFIG.couple.groom, "Mempelai Pria", "Verified", "stamp--navy");
+
+/* ================= RENDER: VISA ACARA ================= */
+$("#visaList").innerHTML = CONFIG.events.map((ev, i) => `
+  <article class="visa ${ev.visaClass} reveal">
+    <div class="visa-top">
+      <div>
+        <div class="visa-kind">${ev.kind}</div>
+        <h3 class="visa-name">${ev.name}</h3>
+      </div>
+      <div class="visa-emblem" aria-hidden="true">${ev.emblem}</div>
+    </div>
+    <div class="visa-grid">
+      <div><small>Hari / Tanggal</small><b>${ev.day}, ${ev.date}</b></div>
+      <div><small>Waktu</small><b>${ev.time}</b></div>
+      <div><small>Tempat</small><b>${ev.venue}</b></div>
+      <div><small>Wilayah</small><b>${ev.area}</b></div>
+    </div>
+    <div class="btn-row">
+      <a class="btn fill" href="${ev.gcal}" target="_blank" rel="noopener">＋ Simpan Tanggal</a>
+      <a class="btn" href="${ev.maps}" target="_blank" rel="noopener">Lihat Lokasi</a>
+    </div>
+    <div class="stamp stamp--rect ${ev.stampClass}" data-stamp style="bottom:14px;right:14px">${ev.stamp}<small>12 . 06 . 2027</small></div>
+  </article>`).join("");
+
+/* ================= RENDER: GALERI CAP POS ================= */
+$("#galGrid").innerHTML = CONFIG.gallery.map((g, i) => `
+  <figure class="gal-item reveal" style="--tilt:${g.tilt}">
+    <img src="${g.src}" alt="Foto ${esc(g.story)} di ${esc(g.city)}" loading="lazy" data-idx="${i}" tabindex="0" role="button">
+    <div class="postmark" data-stamp style="color:${g.color}"><span>${g.code} • ${g.city}</span><b>${g.date}</b><span>Republic of Love</span></div>
+    <figcaption class="gal-cap"><span class="city">${g.city}</span><span class="story">${g.story}</span></figcaption>
+  </figure>`).join("");
+
+/* ================= RENDER: TRAVEL WALLET ================= */
+$("#acctList").innerHTML = CONFIG.accounts.map(a => `
+  <div class="acct">
+    <small>${a.bank} — Travel Wallet</small>
+    <div class="num">${a.number}</div>
+    <div class="an">a.n. ${a.holder}</div>
+    <button type="button" data-copy="${a.number}">SALIN NOMOR</button>
+  </div>`).join("");
+$$("#acctList [data-copy]").forEach(btn => {
+  btn.addEventListener("click", async () => {
+    const txt = btn.getAttribute("data-copy");
+    try { await navigator.clipboard.writeText(txt); }
+    catch (e) {
+      const ta = document.createElement("textarea");
+      ta.value = txt; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); } catch (_) {}
+      ta.remove();
+    }
+    const old = btn.textContent; btn.textContent = "✓ TERSALIN";
+    setTimeout(() => { btn.textContent = old; }, 1600);
+  });
+});
+
+/* ================= COUNTDOWN ================= */
+const target = new Date(CONFIG.countdownTo).getTime();
+function pad(n) { return String(n).padStart(2, "0"); }
+function tickCountdown() {
+  let diff = target - Date.now();
+  if (diff < 0) diff = 0;
+  const d = Math.floor(diff / 86400000),
+        h = Math.floor(diff % 86400000 / 3600000),
+        m = Math.floor(diff % 3600000 / 60000),
+        s = Math.floor(diff % 60000 / 1000);
+  $("#cdD").textContent = pad(d); $("#cdH").textContent = pad(h);
+  $("#cdM").textContent = pad(m); $("#cdS").textContent = pad(s);
+}
+tickCountdown();
+setInterval(tickCountdown, 1000);
+
+/* ================= MUSIK — WebAudio ambient orisinal ================= */
+const Music = {
+  ctx: null, master: null, on: false, chordTimer: null, melTimer: null, step: 0,
+  chords: [ [41,53,57,60], [40,52,55,59], [38,50,53,57], [36,48,52,55] ], // Fmaj7 Em7 Dm7 Cmaj7
+  melody: [77, 81, 84, 81, 79, 76, 79, 77],
+  freq(m) { return 440 * Math.pow(2, (m - 69) / 12); },
+  pad(notes) {
+    const t = this.ctx.currentTime;
+    notes.forEach(m => {
+      [0, 4].forEach(det => {
+        const o = this.ctx.createOscillator(), g = this.ctx.createGain();
+        o.type = "sine"; o.frequency.value = this.freq(m); o.detune.value = det - 2;
+        g.gain.setValueAtTime(0, t);
+        g.gain.linearRampToValueAtTime(0.045, t + 1.5);
+        g.gain.setValueAtTime(0.045, t + 3.4);
+        g.gain.linearRampToValueAtTime(0, t + 5.2);
+        o.connect(g); g.connect(this.master); o.start(t); o.stop(t + 5.3);
+      });
+    });
+  },
+  pluck() {
+    if (Math.random() < 0.25) return;
+    const t = this.ctx.currentTime;
+    const m = this.melody[Math.floor(Math.random() * this.melody.length)];
+    const o = this.ctx.createOscillator(), g = this.ctx.createGain();
+    o.type = "triangle"; o.frequency.value = this.freq(m);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.1, t + 0.03);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 1.4);
+    o.connect(g); g.connect(this.master); o.start(t); o.stop(t + 1.5);
+  },
+  start() {
+    if (!this.ctx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      this.ctx = new AC();
+      this.master = this.ctx.createGain(); this.master.gain.value = 0.8;
+      const lp = this.ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 2400;
+      this.master.connect(lp); lp.connect(this.ctx.destination);
+    }
+    this.ctx.resume();
+    this.pad(this.chords[0]);
+    this.chordTimer = setInterval(() => { this.step = (this.step + 1) % this.chords.length; this.pad(this.chords[this.step]); }, 4600);
+    this.melTimer = setInterval(() => this.pluck(), 1500);
+    this.on = true; $("#btnMusic").classList.add("on");
+  },
+  stop() {
+    clearInterval(this.chordTimer); clearInterval(this.melTimer);
+    if (this.ctx) this.ctx.suspend();
+    this.on = false; $("#btnMusic").classList.remove("on");
+  },
+  toggle() { this.on ? this.stop() : this.start(); }
+};
+$("#btnMusic").addEventListener("click", () => Music.toggle());
+
+/* ================= BUKA PASPOR ================= */
+let opened = false;
+$("#btnOpen").addEventListener("click", () => {
+  if (opened) return; opened = true;
+  if (CONFIG.music.enabled) Music.start();
+  const book = $("#passportBook");
+  book.classList.add("opening");
+  setTimeout(() => {
+    $("#cover").style.display = "none";
+    $("#content").classList.add("open");
+    $("#bottomNav").classList.add("show");
+    window.scrollTo(0, 0);
+    initObservers();
+  }, reduceMotion ? 60 : 950);
+});
+
+/* ================= REVEAL + STEMPEL (IntersectionObserver) ================= */
+$$("[data-stamp]").forEach(el => {
+  const r = (Math.random() * 20 - 13).toFixed(1); // rotasi acak sopan: -13° s.d. +7°
+  el.style.setProperty("--rot", r + "deg");
+});
+let observersReady = false;
+function initObservers() {
+  if (observersReady) return; observersReady = true;
+  const revealEls = $$(".reveal"), stampEls = $$("[data-stamp]");
+  if (!("IntersectionObserver" in window) || reduceMotion) {
+    revealEls.forEach(e => e.classList.add("in"));
+    stampEls.forEach(e => e.classList.add("on"));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add("in");
+      en.target.classList.add("on");
+      io.unobserve(en.target);
+    });
+  }, { threshold: 0.25 });
+  revealEls.forEach(e => io.observe(e));
+  stampEls.forEach(e => io.observe(e));
+}
+const bpStampEl = $("#bpStamp"); // dicap hanya saat check-in, bukan saat terlihat
+if (bpStampEl) bpStampEl.removeAttribute("data-stamp");
+
+/* ================= NAV SPY ================= */
+const sections = ["beranda", "mempelai", "acara", "galeri", "rsvp"];
+window.addEventListener("scroll", () => {
+  if (!$("#content").classList.contains("open")) return;
+  let cur = "beranda";
+  sections.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < innerHeight * 0.45) cur = id; });
+  $$("#bottomNav a").forEach(a => a.classList.toggle("active", a.getAttribute("data-nav") === cur));
+}, { passive: true });
+
+/* ================= LIGHTBOX ================= */
+const lb = $("#lb"), lbImg = $("#lbImg"), lbCap = $("#lbCap");
+$$("#galGrid img").forEach(img => {
+  const open = () => {
+    const g = CONFIG.gallery[Number(img.getAttribute("data-idx"))];
+    lbImg.src = g.src; lbCap.textContent = g.city + " — " + g.note; lb.classList.add("show");
+  };
+  img.addEventListener("click", open);
+  img.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+});
+lb.addEventListener("click", () => lb.classList.remove("show"));
+
+/* ================= RSVP — CHECK-IN BOARDING PASS ================= */
+const wishes = [];
+$("#rsvpForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const nama = $("#fNama").value.trim() || guest;
+  const hadir = ($('input[name="hadir"]:checked') || {}).value || "Hadir";
+  const jumlah = $("#fJumlah").value;
+  const ucapan = $("#fUcapan").value.trim();
+  $("#bpGuest").textContent = nama;
+  const done = $("#rsvpDone");
+  if (hadir === "Hadir") {
+    $("#bpass").classList.add("done");
+    const st = $("#bpStamp");
+    st.style.setProperty("--rot", "-11deg");
+    requestAnimationFrame(() => st.classList.add("on"));
+    done.innerHTML = "<b>Check-in berhasil!</b> Terima kasih, <b>" + esc(nama) + "</b> — kursi " + guestSeat + " untuk " + jumlah + " penumpang kami siapkan. Sampai jumpa di gate Al-Azhar, Sabtu 12 Juni 2027. Boarding pukul 07.30 WIB, jangan terlambat!";
+  } else {
+    done.innerHTML = "<b>Terima kasih, " + esc(nama) + ".</b> Sayang sekali Anda berhalangan terbang bersama kami — doa restu Anda tetap tiba di tujuan sebagai kargo paling berharga.";
+  }
+  done.classList.add("show");
+  if (ucapan) {
+    wishes.unshift({ nama, hadir, ucapan });
+    $("#wishList").innerHTML = wishes.map(w => `
+      <div class="wish"><b>${esc(w.nama)}</b><span class="st ${w.hadir === "Hadir" ? "" : "no"}">${w.hadir === "Hadir" ? "Checked-In" : "Berhalangan"}</span><p>${esc(w.ucapan)}</p></div>`).join("");
+  }
+  done.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+});
+</script>
+</body>
+</html>

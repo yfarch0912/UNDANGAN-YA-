@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bioskop Mini — Meyzsa &amp; Fahrezzi | Tayang Perdana 12 Juni 2027</title>
+<meta name="description" content="Undangan pernikahan digital bergaya premier film: Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c9a45c; --gold-l:#eed9a4; --gold-d:#8f7136;
+  --burg:#8e2434; --burg-d:#5e1420;
+  --ink:#0c0a08; --panel:#17120d; --panel2:#1f1811;
+  --ivory:#f3ead8; --mut:#b3a586; --line:rgba(201,164,92,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#030202;font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--ivory);-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.corm{font-family:'Cormorant Garamond',serif}
+.phone{max-width:430px;margin:0 auto;position:relative;background:radial-gradient(120% 60% at 50% 0%,#241a10 0%,var(--ink) 55%);min-height:100dvh;overflow:clip;box-shadow:0 0 70px rgba(0,0,0,.95)}
+/* ---- film grain + vignette ---- */
+.grain{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:70;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+.vignette{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:69;background:radial-gradient(115% 90% at 50% 45%,transparent 62%,rgba(0,0,0,.5) 100%)}
+/* ---- COVER / POSTER ---- */
+#cover{min-height:100dvh;display:flex;flex-direction:column;position:relative;background:#000}
+#cover .poster-bg{position:absolute;inset:0;background:url('assets/undangya/bioskop-mini/poster.webp') center 22%/cover no-repeat}
+#cover .poster-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,3,2,.62) 0%,rgba(5,3,2,.05) 30%,rgba(5,3,2,.08) 55%,rgba(5,3,2,.88) 88%,#050302 100%)}
+#cover .cover-in{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:34px 26px 30px}
+.studio{font-size:10px;letter-spacing:.42em;color:var(--gold-l);text-transform:uppercase}
+.studio b{color:var(--ivory)}
+.badge-row{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+.badge{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:10px;letter-spacing:.22em;color:var(--gold-l);background:rgba(0,0,0,.35);backdrop-filter:blur(2px)}
+.badge.solid{background:var(--burg);border-color:var(--burg);color:#ffe9c9}
+.cover-spacer{flex:1}
+.film-title{font-family:'Playfair Display',serif;font-weight:900;font-size:47px;line-height:1.02;letter-spacing:.04em;color:#fdf6e3;text-shadow:0 4px 34px rgba(0,0,0,.85)}
+.film-title span{display:block;font-size:19px;font-weight:500;font-style:italic;letter-spacing:.3em;color:var(--gold-l);margin:7px 0}
+.tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#e8dcc0;margin-top:10px}
+.credit-line{margin-top:14px;font-size:8.5px;letter-spacing:.18em;line-height:1.9;color:rgba(243,234,216,.75);text-transform:uppercase;max-width:330px}
+.guest-box{margin-top:20px;background:rgba(10,7,4,.66);border:1px solid var(--line);border-radius:14px;padding:14px 20px 13px;backdrop-filter:blur(3px);width:100%;max-width:330px}
+.guest-box small{display:block;font-size:9.5px;letter-spacing:.3em;color:var(--mut);text-transform:uppercase}
+.guest-box .gname{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#fdf6e3;margin-top:4px;line-height:1.15}
+.guest-box .gseat{font-size:10.5px;letter-spacing:.14em;color:var(--gold-l);margin-top:5px;text-transform:uppercase}
+#btnPlay{margin-top:20px;display:inline-flex;align-items:center;gap:11px;background:linear-gradient(180deg,#d8b96e,#b18c3e);color:#221503;border:none;border-radius:999px;padding:15px 34px;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;letter-spacing:.24em;cursor:pointer;box-shadow:0 10px 30px rgba(201,164,92,.35),inset 0 1px 0 #ffeec2;transition:transform .25s ease,box-shadow .25s ease}
+#btnPlay:active{transform:scale(.96)}
+#btnPlay .tri{font-size:12px}
+.cover-note{margin-top:13px;font-size:10.5px;color:var(--mut);letter-spacing:.08em}
+/* ---- TRAILER ---- */
+#trailer{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:#000;z-index:90;display:none;align-items:center;justify-content:center;text-align:center;padding:30px}
+#trailer.show{display:flex}
+#trailerStage{transition:opacity .45s ease}
+#trailerStage.fade{opacity:0}
+.t-studio{font-size:12px;letter-spacing:.5em;color:var(--gold-l);text-transform:uppercase}
+.t-present{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;color:var(--ivory)}
+.t-title{font-family:'Playfair Display',serif;font-weight:900;font-size:40px;line-height:1.1;color:#fdf6e3;animation:tracking 3.4s ease forwards}
+.t-title small{display:block;font-size:14px;letter-spacing:.4em;font-weight:500;color:var(--gold-l);margin-bottom:12px}
+@keyframes tracking{from{letter-spacing:.02em;opacity:0;transform:scale(.965)}to{letter-spacing:.14em;opacity:1;transform:scale(1)}}
+#btnSkip{position:absolute;bottom:34px;right:24px;background:none;border:1px solid rgba(243,234,216,.35);color:var(--ivory);border-radius:999px;padding:8px 16px;font-size:11px;letter-spacing:.18em;cursor:pointer}
+/* ---- CONTENT ---- */
+#content{display:none;padding-bottom:104px}
+#content.open{display:block}
+section{padding:56px 24px 8px;position:relative}
+.scene-head{text-align:center;margin-bottom:26px}
+.scene-no{font-size:10px;letter-spacing:.5em;color:var(--gold);text-transform:uppercase}
+.scene-title{font-family:'Playfair Display',serif;font-size:29px;font-weight:700;color:#fdf6e3;margin-top:7px}
+.scene-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--mut);margin-top:5px}
+.rule{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:14px}
+.rule::before,.rule::after{content:"";height:1px;width:52px;background:linear-gradient(90deg,transparent,var(--gold));display:block}
+.rule::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.rule i{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);display:block}
+p.body-txt{font-size:14.5px;line-height:1.85;color:#ddd2ba;text-align:center}
+.opening-quote{font-family:'Cormorant Garamond',serif;font-size:19.5px;font-style:italic;line-height:1.65;text-align:center;color:#eee2c6}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:24px 20px}
+/* mempelai */
+.star-card{text-align:center;margin-bottom:20px;overflow:hidden;padding:0 0 24px}
+.star-photo{height:300px;background:url('assets/undangya/bioskop-mini/poster.webp') center 18%/cover no-repeat;position:relative}
+.star-photo.groom{background-position:center 32%}
+.star-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,var(--panel) 100%)}
+.star-role{font-size:9.5px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-top:16px}
+.star-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#fdf6e3;margin-top:7px;padding:0 18px;line-height:1.25}
+.star-parents{font-size:13px;line-height:1.75;color:var(--mut);margin-top:8px;padding:0 22px}
+.ig-link{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:.06em;color:var(--gold-l);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 15px}
+/* acara */
+.show-card{margin-bottom:18px;text-align:center}
+.show-label{display:inline-block;background:var(--burg);color:#ffe9c9;font-size:9.5px;letter-spacing:.34em;padding:6px 14px;border-radius:999px;text-transform:uppercase}
+.show-name{font-family:'Playfair Display',serif;font-size:25px;font-weight:700;margin-top:14px;color:#fdf6e3}
+.show-when{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold-l);margin-top:5px}
+.show-where{font-size:13.5px;color:var(--mut);line-height:1.7;margin-top:7px}
+.btn-row{display:flex;gap:9px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.1em;padding:11px 18px;border-radius:999px;border:1px solid var(--gold);color:var(--gold-l);background:transparent;cursor:pointer;font-family:'Inter',sans-serif}
+.btn.fill{background:linear-gradient(180deg,#d8b96e,#b18c3e);color:#221503;border:none}
+.countdown{display:flex;gap:9px;justify-content:center;margin:6px 0 24px}
+.cd-box{width:70px;background:linear-gradient(180deg,#241b10,#14100a);border:1px solid var(--line);border-radius:13px;padding:12px 0 9px;text-align:center}
+.cd-box b{display:block;font-family:'Playfair Display',serif;font-size:26px;color:var(--gold-l);line-height:1}
+.cd-box span{font-size:9px;letter-spacing:.26em;color:var(--mut);text-transform:uppercase;display:block;margin-top:6px}
+/* galeri filmstrip */
+.filmstrip{background:#000;border-top:1px solid #241c10;border-bottom:1px solid #241c10;padding:30px 0 26px;position:relative;margin:0 -24px}
+.filmstrip::before,.filmstrip::after{content:"";position:absolute;left:0;right:0;height:13px;background-image:radial-gradient(circle at 11px 50%,rgba(238,217,164,.85) 4px,transparent 4.8px);background-size:27px 13px;background-repeat:repeat-x}
+.filmstrip::before{top:7px}
+.filmstrip::after{bottom:7px}
+.strip-track{display:flex;gap:14px;overflow-x:auto;padding:4px 24px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.strip-track::-webkit-scrollbar{display:none}
+.frame{flex:0 0 272px;scroll-snap-align:center;background:#0a0806;border:1px solid #2b2113;border-radius:8px;padding:7px;cursor:pointer}
+.frame img{width:100%;height:172px;object-fit:cover;border-radius:4px;display:block}
+.frame figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.5px;color:var(--gold-l);text-align:center;padding:8px 2px 3px}
+/* lightbox */
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:95;display:none;align-items:center;justify-content:center;padding:22px}
+#lb.show{display:flex}
+#lb img{max-width:min(430px,100%);max-height:82dvh;border:1px solid var(--line);border-radius:8px}
+#lbCap{position:absolute;bottom:36px;left:0;right:0;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-l);font-size:16px}
+/* RSVP ticket */
+.ticket{display:flex;border-radius:15px;overflow:visible;position:relative;background:linear-gradient(120deg,#f8f0da,#eadbb6 60%,#e2cd9c);color:#2a1d0e;box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.ticket-main{flex:1;padding:20px 18px 18px;min-width:0}
+.ticket-stub{width:102px;flex:0 0 102px;border-left:2px dashed rgba(42,29,14,.5);padding:18px 10px;text-align:center;position:relative;transition:transform .85s cubic-bezier(.25,.8,.3,1),opacity .85s}
+.ticket-stub::before,.ticket-stub::after{content:"";position:absolute;left:-12px;width:24px;height:24px;border-radius:50%;background:var(--ink)}
+.ticket-stub::before{top:-13px}
+.ticket-stub::after{bottom:-13px}
+.ticket.done .ticket-stub{transform:rotate(17deg) translate(16px,30px);opacity:.22}
+.tk-brand{font-size:8.5px;letter-spacing:.32em;color:#8a6a25;text-transform:uppercase}
+.tk-title{font-family:'Playfair Display',serif;font-weight:900;font-size:19px;margin-top:5px;line-height:1.2}
+.tk-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin-top:13px;font-size:11px}
+.tk-grid small{display:block;font-size:8px;letter-spacing:.22em;color:#8a6a25;text-transform:uppercase}
+.tk-grid b{font-size:12px}
+.tk-stub-big{font-family:'Playfair Display',serif;font-weight:900;font-size:15px;line-height:1.25;margin-top:6px}
+.tk-stub-seat{font-size:10px;letter-spacing:.14em;margin-top:8px;color:#6d5316}
+.barcode{margin:12px auto 0;width:74px;height:26px;background:repeating-linear-gradient(90deg,#2a1d0e 0 2px,transparent 2px 5px,#2a1d0e 5px 6px,transparent 6px 10px)}
+form.rsvp{margin-top:24px}
+label.flabel{display:block;font-size:10px;letter-spacing:.26em;color:var(--gold);text-transform:uppercase;margin:16px 0 8px}
+input[type=text],textarea,select{width:100%;background:#120e09;border:1px solid var(--line);border-radius:11px;color:var(--ivory);padding:13px 14px;font-size:14px;font-family:'Inter',sans-serif;outline:none}
+input[type=text]:focus,textarea:focus,select:focus{border-color:var(--gold)}
+.radio-row{display:flex;gap:9px}
+.radio-pill{flex:1}
+.radio-pill input{position:absolute;opacity:0;pointer-events:none}
+.radio-pill span{display:block;text-align:center;padding:12px 6px;border:1px solid var(--line);border-radius:11px;font-size:13px;cursor:pointer;color:var(--mut)}
+.radio-pill input:checked+span{background:var(--burg);border-color:var(--burg);color:#ffe9c9;font-weight:600}
+#btnRsvp{width:100%;margin-top:22px;background:linear-gradient(180deg,#a32c40,var(--burg-d));color:#ffe9c9;border:none;border-radius:999px;padding:15px;font-size:13.5px;font-weight:700;letter-spacing:.18em;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 10px 26px rgba(142,36,52,.4)}
+#btnRsvp:active{transform:scale(.98)}
+.demo-note{margin-top:12px;font-size:11px;color:var(--mut);text-align:center;line-height:1.6}
+#rsvpDone{display:none;margin-top:18px;background:rgba(201,164,92,.1);border:1px solid var(--line);border-radius:13px;padding:16px;text-align:center;font-size:13.5px;line-height:1.75;color:#eee2c6}
+#rsvpDone.show{display:block}
+#wishList{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.wish{background:var(--panel);border:1px solid rgba(201,164,92,.16);border-radius:12px;padding:13px 15px}
+.wish b{font-size:13px;color:var(--gold-l)}
+.wish .st{font-size:9px;letter-spacing:.14em;background:var(--burg);color:#ffe9c9;border-radius:999px;padding:3px 8px;margin-left:7px;text-transform:uppercase}
+.wish .st.no{background:#4a4234}
+.wish p{font-size:13px;color:#d9cdb2;line-height:1.65;margin-top:5px}
+/* amplop */
+.gold-card{background:linear-gradient(135deg,#3a2c10,#191106 55%,#2c2110);border:1px solid var(--gold);border-radius:18px;padding:24px 20px;text-align:center;box-shadow:inset 0 0 40px rgba(201,164,92,.12)}
+.acct{background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:13px;padding:15px;margin-top:14px}
+.acct small{font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.acct .num{font-family:'Playfair Display',serif;font-size:21px;letter-spacing:.08em;color:#fdf6e3;margin-top:6px}
+.acct .an{font-size:12px;color:var(--mut);margin-top:3px}
+.acct button{margin-top:11px;background:none;border:1px solid var(--gold);color:var(--gold-l);border-radius:999px;padding:8px 18px;font-size:11.5px;font-weight:600;letter-spacing:.1em;cursor:pointer;font-family:'Inter',sans-serif}
+/* penutup / credits */
+.credits-wrap{height:330px;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(transparent,#000 16%,#000 84%,transparent)}
+.credits-inner{text-align:center;animation:roll 36s linear infinite;padding-top:10px}
+.credits-wrap:hover .credits-inner{animation-play-state:paused}
+@keyframes roll{from{transform:translateY(88%)}to{transform:translateY(-108%)}}
+.cr-role{font-size:9.5px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-top:24px}
+.cr-name{font-family:'Cormorant Garamond',serif;font-size:19px;color:#eee2c6;margin-top:5px;line-height:1.5}
+.tamat{font-family:'Playfair Display',serif;font-size:30px;letter-spacing:.34em;color:#fdf6e3;text-align:center;margin-top:8px}
+.mono{width:64px;height:64px;margin:22px auto 0;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:21px;color:var(--gold-l)}
+footer.site{text-align:center;padding:30px 24px 6px;font-size:10.5px;color:var(--mut);line-height:1.9;letter-spacing:.05em}
+/* bottom nav */
+#bottomNav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:80;background:rgba(10,7,4,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:none;grid-template-columns:repeat(6,1fr);padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
+#bottomNav.show{display:grid}
+#bottomNav a,#bottomNav button{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:var(--mut);font-size:9px;letter-spacing:.06em;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;padding:4px 0}
+#bottomNav svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6}
+#bottomNav a.active{color:var(--gold-l)}
+#btnMusic.on{color:var(--gold-l)}
+#btnMusic .eq{display:none;gap:2px;align-items:flex-end;height:20px}
+#btnMusic.on .eq{display:flex}
+#btnMusic.on .note-ic{display:none}
+.eq i{width:3px;background:var(--gold-l);animation:eq 0.9s ease-in-out infinite}
+.eq i:nth-child(1){height:9px}.eq i:nth-child(2){height:15px;animation-delay:.25s}.eq i:nth-child(3){height:7px;animation-delay:.5s}
+@keyframes eq{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.15)}}
+/* ================= PERKAYAAN VISUAL SINEMATIK (v2) ================= */
+/* grain lebih terasa + lapisan pola art-deco & goresan film */
+.grain{opacity:.095}
+.deco-pattern{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:68;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23c9a45c' stroke-width='1.4'%3E%3Cpath d='M8 48a20 20 0 0 1 40 0'/%3E%3Cpath d='M16 48a12 12 0 0 1 24 0'/%3E%3Cpath d='M28 48V31'/%3E%3C/g%3E%3Ccircle cx='28' cy='52' r='1.7' fill='%23c9a45c'/%3E%3C/svg%3E");background-size:56px 56px}
+.scratches{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:71;background-image:repeating-linear-gradient(90deg,transparent 0 90px,rgba(255,255,255,.016) 90px,rgba(255,255,255,.016) 91px,transparent 91px 173px,rgba(0,0,0,.055) 173px,rgba(0,0,0,.055) 174px,transparent 174px 260px)}
+/* sorotan lampu panggung */
+.beams{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.beams i{position:absolute;top:-12%;height:78%;width:36%;background:linear-gradient(180deg,rgba(255,232,170,.20),rgba(255,232,170,.05) 55%,transparent 82%);clip-path:polygon(43% 0,57% 0,100% 100%,0 100%);transform-origin:50% 0;filter:blur(2px);--r:0deg;animation:sway 9s ease-in-out infinite alternate}
+.beams i:nth-child(1){left:-4%;--r:17deg}
+.beams i:nth-child(2){left:32%;width:38%;opacity:.65;--r:0deg;animation-duration:11s}
+.beams i:nth-child(3){right:-4%;--r:-17deg;animation-duration:10s}
+@keyframes sway{from{transform:rotate(calc(var(--r) - 6deg))}to{transform:rotate(calc(var(--r) + 6deg))}}
+.beams-sm i{height:52%;opacity:.55}
+/* bokeh cahaya marquee */
+.bokeh{position:absolute;inset:0;z-index:1;pointer-events:none;filter:blur(1.2px);opacity:.8;background-image:radial-gradient(circle,rgba(255,226,160,.50) 0 3px,transparent 6px),radial-gradient(circle,rgba(255,226,160,.34) 0 2px,transparent 5px),radial-gradient(circle,rgba(238,180,120,.30) 0 4px,transparent 8px),radial-gradient(circle,rgba(255,226,160,.28) 0 2px,transparent 5px),radial-gradient(circle,rgba(255,240,200,.22) 0 3px,transparent 7px);background-size:270px 340px,340px 260px,430px 480px,210px 300px,380px 420px;background-position:12px 30px,120px 150px,40px 320px,200px 60px,90px 480px;background-repeat:repeat;animation:bokehFloat 12s ease-in-out infinite alternate}
+@keyframes bokehFloat{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+/* tirai merah panggung */
+.curtain-top{position:absolute;top:0;left:0;right:0;height:44px;z-index:3;background:repeating-linear-gradient(90deg,#430d18 0 9px,#6d1626 9px 19px,#380a12 19px 28px);box-shadow:inset 0 -2px 0 rgba(201,164,92,.65),0 10px 24px rgba(0,0,0,.5)}
+.curtain-top::after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:12px;background-image:radial-gradient(circle at 50% 0,#5c1322 8.5px,transparent 9.5px);background-size:26px 12px;background-repeat:repeat-x}
+.curtain-side{position:absolute;top:44px;bottom:0;width:16px;z-index:2;background:repeating-linear-gradient(90deg,#430d18 0 4px,#671425 4px 9px,#350a11 9px 14px);opacity:.92}
+.curtain-side.l{left:0;box-shadow:inset -2px 0 0 rgba(201,164,92,.4),6px 0 18px rgba(0,0,0,.45)}
+.curtain-side.r{right:0;box-shadow:inset 2px 0 0 rgba(201,164,92,.4),-6px 0 18px rgba(0,0,0,.45)}
+#cover .cover-in{padding-top:82px;z-index:4}
+/* bingkai marquee berbohlam di sekeliling poster */
+.marquee{position:absolute;inset:64px 21px 13px;z-index:2;pointer-events:none;border:1px solid rgba(238,217,164,.38);border-radius:8px}
+.mq-t,.mq-b{position:absolute;left:12px;right:12px;height:10px;background-image:radial-gradient(circle,#ffedb8 2.6px,rgba(255,237,184,.28) 3.8px,transparent 5px);background-size:26px 10px;background-repeat:repeat-x;filter:drop-shadow(0 0 5px rgba(255,220,140,.85));animation:chase .9s steps(1) infinite,glowPulse 1.8s ease-in-out infinite alternate}
+.mq-t{top:-5px}.mq-b{bottom:-5px}
+.mq-l,.mq-r{position:absolute;top:12px;bottom:12px;width:10px;background-image:radial-gradient(circle,#ffedb8 2.6px,rgba(255,237,184,.28) 3.8px,transparent 5px);background-size:10px 26px;background-repeat:repeat-y;filter:drop-shadow(0 0 5px rgba(255,220,140,.85));animation:chaseY .9s steps(1) infinite,glowPulse 1.8s ease-in-out infinite alternate}
+.mq-l{left:-5px}.mq-r{right:-5px}
+@keyframes chase{0%,49%{background-position-x:0}50%,100%{background-position-x:13px}}
+@keyframes chaseY{0%,49%{background-position-y:0}50%,100%{background-position-y:13px}}
+@keyframes glowPulse{from{opacity:.82}to{opacity:1}}
+.cnr{position:absolute;width:34px;height:34px;z-index:3}
+.cnr.tl{top:-8px;left:-8px}.cnr.tr{top:-8px;right:-8px;transform:scaleX(-1)}
+.cnr.br{bottom:-8px;right:-8px;transform:scale(-1)}.cnr.bl{bottom:-8px;left:-8px;transform:scaleY(-1)}
+/* aksesoris kecil di cover */
+.cover-acc{display:flex;align-items:center;gap:16px;justify-content:center;margin-top:17px;color:var(--gold-l)}
+.cover-acc::before,.cover-acc::after{content:"";height:1px;width:46px;background:linear-gradient(90deg,transparent,var(--gold));display:block}
+.cover-acc::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.cover-acc svg{width:23px;height:23px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}
+.cover-acc svg .fill{fill:currentColor;stroke:none}
+/* frame art-deco emas untuk kartu */
+.framed{position:relative;border:1px solid rgba(201,164,92,.55);box-shadow:inset 0 0 0 1px rgba(0,0,0,.3),inset 0 0 28px rgba(201,164,92,.07),0 14px 34px rgba(0,0,0,.35);outline:1px solid rgba(201,164,92,.22);outline-offset:-7px}
+.framed::before,.framed::after{content:"";position:absolute;width:30px;height:30px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23c9a45c' stroke-width='1.7'%3E%3Cpath d='M4 40V16Q4 4 16 4h24'/%3E%3Cpath d='M10 40V20Q10 10 20 10h20'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.2' fill='%23c9a45c'/%3E%3C/svg%3E") center/contain no-repeat;pointer-events:none;z-index:4}
+.framed::before{top:4px;left:4px}
+.framed::after{bottom:4px;right:4px;transform:rotate(180deg)}
+/* ikon kustom judul scene */
+.scene-ic{display:flex;justify-content:center;margin-bottom:11px}
+.scene-ic svg{width:34px;height:34px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 9px rgba(201,164,92,.35))}
+.scene-ic svg .fill{fill:var(--gold);stroke:none}
+/* pemisah section: rol film berputar */
+.divider{display:flex;align-items:center;gap:13px;padding:42px 48px 0}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,164,92,.55))}
+.divider::after{background:linear-gradient(90deg,rgba(201,164,92,.55),transparent)}
+.divider svg{width:30px;height:30px;stroke:var(--gold-d);fill:none;stroke-width:1.5;flex:0 0 auto;animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* countdown berbingkai sudut */
+.cd-box{position:relative}
+.cd-box::before,.cd-box::after{content:"";position:absolute;width:13px;height:13px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23c9a45c' stroke-width='2.4'%3E%3Cpath d='M4 40V16Q4 4 16 4h24'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;opacity:.85;pointer-events:none}
+.cd-box::before{top:2px;left:2px}
+.cd-box::after{bottom:2px;right:2px;transform:rotate(180deg)}
+/* galeri: bingkai emas + bintang sudut frame */
+.filmstrip{border-top:1px solid rgba(201,164,92,.45);border-bottom:1px solid rgba(201,164,92,.45);box-shadow:inset 0 0 0 1px rgba(201,164,92,.12),inset 0 0 46px rgba(201,164,92,.05)}
+.frame{position:relative;border:1px solid rgba(201,164,92,.5)}
+.frame::after{content:"";position:absolute;top:9px;right:9px;width:14px;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 16.7 6.1 19.9l1.2-6.5L2.5 8.9 9.1 8z' fill='%23eed9a4'/%3E%3C/svg%3E") center/contain no-repeat;filter:drop-shadow(0 1px 3px rgba(0,0,0,.7))}
+/* tiket: bingkai klasik + rol film watermark */
+.ticket{border:1px solid #a97f2f;box-shadow:0 18px 40px rgba(0,0,0,.55),inset 0 0 0 3px #f6ecd2,inset 0 0 0 4.5px rgba(142,36,52,.45)}
+.ticket-main{position:relative;overflow:hidden}
+.tk-reel{position:absolute;right:-16px;bottom:-20px;width:112px;height:112px;stroke:rgba(42,29,14,.10);fill:none;stroke-width:1.3;pointer-events:none;animation:spin 24s linear infinite}
+.tk-stars{display:flex;gap:3px;justify-content:center;margin-top:9px}
+.tk-stars svg{width:10px;height:10px;fill:#8a6a25}
+/* ikon-ikon kustom kecil di elemen UI */
+.badge svg{width:9px;height:9px;fill:#ffe9c9;vertical-align:-1px;margin-right:5px}
+#btnPlay .tri svg{width:12px;height:12px;fill:#221503;display:block}
+#btnSkip svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2;vertical-align:-1px;margin-left:5px}
+.radio-pill span svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;vertical-align:-3px;margin-right:6px}
+.gstar{width:12px;height:12px;fill:var(--gold-l);vertical-align:-2px}
+.btn svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-2px;margin-right:6px}
+.btn.fill svg{stroke:#221503}
+#rsvpDone svg{width:16px;height:16px;stroke:var(--gold-l);fill:none;stroke-width:1.6;stroke-linecap:round;vertical-align:-3px;margin-right:6px}
+#bottomNav svg .fill{fill:currentColor;stroke:none}
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}
+  .reveal{opacity:1;transform:none}
+  .credits-inner{animation:none}
+}
+</style>
+<link rel="canonical" href="https://undangya.web.id/bioskop-mini">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Bioskop Mini — Meyzsa & Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital bergaya premier film: poster sinematik, opening trailer, galeri filmstrip & RSVP tiket disobek — Bioskop Mini">
+<meta property="og:url" content="https://undangya.web.id/bioskop-mini">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/bioskop-mini.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bioskop Mini — Meyzsa & Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital bergaya premier film: poster sinematik, opening trailer, galeri filmstrip & RSVP tiket disobek — Bioskop Mini">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/bioskop-mini.webp">
+</head>
+<body>
+<div class="phone" id="phone">
+
+  <!-- ============ COVER / POSTER FILM ============ -->
+  <div id="cover">
+    <div class="poster-bg"></div>
+    <div class="beams" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="bokeh" aria-hidden="true"></div>
+    <div class="curtain-top" aria-hidden="true"></div>
+    <div class="curtain-side l" aria-hidden="true"></div>
+    <div class="curtain-side r" aria-hidden="true"></div>
+    <div class="marquee" aria-hidden="true">
+      <span class="mq-t"></span><span class="mq-b"></span><span class="mq-l"></span><span class="mq-r"></span>
+      <svg class="cnr tl" viewBox="0 0 44 44" aria-hidden="true"><g fill="none" stroke="#eed9a4" stroke-width="1.8"><path d="M4 40V16Q4 4 16 4h24"/><path d="M10 40V20Q10 10 20 10h20"/></g><circle cx="16" cy="16" r="2.4" fill="#eed9a4"/></svg>
+      <svg class="cnr tr" viewBox="0 0 44 44" aria-hidden="true"><g fill="none" stroke="#eed9a4" stroke-width="1.8"><path d="M4 40V16Q4 4 16 4h24"/><path d="M10 40V20Q10 10 20 10h20"/></g><circle cx="16" cy="16" r="2.4" fill="#eed9a4"/></svg>
+      <svg class="cnr br" viewBox="0 0 44 44" aria-hidden="true"><g fill="none" stroke="#eed9a4" stroke-width="1.8"><path d="M4 40V16Q4 4 16 4h24"/><path d="M10 40V20Q10 10 20 10h20"/></g><circle cx="16" cy="16" r="2.4" fill="#eed9a4"/></svg>
+      <svg class="cnr bl" viewBox="0 0 44 44" aria-hidden="true"><g fill="none" stroke="#eed9a4" stroke-width="1.8"><path d="M4 40V16Q4 4 16 4h24"/><path d="M10 40V20Q10 10 20 10h20"/></g><circle cx="16" cy="16" r="2.4" fill="#eed9a4"/></svg>
+    </div>
+    <div class="cover-in">
+      <div class="studio">UndangYa! Pictures <b>Mempersembahkan</b></div>
+      <div class="badge-row">
+        <span class="badge solid"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 16.7 6.1 19.9l1.2-6.5L2.5 8.9 9.1 8z"/></svg>Tayang Perdana</span>
+        <span class="badge">Semua Umur</span>
+        <span class="badge">12 . 06 . 2027</span>
+      </div>
+      <div class="cover-spacer"></div>
+      <h1 class="film-title">MEYZSA<span>&amp;</span>FAHREZZI</h1>
+      <p class="tagline">&ldquo;Sebuah kisah cinta yang akhirnya sampai di layar bahagia.&rdquo;</p>
+      <p class="credit-line">A Film by UndangYa! &nbsp;•&nbsp; Starring Meyzsa Putri Ananda &amp; Ahmad Fahrezzi Pratama &nbsp;•&nbsp; Jakarta &nbsp;•&nbsp; 2027</p>
+      <div class="cover-acc" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M6 10.2h12l-1.5 9.3a2 2 0 0 1-2 1.7H9.5a2 2 0 0 1-2-1.7z"/><path d="M6.4 10.2a2.9 2.9 0 1 1 3.1-4.6A3.3 3.3 0 0 1 12 3.9a3.3 3.3 0 0 1 2.5 1.7 2.9 2.9 0 1 1 3.1 4.6"/><path d="M10.2 10.5l.7 9.5M13.8 10.5l-.7 9.5"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 20.4S3.8 15.3 3.8 9.8A4.5 4.5 0 0 1 12 6.7a4.5 4.5 0 0 1 8.2 3.1c0 5.5-8.2 10.6-8.2 10.6z"/><circle class="fill" cx="7.2" cy="8.6" r=".9"/><circle class="fill" cx="12" cy="6.4" r=".9"/><circle class="fill" cx="16.8" cy="8.6" r=".9"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M3 11.2h18V19a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 19z"/><path d="M3.4 10.4 4.6 4.9l15.9-1.6.7 4.5z"/><path d="M7.6 5.6 9.2 8.2M12.6 5.1l1.6 2.6M17.6 4.6l1.6 2.6"/></svg>
+      </div>
+      <div class="guest-box">
+        <small>Kursi Khusus Untuk</small>
+        <div class="gname" id="guestName">Tamu Undangan</div>
+        <div class="gseat" id="guestSeat">Studio 1 &nbsp;•&nbsp; Kursi Tamu</div>
+      </div>
+      <button id="btnPlay" type="button"><span class="tri"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .9 1 1.5 1.8 1L21 13a1.2 1.2 0 0 0 0-2L7.8 2.9C7 2.4 6 2.9 6 3.8z"/></svg></span> PUTAR</button>
+      <p class="cover-note">Tekan Putar untuk menyaksikan undangannya</p>
+    </div>
+  </div>
+
+  <!-- ============ TRAILER ============ -->
+  <div id="trailer" aria-hidden="true">
+    <div id="trailerStage"></div>
+    <button id="btnSkip" type="button">LEWATI<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l8 8-8 8M13 4l8 8-8 8"/></svg></button>
+  </div>
+
+  <!-- ============ ISI ============ -->
+  <main id="content">
+
+    <!-- SCENE 1 · SAMBUTAN -->
+    <section id="beranda">
+      <div class="beams beams-sm" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="scene-head reveal">
+        <div class="scene-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.6 3h6.8l1 5.2H7.6z"/><path d="M8.2 8.2 3.6 21h16.8L15.8 8.2"/><path d="M12 8.2V21M9.4 14.5h5.2"/></svg></div>
+        <div class="scene-no">Scene 01 — Pembuka</div>
+        <h2 class="scene-title">Selamat Datang di Premier Kami</h2>
+        <div class="rule"><i></i></div>
+      </div>
+      <p class="opening-quote reveal">&ldquo;Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya.&rdquo;</p>
+      <p class="body-txt reveal" style="margin-top:16px;font-size:12.5px;color:var(--mut)">— QS. Ar-Rūm: 21 —</p>
+      <p class="body-txt reveal" style="margin-top:22px">Assalamu&rsquo;alaikum warahmatullahi wabarakatuh.<br><br>Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir menyaksikan babak paling bahagia dalam hidup kami — hari di mana dua pemeran utama akhirnya dipersatukan dalam satu cerita selamanya.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="6.9" r="1.8"/><circle cx="16.4" cy="14.6" r="1.8"/><circle cx="7.6" cy="14.6" r="1.8"/></svg></div>
+
+    <!-- SCENE 2 · MEMPELAI -->
+    <section id="mempelai">
+      <div class="scene-head reveal">
+        <div class="scene-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.2l2.6 5.3 5.8.8-4.2 4 1 5.7L12 16.4l-5.2 2.6 1-5.7-4.2-4 5.8-.8z"/></svg></div>
+        <div class="scene-no">Scene 02 — Pemeran Utama</div>
+        <h2 class="scene-title">Dua Pemeran Utama</h2>
+        <p class="scene-sub">diperkenalkan dengan bangga</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="card star-card framed reveal">
+        <div class="star-photo bride"></div>
+        <div class="star-role">Pemeran Utama Wanita</div>
+        <h3 class="star-name">Meyzsa Putri Ananda, S.Pd.</h3>
+        <p class="star-parents">Putri tercinta dari<br>Bapak H. Muhammad Ridwan &amp;<br>Ibu Hj. Siti Aminah</p>
+        <a class="ig-link" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a>
+      </div>
+      <div class="card star-card framed reveal">
+        <div class="star-photo groom"></div>
+        <div class="star-role">Pemeran Utama Pria</div>
+        <h3 class="star-name">Ahmad Fahrezzi Pratama, S.T.</h3>
+        <p class="star-parents">Putra tercinta dari<br>Bapak H. Bambang Sutrisno &amp;<br>Ibu Hj. Ratna Dewi</p>
+        <a class="ig-link" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="6.9" r="1.8"/><circle cx="16.4" cy="14.6" r="1.8"/><circle cx="7.6" cy="14.6" r="1.8"/></svg></div>
+
+    <!-- SCENE 3 · ACARA -->
+    <section id="acara">
+      <div class="scene-head reveal">
+        <div class="scene-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11.2h18V19a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 19z"/><path d="M3.4 10.4 4.6 4.9l15.9-1.6.7 4.5z"/><path d="M7.6 5.6 9.2 8.2M12.6 5.1l1.6 2.6M17.6 4.6l1.6 2.6"/><path d="M7 15.2h6M7 17.8h9.5"/></svg></div>
+        <div class="scene-no">Scene 03 — Jadwal Tayang</div>
+        <h2 class="scene-title">Akad &amp; Resepsi</h2>
+        <p class="scene-sub">satu hari, dua pertunjukan istimewa</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="countdown reveal" aria-label="Hitung mundur menuju akad">
+        <div class="cd-box"><b id="cdD">00</b><span>Hari</span></div>
+        <div class="cd-box"><b id="cdH">00</b><span>Jam</span></div>
+        <div class="cd-box"><b id="cdM">00</b><span>Menit</span></div>
+        <div class="cd-box"><b id="cdS">00</b><span>Detik</span></div>
+      </div>
+      <div id="eventList"></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="6.9" r="1.8"/><circle cx="16.4" cy="14.6" r="1.8"/><circle cx="7.6" cy="14.6" r="1.8"/></svg></div>
+
+    <!-- SCENE 4 · GALERI -->
+    <section id="galeri">
+      <div class="scene-head reveal">
+        <div class="scene-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="6.9" r="1.8"/><circle cx="16.4" cy="14.6" r="1.8"/><circle cx="7.6" cy="14.6" r="1.8"/></svg></div>
+        <div class="scene-no">Scene 04 — Cuplikan</div>
+        <h2 class="scene-title">Cuplikan Kisah Kami</h2>
+        <p class="scene-sub">geser strip filmnya — ketuk untuk memperbesar</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="filmstrip reveal"><div class="strip-track" id="stripTrack"></div></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="6.9" r="1.8"/><circle cx="16.4" cy="14.6" r="1.8"/><circle cx="7.6" cy="14.6" r="1.8"/></svg></div>
+
+    <!-- SCENE 5 · RSVP -->
+    <section id="rsvp">
+      <div class="scene-head reveal">
+        <div class="scene-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8.2A2.2 2.2 0 0 1 6.2 6h11.6A2.2 2.2 0 0 1 20 8.2v1.3a2.6 2.6 0 0 0 0 5v1.3A2.2 2.2 0 0 1 17.8 18H6.2A2.2 2.2 0 0 1 4 15.8v-1.3a2.6 2.6 0 0 0 0-5z"/><path d="M14 6.8v1.7M14 11v2M14 15.5v1.7"/><path class="fill" d="M8.6 9.3l.9 1.8 2 .3-1.4 1.4.3 2-1.8-1-1.8 1 .3-2L5.7 11.4l2-.3z"/></svg></div>
+        <div class="scene-no">Scene 05 — Tiket Anda</div>
+        <h2 class="scene-title">Konfirmasi Kehadiran</h2>
+        <p class="scene-sub">konfirmasi, lalu tiket Anda disobek di loket</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="ticket reveal" id="ticket">
+        <div class="ticket-main">
+          <div class="tk-brand">UndangYa! Cinema — Admit One</div>
+          <div class="tk-title">Premier: Meyzsa &amp; Fahrezzi</div>
+          <div class="tk-grid">
+            <div><small>Penonton</small><b id="tkGuest">Tamu Undangan</b></div>
+            <div><small>Studio</small><b>Studio 1 — Jakarta</b></div>
+            <div><small>Tanggal</small><b>Sabtu, 12 Juni 2027</b></div>
+            <div><small>Jam Tayang</small><b>08.00 WIB</b></div>
+          </div>
+          <svg class="tk-reel" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="6.9" r="1.8"/><circle cx="16.4" cy="14.6" r="1.8"/><circle cx="7.6" cy="14.6" r="1.8"/></svg>
+        </div>
+        <div class="ticket-stub" id="ticketStub">
+          <div class="tk-brand">Stub</div>
+          <div class="tk-stub-big">ADMIT<br>ONE</div>
+          <div class="tk-stub-seat" id="tkSeat">Kursi Tamu</div>
+          <div class="tk-stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 16.7 6.1 19.9l1.2-6.5L2.5 8.9 9.1 8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 16.7 6.1 19.9l1.2-6.5L2.5 8.9 9.1 8z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6 6.6.9-4.8 4.5 1.2 6.5L12 16.7 6.1 19.9l1.2-6.5L2.5 8.9 9.1 8z"/></svg></div>
+          <div class="barcode"></div>
+        </div>
+      </div>
+
+      <form class="rsvp reveal" id="rsvpForm" novalidate>
+        <label class="flabel" for="fNama">Nama Penonton</label>
+        <input type="text" id="fNama" placeholder="Nama Anda" autocomplete="name">
+        <label class="flabel">Konfirmasi Kehadiran</label>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="hadir" value="Hadir" checked><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.2A2.2 2.2 0 0 1 6.2 6h11.6A2.2 2.2 0 0 1 20 8.2v1.3a2.6 2.6 0 0 0 0 5v1.3A2.2 2.2 0 0 1 17.8 18H6.2A2.2 2.2 0 0 1 4 15.8v-1.3a2.6 2.6 0 0 0 0-5z"/><path d="M14 6.8v1.7M14 11v2M14 15.5v1.7"/></svg>Hadir, Insya Allah</span></label>
+          <label class="radio-pill"><input type="radio" name="hadir" value="Berhalangan"><span>Berhalangan</span></label>
+        </div>
+        <label class="flabel" for="fJumlah">Jumlah Tamu</label>
+        <select id="fJumlah">
+          <option value="1">1 orang</option>
+          <option value="2">2 orang</option>
+          <option value="3">3 orang</option>
+          <option value="4">4 orang</option>
+        </select>
+        <label class="flabel" for="fUcapan">Ucapan &amp; Doa (seperti pesan di buku tamu premier)</label>
+        <textarea id="fUcapan" rows="3" placeholder="Tulis ucapan &amp; doa terbaik Anda…"></textarea>
+        <button id="btnRsvp" type="submit">KONFIRMASI — SOBEK TIKET SAYA</button>
+        <p class="demo-note">Mode demo: RSVP &amp; ucapan tersimpan hanya di halaman ini (contoh tampilan, belum terkirim ke server).</p>
+      </form>
+      <div id="rsvpDone" role="status"></div>
+      <div id="wishList"></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="6.9" r="1.8"/><circle cx="16.4" cy="14.6" r="1.8"/><circle cx="7.6" cy="14.6" r="1.8"/></svg></div>
+
+    <!-- SCENE 6 · AMPLOP -->
+    <section id="amplop">
+      <div class="scene-head reveal">
+        <div class="scene-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3.8h8V9a4 4 0 0 1-8 0z"/><path d="M8 5H4.6a3.4 3.4 0 0 0 3.5 3.9M16 5h3.4a3.4 3.4 0 0 1-3.5 3.9"/><path d="M12 13v2.6M9 20.2h6M10.2 15.6h3.6l.7 4.6H9.5z"/><path class="fill" d="M12 5.6l.8 1.6 1.8.3-1.3 1.2.3 1.8L12 9.7l-1.6.8.3-1.8-1.3-1.2 1.8-.3z"/></svg></div>
+        <div class="scene-no">Scene 06 — Gold Class</div>
+        <h2 class="scene-title">Amplop Digital</h2>
+        <p class="scene-sub">tanda kasih untuk kedua pemeran utama</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="gold-card framed reveal">
+        <div style="font-size:10px;letter-spacing:.4em;color:var(--gold-l)"><svg class="gstar" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg> &nbsp;TIKET GOLD CLASS&nbsp; <svg class="gstar" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></div>
+        <p style="font-size:13px;color:var(--mut);line-height:1.75;margin-top:10px">Kehadiran Anda adalah hadiah terindah. Namun bila berkenan memberi tanda kasih, tersedia jalur Gold Class berikut:</p>
+        <div id="acctList"></div>
+        <p class="demo-note" style="margin-top:14px">Nomor di atas adalah contoh/demo tampilan.</p>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="1.7"/><circle cx="12" cy="6.9" r="1.8"/><circle cx="16.4" cy="14.6" r="1.8"/><circle cx="7.6" cy="14.6" r="1.8"/></svg></div>
+
+    <!-- PENUTUP · CREDIT ROLL -->
+    <section id="penutup">
+      <div class="beams beams-sm" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="scene-head reveal">
+        <div class="scene-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.8" y="9" width="11.5" height="9" rx="1.6"/><path d="M14.3 11.8 20.5 9v8.5l-6.2-2.8"/><circle cx="7.2" cy="6.2" r="2.2"/><circle cx="12.2" cy="6.2" r="2.2"/><path d="M6.5 18 5 21.5M11 18l1.2 3.5"/></svg></div>
+        <div class="scene-no">Epilog — Credit Roll</div>
+        <h2 class="scene-title">Terima Kasih</h2>
+        <div class="rule"><i></i></div>
+      </div>
+      <p class="body-txt reveal">Merupakan kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih yang sebesar-besarnya.<br><br>Wassalamu&rsquo;alaikum warahmatullahi wabarakatuh.</p>
+      <div class="credits-wrap reveal" style="margin-top:30px">
+        <div class="credits-inner" id="creditsInner"></div>
+      </div>
+      <div class="tamat reveal">— TAMAT —</div>
+      <div class="mono reveal">M&amp;F</div>
+      <p class="body-txt reveal" style="margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px">Sampai jumpa di pemutaran perdana,<br>12 Juni 2027.</p>
+    </section>
+
+    <footer class="site">© 2027 Meyzsa &amp; Fahrezzi — Sebuah produksi UndangYa! Pictures<br>Undangan digital tema &ldquo;Bioskop Mini&rdquo; • Sampel contoh</footer>
+  </main>
+
+  <!-- ============ BOTTOM NAV ============ -->
+  <nav id="bottomNav" aria-label="Navigasi undangan">
+    <a href="#beranda" data-nav="beranda" class="active"><svg viewBox="0 0 24 24"><path d="M4 21v-9.5L12 4l8 7.5V21"/><path d="M2.8 21h18.4M9.6 21v-4.6h4.8V21"/><path class="fill" d="M12 8.1l.8 1.7 1.9.3-1.4 1.3.4 1.9L12 12.4l-1.7.9.4-1.9-1.4-1.3 1.9-.3z"/></svg>Beranda</a>
+    <a href="#mempelai" data-nav="mempelai"><svg viewBox="0 0 24 24"><circle cx="9.3" cy="14.6" r="5.1"/><circle cx="14.7" cy="14.6" r="5.1"/><path d="M9.8 6.2 12 3.4l2.2 2.8L12 8.4z"/></svg>Mempelai</a>
+    <a href="#acara" data-nav="acara"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path class="fill" d="M12 12.6l1 2 2.2.3-1.6 1.5.4 2.2-2-1.1-2 1.1.4-2.2-1.6-1.5 2.2-.3z"/></svg>Acara</a>
+    <a href="#galeri" data-nav="galeri"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7.6 5v14M16.4 5v14"/><path d="M3 9.2h4.6M3 14.8h4.6M16.4 9.2H21M16.4 14.8H21"/><path class="fill" d="M10.2 9.4 15 12l-4.8 2.6z"/></svg>Galeri</a>
+    <a href="#rsvp" data-nav="rsvp"><svg viewBox="0 0 24 24"><path d="M4 8.2A2.2 2.2 0 0 1 6.2 6h11.6A2.2 2.2 0 0 1 20 8.2v1.3a2.6 2.6 0 0 0 0 5v1.3A2.2 2.2 0 0 1 17.8 18H6.2A2.2 2.2 0 0 1 4 15.8v-1.3a2.6 2.6 0 0 0 0-5z"/><path d="M14 6.8v1.7M14 11v2M14 15.5v1.7"/><path class="fill" d="M8.6 9.3l.9 1.8 2 .3-1.4 1.4.3 2-1.8-1-1.8 1 .3-2L5.7 11.4l2-.3z"/></svg>RSVP</a>
+    <button id="btnMusic" type="button" aria-label="Musik latar">
+      <svg class="note-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="2.7"/><path d="M15.6 5.6a8.6 8.6 0 0 1 2.8 6.4M5.6 15.6a8.6 8.6 0 0 0 6.4 2.8"/></svg>
+      <span class="eq"><i></i><i></i><i></i></span>Musik
+    </button>
+  </nav>
+
+  <!-- lightbox -->
+  <div id="lb" aria-hidden="true"><img id="lbImg" alt="Cuplikan diperbesar"><div id="lbCap"></div></div>
+
+  <div class="vignette"></div>
+  <div class="deco-pattern" aria-hidden="true"></div>
+  <div class="grain"></div>
+  <div class="scratches" aria-hidden="true"></div>
+</div>
+
+<script>
+"use strict";
+/* ================= CONFIG (pola tema UndangYa!) ================= */
+const CONFIG = {
+  couple: {
+    bride: {
+      name: "Meyzsa Putri Ananda, S.Pd.", short: "Meyzsa",
+      father: "H. Muhammad Ridwan", mother: "Hj. Siti Aminah",
+      instagram: "meyzsa.contoh"
+    },
+    groom: {
+      name: "Ahmad Fahrezzi Pratama, S.T.", short: "Fahrezzi",
+      father: "H. Bambang Sutrisno", mother: "Hj. Ratna Dewi",
+      instagram: "fahrezzi.contoh"
+    },
+    filmTitle: "MEYZSA & FAHREZZI",
+    premiereDate: "Sabtu, 12 Juni 2027"
+  },
+  events: [
+    {
+      id: "akad", label: "Pertunjukan Pertama", name: "Akad Nikah",
+      day: "Sabtu", date: "12 Juni 2027", time: "08.00 – 10.00 WIB",
+      venue: "Masjid Agung Al-Azhar", area: "Jakarta Selatan",
+      maps: "https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Al-Azhar+Jakarta+Selatan",
+      gcal: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Meyzsa+%26+Fahrezzi&dates=20270612T010000Z/20270612T030000Z&details=Akad+Nikah+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&location=Masjid+Agung+Al-Azhar,+Jakarta+Selatan"
+    },
+    {
+      id: "resepsi", label: "Pertunjukan Utama", name: "Resepsi",
+      day: "Sabtu", date: "12 Juni 2027", time: "11.00 – 13.00 WIB",
+      venue: "The Ritz-Carlton Jakarta, Pacific Place", area: "Jakarta Selatan",
+      maps: "https://www.google.com/maps/search/?api=1&query=The+Ritz-Carlton+Jakarta+Pacific+Place",
+      gcal: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Meyzsa+%26+Fahrezzi&dates=20270612T040000Z/20270612T060000Z&details=Resepsi+Pernikahan+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&location=The+Ritz-Carlton+Jakarta,+Pacific+Place"
+    }
+  ],
+  countdownTo: "2027-06-12T08:00:00+07:00",
+  gallery: [
+    { src: "assets/undangya/bioskop-mini/still-1.webp", caption: "Cuplikan 01 — Pertemuan Pertama" },
+    { src: "assets/undangya/bioskop-mini/still-2.webp", caption: "Cuplikan 02 — Janji di Bawah Lampu Taman" },
+    { src: "assets/undangya/bioskop-mini/still-3.webp", caption: "Cuplikan 03 — Menuju Babak Bahagia" },
+    { src: "assets/undangya/bioskop-mini/still-4.webp", caption: "Cuplikan 04 — Dansa di Depan Marquee" }
+  ],
+  accounts: [
+    { bank: "BCA", number: "1234567890", holder: "Meyzsa Putri Ananda" },
+    { bank: "DANA", number: "0812-3456-7890", holder: "Meyzsa Putri Ananda" }
+  ],
+  credits: [
+    { role: "Pemeran Utama Wanita", name: "Meyzsa Putri Ananda, S.Pd." },
+    { role: "Pemeran Utama Pria", name: "Ahmad Fahrezzi Pratama, S.T." },
+    { role: "Keluarga Mempelai Wanita", name: "Bapak H. Muhammad Ridwan & Ibu Hj. Siti Aminah" },
+    { role: "Keluarga Mempelai Pria", name: "Bapak H. Bambang Sutrisno & Ibu Hj. Ratna Dewi" },
+    { role: "Lokasi Syuting Akad", name: "Masjid Agung Al-Azhar, Jakarta Selatan" },
+    { role: "Lokasi Syuting Resepsi", name: "The Ritz-Carlton Jakarta, Pacific Place" },
+    { role: "Ucapan Terima Kasih Khusus", name: "Seluruh keluarga besar, sahabat, dan para tamu undangan yang berkenan hadir & memberi doa restu" },
+    { role: "Studio", name: "UndangYa! Pictures" }
+  ],
+  music: { enabled: true }
+};
+
+/* ================= HELPERS ================= */
+const $ = (s, c) => (c || document).querySelector(s);
+const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ================= TAMU (?to=) & KURSI ================= */
+const params = new URLSearchParams(location.search);
+const guest = (params.get("to") || "Tamu Undangan").trim().slice(0, 60) || "Tamu Undangan";
+function seatFor(name) {
+  let h = 0; for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
+  const row = "ABCDEFGH"[h % 8], no = (h % 18) + 1;
+  return "Studio 1 • Kursi " + row + "-" + no;
+}
+$("#guestName").textContent = guest;
+$("#guestSeat").textContent = seatFor(guest);
+$("#tkGuest").textContent = guest;
+$("#tkSeat").textContent = seatFor(guest).replace("Studio 1 • ", "");
+$("#fNama").value = guest === "Tamu Undangan" ? "" : guest;
+
+/* ================= RENDER: ACARA ================= */
+$("#eventList").innerHTML = CONFIG.events.map(ev => `
+  <article class="card show-card framed reveal">
+    <span class="show-label">${ev.label}</span>
+    <h3 class="show-name">${ev.name}</h3>
+    <p class="show-when">${ev.day}, ${ev.date}<br>${ev.time}</p>
+    <p class="show-where">${ev.venue}<br>${ev.area}</p>
+    <div class="btn-row">
+      <a class="btn fill" href="${ev.gcal}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Simpan Tanggal</a>
+      <a class="btn" href="${ev.maps}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5S5 16.3 5 10.2A7 7 0 0 1 19 10.2C19 16.3 12 21.5 12 21.5z"/><circle cx="12" cy="10.2" r="2.7"/></svg>Lihat Lokasi</a>
+    </div>
+  </article>`).join("");
+
+/* ================= RENDER: GALERI FILMSTRIP ================= */
+$("#stripTrack").innerHTML = CONFIG.gallery.map((g, i) => `
+  <figure class="frame" data-idx="${i}" tabindex="0" role="button" aria-label="${g.caption}">
+    <img src="${g.src}" alt="${g.caption}" loading="lazy">
+    <figcaption>${g.caption}</figcaption>
+  </figure>`).join("");
+
+/* ================= RENDER: AMPLOP ================= */
+$("#acctList").innerHTML = CONFIG.accounts.map(a => `
+  <div class="acct">
+    <small>${a.bank} — Gold Class</small>
+    <div class="num">${a.number}</div>
+    <div class="an">a.n. ${a.holder}</div>
+    <button type="button" data-copy="${a.number}">SALIN NOMOR</button>
+  </div>`).join("");
+$$("#acctList [data-copy]").forEach(btn => {
+  btn.addEventListener("click", async () => {
+    const txt = btn.getAttribute("data-copy");
+    try { await navigator.clipboard.writeText(txt); }
+    catch (e) {
+      const ta = document.createElement("textarea");
+      ta.value = txt; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); } catch (_) {}
+      ta.remove();
+    }
+    const old = btn.textContent; btn.textContent = "✓ TERSALIN";
+    setTimeout(() => { btn.textContent = old; }, 1600);
+  });
+});
+
+/* ================= RENDER: CREDITS ================= */
+$("#creditsInner").innerHTML =
+  CONFIG.credits.map(c => `<div class="cr-role">${c.role}</div><div class="cr-name">${c.name}</div>`).join("") +
+  `<div class="cr-role">Sutradara Kehidupan</div><div class="cr-name">Allah SWT, atas segala rahmat &amp; ridha-Nya</div>`;
+
+/* ================= COUNTDOWN ================= */
+const target = new Date(CONFIG.countdownTo).getTime();
+function pad(n) { return String(n).padStart(2, "0"); }
+function tickCountdown() {
+  let diff = target - Date.now();
+  if (diff < 0) diff = 0;
+  const d = Math.floor(diff / 86400000),
+        h = Math.floor(diff % 86400000 / 3600000),
+        m = Math.floor(diff % 3600000 / 60000),
+        s = Math.floor(diff % 60000 / 1000);
+  $("#cdD").textContent = pad(d); $("#cdH").textContent = pad(h);
+  $("#cdM").textContent = pad(m); $("#cdS").textContent = pad(s);
+}
+tickCountdown();
+setInterval(tickCountdown, 1000);
+
+/* ================= MUSIK — WebAudio ambient orisinal ================= */
+const Music = {
+  ctx: null, master: null, on: false, chordTimer: null, melTimer: null, step: 0,
+  chords: [ [48,55,59,64], [45,52,55,60], [41,48,53,57], [43,50,55,62] ], // Cmaj7 Am7 Fmaj7 G
+  melody: [72, 76, 79, 81, 79, 76, 74, 72],
+  freq(m) { return 440 * Math.pow(2, (m - 69) / 12); },
+  pad(notes) {
+    const t = this.ctx.currentTime;
+    notes.forEach(m => {
+      [0, 4].forEach(det => {
+        const o = this.ctx.createOscillator(), g = this.ctx.createGain();
+        o.type = "sine"; o.frequency.value = this.freq(m - 12); o.detune.value = det - 2;
+        g.gain.setValueAtTime(0, t);
+        g.gain.linearRampToValueAtTime(0.05, t + 1.4);
+        g.gain.setValueAtTime(0.05, t + 3.4);
+        g.gain.linearRampToValueAtTime(0, t + 5.2);
+        o.connect(g); g.connect(this.master); o.start(t); o.stop(t + 5.3);
+      });
+    });
+  },
+  pluck() {
+    if (Math.random() < 0.22) return;
+    const t = this.ctx.currentTime;
+    const m = this.melody[Math.floor(Math.random() * this.melody.length)];
+    const o = this.ctx.createOscillator(), g = this.ctx.createGain();
+    o.type = "triangle"; o.frequency.value = this.freq(m);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.11, t + 0.03);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 1.5);
+    o.connect(g); g.connect(this.master); o.start(t); o.stop(t + 1.6);
+  },
+  start() {
+    if (!this.ctx) {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      this.ctx = new AC();
+      this.master = this.ctx.createGain(); this.master.gain.value = 0.8;
+      const lp = this.ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 2400;
+      this.master.connect(lp); lp.connect(this.ctx.destination);
+    }
+    this.ctx.resume();
+    this.pad(this.chords[0]);
+    this.chordTimer = setInterval(() => { this.step = (this.step + 1) % this.chords.length; this.pad(this.chords[this.step]); }, 4600);
+    this.melTimer = setInterval(() => this.pluck(), 1500);
+    this.on = true; $("#btnMusic").classList.add("on");
+  },
+  stop() {
+    clearInterval(this.chordTimer); clearInterval(this.melTimer);
+    if (this.ctx) this.ctx.suspend();
+    this.on = false; $("#btnMusic").classList.remove("on");
+  },
+  toggle() { this.on ? this.stop() : this.start(); }
+};
+$("#btnMusic").addEventListener("click", () => Music.toggle());
+
+/* ================= TRAILER / OPENING ================= */
+const trailer = $("#trailer"), stage = $("#trailerStage");
+let trailerTimers = [], openingDone = false;
+const stages = [
+  `<div class="t-studio">UndangYa! Pictures</div>`,
+  `<div class="t-present">dengan bangga mempersembahkan</div>`,
+  `<div class="t-title"><small>Sabtu • 12 Juni 2027 • Jakarta</small>MEYZSA &amp;<br>FAHREZZI</div>`
+];
+function setStage(html, fadeMs) {
+  stage.classList.add("fade");
+  trailerTimers.push(setTimeout(() => { stage.innerHTML = html; stage.classList.remove("fade"); }, fadeMs));
+}
+function finishOpening() {
+  if (openingDone) return; openingDone = true;
+  trailerTimers.forEach(clearTimeout);
+  trailer.style.transition = "opacity .8s ease"; trailer.style.opacity = "0";
+  setTimeout(() => { trailer.classList.remove("show"); trailer.style.display = "none"; }, reduceMotion ? 60 : 820);
+  $("#cover").style.display = "none";
+  $("#content").classList.add("open");
+  $("#bottomNav").classList.add("show");
+  window.scrollTo(0, 0);
+  initReveal();
+}
+$("#btnPlay").addEventListener("click", () => {
+  if (CONFIG.music.enabled) Music.start();
+  trailer.classList.add("show"); trailer.setAttribute("aria-hidden", "false");
+  if (reduceMotion) { setStage(stages[2], 30); trailerTimers.push(setTimeout(finishOpening, 700)); return; }
+  stage.innerHTML = stages[0];
+  setStage(stages[1], 1500); setStage(stages[2], 3100);
+  trailerTimers.push(setTimeout(finishOpening, 6600));
+});
+$("#btnSkip").addEventListener("click", finishOpening);
+
+/* ================= REVEAL & NAV SPY ================= */
+let revealIO = null;
+function initReveal() {
+  const els = $$(".reveal");
+  if (!("IntersectionObserver" in window) || reduceMotion) { els.forEach(e => e.classList.add("in")); return; }
+  revealIO = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); revealIO.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(e => revealIO.observe(e));
+}
+const sections = ["beranda", "mempelai", "acara", "galeri", "rsvp"];
+window.addEventListener("scroll", () => {
+  if (!$("#content").classList.contains("open")) return;
+  let cur = "beranda";
+  sections.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top < innerHeight * 0.45) cur = id; });
+  $$("#bottomNav a").forEach(a => a.classList.toggle("active", a.getAttribute("data-nav") === cur));
+}, { passive: true });
+
+/* ================= LIGHTBOX ================= */
+const lb = $("#lb"), lbImg = $("#lbImg"), lbCap = $("#lbCap");
+$$("#stripTrack .frame").forEach(f => {
+  const open = () => {
+    const g = CONFIG.gallery[Number(f.getAttribute("data-idx"))];
+    lbImg.src = g.src; lbCap.textContent = g.caption; lb.classList.add("show");
+  };
+  f.addEventListener("click", open);
+  f.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+});
+lb.addEventListener("click", () => lb.classList.remove("show"));
+
+/* ================= RSVP — SOBEK TIKET ================= */
+const wishes = [];
+$("#rsvpForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const nama = $("#fNama").value.trim() || guest;
+  const hadir = ($('input[name="hadir"]:checked') || {}).value || "Hadir";
+  const jumlah = $("#fJumlah").value;
+  const ucapan = $("#fUcapan").value.trim();
+  $("#tkGuest").textContent = nama;
+  $("#ticket").classList.add("done");
+  const done = $("#rsvpDone");
+  done.innerHTML = hadir === "Hadir"
+    ? `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.2A2.2 2.2 0 0 1 6.2 6h11.6A2.2 2.2 0 0 1 20 8.2v1.3a2.6 2.6 0 0 0 0 5v1.3A2.2 2.2 0 0 1 17.8 18H6.2A2.2 2.2 0 0 1 4 15.8v-1.3a2.6 2.6 0 0 0 0-5z"/><path d="M14 6.8v1.7M14 11v2M14 15.5v1.7"/></svg><b>Tiket disobek!</b> Terima kasih, <b>${nama}</b> — kursi untuk ${jumlah} tamu kami siapkan di Studio 1. Sampai jumpa di pemutaran perdana, Sabtu 12 Juni 2027!`
+    : `<b>Terima kasih, ${nama}.</b> Sayang sekali Anda berhalangan hadir — doa restu Anda tetap menjadi bagian terindah dari film kami.`;
+  done.classList.add("show");
+  if (ucapan) {
+    wishes.unshift({ nama, hadir, ucapan });
+    $("#wishList").innerHTML = wishes.map(w => `
+      <div class="wish"><b>${w.nama}</b><span class="st ${w.hadir === "Hadir" ? "" : "no"}">${w.hadir}</span><p>${w.ucapan}</p></div>`).join("");
+  }
+  done.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+});
+</script>
+</body>
+</html>

@@ -187,6 +187,11 @@ themes.push({ slug: "palace-garden-gate", name: "Palace Garden Gate — Gerbang 
 themes.push({ slug: "engraved-highland", name: "Engraved Highland — Ukiran Klasik 2D" });
 themes.push({ slug: "ivory-botanical", name: "Ivory Botanical — Botani Ivory 2D" });
 themes.push({ slug: "emerald-luxe", name: "Emerald Luxe 3D — Taman Emerald Three.js" });
+themes.push({ slug: "bioskop-mini", name: "Bioskop Mini — Premier Film Sinematik" });
+themes.push({ slug: "piringan-hitam", name: "Piringan Hitam — Album Vinyl Retro" });
+themes.push({ slug: "perjalanan-kereta", name: "Perjalanan Kereta — KRL Modern Geser" });
+themes.push({ slug: "surat-hidup", name: "Surat Hidup — Amplop Segel Lilin" });
+themes.push({ slug: "paspor-cinta", name: "Paspor Cinta — Buku Paspor & Visa" });
 themeSel.innerHTML = themes.map(function (t) { return '<option value="' + t.slug + '">' + t.name + "</option>"; }).join("");
 var preTheme = new URLSearchParams(location.search).get("tema");
 if (preTheme && themes.some(function (t) { return t.slug === preTheme; })) themeSel.value = preTheme;

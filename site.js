@@ -52,7 +52,10 @@
     'masjid-bunga': ['Cream', 'Emas', 'Hijau'], 'pink-garden-fountain': ['Pink', 'Hijau'],
     'bali-pastel': ['Pink', 'Cream'], 'burgundy-palace': ['Maroon', 'Emas'],
     'palace-garden-gate': ['Hijau', 'Emas'], 'engraved-highland': ['Cokelat', 'Hijau'],
-    'ivory-botanical': ['Cream', 'Hijau'], 'emerald-luxe': ['Hijau', 'Emas']
+    'ivory-botanical': ['Cream', 'Hijau'], 'emerald-luxe': ['Hijau', 'Emas'],
+    'bioskop-mini': ['Hitam', 'Emas'], 'piringan-hitam': ['Cokelat', 'Cream'],
+    'perjalanan-kereta': ['Hijau', 'Emas'], 'surat-hidup': ['Cream', 'Hijau'],
+    'paspor-cinta': ['Maroon', 'Emas']
   };
   var DOT = { Emas: '#c9973f', Cream: '#f3ead8', Pink: '#e3a0b0', Maroon: '#8c2f39', Hitam: '#26262a', Abu: '#8f8f96', Cokelat: '#96613a', Biru: '#2e5f8a', Hijau: '#5c7350', Ungu: '#7a5fa8', Toska: '#1f7a72', Putih: '#ffffff' };
   var SEARCH_EXTRA = {
@@ -69,7 +72,12 @@
     'palace-garden-gate': 'istana gerbang taman gate meyzsa fahrezzi',
     'engraved-highland': 'ukiran engraving klasik dataran tinggi fahrezzi meyzsa vintage',
     'ivory-botanical': 'ivory botanical botani daun krem meyzsa fahrezzi garden',
-    'emerald-luxe': 'emerald hijau emas three.js 3d interaktif cincin meyzsa fahrezzi luxe'
+    'emerald-luxe': 'emerald hijau emas three.js 3d interaktif cincin meyzsa fahrezzi luxe',
+    'bioskop-mini': 'bioskop film cinema sinematik poster trailer tiket premier movie meyzsa fahrezzi',
+    'piringan-hitam': 'vinyl piringan hitam album retro musik turntable lagu record meyzsa fahrezzi',
+    'perjalanan-kereta': 'kereta krl modern stasiun tiket perjalanan geser horizontal train meyzsa fahrezzi',
+    'surat-hidup': 'surat amplop segel lilin wax seal taman kertas tumbuh letter meyzsa fahrezzi',
+    'paspor-cinta': 'paspor passport visa boarding pass perjalanan travel cap stempel meyzsa fahrezzi'
   };
   var CAT_LABEL = { modern: 'Tema Web 3D · Modern', adat: 'Tema Web 3D · Adat', interaktif: 'Web Interaktif', video: 'Video MP4', ilustrasi: 'Web 2D · Ilustrasi' };
   var WEB_FEATS = ['Countdown real-time, galeri foto & lightbox', 'RSVP, buku tamu & amplop digital (demo lokal)', 'Link tamu personal (?to=Nama) siap kirim via WhatsApp'];
@@ -272,6 +280,106 @@
     preview: 'emerald-luxe?to=Tamu%20Undangan',
     order: 'checkout?tema=emerald-luxe&paket=platinum',
     rec: '<b>Rekomendasi paket:</b> tema interaktif 3D termasuk di <b>Paket Platinum</b> (Rp399.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'bioskop-mini', name: 'Bioskop Mini',
+    tagline: 'Premier film pribadi — poster sinematik, opening trailer, galeri filmstrip & RSVP tiket yang disobek',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#0d0d10,#2a0a12 55%,#17110d)',
+    ring: '#c9973f', ring2: '#e3c26e', font: "'Great Vibes', cursive", orn: '✦', shape: 'crystals',
+    swatch: ['#2a0a12', '#c9973f', '#8c2f39', '#f8f1e6'],
+    warna: WARNA['bioskop-mini'],
+    feats: [
+      'Cover poster film sinematik + opening trailer 3 tahap saat tombol Putar ditekan',
+      'Galeri filmstrip berlubang sprocket dengan lightbox',
+      'RSVP tiket bioskop berperforasi — stub disobek saat konfirmasi hadir',
+      'Penutup credit roll ala film & amplop digital Gold Class (demo lokal)',
+      'Musik latar sintesis WebAudio setelah undangan dibuka'
+    ].concat(WEB_FEATS),
+    preview: 'bioskop-mini?to=Tamu%20Undangan',
+    order: 'checkout?tema=bioskop-mini',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'piringan-hitam', name: 'Piringan Hitam',
+    tagline: 'Album vinyl kisah cinta — tonearm turun, piringan berputar, isi berupa tracklist lagu',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f6ecdc,#eddcc0 55%,#e0c99f)',
+    ring: '#96613a', ring2: '#c08b57', font: "'Dancing Script', cursive", orn: '❦', shape: 'orbs',
+    swatch: ['#f6ecdc', '#96613a', '#26262a', '#8c2f39'],
+    warna: WARNA['piringan-hitam'],
+    feats: [
+      'Cover sleeve album — tonearm turun & piringan berputar saat dibuka',
+      'Isi berupa tracklist: Overture, Duet, The Big Day (Live) & Liner Notes',
+      'Countdown gaya timer kaset + mini-player berputar selama scroll',
+      'RSVP Request Lagu Kehadiran & amplop digital (demo lokal)',
+      'Musik latar sintesis WebAudio setelah undangan dibuka'
+    ],
+    preview: 'piringan-hitam?to=Tamu%20Undangan',
+    order: 'checkout?tema=piringan-hitam',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'perjalanan-kereta', name: 'Perjalanan Kereta',
+    tagline: 'Perjalanan KRL modern menyamping — geser antar-stasiun, kereta berjalan mengikuti ritme, tanpa scroll',
+    cat: 'interaktif',
+    bg: 'linear-gradient(170deg,#08302b,#0f4a3f 55%,#7a4a21)',
+    ring: '#e8a33d', ring2: '#f3d3ae', font: "'Great Vibes', cursive", orn: '✦', shape: 'orbs',
+    swatch: ['#0f4a3f', '#e8a33d', '#f3ead8', '#8c2f39'],
+    warna: WARNA['perjalanan-kereta'],
+    feats: [
+      'Navigasi geser kanan-kiri antar 7 stasiun — kereta KRL modern berjalan mengikuti ritme perpindahan',
+      'Tanpa scroll: tiap stasiun muat satu layar penuh',
+      'Peta rute gaya metro yang terisi mengikuti perjalanan + papan nama stasiun berganti',
+      'Countdown real-time menuju hari acara',
+      'RSVP Konfirmasi Tiket & amplop digital (demo lokal)'
+    ],
+    preview: 'perjalanan-kereta?to=Tamu%20Undangan',
+    order: 'checkout?tema=perjalanan-kereta&paket=platinum',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'surat-hidup', name: 'Surat Hidup',
+    tagline: 'Surat cinta yang hidup — segel lilin dipecahkan, taman kertas tumbuh mengikuti scroll',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#fdf6ec,#f3e3cb 55%,#e9d9ae)',
+    ring: '#8c2f39', ring2: '#9caf88', font: "'Great Vibes', cursive", orn: '❀', shape: 'hearts',
+    swatch: ['#f8f1e6', '#8c2f39', '#9caf88', '#c9973f'],
+    warna: WARNA['surat-hidup'],
+    feats: [
+      'Cover amplop kertas bersegel lilin — ketuk segel untuk membuka surat',
+      'Taman kertas tumbuh mengikuti scroll; bunga mekar di tiap section',
+      'Galeri perangko & kartu pos dengan frame renda',
+      'Countdown real-time menuju hari acara',
+      'RSVP Balas Surat Ini & amplop digital (demo lokal)'
+    ],
+    preview: 'surat-hidup?to=Tamu%20Undangan',
+    order: 'checkout?tema=surat-hidup',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'paspor-cinta', name: 'Paspor Cinta',
+    tagline: 'Buku paspor dua hati — cap visa di tiap section, galeri cap kota & RSVP boarding pass',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#2a0d14,#5e1224 55%,#241a17)',
+    ring: '#c9973f', ring2: '#e3c26e', font: "'Great Vibes', cursive", orn: '✦', shape: 'crystals',
+    swatch: ['#5e1224', '#c9973f', '#2e4057', '#f8f1e6'],
+    warna: WARNA['paspor-cinta'],
+    feats: [
+      'Cover buku paspor Republic of Love — foto ID kedua mempelai & MRZ',
+      'Cap visa / stempel jatuh di tiap section saat pertama terlihat',
+      'Galeri cap pos 4 kota kisah dengan frame perforasi',
+      'Countdown real-time menuju hari acara',
+      'RSVP boarding pass & amplop Travel Wallet (demo lokal)'
+    ],
+    preview: 'paspor-cinta?to=Tamu%20Undangan',
+    order: 'checkout?tema=paspor-cinta',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
   });
 
   ENTRIES.push({
