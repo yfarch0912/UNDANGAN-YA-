@@ -461,7 +461,7 @@ tailwind.config = { theme: { extend: {
         </button>
         <nav class="hidden md:flex items-center gap-1">
           <button type="button" onclick="renderPublicPage('home')" id="pub-nav-home" class="px-3 py-1.5 rounded-lg text-xs font-bold text-indigo-600 bg-indigo-50">Layanan & Beranda</button>
-          <button type="button" onclick="renderPublicPage('templates')" id="pub-nav-templates" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">Template (10)</button>
+          <button type="button" onclick="renderPublicPage('templates')" id="pub-nav-templates" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">Template (25)</button>
           <button type="button" onclick="renderPublicPage('carakerja')" id="pub-nav-carakerja" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">Cara Kerja & Guide</button>
           <button type="button" onclick="renderPublicPage('harga')" id="pub-nav-harga" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">Harga</button>
           <button type="button" onclick="renderPublicPage('faq')" id="pub-nav-faq" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">FAQ</button>
@@ -521,18 +521,33 @@ tailwind.config = { theme: { extend: {
       return icons[name] || icons["rosette-star"];
     }
 
-    // 10 template asli UndangYa! (sinkron katalog undangya.web.id)
+    // 25 template asli UndangYa! (sinkron katalog undangya.web.id)
     const TEMPLATE_CATALOG = [
-      { id: "taman-rahasia", name: "Taman Rahasia", category: "Taman Interaktif", eventGroup: "Pernikahan", tier: "Premium", price: 99000, normalPrice: 99000, recommended: false, image: "assets/katalog/taman-rahasia.webp", accent: "#5F7D42", bgStyle: "bg-gradient-to-b from-emerald-950 via-emerald-900 to-slate-950 text-amber-50", desc: "Taman interaktif — kelopak mengikuti sentuhan, kupu-kupu beterbangan, ucapan mekar jadi bunga." },
-      { id: "javanese-illustrated", name: "Javanese Illustrated", category: "Adat Jawa", eventGroup: "Pernikahan", tier: "Premium", price: 79000, normalPrice: 79000, recommended: false, image: "assets/katalog/javanese-illustrated.webp", accent: "#7A1E33", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-stone-100 text-stone-900", desc: "Undangan ilustrasi Jawa berlapis — animasi pembuka sinematik, batik kawung-parang, foto prewedding asli." },
-      { id: "masjid-bunga", name: "Masjid Bunga", category: "Islami", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, image: "assets/katalog/masjid-bunga.webp", accent: "#496233", bgStyle: "bg-gradient-to-b from-emerald-950 via-slate-900 to-slate-950 text-amber-50", desc: "Masjid cat air di tengah taman bunga — lengkung emas & intro sinematik berlapis." },
-      { id: "pink-garden-fountain", name: "Pink Garden Fountain", category: "Ilustrasi 2D", eventGroup: "Pernikahan", tier: "Premium", price: 99000, normalPrice: 99000, recommended: false, image: "assets/katalog/pink-garden-fountain.webp", accent: "#BC4A63", bgStyle: "bg-gradient-to-b from-rose-100 via-white to-amber-50 text-stone-900", desc: "Taman merah muda & air mancur yang semburannya membentuk gaun pengantin." },
-      { id: "bali-pastel", name: "Bali Pastel Romance", category: "Adat Bali", eventGroup: "Pernikahan", tier: "Premium", price: 79000, normalPrice: 79000, recommended: false, image: "assets/katalog/bali-pastel.webp", accent: "#7E9B5C", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-rose-50 text-stone-900", desc: "Romansa pastel Bali — sampul yang terbuka ke taman, kelopak beterbangan, bale & candi bentar cat air." },
-      { id: "burgundy-palace", name: "Burgundy Royal Palace", category: "Royal Klasik", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, image: "assets/katalog/burgundy-palace.webp", accent: "#5E1224", bgStyle: "bg-gradient-to-b from-slate-950 via-rose-950 to-slate-950 text-amber-50", desc: "Istana burgundy & emas — kemegahan royal untuk hari besar." },
-      { id: "palace-garden-gate", name: "Palace Garden Gate", category: "Royal Klasik", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, image: "assets/katalog/palace-garden-gate.webp", accent: "#A8823C", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-stone-100 text-stone-900", desc: "Gerbang istana taman yang terbuka — jalan masuk menuju perayaan." },
-      { id: "engraved-highland", name: "Engraved Highland", category: "Ilustrasi 2D", eventGroup: "Pernikahan", tier: "Luxury", price: 199000, normalPrice: 199000, recommended: false, image: "assets/katalog/engraved-highland.webp", accent: "#4E3D2C", bgStyle: "bg-gradient-to-b from-stone-100 via-amber-50 to-stone-200 text-stone-900", desc: "Ilustrasi ukiran klasik — rumah & lanskap dataran tinggi dalam garis tinta." },
-      { id: "ivory-botanical", name: "Ivory Botanical", category: "Botani", eventGroup: "Pernikahan", tier: "Basic", price: 49000, normalPrice: 49000, recommended: false, image: "assets/katalog/ivory-botanical.webp", accent: "#B49B72", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-stone-100 text-stone-900", desc: "Botani ivory yang tenang — daun & bunga krem di atas gading." },
-      { id: "emerald-luxe", name: "Emerald Luxe 3D", category: "3D Interaktif", eventGroup: "Pernikahan", tier: "Luxury", price: 299000, normalPrice: 299000, recommended: true, image: "assets/katalog/emerald-luxe.webp", accent: "#1E5C40", bgStyle: "bg-gradient-to-b from-emerald-950 via-slate-950 to-slate-950 text-amber-50", desc: "Istana taman emerald & emas hidup dengan Three.js — cincin emas 3D & 420 partikel melayang." }
+      { id: "taman-rahasia", name: "Taman Rahasia", category: "Taman Interaktif", eventGroup: "Pernikahan", tier: "Premium", price: 99000, normalPrice: 99000, recommended: false, preview: "taman-rahasia?to=Tamu%20Undangan", image: "assets/katalog/taman-rahasia.webp", accent: "#5F7D42", bgStyle: "bg-gradient-to-b from-emerald-950 via-emerald-900 to-slate-950 text-amber-50", desc: "Taman interaktif — kelopak mengikuti sentuhan, kupu-kupu beterbangan, ucapan mekar jadi bunga." },
+      { id: "javanese-illustrated", name: "Javanese Illustrated", category: "Adat Jawa", eventGroup: "Pernikahan", tier: "Premium", price: 79000, normalPrice: 79000, recommended: false, preview: "javanese-illustrated?to=Tamu%20Undangan", image: "assets/katalog/javanese-illustrated.webp", accent: "#7A1E33", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-stone-100 text-stone-900", desc: "Undangan ilustrasi Jawa berlapis — animasi pembuka sinematik, batik kawung-parang, foto prewedding asli." },
+      { id: "masjid-bunga", name: "Masjid Bunga", category: "Islami", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, preview: "masjid-bunga?to=Tamu%20Undangan", image: "assets/katalog/masjid-bunga.webp", accent: "#496233", bgStyle: "bg-gradient-to-b from-emerald-950 via-slate-900 to-slate-950 text-amber-50", desc: "Masjid cat air di tengah taman bunga — lengkung emas & intro sinematik berlapis." },
+      { id: "pink-garden-fountain", name: "Pink Garden Fountain", category: "Ilustrasi 2D", eventGroup: "Pernikahan", tier: "Premium", price: 99000, normalPrice: 99000, recommended: false, preview: "pink-garden-fountain?to=Tamu%20Undangan", image: "assets/katalog/pink-garden-fountain.webp", accent: "#BC4A63", bgStyle: "bg-gradient-to-b from-rose-100 via-white to-amber-50 text-stone-900", desc: "Taman merah muda & air mancur yang semburannya membentuk gaun pengantin." },
+      { id: "bali-pastel", name: "Bali Pastel Romance", category: "Adat Bali", eventGroup: "Pernikahan", tier: "Premium", price: 79000, normalPrice: 79000, recommended: false, preview: "bali-pastel?to=Tamu%20Undangan", image: "assets/katalog/bali-pastel.webp", accent: "#7E9B5C", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-rose-50 text-stone-900", desc: "Romansa pastel Bali — sampul yang terbuka ke taman, kelopak beterbangan, bale & candi bentar cat air." },
+      { id: "burgundy-palace", name: "Burgundy Royal Palace", category: "Royal Klasik", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, preview: "burgundy-palace?to=Tamu%20Undangan", image: "assets/katalog/burgundy-palace.webp", accent: "#5E1224", bgStyle: "bg-gradient-to-b from-slate-950 via-rose-950 to-slate-950 text-amber-50", desc: "Istana burgundy & emas — kemegahan royal untuk hari besar." },
+      { id: "palace-garden-gate", name: "Palace Garden Gate", category: "Royal Klasik", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, preview: "palace-garden-gate?to=Tamu%20Undangan", image: "assets/katalog/palace-garden-gate.webp", accent: "#A8823C", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-stone-100 text-stone-900", desc: "Gerbang istana taman yang terbuka — jalan masuk menuju perayaan." },
+      { id: "engraved-highland", name: "Engraved Highland", category: "Ilustrasi 2D", eventGroup: "Pernikahan", tier: "Luxury", price: 199000, normalPrice: 199000, recommended: false, preview: "engraved-highland?to=Tamu%20Undangan", image: "assets/katalog/engraved-highland.webp", accent: "#4E3D2C", bgStyle: "bg-gradient-to-b from-stone-100 via-amber-50 to-stone-200 text-stone-900", desc: "Ilustrasi ukiran klasik — rumah & lanskap dataran tinggi dalam garis tinta." },
+      { id: "ivory-botanical", name: "Ivory Botanical", category: "Botani", eventGroup: "Pernikahan", tier: "Basic", price: 49000, normalPrice: 49000, recommended: false, preview: "ivory-botanical?to=Tamu%20Undangan", image: "assets/katalog/ivory-botanical.webp", accent: "#B49B72", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-stone-100 text-stone-900", desc: "Botani ivory yang tenang — daun & bunga krem di atas gading." },
+      { id: "emerald-luxe", name: "Emerald Luxe 3D", category: "3D Interaktif", eventGroup: "Pernikahan", tier: "Luxury", price: 299000, normalPrice: 299000, recommended: true, preview: "emerald-luxe?to=Tamu%20Undangan", image: "assets/katalog/emerald-luxe.webp", accent: "#1E5C40", bgStyle: "bg-gradient-to-b from-emerald-950 via-slate-950 to-slate-950 text-amber-50", desc: "Istana taman emerald & emas hidup dengan Three.js — cincin emas 3D & 420 partikel melayang." },
+      { id: "bioskop-mini", name: "Bioskop Mini", category: "Sinematik", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, preview: "bioskop-mini?to=Tamu%20Undangan", image: "assets/katalog/bioskop-mini.webp", accent: "#8C1D2F", bgStyle: "bg-gradient-to-b from-red-950 via-slate-950 to-slate-950 text-amber-50", desc: "Premier film sinematik — poster layar lebar, trailer pembuka, adegan kisah, dan RSVP tiket yang disobek." },
+      { id: "piringan-hitam", name: "Piringan Hitam", category: "Retro Musik", eventGroup: "Pernikahan", tier: "Premium", price: 79000, normalPrice: 79000, recommended: false, preview: "piringan-hitam?to=Tamu%20Undangan", image: "assets/katalog/piringan-hitam.webp", accent: "#3E2A20", bgStyle: "bg-gradient-to-b from-stone-900 via-amber-950 to-slate-950 text-amber-50", desc: "Album vinyl retro — sampul album, piringan berputar & tonearm, sisi lagu berisi kisah dan acara." },
+      { id: "perjalanan-kereta", name: "Perjalanan Kereta", category: "Perjalanan", eventGroup: "Pernikahan", tier: "Premium", price: 99000, normalPrice: 99000, recommended: false, preview: "perjalanan-kereta?to=Tamu%20Undangan", image: "assets/katalog/perjalanan-kereta.webp", accent: "#0E4D3C", bgStyle: "bg-gradient-to-b from-emerald-950 via-slate-900 to-slate-950 text-amber-50", desc: "Tiket KRL modern — perjalanan geser antar-stasiun tanpa scroll, jendela parallax, sampul Golden Ticket." },
+      { id: "surat-hidup", name: "Surat Hidup", category: "Surat & Amplop", eventGroup: "Pernikahan", tier: "Premium", price: 79000, normalPrice: 79000, recommended: false, preview: "surat-hidup?to=Tamu%20Undangan", image: "assets/katalog/surat-hidup.webp", accent: "#7A4A21", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-orange-50 text-stone-900", desc: "Amplop segel lilin berlapis foil emas — taman yang tumbuh mengikuti scroll dan surat yang terbuka." },
+      { id: "paspor-cinta", name: "Paspor Cinta", category: "Perjalanan", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, preview: "paspor-cinta?to=Tamu%20Undangan", image: "assets/katalog/paspor-cinta.webp", accent: "#5E1224", bgStyle: "bg-gradient-to-b from-red-950 via-slate-950 to-slate-950 text-amber-50", desc: "Buku paspor burgundy & emas — cap visa akad/resepsi, galeri cap pos kota, RSVP boarding pass Cinta Air." },
+      { id: "museum-cinta", name: "Museum Cinta", category: "Galeri Seni", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, preview: "museum-cinta?to=Tamu%20Undangan", image: "assets/katalog/museum-cinta.webp", accent: "#6B5320", bgStyle: "bg-gradient-to-b from-stone-950 via-neutral-900 to-slate-950 text-amber-50", desc: "Galeri seni — lukisan pasangan yang hidup di bingkai emas, ruang pamer berlabel museum, RSVP buku tamu." },
+      { id: "koran-cinta", name: "Koran Cinta", category: "Surat Kabar", eventGroup: "Pernikahan", tier: "Premium", price: 79000, normalPrice: 79000, recommended: false, preview: "koran-cinta?to=Tamu%20Undangan", image: "assets/katalog/koran-cinta.webp", accent: "#3A3A38", bgStyle: "bg-gradient-to-b from-stone-100 via-white to-stone-200 text-stone-900", desc: "Surat kabar Harian Bahagia — sampul terlipat yang terbuka, headline pernikahan, kupon RSVP disobek." },
+      { id: "peta-ekspedisi", name: "Peta Ekspedisi", category: "Petualangan", eventGroup: "Pernikahan", tier: "Premium", price: 99000, normalPrice: 99000, recommended: false, preview: "peta-ekspedisi?to=Tamu%20Undangan", image: "assets/katalog/peta-ekspedisi.webp", accent: "#7A3B1E", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-yellow-50 text-stone-900", desc: "Peta petualangan interaktif — rute kisah terlukis sendiri, kompas countdown, pin koordinat berisi foto & cerita." },
+      { id: "ramuan-cinta", name: "Ramuan Cinta", category: "Apotek Vintage", eventGroup: "Pernikahan", tier: "Premium", price: 79000, normalPrice: 79000, recommended: false, preview: "ramuan-cinta?to=Tamu%20Undangan", image: "assets/katalog/ramuan-cinta.webp", accent: "#4E5D3A", bgStyle: "bg-gradient-to-b from-lime-50 via-white to-emerald-50 text-stone-900", desc: "Apotek vintage Formula No. 12 — kisah sebagai ramuan terukur, countdown tabung reaksi, amplop resep." },
+      { id: "radio-cinta", name: "Radio Cinta", category: "Radio Retro", eventGroup: "Pernikahan", tier: "Luxury", price: 199000, normalPrice: 199000, recommended: false, preview: "radio-cinta?to=Tamu%20Undangan", image: "assets/katalog/radio-cinta.webp", accent: "#7A1E33", bgStyle: "bg-gradient-to-b from-rose-950 via-slate-950 to-slate-950 text-amber-50", desc: "Tuning frekuensi nyata — putar kenop melewati desis sampai terkunci 98,6 FM dan panel ON AIR menyala." },
+      { id: "observatorium", name: "Observatorium", category: "Astronomi", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, preview: "observatorium?to=Tamu%20Undangan", image: "assets/katalog/observatorium.webp", accent: "#1E2A5A", bgStyle: "bg-gradient-to-b from-indigo-950 via-slate-950 to-black text-amber-50", desc: "Observatorium — rasi bintang membentuk inisial yang terlukis saat dibuka, teleskop countdown, galeri planet." },
+      { id: "kedai-kopi", name: "Kedai Kopi", category: "Kafe", eventGroup: "Pernikahan", tier: "Premium", price: 79000, normalPrice: 79000, recommended: false, preview: "kedai-kopi?to=Tamu%20Undangan", image: "assets/katalog/kedai-kopi.webp", accent: "#5C3A21", bgStyle: "bg-gradient-to-b from-amber-50 via-white to-orange-50 text-stone-900", desc: "Menu kedai kopi — nama seduhan untuk tiap bagian, RSVP tercetak sebagai struk kasir, amplop kartu loyalitas." },
+      { id: "papan-permainan", name: "Papan Permainan", category: "Permainan", eventGroup: "Pernikahan", tier: "Premium", price: 99000, normalPrice: 99000, recommended: false, preview: "papan-permainan?to=Tamu%20Undangan", image: "assets/katalog/papan-permainan.webp", accent: "#28536B", bgStyle: "bg-gradient-to-b from-sky-50 via-white to-amber-50 text-stone-900", desc: "Papan permainan — lempar dadu sungguhan, bidak melompat petak demi petak kisah sampai FINISH–AKAD." },
+      { id: "oceanarium", name: "Oceanarium", category: "Bawah Laut", eventGroup: "Pernikahan", tier: "Luxury", price: 155000, normalPrice: 155000, recommended: false, preview: "oceanarium?to=Tamu%20Undangan", image: "assets/katalog/oceanarium.webp", accent: "#0B3B5B", bgStyle: "bg-gradient-to-b from-cyan-950 via-blue-950 to-slate-950 text-amber-50", desc: "Menyelam makin dalam 0–40 m — jendela akuarium berbingkai kuningan, pesan dalam botol, penutup bioluminesens." },
+      { id: "pasar-malam", name: "Pasar Malam", category: "Festival", eventGroup: "Pernikahan", tier: "Premium", price: 99000, normalPrice: 99000, recommended: false, preview: "pasar-malam?to=Tamu%20Undangan", image: "assets/katalog/pasar-malam.webp", accent: "#6E1423", bgStyle: "bg-gradient-to-b from-rose-950 via-slate-950 to-slate-950 text-amber-50", desc: "Pasar malam burgundy & emas — gerbang marquee menyala huruf demi huruf, bianglala galeri bisa diputar & diseret." }
     ];
 
     const EVENT_TYPES = [
@@ -559,6 +574,7 @@ tailwind.config = { theme: { extend: {
     ];
 
     const MUSIC_LIBRARY = [
+      { id: "m0", title: "Petals on the Stone Floor", artist: "UndangYa!", category: "Original", duration: "03:03", freq: [261.6, 329.6, 392.0, 523.2] },
       { id: "m1", title: "Kita masih bersama", artist: "Unknown Artist", category: "Original", duration: "03:18", freq: [261.6, 329.6, 392.0, 523.2] },
       { id: "m2", title: "Cinta Utuh - Indra Gutara", artist: "Indra Gutara", category: "Original", duration: "03:45", freq: [293.7, 369.9, 440.0, 587.3] },
       { id: "m3", title: "Arti Reda", artist: "Talitha", category: "Instrumental", duration: "02:54", freq: [329.6, 415.3, 493.9, 659.3] },
@@ -700,7 +716,7 @@ tailwind.config = { theme: { extend: {
               { id: "st-1", title: "Pertemuan Pertama", date: "2023", content: "Berawal dari proyek kolaborasi arsitektur dan sipil di Surabaya, percakapan hangat tentang desain berubah menjadi perjalanan panjang bersama." },
               { id: "st-2", title: "Lamaran Keluarga", date: "2026", content: "Di hadapan kedua keluarga besar, kami mengikat janji untuk melangkah menuju ibadah terpanjang." }
             ],
-            musicId: "m1",
+            musicId: "m0",
             customYoutubeMusic: "",
             openingTitle: "The Wedding of",
             quoteText: "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya. (QS. Ar-Rum: 21)",
@@ -790,7 +806,7 @@ tailwind.config = { theme: { extend: {
             stories: [
               { id: "st-201", title: "Witing Tresno Jalaran Soko Kulino", date: "2024", content: "Pertemuan di Yogyakarta mempertemukan dua hati dalam balutan tradisi yang hangat." }
             ],
-            musicId: "m5",
+            musicId: "m0",
             customYoutubeMusic: "",
             openingTitle: "Pawiwahan Agung",
             quoteText: "Mugi Gusti tansah paring berkah rahmat lan kabagyan langgeng dumugi kaken-kaken ninen-ninen.",
@@ -1310,7 +1326,7 @@ tailwind.config = { theme: { extend: {
           <div class="rounded-2xl bg-gradient-to-r from-indigo-900 via-violet-900 to-rose-900 text-white px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
             <div>
               <h2 class="text-sm font-bold">Temukan desain yang pas untuk Pernikahan & Acara Spesial</h2>
-              <p class="text-xs text-indigo-100 mt-0.5">Jelajahi 10 template asli Undangya — ilustrasi 2D, taman interaktif, adat Jawa & Bali, islami, royal klasik, botani, hingga 3D interaktif.</p>
+              <p class="text-xs text-indigo-100 mt-0.5">Jelajahi 25 template asli Undangya — ilustrasi 2D, taman interaktif, adat Jawa & Bali, islami, royal klasik, botani, 3D interaktif, sampai tema sinematik & interaktif terbaru.</p>
             </div>
             <button type="button" onclick="navigateDash('template')" class="shrink-0 px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs transition">
               Lihat template →
@@ -1569,7 +1585,7 @@ tailwind.config = { theme: { extend: {
         return matchTier && matchCat && matchQ;
       });
 
-      const categories = ["Semua kategori", "Ilustrasi 2D", "Taman Interaktif", "Islami", "Adat Jawa", "Adat Bali", "Royal Klasik", "Botani", "3D Interaktif"];
+      const categories = ["Semua kategori", "Ilustrasi 2D", "Taman Interaktif", "Islami", "Adat Jawa", "Adat Bali", "Royal Klasik", "Botani", "3D Interaktif", "Sinematik", "Retro Musik", "Perjalanan", "Surat & Amplop", "Galeri Seni", "Surat Kabar", "Petualangan", "Apotek Vintage", "Radio Retro", "Astronomi", "Kafe", "Permainan", "Bawah Laut", "Festival"];
 
       return `
         <div class="max-w-7xl mx-auto pb-20">
@@ -2781,7 +2797,7 @@ tailwind.config = { theme: { extend: {
             <button type="button" onclick="activeEditorTab='acara'; renderDashboardView()" title="Acara">${bIcon("calendar-arch", "w-4 h-4")}</button>
             <button type="button" onclick="activeEditorTab='galeri'; renderDashboardView()" title="Galeri">${bIcon("rosette-star", "w-4 h-4")}</button>
             <button type="button" onclick="activeEditorTab='amplop'; renderDashboardView()" title="Amplop">${bIcon("gift-chalice", "w-4 h-4")}</button>
-            <button type="button" onclick="togglePlaySynthesizedMusic('${inv.musicId || 'm1'}')" class="w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] ${playingMusicId ? 'spin-disc' : ''}" title="Musik">${bIcon("vinyl-disc", "w-4 h-4")}</button>
+            <button type="button" onclick="togglePlaySynthesizedMusic('${inv.musicId || 'm0'}')" class="w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] ${playingMusicId ? 'spin-disc' : ''}" title="Musik">${bIcon("vinyl-disc", "w-4 h-4")}</button>
           </div>
         </div>
       `;
@@ -3188,7 +3204,7 @@ tailwind.config = { theme: { extend: {
     // 12. VIEW 8: KATALOG TEMPLATE
     // =========================================================================
     function buildViewTemplateCatalog() {
-      const categories = ["Semua kategori", "Ilustrasi 2D", "Taman Interaktif", "Islami", "Adat Jawa", "Adat Bali", "Royal Klasik", "Botani", "3D Interaktif"];
+      const categories = ["Semua kategori", "Ilustrasi 2D", "Taman Interaktif", "Islami", "Adat Jawa", "Adat Bali", "Royal Klasik", "Botani", "3D Interaktif", "Sinematik", "Retro Musik", "Perjalanan", "Surat & Amplop", "Galeri Seni", "Surat Kabar", "Petualangan", "Apotek Vintage", "Radio Retro", "Astronomi", "Kafe", "Permainan", "Bawah Laut", "Festival"];
       const filtered = TEMPLATE_CATALOG.filter(t => {
         const matchTier = tplFilterTier === "Semua level" || t.tier === tplFilterTier;
         const matchCat = tplFilterCategory === "Semua kategori" || t.category === tplFilterCategory;
@@ -3203,7 +3219,7 @@ tailwind.config = { theme: { extend: {
             <div>
               <p class="text-xs text-slate-400 font-medium">Dasbor / <span class="text-slate-700 font-semibold">Pilihan Template</span></p>
               <h1 class="text-2xl font-extrabold text-slate-900 mt-1">Template <span class="underline decoration-indigo-500 decoration-4 underline-offset-4">Undangan Digital</span></h1>
-              <p class="text-xs text-slate-500 mt-1">Sepuluh template asli UndangYa! — ilustrasi 2D, taman interaktif, adat Jawa & Bali, islami, royal klasik, botani, sampai 3D interaktif. Semua bisa dicustom: foto pengantin, cover, galeri, dan seluruh teks isi.</p>
+              <p class="text-xs text-slate-500 mt-1">Dua puluh lima template asli UndangYa! — ilustrasi 2D, taman interaktif, adat Jawa & Bali, islami, royal klasik, botani, 3D interaktif, sampai tema sinematik & interaktif terbaru. Semua bisa dicustom: foto pengantin, cover, galeri, dan seluruh teks isi.</p>
             </div>
             <button type="button" onclick="startCreateInvitationWizard()" class="px-4 py-2.5 rounded-xl bg-slate-950 hover:bg-indigo-600 text-white font-bold text-xs shadow-sm">
               + Buat Undangan Baru
@@ -3422,7 +3438,7 @@ tailwind.config = { theme: { extend: {
             <div class="bg-white rounded-3xl border border-slate-200 p-5 space-y-2">
               <span class="text-xs font-extrabold text-indigo-600">Panduan 01 · Acara Privat</span>
               <h3 class="text-base font-extrabold text-slate-900">Panduan Undangan Digital</h3>
-              <p class="text-xs text-slate-500">Pilih 9 jenis acara, telusuri 10 template, isi profil & lokasi, impor daftar tamu CSV, bagikan link personal via WhatsApp, dan nikmati Mode Kenangan hingga 24 bulan.</p>
+              <p class="text-xs text-slate-500">Pilih 9 jenis acara, telusuri 25 template, isi profil & lokasi, impor daftar tamu CSV, bagikan link personal via WhatsApp, dan nikmati Mode Kenangan hingga 24 bulan.</p>
             </div>
             <div class="bg-white rounded-3xl border border-slate-200 p-5 space-y-2">
               <span class="text-xs font-extrabold text-emerald-600">Panduan 02 · Acara Terbuka</span>
@@ -3488,7 +3504,7 @@ tailwind.config = { theme: { extend: {
                   Mulai buat acara gratis →
                 </button>
                 <button type="button" onclick="switchSurfaceMode('dashboard'); navigateDash('template')" class="px-6 py-3 rounded-2xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-800 font-bold text-xs transition">
-                  Lihat 10 Template
+                  Lihat 25 Template
                 </button>
               </div>
               <div class="flex flex-wrap justify-center gap-4 pt-3 text-xs font-semibold text-slate-600">
@@ -3508,7 +3524,7 @@ tailwind.config = { theme: { extend: {
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               ${[
                 { n: "1", t: "Daftar akun gratis", d: "Masuk dengan Google atau email di dash.undangya.web.id tanpa kartu kredit." },
-                { n: "2", t: "Pilih layanan & desain", d: "Buat undangan digital (10 template), halaman event terbuka, atau link pendek QR." },
+                { n: "2", t: "Pilih layanan & desain", d: "Buat undangan digital (25 template), halaman event terbuka, atau link pendek QR." },
                 { n: "3", t: "Isi detail & pratinjau langsung", d: "Ketik nama, waktu, lokasi Google Maps, foto, hingga rekening kado dan lihat hasilnya real-time." },
                 { n: "4", t: "Terbitkan, bagikan & pantau tamu", d: "Kirim tautan personal lewat WhatsApp, cetak QR, lalu pantau RSVP, ucapan & check-in." }
               ].map(s => `
@@ -4347,6 +4363,7 @@ tailwind.config = { theme: { extend: {
           </div>
           <div class="flex justify-end gap-2 pt-2">
             <button type="button" onclick="closeModal()" class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold">Tutup</button>
+            <a href="${tpl.preview}" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl border border-indigo-200 bg-indigo-50 text-indigo-700 text-xs font-bold">Buka Desain Asli ↗</a>
             <button type="button" onclick="closeModal(); useTemplateFromCatalog('${tpl.id}')" class="px-5 py-2 rounded-xl bg-indigo-600 text-white text-xs font-bold">Gunakan Template Ini →</button>
           </div>
         </div>
@@ -4427,7 +4444,7 @@ tailwind.config = { theme: { extend: {
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 space-y-1">
               <p class="font-extrabold text-indigo-950">PAKET &amp; ASET</p>
-              <p class="text-[11px] text-indigo-800">• 10 Template Undangan<br/>• 4 Paket Layanan<br/>• Saldo Kredit (${formatRp(UndangyaREA.resources.creditBalance)})<br/>• ${UndangyaREA.resources.shortLinks.length} Short Link & QR</p>
+              <p class="text-[11px] text-indigo-800">• 25 Template Undangan<br/>• 4 Paket Layanan<br/>• Saldo Kredit (${formatRp(UndangyaREA.resources.creditBalance)})<br/>• ${UndangyaREA.resources.shortLinks.length} Short Link & QR</p>
             </div>
             <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-1">
               <p class="font-extrabold text-emerald-950">ACARA</p>
