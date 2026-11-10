@@ -40,8 +40,11 @@ img{max-width:100%}
 .gate-r{right:10%;transform-origin:right center;object-position:left center}
 .crest{position:absolute;top:10.5%;left:50%;transform:translateX(-50%);width:28%;z-index:5;
   filter:drop-shadow(0 3px 6px rgba(74,52,35,.3))}
-/* Gapura: lengkung batu paling depan — gerbang membuka di balik bukaannya */
-.gapura{position:absolute;top:0;left:-12%;width:124%;height:100%;object-fit:cover;object-position:50% 50%;
+/* Gapura: lengkung batu paling depan — gerbang membuka di balik bukaannya.
+   max-width:none WAJIB: aturan global img{max-width:100%} sempat membatasi lebar 124% ini menjadi 100%
+   sementara left:-12% tetap berlaku — lapisan bergeser 12% lebar panggung ke kiri dari sumbu tengah
+   (terukur di Chromium 430px: pusat lapisan 163,4px vs pusat panggung 215px). */
+.gapura{position:absolute;top:0;left:-12%;width:124%;max-width:none;height:100%;object-fit:cover;object-position:50% 50%;
   z-index:6;pointer-events:none;filter:drop-shadow(0 10px 24px rgba(74,52,35,.35))}
 .cover-branch{position:absolute;top:0;width:36%;z-index:8;pointer-events:none;transform-origin:50% 92%;animation:sway 2.4s cubic-bezier(.45,.05,.55,.95) infinite alternate}
 .cover-branch.bl{left:-4%}.cover-branch.br{right:-4%}
