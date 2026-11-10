@@ -381,6 +381,22 @@ p.body-txt{font-size:14.5px;line-height:1.85;color:#e2d5b8;text-align:center}
         <div class="gold-frame"><img class="art" src="assets/undangya/museum-cinta/galeri-4.webp" alt="Meyzsa dan Fahrezzi di atrium besar museum"></div>
         <figcaption class="work-label"><span class="no">04</span><div><h4>&ldquo;Dansa Pelan di Atrium Agung&rdquo;</h4><p class="medium">Fotografi atrium &amp; kolom marmer, 2027</p><p>Musiknya hanya terdengar oleh mereka berdua. Kolom-kolom tinggi menjadi saksi: inilah karya yang akan dipamerkan seumur hidup.</p></div></figcaption>
       </figure>
+      <figure class="work reveal">
+        <div class="gold-frame"><img class="art" src="assets/undangya/museum-cinta/galeri-5.webp" alt="Meyzsa dan Fahrezzi di studio restorasi museum"></div>
+        <figcaption class="work-label"><span class="no">05</span><div><h4>&ldquo;Studio Restorasi — Menyentuh Ulang Masa Lalu&rdquo;</h4><p class="medium">Fotografi studio restorasi lukisan, 2027</p><p>Di studio restorasi, mereka belajar: yang retak bukan untuk dibuang — cukup disentuh ulang dengan sabar, bersama.</p></div></figcaption>
+      </figure>
+      <figure class="work reveal">
+        <div class="gold-frame"><img class="art" src="assets/undangya/museum-cinta/galeri-6.webp" alt="Meyzsa dan Fahrezzi memegang tiket emas di gerbang museum"></div>
+        <figcaption class="work-label"><span class="no">06</span><div><h4>&ldquo;Dua Tiket Emas di Gerbang Agung&rdquo;</h4><p class="medium">Fotografi gerbang utama museum, 2027</p><p>Dua tiket untuk satu pameran seumur hidup. Tidak ada antrean, tidak ada pengunjung lain — galerinya milik mereka berdua.</p></div></figcaption>
+      </figure>
+      <figure class="work reveal">
+        <div class="gold-frame"><img class="art" src="assets/undangya/museum-cinta/galeri-7.webp" alt="Meyzsa dan Fahrezzi di samping air mancur halaman museum"></div>
+        <figcaption class="work-label"><span class="no">07</span><div><h4>&ldquo;Air Mancur di Halaman Dalam&rdquo;</h4><p class="medium">Fotografi halaman dalam &amp; air mancur marmer, 2027</p><p>Di halaman yang rindang ini mereka berhenti paling lama — bukan karena pemandangannya, tapi karena tak ingin buru-buru pulang.</p></div></figcaption>
+      </figure>
+      <figure class="work reveal">
+        <div class="gold-frame"><img class="art" src="assets/undangya/museum-cinta/galeri-8.webp" alt="Meyzsa dan Fahrezzi memegang bingkai mini di toko cendera mata museum"></div>
+        <figcaption class="work-label"><span class="no">08</span><div><h4>&ldquo;Bingkai Mini, Janji Sebesar Hidup&rdquo;</h4><p class="medium">Fotografi toko cendera mata museum, 2027</p><p>Oleh-olehnya hanya bingkai kecil. Isinya nanti: foto hari ini — hari ketika pameran berubah menjadi pernikahan.</p></div></figcaption>
+      </figure>
     </section>
 
     <section id="rsvp">
@@ -596,5 +612,112 @@ p.body-txt{font-size:14.5px;line-height:1.85;color:#e2d5b8;text-align:center}
 })();
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+<style>
+/* ===== UPGRADE-D: animasi serius + ambient museum-cinta ===== */
+body{overflow-x:clip}
+#ambC{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:4;opacity:.55}
+.reveal[data-rv="l"]:not(.in){transform:translateX(-40px)}
+.reveal[data-rv="r"]:not(.in){transform:translateX(40px)}
+.reveal[data-rv="s"]:not(.in){transform:scale(.9) translateY(22px)}
+.reveal[data-rv="rot"]:not(.in){transform:rotate(-2.4deg) translateY(26px)}
+.reveal{transition-delay:var(--d,0s)}
+.upg{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}
+.upg[data-rv="l"]{transform:translateX(-40px)} .upg[data-rv="r"]{transform:translateX(40px)}
+.upg[data-rv="s"]{transform:scale(.9) translateY(22px)} .upg[data-rv="rot"]{transform:rotate(-2.4deg) translateY(26px)}
+.upg.in{opacity:1;transform:none}
+@keyframes cineUp{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
+[data-cine]{animation:cineUp 1.05s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--cd,0s)}
+@keyframes swayD{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg) translateY(-3px)}}
+.swayD{animation:swayD 5.2s ease-in-out infinite;transform-origin:50% 20%}
+@keyframes cdPop{0%{transform:scale(1.22)}100%{transform:scale(1)}}
+.cdpop{animation:cdPop .45s ease}
+@keyframes btnSheen{0%,55%{left:-70%}85%,100%{left:130%}}
+.btn,.cta,button[type="submit"]{position:relative;overflow:hidden}
+.btn::after,.cta::after,button[type="submit"]::after{content:"";position:absolute;top:0;bottom:0;width:45%;left:-70%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);animation:btnSheen 3.8s ease-in-out infinite;pointer-events:none}
+#galeri img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .7s}
+#galeri figure:hover img,#galeri .gal-item:hover img,#pinDetail:hover img{transform:scale(1.045);filter:saturate(1.12)}
+.plxImg{will-change:transform}
+#upgLb{position:fixed;inset:0;background:rgba(8,6,4,.92);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:999;padding:20px}
+#upgLb.show{display:flex} #upgLb img{max-width:92vw;max-height:76vh;border-radius:8px;box-shadow:0 24px 60px rgba(0,0,0,.6)}
+#upgLb p{color:#f3e9d2;margin-top:14px;font-size:13px;text-align:center;max-width:420px}
+#upgLb button{position:absolute;top:16px;right:18px;background:none;border:1px solid #c9a45c;color:#e8c87a;border-radius:50%;width:40px;height:40px;font-size:18px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){#ambC{display:none} .swayD,[data-cine],.cdpop,.btn::after,.cta::after,button[type="submit"]::after{animation:none!important} .upg,.reveal{transition:none!important}}
+</style>
+<script>
+/* ===== UPGRADE-D museum-cinta: reveal variasi, parallax, ambient, countdown pop, lightbox ===== */
+(function(){
+"use strict";
+var RM=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var vars=["u","l","r","s","rot"];
+/* variasi reveal existing */
+document.querySelectorAll(".reveal").forEach(function(el,i){
+  if(!el.getAttribute("data-rv")) el.setAttribute("data-rv",vars[i%vars.length]);
+  var sib=Array.prototype.indexOf.call(el.parentNode.children,el);
+  el.style.setProperty("--d",(Math.max(0,sib)*0.07)+"s");
+});
+/* tema tanpa reveal: koran & ramuan */
+var extra=document.querySelectorAll("section:not(#galeri) > *, #galeri > *");
+if(!document.querySelector(".reveal")){
+  extra.forEach(function(el,i){ el.classList.add("upg"); el.setAttribute("data-rv",vars[i%vars.length]); el.style.setProperty("--d",((i%4)*0.08)+"s"); });
+}
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll(".upg").forEach(function(el){io.observe(el);});
+} else { document.querySelectorAll(".upg").forEach(function(el){el.classList.add("in");}); }
+/* pembuka sinematik berjenjang */
+var first=document.querySelector("section, .cover, #cover, #sampul");
+if(first){ var kids=first.querySelectorAll("img,h1,h2,h3,p,.btn,.cd-box,.tube"); kids.forEach(function(el,i){ if(i<8){ el.setAttribute("data-cine",""); el.style.setProperty("--cd",(0.15+i*0.16)+"s"); } }); }
+/* sway aksesoris */
+document.querySelectorAll(".medals img,.icon,.divider img,.kicker-icon").forEach(function(el){el.classList.add("swayD");});
+/* parallax 2 lapis: foto hero + ikon/aksen section */
+var plx=[];
+var hero=document.querySelector("section img, .cover img, #sampul img");
+if(hero){hero.classList.add("plxImg");plx.push({el:hero,f:0.05});}
+document.querySelectorAll("#galeri img").forEach(function(im,i){ if(i%2===0){im.classList.add("plxImg");plx.push({el:im,f:i%4===0?0.03:-0.025});}});
+if(!RM&&plx.length){
+  var tick=false;
+  function upd(){ tick=false; var vh=window.innerHeight;
+    plx.forEach(function(p){ var r=p.el.getBoundingClientRect(); if(r.bottom<-80||r.top>vh+80) return; var c=(r.top+r.height/2-vh/2)*p.f; p.el.style.transform="translateY("+c.toFixed(1)+"px) scale(1.05)"; });
+  }
+  window.addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true}); upd();
+}
+/* countdown pop saat angka berubah */
+var cds=document.querySelectorAll("#cdD,#cdH,#cdM,#cdS,#cd-d,#cd-h,#cd-m,#cd-s,.cd-box b");
+if(window.MutationObserver){ cds.forEach(function(el){ new MutationObserver(function(){ el.classList.remove("cdpop"); void el.offsetWidth; el.classList.add("cdpop"); }).observe(el,{childList:true,characterData:true,subtree:true}); }); }
+/* ambient canvas khas tema */
+var MODE="dust", COL="#e8c87a";
+if(!RM){
+  var cv=document.createElement("canvas"); cv.id="ambC"; document.body.appendChild(cv);
+  var cx=cv.getContext("2d"), W=0,H=0, P=[], T=0;
+  if(!cx){cv.remove(); cx={clearRect:function(){},beginPath:function(){},arc:function(){},stroke:function(){},fill:function(){},save:function(){},restore:function(){},translate:function(){},rotate:function(){},fillRect:function(){}};}
+  function rs(){ W=cv.width=Math.min(innerWidth,860); H=cv.height=innerHeight; }
+  rs(); addEventListener("resize",rs);
+  for(var i=0;i<26;i++) P.push({x:Math.random(),y:Math.random(),s:1+Math.random()*2.4,v:.12+Math.random()*.35,ph:Math.random()*6.28,r:2+Math.random()*5});
+  (function loop(){
+    if(!document.hidden){ T+=0.016; cx.clearRect(0,0,W,H);
+      P.forEach(function(p,i){
+        if(MODE==="bubble"){ p.y-=p.v*0.0016; if(p.y<-.03){p.y=1.03;p.x=Math.random();} var x=(p.x+Math.sin(T*1.4+p.ph)*0.008)*W,y=p.y*H; cx.beginPath();cx.arc(x,y,p.r+1.6,0,6.29);cx.strokeStyle=COL;cx.globalAlpha=.34;cx.stroke(); cx.beginPath();cx.arc(x-p.r*.3,y-p.r*.3,1,0,6.29);cx.fillStyle=COL;cx.globalAlpha=.5;cx.fill(); }
+        else if(MODE==="wave"){ var rr=((T*26+p.ph*14)%130); var bx=(i%2?W-24:24), by=H-90; cx.beginPath();cx.arc(bx,by,rr,0,6.29);cx.strokeStyle=COL;cx.globalAlpha=Math.max(0,.4-rr/330);cx.stroke(); p.y-=p.v*0.0009; if(p.y<0)p.y=1; cx.beginPath();cx.arc(p.x*W,p.y*H,1.4,0,6.29);cx.fillStyle=COL;cx.globalAlpha=.45;cx.fill(); }
+        else if(MODE==="route"){ var px=((p.x+T*0.008*p.v*3)%1)*W, py=(0.5+Math.sin(px*0.012+p.ph)*0.16+p.y*0.2)*H; cx.beginPath();cx.arc(px,py,p.s,0,6.29);cx.fillStyle=COL;cx.globalAlpha=.55;cx.fill(); if(i%6===0){cx.beginPath();cx.arc(px,py,((T*18+p.ph*8)%22),0,6.29);cx.strokeStyle=COL;cx.globalAlpha=.3;cx.stroke();} }
+        else if(MODE==="fleck"){ p.y+=p.v*0.0011; p.x+=Math.sin(T+p.ph)*0.0003; if(p.y>1.02){p.y=-.02;p.x=Math.random();} cx.save();cx.translate(p.x*W,p.y*H);cx.rotate(T*.5+p.ph);cx.globalAlpha=.30;cx.fillStyle=COL;cx.fillRect(-p.s*2,-p.s, p.s*4, p.s*2);cx.restore(); }
+        else { p.y-=p.v*0.0008; if(p.y<-.02){p.y=1.02;p.x=Math.random();} var dx=Math.sin(T*.8+p.ph)*9; cx.beginPath();cx.arc(p.x*W+dx,p.y*H,p.s,0,6.29);cx.fillStyle=COL;cx.globalAlpha=.4+Math.sin(T*2+p.ph)*.18;cx.fill(); }
+      });
+      cx.globalAlpha=1;
+    }
+    requestAnimationFrame(loop);
+  })();
+}
+/* lightbox generik bila tema belum punya */
+if(!document.getElementById("lb")){
+  var lb=document.createElement("div"); lb.id="upgLb"; lb.setAttribute("aria-hidden","true");
+  lb.innerHTML='<button aria-label="Tutup">&times;</button><img alt=""><p></p>'; document.body.appendChild(lb);
+  var li=lb.querySelector("img"), lp=lb.querySelector("p");
+  document.querySelectorAll("#galeri img").forEach(function(im){ im.style.cursor="zoom-in"; im.addEventListener("click",function(){ li.src=im.src; lp.textContent=im.alt||""; lb.classList.add("show"); }); });
+  lb.addEventListener("click",function(){lb.classList.remove("show");});
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") lb.classList.remove("show"); });
+}
+})();
+</script>
+
 </body>
 </html>

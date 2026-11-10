@@ -399,6 +399,62 @@ body.journey .routemap{display:block;flex:0 0 auto;background:linear-gradient(18
   .ticket::before{animation:none}
   em.gleam{animation:none}
 }
+/* ===== KC-UPGRADE: animasi serius Perjalanan Kereta (tetap TANPA scroll vertikal) ===== */
+/* galeri kini 8 jendela: 4 baris x 2 kolom, tetap muat satu layar stasiun */
+#galleryGrid{grid-template-rows:repeat(4,1fr)}
+/* pembuka: elemen e-tiket naik berjenjang */
+@keyframes kcUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: no-preference){
+  #cover .cover-brand{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) .1s both}
+  #cover .cover-title{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) .25s both}
+  #cover .cover-sub{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) .4s both}
+  #cover .ticket{animation:kcUp .95s cubic-bezier(.22,.8,.3,1) .55s both}
+  #cover .btn-board{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) .85s both}
+  #cover .cover-note{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) 1s both}
+  #cover .ticket-stamp{animation:kcStampPulse 3.2s ease-in-out 1.6s infinite}
+  /* foto jendela bernapas pelan (ken burns halus) */
+  .win img{animation:kcKen 9s ease-in-out infinite alternate}
+  .win:nth-child(2n) img{animation-delay:-3s}.win:nth-child(3n) img{animation-delay:-6s}
+  /* cap tiket berdenyut lembut */
+}
+@keyframes kcStampPulse{0%,100%{scale:1}50%{scale:1.05}}
+@keyframes kcKen{from{transform:scale(1)}to{transform:scale(1.07)}}
+/* sapuan cahaya menyapu jendela atas (ambient) */
+.upg-sweep{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:5}
+.upg-sweep i{position:absolute;top:-10%;bottom:-10%;width:34%;left:-45%;background:linear-gradient(100deg,transparent,rgba(255,248,220,.28),transparent);transform:skewX(-14deg);animation:kcSweep 7.5s ease-in-out infinite}
+@keyframes kcSweep{0%,58%{left:-45%}88%,100%{left:120%}}
+/* reveal bervariasi saat tiba di stasiun */
+.reveal{transition:opacity .8s cubic-bezier(.22,.8,.3,1),transform .8s cubic-bezier(.22,.8,.3,1)}
+.reveal[data-rv="l"]:not(.in){transform:translateX(-30px)}
+.reveal[data-rv="r"]:not(.in){transform:translateX(30px)}
+.reveal[data-rv="z"]:not(.in){transform:scale(.88) translateY(10px)}
+.reveal[data-rv="d"]:not(.in){transform:scale(.93) translateY(6px)}
+/* countdown pop */
+.kc-pop{animation:kcPop .5s cubic-bezier(.3,1.6,.4,1)}
+@keyframes kcPop{0%{transform:scale(1)}35%{transform:scale(1.14) translateY(-2px)}100%{transform:scale(1)}}
+/* tombol berkilau */
+.btn,.btn-board{position:relative;overflow:hidden}
+.btn::after,.btn-board::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);transform:skewX(-18deg);animation:kcShine 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes kcShine{0%,55%{left:-70%}88%,100%{left:135%}}
+/* mikro-interaksi jendela galeri */
+.win{transition:transform .5s cubic-bezier(.22,.8,.3,1),box-shadow .5s ease;cursor:pointer}
+.win:hover{transform:translateY(-3px);box-shadow:0 16px 28px rgba(14,58,50,.28)}
+.win figcaption{transition:letter-spacing .5s ease}
+.win:hover figcaption{letter-spacing:.09em}
+/* lightbox jendela */
+.upg-lb{position:fixed;inset:0;z-index:120;background:rgba(8,26,22,.95);display:none;align-items:center;justify-content:center;padding:20px}
+.upg-lb.show{display:flex}
+.upg-lb figure{margin:0;text-align:center;max-width:min(430px,94vw)}
+.upg-lb img{max-width:100%;max-height:76dvh;border:6px solid #123c33;border-radius:14px;box-shadow:0 24px 50px rgba(0,0,0,.55)}
+.upg-lb figcaption{color:#fdf6df;font-size:13.5px;font-weight:700;letter-spacing:.05em;margin-top:13px}
+.upg-lb-x{position:absolute;top:14px;right:16px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(253,246,223,.5);background:transparent;color:#fdf6df;font-size:22px;cursor:pointer}
+.upg-lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid rgba(253,246,223,.5);background:rgba(0,0,0,.35);color:#fdf6df;font-size:24px;cursor:pointer}
+.upg-lb-nav.prev{left:10px}.upg-lb-nav.next{right:10px}
+@media (prefers-reduced-motion: reduce){
+  .upg-sweep{display:none}.kc-pop{animation:none}.btn::after,.btn-board::after{animation:none;display:none}
+  .win img{animation:none}.win{transition:none}
+}
+
 </style>
 <link rel="canonical" href="https://undangya.web.id/perjalanan-kereta">
 <meta property="og:type" content="website">
@@ -721,7 +777,11 @@ window.KERETA_CONFIG = {
     { src: "assets/undangya/perjalanan-kereta/galeri-sawah.webp", cap: "KM 12 — Sawah Terasering Senja" },
     { src: "assets/undangya/perjalanan-kereta/galeri-gunung.webp", cap: "KM 47 — Jembatan di Atas Kabut" },
     { src: "assets/undangya/perjalanan-kereta/galeri-danau.webp", cap: "KM 83 — Danau Cermin Senja" },
-    { src: "assets/undangya/perjalanan-kereta/galeri-stasiun.webp", cap: "KM 120 — Stasiun Tujuan Terlihat" }
+    { src: "assets/undangya/perjalanan-kereta/galeri-stasiun.webp", cap: "KM 120 — Stasiun Tujuan Terlihat" },
+    { src: "assets/undangya/perjalanan-kereta/galeri-pantai.webp", cap: "KM 128 — Garis Pantai Emas" },
+    { src: "assets/undangya/perjalanan-kereta/galeri-airterjun.webp", cap: "KM 141 — Air Terjun di Balik Kabut" },
+    { src: "assets/undangya/perjalanan-kereta/galeri-kebunteh.webp", cap: "KM 156 — Kebun Teh di Pagi Hari" },
+    { src: "assets/undangya/perjalanan-kereta/galeri-kota.webp", cap: "KM 170 — Lampu Kota Tujuan Menyala" }
   ],
   accounts: [
     { bank: "BCA", label: "Bank BCA (contoh)", number: "1234567890", holder: "a.n. Meyzsa Putri Ananda", dana: false },
@@ -1125,5 +1185,59 @@ $("btnMusic").addEventListener("click", function(){ musicOn ? stopMusic() : star
 })();
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+<div class="upg-lb" id="upgLb" role="dialog" aria-label="Foto diperbesar" aria-hidden="true"><button class="upg-lb-x" id="upgLbX" type="button" aria-label="Tutup">×</button><button class="upg-lb-nav prev" id="upgLbPrev" type="button" aria-label="Foto sebelumnya">‹</button><figure><img id="upgLbImg" alt=""><figcaption id="upgLbCap"></figcaption></figure><button class="upg-lb-nav next" id="upgLbNext" type="button" aria-label="Foto berikutnya">›</button></div>
+
+<script>
+/* ===== KC-UPGRADE: mesin animasi Perjalanan Kereta (di dalam model geser, tanpa scroll) ===== */
+(function(){
+"use strict";
+var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* variasi reveal per stasiun */
+var V=["u","l","r","z","d","u","r","l"];
+document.querySelectorAll(".reveal").forEach(function(el,i){
+  if(!el.getAttribute("data-rv")) el.setAttribute("data-rv", V[i%V.length]);
+  el.style.transitionDelay = ((i%4)*60)+"ms";
+});
+var mo=new MutationObserver(function(ms){ ms.forEach(function(m){ if(m.target.classList && m.target.classList.contains("in")) m.target.style.transitionDelay=""; }); });
+document.querySelectorAll(".reveal").forEach(function(el){ mo.observe(el,{attributes:true,attributeFilter:["class"]}); });
+/* ambient: sapuan cahaya di jendela atas */
+var wt=document.querySelector(".window-top");
+if(wt && !RM){ var sw=document.createElement("div"); sw.className="upg-sweep"; sw.setAttribute("aria-hidden","true"); sw.innerHTML="<i></i>"; wt.appendChild(sw); }
+/* paralaks di dalam model geser: jendela galeri + foto hero mengikuti progres perjalanan */
+var wins=[].slice.call(document.querySelectorAll("#galleryGrid .win"));
+var heroPh=document.querySelector(".hero-photo");
+var lastP=-1;
+function kLoop(){ var J=window.KeretaJourney;
+  if(J && !RM){ var p=J.progress();
+    if(Math.abs(p-lastP)>0.0004){ lastP=p;
+      wins.forEach(function(w,i){ var f=(i%2? -10:10); w.style.translate=((p-4)*f).toFixed(1)+"px 0"; });
+      if(heroPh) heroPh.style.translate=(p*-10).toFixed(1)+"px 0";
+    } }
+  requestAnimationFrame(kLoop); }
+requestAnimationFrame(kLoop);
+/* countdown pop (dua set) */
+var ids=["cd-d","cd-h","cd-m","cd-s","cd2-d","cd2-h","cd2-m","cd2-s"], last={};
+function watch(){ ids.forEach(function(id){ var el=document.getElementById(id); if(!el) return; var v=el.textContent;
+  if(last[id]!==undefined && last[id]!==v && !RM){ var box=el.closest(".cd")||el; box.classList.remove("kc-pop"); void box.offsetWidth; box.classList.add("kc-pop"); }
+  last[id]=v; }); }
+watch(); setInterval(watch,250);
+/* lightbox jendela galeri (8 jendela) */
+var lb=document.getElementById("upgLb"), lbImg=document.getElementById("upgLbImg"), lbCap=document.getElementById("upgLbCap");
+var C=window.KERETA_CONFIG, cur=0;
+function openLb(i){ cur=(i+C.gallery.length)%C.gallery.length; var g=C.gallery[cur];
+  lbImg.src=g.src; lbImg.alt=g.cap; lbCap.textContent=g.cap; lb.classList.add("show"); lb.setAttribute("aria-hidden","false"); }
+function closeLb(){ lb.classList.remove("show"); lb.setAttribute("aria-hidden","true"); }
+wins.forEach(function(w,i){ w.setAttribute("tabindex","0"); w.setAttribute("role","button");
+  w.addEventListener("click",function(){ openLb(i); });
+  w.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); openLb(i); } }); });
+document.getElementById("upgLbX").addEventListener("click",closeLb);
+document.getElementById("upgLbPrev").addEventListener("click",function(e){ e.stopPropagation(); openLb(cur-1); });
+document.getElementById("upgLbNext").addEventListener("click",function(e){ e.stopPropagation(); openLb(cur+1); });
+lb.addEventListener("click",function(e){ if(e.target===lb) closeLb(); });
+document.addEventListener("keydown",function(e){ if(!lb.classList.contains("show")) return;
+  if(e.key==="Escape") closeLb(); if(e.key==="ArrowLeft") openLb(cur-1); if(e.key==="ArrowRight") openLb(cur+1); });
+})();
+
+</script>
 </body>
 </html>

@@ -51,7 +51,10 @@ window.JAVANESE_CONFIG = {
     { src: "photos/prewed-2.webp", alt: "Foto prewedding candid tertawa di bawah pohon kamboja", cap: "Tawa Lepas" },
     { src: "photos/prewed-3.webp", alt: "Foto prewedding mesra di depan pintu gebyok ukiran", cap: "Gebyok Ukiran" },
     { src: "photos/prewed-4.webp", alt: "Foto prewedding berjalan bergandengan saat senja di taman", cap: "Senja di Taman" },
-    { src: "photos/prewed-5.webp", alt: "Detail cincin emas dan buket lili di atas kebaya bordir", cap: "Cincin & Buket" }
+    { src: "photos/prewed-5.webp", alt: "Detail cincin emas dan buket lili di atas kebaya bordir", cap: "Cincin & Buket" },
+    { src: "photos/prewed-6-gebyok-joglo.webp", alt: "Foto AI prewedding Fahrezzi & Meyzsa bergandengan tangan di depan pendopo Joglo ukiran", cap: "Bergandengan di Pendopo" },
+    { src: "photos/prewed-7-tangga-pendopo.webp", alt: "Foto AI prewedding Fahrezzi & Meyzsa duduk di tangga pendopo di antara bunga kamboja", cap: "Tangga Pendopo" },
+    { src: "photos/prewed-8-kamboja-dekat.webp", alt: "Foto AI prewedding close-up Fahrezzi & Meyzsa di bawah pohon kamboja berbunga", cap: "Di Bawah Kamboja" }
   ],
   closing: "Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih."
 };

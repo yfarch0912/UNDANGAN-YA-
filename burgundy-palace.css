@@ -268,3 +268,31 @@ body.anim-paused .stage *{animation-play-state:paused!important}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   html{scroll-behavior:auto}
 }
+
+/* ===== UPGRADE B 2026-11-10: animasi serius khas tema (aditif) ===== */
+body{overflow-x:clip}
+.upg .uv{opacity:0;transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.25,1);will-change:opacity,transform}
+.upg .uv[data-uv="left"]{transform:translateX(-34px)}
+.upg .uv[data-uv="right"]{transform:translateX(34px)}
+.upg .uv[data-uv="up"]{transform:translateY(30px)}
+.upg .uv[data-uv="zoom"]{transform:scale(.93)}
+.upg .uv.uin{opacity:1;transform:none}
+.ucine{animation:uCine 1.05s cubic-bezier(.2,.7,.25,1) both}
+@keyframes uCine{from{opacity:0;transform:translateY(26px) scale(.985)}to{opacity:1;transform:none}}
+.ambient{position:fixed;inset:0;max-width:430px;margin:0 auto;z-index:34;pointer-events:none;overflow:hidden}
+.ambient i{position:absolute;top:-4%;width:10px;height:14px;background:#a31630;border-radius:70% 0 70% 0;opacity:.5;animation:uFall linear infinite}
+.ambient i.dot{width:5px;height:5px;border-radius:50%;background:#e8c877;opacity:.75}
+@keyframes uFall{0%{transform:translate3d(0,-5vh,0) rotate(0deg)}100%{transform:translate3d(var(--sw,20px),106vh,0) rotate(320deg)}}
+body.amb-paused .ambient i{animation-play-state:paused}
+.gallery-grid .gal-tile{position:relative;overflow:hidden}
+.gallery-grid .gal-tile img{transition:transform .6s cubic-bezier(.2,.7,.25,1),filter .6s ease}
+.gallery-grid .gal-tile:hover img,.gallery-grid .gal-tile:focus-visible img{transform:scale(1.06);filter:brightness(1.05)}
+.gallery-grid .gal-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.34) 50%,transparent 58%);transform:translateX(-130%);pointer-events:none}
+.gallery-grid .gal-tile:hover::after{transform:translateX(130%);transition:transform .9s ease}
+.upop{animation:uPop .45s cubic-bezier(.2,.7,.25,1)}
+@keyframes uPop{35%{transform:scale(1.2);color:#e8c877}}
+.uglow{animation:uGlow 3.4s ease-in-out infinite}
+@keyframes uGlow{0%,100%{box-shadow:0 0 0 0 rgba(232,200,119,.5)}50%{box-shadow:0 0 0 9px rgba(0,0,0,0)}}
+.sec-divider,.divider{animation:uSway 6s ease-in-out infinite alternate;transform-origin:50% 0}
+@keyframes uSway{from{transform:rotate(-1.1deg)}to{transform:rotate(1.1deg)}}
+@media (prefers-reduced-motion:reduce){.upg .uv{opacity:1;transform:none;transition:none}.ambient{display:none}.ucine,.uglow,.upop{animation:none}}

@@ -34,7 +34,9 @@ window.BALI_CONFIG = {
     { src: "assets/undangya/bali-pastel/library/details/detail-lotus.webp", cap: "Teratai di Tepi Danau" },
     { src: "assets/undangya/bali-pastel/library/details/detail-reflection.webp", cap: "Pantulan Gerbang Senja" },
     { src: "assets/undangya/bali-pastel/library/details/detail-pavilion.webp", cap: "Bale Paviliun Berbunga" },
-    { src: "assets/undangya/bali-pastel/library/details/detail-lake-path.webp", cap: "Jalur Batu ke Gerbang Danau" }
+    { src: "assets/undangya/bali-pastel/library/details/detail-lake-path.webp", cap: "Jalur Batu ke Gerbang Danau" },
+    { src: "assets/undangya/bali-pastel/photos/gallery-baru-1-candi-bentar.webp", pos: "50% 35%", cap: "Berdua di Candi Bentar — Foto AI" },
+    { src: "assets/undangya/bali-pastel/photos/gallery-baru-2-tepi-teratai.webp", pos: "50% 35%", cap: "Tepi Teratai Senja — Foto AI" }
   ],
   gift: { bank: "BCA (contoh)", number: "1234567890", holder: "Meyzsa Ayu Lestari" },
   rsvp: { storageKey: "undangya-bali-pastel-rsvp-v1", deadlineLabel: "Mohon konfirmasi sebelum 8 Mei 2027" },

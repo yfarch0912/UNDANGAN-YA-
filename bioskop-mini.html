@@ -266,6 +266,57 @@ footer.site{text-align:center;padding:30px 24px 6px;font-size:10.5px;color:var(-
   .reveal{opacity:1;transform:none}
   .credits-inner{animation:none}
 }
+/* ===== KC-UPGRADE: animasi serius Bioskop Mini ===== */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+/* pembuka sinematik berjenjang */
+@keyframes kcZoom{from{transform:scale(1.14)}to{transform:scale(1)}}
+@keyframes kcUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes kcPulse{0%,100%{scale:1}50%{scale:1.06}}
+@media (prefers-reduced-motion: no-preference){
+  #cover .poster-bg{animation:kcZoom 8s cubic-bezier(.22,.8,.3,1) both}
+  #cover .cover-in>*{animation:kcUp .9s cubic-bezier(.22,.8,.3,1) both}
+  #cover .cover-in>*:nth-child(1){animation-delay:.15s}#cover .cover-in>*:nth-child(2){animation-delay:.3s}
+  #cover .cover-in>*:nth-child(3){animation-delay:.4s}#cover .cover-in>*:nth-child(4){animation-delay:.55s}
+  #cover .cover-in>*:nth-child(5){animation-delay:.75s}#cover .cover-in>*:nth-child(6){animation-delay:.9s}
+  #cover .cover-in>*:nth-child(7){animation-delay:1.05s}#cover .cover-in>*:nth-child(8){animation-delay:1.2s}
+  #cover .cover-in>*:nth-child(9){animation-delay:1.35s}#cover .cover-in>*:nth-child(10){animation-delay:1.5s}
+  #btnPlay{animation:kcPulse 2.8s ease-in-out 2s infinite}
+  /* marquee: bohlam mengejar bergantian */
+  #cover .mq-t,#cover .mq-b{animation:kcMq 1.5s ease-in-out infinite alternate}
+  #cover .mq-l,#cover .mq-r{animation:kcMq 1.5s ease-in-out .75s infinite alternate}
+  /* kedip proyektor pada panggung trailer */
+  #trailerStage{animation:kcFlick 4.2s linear infinite}
+}
+@keyframes kcMq{from{opacity:.55}to{opacity:1}}
+@keyframes kcFlick{0%,100%{opacity:1}92%{opacity:1}93%{opacity:.86}94%{opacity:1}97%{opacity:.93}98%{opacity:1}}
+/* reveal scroll bervariasi (arah/jeda/skala) */
+.reveal{transition:opacity .95s cubic-bezier(.22,.8,.3,1),transform .95s cubic-bezier(.22,.8,.3,1)}
+.reveal[data-rv="l"]:not(.in){transform:translateX(-38px)}
+.reveal[data-rv="r"]:not(.in){transform:translateX(38px)}
+.reveal[data-rv="z"]:not(.in){transform:scale(.86) translateY(16px)}
+.reveal[data-rv="d"]:not(.in){transform:translateY(48px)}
+/* countdown pop saat angka berubah */
+.kc-pop{animation:kcPop .5s cubic-bezier(.3,1.6,.4,1)}
+@keyframes kcPop{0%{transform:scale(1)}35%{transform:scale(1.16) translateY(-2px)}100%{transform:scale(1)}}
+/* tombol berkilau berkala */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);transform:skewX(-18deg);animation:kcShine 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes kcShine{0%,55%{left:-70%}88%,100%{left:135%}}
+/* mikro-interaksi galeri filmstrip */
+.frame{transition:transform .5s cubic-bezier(.22,.8,.3,1),box-shadow .5s ease}
+.frame:hover,.frame:focus-visible{transform:translateY(-6px) scale(1.02);box-shadow:0 18px 34px rgba(0,0,0,.55)}
+.frame img{transition:transform .8s cubic-bezier(.22,.8,.3,1)}
+.frame:hover img,.frame:focus-visible img{transform:scale(1.07)}
+/* debu cahaya proyektor melayang (ambient) */
+.upg-fx{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:min(430px,100%);overflow:hidden;pointer-events:none;z-index:4}
+.upg-fx i{position:absolute;bottom:-4%;border-radius:50%;background:radial-gradient(circle,rgba(255,226,160,.95),rgba(255,226,160,0) 70%);opacity:0;animation:upgFloat linear infinite}
+@keyframes upgFloat{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.85}55%{transform:translate3d(14px,-52vh,0);opacity:.55}100%{transform:translate3d(-10px,-104vh,0);opacity:0}}
+@media (prefers-reduced-motion: reduce){
+  .upg-fx{display:none}.kc-pop{animation:none}.btn::after{animation:none;display:none}
+  .frame,.frame img{transition:none}
+}
+
 </style>
 <link rel="canonical" href="https://undangya.web.id/bioskop-mini">
 <meta property="og:type" content="website">
@@ -566,7 +617,11 @@ const CONFIG = {
     { src: "assets/undangya/bioskop-mini/still-1.webp", caption: "Cuplikan 01 — Pertemuan Pertama" },
     { src: "assets/undangya/bioskop-mini/still-2.webp", caption: "Cuplikan 02 — Janji di Bawah Lampu Taman" },
     { src: "assets/undangya/bioskop-mini/still-3.webp", caption: "Cuplikan 03 — Menuju Babak Bahagia" },
-    { src: "assets/undangya/bioskop-mini/still-4.webp", caption: "Cuplikan 04 — Dansa di Depan Marquee" }
+    { src: "assets/undangya/bioskop-mini/still-4.webp", caption: "Cuplikan 04 — Dansa di Depan Marquee" },
+    { src: "assets/undangya/bioskop-mini/still-5.webp", caption: "Cuplikan 05 — Berbagi Popcorn di Baris Tengah" },
+    { src: "assets/undangya/bioskop-mini/still-6.webp", caption: "Cuplikan 06 — Dua Tiket Emas di Loket" },
+    { src: "assets/undangya/bioskop-mini/still-7.webp", caption: "Cuplikan 07 — Cahaya dari Ruang Proyeksi" },
+    { src: "assets/undangya/bioskop-mini/still-8.webp", caption: "Cuplikan 08 — Karpet Merah Malam Premier" }
   ],
   accounts: [
     { bank: "BCA", number: "1234567890", holder: "Meyzsa Putri Ananda" },
@@ -777,5 +832,48 @@ $("#rsvpForm").addEventListener("submit", e => {
 });
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+<script>
+/* ===== KC-UPGRADE: mesin animasi Bioskop Mini ===== */
+(function(){
+"use strict";
+var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* variasi reveal: arah + jeda berjenjang */
+var V=["u","l","r","z","d","u","r","l"];
+document.querySelectorAll(".reveal").forEach(function(el,i){
+  if(!el.getAttribute("data-rv")) el.setAttribute("data-rv", V[i%V.length]);
+  el.style.transitionDelay = ((i%4)*70)+"ms";
+});
+var mo=new MutationObserver(function(ms){ ms.forEach(function(m){ if(m.target.classList && m.target.classList.contains("in")) m.target.style.transitionDelay=""; }); });
+document.querySelectorAll(".reveal").forEach(function(el){ mo.observe(el,{attributes:true,attributeFilter:["class"]}); });
+/* paralaks 2+ lapis: ikon adegan, kotak countdown, tiket, bingkai film */
+var plx=[];
+function reg(sel,f){ document.querySelectorAll(sel).forEach(function(el,i){ el.setAttribute("data-plx",(i%2? -f:f)); plx.push(el); }); }
+reg(".scene-ic",14); reg(".cd-box",7); reg("#ticket",6); reg(".frame",9); reg(".star-photo",5);
+var tick=false;
+function plxUpd(){ tick=false; if(RM) return; var vh=window.innerHeight||800;
+  plx.forEach(function(el){ var cur=parseFloat((el.style.translate||"0 0").split(" ")[1])||0;
+    var r=el.getBoundingClientRect(); var top=r.top-cur;
+    if(top+r.height<-100||top>vh+100){ el.style.translate=""; return; }
+    var c=(top+r.height/2-vh/2)/vh;
+    el.style.translate="0 "+(-c*parseFloat(el.getAttribute("data-plx"))).toFixed(1)+"px"; });
+}
+window.addEventListener("scroll",function(){ if(!tick){ tick=true; requestAnimationFrame(plxUpd); } },{passive:true});
+window.addEventListener("resize",function(){ requestAnimationFrame(plxUpd); });
+setTimeout(plxUpd,400); setTimeout(plxUpd,1600);
+/* countdown pop saat berubah */
+var ids=["cdD","cdH","cdM","cdS"], last={};
+function watch(){ ids.forEach(function(id){ var el=document.getElementById(id); if(!el) return; var v=el.textContent;
+  if(last[id]!==undefined && last[id]!==v && !RM){ var box=el.closest(".cd-box")||el; box.classList.remove("kc-pop"); void box.offsetWidth; box.classList.add("kc-pop"); }
+  last[id]=v; }); }
+watch(); setInterval(watch,250);
+/* ambient: debu cahaya proyektor */
+if(!RM){ var fx=document.createElement("div"); fx.className="upg-fx"; fx.setAttribute("aria-hidden","true");
+  for(var i=0;i<12;i++){ var s=document.createElement("i"); var sz=3+(i%4)*1.6;
+    s.style.left=((i*37+11)%96)+"%"; s.style.width=s.style.height=sz+"px";
+    s.style.animationDuration=(9+(i%5)*1.9)+"s"; s.style.animationDelay=(-(i*1.37))+"s"; fx.appendChild(s); }
+  document.body.appendChild(fx); }
+})();
+
+</script>
 </body>
 </html>

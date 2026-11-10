@@ -31,6 +31,12 @@ window.ENGRAVED_CONFIG = {
     { name: "Resepsi", time: "11.00 – 13.00 WIB", note: "Taman Bunga (contoh)" }
   ],
   gallery: [
+    { src: "photos/gallery-couple-steps.webp", alt: "Ilustrasi ukiran Meyzsa & Fahrezzi duduk di tangga rumah kayu", cap: "Di Tangga Rumah Kayu" },
+    { src: "photos/gallery-couple-valley.webp", alt: "Ilustrasi ukiran Meyzsa & Fahrezzi berjalan di taman bunga lembah pegunungan", cap: "Berjalan di Lembah" },
+    { src: "photos/gallery-couple-tree.webp", alt: "Ilustrasi ukiran potret Meyzsa & Fahrezzi di bawah pohon besar", cap: "Di Bawah Pohon Tua" },
+    { src: "photos/gallery-couple-garland.webp", alt: "Ilustrasi ukiran Meyzsa & Fahrezzi bertukar karangan bunga anggrek", cap: "Tukar Karangan Bunga" },
+    { src: "photos/gallery-couple-terrace.webp", alt: "Ilustrasi ukiran Meyzsa & Fahrezzi di teras kayu memandang ladang terasering saat fajar", cap: "Fajar di Teras Kayu" },
+    { src: "photos/gallery-couple-tea.webp", alt: "Ilustrasi ukiran Meyzsa & Fahrezzi minum teh bersama di taman rumah kayu", cap: "Teh di Taman" },
     { src: "photos/gallery-couple-close.webp", alt: "Ilustrasi pasangan dari dekat", cap: "Dua Hati" },
     { src: "photos/couple-illustration.webp", alt: "Ilustrasi pasangan di depan rumah kayu", cap: "Di Depan Rumah Kayu" },
     { src: "photos/gallery-house-mono.webp", alt: "Ukiran rumah kayu tradisional", cap: "Rumah Kayu" },

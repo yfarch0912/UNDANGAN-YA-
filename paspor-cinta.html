@@ -232,6 +232,68 @@ footer.site{text-align:center;padding:6px 24px 4px;font-size:10.5px;color:#8b93a
   .reveal{opacity:1;transform:none}
   .stamp,.postmark{opacity:.9}
 }
+/* ===== KC-UPGRADE: animasi serius Paspor Cinta ===== */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@keyframes kcUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: no-preference){
+  #passportBook .pb-country{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) .1s both}
+  #passportBook .pb-emblem{animation:kcUp .9s cubic-bezier(.22,.8,.3,1) .25s both}
+  #passportBook .pb-word{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) .45s both}
+  #passportBook .pb-word-sub{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) .58s both}
+  #passportBook .pb-route{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) .7s both}
+  #passportBook .pb-photos{animation:kcUp .9s cubic-bezier(.22,.8,.3,1) .85s both}
+  #passportBook .pb-holder{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) 1.05s both}
+  #passportBook #btnOpen{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) 1.2s both}
+  #passportBook .pb-note{animation:kcUp .8s cubic-bezier(.22,.8,.3,1) 1.35s both}
+  /* pesawat kecil melayang di rute paspor */
+  .pb-route-plane{animation:kcPlane 3.6s ease-in-out infinite alternate}
+  /* cap pos bernapas pelan setelah tercap (ambient) */
+  .postmark.on{animation:stampIn .5s cubic-bezier(.25,2.2,.45,1) forwards,kcBreath 4.6s ease-in-out 1.4s infinite}
+  /* emblem visa berputar sangat pelan memakai properti rotate (tidak menabrak transform lain) */
+  .visa-emblem{animation:kcSlowSpin 14s linear infinite}
+}
+@keyframes kcPlane{from{translate:0 0}to{translate:-7px -4px}}
+@keyframes kcBreath{0%,100%{scale:1}50%{scale:1.05}}
+@keyframes kcSlowSpin{from{rotate:0deg}to{rotate:360deg}}
+/* reveal bervariasi */
+.reveal{transition:opacity .95s cubic-bezier(.22,.8,.3,1),transform .95s cubic-bezier(.22,.8,.3,1)}
+.reveal[data-rv="l"]:not(.in){transform:translateX(-38px)}
+.reveal[data-rv="r"]:not(.in){transform:translateX(38px)}
+.reveal[data-rv="z"]:not(.in){transform:scale(.86) translateY(16px)}
+.reveal[data-rv="d"]:not(.in){transform:translateY(48px)}
+/* gal-item memakai rotasi tilt: varian untuknya memakai translate/scale agar tilt tetap hidup */
+.gal-item.reveal[data-rv]:not(.in){transform:rotate(var(--tilt,0deg))}
+.gal-item.reveal[data-rv="l"]:not(.in){translate:-30px 0}
+.gal-item.reveal[data-rv="r"]:not(.in){translate:30px 0}
+.gal-item.reveal[data-rv="z"]:not(.in){scale:.86}
+.gal-item.reveal[data-rv="d"]:not(.in){translate:0 40px}
+/* countdown pop */
+.kc-pop{animation:kcPop .5s cubic-bezier(.3,1.6,.4,1)}
+@keyframes kcPop{0%{transform:scale(1)}35%{transform:scale(1.16) translateY(-2px)}100%{transform:scale(1)}}
+/* tombol berkilau */
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.32),transparent);transform:skewX(-18deg);animation:kcShine 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes kcShine{0%,55%{left:-70%}88%,100%{left:135%}}
+#btnOpen{position:relative;overflow:hidden}
+#btnOpen::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);animation:kcShine 5.5s ease-in-out infinite;pointer-events:none}
+/* mikro-interaksi galeri cap */
+.gal-item{transition:transform .5s cubic-bezier(.22,.8,.3,1),box-shadow .5s ease}
+.gal-item:hover{transform:rotate(0deg) translateY(-5px);box-shadow:0 18px 34px rgba(20,16,8,.3)}
+.gal-item img{transition:transform .8s cubic-bezier(.22,.8,.3,1)}
+.gal-item:hover img{transform:scale(1.06)}
+/* kilau melintasi foto data paspor */
+.data-photo{position:relative;overflow:hidden}
+.data-photo::after{content:"";position:absolute;top:0;bottom:0;left:-80%;width:50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-16deg);animation:kcShine 6.5s ease-in-out infinite;pointer-events:none}
+/* debu emas perjalanan (ambient) */
+.upg-fx{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:min(430px,100%);overflow:hidden;pointer-events:none;z-index:4}
+.upg-fx i{position:absolute;bottom:-4%;border-radius:50%;background:radial-gradient(circle,rgba(230,197,120,.95),rgba(230,197,120,0) 70%);opacity:0;animation:upgFloat linear infinite}
+@keyframes upgFloat{0%{transform:translate3d(0,0,0);opacity:0}12%{opacity:.85}55%{transform:translate3d(13px,-52vh,0);opacity:.55}100%{transform:translate3d(-11px,-104vh,0);opacity:0}}
+@media (prefers-reduced-motion: reduce){
+  .upg-fx{display:none}.kc-pop{animation:none}.btn::after,#btnOpen::after,.data-photo::after{animation:none;display:none}
+  .gal-item,.gal-item img{transition:none}.visa-emblem,.pb-route-plane{animation:none}
+}
+
 </style>
 <link rel="canonical" href="https://undangya.web.id/paspor-cinta">
 <meta property="og:type" content="website">
@@ -504,7 +566,11 @@ const CONFIG = {
     { src: "assets/undangya/paspor-cinta/galeri-jakarta.webp", city: "Jakarta", code: "JKT", date: "14 . 02 . 2021", story: "Pertama Bertemu", note: "Pertama bertemu — di bawah langit Jakarta, perjalanan ini dimulai.", color: "var(--burg)", tilt: "-1.2deg" },
     { src: "assets/undangya/paspor-cinta/galeri-bandung.webp", city: "Bandung", code: "BDG", date: "03 . 07 . 2022", story: "Liburan Pertama", note: "Liburan pertama — kopi hangat, kabut pinus, dan tawa yang tak habis.", color: "var(--teal)", tilt: "1.1deg" },
     { src: "assets/undangya/paspor-cinta/galeri-yogya.webp", city: "Yogyakarta", code: "JOG", date: "19 . 11 . 2023", story: "Menghadap Keluarga", note: "Menghadap keluarga — fajar di Borobudur, restu mulai terbit.", color: "#9a742a", tilt: "-1deg" },
-    { src: "assets/undangya/paspor-cinta/galeri-bali.webp", city: "Bali", code: "DPS", date: "25 . 12 . 2024", story: "Janji di Gerbang Surga", note: "Janji di gerbang surga — satu pertanyaan, satu jawaban: ya.", color: "var(--navy)", tilt: "1.3deg" }
+    { src: "assets/undangya/paspor-cinta/galeri-bali.webp", city: "Bali", code: "DPS", date: "25 . 12 . 2024", story: "Janji di Gerbang Surga", note: "Janji di gerbang surga — satu pertanyaan, satu jawaban: ya.", color: "var(--navy)", tilt: "1.3deg" },
+    { src: "assets/undangya/paspor-cinta/galeri-semarang.webp", city: "Semarang", code: "SRG", date: "08 . 03 . 2025", story: "Seribu Pintu Terbuka", note: "Seribu pintu terbuka — setiap pintu membawa kami lebih dekat.", color: "var(--teal)", tilt: "1.2deg" },
+    { src: "assets/undangya/paspor-cinta/galeri-surabaya.webp", city: "Surabaya", code: "SUB", date: "21 . 06 . 2025", story: "Senja di Kota Lama", note: "Senja di kota lama — lampu-lampu jalan menyala, begitu juga hati.", color: "var(--burg)", tilt: "-1.1deg" },
+    { src: "assets/undangya/paspor-cinta/galeri-lombok.webp", city: "Lombok", code: "LOP", date: "30 . 09 . 2025", story: "Senja di Senggigi", note: "Senja di Senggigi — ombak kecil menyetujui rencana besar kami.", color: "#9a742a", tilt: "1deg" },
+    { src: "assets/undangya/paspor-cinta/galeri-medan.webp", city: "Medan", code: "MES", date: "17 . 01 . 2026", story: "Restu di Istana Maimun", note: "Restu di istana — perjalanan pulang membawa berkat keluarga.", color: "var(--navy)", tilt: "-1.3deg" }
   ],
   accounts: [
     { bank: "BCA", number: "1234567890", holder: "Meyzsa Putri Ananda" },
@@ -746,5 +812,48 @@ $("#rsvpForm").addEventListener("submit", e => {
 });
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+<script>
+/* ===== KC-UPGRADE: mesin animasi Paspor Cinta ===== */
+(function(){
+"use strict";
+var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* variasi reveal: arah + jeda berjenjang */
+var V=["u","l","r","z","d","u","r","l"];
+document.querySelectorAll(".reveal").forEach(function(el,i){
+  if(!el.getAttribute("data-rv")) el.setAttribute("data-rv", V[i%V.length]);
+  el.style.transitionDelay = ((i%4)*70)+"ms";
+});
+var mo=new MutationObserver(function(ms){ ms.forEach(function(m){ if(m.target.classList && m.target.classList.contains("in")) m.target.style.transitionDelay=""; }); });
+document.querySelectorAll(".reveal").forEach(function(el){ mo.observe(el,{attributes:true,attributeFilter:["class"]}); });
+/* paralaks 2+ lapis: emblem visa, foto data, kartu cap galeri */
+var plx=[];
+function reg(sel,f){ document.querySelectorAll(sel).forEach(function(el,i){ el.setAttribute("data-plx",(i%2? -f:f)); plx.push(el); }); }
+reg(".visa-emblem",12); reg(".data-photo",7); reg(".gal-item",9); reg(".page-head .rule",5);
+var tick=false;
+function plxUpd(){ tick=false; if(RM) return; var vh=window.innerHeight||800;
+  plx.forEach(function(el){ var cur=parseFloat((el.style.translate||"0 0").split(" ")[1])||0;
+    var r=el.getBoundingClientRect(); var top=r.top-cur;
+    if(top+r.height<-100||top>vh+100){ el.style.translate=""; return; }
+    var c=(top+r.height/2-vh/2)/vh;
+    el.style.translate="0 "+(-c*parseFloat(el.getAttribute("data-plx"))).toFixed(1)+"px"; });
+}
+window.addEventListener("scroll",function(){ if(!tick){ tick=true; requestAnimationFrame(plxUpd); } },{passive:true});
+window.addEventListener("resize",function(){ requestAnimationFrame(plxUpd); });
+setTimeout(plxUpd,400); setTimeout(plxUpd,1400);
+/* countdown pop saat berubah */
+var ids=["cdD","cdH","cdM","cdS"], last={};
+function watch(){ ids.forEach(function(id){ var el=document.getElementById(id); if(!el) return; var v=el.textContent;
+  if(last[id]!==undefined && last[id]!==v && !RM){ var box=el.closest(".cd-box")||el; box.classList.remove("kc-pop"); void box.offsetWidth; box.classList.add("kc-pop"); }
+  last[id]=v; }); }
+watch(); setInterval(watch,250);
+/* ambient: debu emas */
+if(!RM){ var fx=document.createElement("div"); fx.className="upg-fx"; fx.setAttribute("aria-hidden","true");
+  for(var i=0;i<11;i++){ var s=document.createElement("i"); var sz=3+(i%4)*1.5;
+    s.style.left=((i*39+13)%96)+"%"; s.style.width=s.style.height=sz+"px";
+    s.style.animationDuration=(9.5+(i%5)*1.8)+"s"; s.style.animationDelay=(-(i*1.43))+"s"; fx.appendChild(s); }
+  document.body.appendChild(fx); }
+})();
+
+</script>
 </body>
 </html>

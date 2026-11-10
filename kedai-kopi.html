@@ -223,6 +223,10 @@ footer{text-align:center;padding:26px 20px 96px;color:#7a5c39;font-size:12.5px;p
     <figure><img class="ph" src="assets/undangya/kedai-kopi/galeri-2.webp" alt="Pasangan di mesin espresso"><figcaption>Di Depan Mesin Espresso</figcaption></figure>
     <figure><img class="ph" src="assets/undangya/kedai-kopi/galeri-3.webp" alt="Pasangan memilih biji kopi di rak"><figcaption>Rak Biji Pilihan</figcaption></figure>
     <figure><img class="ph" src="assets/undangya/kedai-kopi/galeri-4.webp" alt="Cangkir latte art mengepul di meja kayu"><figcaption>Racikan Tanda Cinta</figcaption></figure>
+    <figure><img class="ph" src="assets/undangya/kedai-kopi/galeri-5.webp" alt="Pasangan menuang latte art bersama di balik meja bar"><figcaption>Latte Art Berdua</figcaption></figure>
+    <figure><img class="ph" src="assets/undangya/kedai-kopi/galeri-6.webp" alt="Pasangan memegang piring croissant di depan rak biji kopi"><figcaption>Piring Croissant Kami</figcaption></figure>
+    <figure><img class="ph" src="assets/undangya/kedai-kopi/galeri-7.webp" alt="Pasangan berbagi croissant di meja dekat jendela pagi hari"><figcaption>Berbagi di Meja Jendela</figcaption></figure>
+    <figure><img class="ph" src="assets/undangya/kedai-kopi/galeri-8.webp" alt="Pasangan memegang cangkir hangat di pintu kedai saat senja"><figcaption>Dua Cangkir di Ambang Senja</figcaption></figure>
   </div>
 </section>
 <!-- ================= RSVP STRUK ================= -->
@@ -373,6 +377,98 @@ function startMusic(){
 function stopMusic(){playing=false;syncMusicBtn();var el=bgmEl();if(el)el.pause();}
 document.getElementById('musicBtn').addEventListener('click',function(){playing?stopMusic():startMusic();});
 document.addEventListener('DOMContentLoaded',function(){var el=bgmEl();if(!el)return;el.addEventListener('play',function(){playing=true;syncMusicBtn();});el.addEventListener('pause',function(){playing=false;syncMusicBtn();});});
+})();
+</script>
+
+<style id="uvEStyle">/* ===== UPGRADE KELOMPOK E: animasi serius + galeri 8 ===== */
+[data-uv]{opacity:0}
+[data-uv="up"]:not(.uv-in){transform:translateY(30px)}
+[data-uv="left"]:not(.uv-in){transform:translateX(-38px)}
+[data-uv="right"]:not(.uv-in){transform:translateX(38px)}
+[data-uv="zoom"]:not(.uv-in){transform:scale(.86) translateY(14px)}
+[data-uv="flip"]:not(.uv-in){transform:perspective(700px) rotateX(16deg) translateY(22px)}
+[data-uv="down"]:not(.uv-in){transform:translateY(-26px)}
+[data-uv].uv-in{opacity:1;transform:none;transition:opacity .85s ease,transform .85s cubic-bezier(.22,.9,.28,1)}
+.uv-cine>*{animation:uvCine .95s cubic-bezier(.22,.9,.3,1) both}
+.uv-cine>*:nth-child(1){animation-delay:.04s}.uv-cine>*:nth-child(2){animation-delay:.14s}
+.uv-cine>*:nth-child(3){animation-delay:.24s}.uv-cine>*:nth-child(4){animation-delay:.36s}
+.uv-cine>*:nth-child(5){animation-delay:.48s}.uv-cine>*:nth-child(6){animation-delay:.60s}
+.uv-cine>*:nth-child(7){animation-delay:.72s}.uv-cine>*:nth-child(8){animation-delay:.84s}
+.uv-cine>*:nth-child(n+9){animation-delay:.96s}
+@keyframes uvCine{from{opacity:0;transform:translateY(28px) scale(.965)}to{opacity:1;transform:none}}
+.uv-pop{animation:uvPop .38s ease!important}
+@keyframes uvPop{35%{transform:scale(1.24)}}
+@keyframes uvSway{0%,100%{transform:rotate(-2.6deg)}50%{transform:rotate(2.6deg)}}
+@keyframes uvBob{0%,100%{transform:translateY(0) rotate(-1.6deg)}50%{transform:translateY(-6px) rotate(1.6deg)}}
+
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;bottom:0;width:34%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);animation:uvShine 4.6s ease-in-out infinite;pointer-events:none;z-index:2}
+@keyframes uvShine{0%,55%{left:-60%}88%,100%{left:135%}}
+#openBtn{animation:uvBtnPulse 3.4s ease-in-out infinite}
+@keyframes uvBtnPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.14)}}
+
+.gal figure{transition:transform .45s ease,box-shadow .45s ease;cursor:pointer}
+.gal figure:hover,.gal figure:focus-visible{transform:translateY(-4px) scale(1.03)}
+.gal figure:active{transform:scale(.97)}
+.gal figure img{transition:transform .8s ease}
+.gal figure:hover img{transform:scale(1.07)}
+
+.lamp{transform-origin:top center;animation:uvSwayL 4.6s ease-in-out infinite}.lamp::after{animation:uvFlick 3.8s ease-in-out infinite}@keyframes uvSwayL{0%,100%{transform:rotate(2.4deg)}50%{transform:rotate(-2.4deg)}}@keyframes uvFlick{0%,100%{opacity:1}42%{opacity:.8}58%{opacity:.95}74%{opacity:.84}}.menu-row img{animation:uvBob 4.2s ease-in-out infinite}
+
+#uvLb{position:fixed;inset:0;z-index:200;background:rgba(6,3,2,.93);display:none;align-items:center;justify-content:center;padding:20px}
+#uvLb.open{display:flex}
+#uvLb .uv-card{max-width:400px;width:100%;text-align:center;animation:uvLbIn .35s ease;background:#1c1008;border:2px solid #c7a166;border-radius:16px;padding:14px}
+#uvLb img{width:100%;max-height:68dvh;object-fit:contain;border-radius:10px;display:block}
+#uvLb p{color:#f3e6cd;margin-top:10px;font-size:15px;line-height:1.55}
+#uvLb button{margin-top:12px;background:transparent;color:#c7a166;border:1.5px solid #c7a166;border-radius:999px;padding:9px 26px;font-family:inherit;font-size:13px;letter-spacing:.1em;cursor:pointer}
+@keyframes uvLbIn{from{opacity:0;transform:scale(.9) translateY(16px)}}
+
+@media (prefers-reduced-motion: reduce){[data-uv]{opacity:1!important;transform:none!important}.uv-cine>*{animation:none!important}}
+</style>
+<div id="uvLb" role="dialog" aria-modal="true" aria-label="Foto galeri besar"><div class="uv-card"><img src="" alt="Foto galeri besar"><p></p><button type="button">TUTUP</button></div></div>
+<script id="uvEScript">/* ===== UPGRADE KELOMPOK E ===== */
+(function(){
+"use strict";
+if(window.__uvE)return;
+var reduced=false; try{reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+var cine=document.querySelector("#cover"); if(cine)cine.classList.add("uv-cine");
+var variants=["up","left","zoom","right","flip","up","down","zoom"];
+var cands=[];
+try{document.querySelectorAll("#sambutan>*, #kisah>*, #mempelai>*, #acara>*, #rsvp>*, #amplop>*, #penutup>*, #galeri .gal figure, #galeri .kicker, #galeri .sec-title, #galeri .rule").forEach(function(el,i){ if(el.hasAttribute("data-uv"))return; el.setAttribute("data-uv",variants[i%variants.length]); el.style.transitionDelay=((i%3)*0.09)+"s"; cands.push(el); });}catch(e){}
+function showAll(){cands.forEach(function(el){el.classList.add("uv-in");});}
+if(reduced||!("IntersectionObserver" in window)){showAll();}
+else{try{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("uv-in");io.unobserve(x.target);}});},{threshold:0.1,rootMargin:"0px 0px -6% 0px"});cands.forEach(function(el){io.observe(el);});}catch(e){showAll();}}
+var pxEls=[];
+try{document.querySelectorAll("#galeri .gal, .cupimg").forEach(function(el,i){ if(el.hasAttribute("data-uv"))return; pxEls.push({el:el,sp:(i%2?-1:1)*(0.045+0.02*i)}); });}catch(e){}
+var ticking=false;
+function clamp(v){return Math.max(-16,Math.min(16,v));}
+function pxUpdate(){ticking=false; if(reduced)return; var vh=window.innerHeight||800; pxEls.forEach(function(o){try{var r=o.el.getBoundingClientRect(); if(!r||r.height===0)return; var off=clamp((r.top+r.height/2-vh/2)*o.sp); o.el.style.transform="translate3d(0,"+off.toFixed(1)+"px,0)";}catch(e){}});}
+function pxReq(){if(!ticking){ticking=true; if(window.requestAnimationFrame)window.requestAnimationFrame(pxUpdate); else pxUpdate();}}
+if(!reduced&&pxEls.length){try{window.addEventListener("scroll",pxReq,{passive:true}); window.addEventListener("resize",pxReq); pxReq();}catch(e){}}
+var cdEls=[]; try{cdEls=Array.prototype.slice.call(document.querySelectorAll("#cdD,#cdH,#cdM,#cdS"));}catch(e){}
+var cdPrev={},popCount=0;
+setInterval(function(){cdEls.forEach(function(el,i){var v=el.textContent; if(cdPrev[i]!==undefined&&cdPrev[i]!==v){el.classList.remove("uv-pop"); void el.offsetWidth; el.classList.add("uv-pop"); popCount++;} cdPrev[i]=v;});},300);
+
+var lb=document.getElementById("uvLb");
+if(lb){
+  var lbImg=lb.querySelector("img"), lbCap=lb.querySelector("p");
+  function uvOpenLb(src,cap){ lbImg.src=src; lbCap.textContent=cap||""; lb.classList.add("open"); }
+  function uvCloseLb(){ lb.classList.remove("open"); }
+  lb.addEventListener("click",function(e){ if(e.target!==lbImg) uvCloseLb(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") uvCloseLb(); });
+  document.querySelectorAll(".gal figure").forEach(function(fig){
+    var im=fig.querySelector("img"); if(!im)return;
+    fig.setAttribute("tabindex","0"); fig.setAttribute("role","button");
+    function go(){ var fc=fig.querySelector("figcaption"); uvOpenLb(im.getAttribute("src"), fc?fc.textContent:(im.getAttribute("alt")||"")); }
+    fig.addEventListener("click",go);
+    fig.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); go(); } });
+  });
+  window.__uvLb={open:uvOpenLb,close:uvCloseLb,isOpen:function(){return lb.classList.contains("open");}};
+}
+
+window.__uvE={reveals:cands.length,parallax:pxEls.length,reduced:reduced,popCount:function(){return popCount;},
+sampleAmbient:function(){var el=document.querySelector(".lamp"); if(!el)return ""; try{var cs=window.getComputedStyle(el); return (cs.transform||"")+"|"+(cs.opacity||"")+"|"+(cs.boxShadow||"");}catch(e){return "";}},
+sampleAmbient2:function(){var el=document.querySelector(".menu-row img"); if(!el)return ""; try{var cs=window.getComputedStyle(el); return (cs.transform||"")+"|"+(cs.opacity||"")+"|"+(cs.boxShadow||"");}catch(e){return "";}}};
 })();
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>

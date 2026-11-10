@@ -36,7 +36,19 @@
     var b = e.target.closest('.g-copy'); if (b) copyText(b.dataset.num, 'Nomor tersalin 🌸');
   });
 
-  var stripImgs = C.gallerySeeds.map(function (s, i) { return { src: 'https://picsum.photos/seed/' + s + '/620/760', cap: 'Momen ke-' + (i + 1) + ' di taman kami' }; });
+  /* Galeri pasangan AI (2026-11-10): 8 foto ilustrasi Taman Rahasia lokal,
+     menggantikan seed generik picsum khusus tampilan strip tema ini.
+     config.js bersama TIDAK diubah (dipakai halaman utama). */
+  var stripImgs = [
+    { src: 'assets/undangya/taman-rahasia/gallery/gallery-baru-1-lengkung-mawar.webp', cap: 'Di Bawah Lengkung Mawar' },
+    { src: 'assets/undangya/taman-rahasia/gallery/gallery-baru-2-bangku-bunga.webp', cap: 'Bangku di Antara Bunga' },
+    { src: 'assets/undangya/taman-rahasia/gallery/gallery-baru-3-bunga-matahari.webp', cap: 'Senyum Bunga Matahari' },
+    { src: 'assets/undangya/taman-rahasia/gallery/gallery-baru-4-air-mancur-kupu.webp', cap: 'Air Mancur & Kupu-Kupu' },
+    { src: 'assets/undangya/taman-rahasia/gallery/gallery-baru-5-wisteria-senja.webp', cap: 'Wisteria Senja' },
+    { src: 'assets/undangya/taman-rahasia/gallery/gallery-baru-6-gerbang-kayu.webp', cap: 'Kalungan Bunga di Gerbang' },
+    { src: 'assets/undangya/taman-rahasia/gallery/gallery-baru-7-hujan-kelopak.webp', cap: 'Hujan Kelopak' },
+    { src: 'assets/undangya/taman-rahasia/gallery/gallery-baru-8-menuju-senja.webp', cap: 'Menuju Cahaya Senja' }
+  ];
   $('gStrip').innerHTML = stripImgs.map(function (g, i) {
     return '<figure data-i="' + i + '"><img src="' + g.src + '" alt="' + g.cap + '" loading="lazy"><figcaption>' + g.cap + '</figcaption></figure>';
   }).join('');

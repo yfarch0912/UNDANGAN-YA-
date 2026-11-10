@@ -45,7 +45,9 @@ window.PINK_GARDEN_CONFIG = {
     { src: "gallery/gallery-3.webp", alt: "Foto prewedding pasangan berdiri di bawah lengkungan bunga mawar pink dan putih", cap: "Di Bawah Lengkungan Bunga" },
     { src: "gallery/gallery-4.webp", alt: "Foto prewedding close-up pasangan tersenyum di antara bunga mawar pink", cap: "Senyum Untukmu" },
     { src: "gallery/gallery-5.webp", alt: "Foto prewedding mempelai pria memutar mempelai wanita di tengah hamparan bunga", cap: "Berputar Bahagia" },
-    { src: "gallery/gallery-6.webp", alt: "Foto prewedding pasangan berpelukan saat senja dengan cahaya matahari terbenam", cap: "Senja Berdua" }
+    { src: "gallery/gallery-6.webp", alt: "Foto prewedding pasangan berpelukan saat senja dengan cahaya matahari terbenam", cap: "Senja Berdua" },
+    { src: "gallery/gallery-7.webp", alt: "Foto AI prewedding pasangan berdansa di antara mawar pink dekat air mancur batu", cap: "Dansa di Air Mancur" },
+    { src: "gallery/gallery-8.webp", alt: "Foto AI prewedding pasangan berjalan di bawah payung putih di jalan setapak mawar pink", cap: "Payung Putih Berdua" }
   ],
   gift: {
     note: "Data contoh — ganti dengan rekening asli atau kosongkan untuk menyembunyikan section ini.",

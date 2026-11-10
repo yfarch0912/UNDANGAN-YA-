@@ -1,0 +1,130 @@
+/* ============================================================
+   UndangYa! — PENINGKATAN ANIMASI KELOMPOK A (additive, 2026-11-10)
+   Berlaku: taman-rahasia, javanese-illustrated, masjid-bunga,
+   pink-garden-fountain, bali-pastel.
+   Prinsip: hanya properti individual translate/scale/rotate +
+   opacity untuk gerak utama (TIDAK menimpa `transform` milik
+   sistem reveal/layer existing), rAF-throttled, hormati
+   prefers-reduced-motion, tanpa overflow horizontal baru.
+   ============================================================ */
+
+/* ---------- 1) Pembuka sinematik berjenjang ---------- */
+.upx-stage-in > * {
+  opacity: 0; translate: 0 24px; scale: .96;
+  transition: opacity .85s ease, translate .85s cubic-bezier(.2,.7,.2,1), scale .85s cubic-bezier(.2,.7,.2,1);
+}
+body.upx-open .upx-stage-in > * { opacity: 1; translate: 0 0; scale: 1; }
+body.upx-open .upx-stage-in > *:nth-child(2) { transition-delay: .10s; }
+body.upx-open .upx-stage-in > *:nth-child(3) { transition-delay: .20s; }
+body.upx-open .upx-stage-in > *:nth-child(4) { transition-delay: .30s; }
+body.upx-open .upx-stage-in > *:nth-child(5) { transition-delay: .40s; }
+body.upx-open .upx-stage-in > *:nth-child(6) { transition-delay: .50s; }
+body.upx-open .upx-stage-in > *:nth-child(7) { transition-delay: .60s; }
+body.upx-open .upx-stage-in > *:nth-child(n+8) { transition-delay: .70s; }
+
+/* ---------- 2) Reveal scroll bervariasi (arah/jeda/skala/rotasi) ---------- */
+.upx-rv {
+  opacity: 0;
+  transition: opacity .9s ease var(--upx-d, 0s),
+              translate .9s cubic-bezier(.2,.7,.2,1) var(--upx-d, 0s),
+              scale .9s cubic-bezier(.2,.7,.2,1) var(--upx-d, 0s),
+              rotate .9s cubic-bezier(.2,.7,.2,1) var(--upx-d, 0s);
+}
+.upx-rv-l { translate: -34px 0; }
+.upx-rv-r { translate: 34px 0; }
+.upx-rv-u { translate: 0 38px; }
+.upx-rv-z { translate: 0 14px; scale: .88; }
+.upx-rv-rot { translate: 0 30px; rotate: -2.2deg; }
+.upx-rv.upx-in { opacity: 1; translate: 0 0; scale: 1; rotate: 0deg; }
+
+/* ---------- 3) Ambient khas tema (bergerak terus, halus) ---------- */
+.upx-ambient {
+  position: fixed; inset: 0; z-index: 4; overflow: hidden;
+  pointer-events: none; contain: layout style;
+}
+.upx-ambient .upx-p {
+  position: absolute; top: -6vh; display: block;
+  animation: upxFall linear infinite; will-change: translate;
+}
+.upx-ambient .upx-p i {
+  display: block; width: 100%; height: 100%;
+  animation: upxSway ease-in-out infinite alternate; will-change: translate, rotate;
+}
+/* kelopak umum */
+.upx-shape-petal i { border-radius: 62% 4% 62% 4%; background: rgba(242,167,187,.75); }
+/* taman rahasia: kelopak sage-blush + debu cahaya */
+body.upx-taman-rahasia .upx-shape-petal i { background: rgba(168,213,162,.8); }
+body.upx-taman-rahasia .upx-shape-dot i { background: rgba(249,217,118,.85); }
+/* jawa: kelopak kamboja krem-emas */
+body.upx-javanese-illustrated .upx-shape-petal i { border-radius: 50% 50% 50% 6%; background: rgba(255,244,200,.9); }
+/* masjid bunga: debu cahaya emas + kelopak gading (BUKAN waterfall/pool) */
+body.upx-masjid-bunga .upx-shape-petal i { background: rgba(255,250,235,.85); }
+body.upx-masjid-bunga .upx-shape-dot i { background: rgba(233,201,121,.9); box-shadow: 0 0 8px 2px rgba(233,201,121,.45); }
+/* pink garden: kelopak mawar pink */
+body.upx-pink-garden-fountain .upx-shape-petal i { background: rgba(244,150,180,.8); }
+/* bali pastel: kamboja pastel + titik lavender */
+body.upx-bali-pastel .upx-shape-petal i { border-radius: 50% 50% 50% 6%; background: rgba(255,214,228,.9); }
+body.upx-bali-pastel .upx-shape-dot i { background: rgba(196,168,224,.8); }
+.upx-shape-dot i { border-radius: 50%; background: rgba(255,226,160,.8); }
+
+@keyframes upxFall {
+  from { translate: 0 -6vh; }
+  to   { translate: 0 112vh; }
+}
+@keyframes upxSway {
+  from { translate: -14px 0; rotate: -38deg; }
+  to   { translate: 14px 0; rotate: 42deg; }
+}
+
+/* ---------- 4) Parallax 2 lapis di section utama ---------- */
+.upx-plx {
+  position: absolute; inset: -14% 0; z-index: 0; pointer-events: none;
+  opacity: .38; will-change: transform;
+}
+.upx-plx-back {
+  background-image: radial-gradient(circle, rgba(190,150,90,.5) 1.6px, transparent 2.4px),
+                    radial-gradient(circle, rgba(255,255,255,.55) 1.2px, transparent 2px);
+  background-size: 190px 190px, 130px 130px;
+  background-position: 0 0, 60px 40px;
+}
+.upx-plx-front {
+  background-image: radial-gradient(ellipse 9px 5px, rgba(230,170,190,.55) 60%, transparent 70%),
+                    radial-gradient(circle, rgba(190,150,90,.4) 2.2px, transparent 3px);
+  background-size: 260px 260px, 320px 320px;
+  background-position: 40px 20px, 120px 90px;
+  opacity: .3;
+}
+
+/* ---------- 5) Flora sway ---------- */
+.upx-sway { animation: upxFlora 5.5s ease-in-out infinite alternate; transform-origin: 50% 100%; }
+@keyframes upxFlora { from { rotate: -1.8deg; } to { rotate: 1.8deg; } }
+
+/* ---------- 6) Mikro-interaksi: kilau + denyut tombol ---------- */
+.upx-shine { position: relative; overflow: hidden; }
+.upx-shine::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,.5) 50%, transparent 68%);
+  translate: -130% 0; animation: upxSheen 4.2s ease-in-out infinite;
+}
+@keyframes upxSheen { 0% { translate: -130% 0; } 34% { translate: 130% 0; } 100% { translate: 130% 0; } }
+/* denyut terbatas (4x) agar tombol tetap stabil & mudah diklik setelahnya;
+   kilau ::after di atas yang berjalan berkala terus */
+.upx-pulse { animation: upxPulse 2.8s ease-in-out 4; }
+@keyframes upxPulse { 0%,100% { scale: 1; } 50% { scale: 1.035; } }
+
+/* ---------- 7) Countdown pop saat angka berubah ---------- */
+.upx-pop { animation: upxPop .45s cubic-bezier(.2,.9,.3,1.5); }
+@keyframes upxPop { 0% { scale: 1; } 40% { scale: 1.22; } 100% { scale: 1; } }
+
+/* ---------- 8) Galeri: tap/hover membesar halus ---------- */
+.upx-gal { overflow: hidden; }
+.upx-gal img { transition: scale .55s cubic-bezier(.2,.7,.2,1), filter .55s ease; }
+.upx-gal:hover img, .upx-gal:focus-visible img, .upx-gal.upx-tap img { scale: 1.07; filter: saturate(1.08); }
+
+/* ---------- Reduced motion: matikan semua gerak tambahan ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .upx-stage-in > *, .upx-rv { opacity: 1 !important; translate: 0 0 !important; scale: 1 !important; rotate: 0deg !important; transition: none !important; }
+  .upx-ambient, .upx-plx { display: none !important; }
+  .upx-sway, .upx-pulse, .upx-pop, .upx-shine::after { animation: none !important; }
+  .upx-gal img { transition: none; }
+}

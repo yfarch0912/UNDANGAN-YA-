@@ -493,15 +493,27 @@ const CONFIG = {
     { id:"p1", name:"Terra Pertemuan", src:"assets/undangya/observatorium/galeri-1.webp", ring:0, angle:-90,
       title:"Planet Terra — Pertemuan Pertama",
       story:"Di teras observatorium bukit itu, kami pertama kali menatap langit bersama. Ia menunjukkan rasi favoritnya; sejak malam itu, teleskop kami tak pernah lagi mengarah ke bintang lain." },
-    { id:"p2", name:"Venus Lentera", src:"assets/undangya/observatorium/galeri-2.webp", ring:0, angle:30,
+    { id:"p2", name:"Venus Lentera", src:"assets/undangya/observatorium/galeri-2.webp", ring:0, angle:0,
       title:"Planet Venus — Lentera Bintang",
       story:"Di taman planetarium, sebuah lentera kuningan berbentuk bintang menjadi saksi janji sederhana: ke mana pun orbit hidup membawa, kami akan selalu pulang ke langit yang sama." },
-    { id:"p3", name:"Mars Dansa", src:"assets/undangya/observatorium/galeri-3.webp", ring:0, angle:150,
+    { id:"p3", name:"Mars Dansa", src:"assets/undangya/observatorium/galeri-3.webp", ring:0, angle:90,
       title:"Planet Mars — Dansa Hujan Meteor",
       story:"Di bawah hujan meteor di atap kota, kami berdansa tanpa musik — hanya detak jantung dan desis bintang jatuh. Malam itu ia berbisik, 'Menikahlah denganku, di bawah bintang yang sama.'" },
-    { id:"p4", name:"Saturnus Atlas", src:"assets/undangya/observatorium/galeri-4.webp", ring:1, angle:200,
+    { id:"p4", name:"Saturnus Atlas", src:"assets/undangya/observatorium/galeri-4.webp", ring:1, angle:225,
       title:"Planet Saturnus — Atlas Bintang",
-      story:"Di tangga kubah observatorium, kami membuka atlas bintang tua dan menandai satu tanggal dengan lingkaran emas: 12 Juni 2027 — hari di mana kisah kami resmi tercatat di semesta." }
+      story:"Di tangga kubah observatorium, kami membuka atlas bintang tua dan menandai satu tanggal dengan lingkaran emas: 12 Juni 2027 — hari di mana kisah kami resmi tercatat di semesta." },
+    { id:"p5", name:"Nebula Arsip", src:"assets/undangya/observatorium/galeri-5.webp", ring:0, angle:180,
+      title:"Planet Nebula — Peta Bintang di Kubah",
+      story:"Di bawah kubah kaca planetarium, kami membuka peta bintang kuno dan menelusuri garis rasi dengan ujung jari. Setiap bintang di peta itu kini punya nama baru: tanggal-tanggal kecil perjalanan kami." },
+    { id:"p6", name:"Komet Teras", src:"assets/undangya/observatorium/galeri-6.webp", ring:1, angle:-45,
+      title:"Planet Komet — Dansa di Teras Kubah",
+      story:"Di teras atap observatorium, di antara kubah-kubah perak dan teleskop kuningan, hujan meteor melintas seperti kembang api langit. Kami berdansa pelan — semesta menjadi orkestranya." },
+    { id:"p7", name:"Atlas Tangga", src:"assets/undangya/observatorium/galeri-7.webp", ring:1, angle:45,
+      title:"Planet Atlas — Tangga Kubah & Atlas Tua",
+      story:"Di tangga batu kubah tua, ditemani lentera hangat, kami membuka atlas bintang warisan dan menandai halaman favorit kami: langit malam 12 Juni, malam yang akan mengubah segalanya." },
+    { id:"p8", name:"Orrery Hangat", src:"assets/undangya/observatorium/galeri-8.webp", ring:1, angle:135,
+      title:"Planet Orrery — Dua Cangkir & Mesin Planet",
+      story:"Di hadapan orrery kuningan yang bercahaya, dua cangkir hangat mengepul. Planet-planet kecil itu berputar selaras — seperti kami: berbeda orbit, satu pusat yang sama." }
   ],
   accounts: [
     { bank:"BCA", number:"1234567890", holder:"Meyzsa Putri Ananda" },
@@ -723,6 +735,67 @@ function initReveal(){
   const io=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}}),{threshold:0.08});
   els.forEach(e=>io.observe(e));
 }
+</script>
+<style id="uvEStyle">/* ===== UPGRADE KELOMPOK E: animasi serius + galeri 8 ===== */
+[data-uv]{opacity:0}
+[data-uv="up"]:not(.uv-in){transform:translateY(30px)}
+[data-uv="left"]:not(.uv-in){transform:translateX(-38px)}
+[data-uv="right"]:not(.uv-in){transform:translateX(38px)}
+[data-uv="zoom"]:not(.uv-in){transform:scale(.86) translateY(14px)}
+[data-uv="flip"]:not(.uv-in){transform:perspective(700px) rotateX(16deg) translateY(22px)}
+[data-uv="down"]:not(.uv-in){transform:translateY(-26px)}
+[data-uv].uv-in{opacity:1;transform:none;transition:opacity .85s ease,transform .85s cubic-bezier(.22,.9,.28,1)}
+.uv-cine>*{animation:uvCine .95s cubic-bezier(.22,.9,.3,1) both}
+.uv-cine>*:nth-child(1){animation-delay:.04s}.uv-cine>*:nth-child(2){animation-delay:.14s}
+.uv-cine>*:nth-child(3){animation-delay:.24s}.uv-cine>*:nth-child(4){animation-delay:.36s}
+.uv-cine>*:nth-child(5){animation-delay:.48s}.uv-cine>*:nth-child(6){animation-delay:.60s}
+.uv-cine>*:nth-child(7){animation-delay:.72s}.uv-cine>*:nth-child(8){animation-delay:.84s}
+.uv-cine>*:nth-child(n+9){animation-delay:.96s}
+@keyframes uvCine{from{opacity:0;transform:translateY(28px) scale(.965)}to{opacity:1;transform:none}}
+.uv-pop{animation:uvPop .38s ease!important}
+@keyframes uvPop{35%{transform:scale(1.24)}}
+@keyframes uvSway{0%,100%{transform:rotate(-2.6deg)}50%{transform:rotate(2.6deg)}}
+@keyframes uvBob{0%,100%{transform:translateY(0) rotate(-1.6deg)}50%{transform:translateY(-6px) rotate(1.6deg)}}
+
+#btnOpen, .btn, #btnRsvp, .cm-btn{position:relative;overflow:hidden}
+#btnOpen::after, .btn::after, #btnRsvp::after, .cm-btn::after{content:"";position:absolute;top:0;bottom:0;width:34%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);animation:uvShine 4.6s ease-in-out infinite;pointer-events:none;z-index:2}
+@keyframes uvShine{0%,55%{left:-60%}88%,100%{left:135%}}
+#btnOpen{animation:uvBtnPulse 3.4s ease-in-out infinite}
+@keyframes uvBtnPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.14)}}
+
+.planet{transition:box-shadow .35s ease,border-color .35s ease}.planet:hover{border-color:#ffeec0;box-shadow:0 0 20px rgba(255,238,192,.5)}
+
+.sec-medal{animation:uvSway 5.2s ease-in-out infinite;transform-origin:50% 60%}.orbit-ring.r1{animation:uvRingPulse 4.5s ease-in-out infinite}@keyframes uvRingPulse{50%{box-shadow:inset 0 0 22px rgba(201,164,92,.35),0 0 14px rgba(201,164,92,.25)}}
+
+@media (prefers-reduced-motion: reduce){[data-uv]{opacity:1!important;transform:none!important}.uv-cine>*{animation:none!important}}
+</style>
+<script id="uvEScript">/* ===== UPGRADE KELOMPOK E ===== */
+(function(){
+"use strict";
+if(window.__uvE)return;
+var reduced=false; try{reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+var cine=document.querySelector(".cover-in"); if(cine)cine.classList.add("uv-cine");
+var variants=["up","left","zoom","right","flip","up","down","zoom"];
+var cands=[];
+try{document.querySelectorAll("#content section .sec-head, #content section .card, #content section .scope-panel, #content section .quote, #content section .body-txt, #content section .mission-ticket, #content section form.rsvp, #content section .cargo, #content section .orbit-stage, #content section .divider").forEach(function(el,i){ if(el.hasAttribute("data-uv"))return; el.setAttribute("data-uv",variants[i%variants.length]); el.style.transitionDelay=((i%3)*0.09)+"s"; cands.push(el); });}catch(e){}
+function showAll(){cands.forEach(function(el){el.classList.add("uv-in");});}
+if(reduced||!("IntersectionObserver" in window)){showAll();}
+else{try{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("uv-in");io.unobserve(x.target);}});},{threshold:0.1,rootMargin:"0px 0px -6% 0px"});cands.forEach(function(el){io.observe(el);});}catch(e){showAll();}}
+var pxEls=[];
+try{document.querySelectorAll(".rasi-box, #galeri .planet-story, .guest-box").forEach(function(el,i){ if(el.hasAttribute("data-uv"))return; pxEls.push({el:el,sp:(i%2?-1:1)*(0.045+0.02*i)}); });}catch(e){}
+var ticking=false;
+function clamp(v){return Math.max(-16,Math.min(16,v));}
+function pxUpdate(){ticking=false; if(reduced)return; var vh=window.innerHeight||800; pxEls.forEach(function(o){try{var r=o.el.getBoundingClientRect(); if(!r||r.height===0)return; var off=clamp((r.top+r.height/2-vh/2)*o.sp); o.el.style.transform="translate3d(0,"+off.toFixed(1)+"px,0)";}catch(e){}});}
+function pxReq(){if(!ticking){ticking=true; if(window.requestAnimationFrame)window.requestAnimationFrame(pxUpdate); else pxUpdate();}}
+if(!reduced&&pxEls.length){try{window.addEventListener("scroll",pxReq,{passive:true}); window.addEventListener("resize",pxReq); pxReq();}catch(e){}}
+var cdEls=[]; try{cdEls=Array.prototype.slice.call(document.querySelectorAll("#cdD,#cdH,#cdM,#cdS"));}catch(e){}
+var cdPrev={},popCount=0;
+setInterval(function(){cdEls.forEach(function(el,i){var v=el.textContent; if(cdPrev[i]!==undefined&&cdPrev[i]!==v){el.classList.remove("uv-pop"); void el.offsetWidth; el.classList.add("uv-pop"); popCount++;} cdPrev[i]=v;});},300);
+
+window.__uvE={reveals:cands.length,parallax:pxEls.length,reduced:reduced,popCount:function(){return popCount;},
+sampleAmbient:function(){var el=document.querySelector(".sec-medal"); if(!el)return ""; try{var cs=window.getComputedStyle(el); return (cs.transform||"")+"|"+(cs.opacity||"")+"|"+(cs.boxShadow||"");}catch(e){return "";}},
+sampleAmbient2:function(){var el=document.querySelector(".orbit-ring.r1"); if(!el)return ""; try{var cs=window.getComputedStyle(el); return (cs.transform||"")+"|"+(cs.opacity||"")+"|"+(cs.boxShadow||"");}catch(e){return "";}}};
+})();
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>

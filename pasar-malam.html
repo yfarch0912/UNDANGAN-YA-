@@ -215,12 +215,14 @@ var photos=[
  {img:'assets/undangya/pasar-malam/lantern.webp',t:'Lorong Lentera',s:'Di lorong lentera burgundy-emas, langkah kami menyatu. Setiap lampu seperti doa kecil yang digantung untuk masa depan.'},
  {img:'assets/undangya/pasar-malam/stall.webp',t:'Stan Lempar Gelang',s:'Tiga kali gagal, sekali berhasil. Gelang terakhir mendarat tepat — katanya, itu tanda restu dari semesta.'},
  {img:'assets/undangya/pasar-malam/bride.webp',t:'Senyum di Kabin Lima',s:'Kabin nomor lima berhenti tepat di puncak. Di sana, di atas semua lampu, sebuah lamaran sederhana diucapkan.'},
- {img:'assets/undangya/pasar-malam/groom.webp',t:'Penjaga Malam Itu',s:'Ia menunggu di gerbang dengan tiket kedua di saku — tiket yang kini kami bagikan kepada Anda semua.'}];
+ {img:'assets/undangya/pasar-malam/groom.webp',t:'Penjaga Malam Itu',s:'Ia menunggu di gerbang dengan tiket kedua di saku — tiket yang kini kami bagikan kepada Anda semua.'},
+ {img:'assets/undangya/pasar-malam/kabin-7.webp',t:'Di Puncak Kabin Tujuh',s:'Kabin kami berhenti tepat di puncak roda. Di dalam kabin kaca yang hangat, kota berkilau di bawah — dan untuk sesaat, dunia hanya milik berdua.'},
+ {img:'assets/undangya/pasar-malam/kabin-8.webp',t:'Lentera di Stan Terakhir',s:'Di stan terakhir sebelum pulang, kami memegang lentera burgundy-emas yang sama. Cahayanya kecil, tetapi cukup untuk menerangi jalan menuju selamanya.'}];
 var wheel=qs('#wheel'), wrap=qs('#wheelWrap'), angle=0, cabins=[];
 var R=128, CX=165, CY=165;
-for(var i=0;i<6;i++){ var sp=document.createElement('div'); sp.className='spoke'; sp.style.transform='rotate('+(i*60)+'deg)'; wheel.appendChild(sp); }
+var STEP=360/photos.length; for(var i=0;i<photos.length;i++){ var sp=document.createElement('div'); sp.className='spoke'; sp.style.transform='rotate('+(i*STEP)+'deg)'; wheel.appendChild(sp); }
 photos.forEach(function(p,i){ var b=document.createElement('button'); b.className='cabin'; b.setAttribute('aria-label',p.t); b.innerHTML='<span class="gond"><img src="'+p.img+'" alt="'+p.t+'"></span>'; b.addEventListener('click',function(){ if(movedDist>8) return; openModal(i); }); wheel.appendChild(b); cabins.push(b); });
-function render(){ wheel.style.transform='rotate('+angle+'deg)'; cabins.forEach(function(b,i){ var rad=(i*60-90)*Math.PI/180; b.style.left=(CX+Math.cos(rad)*R)+'px'; b.style.top=(CY+Math.sin(rad)*R)+'px'; b.style.transform='rotate('+(-angle)+'deg)'; }); }
+function render(){ wheel.style.transform='rotate('+angle+'deg)'; cabins.forEach(function(b,i){ var rad=(i*STEP-90)*Math.PI/180; b.style.left=(CX+Math.cos(rad)*R)+'px'; b.style.top=(CY+Math.sin(rad)*R)+'px'; b.style.transform='rotate('+(-angle)+'deg)'; }); }
 var reduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var dragging=false,lastA=0,movedDist=0,downX=0,downY=0;
 function ptAngle(e){ var r=wrap.getBoundingClientRect(); return Math.atan2(e.clientY-(r.top+r.height/2), e.clientX-(r.left+r.width/2))*180/Math.PI; }
@@ -246,6 +248,67 @@ function stopMusic(){ playing=false; syncMusicLabel(); var el=bgmEl(); if(el)el.
 qs('#musicBtn').addEventListener('click',function(){ playing?stopMusic():startMusic(); });
 document.addEventListener('DOMContentLoaded',function(){var el=bgmEl();if(!el)return;el.addEventListener('play',function(){playing=true;syncMusicLabel();});el.addEventListener('pause',function(){playing=false;syncMusicLabel();});});
 window.__pm={ getAngle:function(){return angle}, rotateBy:function(d){angle+=d;render();}, litCount:function(){return document.querySelectorAll('#marquee .ch.lit').length}, openModal:openModal };
+})();
+</script>
+<style id="uvEStyle">/* ===== UPGRADE KELOMPOK E: animasi serius + galeri 8 ===== */
+[data-uv]{opacity:0}
+[data-uv="up"]:not(.uv-in){transform:translateY(30px)}
+[data-uv="left"]:not(.uv-in){transform:translateX(-38px)}
+[data-uv="right"]:not(.uv-in){transform:translateX(38px)}
+[data-uv="zoom"]:not(.uv-in){transform:scale(.86) translateY(14px)}
+[data-uv="flip"]:not(.uv-in){transform:perspective(700px) rotateX(16deg) translateY(22px)}
+[data-uv="down"]:not(.uv-in){transform:translateY(-26px)}
+[data-uv].uv-in{opacity:1;transform:none;transition:opacity .85s ease,transform .85s cubic-bezier(.22,.9,.28,1)}
+.uv-cine>*{animation:uvCine .95s cubic-bezier(.22,.9,.3,1) both}
+.uv-cine>*:nth-child(1){animation-delay:.04s}.uv-cine>*:nth-child(2){animation-delay:.14s}
+.uv-cine>*:nth-child(3){animation-delay:.24s}.uv-cine>*:nth-child(4){animation-delay:.36s}
+.uv-cine>*:nth-child(5){animation-delay:.48s}.uv-cine>*:nth-child(6){animation-delay:.60s}
+.uv-cine>*:nth-child(7){animation-delay:.72s}.uv-cine>*:nth-child(8){animation-delay:.84s}
+.uv-cine>*:nth-child(n+9){animation-delay:.96s}
+@keyframes uvCine{from{opacity:0;transform:translateY(28px) scale(.965)}to{opacity:1;transform:none}}
+.uv-pop{animation:uvPop .38s ease!important}
+@keyframes uvPop{35%{transform:scale(1.24)}}
+@keyframes uvSway{0%,100%{transform:rotate(-2.6deg)}50%{transform:rotate(2.6deg)}}
+@keyframes uvBob{0%,100%{transform:translateY(0) rotate(-1.6deg)}50%{transform:translateY(-6px) rotate(1.6deg)}}
+
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;bottom:0;width:34%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-18deg);animation:uvShine 4.6s ease-in-out infinite;pointer-events:none;z-index:2}
+@keyframes uvShine{0%,55%{left:-60%}88%,100%{left:135%}}
+#openBtn{animation:uvBtnPulse 3.4s ease-in-out infinite}
+@keyframes uvBtnPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.14)}}
+
+.cabin{transition:filter .3s ease}.cabin:hover{filter:brightness(1.18)}
+
+section::before{animation:uvChase 1.6s linear infinite}@keyframes uvChase{from{background-position:0 0}to{background-position:26px 0}}.gate-board::before,.gate-board::after{animation:uvChaseB 1.3s linear infinite}@keyframes uvChaseB{from{background-position:0 0}to{background-position:22px 0}}.medallion{animation:uvSway 5s ease-in-out infinite;transform-origin:50% 30%}.cabin img{animation:uvCabinGlow 3.6s ease-in-out infinite}@keyframes uvCabinGlow{50%{box-shadow:0 4px 20px rgba(255,215,130,.8),0 0 10px rgba(255,215,130,.5)}}
+
+@media (prefers-reduced-motion: reduce){[data-uv]{opacity:1!important;transform:none!important}.uv-cine>*{animation:none!important}}
+</style>
+<script id="uvEScript">/* ===== UPGRADE KELOMPOK E ===== */
+(function(){
+"use strict";
+if(window.__uvE)return;
+var reduced=false; try{reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){}
+var cine=document.querySelector("#cover"); if(cine)cine.classList.add("uv-cine");
+var variants=["up","left","zoom","right","flip","up","down","zoom"];
+var cands=[];
+try{document.querySelectorAll("section:not(#cover)>*:not(.orbit):not(#wheelWrap)").forEach(function(el,i){ if(el.hasAttribute("data-uv"))return; el.setAttribute("data-uv",variants[i%variants.length]); el.style.transitionDelay=((i%3)*0.09)+"s"; cands.push(el); });}catch(e){}
+function showAll(){cands.forEach(function(el){el.classList.add("uv-in");});}
+if(reduced||!("IntersectionObserver" in window)){showAll();}
+else{try{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("uv-in");io.unobserve(x.target);}});},{threshold:0.1,rootMargin:"0px 0px -6% 0px"});cands.forEach(function(el){io.observe(el);});}catch(e){showAll();}}
+var pxEls=[];
+try{document.querySelectorAll(".orbit, #wheelWrap").forEach(function(el,i){ if(el.hasAttribute("data-uv"))return; pxEls.push({el:el,sp:(i%2?-1:1)*(0.045+0.02*i)}); });}catch(e){}
+var ticking=false;
+function clamp(v){return Math.max(-16,Math.min(16,v));}
+function pxUpdate(){ticking=false; if(reduced)return; var vh=window.innerHeight||800; pxEls.forEach(function(o){try{var r=o.el.getBoundingClientRect(); if(!r||r.height===0)return; var off=clamp((r.top+r.height/2-vh/2)*o.sp); o.el.style.transform="translate3d(0,"+off.toFixed(1)+"px,0)";}catch(e){}});}
+function pxReq(){if(!ticking){ticking=true; if(window.requestAnimationFrame)window.requestAnimationFrame(pxUpdate); else pxUpdate();}}
+if(!reduced&&pxEls.length){try{window.addEventListener("scroll",pxReq,{passive:true}); window.addEventListener("resize",pxReq); pxReq();}catch(e){}}
+var cdEls=[]; try{cdEls=Array.prototype.slice.call(document.querySelectorAll("#cd-d,#cd-h,#cd-m,#cd-s"));}catch(e){}
+var cdPrev={},popCount=0;
+setInterval(function(){cdEls.forEach(function(el,i){var v=el.textContent; if(cdPrev[i]!==undefined&&cdPrev[i]!==v){el.classList.remove("uv-pop"); void el.offsetWidth; el.classList.add("uv-pop"); popCount++;} cdPrev[i]=v;});},300);
+
+window.__uvE={reveals:cands.length,parallax:pxEls.length,reduced:reduced,popCount:function(){return popCount;},
+sampleAmbient:function(){var el=document.querySelector(".medallion"); if(!el)return ""; try{var cs=window.getComputedStyle(el); return (cs.transform||"")+"|"+(cs.opacity||"")+"|"+(cs.boxShadow||"");}catch(e){return "";}},
+sampleAmbient2:function(){var el=document.querySelector(".cabin img"); if(!el)return ""; try{var cs=window.getComputedStyle(el); return (cs.transform||"")+"|"+(cs.opacity||"")+"|"+(cs.boxShadow||"");}catch(e){return "";}}};
 })();
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>

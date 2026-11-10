@@ -80,6 +80,17 @@ section.in h2::after{transform:scaleX(1)}
 input,select,textarea{transition:border-color .3s,box-shadow .3s}
 input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(199,161,102,.25);outline:0}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.js .rv{opacity:1;transform:none}}
+
+/* ===== UPGRADE B 2026-11-10: ambient debu emas emerald + galeri (aditif, Three.js tidak diubah) ===== */
+body{overflow-x:clip}
+.ambient{position:fixed;inset:0;max-width:430px;margin:0 auto;z-index:34;pointer-events:none;overflow:hidden}
+.ambient i{position:absolute;top:-4%;width:5px;height:5px;border-radius:50%;background:#C7A166;opacity:.8;animation:uFall linear infinite}
+.ambient i.leaf{width:9px;height:13px;border-radius:70% 0 70% 0;background:rgba(30,92,64,.55)}
+@keyframes uFall{0%{transform:translate3d(0,-5vh,0) rotate(0deg)}100%{transform:translate3d(var(--sw,20px),106vh,0) rotate(320deg)}}
+body.amb-paused .ambient i{animation-play-state:paused}
+.gallery img{border:2px solid rgba(199,161,102,.55)}
+#galeri .gallery{gap:12px}
+@media (prefers-reduced-motion:reduce){.ambient{display:none}}
 </style>
 <link rel="canonical" href="https://undangya.web.id/emerald-luxe">
 <meta property="og:type" content="website">
@@ -134,7 +145,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 
   <section id="galeri">
     <h2>Galeri Prewedding</h2>
     <p>Foto contoh fotorealistik hasil generate AI, dioptimasi Python (Pillow → WebP ≤97KB). Klik foto untuk memperbesar.</p>
-    <div class="gallery"><img src="assets/undangya/emerald-luxe/couple.webp" alt="Prewedding berdua di taman emerald"><img src="assets/undangya/emerald-luxe/candid.webp" alt="Prewedding candid tertawa berdua"><img src="assets/undangya/emerald-luxe/bride.webp" alt="Potret mempelai wanita"><img src="assets/undangya/emerald-luxe/groom.webp" alt="Potret mempelai pria"></div>
+    <div class="gallery"><img src="assets/undangya/emerald-luxe/couple.webp" alt="Prewedding berdua di taman emerald"><img src="assets/undangya/emerald-luxe/candid.webp" alt="Prewedding candid tertawa berdua"><img src="assets/undangya/emerald-luxe/gallery-arch.webp" alt="Prewedding berjalan melewati gerbang ivy emerald"><img src="assets/undangya/emerald-luxe/gallery-fountain.webp" alt="Prewedding candid tertawa di tepi air mancur istana"><img src="assets/undangya/emerald-luxe/gallery-ivy.webp" alt="Potret dekat berdua di dinding ivy istana"><img src="assets/undangya/emerald-luxe/gallery-terrace.webp" alt="Prewedding berdansa di teras istana saat senja"><img src="assets/undangya/emerald-luxe/gallery-ring.webp" alt="Momen penyematan cincin di taman emerald"><img src="assets/undangya/emerald-luxe/gallery-steps.webp" alt="Prewedding di tangga istana di antara kolom ukiran"><img src="assets/undangya/emerald-luxe/bride.webp" alt="Potret mempelai wanita"><img src="assets/undangya/emerald-luxe/groom.webp" alt="Potret mempelai pria"></div>
   </section>
 
   <section id="amplop" style="background:var(--cream)">
@@ -214,6 +225,21 @@ try{
  let mx=0; addEventListener("pointermove",e=>mx=(e.clientX/innerWidth-.5));
  (function anim(t){requestAnimationFrame(anim); r1.rotation.y=t*.0006; r2.rotation.y=-t*.0006; r1.position.y=Math.sin(t*.001)*.15; r2.position.y=Math.cos(t*.001)*.15; cam.position.x=mx*1.2; cam.lookAt(0,0,0); renderer.render(scene,cam)})(0);
 }catch(e){ document.getElementById("three").style.display="none"; }
+</script>
+<script>
+/* ===== UPGRADE B 2026-11-10: ambient + parallax DOM (aditif; engine Three.js & musik tidak diubah) ===== */
+(function(){
+var reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!reduced){
+ var amb=document.createElement("div");amb.className="ambient";amb.setAttribute("aria-hidden","true");
+ for(var i=0;i<16;i++){var s=document.createElement("i");s.style.left=(Math.random()*97)+"%";s.style.animationDuration=(9+Math.random()*10)+"s";s.style.animationDelay=(-Math.random()*14)+"s";s.style.setProperty("--sw",(Math.random()*46-23)+"px");if(i%3===0)s.className="leaf";amb.appendChild(s);}
+ document.body.appendChild(amb);
+ document.addEventListener("visibilitychange",function(){document.body.classList.toggle("amb-paused",document.hidden);});
+ var plx=[document.querySelector(".hero-inner"),document.querySelector(".couple")].filter(Boolean),ticking=false;
+ function upd(){ticking=false;var vh=window.innerHeight;plx.forEach(function(el,i){var r=el.getBoundingClientRect();if(r.bottom<-40||r.top>vh+40)return;var c=(r.top+r.height/2-vh/2)/vh;el.style.translate="0 "+(c*(i%2?-20:-12)).toFixed(1)+"px";});}
+ window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(upd);}},{passive:true});upd();
+}
+})();
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>

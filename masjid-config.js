@@ -54,7 +54,10 @@ window.MASJID_CONFIG = {
     { src: "gallery/gal-arch.webp", alt: "Ilustrasi lengkung emas berhiaskan mawar merah dan lentera", cap: "Lengkung Emas" },
     { src: "gallery/gal-falls.webp", alt: "Ilustrasi air terjun ganda dan kolam berbatu", cap: "Air Terjun" },
     { src: "gallery/gal-mosque-dome.webp", alt: "Ilustrasi kubah dan menara masjid dari dekat", cap: "Kubah & Menara" },
-    { src: "gallery/gal-waterfall-rocks.webp", alt: "Ilustrasi bebatuan dan air terjun di depan masjid", cap: "Kolam Batu" }
+    { src: "gallery/gal-waterfall-rocks.webp", alt: "Ilustrasi bebatuan dan air terjun di depan masjid", cap: "Kolam Batu" },
+    { src: "gallery/gal-couple-arch.webp", alt: "Ilustrasi AI pasangan Meyzsa & Fahrezzi bergandengan tangan di bawah lengkung bunga gading masjid", cap: "Di Bawah Lengkung Bunga" },
+    { src: "gallery/gal-couple-dome.webp", alt: "Ilustrasi AI pasangan Meyzsa & Fahrezzi berjalan di taman bunga dengan kubah masjid di belakang", cap: "Jalan di Taman Masjid" },
+    { src: "gallery/gal-couple-lantern.webp", alt: "Ilustrasi AI close-up pasangan Meyzsa & Fahrezzi bergandengan tangan di bawah lentera emas", cap: "Cahaya Lentera" }
   ],
   gift: [
     { bank: "BCA (contoh)", number: "1234567890", name: "a.n. Meyzsa Nur Ramadhani" },

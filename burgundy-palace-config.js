@@ -77,7 +77,9 @@ window.BP_CONFIG = {
     { src: "assets/undangya/burgundy-palace/photos/portrait-groom.webp", caption: "Mempelai Pria" },
     { src: "assets/undangya/burgundy-palace/photos/prewed-fountain.webp", caption: "Di Air Mancur Emas" },
     { src: "assets/undangya/burgundy-palace/photos/prewed-stairs.webp", caption: "Tawa di Tangga Istana" },
-    { src: "assets/undangya/burgundy-palace/photos/prewed-garden.webp", caption: "Langkah Berdua" }
+    { src: "assets/undangya/burgundy-palace/photos/prewed-garden.webp", caption: "Langkah Berdua" },
+    { src: "assets/undangya/burgundy-palace/photos/prewed-grand-stairs.webp", caption: "Senyum di Tangga Agung" },
+    { src: "assets/undangya/burgundy-palace/photos/prewed-fountain-dusk.webp", caption: "Senja di Air Mancur Emas" }
   ],
 
   // Amplop digital = MODE DEMO. Nomor di bawah ini CONTOH, bukan rekening asli.

@@ -366,6 +366,61 @@ form.reply{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.
 .music-btn .disc svg{width:12px; height:12px; display:block}
 .music-btn.playing .disc{color:var(--burgundy)}
 
+/* ===== KC-UPGRADE: animasi serius Surat Hidup ===== */
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@keyframes kcUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes kcZoom{from{transform:scale(1.1)}to{transform:scale(1)}}
+@media (prefers-reduced-motion: no-preference){
+  #cover .cover-in>*{animation:kcUp .9s cubic-bezier(.22,.8,.3,1) both}
+  #cover .env-stage{animation:kcZoom 1.4s cubic-bezier(.22,.8,.3,1) .2s both}
+  /* segel lilin berdenyut lembut menunggu dipecahkan */
+  .seal-wrap{animation:kcSeal 2.6s ease-in-out infinite}
+  /* rangkaian tepi bergoyang seperti tertiup angin taman */
+  .sprig{animation:kcSway 5.2s ease-in-out infinite alternate}
+  .sprig.br{animation-delay:-2.4s}
+  /* perangko pada amplop melambai halus */
+  .env-postmark{animation:kcSway 6s ease-in-out infinite alternate}
+}
+@keyframes kcSeal{0%,100%{scale:1}50%{scale:1.07}}
+@keyframes kcSway{from{rotate:-1.7deg}to{rotate:1.7deg}}
+/* reveal bervariasi (berpasangan dengan sistem grown existing) */
+.reveal{transition:opacity .95s cubic-bezier(.22,.8,.3,1),transform .95s cubic-bezier(.22,.8,.3,1)}
+.reveal[data-rv="l"]:not(.in){transform:translateX(-36px)}
+.reveal[data-rv="r"]:not(.in){transform:translateX(36px)}
+.reveal[data-rv="z"]:not(.in){transform:scale(.87) translateY(14px)}
+.reveal[data-rv="d"]:not(.in){transform:translateY(46px)}
+/* countdown pop */
+.kc-pop{animation:kcPop .5s cubic-bezier(.3,1.6,.4,1)}
+@keyframes kcPop{0%{transform:scale(1)}35%{transform:scale(1.15) translateY(-2px)}100%{transform:scale(1)}}
+/* tombol berkilau */
+.send-btn,.maps-btn,.copy-btn{position:relative;overflow:hidden}
+.send-btn::after,.maps-btn::after,.copy-btn::after{content:"";position:absolute;top:0;bottom:0;left:-70%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-18deg);animation:kcShine 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes kcShine{0%,55%{left:-70%}88%,100%{left:135%}}
+/* mikro-interaksi galeri taman */
+.g-item{transition:transform .5s cubic-bezier(.22,.8,.3,1),filter .5s ease;cursor:pointer}
+.g-item:hover{filter:drop-shadow(0 20px 22px rgba(74,52,33,.34))}
+.g-item img{transition:transform .8s cubic-bezier(.22,.8,.3,1)}
+.g-item:hover img{transform:scale(1.06)}
+/* kelopak jatuh di taman surat (ambient) */
+.upg-fx{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:min(430px,100%);overflow:hidden;pointer-events:none;z-index:4}
+.upg-fx i{position:absolute;top:-4%;border-radius:62% 6px 62% 6px;background:linear-gradient(135deg,rgba(210,157,171,.85),rgba(160,58,78,.55));opacity:0;animation:upgPetal linear infinite}
+@keyframes upgPetal{0%{transform:translate3d(0,0,0) rotate(0deg);opacity:0}10%{opacity:.75}52%{transform:translate3d(16px,54vh,0) rotate(190deg);opacity:.6}100%{transform:translate3d(-12px,106vh,0) rotate(360deg);opacity:0}}
+/* lightbox perangko & kartu pos */
+.upg-lb{position:fixed;inset:0;z-index:120;background:rgba(38,26,18,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.upg-lb.show{display:flex}
+.upg-lb figure{margin:0;text-align:center;max-width:min(430px,94vw);background:#fdfaf1;padding:10px 10px 14px;box-shadow:0 24px 50px rgba(0,0,0,.5)}
+.upg-lb img{max-width:100%;max-height:72dvh;display:block}
+.upg-lb figcaption{color:#6d5138;font-size:15px;margin-top:10px;font-style:italic}
+.upg-lb-x{position:absolute;top:14px;right:16px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(253,250,241,.55);background:transparent;color:#fdfaf1;font-size:22px;cursor:pointer}
+.upg-lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid rgba(253,250,241,.55);background:rgba(0,0,0,.35);color:#fdfaf1;font-size:24px;cursor:pointer}
+.upg-lb-nav.prev{left:10px}.upg-lb-nav.next{right:10px}
+@media (prefers-reduced-motion: reduce){
+  .upg-fx{display:none}.kc-pop{animation:none}
+  .send-btn::after,.maps-btn::after,.copy-btn::after{animation:none;display:none}
+  .g-item,.g-item img{transition:none}.sprig,.seal-wrap,.env-postmark{animation:none}
+}
+
 </style>
 <link rel="canonical" href="https://undangya.web.id/surat-hidup">
 <meta property="og:type" content="website">
@@ -736,7 +791,11 @@ const CONFIG = {
     { src: "assets/undangya/surat-hidup/couple.webp",  alt: "Ilustrasi cat air Meyzsa & Fahrezzi di taman kertas", caption: "sejak surat pertama", label: "Perangko" },
     { src: "assets/undangya/surat-hidup/galeri-1.webp", alt: "Ilustrasi kartu pos pasangan berjalan bergandengan di taman", caption: "berjalan ke arah yang sama", label: "Kartu Pos" },
     { src: "assets/undangya/surat-hidup/galeri-2.webp", alt: "Ilustrasi cincin emas di atas surat tulisan tangan bersegel lilin hati", caption: "janji yang tersegel", label: "Perangko" },
-    { src: "assets/undangya/surat-hidup/galeri-3.webp", alt: "Ilustrasi kartu pos pelaminan taman dengan kubah masjid di kejauhan", caption: "alamat hari bahagia", label: "Kartu Pos" }
+    { src: "assets/undangya/surat-hidup/galeri-3.webp", alt: "Ilustrasi kartu pos pelaminan taman dengan kubah masjid di kejauhan", caption: "alamat hari bahagia", label: "Kartu Pos" },
+    { src: "assets/undangya/surat-hidup/galeri-4.webp", alt: "Ilustrasi cat air pasangan bertukar surat di bawah pohon kamboja di taman kertas", caption: "surat yang tak pernah salah alamat", label: "Perangko" },
+    { src: "assets/undangya/surat-hidup/galeri-5.webp", alt: "Ilustrasi cat air pasangan menanam bibit mawar bersama di taman kertas", caption: "menanam janji, menyiramnya bersama", label: "Kartu Pos" },
+    { src: "assets/undangya/surat-hidup/galeri-6.webp", alt: "Ilustrasi cat air pasangan berayun bersama di ayunan taman berbunga", caption: "berayun di halaman yang sama", label: "Perangko" },
+    { src: "assets/undangya/surat-hidup/galeri-7.webp", alt: "Ilustrasi cat air pasangan bergandengan di depan lengkung bunga pelaminan taman", caption: "sampai di alamat terakhir", label: "Kartu Pos" }
   ],
   accounts: [
     { bank: "BCA",  number: "1234567890",    name: "Meyzsa Putri Ananda" },
@@ -1023,5 +1082,65 @@ $("rsvpForm").addEventListener("submit", (e) => {
 });
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+<div class="upg-lb" id="upgLb" role="dialog" aria-label="Foto diperbesar" aria-hidden="true"><button class="upg-lb-x" id="upgLbX" type="button" aria-label="Tutup">×</button><button class="upg-lb-nav prev" id="upgLbPrev" type="button" aria-label="Foto sebelumnya">‹</button><figure><img id="upgLbImg" alt=""><figcaption id="upgLbCap"></figcaption></figure><button class="upg-lb-nav next" id="upgLbNext" type="button" aria-label="Foto berikutnya">›</button></div>
+
+<script>
+/* ===== KC-UPGRADE: mesin animasi Surat Hidup ===== */
+(function(){
+"use strict";
+var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* variasi reveal: arah + jeda; .in menjadi penanda varian (sistem grown existing tetap berjalan) */
+var V=["u","l","r","z","d","u","r","l"];
+var revs=document.querySelectorAll(".reveal");
+revs.forEach(function(el,i){ if(!el.getAttribute("data-rv")) el.setAttribute("data-rv", V[i%V.length]); el.style.transitionDelay=((i%4)*70)+"ms"; });
+if(RM || !("IntersectionObserver" in window)){ revs.forEach(function(el){ el.classList.add("in"); el.style.transitionDelay=""; }); }
+else { var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); en.target.style.transitionDelay=""; io.unobserve(en.target); } }); },{threshold:.1});
+  revs.forEach(function(el){ io.observe(el); }); }
+/* paralaks: kartu perangko galeri + ikon bab */
+var plx=[];
+document.querySelectorAll(".g-item").forEach(function(el,i){ el.setAttribute("data-plx",(i%2? -9:9)); plx.push(el); });
+document.querySelectorAll(".sec-icon").forEach(function(el,i){ el.setAttribute("data-plx",(i%2? -13:13)); plx.push(el); });
+var tick=false;
+function plxUpd(){ tick=false; if(RM) return; var vh=window.innerHeight||800;
+  plx.forEach(function(el){ var cur=parseFloat((el.style.translate||"0 0").split(" ")[1])||0;
+    var r=el.getBoundingClientRect(); var top=r.top-cur;
+    if(top+r.height<-100||top>vh+100){ el.style.translate=""; return; }
+    var c=(top+r.height/2-vh/2)/vh;
+    el.style.translate="0 "+(-c*parseFloat(el.getAttribute("data-plx"))).toFixed(1)+"px"; });
+}
+window.addEventListener("scroll",function(){ if(!tick){ tick=true; requestAnimationFrame(plxUpd); } },{passive:true});
+window.addEventListener("resize",function(){ requestAnimationFrame(plxUpd); });
+setTimeout(plxUpd,600);
+/* countdown pop */
+var ids=["cdD","cdH","cdM","cdS"], last={};
+function watch(){ ids.forEach(function(id){ var el=document.getElementById(id); if(!el) return; var v=el.textContent;
+  if(last[id]!==undefined && last[id]!==v && !RM){ var box=el.closest(".cd")||el; box.classList.remove("kc-pop"); void box.offsetWidth; box.classList.add("kc-pop"); }
+  last[id]=v; }); }
+watch(); setInterval(watch,250);
+/* ambient: kelopak jatuh */
+if(!RM){ var fx=document.createElement("div"); fx.className="upg-fx"; fx.setAttribute("aria-hidden","true");
+  for(var i=0;i<9;i++){ var s=document.createElement("i"); var sz=8+(i%3)*3;
+    s.style.left=((i*43+5)%94)+"%"; s.style.width=sz+"px"; s.style.height=(sz*0.72)+"px";
+    s.style.animationDuration=(11+(i%4)*2.3)+"s"; s.style.animationDelay=(-(i*1.71))+"s"; fx.appendChild(s); }
+  document.body.appendChild(fx); }
+/* lightbox perangko & kartu pos (mencakup slot baru) */
+var lb=document.getElementById("upgLb"), lbImg=document.getElementById("upgLbImg"), lbCap=document.getElementById("upgLbCap");
+var items=[].slice.call(document.querySelectorAll("#galleryWrap .g-item")), cur=0;
+function capOf(f){ var c=f.querySelector(".cap"); var p=f.querySelector(".perfo"); return (p?p.textContent+" · ":"")+(c?c.textContent:""); }
+function openLb(i){ cur=(i+items.length)%items.length; var img=items[cur].querySelector("img");
+  lbImg.src=img.src; lbImg.alt=img.alt||""; lbCap.textContent=capOf(items[cur]); lb.classList.add("show"); lb.setAttribute("aria-hidden","false"); }
+function closeLb(){ lb.classList.remove("show"); lb.setAttribute("aria-hidden","true"); }
+items.forEach(function(f,i){ f.setAttribute("tabindex","0"); f.setAttribute("role","button");
+  f.addEventListener("click",function(){ openLb(i); });
+  f.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); openLb(i); } }); });
+document.getElementById("upgLbX").addEventListener("click",closeLb);
+document.getElementById("upgLbPrev").addEventListener("click",function(e){ e.stopPropagation(); openLb(cur-1); });
+document.getElementById("upgLbNext").addEventListener("click",function(e){ e.stopPropagation(); openLb(cur+1); });
+lb.addEventListener("click",function(e){ if(e.target===lb) closeLb(); });
+document.addEventListener("keydown",function(e){ if(!lb.classList.contains("show")) return;
+  if(e.key==="Escape") closeLb(); if(e.key==="ArrowLeft") openLb(cur-1); if(e.key==="ArrowRight") openLb(cur+1); });
+})();
+
+</script>
 </body>
 </html>

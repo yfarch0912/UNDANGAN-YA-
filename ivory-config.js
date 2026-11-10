@@ -34,7 +34,12 @@ window.IVORY_CONFIG = {
     { src: "photos/venue-botanical-garden.webp", alt: "Venue The Botanical Garden" },
     { src: "photos/couple-outdoor.webp", alt: "Fahrezzi & Meyzsa berjalan di taman" },
     { src: "photos/garden-celebration.webp", alt: "Susunan kursi & pelaminan taman" },
-    { src: "photos/floral-detail.webp", alt: "Detail bunga mawar putih & blush" }
+    { src: "photos/floral-detail.webp", alt: "Detail bunga mawar putih & blush" },
+    { src: "photos/couple-path-walk.webp", alt: "Fahrezzi & Meyzsa berjalan bergandengan di jalan setapak taman botanical" },
+    { src: "photos/couple-rose-arch.webp", alt: "Fahrezzi & Meyzsa di bawah lengkung mawar putih" },
+    { src: "photos/couple-close-laugh.webp", alt: "Potret dekat Fahrezzi & Meyzsa tertawa di antara mawar putih" },
+    { src: "photos/couple-bench-ring.webp", alt: "Fahrezzi menyematkan cincin untuk Meyzsa di bangku taman mawar" },
+    { src: "photos/couple-greenhouse-dance.webp", alt: "Fahrezzi & Meyzsa berdansa di depan rumah kaca botanical saat senja" }
   ],
   closing: "Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih."
 };

@@ -50,6 +50,14 @@ window.PALACE_CONFIG = {
     { year: "2027", title: "Hari Bahagia", img: "flora/lily-pink.webp", text: "Kini gerbang itu terbuka untuk selamanya. Meyzsa & Fahrezzi mengundang Anda menjadi saksi babak terindah mereka. (teks contoh)" }
   ],
   gallery: [
+    { src: "photos/gallery-couple-gate.webp", alt: "Ilustrasi watercolor Meyzsa & Fahrezzi berjalan melewati gerbang taman istana", cap: "Melewati Gerbang Taman" },
+    { src: "photos/gallery-couple-fountain.webp", alt: "Ilustrasi watercolor Meyzsa & Fahrezzi duduk tertawa di tepi air mancur istana", cap: "Tawa di Air Mancur" },
+    { src: "photos/gallery-couple-arch.webp", alt: "Ilustrasi watercolor Meyzsa & Fahrezzi di bawah lengkung terracotta dengan buket peony", cap: "Di Bawah Lengkung" },
+    { src: "photos/gallery-couple-dance.webp", alt: "Ilustrasi watercolor Meyzsa & Fahrezzi berdansa di paviliun taman", cap: "Dansa di Paviliun" },
+    { src: "photos/gallery-couple-close.webp", alt: "Ilustrasi watercolor potret dekat Meyzsa & Fahrezzi di antara mawar putih", cap: "Dua Hati, Satu Pandang" },
+    { src: "photos/gallery-couple-terrace.webp", alt: "Ilustrasi watercolor Meyzsa & Fahrezzi di teras istana saat senja keemasan", cap: "Senja di Teras Istana" },
+    { src: "photos/gallery-couple-path.webp", alt: "Ilustrasi watercolor Meyzsa & Fahrezzi berjalan bergandengan di jalan setapak peony", cap: "Jalan Setapak Peony" },
+    { src: "photos/gallery-couple-ring.webp", alt: "Ilustrasi watercolor Fahrezzi menyematkan cincin untuk Meyzsa di depan gerbang bronze", cap: "Janji di Gerbang Bronze" },
     { src: "scenes/palace-vista.webp", alt: "Panorama taman istana dan lengkung batu", cap: "Palace Vista" },
     { src: "scenes/fountain-scene.webp", alt: "Air mancur tiga tingkat di tengah taman", cap: "Air Mancur" },
     { src: "scenes/gallery-gate-detail.webp", alt: "Detail ukiran gerbang bronze", cap: "Detail Gerbang" },
