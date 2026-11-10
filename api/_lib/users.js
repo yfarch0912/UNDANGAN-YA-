@@ -125,7 +125,32 @@ async function rateLimitReset(key) {
 function revokedPath(jti) { return "auth/revoked/" + String(jti) + ".json"; }
 async function revokeSession(jti, exp) {
   if (!jti) return;
-  await blobPut(revokedPath(jti), JSON.stringify({ exp: exp || 0, revokedAt: new Date().toISOString() }));
+  const path = revokedPath(jti);
+  await blobPut(path, JSON.stringify({ exp: exp || 0, revokedAt: new Date().toISOString() }));
+  /* Confirm-read (keputusan user 2026-11-10: "perbaiki semua"; kambuh
+     ke-5 pada audit 15:05 hari yang sama setelah 36 run bersih):
+     propagasi baca-setelah-tulis Blob sesekali ±0,7–0,95 dtk — lebih
+     lambat dari jendela retry isSessionRevoked (±550ms) — sehingga
+     token yang baru dicabut sempat lolos sekali sebelum 401. Logout
+     kini membaca-balik catatan cabut (jeda 150ms) sampai TERLIHAT,
+     batas ±2 detik, sebelum membalas 200: begitu respons logout
+     diterima, pencabutan dijamin sudah terbaca oleh /me. Bila batas
+     tercapai tanpa terlihat (gangguan Blob luar biasa), logout TETAP
+     dilanjutkan dan keadaan dicatat di log server — menggantung atau
+     menggagalkan logout lebih buruk bagi pengguna; retry di
+     isSessionRevoked tetap menjadi lapis kedua. */
+  const deadline = Date.now() + 2000;
+  for (;;) {
+    try {
+      const t = await blobGet(path);
+      if (t) return;
+    } catch (e) { /* belum terbaca / gangguan sesaat: tunggu lalu coba lagi sampai batas */ }
+    const sisa = deadline - Date.now();
+    if (sisa <= 0) break;
+    await new Promise((r) => setTimeout(r, Math.min(150, sisa)));
+  }
+  console.error("[auth] confirm-read logout: catatan cabut " + String(jti) +
+    " belum terlihat setelah ±2 dtk; logout tetap dilanjutkan (retry /me adalah lapis kedua).");
 }
 async function isSessionRevoked(jti) {
   if (!jti) return false;
