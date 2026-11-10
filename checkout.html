@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout — UNDANGAN-YA! 3D × Midtrans Sandbox</title>
-<meta name="description" content="Demo checkout undangan pernikahan digital 3D dengan Midtrans Sandbox: pilih paket Silver / Gold / Platinum, pilih tema, bayar via QRIS, VA, e-wallet, atau kartu (mode test).">
+<meta name="description" content="Demo checkout undangan pernikahan digital 3D dengan Midtrans Sandbox: pilih paket Basic / Premium / Eksklusif / Luxury, pilih tema, bayar via QRIS, VA, e-wallet, atau kartu (mode test).">
 <link rel="icon" type="image/png" href="assets/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,12 +81,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="UNDANGYA!">
 <meta property="og:title" content="Checkout — UNDANGAN-YA! 3D × Midtrans Sandbox">
-<meta property="og:description" content="Demo checkout undangan pernikahan digital 3D dengan Midtrans Sandbox: pilih paket Silver / Gold / Platinum, pilih tema, bayar via QRIS, VA, e-wallet, atau kartu (mode test).">
+<meta property="og:description" content="Demo checkout undangan pernikahan digital 3D dengan Midtrans Sandbox: pilih paket Basic / Premium / Eksklusif / Luxury, pilih tema, bayar via QRIS, VA, e-wallet, atau kartu (mode test).">
 <meta property="og:url" content="https://undangya.web.id/checkout">
 <meta property="og:image" content="https://undangya.web.id/assets/hero-envelope.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Checkout — UNDANGAN-YA! 3D × Midtrans Sandbox">
-<meta name="twitter:description" content="Demo checkout undangan pernikahan digital 3D dengan Midtrans Sandbox: pilih paket Silver / Gold / Platinum, pilih tema, bayar via QRIS, VA, e-wallet, atau kartu (mode test).">
+<meta name="twitter:description" content="Demo checkout undangan pernikahan digital 3D dengan Midtrans Sandbox: pilih paket Basic / Premium / Eksklusif / Luxury, pilih tema, bayar via QRIS, VA, e-wallet, atau kartu (mode test).">
 <meta name="twitter:image" content="https://undangya.web.id/assets/hero-envelope.webp">
 </head>
 <body>
@@ -149,13 +149,17 @@
 
 <script src="themes.js"></script>
 <script>
+/* Paket disamakan dengan paket dashboard (app.html) — keputusan user 2026-11-10.
+   Id lama (silver/gold/platinum) dipetakan diam-diam ke padanan baru. */
+var LEGACY_PKG = { silver: "basic", gold: "premium", platinum: "luxury" };
 var PACKAGES = {
-  silver:   { name: "SILVER",   label: "Paket SILVER — Undangan Web 3D", price: 199000, features: ["1 tema standar (10 tema warna)","Countdown, galeri, RSVP & buku tamu","Amplop digital","Link tamu personal (?to=Nama)","Masa aktif 1 tahun"] },
-  gold:     { name: "GOLD",     label: "Paket GOLD — Web 3D + Adat", price: 299000, pop: "PALING LARIS", features: ["Semua 13 tema termasuk Adat Jawa / Sunda / Bali","Semua fitur Silver","Musik latar & peta lokasi","Dresscode & cerita cinta (timeline)","Masa aktif 2 tahun"] },
-  platinum: { name: "PLATINUM", label: "Paket PLATINUM — Web Interaktif + Video MP4", price: 399000, features: ["Semua fitur Gold","Tema interaktif Taman Rahasia","Video undangan MP4 9:16 ±60 detik Full HD","Prioritas pengerjaan","Masa aktif selamanya"] }
+  basic:     { name: "BASIC",     label: "Paket BASIC — Undangan Digital UndangYa!", price: 50000, features: ["Pilihan desain standar (tema tier Basic)","Galeri 4 foto","Kuota 50 tamu","RSVP kehadiran","Jadwal acara tanpa batas","Masa aktif s/d H+30"] },
+  premium:   { name: "PREMIUM",   label: "Paket PREMIUM — Undangan Digital UndangYa!", price: 110000, features: ["Semua fitur Basic","Galeri 10 foto","Kuota 100 tamu","Amplop digital","Ucapan & doa + cerita cinta","Desain Premium","Masa aktif s/d H+30"] },
+  eksklusif: { name: "EKSKLUSIF", label: "Paket EKSKLUSIF — Undangan Digital UndangYa!", price: 180000, pop: "REKOMENDASI", features: ["Semua fitur Premium","Galeri 20 foto","Tamu tanpa batas + impor CSV","Desain Eksklusif","Live streaming","Masa aktif s/d H+60"] },
+  luxury:    { name: "LUXURY",    label: "Paket LUXURY — Undangan Digital UndangYa!", price: 280000, features: ["Semua fitur Eksklusif","Galeri 50 foto","Tamu tanpa batas","Semua desain termasuk tier Luxury + sampul video","Video undangan MP4 9:16 ±60 detik Full HD","Jadwal berbeda per tamu","Alamat link rapi tanpa kode acak","Masa aktif s/d H+90"] }
 };
 var rupiah = function (n) { return "Rp" + n.toLocaleString("id-ID"); };
-var selected = "gold";
+var selected = "premium";
 var paymentConfig = { mode: "simulated", clientKey: null, snapJsUrl: "https://app.sandbox.midtrans.com/snap/snap.js" };
 var currentOrder = null;
 
@@ -206,6 +210,7 @@ themeSel.innerHTML = themes.map(function (t) { return '<option value="' + t.slug
 var preTheme = new URLSearchParams(location.search).get("tema");
 if (preTheme && themes.some(function (t) { return t.slug === preTheme; })) themeSel.value = preTheme;
 var prePkg = new URLSearchParams(location.search).get("paket");
+if (prePkg && LEGACY_PKG[prePkg]) prePkg = LEGACY_PKG[prePkg];
 if (prePkg && PACKAGES[prePkg]) selected = prePkg;
 themeSel.addEventListener("change", renderSummary);
 

@@ -104,8 +104,8 @@
       'Galeri geser dengan lightbox'
     ].concat(WEB_FEATS),
     preview: 'taman-rahasia?to=Tamu%20Undangan',
-    order: 'checkout?tema=taman-rahasia&paket=platinum',
-    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+    order: 'checkout?tema=taman-rahasia&paket=luxury',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Luxury</b> (Rp280.000).'
   });
 
   ENTRIES.push({
@@ -127,7 +127,7 @@
     ],
     preview: 'javanese-illustrated?to=Tamu%20Undangan',
     order: 'checkout?tema=javanese-illustrated',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -147,7 +147,7 @@
     ],
     preview: 'masjid-bunga',
     order: 'checkout?tema=masjid-bunga',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
   ENTRIES.push({
     slug: 'pink-garden-fountain', name: 'Pink Garden Fountain',
@@ -166,7 +166,7 @@
     ],
     preview: 'pink-garden-fountain',
     order: 'checkout?tema=pink-garden-fountain',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
   ENTRIES.push({
     slug: 'bali-pastel', name: 'Bali Pastel Romance',
@@ -186,7 +186,7 @@
     ],
     preview: 'bali-pastel?to=Tamu%20Undangan',
     order: 'checkout?tema=bali-pastel',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
   ENTRIES.push({
     slug: 'burgundy-palace', name: 'Burgundy Royal Palace',
@@ -204,7 +204,7 @@
     ],
     preview: 'burgundy-palace',
     order: 'checkout?tema=burgundy-palace',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
   ENTRIES.push({
     slug: 'palace-garden-gate', name: 'Palace Garden Gate',
@@ -223,7 +223,7 @@
     ],
     preview: 'palace-garden-gate?to=Tamu%20Undangan',
     order: 'checkout?tema=palace-garden-gate',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
   ENTRIES.push({
     slug: 'engraved-highland', name: 'Engraved Highland',
@@ -242,7 +242,7 @@
     ],
     preview: 'engraved-highland',
     order: 'checkout?tema=engraved-highland',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
   ENTRIES.push({
     slug: 'ivory-botanical', name: 'Ivory Botanical',
@@ -260,7 +260,7 @@
     ],
     preview: 'ivory-botanical',
     order: 'checkout?tema=ivory-botanical',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -280,8 +280,8 @@
       'RSVP & buku tamu (demo lokal)'
     ].concat(WEB_FEATS),
     preview: 'emerald-luxe?to=Tamu%20Undangan',
-    order: 'checkout?tema=emerald-luxe&paket=platinum',
-    rec: '<b>Rekomendasi paket:</b> tema interaktif 3D termasuk di <b>Paket Platinum</b> (Rp399.000).'
+    order: 'checkout?tema=emerald-luxe&paket=luxury',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif 3D termasuk di <b>Paket Luxury</b> (Rp280.000).'
   });
 
   ENTRIES.push({
@@ -301,7 +301,7 @@
     ].concat(WEB_FEATS),
     preview: 'bioskop-mini?to=Tamu%20Undangan',
     order: 'checkout?tema=bioskop-mini',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -321,7 +321,7 @@
     ],
     preview: 'piringan-hitam?to=Tamu%20Undangan',
     order: 'checkout?tema=piringan-hitam',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -340,8 +340,8 @@
       'RSVP Konfirmasi Tiket & amplop digital (demo lokal)'
     ],
     preview: 'perjalanan-kereta?to=Tamu%20Undangan',
-    order: 'checkout?tema=perjalanan-kereta&paket=platinum',
-    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+    order: 'checkout?tema=perjalanan-kereta&paket=luxury',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Luxury</b> (Rp280.000).'
   });
 
   ENTRIES.push({
@@ -361,7 +361,7 @@
     ],
     preview: 'surat-hidup?to=Tamu%20Undangan',
     order: 'checkout?tema=surat-hidup',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -381,7 +381,7 @@
     ],
     preview: 'paspor-cinta?to=Tamu%20Undangan',
     order: 'checkout?tema=paspor-cinta',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -401,8 +401,8 @@
       'Deliverable berupa file video — bukan halaman web'
     ],
     preview: null,
-    order: 'checkout?paket=platinum',
-    rec: '<b>Rekomendasi paket:</b> video undangan adalah deliverable <b>Paket Platinum</b> (Rp399.000).'
+    order: 'checkout?paket=luxury',
+    rec: '<b>Rekomendasi paket:</b> video undangan adalah deliverable <b>Paket Luxury</b> (Rp280.000).'
   });
 
   var bySlug = {};
@@ -423,7 +423,7 @@
     ],
     preview: 'museum-cinta?to=Tamu%20Undangan',
     order: 'checkout?tema=museum-cinta',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -443,7 +443,7 @@
     ],
     preview: 'koran-cinta?to=Tamu%20Undangan',
     order: 'checkout?tema=koran-cinta',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -462,8 +462,8 @@
       'Musik latar sintesis WebAudio setelah undangan dibuka'
     ].concat(WEB_FEATS),
     preview: 'peta-ekspedisi?to=Tamu%20Undangan',
-    order: 'checkout?tema=peta-ekspedisi&paket=platinum',
-    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+    order: 'checkout?tema=peta-ekspedisi&paket=luxury',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Luxury</b> (Rp280.000).'
   });
 
   ENTRIES.push({
@@ -483,7 +483,7 @@
     ],
     preview: 'ramuan-cinta?to=Tamu%20Undangan',
     order: 'checkout?tema=ramuan-cinta',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -502,8 +502,8 @@
       'Musik & suara radio sintesis WebAudio setelah sinyal ditemukan'
     ].concat(WEB_FEATS),
     preview: 'radio-cinta?to=Tamu%20Undangan',
-    order: 'checkout?tema=radio-cinta&paket=platinum',
-    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+    order: 'checkout?tema=radio-cinta&paket=luxury',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Luxury</b> (Rp280.000).'
   });
 
   ENTRIES.push({
@@ -523,7 +523,7 @@
     ],
     preview: 'observatorium?to=Tamu%20Undangan',
     order: 'checkout?tema=observatorium',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -543,7 +543,7 @@
     ],
     preview: 'kedai-kopi?to=Tamu%20Undangan',
     order: 'checkout?tema=kedai-kopi',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -562,8 +562,8 @@
       'Musik latar sintesis WebAudio setelah undangan dibuka'
     ].concat(WEB_FEATS),
     preview: 'papan-permainan?to=Tamu%20Undangan',
-    order: 'checkout?tema=papan-permainan&paket=platinum',
-    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+    order: 'checkout?tema=papan-permainan&paket=luxury',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Luxury</b> (Rp280.000).'
   });
 
   ENTRIES.push({
@@ -583,7 +583,7 @@
     ],
     preview: 'oceanarium?to=Tamu%20Undangan',
     order: 'checkout?tema=oceanarium',
-    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Premium</b> (Rp110.000).'
   });
 
   ENTRIES.push({
@@ -602,8 +602,8 @@
       'Musik latar sintesis WebAudio setelah undangan dibuka'
     ].concat(WEB_FEATS),
     preview: 'pasar-malam?to=Tamu%20Undangan',
-    order: 'checkout?tema=pasar-malam&paket=platinum',
-    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+    order: 'checkout?tema=pasar-malam&paket=luxury',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Luxury</b> (Rp280.000).'
   });
 
   ENTRIES.forEach(function (e) { bySlug[e.slug] = e; });

@@ -21,9 +21,12 @@ Harga paket (sumber satu-satunya di server: `lib/pricing.js`):
 
 | Paket | Harga | Isi ringkas |
 |---|---|---|
-| SILVER | Rp199.000 | 1 tema standar, RSVP, galeri, amplop digital, aktif 1 tahun |
-| GOLD | Rp299.000 | Semua 13 tema incl. adat, aktif 2 tahun |
-| PLATINUM | Rp399.000 | Gold + Taman Rahasia interaktif + video MP4 9:16, aktif selamanya |
+| BASIC | Rp50.000 | Desain standar, galeri 4 foto, 50 tamu, RSVP, aktif s/d H+30 |
+| PREMIUM | Rp110.000 | Basic + galeri 10 foto, 100 tamu, amplop digital, cerita cinta, aktif s/d H+30 |
+| EKSKLUSIF | Rp180.000 | Premium + galeri 20 foto, tamu tanpa batas + impor CSV, live streaming, aktif s/d H+60 |
+| LUXURY | Rp280.000 | Eksklusif + galeri 50 foto, semua desain + video MP4 9:16, aktif s/d H+90 |
+
+(Paket disamakan dengan dashboard app.html — keputusan user 2026-11-10. Id lama silver/gold/platinum dipetakan diam-diam ke basic/premium/luxury.)
 
 ## File yang ditambahkan
 

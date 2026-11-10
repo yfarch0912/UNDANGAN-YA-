@@ -18,7 +18,7 @@
      resmi user, mis. GoPay Merchant/GoBiz atau bank) -> MODE LIVE.
 */
 const crypto = require("crypto");
-const { PACKAGES, THEME_SLUGS } = require("./_lib/pricing");
+const { PACKAGES, THEME_SLUGS, resolvePackage } = require("./_lib/pricing");
 const { injectAmount, getTag, buildDemoStaticPayload, isValidCrc } = require("./_lib/qris");
 
 function readBody(req) {
@@ -48,8 +48,8 @@ module.exports = async function handler(req, res) {
   if (req.method !== "POST") { res.status(405).json({ error: "Method not allowed" }); return; }
 
   const body = await readBody(req);
-  const pkg = PACKAGES[body.packageId];
-  if (!pkg) { res.status(400).json({ error: "Paket tidak dikenal. Pilih Silver, Gold, atau Platinum." }); return; }
+  const pkg = resolvePackage(body.packageId);
+  if (!pkg) { res.status(400).json({ error: "Paket tidak dikenal. Pilih Basic, Premium, Eksklusif, atau Luxury." }); return; }
 
   const themeSlug = THEME_SLUGS.includes(body.themeSlug) ? body.themeSlug : "senja-emas";
   const name = sanitize(body.name, 80);
