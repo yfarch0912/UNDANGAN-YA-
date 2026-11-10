@@ -147,4 +147,27 @@
     }, { threshold: .12 });
     els.forEach(function (el) { io.observe(el); });
   }
+
+  /* ---------- Musik latar: file bersama Petals on the Stone Floor ---------- */
+  (function () {
+    var btn = $("#musicBtn");
+    if (!btn) return;
+    btn.title = C.musicTitle || "Musik latar";
+    var audio = document.getElementById("bgmShared");
+    if (!audio) { btn.style.display = "none"; return; }
+    var on = false, started = false;
+    function setBtn() {
+      btn.classList.toggle("on", on);
+      btn.setAttribute("aria-pressed", String(on));
+      btn.setAttribute("aria-label", on ? "Jeda musik latar" : "Putar musik latar");
+    }
+    audio.addEventListener("play", function () { on = true; started = true; setBtn(); });
+    audio.addEventListener("pause", function () { on = false; setBtn(); });
+    function start() { try { var p = audio.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {} }
+    btn.addEventListener("click", function () { if (on) audio.pause(); else start(); });
+    /* mulai pada interaksi pertama tamu — pemicu buka tema ini: klik "Buka Undangan" */
+    var ob = document.getElementById("openBtn");
+    if (ob) ob.addEventListener("click", function () { if (!started && !on) start(); });
+    document.addEventListener("pointerdown", function (e) { if (!started && !on && !btn.contains(e.target)) start(); });
+  })();
 })();

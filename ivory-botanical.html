@@ -153,6 +153,21 @@
   </section>
 </main>
 
+<!-- tombol musik melayang — ikon nada & tangkai daun digambar tangan (SVG inline) -->
+<button type="button" class="music-btn" id="musicBtn" aria-label="Putar musik latar" aria-pressed="false">
+  <svg class="ic-note" viewBox="0 0 24 24" width="23" height="23" aria-hidden="true" focusable="false">
+    <path d="M11 6.1 C13.7 6.6 15.8 8.1 16.9 10.7 C15.4 9.3 13.4 8.4 11 8.2 Z" fill="currentColor"/>
+    <path d="M11 16.9 V6.1" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <ellipse cx="7.9" cy="17.2" rx="3.1" ry="2.35" transform="rotate(-18 7.9 17.2)" fill="currentColor"/>
+    <path class="leaf" d="M4.9 21.4 C3.8 18.4 5 15.5 7.6 13.9 C8.3 16.9 7.1 19.8 4.9 21.4 Z" fill="none" stroke-width="1.4"/>
+    <path class="leaf" d="M4.9 21.4 C5.6 18.9 6.5 16.5 7.6 13.9" fill="none" stroke-width="1"/>
+  </svg>
+  <svg class="ic-pause" viewBox="0 0 24 24" width="21" height="21" aria-hidden="true" focusable="false">
+    <rect x="7.1" y="5.6" width="3.4" height="12.8" rx="1.5" fill="currentColor"/>
+    <rect x="13.5" y="5.6" width="3.4" height="12.8" rx="1.5" fill="currentColor"/>
+  </svg>
+</button>
+
 <!-- lightbox galeri -->
 <div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto galeri diperbesar">
   <button id="lbClose" type="button" aria-label="Tutup">×</button>
@@ -173,6 +188,7 @@
   </defs>
 </svg>
 
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="ivory-config.js"></script>

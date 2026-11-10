@@ -8,6 +8,7 @@ window.IVORY_CONFIG = {
     name: "Ivory Botanical",
     assets: "assets/undangya/ivory-botanical/"
   },
+  musicTitle: "Petals on the Stone Floor — instrumental",
   event: {
     type: "Wedding Celebration",
     title: "The Wedding of",
