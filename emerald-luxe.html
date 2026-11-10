@@ -167,9 +167,14 @@ tick(); setInterval(tick,1000);
 // RSVP localStorage demo
 const key="emerald-rsvp"; const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); const render=()=>{const data=JSON.parse(localStorage.getItem(key)||"[]"); document.getElementById("list").innerHTML=data.map(x=>`<div class="card"><strong>${esc(x.nama)}</strong> • ${esc(x.hadir)}<br>${esc(x.ucapan)}</div>`).join("")};
 document.getElementById("rsvpForm").onsubmit=e=>{e.preventDefault(); const data=JSON.parse(localStorage.getItem(key)||"[]"); data.unshift({nama:nama.value,hadir:hadir.value,ucapan:ucapan.value}); localStorage.setItem(key,JSON.stringify(data)); e.target.reset(); render();}; render();
-// WebAudio music (synth, no file)
-let ctx,playing=false; function startMusic(){ if(playing||!window.AudioContext) return; ctx=new AudioContext(); playing=true; const notes=[523,659,784,659]; notes.forEach((f,i)=>{const o=ctx.createOscillator(),g=ctx.createGain(); o.frequency.value=f; g.gain.value=.04; o.connect(g).connect(ctx.destination); o.start(ctx.currentTime+i*.45); o.stop(ctx.currentTime+i*.45+.4);});}
-document.getElementById("musicBtn").onclick=()=>{startMusic(); document.getElementById("musicBtn").classList.add("playing");};
+// Musik: "Petals on the Stone Floor" — file audio bersama (loop)
+const bgmShared=document.getElementById("bgmShared");
+function startMusic(){ if(!bgmShared) return; const p=bgmShared.play(); if(p&&p.catch) p.catch(()=>{}); }
+if(bgmShared){
+  bgmShared.addEventListener("play",()=>document.getElementById("musicBtn").classList.add("playing"));
+  bgmShared.addEventListener("pause",()=>document.getElementById("musicBtn").classList.remove("playing"));
+}
+document.getElementById("musicBtn").onclick=()=>{ if(bgmShared&&!bgmShared.paused) bgmShared.pause(); else startMusic(); };
 // Animasi transisi — reveal elemen saat masuk layar (stagger per section) + nav aktif mengikuti scroll
 document.documentElement.classList.add("js");
 (function(){
@@ -210,5 +215,6 @@ try{
  (function anim(t){requestAnimationFrame(anim); r1.rotation.y=t*.0006; r2.rotation.y=-t*.0006; r1.position.y=Math.sin(t*.001)*.15; r2.position.y=Math.cos(t*.001)*.15; cam.position.x=mx*1.2; cam.lookAt(0,0,0); renderer.render(scene,cam)})(0);
 }catch(e){ document.getElementById("three").style.display="none"; }
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

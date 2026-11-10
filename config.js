@@ -56,5 +56,5 @@ window.UNDANGAN_CONFIG = {
   ],
   giftAddress: "Jl. Mawar No. 10, Kebayoran Baru, Jakarta Selatan 12120 (a.n. Meyzsa Ayu Lestari)",
   dresscode: ["Emas", "Sage", "Krem", "Cokelat muda"],
-  musicTitle: "Senja Emas — melodi latar (sintesis)"
+  musicTitle: "Petals on the Stone Floor — instrumental"
 };

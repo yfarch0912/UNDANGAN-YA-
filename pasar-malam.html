@@ -237,13 +237,16 @@ qs('#rsvpForm').addEventListener('submit',function(e){ e.preventDefault(); qs('#
 /* envelope ring toss */
 qs('#throwBtn').addEventListener('click',function(){ var r=qs('#ring'); r.classList.remove('thrown'); void r.offsetWidth; r.classList.add('thrown'); setTimeout(function(){ qs('#accounts').classList.add('show'); },750); });
 document.querySelectorAll('.copyBtn').forEach(function(b){ b.addEventListener('click',function(){ var v=qs('#'+b.getAttribute('data-copy')).textContent; if(navigator.clipboard) navigator.clipboard.writeText(v); b.textContent='Tersalin'; setTimeout(function(){b.textContent='Salin'},1500); }); });
-/* music: original music-box WebAudio */
-var actx=null,playing=false,mTimer2=null,notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,783.99,1046.5,987.77,880,783.99,659.25],ni=0;
-function tone(f,t){ if(!actx) return; var o=actx.createOscillator(),g=actx.createGain(); o.type='sine'; o.frequency.value=f; g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.14,t+0.02); g.gain.exponentialRampToValueAtTime(0.0001,t+0.9); o.connect(g); g.connect(actx.destination); o.start(t); o.stop(t+1); }
-function startMusic(){ try{ if(!window.AudioContext && !window.webkitAudioContext) return; if(!actx) actx=new (window.AudioContext||window.webkitAudioContext)(); if(playing) return; playing=true; qs('#musicLabel').textContent='Musik On'; var step=function(){ if(!playing) return; tone(notes[ni%notes.length], actx.currentTime); ni++; mTimer2=setTimeout(step,420); }; step(); }catch(e){} }
-function stopMusic(){ playing=false; if(mTimer2) clearTimeout(mTimer2); qs('#musicLabel').textContent='Musik'; }
+/* music latar bersama: Petals on the Stone Floor */
+var playing=false;
+function bgmEl(){return document.getElementById('bgmShared');}
+function syncMusicLabel(){qs('#musicLabel').textContent=playing?'Musik On':'Musik';}
+function startMusic(){ try{ var el=bgmEl(); if(!el) return; if(playing) return; var p=el.play(); if(p&&p.catch)p.catch(function(){}); playing=true; syncMusicLabel(); }catch(e){} }
+function stopMusic(){ playing=false; syncMusicLabel(); var el=bgmEl(); if(el)el.pause(); }
 qs('#musicBtn').addEventListener('click',function(){ playing?stopMusic():startMusic(); });
+document.addEventListener('DOMContentLoaded',function(){var el=bgmEl();if(!el)return;el.addEventListener('play',function(){playing=true;syncMusicLabel();});el.addEventListener('pause',function(){playing=false;syncMusicLabel();});});
 window.__pm={ getAngle:function(){return angle}, rotateBy:function(d){angle+=d;render();}, litCount:function(){return document.querySelectorAll('#marquee .ch.lit').length}, openModal:openModal };
 })();
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body></html>

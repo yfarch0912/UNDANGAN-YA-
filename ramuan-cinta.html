@@ -189,9 +189,8 @@ document.getElementById('rsvpForm').addEventListener('submit',function(e){e.prev
  document.getElementById('stampDesc').textContent=att==='hadir'?('Hasil uji untuk '+name+': formula COCOK — sampel kehadiran terkonfirmasi. Sampai jumpa di hari peracikan!'):('Hasil uji untuk '+name+': tercatat dengan terima kasih atas doa restunya.');
  if(box.scrollIntoView)box.scrollIntoView({behavior:'smooth',block:'center'});});
 document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var el=document.getElementById(b.dataset.copy);el.select();try{navigator.clipboard.writeText(el.value);}catch(e){document.execCommand('copy');}document.getElementById('copyNote').textContent='Nomor contoh tersalin: '+el.value;});});
-var actx=null,playing=false;
-function chime(f,t,d){if(!actx)return;var o=actx.createOscillator(),g=actx.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.0001,actx.currentTime+t);g.gain.exponentialRampToValueAtTime(.12,actx.currentTime+t+.02);g.gain.exponentialRampToValueAtTime(.0001,actx.currentTime+t+d);o.connect(g).connect(actx.destination);o.start(actx.currentTime+t);o.stop(actx.currentTime+t+d+.05);}
-function loop(){if(!playing)return;[523.25,659.25,783.99,1046.5].forEach(function(f,i){chime(f,i*.55,1.1);});chime(261.63,2.4,1.6);setTimeout(loop,4200);}
-function startAudio(){if(actx){playing=!playing;if(playing)loop();return;}try{actx=new (window.AudioContext||window.webkitAudioContext)();playing=true;loop();}catch(e){}}
+var playing=false;
+function startAudio(){var b=document.getElementById('bgmShared');if(!b)return;if(playing){b.pause();playing=false;return;}playing=true;try{var p=b.play();if(p&&p.catch)p.catch(function(){playing=false;});}catch(e){playing=false;}}
 document.getElementById('musicBtn').addEventListener('click',startAudio);
-</script></body></html>
+</script><audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+</body></html>

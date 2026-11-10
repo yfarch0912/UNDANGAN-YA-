@@ -456,14 +456,12 @@ document.addEventListener("click",e=>{const img=e.target.closest?e.target.closes
 $("#lb").addEventListener("click",()=>$("#lb").classList.remove("show"));
 /* RSVP stamp */
 $("#rsvpForm").addEventListener("submit",e=>{e.preventDefault();const name=($("#fNama").value||guest).trim()||"Tamu Undangan";const hadir=($('input[name="hadir"]:checked')||{}).value||"Hadir";const jml=$("#fJumlah").value;const ucapan=$("#fUcapan").value.trim();$("#ppName").textContent=name;$("#ppStatus").textContent=hadir+" • "+jml+" orang";const st=$("#stampRsvp");st.classList.remove("show","stamped");void st.offsetWidth;st.classList.add("show","stamped");const done=$("#rsvpDone");done.innerHTML="<b>Stempel jatuh!</b> Terima kasih, "+esc(name)+". Kehadiran Anda ("+esc(hadir)+", "+esc(jml)+" orang) telah <b>tercatat dalam ekspedisi</b> ini. (Mode demo)";done.classList.add("show");if(ucapan){const w=document.createElement("div");w.className="wish";w.innerHTML="<b>"+esc(name)+'</b><span class="st'+(hadir==="Hadir"?"":" no")+'">'+esc(hadir)+"</span><p>"+esc(ucapan)+"</p>";$("#wishList").prepend(w)} if(st.scrollIntoView)st.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"center"})});
-/* music: original WebAudio plucked adventure motif */
-let actx=null,master=null,playing=false,timer=null,step=0;
-const NOTES=[392,440,523.25,587.33,523.25,440,392,329.63];
-function pluck(f,t){if(!actx)return;const o=actx.createOscillator(),o2=actx.createOscillator(),g=actx.createGain();o.type="triangle";o.frequency.value=f;o2.type="sine";o2.frequency.value=f*2;const g2=actx.createGain();g2.gain.value=.18;o.connect(g);o2.connect(g2);g2.connect(g);g.connect(master);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.5,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+1.1);o.start(t);o2.start(t);o.stop(t+1.2);o2.stop(t+1.2)}
-function loop(){if(!playing)return;pluck(NOTES[step%NOTES.length],actx.currentTime+.05);if(step%4===0)pluck(NOTES[step%NOTES.length]/2,actx.currentTime+.05);step++;timer=setTimeout(loop,620)}
-function startMusic(){if(playing||!window.AudioContext)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();master=actx.createGain();master.gain.value=.35;master.connect(actx.destination);if(actx.state==="suspended")actx.resume();playing=true;$("#btnMusic").classList.add("on");loop()}catch(e){}}
-function stopMusic(){playing=false;if(timer)clearTimeout(timer);$("#btnMusic").classList.remove("on")}
+/* music: lagu latar bersama "Petals on the Stone Floor" (file MP3 bersama) */
+let playing=false;
+function startMusic(){if(playing)return;const b=document.getElementById("bgmShared");if(!b)return;playing=true;$("#btnMusic").classList.add("on");try{const p=b.play();if(p&&p.catch)p.catch(()=>{playing=false;$("#btnMusic").classList.remove("on")})}catch(e){playing=false;$("#btnMusic").classList.remove("on")}}
+function stopMusic(){playing=false;const b=document.getElementById("bgmShared");if(b)b.pause();$("#btnMusic").classList.remove("on")}
 $("#btnMusic").addEventListener("click",()=>{if(!opened)return; playing?stopMusic():startMusic()});
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

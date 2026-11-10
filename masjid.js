@@ -269,75 +269,14 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
   document.querySelectorAll(".sec").forEach(function (s) { revealIO.observe(s); });
 }
 
-/* ---------- Musik latar: instrumental romantis original (sintesis WebAudio) ---------- */
+/* ---------- Musik latar: file bersama Petals on the Stone Floor ---------- */
 (function () {
   var btn = $("musicBtn");
   if (!btn) return;
   btn.title = C.musicTitle || "Musik latar";
-  var ACtor = window.AudioContext || window.webkitAudioContext;
-  if (!ACtor) { btn.style.display = "none"; return; }
-  var ac = null, master = null, timer = null, nextBar = 0, barIdx = 0, on = false;
-  var BAR = 60 / 63 * 4;
-  var CH = [
-    { r: "A2", c: ["A3", "C4", "E4"] }, { r: "F2", c: ["F3", "A3", "C4"] },
-    { r: "C3", c: ["C4", "E4", "G4"] }, { r: "G2", c: ["G3", "B3", "D4"] },
-    { r: "A2", c: ["A3", "C4", "E4"] }, { r: "F2", c: ["F3", "A3", "C4"] },
-    { r: "D3", c: ["D4", "F4", "A4"] }, { r: "E3", c: ["E4", "G#4", "B4"] }
-  ];
-  var MEL = [
-    [["E5", 0, 1.5], ["C5", 1.5, 1], ["A4", 2.5, 1.5]],
-    [["A4", 0, 1.5], ["C5", 1.5, 1], ["F5", 2.5, 1.5]],
-    [["E5", 0, 1], ["G5", 1, 1], ["E5", 2, 1], ["C5", 3, 1]],
-    [["D5", 0, 2], ["B4", 2, 1], ["G4", 3, 1]],
-    [["E5", 0, 1.5], ["A5", 1.5, 1], ["G5", 2.5, 1.5]],
-    [["F5", 0, 1], ["E5", 1, 1], ["C5", 2, 1], ["A4", 3, 1]],
-    [["F5", 0, 1.5], ["A5", 1.5, 1], ["D6", 2.5, 1.5]],
-    [["B5", 0, 1], ["G#5", 1, 1], ["E5", 2, 2]]
-  ];
-  var SEMI = { C: 0, "C#": 1, D: 2, "D#": 3, E: 4, F: 5, "F#": 6, G: 7, "G#": 8, A: 9, "A#": 10, B: 11 };
-  function fq(n) { var m = /^([A-G]#?)(\d)$/.exec(n); return 440 * Math.pow(2, (SEMI[m[1]] + (parseInt(m[2], 10) + 1) * 12 - 69) / 12); }
-  function pluck(f, t, dur, peak, bright) {
-    var o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(), g2 = ac.createGain();
-    o.type = "triangle"; o.frequency.value = f;
-    o2.type = "sine"; o2.frequency.value = f * 2; g2.gain.value = bright;
-    o.connect(g); o2.connect(g2); g2.connect(g); g.connect(master);
-    g.gain.setValueAtTime(0.0001, t);
-    g.gain.exponentialRampToValueAtTime(peak, t + 0.02);
-    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-    o.start(t); o2.start(t); o.stop(t + dur + 0.1); o2.stop(t + dur + 0.1);
-  }
-  function padTone(f, t, dur) {
-    [-6, 6].forEach(function (det) {
-      var o = ac.createOscillator(), g = ac.createGain(), fl = ac.createBiquadFilter();
-      o.type = "triangle"; o.frequency.value = f; o.detune.value = det;
-      fl.type = "lowpass"; fl.frequency.value = 850;
-      o.connect(fl); fl.connect(g); g.connect(master);
-      g.gain.setValueAtTime(0.0001, t);
-      g.gain.linearRampToValueAtTime(0.03, t + 0.5);
-      g.gain.setValueAtTime(0.03, Math.max(t + 0.5, t + dur - 0.5));
-      g.gain.linearRampToValueAtTime(0.0001, t + dur);
-      o.start(t); o.stop(t + dur + 0.1);
-    });
-  }
-  function playBar(i, t) {
-    var ch = CH[i], beat = BAR / 4;
-    ch.c.forEach(function (n) { padTone(fq(n), t, BAR); });
-    var bass = ac.createOscillator(), bg = ac.createGain();
-    bass.type = "sine"; bass.frequency.value = fq(ch.r);
-    bass.connect(bg); bg.connect(master);
-    bg.gain.setValueAtTime(0.0001, t);
-    bg.gain.exponentialRampToValueAtTime(0.11, t + 0.03);
-    bg.gain.exponentialRampToValueAtTime(0.0001, t + BAR * 0.95);
-    bass.start(t); bass.stop(t + BAR);
-    MEL[i].forEach(function (ev) { pluck(fq(ev[0]), t + ev[1] * beat, Math.max(0.5, ev[2] * beat * 0.95), 0.14, 0.22); });
-    if (i % 2 === 0) {
-      pluck(fq(ch.c[2]) * 2, t + 2.5 * beat, 0.5, 0.035, 0.4);
-      pluck(fq(ch.c[1]) * 2, t + 3.5 * beat, 0.5, 0.03, 0.4);
-    }
-  }
-  function schedule() {
-    while (nextBar < ac.currentTime + BAR * 1.2) { playBar(barIdx % 8, nextBar); nextBar += BAR; barIdx++; }
-  }
+  var audio = document.getElementById("bgmShared");
+  if (!audio) { btn.style.display = "none"; return; }
+  var on = false;
   function setBtn() {
     btn.classList.toggle("on", on);
     btn.setAttribute("aria-pressed", String(on));
@@ -345,20 +284,10 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
     btn.textContent = on ? "❚❚" : "♪";
     btn.style.fontSize = on ? ".8rem" : "1.3rem";
   }
-  function start() {
-    if (!ac) {
-      ac = new ACtor();
-      var comp = ac.createDynamicsCompressor();
-      master = ac.createGain(); master.gain.value = 0;
-      master.connect(comp); comp.connect(ac.destination);
-      master.gain.linearRampToValueAtTime(0.9, ac.currentTime + 1.2);
-      nextBar = ac.currentTime + 0.1; barIdx = 0;
-      timer = setInterval(schedule, 350); schedule();
-    }
-    if (ac.state === "suspended") ac.resume();
-    on = true; setBtn();
-  }
-  function pause() { if (ac) ac.suspend(); on = false; setBtn(); }
+  audio.addEventListener("play", function () { on = true; setBtn(); });
+  audio.addEventListener("pause", function () { on = false; setBtn(); });
+  function start() { try { var p = audio.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {} }
+  function pause() { audio.pause(); }
   btn.addEventListener("click", function () { if (on) pause(); else start(); });
   /* Musik hanya mulai dari gestur yang disengaja: tombol musik, atau klik
      "Buka Undangan" (aksi membuka undangan). Klik/scroll biasa TIDAK menyalakan musik. */

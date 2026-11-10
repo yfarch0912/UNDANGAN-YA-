@@ -630,59 +630,26 @@ function tickCountdown() {
 tickCountdown();
 setInterval(tickCountdown, 1000);
 
-/* ================= MUSIK — WebAudio ambient orisinal ================= */
+/* ================= MUSIK — "Petals on the Stone Floor" (file bersama) ================= */
 const Music = {
-  ctx: null, master: null, on: false, chordTimer: null, melTimer: null, step: 0,
-  chords: [ [41,53,57,60], [40,52,55,59], [38,50,53,57], [36,48,52,55] ], // Fmaj7 Em7 Dm7 Cmaj7
-  melody: [77, 81, 84, 81, 79, 76, 79, 77],
-  freq(m) { return 440 * Math.pow(2, (m - 69) / 12); },
-  pad(notes) {
-    const t = this.ctx.currentTime;
-    notes.forEach(m => {
-      [0, 4].forEach(det => {
-        const o = this.ctx.createOscillator(), g = this.ctx.createGain();
-        o.type = "sine"; o.frequency.value = this.freq(m); o.detune.value = det - 2;
-        g.gain.setValueAtTime(0, t);
-        g.gain.linearRampToValueAtTime(0.045, t + 1.5);
-        g.gain.setValueAtTime(0.045, t + 3.4);
-        g.gain.linearRampToValueAtTime(0, t + 5.2);
-        o.connect(g); g.connect(this.master); o.start(t); o.stop(t + 5.3);
-      });
-    });
-  },
-  pluck() {
-    if (Math.random() < 0.25) return;
-    const t = this.ctx.currentTime;
-    const m = this.melody[Math.floor(Math.random() * this.melody.length)];
-    const o = this.ctx.createOscillator(), g = this.ctx.createGain();
-    o.type = "triangle"; o.frequency.value = this.freq(m);
-    g.gain.setValueAtTime(0.0001, t);
-    g.gain.exponentialRampToValueAtTime(0.1, t + 0.03);
-    g.gain.exponentialRampToValueAtTime(0.0001, t + 1.4);
-    o.connect(g); g.connect(this.master); o.start(t); o.stop(t + 1.5);
+  on: false,
+  el() { return document.getElementById("bgmShared"); },
+  sync() {
+    const a = this.el(); this.on = !!(a && !a.paused);
+    $("#btnMusic").classList.toggle("on", this.on);
   },
   start() {
-    if (!this.ctx) {
-      const AC = window.AudioContext || window.webkitAudioContext;
-      if (!AC) return;
-      this.ctx = new AC();
-      this.master = this.ctx.createGain(); this.master.gain.value = 0.8;
-      const lp = this.ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 2400;
-      this.master.connect(lp); lp.connect(this.ctx.destination);
-    }
-    this.ctx.resume();
-    this.pad(this.chords[0]);
-    this.chordTimer = setInterval(() => { this.step = (this.step + 1) % this.chords.length; this.pad(this.chords[this.step]); }, 4600);
-    this.melTimer = setInterval(() => this.pluck(), 1500);
+    const a = this.el(); if (!a) return;
+    const p = a.play(); if (p && p.catch) p.catch(() => {});
     this.on = true; $("#btnMusic").classList.add("on");
   },
   stop() {
-    clearInterval(this.chordTimer); clearInterval(this.melTimer);
-    if (this.ctx) this.ctx.suspend();
+    const a = this.el(); if (a) a.pause();
     this.on = false; $("#btnMusic").classList.remove("on");
   },
   toggle() { this.on ? this.stop() : this.start(); }
 };
+(function bindBgm(){ const a = document.getElementById("bgmShared"); if (a) { a.addEventListener("play", () => Music.sync()); a.addEventListener("pause", () => Music.sync()); } else { document.addEventListener("DOMContentLoaded", bindBgm); } })();
 $("#btnMusic").addEventListener("click", () => Music.toggle());
 
 /* ================= BUKA PASPOR ================= */
@@ -778,5 +745,6 @@ $("#rsvpForm").addEventListener("submit", e => {
   done.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
 });
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

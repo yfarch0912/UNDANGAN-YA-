@@ -351,27 +351,20 @@
     $("fMsg").value = ""; renderWishes();
   });
 
-  /* ---------- musik sintetis orisinal (WebAudio pad lembut) ---------- */
-  var audio = null, playing = false;
-  function toggleMusic() {
-    if (!audio) {
-      var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
-      audio = { ctx: new AC(), nodes: [] };
-      var ctx = audio.ctx, master = ctx.createGain(); master.gain.value = 0.05; master.connect(ctx.destination);
-      audio.master = master;
-      [261.63, 329.63, 392.0, 523.25].forEach(function (f, idx) {
-        var o = ctx.createOscillator(), g = ctx.createGain();
-        o.type = "sine"; o.frequency.value = f; g.gain.value = 0.24;
-        var lfo = ctx.createOscillator(), lg = ctx.createGain();
-        lfo.frequency.value = 0.07 + idx * 0.03; lg.gain.value = 0.1; lfo.connect(lg); lg.connect(g.gain);
-        o.connect(g); g.connect(master); o.start(); lfo.start(); audio.nodes.push(o, lfo);
-      });
-    }
-    if (audio.ctx.state === "suspended") audio.ctx.resume();
-    playing = !playing;
-    audio.master.gain.linearRampToValueAtTime(playing ? 0.05 : 0.0001, audio.ctx.currentTime + 0.6);
+  /* ---------- musik latar: file bersama Petals on the Stone Floor ---------- */
+  var bgm = document.getElementById("bgmShared"), playing = false;
+  function syncMusicBtn() {
     $("btnMusic").textContent = playing ? "♪ Musik: Nyala" : "♪ Musik: Mati";
     $("btnMusic").setAttribute("aria-pressed", playing ? "true" : "false");
+  }
+  if (bgm) {
+    bgm.addEventListener("play", function () { playing = true; syncMusicBtn(); });
+    bgm.addEventListener("pause", function () { playing = false; syncMusicBtn(); });
+  }
+  function toggleMusic() {
+    if (!bgm) return;
+    if (playing) bgm.pause();
+    else { try { var p = bgm.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {} }
   }
   $("btnMusic").addEventListener("click", toggleMusic);
 

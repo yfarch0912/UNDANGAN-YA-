@@ -556,7 +556,7 @@ const CONFIG = {
     { bank: "BCA", number: "1234567890", holder: "Meyzsa Putri Ananda", demo: true },
     { bank: "DANA", number: "0812-3456-7890", holder: "Meyzsa Putri Ananda", demo: true }
   ],
-  music: { enabled: true, tempo: 72, note: "Melodi ambient orisinal dibuat dengan WebAudio — tanpa lagu berhak cipta." }
+  music: { enabled: true, title: "Petals on the Stone Floor" }
 };
 
 /* ================= NAMA TAMU (?to=) ================= */
@@ -581,79 +581,23 @@ const CONFIG = {
   tick(); setInterval(tick, 1000);
 })();
 
-/* ================= MUSIK — WebAudio ambient orisinal ================= */
+/* ================= MUSIK — "Petals on the Stone Floor" (file bersama, diputar piringan) ================= */
 const Music = {
-  ctx: null, master: null, timer: null, step: 0, playing: false,
-  chords: [
-    [261.63, 329.63, 392.00, 493.88],  /* Cmaj7 */
-    [220.00, 261.63, 329.63, 392.00],  /* Am7   */
-    [174.61, 220.00, 261.63, 329.63],  /* Fmaj7 */
-    [196.00, 246.94, 293.66, 392.00]   /* G     */
-  ],
-  melody: [523.25, 587.33, 659.25, 783.99, 659.25, 587.33, 523.25, 440.00],
-  init() {
-    if (this.ctx) return;
-    const AC = window.AudioContext || window.webkitAudioContext;
-    if (!AC) return;
-    this.ctx = new AC();
-    this.master = this.ctx.createGain();
-    this.master.gain.value = 0.16;
-    const lp = this.ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 1600;
-    this.master.connect(lp); lp.connect(this.ctx.destination);
-    this.startCrackle();
-  },
-  startCrackle() { /* desis piringan hitam halus */
-    const len = 2 * this.ctx.sampleRate;
-    const buf = this.ctx.createBuffer(1, len, this.ctx.sampleRate);
-    const d = buf.getChannelData(0);
-    for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (Math.random() < 0.0006 ? 0.9 : 0.12);
-    const src = this.ctx.createBufferSource(); src.buffer = buf; src.loop = true;
-    const g = this.ctx.createGain(); g.gain.value = 0.012;
-    const hp = this.ctx.createBiquadFilter(); hp.type = "highpass"; hp.frequency.value = 1800;
-    src.connect(hp); hp.connect(g); g.connect(this.ctx.destination); src.start();
-  },
-  pad(freqs, t, dur) {
-    freqs.forEach(f => {
-      const o = this.ctx.createOscillator(), g = this.ctx.createGain();
-      o.type = "triangle"; o.frequency.value = f;
-      g.gain.setValueAtTime(0, t);
-      g.gain.linearRampToValueAtTime(0.05, t + 0.6);
-      g.gain.setValueAtTime(0.05, t + dur - 0.7);
-      g.gain.linearRampToValueAtTime(0, t + dur);
-      o.connect(g); g.connect(this.master); o.start(t); o.stop(t + dur + 0.05);
-    });
-  },
-  pluck(f, t) {
-    const o = this.ctx.createOscillator(), g = this.ctx.createGain();
-    o.type = "sine"; o.frequency.value = f;
-    g.gain.setValueAtTime(0.0001, t);
-    g.gain.exponentialRampToValueAtTime(0.11, t + 0.03);
-    g.gain.exponentialRampToValueAtTime(0.0001, t + 1.4);
-    o.connect(g); g.connect(this.master); o.start(t); o.stop(t + 1.5);
-  },
-  schedule() {
-    if (!this.ctx) return;
-    const t = this.ctx.currentTime + 0.08;
-    const chord = this.chords[this.step % 4];
-    this.pad(chord, t, 3.4);
-    const base = (this.step * 2) % this.melody.length;
-    this.pluck(this.melody[base], t + 0.2);
-    this.pluck(this.melody[(base + 2) % this.melody.length], t + 1.5);
-    this.step++;
+  playing: false,
+  el() { return document.getElementById("bgmShared"); },
+  sync() {
+    const a = this.el(); this.playing = !!(a && !a.paused);
+    document.body.classList.toggle("playing", this.playing); syncMusicUI();
   },
   async play() {
-    this.init(); if (!this.ctx) return;
-    await this.ctx.resume();
-    if (this.playing) return;
+    const a = this.el(); if (!a) return;
+    try { const p = a.play(); if (p && p.catch) await p.catch(() => {}); } catch (_) {}
     this.playing = true;
-    this.schedule();
-    this.timer = setInterval(() => this.schedule(), 3300);
     document.body.classList.add("playing"); syncMusicUI();
   },
   async pause() {
+    const a = this.el(); if (a) a.pause();
     this.playing = false;
-    if (this.timer) { clearInterval(this.timer); this.timer = null; }
-    if (this.ctx) await this.ctx.suspend();
     document.body.classList.remove("playing"); syncMusicUI();
   },
   toggle() { this.playing ? this.pause() : this.play(); }
@@ -662,6 +606,7 @@ function syncMusicUI() {
   /* ikon play/pause mini-player diganti via CSS mengikuti class body.playing */
   document.getElementById("btnMusic").classList.toggle("active", Music.playing);
 }
+(function bindBgm(){ const a = document.getElementById("bgmShared"); if (a) { a.addEventListener("play", () => Music.sync()); a.addEventListener("pause", () => Music.sync()); } else { document.addEventListener("DOMContentLoaded", bindBgm); } })();
 
 /* ================= BUKA UNDANGAN ================= */
 document.getElementById("btnPlay").addEventListener("click", function () {
@@ -711,5 +656,6 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
   box.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

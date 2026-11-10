@@ -650,55 +650,33 @@ for(var c=0;c<copyBtns.length;c++){
   });
 }
 
-/* ---------- musik WebAudio orisinal: pad bawah air + denting tetes ---------- */
-var actx = null, musicOn = false, padNodes = [], dripTimer = null;
-function buildPad(){
-  var g = actx.createGain(); g.gain.value = 0; g.connect(actx.destination);
-  g.gain.linearRampToValueAtTime(.055, actx.currentTime + 2.5);
-  var filt = actx.createBiquadFilter(); filt.type = "lowpass"; filt.frequency.value = 420; filt.connect(g);
-  [110, 164.81, 220, 277.18].forEach(function(fr, idx){
-    var o = actx.createOscillator(); o.type = idx<2 ? "sine" : "triangle"; o.frequency.value = fr;
-    var og = actx.createGain(); og.gain.value = idx<2 ? .5 : .14;
-    o.connect(og); og.connect(filt); o.start(); padNodes.push(o);
-    var lfo = actx.createOscillator(); lfo.frequency.value = .05 + idx*.03;
-    var lg = actx.createGain(); lg.gain.value = 60; lfo.connect(lg); lg.connect(filt.frequency); lfo.start(); padNodes.push(lfo);
-  });
-  padNodes.push(g);
-}
-function drip(){
-  if(!actx || !musicOn) return;
-  var o = actx.createOscillator(), g = actx.createGain();
-  o.type = "sine";
-  var f0 = 1100 + Math.random()*700;
-  o.frequency.setValueAtTime(f0, actx.currentTime);
-  o.frequency.exponentialRampToValueAtTime(f0*.45, actx.currentTime + .16);
-  g.gain.setValueAtTime(.0001, actx.currentTime);
-  g.gain.exponentialRampToValueAtTime(.06, actx.currentTime + .015);
-  g.gain.exponentialRampToValueAtTime(.0001, actx.currentTime + .3);
-  o.connect(g); g.connect(actx.destination); o.start(); o.stop(actx.currentTime + .32);
-  dripTimer = setTimeout(drip, 1600 + Math.random()*2600);
-}
+/* ---------- musik latar bersama: Petals on the Stone Floor ---------- */
+var musicOn = false;
+function bgmEl(){ return document.getElementById("bgmShared"); }
+function syncMusicUI(){ var b=document.getElementById("musicBtn"); if(!b)return; if(musicOn)b.classList.add("playing"); else b.classList.remove("playing"); }
 function startMusic(){
   try{
-    if(!actx){
-      var AC = window.AudioContext || window.webkitAudioContext;
-      if(!AC) return;
-      actx = new AC(); buildPad();
-    }
-    if(actx.state === "suspended") actx.resume();
-    if(!musicOn){ musicOn = true; drip(); document.getElementById("musicBtn").classList.add("playing"); }
+    var el = bgmEl(); if(!el) return;
+    if(musicOn) return;
+    var p = el.play(); if(p && p.catch) p.catch(function(){});
+    musicOn = true; syncMusicUI();
   }catch(e){}
 }
 function stopMusic(){
   musicOn = false;
-  if(dripTimer) clearTimeout(dripTimer);
-  if(actx) actx.suspend();
-  document.getElementById("musicBtn").classList.remove("playing");
+  var el = bgmEl(); if(el) el.pause();
+  syncMusicUI();
 }
 document.getElementById("musicBtn").addEventListener("click", function(){
   if(musicOn) stopMusic(); else startMusic();
 });
+document.addEventListener("DOMContentLoaded", function(){
+  var el = bgmEl(); if(!el) return;
+  el.addEventListener("play", function(){ musicOn = true; syncMusicUI(); });
+  el.addEventListener("pause", function(){ musicOn = false; syncMusicUI(); });
+});
 })();
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

@@ -2,7 +2,7 @@
    Tema 2D berlapis: ganti isi di sini, layout, aset & animasi tidak berubah.
    Foto pasangan diganti dengan menimpa file di path photo (rasio ±4:5). */
 window.JAVANESE_CONFIG = {
-  musicTitle: "Laras Cinta — instrumental romantis (sintesis)",
+  musicTitle: "Petals on the Stone Floor — instrumental",
   theme: {
     slug: "javanese-illustrated",
     name: "Javanese Illustrated",

@@ -4,7 +4,7 @@
    orang tua & rekening adalah DATA CONTOH — ganti sebelum dipakai nyata.
    Foto pasangan diganti dengan menimpa file di path photo. */
 window.MASJID_CONFIG = {
-  musicTitle: "Senandung Sakura — instrumental romantis (sintesis)",
+  musicTitle: "Petals on the Stone Floor — instrumental",
   theme: {
     slug: "masjid-bunga",
     name: "Masjid Bunga",

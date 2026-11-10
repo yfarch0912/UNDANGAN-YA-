@@ -114,46 +114,22 @@
       .to({}, { duration: 0.4 });
   }
 
-  /* ---------- Musik: pad instrumental WebAudio (tanpa file eksternal) ---------- */
-  var audio = { ctx: null, playing: false, timer: null, step: 0 };
-  var CHORDS = [ // Am – F – C – G, nuansa klasik lembut
-    [220.0, 261.63, 329.63], [174.61, 220.0, 261.63],
-    [130.81, 196.0, 261.63], [196.0, 246.94, 293.66]
-  ];
-  function playChord(freqs, t, dur) {
-    freqs.forEach(function (f, i) {
-      var o = audio.ctx.createOscillator(), g = audio.ctx.createGain();
-      o.type = i === 0 ? "sine" : "triangle"; o.frequency.value = f;
-      g.gain.setValueAtTime(0, t);
-      g.gain.linearRampToValueAtTime(i === 0 ? .055 : .032, t + .5);
-      g.gain.exponentialRampToValueAtTime(.0008, t + dur);
-      o.connect(g); g.connect(audio.ctx.destination);
-      o.start(t); o.stop(t + dur + .1);
-    });
-  }
+  /* ---------- Musik: "Petals on the Stone Floor" — file audio bersama ---------- */
+  var bgm = document.getElementById("bgmShared");
   function musicStart() {
     if (!C.music || !C.music.enabled) return;
-    try {
-      if (!audio.ctx) audio.ctx = new (window.AudioContext || window.webkitAudioContext)();
-      if (audio.ctx.state === "suspended") audio.ctx.resume();
-      if (audio.playing) return;
-      audio.playing = true;
-      var btn = $("#musicBtn"); btn.hidden = false; btn.classList.add("playing");
-      var tick = function () {
-        if (!audio.playing) return;
-        playChord(CHORDS[audio.step % CHORDS.length], audio.ctx.currentTime + .05, 3.6);
-        audio.step++;
-      };
-      tick(); audio.timer = setInterval(tick, 3400);
-    } catch (e) { /* audio tidak tersedia — undangan tetap berfungsi */ }
+    if (!bgm) return;
+    var btn = $("#musicBtn"); btn.hidden = false;
+    var p = bgm.play(); if (p && p.catch) p.catch(function () {});
   }
   function musicStop() {
-    audio.playing = false;
-    if (audio.timer) clearInterval(audio.timer);
-    var btn = $("#musicBtn"); btn.classList.remove("playing");
-    if (audio.ctx) audio.ctx.suspend();
+    if (bgm) bgm.pause();
   }
-  $("#musicBtn").addEventListener("click", function () { audio.playing ? musicStop() : musicStart(); });
+  if (bgm) {
+    bgm.addEventListener("play", function () { $("#musicBtn").classList.add("playing"); });
+    bgm.addEventListener("pause", function () { $("#musicBtn").classList.remove("playing"); });
+  }
+  $("#musicBtn").addEventListener("click", function () { (bgm && !bgm.paused) ? musicStop() : musicStart(); });
 
   /* ---------- Buka Undangan ---------- */
   var openBtn = $("#openBtn"), coverCard = $("#coverCard");

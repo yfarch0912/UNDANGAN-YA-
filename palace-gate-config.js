@@ -4,7 +4,7 @@
    Nama orang tua, venue, dan rekening adalah contoh — ganti dengan data asli pasangan
    sebelum undangan disebar. Rekening bertanda DEMO tidak boleh dipakai menerima dana. */
 window.PALACE_CONFIG = {
-  musicTitle: "Palace Garden — instrumental lembut (sintesis WebAudio, tanpa file audio)",
+  musicTitle: "Petals on the Stone Floor — instrumental",
   theme: {
     slug: "palace-garden-gate",
     name: "Palace Garden Gate",

@@ -538,9 +538,9 @@ $("#guestName").textContent = guest;
 $("#phoneFrom").textContent = guest;
 $("#fNama").value = guest === "Tamu Undangan" ? "" : guest;
 
-/* ================= AUDIO: DESIS + MUSIK ORISINAL ================= */
+/* ============ AUDIO: DESIS TUNING (WebAudio) + MUSIK MP3 BERSAMA ============ */
 const RadioAudio = {
-  ctx: null, noiseGain: null, musicGain: null, musicTimer: null, step: 0, musicOn: false,
+  ctx: null, noiseGain: null, musicOn: false,
   ensure() {
     if (this.ctx) return true;
     const AC = window.AudioContext || window.webkitAudioContext;
@@ -557,9 +557,6 @@ const RadioAudio = {
       this.noiseGain = this.ctx.createGain(); this.noiseGain.gain.value = 0.0;
       src.connect(hp); hp.connect(this.noiseGain); this.noiseGain.connect(this.ctx.destination);
       src.start();
-      this.musicGain = this.ctx.createGain(); this.musicGain.gain.value = 0.0;
-      const lp = this.ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 1800;
-      this.musicGain.connect(lp); lp.connect(this.ctx.destination);
       return true;
     } catch (e) { return false; }
   },
@@ -569,41 +566,16 @@ const RadioAudio = {
     this.noiseGain.gain.cancelScheduledValues(t);
     this.noiseGain.gain.setTargetAtTime(Math.max(0, Math.min(1, level)) * 0.14, t, 0.08);
   },
-  chords: [[261.63,329.63,392.00,493.88],[220.00,261.63,329.63,392.00],[174.61,220.00,261.63,329.63],[196.00,246.94,293.66,392.00]],
-  melody: [523.25,587.33,659.25,783.99,659.25,587.33,523.25,440.00],
-  scheduleStep() {
-    if (!this.ctx) return;
-    const t = this.ctx.currentTime + 0.06;
-    const chord = this.chords[this.step % 4];
-    chord.forEach(f => {
-      const o = this.ctx.createOscillator(), g = this.ctx.createGain();
-      o.type = "triangle"; o.frequency.value = f;
-      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.045, t + 0.5);
-      g.gain.setValueAtTime(0.045, t + 2.6); g.gain.linearRampToValueAtTime(0, t + 3.3);
-      o.connect(g); g.connect(this.musicGain); o.start(t); o.stop(t + 3.4);
-    });
-    const base = (this.step * 2) % this.melody.length;
-    [0, 1.5].forEach((off, i) => {
-      const f = this.melody[(base + i * 2) % this.melody.length];
-      const o = this.ctx.createOscillator(), g = this.ctx.createGain();
-      o.type = "sine"; o.frequency.value = f;
-      const tt = t + off;
-      g.gain.setValueAtTime(0.0001, tt); g.gain.exponentialRampToValueAtTime(0.09, tt + 0.03);
-      g.gain.exponentialRampToValueAtTime(0.0001, tt + 1.3);
-      o.connect(g); g.connect(this.musicGain); o.start(tt); o.stop(tt + 1.4);
-    });
-    this.step++;
-  },
+  /* Musik pasca-lock: lagu latar bersama "Petals on the Stone Floor" (file MP3 bersama).
+     Sintesis lagu WebAudio lama DINONAKTIFKAN; WebAudio kini hanya untuk desis statis tuning. */
   startMusic() {
-    if (!this.ensure()) return;
-    if (this.ctx.state === "suspended") this.ctx.resume();
-    this.musicGain.gain.setTargetAtTime(0.9, this.ctx.currentTime, 0.4);
-    if (!this.musicTimer) { this.scheduleStep(); this.musicTimer = setInterval(() => this.scheduleStep(), 3300); }
+    const b = document.getElementById("bgmShared");
+    if (b) { try { const p = b.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {} }
     this.musicOn = true; syncMusicBtn();
   },
   stopMusic() {
-    if (this.ctx && this.musicGain) this.musicGain.gain.setTargetAtTime(0.0, this.ctx.currentTime, 0.2);
-    if (this.musicTimer) { clearInterval(this.musicTimer); this.musicTimer = null; }
+    const b = document.getElementById("bgmShared");
+    if (b) { try { b.pause(); } catch (e) {} }
     this.musicOn = false; syncMusicBtn();
   },
   toggleMusic() { this.musicOn ? this.stopMusic() : this.startMusic(); }
@@ -858,5 +830,6 @@ window.RadioApp = {
   openInvitation
 };
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

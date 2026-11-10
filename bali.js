@@ -286,33 +286,19 @@ function startPetals(){
   }
 }
 
-/* --- musik sintetis orisinal (gender-wayang lembut, WebAudio) --- */
-var actx = null, playing = false, musicTimer = null;
-var scale = [293.66, 329.63, 392.0, 440.0, 523.25, 587.33];
-function pluck(freq, when, vol){
-  var o = actx.createOscillator(), g = actx.createGain();
-  o.type = "sine"; o.frequency.value = freq;
-  g.gain.setValueAtTime(0, when); g.gain.linearRampToValueAtTime(vol, when + .02); g.gain.exponentialRampToValueAtTime(.0001, when + 1.6);
-  o.connect(g); g.connect(actx.destination); o.start(when); o.stop(when + 1.7);
-}
+/* --- musik latar: file bersama Petals on the Stone Floor --- */
+var playing = false;
+function bgmEl(){ return document.getElementById("bgmShared"); }
+function syncMusicBtn(){ var mb = $("#musicBtn"); if(!mb) return; mb.classList.toggle("playing", playing); mb.setAttribute("aria-pressed", playing ? "true" : "false"); }
+function bindBgm(){ var a = bgmEl(); if(!a || a.__boundBgm) return; a.__boundBgm = true; a.addEventListener("play", function(){ playing = true; syncMusicBtn(); }); a.addEventListener("pause", function(){ playing = false; syncMusicBtn(); }); }
+bindBgm();
 function startMusic(){
   if(playing || reduced) return;
-  try{
-    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
-    playing = true; var mb = $("#musicBtn"); mb.classList.add("playing"); mb.setAttribute("aria-pressed", "true");
-    var step = 0, seq = [0,2,4,3, 2,4,5,4, 0,2,3,1, 2,1,0,-1];
-    var loop = function(){
-      if(!playing) return;
-      var t = actx.currentTime + .05, idx = seq[step % seq.length];
-      if(idx >= 0) pluck(scale[idx], t, .12);
-      if(step % 4 === 0) pluck(scale[0] / 2, t, .07);
-      step++; musicTimer = setTimeout(loop, 560);
-    };
-    loop();
-  }catch(e){ /* audio tidak tersedia — diam */ }
+  var a = bgmEl(); if(!a) return; bindBgm();
+  try{ var p = a.play(); if(p && p.catch) p.catch(function(){}); }catch(e){ /* audio tidak tersedia — diam */ }
 }
 $("#musicBtn").addEventListener("click", function(){
-  if(playing){ playing = false; clearTimeout(musicTimer); this.classList.remove("playing"); this.setAttribute("aria-pressed", "false"); if(actx) actx.close(), actx = null; }
+  if(playing){ var a = bgmEl(); if(a) a.pause(); }
   else startMusic();
 });
 }

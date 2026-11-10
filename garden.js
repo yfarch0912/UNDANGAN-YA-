@@ -247,29 +247,23 @@
     toast('Selamat datang di taman kami' + (guest ? ', ' + guest : '') + ' 🌸');
   });
 
-  /* ---------- Musik taman (WebAudio) ---------- */
-  var actx = null, mOn = false, mTimer = null, ci = 0;
-  var CH = [[392, 493.88, 587.33], [329.63, 392, 493.88], [261.63, 329.63, 392], [293.66, 369.99, 587.33]];
-  function chord() {
-    if (!actx) return; var now = actx.currentTime;
-    CH[ci++ % CH.length].forEach(function (fq) {
-      var o = actx.createOscillator(), g = actx.createGain();
-      o.type = 'triangle'; o.frequency.value = fq;
-      g.gain.setValueAtTime(0, now); g.gain.linearRampToValueAtTime(.04, now + .7); g.gain.linearRampToValueAtTime(0, now + 3.9);
-      o.connect(g); g.connect(actx.destination); o.start(now); o.stop(now + 4);
-    });
-  }
+  /* ---------- Musik latar: file bersama Petals on the Stone Floor ---------- */
+  var mOn = false;
+  function bgmEl() { return document.getElementById('bgmShared'); }
+  function syncMusicBtn() { var b = $('gMusic'); if (b) b.classList.toggle('playing', mOn); }
   function startMusic() {
-    if (mOn) return;
-    try {
-      actx = actx || new (window.AudioContext || window.webkitAudioContext)();
-      actx.resume(); chord(); mTimer = setInterval(chord, 3700);
-      mOn = true; $('gMusic').classList.add('playing');
-    } catch (e) {}
+    var a = bgmEl(); if (!a || mOn) return;
+    try { var p = a.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {}
   }
+  function stopMusic() { var a = bgmEl(); if (a) a.pause(); }
+  (function bindBgm() {
+    var a = bgmEl(); if (!a) return;
+    a.addEventListener('play', function () { mOn = true; syncMusicBtn(); });
+    a.addEventListener('pause', function () { mOn = false; syncMusicBtn(); });
+  })();
   $('gMusic').addEventListener('click', function () {
-    if (mOn) { clearInterval(mTimer); mOn = false; $('gMusic').classList.remove('playing'); if (actx) actx.suspend(); }
-    else startMusic();
+    if (mOn) stopMusic(); else startMusic();
   });
+
   onScroll();
 })();

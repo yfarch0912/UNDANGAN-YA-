@@ -131,25 +131,19 @@ if(document.readyState === "loading") addEventListener("DOMContentLoaded", build
 $("#btnSkip").addEventListener("click", ()=>{ if(tl) tl.progress(1); finalState(); });
 $("#btnReplay").addEventListener("click", ()=>{ $("#introCanopy").style.display=""; $("#btnOpen").style.visibility="hidden"; if(tl){ tl.restart(); } else buildTimeline(); });
 
-/* ---------- buka undangan + musik sintetis ---------- */
-let audio = null, musicOn = false, musicTimer = null;
-function startMusic(){
-  try{
-    audio = audio || new (window.AudioContext||window.webkitAudioContext)();
-    const chords = [[220,261.6,329.6],[174.6,220,261.6],[196,246.9,293.7],[164.8,196,246.9]];
-    let i = 0;
-    const play = ()=>{
-      const t = audio.currentTime, gain = audio.createGain();
-      gain.gain.setValueAtTime(0, t); gain.gain.linearRampToValueAtTime(.06, t+.8); gain.gain.linearRampToValueAtTime(0, t+3.8);
-      gain.connect(audio.destination);
-      chords[i % chords.length].forEach(f=>{ const o = audio.createOscillator(); o.type="sine"; o.frequency.value=f; o.connect(gain); o.start(t); o.stop(t+4); });
-      i++;
-    };
-    play(); musicTimer = setInterval(play, 4000); musicOn = true; $("#musicBtn").classList.add("playing");
-  }catch(e){ /* tanpa audio tetap bisa */ }
+/* ---------- buka undangan + musik: "Petals on the Stone Floor" — file audio bersama ---------- */
+let bgm = document.getElementById("bgmShared"), musicOn = false;
+function syncMusicBtn(){ $("#musicBtn").classList.toggle("playing", musicOn); }
+if(bgm){
+  bgm.addEventListener("play", ()=>{ musicOn = true; syncMusicBtn(); });
+  bgm.addEventListener("pause", ()=>{ musicOn = false; syncMusicBtn(); });
 }
-function stopMusic(){ if(musicTimer) clearInterval(musicTimer); musicTimer = null; musicOn = false; $("#musicBtn").classList.remove("playing"); if(audio) audio.suspend(); }
-$("#musicBtn").addEventListener("click", ()=>{ if(musicOn) stopMusic(); else { if(audio) audio.resume(); startMusic(); } });
+function startMusic(){
+  if(!bgm) return;
+  const p = bgm.play(); if(p && p.catch) p.catch(()=>{});
+}
+function stopMusic(){ if(bgm) bgm.pause(); }
+$("#musicBtn").addEventListener("click", ()=>{ if(musicOn) stopMusic(); else startMusic(); });
 $("#btnOpen").addEventListener("click", ()=>{
   document.body.classList.remove("locked");
   if(!musicOn) startMusic();

@@ -4,7 +4,7 @@
    khusus agar countdown contoh berfungsi — ganti seluruh blok ini dengan data asli
    sebelum dipakai produksi. Foto pasangan = ilustrasi contoh berlabel, bukan foto asli. */
 window.PINK_GARDEN_CONFIG = {
-  musicTitle: "Pink Garden — instrumental romantis (sintesis orisinal)",
+  musicTitle: "Petals on the Stone Floor — instrumental",
   theme: {
     slug: "pink-garden-fountain",
     name: "Pink Garden Fountain",

@@ -358,68 +358,26 @@ if ("IntersectionObserver" in window && !reduced) {
   document.querySelectorAll(".sec").forEach(function (s) { revealIO.observe(s); });
 }
 
-/* ================= Musik: pad lembut sintesis WebAudio ================= */
+/* ================= Musik: "Petals on the Stone Floor" — file audio bersama ================= */
 (function () {
   var btn = $("musicBtn");
   if (!btn) return;
   btn.title = C.musicTitle || "Musik latar";
   var ico = btn.querySelector("img");
   if (ico) ico.addEventListener("error", function () { btn.classList.add("noicon"); });
-  var ACtor = window.AudioContext || window.webkitAudioContext;
-  if (!ACtor) { btn.style.display = "none"; return; }
-  var ac = null, master = null, timer = null, nextBar = 0, barIdx = 0, on = false;
-  var BAR = 60 / 60 * 4; /* 60 BPM, 4/4 — tempo taman yang tenang */
-  /* Progresi romantis: C – Am – F – G (midi root + triad) */
-  var CHORDS = [[130.81, 196.00, 261.63, 329.63], [110.00, 164.81, 220.00, 261.63],
-                [87.31, 174.61, 220.00, 261.63], [98.00, 196.00, 246.94, 293.66]];
-  var MEL = [659.25, 523.25, 587.33, 783.99, 659.25, 523.25, 440.00, 493.88];
-  function padTone(f, t, dur) {
-    [-5, 5].forEach(function (det) {
-      var o = ac.createOscillator(), g = ac.createGain(), fl = ac.createBiquadFilter();
-      o.type = "triangle"; o.frequency.value = f; o.detune.value = det;
-      fl.type = "lowpass"; fl.frequency.value = 780;
-      o.connect(fl); fl.connect(g); g.connect(master);
-      g.gain.setValueAtTime(0.0001, t);
-      g.gain.linearRampToValueAtTime(0.028, t + 0.6);
-      g.gain.setValueAtTime(0.028, Math.max(t + 0.6, t + dur - 0.6));
-      g.gain.linearRampToValueAtTime(0.0001, t + dur);
-      o.start(t); o.stop(t + dur + 0.1);
-    });
-  }
-  function pluck(f, t) {
-    var o = ac.createOscillator(), g = ac.createGain();
-    o.type = "sine"; o.frequency.value = f;
-    o.connect(g); g.connect(master);
-    g.gain.setValueAtTime(0.0001, t);
-    g.gain.exponentialRampToValueAtTime(0.07, t + 0.03);
-    g.gain.exponentialRampToValueAtTime(0.0001, t + 1.6);
-    o.start(t); o.stop(t + 1.8);
-  }
-  function playBar(i, t) {
-    CHORDS[i % 4].forEach(function (f) { padTone(f, t, BAR); });
-    pluck(MEL[(i * 2) % 8], t + 0.2);
-    pluck(MEL[(i * 2 + 1) % 8], t + BAR / 2);
-  }
-  function schedule() { while (nextBar < ac.currentTime + BAR * 1.2) { playBar(barIdx, nextBar); nextBar += BAR; barIdx++; } }
+  var bgm = document.getElementById("bgmShared");
+  if (!bgm) { btn.style.display = "none"; return; }
+  var on = false;
   function setBtn() {
     btn.classList.toggle("on", on);
     btn.setAttribute("aria-pressed", String(on));
     btn.setAttribute("aria-label", on ? "Jeda musik latar" : "Putar musik latar");
   }
-  function start() {
-    if (!ac) {
-      ac = new ACtor();
-      var comp = ac.createDynamicsCompressor();
-      master = ac.createGain(); master.gain.value = 0;
-      master.connect(comp); comp.connect(ac.destination);
-      master.gain.linearRampToValueAtTime(0.9, ac.currentTime + 1.2);
-      nextBar = ac.currentTime + 0.1; barIdx = 0;
-      timer = setInterval(schedule, 350); schedule();
-    }
-    if (ac.state === "suspended") ac.resume();
-    on = true; setBtn();
-  }
-  function pause() { if (ac) ac.suspend(); on = false; setBtn(); }
-  btn.addEventListener("click", function () { if (on) pause(); else start(); });
+  bgm.addEventListener("play", function () { on = true; setBtn(); });
+  bgm.addEventListener("pause", function () { on = false; setBtn(); });
+  btn.addEventListener("click", function () {
+    if (!bgm.paused) bgm.pause();
+    else { var p = bgm.play(); if (p && p.catch) p.catch(function () {}); }
+  });
 })();
 })();

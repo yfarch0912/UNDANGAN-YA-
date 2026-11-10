@@ -125,12 +125,12 @@ document.getElementById('rsvpBtn').addEventListener('click',function(){
  document.getElementById('coupon').classList.add('torn');document.getElementById('rsvpResult').classList.remove('hidden');
  var n=document.getElementById('rsvpName').value||'Tamu',m=document.getElementById('rsvpMsg').value;
  var div=document.createElement('div');div.className='box';div.style.marginTop='8px';div.innerHTML='<b></b><p></p>';div.querySelector('b').textContent=n;div.querySelector('p').textContent=m||'Selamat!';document.getElementById('wishes').prepend(div);});
-var ctx=null,playing=false,timer=null;
+var playing=false;
 document.getElementById('musicBtn').addEventListener('click',function(){
- if(playing){clearInterval(timer);playing=false;this.textContent='Putar Musik Redaksi';return;}
- ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();playing=true;this.textContent='Hentikan Musik';
- var notes=[523.25,587.33,659.25,783.99,698.46,659.25,587.33,523.25],i=0;
- function note(){if(!playing)return;var o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=notes[i%notes.length];g.gain.setValueAtTime(.12,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.9);o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+1);i++;}
- note();timer=setInterval(note,650);});
+ var bgm=document.getElementById('bgmShared'); if(!bgm) return;
+ if(playing){bgm.pause();playing=false;this.textContent='Putar Musik Redaksi';return;}
+ playing=true;this.textContent='Hentikan Musik';
+ try{var p=bgm.play(); if(p&&p.catch){var self=this;p.catch(function(){playing=false;self.textContent='Putar Musik Redaksi';});}}catch(e){playing=false;this.textContent='Putar Musik Redaksi';}});
 })();
-</script></body></html>
+</script><audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+</body></html>

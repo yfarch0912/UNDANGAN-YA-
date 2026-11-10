@@ -694,43 +694,23 @@ function renderWishes(){
     <div class="wish"><b>${w.nama}</b><span class="st ${w.hadir==="Hadir"?"":"no"}">${w.hadir==="Hadir"?"Siap Meluncur":"Di Orbit Lain"}</span><p>${w.ucapan}</p></div>`).join("");
 }
 
-/* ================= MUSIK WEBAUDIO ================= */
-let actx=null,musicOn=false,master=null,chimeTimer=null;
+/* ================= MUSIK LATAR BERSAMA: Petals on the Stone Floor ================= */
+let musicOn=false;
+function bgmEl(){return document.getElementById("bgmShared");}
+function syncMusicUI(){const b=$("#btnMusic"); if(!b)return; if(musicOn)b.classList.add("on"); else b.classList.remove("on");}
 function startMusic(){
   if(!CONFIG.musicEnabled())return;
-  if(actx){toggleMusic(true);return;}
-  try{
-    actx=new (window.AudioContext||window.webkitAudioContext)();
-    master=actx.createGain(); master.gain.value=0.0; master.connect(actx.destination);
-    master.gain.linearRampToValueAtTime(0.14,actx.currentTime+1.2);
-    /* pad ambien antariksa: dua osilator detune + LFO */
-    [110,164.81,220].forEach((f,i)=>{
-      const o=actx.createOscillator(),g=actx.createGain();
-      o.type=i===2?"triangle":"sine"; o.frequency.value=f;
-      g.gain.value=i===2?0.018:0.032; o.connect(g); g.connect(master); o.start();
-    });
-    const lfo=actx.createOscillator(),lg=actx.createGain();
-    lfo.frequency.value=0.07; lg.gain.value=0.012; lfo.connect(lg); lg.connect(master.gain); lfo.start();
-    musicOn=true; $("#btnMusic").classList.add("on");
-    const chime=()=>{ if(!musicOn)return;
-      const o=actx.createOscillator(),g=actx.createGain();
-      const notes=[880,1046.5,1174.66,1318.51,1567.98];
-      o.type="sine"; o.frequency.value=notes[Math.floor(Math.random()*notes.length)];
-      g.gain.setValueAtTime(0.0001,actx.currentTime);
-      g.gain.exponentialRampToValueAtTime(0.06,actx.currentTime+0.03);
-      g.gain.exponentialRampToValueAtTime(0.0001,actx.currentTime+1.6);
-      o.connect(g); g.connect(master); o.start(); o.stop(actx.currentTime+1.7);
-      chimeTimer=setTimeout(chime,2600+Math.random()*3200);
-    };
-    chimeTimer=setTimeout(chime,1400);
-  }catch(err){ /* audio tidak tersedia */ }
+  const el=bgmEl(); if(!el)return;
+  try{ const p=el.play(); if(p&&p.catch)p.catch(()=>{}); }catch(err){ /* audio tidak tersedia */ }
+  musicOn=true; syncMusicUI();
 }
 CONFIG.musicEnabled=function(){return true;};
 function toggleMusic(forceOn){
-  if(!actx){startMusic();return;}
-  if(musicOn&&!forceOn){ master.gain.linearRampToValueAtTime(0.0001,actx.currentTime+0.4); musicOn=false; $("#btnMusic").classList.remove("on"); if(chimeTimer)clearTimeout(chimeTimer); }
-  else if(!musicOn){ master.gain.linearRampToValueAtTime(0.14,actx.currentTime+0.6); musicOn=true; $("#btnMusic").classList.add("on"); }
+  const el=bgmEl(); if(!el){startMusic();return;}
+  if(musicOn&&!forceOn){ try{el.pause();}catch(err){} musicOn=false; syncMusicUI(); }
+  else if(!musicOn){ startMusic(); }
 }
+document.addEventListener("DOMContentLoaded",()=>{ const el=bgmEl(); if(!el)return; el.addEventListener("play",()=>{musicOn=true;syncMusicUI();}); el.addEventListener("pause",()=>{musicOn=false;syncMusicUI();}); });
 $("#btnMusic").addEventListener("click",()=>toggleMusic(false));
 
 /* ================= NAV & REVEAL ================= */
@@ -744,5 +724,6 @@ function initReveal(){
   els.forEach(e=>io.observe(e));
 }
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

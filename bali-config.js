@@ -1,5 +1,6 @@
 /* UndangYa! — Bali Pastel Romance — konfigurasi tunggal (data CONTOH, mudah diganti) */
 window.BALI_CONFIG = {
+  musicTitle: "Petals on the Stone Floor — instrumental",
   couple: {
     bride: { nick: "Meyzsa", full: "Meyzsa Ayu Lestari, S.Par.", father: "Bapak I Made Sudarma", mother: "Ibu Ni Wayan Sari", origin: "Banjar Tengah, Ubud, Gianyar", photo: "assets/undangya/bali-pastel/photos/portrait-bride.webp" },
     groom: { nick: "Fahrezzi", full: "Fahrezzi Wirawan, S.T.", father: "Bapak I Nyoman Rai", mother: "Ibu Ni Ketut Ayu", origin: "Banjar Kaja, Denpasar", photo: "assets/undangya/bali-pastel/photos/portrait-groom.webp" },

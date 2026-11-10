@@ -111,7 +111,7 @@ footer{text-align:center;font-size:12px;color:#6b5844;line-height:1.7;padding-bo
 <meta name="twitter:image" content="https://undangya.web.id/assets/katalog/papan-permainan.webp">
 </head>
 <body>
-<button id="musicBtn" aria-label="Musik" title="Musik kotak musik orisinal">♪</button>
+<button id="musicBtn" aria-label="Musik" title="Petals on the Stone Floor">♪</button>
 <div class="stage" id="stage">
 
 <section id="sampul">
@@ -248,13 +248,16 @@ document.getElementById('flipBtn').addEventListener('click',function(){document.
 document.getElementById('rsvpForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('rsvpDone').style.display='block';});
 /* COPY */
 document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;if(navigator.clipboard)navigator.clipboard.writeText(t);b.textContent='Tersalin ✓';setTimeout(function(){b.textContent='Salin Nomor';},1500);});});
-/* MUSIC WebAudio original music-box */
-var actx=null,playing=false,timer=null,notes=[523.25,587.33,659.25,783.99,659.25,587.33,523.25,440,493.88,523.25,587.33,659.25,783.99,880,783.99,659.25],ni=0;
-function beep(f){var o=actx.createOscillator(),g=actx.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.14,actx.currentTime);g.gain.exponentialRampToValueAtTime(.001,actx.currentTime+.7);o.connect(g);g.connect(actx.destination);o.start();o.stop(actx.currentTime+.75);}
-function startMusic(){if(playing)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();playing=true;timer=setInterval(function(){beep(notes[ni%notes.length]);ni++;},420);document.getElementById('musicBtn').textContent='♫';}catch(e){}}
-function stopMusic(){playing=false;if(timer)clearInterval(timer);document.getElementById('musicBtn').textContent='♪';}
+/* MUSIC latar bersama: Petals on the Stone Floor */
+var playing=false;
+function bgmEl(){return document.getElementById('bgmShared');}
+function syncMusicBtn(){document.getElementById('musicBtn').textContent=playing?'\u266b':'\u266a';}
+function startMusic(){if(playing)return;try{var el=bgmEl();if(!el)return;var p=el.play();if(p&&p.catch)p.catch(function(){});playing=true;syncMusicBtn();}catch(e){}}
+function stopMusic(){playing=false;syncMusicBtn();var el=bgmEl();if(el)el.pause();}
 document.getElementById('musicBtn').addEventListener('click',function(){playing?stopMusic():startMusic();});
+document.addEventListener('DOMContentLoaded',function(){var el=bgmEl();if(!el)return;el.addEventListener('play',function(){playing=true;syncMusicBtn();});el.addEventListener('pause',function(){playing=false;syncMusicBtn();});});
 })();
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

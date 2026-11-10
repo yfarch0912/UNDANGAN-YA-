@@ -493,42 +493,21 @@ p.body-txt{font-size:14.5px;line-height:1.85;color:#e2d5b8;text-align:center}
     }
   }
 
-  /* --- musik WebAudio orisinal: piano + string lembut ala galeri --- */
-  var audioCtx=null,musicOn=false,musicTimer=null,btnMusic=document.getElementById("btnMusic");
-  function note(freq,t,dur,type,vol){
-    if(!audioCtx) return;
-    var o=audioCtx.createOscillator(),g=audioCtx.createGain();
-    o.type=type||"sine";o.frequency.value=freq;
-    g.gain.setValueAtTime(0.0001,t);
-    g.gain.exponentialRampToValueAtTime(vol,t+0.08);
-    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
-    o.connect(g);g.connect(audioCtx.destination);o.start(t);o.stop(t+dur+0.1);
-  }
-  var melody=[523.25,587.33,659.25,783.99,659.25,587.33,523.25,440.00,493.88,523.25,587.33,523.25];
-  var bass=[130.81,196.00,164.81,174.61];
-  var step=0;
-  function playStep(){
-    if(!audioCtx||!musicOn) return;
-    var t=audioCtx.currentTime+0.05;
-    note(melody[step%melody.length],t,1.6,"sine",0.055);
-    note(melody[step%melody.length]/2,t,1.6,"triangle",0.018);
-    if(step%3===0) note(bass[(step/3)%bass.length|0],t,2.8,"sine",0.035);
-    step++;
-  }
+  /* --- musik latar bersama: "Petals on the Stone Floor" (file MP3 bersama) --- */
+  var musicOn=false,btnMusic=document.getElementById("btnMusic"),_bgmBound=false;
+  function bgmEl(){return document.getElementById("bgmShared");}
+  function syncMusicBtn(){if(btnMusic) btnMusic.classList.toggle("playing",musicOn);}
+  function bindBgm(){var b=bgmEl();if(!b||_bgmBound) return;_bgmBound=true;
+    b.addEventListener("play",function(){musicOn=true;syncMusicBtn();});
+    b.addEventListener("pause",function(){musicOn=false;syncMusicBtn();});}
   function startMusic(){
-    try{
-      if(!audioCtx){var AC=window.AudioContext||window.webkitAudioContext;if(!AC) return;audioCtx=new AC();}
-      if(audioCtx.state==="suspended") audioCtx.resume();
-      if(musicOn) return;
-      musicOn=true;playStep();
-      musicTimer=setInterval(playStep,950);
-      if(btnMusic) btnMusic.classList.add("playing");
-    }catch(e){/* musik opsional */}
+    var b=bgmEl(); if(!b) return; bindBgm();
+    musicOn=true; syncMusicBtn();
+    try{var p=b.play(); if(p&&p.catch) p.catch(function(){musicOn=false;syncMusicBtn();});}catch(e){musicOn=false;syncMusicBtn();}
   }
   function stopMusic(){
-    musicOn=false;
-    if(musicTimer){clearInterval(musicTimer);musicTimer=null;}
-    if(btnMusic) btnMusic.classList.remove("playing");
+    var b=bgmEl(); if(b) b.pause();
+    musicOn=false; syncMusicBtn();
   }
   if(btnMusic) btnMusic.addEventListener("click",function(){musicOn?stopMusic():startMusic();});
 
@@ -616,5 +595,6 @@ p.body-txt{font-size:14.5px;line-height:1.85;color:#e2d5b8;text-align:center}
   });
 })();
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

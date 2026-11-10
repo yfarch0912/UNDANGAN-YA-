@@ -728,7 +728,7 @@ window.KERETA_CONFIG = {
     { bank: "DANA", label: "DANA (contoh)", number: "0812-3456-7890", holder: "a.n. Meyzsa Putri Ananda", dana: true }
   ],
   rsvp: { storageKey: "undangya-perjalanan-kereta-rsvp-v1" },
-  music: { tempo: 0.42 }
+  music: { title: "Petals on the Stone Floor" }
 };
 </script>
 <script>
@@ -1102,46 +1102,28 @@ $("rsvpForm").addEventListener("submit", function(ev){
   showToast("Tiket terkonfirmasi — sampai jumpa di stasiun!");
 });
 
-/* ---------- Musik WebAudio ambient (buatan sendiri) ---------- */
-var actx = null, master = null, musicOn = false, musicTimer = null, step = 0;
-var melody = [261.63, 329.63, 392.00, 523.25, 392.00, 329.63, 293.66, 329.63]; /* C E G C' G E D E */
-var bass = [130.81, 98.00, 110.00, 130.81];
-function ensureCtx(){
-  var AC = window.AudioContext || window.webkitAudioContext;
-  if (!AC) return false;
-  if (!actx){ actx = new AC(); master = actx.createGain(); master.gain.value = 0.16; master.connect(actx.destination); }
-  if (actx.state === "suspended") actx.resume();
-  return true;
-}
-function tone(freq, t, dur, gainVal, type){
-  var o = actx.createOscillator(), g = actx.createGain();
-  o.type = type || "sine"; o.frequency.value = freq;
-  g.gain.setValueAtTime(0, t);
-  g.gain.linearRampToValueAtTime(gainVal, t + 0.06);
-  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-  o.connect(g); g.connect(master); o.start(t); o.stop(t + dur + 0.05);
-}
-function playStep(){
-  if (!musicOn || !actx) return;
-  var t = actx.currentTime + 0.05;
-  tone(melody[step % melody.length], t, 1.5, 0.5, "sine");
-  tone(melody[step % melody.length] * 2, t, 0.9, 0.08, "triangle");
-  if (step % 2 === 0) tone(bass[(step / 2) % bass.length], t, 2.2, 0.35, "sine");
-  step++;
-  musicTimer = setTimeout(playStep, C.music.tempo * 1000);
+/* ---------- Musik — "Petals on the Stone Floor" (file bersama) ---------- */
+var musicOn = false;
+function bgmEl(){ return document.getElementById("bgmShared"); }
+function syncMusicUI(){
+  var a = bgmEl(); musicOn = !!(a && !a.paused);
+  $("btnMusic").classList.toggle("playing", musicOn);
 }
 function startMusic(){
-  if (musicOn) return;
-  if (!ensureCtx()){ showToast("Audio tidak didukung di perangkat ini"); return; }
-  musicOn = true; step = 0; playStep();
+  var a = bgmEl(); if (!a){ showToast("Audio tidak didukung di perangkat ini"); return; }
+  var p = a.play(); if (p && p.catch) p.catch(function(){});
+  musicOn = true;
   $("btnMusic").classList.add("playing");
 }
 function stopMusic(){
-  musicOn = false; clearTimeout(musicTimer);
+  var a = bgmEl(); if (a) a.pause();
+  musicOn = false;
   $("btnMusic").classList.remove("playing");
 }
+(function bindBgm(){ var a = bgmEl(); if (a){ a.addEventListener("play", syncMusicUI); a.addEventListener("pause", syncMusicUI); } else { document.addEventListener("DOMContentLoaded", bindBgm); } })();
 $("btnMusic").addEventListener("click", function(){ musicOn ? stopMusic() : startMusic(); });
 })();
 </script>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
 </body>
 </html>

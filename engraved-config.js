@@ -4,7 +4,7 @@
    (perintah user 2026-10-29, menggantikan nama referensi asli); tanggal, venue,
    nama orang tua & rekening di bawah ini CONTOH sampai diganti data asli. */
 window.ENGRAVED_CONFIG = {
-  musicTitle: "Highland Air — instrumental lembut (sintesis orisinal)",
+  musicTitle: "Petals on the Stone Floor — instrumental",
   theme: { slug: "engraved-highland", name: "Engraved Highland", assets: "assets/undangya/engraved-highland/" },
   event: {
     title: "The Wedding of",
