@@ -4,111 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard — UNDANGYA!</title>
-<meta name="description" content="Dashboard UndangYA! — kelola undangan digitalmu.">
+<meta name="robots" content="noindex">
+<script>location.replace('app');</script>
+<meta http-equiv="refresh" content="0; url=app">
 <link rel="icon" type="image/png" href="assets/logo-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Great+Vibes&family=Parisienne&family=Dancing+Script:wght@500;700&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
-<link rel="stylesheet" href="katalog.css">
-<link rel="stylesheet" href="auth.css">
-<link rel="canonical" href="https://undangya.web.id/dashboard">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="UNDANGYA!">
-<meta property="og:title" content="Dashboard — UNDANGYA!">
-<meta property="og:description" content="Dashboard UndangYA! — kelola undangan digitalmu.">
-<meta property="og:url" content="https://undangya.web.id/dashboard">
-<meta property="og:image" content="https://undangya.web.id/assets/hero-envelope.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Dashboard — UNDANGYA!">
-<meta name="twitter:description" content="Dashboard UndangYA! — kelola undangan digitalmu.">
-<meta name="twitter:image" content="https://undangya.web.id/assets/hero-envelope.webp">
 </head>
-<body class="auth-page">
-
-<header class="site-head katalog-head">
-  <div class="wrap head-in">
-    <a class="brand-plaque" href="/" aria-label="UNDANGYA! — kembali ke beranda">
-      <img class="brand-full" src="assets/logo-undangya-horizontal.webp" alt="UndangYA!" width="1800" height="466">
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Buka menu navigasi">☰</button>
-    <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
-      <a href="/">Beranda</a>
-      <a href="katalog">Katalog</a>
-      <a href="/#harga">Harga</a>
-      <a href="dashboard" aria-current="page" class="on">Dashboard</a>
-    </nav>
-    <button class="btn btn-line btn-sm head-cta" id="logoutBtn" type="button">Keluar</button>
-  </div>
-</header>
-
-<main class="auth-main dash-main">
-  <div class="wrap">
-    <div class="dash-head">
-      <img class="dash-avatar" id="avatar" alt="" width="72" height="72" hidden>
-      <div>
-        <p class="micro gold">Dashboard</p>
-        <h1 id="hello">Memuat…</h1>
-        <p class="auth-sub" id="emailLine"></p>
-      </div>
-    </div>
-
-    <div class="dash-grid">
-      <a class="dash-card" href="katalog">
-        <h2>Lihat Katalog</h2>
-        <p>Jelajahi koleksi Simple 2D, Motion 2D, Cinematic, dan 3D Interactive.</p>
-        <span class="dash-link">Buka katalog →</span>
-      </a>
-      <a class="dash-card" href="katalog">
-        <h2>Buat Undangan <span class="free-badge" style="vertical-align:middle">Gratis</span></h2>
-        <p>Buka editor, pilih template, dan buat undangan pertamamu gratis — bayar hanya saat publikasi.</p>
-        <span class="dash-link">Mulai buat gratis →</span>
-      </a>
-      <div class="dash-card">
-        <h2>Undangan Saya</h2>
-        <p>Belum ada undangan yang tersimpan di akun ini. Undangan pertamamu akan tampil di sini setelah dibuat.</p>
-        <span class="dash-link">Masih kosong</span>
-      </div>
-    </div>
+<body>
+<main style="min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px">
+  <div>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#410D19;margin:0 0 8px">Mengalihkan ke dashboard…</p>
+    <p style="color:#6b5b43">Bila tidak berpindah otomatis, <a href="app" style="color:#8a6420;text-decoration:underline">klik di sini</a>.</p>
   </div>
 </main>
-
-<footer class="site-foot">
-  <div class="wrap">
-    <p class="foot-legal"><a href="kebijakan-privasi">Kebijakan Privasi</a> · <a href="syarat-ketentuan">Syarat &amp; Ketentuan</a></p>
-    <p class="foot-bottom">© <span id="year">2026</span> UndangYA! — etalase demo. Semua nama pasangan, foto, dan data acara di situs ini adalah contoh fiktif untuk keperluan demo.</p>
-  </div>
-</footer>
-
-<script>
-(function () {
-  fetch('/api/auth/me').then(function (r) {
-    if (!r.ok) { window.location.replace('login'); return null; }
-    return r.json();
-  }).then(function (data) {
-    if (!data) return;
-    var u = data.user;
-    document.getElementById('hello').textContent = 'Halo, ' + (u.name || 'Pengguna') + '!';
-    document.getElementById('emailLine').textContent = u.email || '';
-    if (u.picture) {
-      var av = document.getElementById('avatar');
-      av.src = u.picture; av.hidden = false;
-    }
-  }).catch(function () { window.location.replace('login'); });
-
-  document.getElementById('logoutBtn').addEventListener('click', function () {
-    fetch('/api/auth/logout', { method: 'POST' }).then(function () {
-      window.location.replace('index');
-    });
-  });
-  var y = document.getElementById('year');
-  if (y) y.textContent = String(new Date().getFullYear());
-  var t = document.getElementById('navToggle'), n = document.getElementById('mainNav');
-  if (t && n) t.addEventListener('click', function () {
-    var open = n.classList.toggle('open');
-    t.setAttribute('aria-expanded', String(open));
-  });
-})();
-</script>
 </body>
 </html>

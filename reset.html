@@ -38,7 +38,7 @@
       <a href="/#harga">Harga</a>
       <a href="login">Masuk</a>
     </nav>
-    <a class="btn btn-gold btn-sm head-cta" href="login?next=dashboard">Buat Undangan Gratis</a>
+    <a class="btn btn-gold btn-sm head-cta" href="login?next=app">Buat Undangan Gratis</a>
   </div>
 </header>
 
@@ -157,7 +157,7 @@
     postJson('/api/auth/recovery', { token: token, password: pw }).then(function (res) {
       if (res.ok) {
         showNote('setNote', 'Kata sandi berhasil diubah dan kamu sudah masuk. Mengalihkan ke dashboard…');
-        setTimeout(function () { window.location.replace('dashboard'); }, 1200);
+        setTimeout(function () { window.location.replace('app'); }, 1200);
         return;
       }
       showNote('setNote', (res.body && res.body.message) || 'Gagal mengatur ulang kata sandi. Coba lagi sebentar.');
