@@ -12,11 +12,11 @@ h1,h2{font-family:"Cormorant Garamond",serif;font-weight:600;margin:.2em 0}
 /* ---- panel system ---- */
 main{background:linear-gradient(180deg,var(--blush),var(--lav) 26%,var(--ivory) 50%,var(--lav) 76%,var(--blush));padding-bottom:88px}
 html{scroll-padding-bottom:96px}
-.sec{position:relative;overflow:hidden;margin-top:-240px;padding:calc(5.2rem + 240px) 1.25rem 17rem;isolation:isolate}
+.sec{position:relative;overflow:hidden;margin-top:-140px;padding:calc(3.2rem + 140px) 1.25rem 9rem;isolation:isolate}
 main .sec:first-child{margin-top:0;padding-top:5.2rem}
 .sec-bg{position:absolute;left:0;right:0;top:-12%;height:124%;background-size:cover;background-position:center;z-index:-3;will-change:transform;
-  -webkit-mask-image:linear-gradient(180deg,transparent,#000 320px,#000 calc(100% - 320px),transparent);
-  mask-image:linear-gradient(180deg,transparent,#000 320px,#000 calc(100% - 320px),transparent)}
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 170px,#000 calc(100% - 170px),transparent);
+  mask-image:linear-gradient(180deg,transparent,#000 170px,#000 calc(100% - 170px),transparent)}
 .sec::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(255,248,243,.5),rgba(255,248,243,.10) 26%,rgba(255,248,243,.10) 74%,rgba(229,221,245,.4))}
 .sec .inner{max-width:520px;margin:0 auto;text-align:center;position:relative;z-index:2}
 .veil{background:rgba(255,248,243,.87);backdrop-filter:blur(3px);border:1px solid rgba(200,166,107,.45);border-radius:18px;padding:1.4rem 1.2rem;box-shadow:0 12px 34px rgba(110,74,126,.14)}
@@ -164,7 +164,7 @@ img.petal{background:none;border-radius:0;height:auto;opacity:.9}
 /* ---- reveal ---- */
 .js-anim .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
 .js-anim .rv.in{opacity:1;transform:none}
-@media (min-width:760px){.hero-names{font-size:4rem}.sec{padding:calc(6.5rem + 240px) 1.25rem 17rem}}
+@media (min-width:760px){.hero-names{font-size:4rem}.sec{padding:calc(4rem + 140px) 1.25rem 9rem}}
 /* ---- mode HP: undangan ini dirancang untuk ponsel; di layar lebar tampil sebagai kolom seukuran HP di tengah ---- */
 @media (min-width:760px){
   body{background:#221830}
