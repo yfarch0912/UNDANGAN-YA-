@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Observatorium — Meyzsa &amp; Fahrezzi | Di Bawah Bintang yang Sama, 12 Juni 2027</title>
+<meta name="description" content="Undangan pernikahan digital bertema observatorium: Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta. Di bawah bintang yang sama.">
+<link rel="icon" type="image/webp" href="assets/undangya/observatorium/icon-astrolabe.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brass:#c9a45c; --brass-l:#eed9a4; --brass-d:#8f7136;
+  --night:#070d24; --night2:#0d1738; --panel:#101a3d; --panel2:#16224d;
+  --burg:#8e2434; --burg-l:#c0455a;
+  --ivory:#f2ecd9; --mut:#aab4d6; --line:rgba(201,164,92,.32);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#02040c;font-family:'Inter',system-ui,sans-serif;color:var(--ivory);-webkit-font-smoothing:antialiased}
+.phone{max-width:430px;margin:0 auto;position:relative;min-height:100dvh;overflow:clip;box-shadow:0 0 80px rgba(0,0,0,.95);
+  background:
+   radial-gradient(90% 34% at 85% 6%,rgba(142,36,52,.28),transparent 60%),
+   radial-gradient(100% 40% at 8% 22%,rgba(63,84,180,.30),transparent 62%),
+   radial-gradient(80% 30% at 92% 58%,rgba(90,50,140,.22),transparent 60%),
+   radial-gradient(110% 36% at 12% 84%,rgba(38,90,120,.22),transparent 62%),
+   linear-gradient(180deg,#060b21 0%,#0a1330 34%,#081026 68%,#05081a 100%)}
+#skyCanvas{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:1;opacity:.9}
+.milkyway{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%) rotate(0.001deg);width:100%;max-width:430px;pointer-events:none;z-index:0;background:linear-gradient(112deg,transparent 30%,rgba(190,200,255,.055) 44%,rgba(230,210,255,.09) 50%,rgba(190,200,255,.05) 57%,transparent 72%)}
+.vignette{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:65;background:radial-gradient(115% 90% at 50% 45%,transparent 62%,rgba(0,0,0,.55) 100%)}
+.serif{font-family:'Playfair Display',serif}.corm{font-family:'Cormorant Garamond',serif}
+.smallcaps{letter-spacing:.34em;text-transform:uppercase}
+/* ---------- COVER : PETA BINTANG ---------- */
+#cover{min-height:100dvh;display:flex;flex-direction:column;position:relative;z-index:3;background:linear-gradient(180deg,rgba(4,7,20,.25),rgba(4,7,20,.05) 40%,rgba(4,7,20,.88) 88%,#05081a)}
+#starMap{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.dome-ribs{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;background:
+  radial-gradient(130% 62% at 50% -12%,transparent 58%,rgba(201,164,92,.16) 59%,transparent 60.5%),
+  radial-gradient(150% 72% at 50% -12%,transparent 66%,rgba(201,164,92,.10) 67%,transparent 68.5%)}
+.cover-in{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:38px 26px 32px}
+.obs-name{font-size:10px;letter-spacing:.44em;color:var(--brass-l);text-transform:uppercase}
+.obs-name b{color:var(--ivory)}
+.coord{margin-top:12px;font-size:10px;letter-spacing:.26em;color:var(--mut)}
+.chip-row{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;justify-content:center}
+.chip{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:10px;letter-spacing:.2em;color:var(--brass-l);background:rgba(5,8,26,.45)}
+.chip.solid{background:var(--burg);border-color:var(--burg);color:#ffe9c9}
+.cover-spacer{flex:1}
+.cover-kicker{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#dfe4f7}
+.cover-title{font-family:'Playfair Display',serif;font-weight:900;font-size:44px;line-height:1.04;color:#fdf8e7;text-shadow:0 4px 36px rgba(0,0,0,.9);margin-top:8px}
+.cover-title span{display:block;font-size:18px;font-weight:500;font-style:italic;letter-spacing:.32em;color:var(--brass-l);margin:8px 0}
+.cover-date{font-size:11px;letter-spacing:.34em;color:var(--ivory);margin-top:12px;text-transform:uppercase}
+.medal-row{display:flex;gap:12px;justify-content:center;margin-top:20px}
+.medal-row img{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);object-fit:cover;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.guest-box{margin-top:22px;background:rgba(7,11,30,.72);border:1px solid var(--line);border-radius:14px;padding:14px 20px 13px;width:100%;max-width:330px;outline:1px solid rgba(201,164,92,.16);outline-offset:-6px}
+.guest-box small{display:block;font-size:9.5px;letter-spacing:.3em;color:var(--mut);text-transform:uppercase}
+.guest-box .gname{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#fdf8e7;margin-top:4px;line-height:1.15}
+.guest-box .gcoord{font-size:10px;letter-spacing:.16em;color:var(--brass-l);margin-top:5px;text-transform:uppercase}
+#btnOpen{margin-top:20px;display:inline-flex;align-items:center;gap:11px;background:linear-gradient(180deg,#d8b96e,#b18c3e);color:#1d1503;border:none;border-radius:999px;padding:15px 30px;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.2em;cursor:pointer;box-shadow:0 10px 30px rgba(201,164,92,.35),inset 0 1px 0 #ffeec2}
+#btnOpen:active{transform:scale(.96)}
+#btnOpen img{width:22px;height:22px;border-radius:50%}
+.cover-note{margin-top:13px;font-size:10.5px;color:var(--mut);letter-spacing:.06em;line-height:1.6}
+/* ---------- CONTENT ---------- */
+#content{display:none;padding-bottom:108px;position:relative;z-index:3}
+#content.open{display:block}
+section{padding:54px 24px 8px;position:relative}
+.sec-head{text-align:center;margin-bottom:26px}
+.sec-medal{width:74px;height:74px;border-radius:50%;object-fit:cover;border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.55),0 0 0 5px rgba(201,164,92,.07);margin-bottom:12px}
+.sec-no{font-size:10px;letter-spacing:.48em;color:var(--brass);text-transform:uppercase}
+.sec-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fdf8e7;margin-top:7px;line-height:1.2}
+.sec-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--mut);margin-top:5px}
+.rule{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:14px}
+.rule::before,.rule::after{content:"";height:1px;width:52px;background:linear-gradient(90deg,transparent,var(--brass))}
+.rule::after{background:linear-gradient(90deg,var(--brass),transparent)}
+.rule i{width:6px;height:6px;background:var(--brass);transform:rotate(45deg)}
+p.body-txt{font-size:14.5px;line-height:1.85;color:#dde2f4;text-align:center}
+.quote{font-family:'Cormorant Garamond',serif;font-size:19.5px;font-style:italic;line-height:1.65;text-align:center;color:#eee6c8}
+.card{background:linear-gradient(180deg,rgba(22,34,77,.88),rgba(13,20,48,.92));border:1px solid var(--line);border-radius:18px;padding:24px 20px}
+.framed{position:relative;box-shadow:inset 0 0 28px rgba(201,164,92,.06),0 14px 34px rgba(0,0,0,.4);outline:1px solid rgba(201,164,92,.20);outline-offset:-7px}
+.framed::before,.framed::after{content:"";position:absolute;width:28px;height:28px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23c9a45c' stroke-width='1.7'%3E%3Cpath d='M4 40V16Q4 4 16 4h24'/%3E%3Cpath d='M10 40V20Q10 10 20 10h20'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='2.2' fill='%23c9a45c'/%3E%3C/svg%3E") center/contain no-repeat;pointer-events:none;z-index:4}
+.framed::before{top:4px;left:4px}.framed::after{bottom:4px;right:4px;transform:rotate(180deg)}
+.divider{display:flex;align-items:center;gap:13px;padding:40px 48px 0}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,164,92,.5))}
+.divider::after{background:linear-gradient(90deg,rgba(201,164,92,.5),transparent)}
+.divider img{width:34px;height:34px;border-radius:50%;object-fit:cover;opacity:.9}
+/* rasi */
+.rasi-box{background:radial-gradient(120% 120% at 50% 0%,rgba(30,44,96,.9),rgba(7,11,30,.95));border:1px solid var(--line);border-radius:18px;padding:18px 12px 14px;text-align:center}
+#rasiSvg{width:100%;height:auto;display:block}
+.rasi-line{stroke:var(--brass-l);stroke-width:1.6;fill:none;stroke-linecap:round;opacity:0;filter:drop-shadow(0 0 4px rgba(238,217,164,.8))}
+.rasi-line.drawn{opacity:1;transition:stroke-dashoffset .55s ease,opacity .2s}
+.cstar{fill:#3d4a7d;stroke:rgba(238,217,164,.35);stroke-width:.8;transition:fill .3s}
+.cstar.lit{fill:#ffeec0;filter:drop-shadow(0 0 6px rgba(255,238,192,.95))}
+.rasi-grid{stroke:rgba(170,180,214,.14);stroke-width:.6;fill:none}
+.rasi-status{font-size:10.5px;letter-spacing:.3em;color:var(--brass-l);text-transform:uppercase;margin-top:8px;min-height:14px}
+.rasi-cap{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mut);margin-top:6px;padding:0 12px}
+/* mempelai */
+.person-card{text-align:center;margin-bottom:20px;overflow:hidden;padding:0 0 24px}
+.person-photo{height:320px;position:relative;background-size:cover;background-position:center 22%}
+.person-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(13,20,48,.98) 100%)}
+.person-role{font-size:9.5px;letter-spacing:.4em;color:var(--brass);text-transform:uppercase;margin-top:14px}
+.person-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#fdf8e7;margin-top:7px;padding:0 18px;line-height:1.25}
+.person-parents{font-size:13px;line-height:1.75;color:var(--mut);margin-top:8px;padding:0 22px}
+.ig-link{display:inline-block;margin-top:12px;font-size:12px;color:var(--brass-l);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 15px}
+/* teleskop countdown */
+.scope-panel{background:radial-gradient(130% 130% at 50% 0%,rgba(24,36,84,.95),rgba(7,11,30,.97));border:1px solid var(--line);border-radius:18px;padding:22px 18px 20px;text-align:center;overflow:hidden;position:relative}
+.scope-stage{position:relative;height:158px;margin-top:6px}
+.scope-img{position:absolute;left:6px;bottom:4px;width:118px;height:118px;border-radius:50%;object-fit:cover;border:1px solid var(--line);transform:rotate(-4deg)}
+.aim-line{position:absolute;left:104px;bottom:96px;width:196px;height:1.6px;background:repeating-linear-gradient(90deg,var(--brass-l) 0 7px,transparent 7px 13px);transform:rotate(-17deg);transform-origin:left center;opacity:.85}
+.target-star{position:absolute;right:16px;top:2px;width:44px;height:44px}
+.target-star i{position:absolute;inset:14px;background:#ffeec0;border-radius:50%;box-shadow:0 0 18px 6px rgba(255,238,192,.75);display:block;animation:pulse 2.4s ease-in-out infinite}
+.target-star::before,.target-star::after{content:"";position:absolute;left:50%;top:0;width:1.6px;height:44px;background:linear-gradient(180deg,transparent,#ffeec0,transparent)}
+.target-star::after{transform:rotate(90deg)}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+.target-label{position:absolute;right:2px;top:50px;font-size:9px;letter-spacing:.22em;color:var(--brass-l);text-transform:uppercase}
+.scope-read{font-size:10px;letter-spacing:.3em;color:var(--mut);text-transform:uppercase;margin-top:4px}
+.countdown{display:flex;gap:9px;justify-content:center;margin-top:14px}
+.cd-box{flex:1;max-width:78px;background:linear-gradient(180deg,#1a2650,#0d1533);border:1px solid var(--line);border-radius:13px;padding:12px 0 9px;text-align:center}
+.cd-box b{display:block;font-family:'Playfair Display',serif;font-size:26px;color:var(--brass-l);line-height:1}
+.cd-box span{font-size:9px;letter-spacing:.24em;color:var(--mut);text-transform:uppercase;display:block;margin-top:6px}
+.event-card{margin-top:18px;text-align:center}
+.ev-label{display:inline-block;background:var(--burg);color:#ffe9c9;font-size:9.5px;letter-spacing:.32em;padding:6px 14px;border-radius:999px;text-transform:uppercase}
+.ev-name{font-family:'Playfair Display',serif;font-size:25px;font-weight:700;margin-top:14px;color:#fdf8e7}
+.ev-when{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--brass-l);margin-top:5px}
+.ev-where{font-size:13.5px;color:var(--mut);line-height:1.7;margin-top:7px}
+.btn-row{display:flex;gap:9px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;padding:11px 18px;border-radius:999px;border:1px solid var(--brass);color:var(--brass-l);background:transparent;cursor:pointer;font-family:'Inter',sans-serif}
+.btn.fill{background:linear-gradient(180deg,#d8b96e,#b18c3e);color:#1d1503;border:none}
+/* galeri orbit */
+.orbit-stage{position:relative;width:342px;height:342px;margin:4px auto 0;max-width:88vw;aspect-ratio:1}
+.orbit-ring{position:absolute;border:1px dashed rgba(201,164,92,.35);border-radius:50%}
+.orbit-ring.r1{inset:0}.orbit-ring.r2{inset:52px;border-color:rgba(170,180,214,.22)}
+.orbit-sun{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:86px;height:86px;border-radius:50%;object-fit:cover;border:1px solid var(--line);box-shadow:0 0 30px rgba(201,164,92,.35)}
+.orbit-moon{position:absolute;inset:0;animation:spin 26s linear infinite;pointer-events:none}
+.orbit-moon i{position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#ffeec0;box-shadow:0 0 10px 3px rgba(255,238,192,.6);display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.planet{position:absolute;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;border:2px solid rgba(238,217,164,.65);padding:0;cursor:pointer;background:#0d1533;overflow:visible;animation:bob 5s ease-in-out infinite}
+.planet img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.planet::after{content:attr(data-name);position:absolute;left:50%;bottom:-19px;transform:translateX(-50%);font-size:8.5px;letter-spacing:.18em;color:var(--brass-l);text-transform:uppercase;white-space:nowrap}
+.planet.sel{border-color:#ffeec0;box-shadow:0 0 0 3px rgba(255,238,192,.25),0 0 22px rgba(255,238,192,.45)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.planet-story{margin-top:30px;text-align:center}
+.planet-story img{width:100%;height:190px;object-fit:cover;border-radius:12px;border:1px solid var(--line);display:block}
+.ps-title{font-family:'Playfair Display',serif;font-size:20px;color:#fdf8e7;margin-top:14px}
+.ps-txt{font-size:13.5px;line-height:1.8;color:#dde2f4;margin-top:7px}
+.ps-tag{font-size:9.5px;letter-spacing:.3em;color:var(--brass);text-transform:uppercase}
+/* RSVP tiket misi */
+.mission-ticket{position:relative;background:linear-gradient(125deg,#14224f,#0b1330 60%,#1a1030);border:1px solid var(--brass);border-radius:16px;padding:22px 20px 20px;overflow:hidden;box-shadow:inset 0 0 34px rgba(201,164,92,.08),0 16px 36px rgba(0,0,0,.5)}
+.mission-ticket::before{content:"";position:absolute;inset:6px;border:1px dashed rgba(201,164,92,.35);border-radius:11px;pointer-events:none}
+.mt-brand{font-size:8.5px;letter-spacing:.32em;color:var(--brass);text-transform:uppercase;text-align:center}
+.mt-title{font-family:'Playfair Display',serif;font-weight:900;font-size:21px;text-align:center;margin-top:6px;color:#fdf8e7;line-height:1.25}
+.mt-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:16px;font-size:11px;position:relative;z-index:1}
+.mt-grid small{display:block;font-size:8px;letter-spacing:.22em;color:var(--brass);text-transform:uppercase}
+.mt-grid b{font-size:12.5px;color:var(--ivory)}
+.mt-rocket{display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;margin:16px auto 2px;border:1px solid var(--line)}
+#stamp{position:absolute;right:12px;top:44%;transform:rotate(-13deg) scale(2.4);border:3px solid var(--burg-l);color:#ff8f9f;border-radius:10px;padding:7px 12px;font-weight:700;font-size:14px;letter-spacing:.18em;text-transform:uppercase;opacity:0;pointer-events:none;background:rgba(90,10,22,.28);z-index:3;text-align:center;line-height:1.3}
+#stamp.on{opacity:1;transform:rotate(-13deg) scale(1);transition:transform .28s cubic-bezier(.2,2.2,.4,1),opacity .18s}
+form.rsvp{margin-top:24px}
+label.flabel{display:block;font-size:10px;letter-spacing:.26em;color:var(--brass);text-transform:uppercase;margin:16px 0 8px}
+input[type=text],textarea,select{width:100%;background:#0a1128;border:1px solid var(--line);border-radius:11px;color:var(--ivory);padding:13px 14px;font-size:14px;font-family:'Inter',sans-serif;outline:none}
+input[type=text]:focus,textarea:focus,select:focus{border-color:var(--brass)}
+.radio-row{display:flex;gap:9px}
+.radio-pill{flex:1;position:relative}
+.radio-pill input{position:absolute;opacity:0;pointer-events:none}
+.radio-pill span{display:block;text-align:center;padding:12px 6px;border:1px solid var(--line);border-radius:11px;font-size:13px;cursor:pointer;color:var(--mut)}
+.radio-pill input:checked+span{background:var(--burg);border-color:var(--burg);color:#ffe9c9;font-weight:600}
+#btnRsvp{width:100%;margin-top:22px;background:linear-gradient(180deg,#d8b96e,#b18c3e);color:#1d1503;border:none;border-radius:999px;padding:15px;font-size:13px;font-weight:700;letter-spacing:.16em;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 10px 26px rgba(201,164,92,.3)}
+#btnRsvp:active{transform:scale(.98)}
+.demo-note{margin-top:12px;font-size:11px;color:var(--mut);text-align:center;line-height:1.6}
+#rsvpDone{display:none;margin-top:18px;background:rgba(201,164,92,.1);border:1px solid var(--line);border-radius:13px;padding:16px;text-align:center;font-size:13.5px;line-height:1.75;color:#eee6c8}
+#rsvpDone.show{display:block}
+#wishList{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.wish{background:rgba(13,20,48,.9);border:1px solid rgba(201,164,92,.18);border-radius:12px;padding:13px 15px}
+.wish b{font-size:13px;color:var(--brass-l)}
+.wish .st{font-size:9px;letter-spacing:.12em;background:var(--burg);color:#ffe9c9;border-radius:999px;padding:3px 8px;margin-left:7px;text-transform:uppercase}
+.wish .st.no{background:#3d4666}
+.wish p{font-size:13px;color:#d5dbf2;line-height:1.65;margin-top:5px}
+/* amplop : modul kargo */
+.cargo{background:linear-gradient(150deg,#1a2650,#0b1330 62%,#241028);border:1px solid var(--brass);border-radius:18px;padding:24px 20px;text-align:center;box-shadow:inset 0 0 40px rgba(201,164,92,.08)}
+.cargo-manifest{text-align:left;background:rgba(3,5,16,.45);border:1px dashed rgba(201,164,92,.4);border-radius:12px;padding:15px 16px;margin-top:14px}
+.cargo-manifest small{font-size:9px;letter-spacing:.3em;color:var(--brass);text-transform:uppercase}
+.cm-num{font-family:'Playfair Display',serif;font-size:21px;letter-spacing:.06em;color:#fdf8e7;margin-top:6px}
+.cm-an{font-size:12px;color:var(--mut);margin-top:3px}
+.cm-btn{margin-top:11px;background:none;border:1px solid var(--brass);color:var(--brass-l);border-radius:999px;padding:8px 18px;font-size:11.5px;font-weight:600;letter-spacing:.08em;cursor:pointer;font-family:'Inter',sans-serif}
+.barcode{margin:16px auto 0;width:120px;height:28px;background:repeating-linear-gradient(90deg,rgba(238,217,164,.85) 0 2px,transparent 2px 5px,rgba(238,217,164,.85) 5px 6px,transparent 6px 10px)}
+/* penutup */
+.mono{width:66px;height:66px;margin:22px auto 0;border:1px solid var(--brass);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:var(--brass-l);background:rgba(7,11,30,.6)}
+.credit-line{font-size:12.5px;line-height:2;color:var(--mut);text-align:center}
+.credit-line b{color:#eee6c8;font-family:'Cormorant Garamond',serif;font-size:16px}
+footer.site{text-align:center;padding:30px 24px 6px;font-size:10.5px;color:var(--mut);line-height:1.9}
+footer.site img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1px solid var(--line);margin-bottom:8px}
+/* bottom nav */
+#bottomNav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:80;background:rgba(6,9,24,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);display:none;grid-template-columns:repeat(6,1fr);padding:7px 4px calc(7px + env(safe-area-inset-bottom))}
+#bottomNav.show{display:grid}
+#bottomNav a,#bottomNav button{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:var(--mut);font-size:9px;letter-spacing:.04em;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;padding:3px 0}
+#bottomNav img{width:24px;height:24px;border-radius:50%;object-fit:cover;border:1px solid rgba(201,164,92,.35)}
+#bottomNav a.active{color:var(--brass-l)}
+#btnMusic .eq{display:none;gap:2px;align-items:flex-end;height:24px}
+#btnMusic.on .eq{display:flex}#btnMusic.on img{display:none}
+.eq i{width:3px;background:var(--brass-l);animation:eq .9s ease-in-out infinite}
+.eq i:nth-child(1){height:9px}.eq i:nth-child(2){height:15px;animation-delay:.25s}.eq i:nth-child(3){height:7px;animation-delay:.5s}
+@keyframes eq{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.15)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<link rel="canonical" href="https://undangya.web.id/observatorium">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Observatorium — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital bergaya observatorium: rasi bintang M·F terlukis, countdown teleskop & planet kenangan — Observatorium">
+<meta property="og:url" content="https://undangya.web.id/observatorium">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/observatorium.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Observatorium — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital bergaya observatorium: rasi bintang M·F terlukis, countdown teleskop & planet kenangan — Observatorium">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/observatorium.webp">
+</head>
+<body>
+<div class="phone" id="phone">
+<div class="milkyway" aria-hidden="true"></div>
+<canvas id="skyCanvas" aria-hidden="true"></canvas>
+
+  <!-- ===== SAMPUL : PETA BINTANG ===== -->
+  <div id="cover">
+    <canvas id="starMap" aria-hidden="true"></canvas>
+    <div class="dome-ribs" aria-hidden="true"></div>
+    <div class="cover-in">
+      <div class="obs-name">Observatorium UndangYa! <b>• Est. 2027</b></div>
+      <div class="coord">6°14′ LS — 106°49′ BT &nbsp;•&nbsp; Langit Jakarta</div>
+      <div class="chip-row">
+        <span class="chip solid">Misi: Selamanya</span>
+        <span class="chip">Peta Bintang No. 1206</span>
+        <span class="chip">12 . 06 . 2027</span>
+      </div>
+      <div class="cover-spacer"></div>
+      <p class="cover-kicker">Di Bawah Bintang yang Sama</p>
+      <h1 class="cover-title">MEYZSA<span>&amp;</span>FAHREZZI</h1>
+      <div class="cover-date">Sabtu, 12 Juni 2027</div>
+      <div class="medal-row" aria-hidden="true">
+        <img src="assets/undangya/observatorium/icon-teleskop.webp" alt="">
+        <img src="assets/undangya/observatorium/icon-planet.webp" alt="">
+        <img src="assets/undangya/observatorium/icon-bulan.webp" alt="">
+      </div>
+      <div class="guest-box">
+        <small>Kartu Pengamat Untuk</small>
+        <div class="gname" id="guestName">Tamu Undangan</div>
+        <div class="gcoord" id="guestCoord">Sektor Tamu • Dek Observasi</div>
+      </div>
+      <button id="btnOpen" type="button"><img src="assets/undangya/observatorium/icon-astrolabe.webp" alt="">BUKA PETA BINTANG</button>
+      <p class="cover-note">Tekan untuk membuka kubah — rasi bintang kami<br>akan terlukis di langit untuk Anda.</p>
+    </div>
+  </div>
+
+  <!-- ===== ISI ===== -->
+  <main id="content">
+
+    <!-- RASI + SAMBUTAN -->
+    <section id="beranda">
+      <div class="sec-head reveal">
+        <img class="sec-medal" src="assets/undangya/observatorium/icon-astrolabe.webp" alt="Medali astrolabe">
+        <div class="sec-no">Pengamatan 01 — Rasi Kami</div>
+        <h2 class="sec-title">Rasi M·F Terlukis di Langit</h2>
+        <p class="sec-sub">saksikan bintang-bintangnya menyala satu demi satu</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="rasi-box framed reveal">
+        <svg id="rasiSvg" viewBox="0 0 340 170" role="img" aria-label="Rasi bintang membentuk inisial M dan F">
+          <path class="rasi-grid" d="M10 42 H330 M10 85 H330 M10 128 H330 M62 8 V162 M124 8 V162 M186 8 V162 M248 8 V162 M310 8 V162"/>
+          <ellipse class="rasi-grid" cx="170" cy="85" rx="160" ry="76"/>
+          <g id="rasiLines"></g>
+          <g id="rasiStars"></g>
+          <circle cx="292" cy="30" r="2.2" fill="#ffeec0"/>
+          <circle cx="36" cy="146" r="1.6" fill="#cdd7ff"/>
+          <circle cx="322" cy="140" r="1.8" fill="#cdd7ff"/>
+        </svg>
+        <div class="rasi-status" id="rasiStatus">Kubah dibuka — menunggu pengamatan…</div>
+        <p class="rasi-cap">Dua inisial, satu langit. Sejak malam pertama kami menatap bintang yang sama, semesta sudah menggambar nama kami berdampingan.</p>
+      </div>
+      <p class="quote reveal" style="margin-top:30px">&ldquo;Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya.&rdquo;</p>
+      <p class="body-txt reveal" style="margin-top:14px;font-size:12.5px;color:var(--mut)">— QS. Ar-Rūm: 21 —</p>
+      <p class="body-txt reveal" style="margin-top:20px">Assalamu&rsquo;alaikum warahmatullahi wabarakatuh.<br><br>Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk ikut mengamati malam paling terang dalam hidup kami — hari di mana dua pengamat bintang akhirnya dipersatukan di bawah langit yang sama, selamanya.</p>
+    </section>
+
+    <div class="divider" aria-hidden="true"><img src="assets/undangya/observatorium/icon-bulan.webp" alt=""></div>
+
+    <!-- MEMPELAI -->
+    <section id="mempelai">
+      <div class="sec-head reveal">
+        <img class="sec-medal" src="assets/undangya/observatorium/icon-bulan.webp" alt="Medali bulan sabit">
+        <div class="sec-no">Pengamatan 02 — Dua Bintang Utama</div>
+        <h2 class="sec-title">Mempelai</h2>
+        <p class="sec-sub">dua bintang yang akhirnya sejajar</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div style="text-align:center;margin-bottom:22px" class="reveal"><img src="assets/undangya/observatorium/hero.webp" alt="Meyzsa dan Fahrezzi di bawah kubah observatorium" style="width:100%;height:340px;object-fit:cover;object-position:center 62%;border-radius:16px;border:1px solid var(--line)"></div>
+      <div class="card person-card framed reveal">
+        <div class="person-photo" style="background-image:url('assets/undangya/observatorium/bride.webp')"></div>
+        <div class="person-role">Bintang Utama Wanita</div>
+        <h3 class="person-name">Meyzsa Putri Ananda, S.Pd.</h3>
+        <p class="person-parents">Putri tercinta dari<br>Bapak H. Muhammad Ridwan &amp;<br>Ibu Hj. Siti Aminah</p>
+        <a class="ig-link" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a>
+      </div>
+      <div class="card person-card framed reveal">
+        <div class="person-photo" style="background-image:url('assets/undangya/observatorium/groom.webp')"></div>
+        <div class="person-role">Bintang Utama Pria</div>
+        <h3 class="person-name">Ahmad Fahrezzi Pratama, S.T.</h3>
+        <p class="person-parents">Putra tercinta dari<br>Bapak H. Bambang Sutrisno &amp;<br>Ibu Hj. Ratna Dewi</p>
+        <a class="ig-link" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><img src="assets/undangya/observatorium/icon-teleskop.webp" alt=""></div>
+
+    <!-- ACARA + COUNTDOWN TELESKOP -->
+    <section id="acara">
+      <div class="sec-head reveal">
+        <img class="sec-medal" src="assets/undangya/observatorium/icon-teleskop.webp" alt="Medali teleskop kuningan">
+        <div class="sec-no">Pengamatan 03 — Bintang Hari-H</div>
+        <h2 class="sec-title">Akad &amp; Resepsi</h2>
+        <p class="sec-sub">teleskop kami sudah mengarah ke harinya</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="scope-panel framed reveal">
+        <div class="scope-read">Pembacaan Astronom — Hitung Mundur</div>
+        <div class="scope-stage" aria-hidden="true">
+          <img class="scope-img" src="assets/undangya/observatorium/icon-teleskop.webp" alt="">
+          <div class="aim-line"></div>
+          <div class="target-star"><i></i></div>
+          <div class="target-label">★ Bintang<br>Hari-H</div>
+        </div>
+        <div class="countdown" aria-label="Hitung mundur menuju akad">
+          <div class="cd-box"><b id="cdD">00</b><span>Hari</span></div>
+          <div class="cd-box"><b id="cdH">00</b><span>Jam</span></div>
+          <div class="cd-box"><b id="cdM">00</b><span>Menit</span></div>
+          <div class="cd-box"><b id="cdS">00</b><span>Detik</span></div>
+        </div>
+        <p class="scope-read" style="margin-top:12px">Lensa terkunci • Sabtu, 12 Juni 2027 • 08.00 WIB</p>
+      </div>
+      <div id="eventList"></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><img src="assets/undangya/observatorium/icon-planet.webp" alt=""></div>
+
+    <!-- GALERI PLANET KENANGAN -->
+    <section id="galeri">
+      <div class="sec-head reveal">
+        <img class="sec-medal" src="assets/undangya/observatorium/icon-planet.webp" alt="Medali planet bercincin">
+        <div class="sec-no">Pengamatan 04 — Planet Kenangan</div>
+        <h2 class="sec-title">Planet-Planet Kenangan</h2>
+        <p class="sec-sub">ketuk sebuah planet untuk membaca kisahnya</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="orbit-stage reveal" id="orbitStage">
+        <div class="orbit-ring r1"></div>
+        <div class="orbit-ring r2"></div>
+        <div class="orbit-moon" aria-hidden="true"><i></i></div>
+        <img class="orbit-sun" src="assets/undangya/observatorium/hero.webp" alt="Pasangan di pusat orbit kenangan">
+      </div>
+      <div class="card planet-story framed reveal" id="planetStory" aria-live="polite"></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><img src="assets/undangya/observatorium/icon-roket.webp" alt=""></div>
+
+    <!-- RSVP TIKET MISI -->
+    <section id="rsvp">
+      <div class="sec-head reveal">
+        <img class="sec-medal" src="assets/undangya/observatorium/icon-roket.webp" alt="Medali roket">
+        <div class="sec-no">Pengamatan 05 — Tiket Misi</div>
+        <h2 class="sec-title">RSVP — Meluncur ke Selamanya</h2>
+        <p class="sec-sub">konfirmasi kursi Anda di kapsul perayaan kami</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="mission-ticket reveal" id="missionTicket">
+        <div class="mt-brand">UndangYa! Space Program — Boarding Pass Misi</div>
+        <div class="mt-title">MELUNCUR KE SELAMANYA</div>
+        <img class="mt-rocket" src="assets/undangya/observatorium/icon-roket.webp" alt="">
+        <div class="mt-grid">
+          <div><small>Penumpang</small><b id="tkGuest">Tamu Undangan</b></div>
+          <div><small>Misi</small><b>M·F — Selamanya</b></div>
+          <div><small>Peluncuran</small><b>Sabtu, 12 Juni 2027</b></div>
+          <div><small>Landasan</small><b>Jakarta Selatan</b></div>
+        </div>
+        <div id="stamp" aria-hidden="true">Siap<br>Meluncur</div>
+      </div>
+      <form class="rsvp reveal" id="rsvpForm" novalidate>
+        <label class="flabel" for="fNama">Nama Penumpang</label>
+        <input type="text" id="fNama" placeholder="Nama Anda" autocomplete="name">
+        <label class="flabel">Status Misi</label>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="hadir" value="Hadir" checked><span>Siap Meluncur (Hadir)</span></label>
+          <label class="radio-pill"><input type="radio" name="hadir" value="Berhalangan"><span>Di Orbit Lain (Berhalangan)</span></label>
+        </div>
+        <label class="flabel" for="fJumlah">Jumlah Penumpang</label>
+        <select id="fJumlah"><option value="1">1 orang</option><option value="2">2 orang</option><option value="3">3 orang</option><option value="4">4 orang</option></select>
+        <label class="flabel" for="fUcapan">Pesan dari Bumi (Ucapan &amp; Doa)</label>
+        <textarea id="fUcapan" rows="3" placeholder="Tulis ucapan &amp; doa terbaik Anda…"></textarea>
+        <button id="btnRsvp" type="submit">KONFIRMASI — STEMPEL TIKET SAYA</button>
+        <p class="demo-note">Mode demo: RSVP &amp; ucapan tersimpan hanya di halaman ini (contoh tampilan, belum terkirim ke server).</p>
+      </form>
+      <div id="rsvpDone" role="status"></div>
+      <div id="wishList"></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><img src="assets/undangya/observatorium/icon-astrolabe.webp" alt=""></div>
+
+    <!-- AMPLOP : MODUL KARGO -->
+    <section id="amplop">
+      <div class="sec-head reveal">
+        <img class="sec-medal" src="assets/undangya/observatorium/icon-planet.webp" alt="Medali planet bercincin">
+        <div class="sec-no">Pengamatan 06 — Modul Kargo Hadiah</div>
+        <h2 class="sec-title">Amplop Digital</h2>
+        <p class="sec-sub">kargo tanda kasih, dikirim lintas orbit</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="cargo framed reveal">
+        <div style="font-size:10px;letter-spacing:.38em;color:var(--brass-l)">MANIFES KARGO • MISI M·F</div>
+        <p style="font-size:13px;color:var(--mut);line-height:1.75;margin-top:10px">Kehadiran Anda adalah muatan paling berharga. Namun bila berkenan mengirim tanda kasih, modul kargo berikut siap menerima:</p>
+        <div id="acctList"></div>
+        <div class="barcode" aria-hidden="true"></div>
+        <p class="demo-note" style="margin-top:12px">Nomor di atas adalah contoh/demo tampilan.</p>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"><img src="assets/undangya/observatorium/icon-bulan.webp" alt=""></div>
+
+    <!-- PENUTUP -->
+    <section id="penutup">
+      <div class="sec-head reveal">
+        <img class="sec-medal" src="assets/undangya/observatorium/icon-astrolabe.webp" alt="Medali astrolabe">
+        <div class="sec-no">Epilog — Catatan Pengamatan Terakhir</div>
+        <h2 class="sec-title">Terima Kasih</h2>
+        <div class="rule"><i></i></div>
+      </div>
+      <p class="body-txt reveal">Merupakan kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih yang sebesar-besarnya.<br><br>Wassalamu&rsquo;alaikum warahmatullahi wabarakatuh.</p>
+      <div class="card framed reveal" style="margin-top:26px">
+        <p class="credit-line">
+          Bintang Utama Wanita<br><b>Meyzsa Putri Ananda, S.Pd.</b><br>
+          Bintang Utama Pria<br><b>Ahmad Fahrezzi Pratama, S.T.</b><br>
+          Keluarga Mempelai Wanita<br><b>Bapak H. Muhammad Ridwan &amp; Ibu Hj. Siti Aminah</b><br>
+          Keluarga Mempelai Pria<br><b>Bapak H. Bambang Sutrisno &amp; Ibu Hj. Ratna Dewi</b><br>
+          Lokasi Akad<br><b>Masjid Agung Al-Azhar, Jakarta Selatan</b><br>
+          Lokasi Resepsi<br><b>The Ritz-Carlton Jakarta, Pacific Place</b><br>
+          Stasiun Pengamatan<br><b>Observatorium UndangYa!</b>
+        </p>
+      </div>
+      <div class="mono reveal">M·F</div>
+      <p class="body-txt reveal" style="margin-top:16px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px">Sampai jumpa di bawah bintang yang sama,<br>12 Juni 2027.</p>
+    </section>
+
+    <footer class="site">
+      <img src="assets/undangya/observatorium/icon-astrolabe.webp" alt=""><br>
+      © 2027 Meyzsa &amp; Fahrezzi — Observatorium UndangYa!<br>
+      Undangan digital tema &ldquo;Observatorium — Di Bawah Bintang yang Sama&rdquo; • Sampel contoh
+    </footer>
+  </main>
+
+  <!-- ===== BOTTOM NAV ===== -->
+  <nav id="bottomNav" aria-label="Navigasi undangan">
+    <a href="#beranda" data-nav="beranda" class="active"><img src="assets/undangya/observatorium/icon-astrolabe.webp" alt="">Beranda</a>
+    <a href="#mempelai" data-nav="mempelai"><img src="assets/undangya/observatorium/icon-bulan.webp" alt="">Mempelai</a>
+    <a href="#acara" data-nav="acara"><img src="assets/undangya/observatorium/icon-teleskop.webp" alt="">Acara</a>
+    <a href="#galeri" data-nav="galeri"><img src="assets/undangya/observatorium/icon-planet.webp" alt="">Galeri</a>
+    <a href="#rsvp" data-nav="rsvp"><img src="assets/undangya/observatorium/icon-roket.webp" alt="">RSVP</a>
+    <button id="btnMusic" type="button" aria-label="Musik latar"><img src="assets/undangya/observatorium/icon-planet.webp" alt=""><span class="eq"><i></i><i></i><i></i></span>Musik</button>
+  </nav>
+
+  <div class="vignette"></div>
+</div>
+
+<script>
+"use strict";
+/* ================= CONFIG ================= */
+const CONFIG = {
+  couple: {
+    bride: { name: "Meyzsa Putri Ananda, S.Pd.", father: "H. Muhammad Ridwan", mother: "Hj. Siti Aminah", instagram: "meyzsa.contoh" },
+    groom: { name: "Ahmad Fahrezzi Pratama, S.T.", father: "H. Bambang Sutrisno", mother: "Hj. Ratna Dewi", instagram: "fahrezzi.contoh" }
+  },
+  events: [
+    { id:"akad", label:"Pengamatan Pertama", name:"Akad Nikah", day:"Sabtu", date:"12 Juni 2027", time:"08.00 – 10.00 WIB",
+      venue:"Masjid Agung Al-Azhar", area:"Jakarta Selatan",
+      maps:"https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Al-Azhar+Jakarta+Selatan",
+      gcal:"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Meyzsa+%26+Fahrezzi&dates=20270612T010000Z/20270612T030000Z&details=Akad+Nikah+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&location=Masjid+Agung+Al-Azhar,+Jakarta+Selatan" },
+    { id:"resepsi", label:"Pengamatan Utama", name:"Resepsi", day:"Sabtu", date:"12 Juni 2027", time:"11.00 – 13.00 WIB",
+      venue:"The Ritz-Carlton Jakarta, Pacific Place", area:"Jakarta Selatan",
+      maps:"https://www.google.com/maps/search/?api=1&query=The+Ritz-Carlton+Jakarta+Pacific+Place",
+      gcal:"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Meyzsa+%26+Fahrezzi&dates=20270612T040000Z/20270612T060000Z&details=Resepsi+Pernikahan+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&location=The+Ritz-Carlton+Jakarta,+Pacific+Place" }
+  ],
+  countdownTo: "2027-06-12T08:00:00+07:00",
+  planets: [
+    { id:"p1", name:"Terra Pertemuan", src:"assets/undangya/observatorium/galeri-1.webp", ring:0, angle:-90,
+      title:"Planet Terra — Pertemuan Pertama",
+      story:"Di teras observatorium bukit itu, kami pertama kali menatap langit bersama. Ia menunjukkan rasi favoritnya; sejak malam itu, teleskop kami tak pernah lagi mengarah ke bintang lain." },
+    { id:"p2", name:"Venus Lentera", src:"assets/undangya/observatorium/galeri-2.webp", ring:0, angle:30,
+      title:"Planet Venus — Lentera Bintang",
+      story:"Di taman planetarium, sebuah lentera kuningan berbentuk bintang menjadi saksi janji sederhana: ke mana pun orbit hidup membawa, kami akan selalu pulang ke langit yang sama." },
+    { id:"p3", name:"Mars Dansa", src:"assets/undangya/observatorium/galeri-3.webp", ring:0, angle:150,
+      title:"Planet Mars — Dansa Hujan Meteor",
+      story:"Di bawah hujan meteor di atap kota, kami berdansa tanpa musik — hanya detak jantung dan desis bintang jatuh. Malam itu ia berbisik, 'Menikahlah denganku, di bawah bintang yang sama.'" },
+    { id:"p4", name:"Saturnus Atlas", src:"assets/undangya/observatorium/galeri-4.webp", ring:1, angle:200,
+      title:"Planet Saturnus — Atlas Bintang",
+      story:"Di tangga kubah observatorium, kami membuka atlas bintang tua dan menandai satu tanggal dengan lingkaran emas: 12 Juni 2027 — hari di mana kisah kami resmi tercatat di semesta." }
+  ],
+  accounts: [
+    { bank:"BCA", number:"1234567890", holder:"Meyzsa Putri Ananda" },
+    { bank:"DANA", number:"0812-3456-7890", holder:"Meyzsa Putri Ananda" }
+  ]
+};
+const $=(s,c)=>(c||document).querySelector(s);
+const $$=(s,c)=>Array.from((c||document).querySelectorAll(s));
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ================= TAMU ================= */
+const params=new URLSearchParams(location.search);
+const guest=((params.get("to")||"Tamu Undangan").trim().slice(0,60)||"Tamu Undangan");
+function sectorFor(name){let h=0;for(let i=0;i<name.length;i++)h=(h*31+name.charCodeAt(i))>>>0;return "Sektor "+("ABCDEFGH"[h%8])+"-"+((h%12)+1)+" • Dek Observasi";}
+$("#guestName").textContent=guest;
+$("#guestCoord").textContent=sectorFor(guest);
+$("#tkGuest").textContent=guest;
+$("#fNama").value = guest==="Tamu Undangan" ? "" : guest;
+
+/* ================= CANVAS BINTANG ================= */
+function makeStars(n,w,h){const a=[];for(let i=0;i<n;i++)a.push({x:Math.random()*w,y:Math.random()*h,r:.4+Math.random()*1.3,p:Math.random()*Math.PI*2,s:.4+Math.random()*1.2});return a;}
+function drawSky(cv,stars,t,withGrid){
+  const ctx=cv.getContext&&cv.getContext("2d"); if(!ctx)return;
+  const w=cv.width,h=cv.height; ctx.clearRect(0,0,w,h);
+  if(withGrid){ /* garis lintang langit pada peta bintang sampul */
+    ctx.strokeStyle="rgba(170,180,214,.16)"; ctx.lineWidth=1;
+    for(let i=1;i<=4;i++){ctx.beginPath();ctx.moveTo(0,h*i/5);ctx.lineTo(w,h*i/5);ctx.stroke();}
+    for(let i=1;i<=3;i++){ctx.beginPath();ctx.moveTo(w*i/4,0);ctx.lineTo(w*i/4,h);ctx.stroke();}
+    ctx.beginPath();ctx.ellipse(w/2,h/2,w*.46,h*.34,0,0,Math.PI*2);ctx.stroke();
+    ctx.beginPath();ctx.ellipse(w/2,h/2,w*.30,h*.22,0,0,Math.PI*2);ctx.stroke();
+  }
+  stars.forEach(st=>{const tw=.45+.55*Math.abs(Math.sin(t/900*st.s+st.p));ctx.globalAlpha=tw;ctx.fillStyle="#e8ecff";ctx.beginPath();ctx.arc(st.x,st.y,st.r,0,Math.PI*2);ctx.fill();});
+  ctx.globalAlpha=1;
+}
+let skyStars=[],mapStars=[];
+function initCanvas(){
+  const sky=$("#skyCanvas"),map=$("#starMap");
+  const W=Math.min(window.innerWidth,430),H=window.innerHeight;
+  if(sky){sky.width=W;sky.height=H;skyStars=makeStars(90,W,H);}
+  if(map){const r=map.getBoundingClientRect();map.width=Math.max(300,r.width);map.height=Math.max(500,r.height);mapStars=makeStars(150,map.width,map.height);}
+  drawSky(sky,skyStars,0,false); drawSky(map,mapStars,0,true);
+}
+initCanvas();
+if(!reduceMotion){
+  let last=0;
+  (function loop(t){ if(t-last>120){ drawSky($("#skyCanvas"),skyStars,t,false); if($("#cover").style.display!=="none")drawSky($("#starMap"),mapStars,t,true); last=t; } requestAnimationFrame(loop); })(0);
+}
+
+/* ================= RASI M·F ================= */
+/* M: polyline, F: polyline + bar tengah */
+const RASI = {
+  stars: [
+    {x:28,y:138},{x:52,y:34},{x:80,y:96},{x:108,y:34},{x:132,y:138}, /* M */
+    {x:212,y:138},{x:212,y:34},{x:292,y:34},{x:212,y:84},{x:262,y:84} /* F */
+  ],
+  lines: [[0,1],[1,2],[2,3],[3,4],[5,6],[6,7],[5,8],[8,9]]
+};
+const NS="http://www.w3.org/2000/svg";
+const rasiSvg=$("#rasiSvg"); rasiSvg.dataset.state="idle";
+RASI.stars.forEach((p,i)=>{
+  const c=document.createElementNS(NS,"circle");
+  c.setAttribute("cx",p.x);c.setAttribute("cy",p.y);c.setAttribute("r",i%2?3.4:4.2);
+  c.setAttribute("class","cstar");c.setAttribute("id","cstar-"+i);
+  $("#rasiStars").appendChild(c);
+});
+RASI.lines.forEach((seg,i)=>{
+  const a=RASI.stars[seg[0]],b=RASI.stars[seg[1]];
+  const l=document.createElementNS(NS,"line");
+  l.setAttribute("x1",a.x);l.setAttribute("y1",a.y);l.setAttribute("x2",b.x);l.setAttribute("y2",b.y);
+  const len=Math.hypot(b.x-a.x,b.y-a.y);
+  l.setAttribute("class","rasi-line");l.setAttribute("id","rline-"+i);
+  l.style.strokeDasharray=len; l.style.strokeDashoffset=len; l.dataset.len=len;
+  $("#rasiLines").appendChild(l);
+});
+let rasiStarted=false;
+function drawConstellation(){
+  if(rasiStarted)return; rasiStarted=true;
+  rasiSvg.dataset.state="drawing";
+  $("#rasiStatus").textContent="Pengamatan dimulai — rasi sedang terlukis…";
+  const stepMs = reduceMotion?0:300;
+  const order=[0,1,2,3,4,5,6,7,8,9];
+  order.forEach((si,k)=>{
+    setTimeout(()=>{ const c=$("#cstar-"+si); if(c)c.classList.add("lit");
+      RASI.lines.forEach((seg,li)=>{ if(seg[1]===si||(li===0&&seg[0]===si)){ const l=$("#rline-"+li); if(l){l.classList.add("drawn"); l.style.strokeDashoffset=0;} } });
+      if(si===0){const l=$("#rline-0"); if(l){l.classList.add("drawn");l.style.strokeDashoffset=0;}}
+    }, stepMs*k);
+  });
+  setTimeout(()=>{
+    $$(".rasi-line").forEach(l=>{l.classList.add("drawn");l.style.strokeDashoffset=0;});
+    $$(".cstar").forEach(c=>c.classList.add("lit"));
+    rasiSvg.dataset.state="done";
+    $("#rasiStatus").textContent="Rasi M·F selesai terlukis — tercatat di langit selamanya";
+  }, stepMs*order.length+ (reduceMotion?10:650));
+}
+
+/* ================= BUKA UNDANGAN ================= */
+let opened=false;
+$("#btnOpen").addEventListener("click",()=>{
+  if(opened)return; opened=true;
+  $("#cover").style.display="none";
+  $("#content").classList.add("open");
+  $("#bottomNav").classList.add("show");
+  drawConstellation();
+  startMusic();
+  window.scrollTo(0,0);
+  initReveal();
+});
+
+/* ================= ACARA ================= */
+$("#eventList").innerHTML = CONFIG.events.map(ev=>`
+  <div class="card event-card framed reveal">
+    <span class="ev-label">${ev.label}</span>
+    <h3 class="ev-name">${ev.name}</h3>
+    <p class="ev-when">${ev.day}, ${ev.date}<br>${ev.time}</p>
+    <p class="ev-where"><b style="color:#eee6c8">${ev.venue}</b><br>${ev.area}</p>
+    <div class="btn-row">
+      <a class="btn fill" href="${ev.maps}" target="_blank" rel="noopener">Lihat Lokasi</a>
+      <a class="btn" href="${ev.gcal}" target="_blank" rel="noopener">Simpan Tanggal</a>
+    </div>
+  </div>`).join("");
+
+/* ================= COUNTDOWN ================= */
+function tick(){
+  const target=new Date(CONFIG.countdownTo).getTime();
+  let diff=Math.max(0,target-Date.now());
+  const d=Math.floor(diff/864e5),h=Math.floor(diff/36e5)%24,m=Math.floor(diff/6e4)%60,s=Math.floor(diff/1e3)%60;
+  const pad=n=>String(n).padStart(2,"0");
+  $("#cdD").textContent=pad(d);$("#cdH").textContent=pad(h);$("#cdM").textContent=pad(m);$("#cdS").textContent=pad(s);
+}
+tick(); setInterval(tick,1000);
+
+/* ================= GALERI ORBIT ================= */
+const stage=$("#orbitStage");
+CONFIG.planets.forEach((p,i)=>{
+  const R = p.ring===0? 46 : 35; /* persen dari pusat */
+  const rad=(p.angle)*Math.PI/180;
+  const btn=document.createElement("button");
+  btn.type="button"; btn.className="planet"+(i===0?" sel":"");
+  btn.dataset.name=p.name; btn.dataset.planet=p.id; btn.setAttribute("aria-label","Planet "+p.name);
+  btn.style.left=(50+R*Math.cos(rad))+"%"; btn.style.top=(50+R*Math.sin(rad))+"%";
+  btn.style.animationDelay=(i*0.9)+"s";
+  btn.innerHTML=`<img src="${p.src}" alt="Foto kenangan ${p.name}">`;
+  btn.addEventListener("click",()=>selectPlanet(p.id));
+  stage.appendChild(btn);
+});
+function selectPlanet(id){
+  const p=CONFIG.planets.find(x=>x.id===id)||CONFIG.planets[0];
+  $$(".planet").forEach(b=>b.classList.toggle("sel",b.dataset.planet===p.id));
+  $("#planetStory").innerHTML=`
+    <img src="${p.src}" alt="Foto kenangan ${p.name}">
+    <div class="ps-tag" style="margin-top:14px">Planet Kenangan Terpilih</div>
+    <h3 class="ps-title">${p.title}</h3>
+    <p class="ps-txt">${p.story}</p>`;
+}
+selectPlanet(CONFIG.planets[0].id);
+
+/* ================= AMPLOP ================= */
+$("#acctList").innerHTML = CONFIG.accounts.map((a,i)=>`
+  <div class="cargo-manifest">
+    <small>Muatan ${i+1} • ${a.bank} — Contoh/Demo</small>
+    <div class="cm-num">${a.number}</div>
+    <div class="cm-an">a.n. ${a.holder}</div>
+    <button class="cm-btn" type="button" data-copy="${a.number}">Salin Nomor</button>
+  </div>`).join("");
+$$("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
+  const v=b.getAttribute("data-copy");
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).catch(()=>{});
+  b.textContent="Nomor Tersalin"; setTimeout(()=>b.textContent="Salin Nomor",1600);
+}));
+
+/* ================= RSVP ================= */
+const wishes=[];
+$("#rsvpForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const nama=($("#fNama").value||"").trim()||guest;
+  const hadir=($('input[name="hadir"]:checked')||{}).value||"Hadir";
+  const jumlah=$("#fJumlah").value;
+  const ucapan=($("#fUcapan").value||"").trim();
+  $("#missionTicket").classList.add("stamped");
+  const stamp=$("#stamp"); stamp.classList.remove("on"); void stamp.offsetWidth; stamp.classList.add("on");
+  const done=$("#rsvpDone");
+  done.innerHTML = hadir==="Hadir"
+    ? `Tiket misi atas nama <b>${nama}</b> telah terstempel <b>SIAP MELUNCUR</b> — ${jumlah} penumpang terdaftar. Sampai jumpa di landasan, 12 Juni 2027!`
+    : `Terima kasih, <b>${nama}</b>. Ketidakhadiran Anda tercatat di log misi — doa dari orbit mana pun tetap sampai ke bintang kami.`;
+  done.classList.add("show");
+  if(ucapan){ wishes.unshift({nama,hadir,ucapan}); renderWishes(); }
+});
+function renderWishes(){
+  $("#wishList").innerHTML=wishes.map(w=>`
+    <div class="wish"><b>${w.nama}</b><span class="st ${w.hadir==="Hadir"?"":"no"}">${w.hadir==="Hadir"?"Siap Meluncur":"Di Orbit Lain"}</span><p>${w.ucapan}</p></div>`).join("");
+}
+
+/* ================= MUSIK WEBAUDIO ================= */
+let actx=null,musicOn=false,master=null,chimeTimer=null;
+function startMusic(){
+  if(!CONFIG.musicEnabled())return;
+  if(actx){toggleMusic(true);return;}
+  try{
+    actx=new (window.AudioContext||window.webkitAudioContext)();
+    master=actx.createGain(); master.gain.value=0.0; master.connect(actx.destination);
+    master.gain.linearRampToValueAtTime(0.14,actx.currentTime+1.2);
+    /* pad ambien antariksa: dua osilator detune + LFO */
+    [110,164.81,220].forEach((f,i)=>{
+      const o=actx.createOscillator(),g=actx.createGain();
+      o.type=i===2?"triangle":"sine"; o.frequency.value=f;
+      g.gain.value=i===2?0.018:0.032; o.connect(g); g.connect(master); o.start();
+    });
+    const lfo=actx.createOscillator(),lg=actx.createGain();
+    lfo.frequency.value=0.07; lg.gain.value=0.012; lfo.connect(lg); lg.connect(master.gain); lfo.start();
+    musicOn=true; $("#btnMusic").classList.add("on");
+    const chime=()=>{ if(!musicOn)return;
+      const o=actx.createOscillator(),g=actx.createGain();
+      const notes=[880,1046.5,1174.66,1318.51,1567.98];
+      o.type="sine"; o.frequency.value=notes[Math.floor(Math.random()*notes.length)];
+      g.gain.setValueAtTime(0.0001,actx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.06,actx.currentTime+0.03);
+      g.gain.exponentialRampToValueAtTime(0.0001,actx.currentTime+1.6);
+      o.connect(g); g.connect(master); o.start(); o.stop(actx.currentTime+1.7);
+      chimeTimer=setTimeout(chime,2600+Math.random()*3200);
+    };
+    chimeTimer=setTimeout(chime,1400);
+  }catch(err){ /* audio tidak tersedia */ }
+}
+CONFIG.musicEnabled=function(){return true;};
+function toggleMusic(forceOn){
+  if(!actx){startMusic();return;}
+  if(musicOn&&!forceOn){ master.gain.linearRampToValueAtTime(0.0001,actx.currentTime+0.4); musicOn=false; $("#btnMusic").classList.remove("on"); if(chimeTimer)clearTimeout(chimeTimer); }
+  else if(!musicOn){ master.gain.linearRampToValueAtTime(0.14,actx.currentTime+0.6); musicOn=true; $("#btnMusic").classList.add("on"); }
+}
+$("#btnMusic").addEventListener("click",()=>toggleMusic(false));
+
+/* ================= NAV & REVEAL ================= */
+$$("#bottomNav a").forEach(a=>a.addEventListener("click",()=>{
+  $$("#bottomNav a").forEach(x=>x.classList.remove("active")); a.classList.add("active");
+}));
+function initReveal(){
+  const els=$$(".reveal");
+  if(!("IntersectionObserver" in window)||reduceMotion){els.forEach(e=>e.classList.add("in"));return;}
+  const io=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}}),{threshold:0.08});
+  els.forEach(e=>io.observe(e));
+}
+</script>
+</body>
+</html>

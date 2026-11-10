@@ -55,7 +55,8 @@
     'ivory-botanical': ['Cream', 'Hijau'], 'emerald-luxe': ['Hijau', 'Emas'],
     'bioskop-mini': ['Hitam', 'Emas'], 'piringan-hitam': ['Cokelat', 'Cream'],
     'perjalanan-kereta': ['Hijau', 'Emas'], 'surat-hidup': ['Cream', 'Hijau'],
-    'paspor-cinta': ['Maroon', 'Emas']
+    'paspor-cinta': ['Maroon', 'Emas'],
+    'museum-cinta': ['Maroon', 'Emas'], 'koran-cinta': ['Cream', 'Hitam'], 'peta-ekspedisi': ['Hijau', 'Emas'], 'ramuan-cinta': ['Hijau', 'Cream'], 'radio-cinta': ['Cokelat', 'Emas'], 'observatorium': ['Biru', 'Emas'], 'kedai-kopi': ['Cokelat', 'Cream'], 'papan-permainan': ['Emas', 'Hijau'], 'oceanarium': ['Biru', 'Toska'], 'pasar-malam': ['Maroon', 'Emas']
   };
   var DOT = { Emas: '#c9973f', Cream: '#f3ead8', Pink: '#e3a0b0', Maroon: '#8c2f39', Hitam: '#26262a', Abu: '#8f8f96', Cokelat: '#96613a', Biru: '#2e5f8a', Hijau: '#5c7350', Ungu: '#7a5fa8', Toska: '#1f7a72', Putih: '#ffffff' };
   var SEARCH_EXTRA = {
@@ -77,7 +78,8 @@
     'piringan-hitam': 'vinyl piringan hitam album retro musik turntable lagu record meyzsa fahrezzi',
     'perjalanan-kereta': 'kereta krl modern stasiun tiket perjalanan geser horizontal train meyzsa fahrezzi',
     'surat-hidup': 'surat amplop segel lilin wax seal taman kertas tumbuh letter meyzsa fahrezzi',
-    'paspor-cinta': 'paspor passport visa boarding pass perjalanan travel cap stempel meyzsa fahrezzi'
+    'paspor-cinta': 'paspor passport visa boarding pass perjalanan travel cap stempel meyzsa fahrezzi',
+    'museum-cinta': 'museum galeri seni lukisan hidup pameran meyzsa fahrezzi', 'koran-cinta': 'koran surat kabar headline berita harian bahagia meyzsa fahrezzi', 'peta-ekspedisi': 'peta ekspedisi petualangan kompas rute koordinat meyzsa fahrezzi', 'ramuan-cinta': 'ramuan apotek formula botol resep vintage meyzsa fahrezzi', 'radio-cinta': 'radio fm tuning on air penyiar siaran meyzsa fahrezzi', 'observatorium': 'observatorium bintang rasi teleskop planet astronom meyzsa fahrezzi', 'kedai-kopi': 'kedai kopi kafe menu barista struk meyzsa fahrezzi', 'papan-permainan': 'papan permainan dadu board game bidak finish meyzsa fahrezzi', 'oceanarium': 'oceanarium akuarium laut menyelam ikan dalam meyzsa fahrezzi', 'pasar-malam': 'pasar malam festival bianglala marquee karnaval meyzsa fahrezzi'
   };
   var CAT_LABEL = { modern: 'Tema Web 3D · Modern', adat: 'Tema Web 3D · Adat', interaktif: 'Web Interaktif', video: 'Video MP4', ilustrasi: 'Web 2D · Ilustrasi' };
   var WEB_FEATS = ['Countdown real-time, galeri foto & lightbox', 'RSVP, buku tamu & amplop digital (demo lokal)', 'Link tamu personal (?to=Nama) siap kirim via WhatsApp'];
@@ -404,6 +406,206 @@
   });
 
   var bySlug = {};
+  ENTRIES.push({
+    slug: 'museum-cinta', name: 'Museum Cinta',
+    tagline: 'Galeri seni cinta — lukisan pasangan yang hidup bernapas, ruang pamer per bab & RSVP buku tamu pameran',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#2a1c11,#4a1220 55%,#1d130c)',
+    ring: '#c9973f', ring2: '#eed9a4', font: "'Great Vibes', cursive", orn: '❦', shape: 'orbs',
+    swatch: ['#4a1220', '#c9973f', '#7e1f2e', '#f6eeda'],
+    warna: WARNA['museum-cinta'],
+    feats: [
+      'Lukisan hero cat minyak dalam bingkai emas yang hidup — bernapas perlahan & disapu cahaya galeri',
+      'Isi sebagai Ruang Pamer per bab, tiap foto berlabel karya ala museum',
+      'Medali ikon & foto pasangan generate AI se-konsep galeri seni',
+      'RSVP Buku Tamu Pameran & amplop digital (demo lokal)',
+      'Musik latar sintesis WebAudio setelah undangan dibuka'
+    ],
+    preview: 'museum-cinta?to=Tamu%20Undangan',
+    order: 'checkout?tema=museum-cinta',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'koran-cinta', name: 'Koran Cinta',
+    tagline: 'Edisi khusus "Harian Bahagia" — headline "AKHIRNYA MENIKAH!", kolom kisah, cuaca hari-H & RSVP kupon disobek',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f3ead8,#e7dbc2 55%,#d9c9a6)',
+    ring: '#26262a', ring2: '#8c2f39', font: "'Parisienne', cursive", orn: '✦', shape: 'crystals',
+    swatch: ['#f3ead8', '#26262a', '#8c2f39', '#96613a'],
+    warna: WARNA['koran-cinta'],
+    feats: [
+      'Cover koran terlipat yang terbuka — headline raksasa "AKHIRNYA MENIKAH!"',
+      'Kisah cinta sebagai kolom berita + ramalan cuaca hari-H & TTS mini',
+      'RSVP kupon berperforasi yang disobek saat konfirmasi hadir',
+      'Amplop digital sebagai iklan baris (demo lokal)',
+      'Musik latar sintesis WebAudio setelah undangan dibuka'
+    ],
+    preview: 'koran-cinta?to=Tamu%20Undangan',
+    order: 'checkout?tema=koran-cinta',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'peta-ekspedisi', name: 'Peta Ekspedisi',
+    tagline: 'Peta petualangan — rute kisah terlukis menganimasi, pin koordinat kenangan & countdown kompas berputar',
+    cat: 'interaktif',
+    bg: 'linear-gradient(170deg,#e9dfc8,#d9c9a3 55%,#b39b6d)',
+    ring: '#5c7350', ring2: '#c9973f', font: "'Great Vibes', cursive", orn: '✦', shape: 'orbs',
+    swatch: ['#e9dfc8', '#5c7350', '#c9973f', '#8c2f39'],
+    warna: WARNA['peta-ekspedisi'],
+    feats: [
+      'Rute kisah terlukis menganimasi garis demi garis antar titik ekspedisi',
+      'Galeri pin koordinat — ketuk pin untuk membuka foto & cerita kenangan',
+      'Countdown kompas dengan jarum yang bergerak',
+      'RSVP terstempel "TERCATAT DALAM EKSPEDISI" (demo lokal)',
+      'Musik latar sintesis WebAudio setelah undangan dibuka'
+    ].concat(WEB_FEATS),
+    preview: 'peta-ekspedisi?to=Tamu%20Undangan',
+    order: 'checkout?tema=peta-ekspedisi&paket=platinum',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'ramuan-cinta', name: 'Ramuan Cinta',
+    tagline: 'Apotek cinta vintage — Formula No. 12 "Dua Hati", label botol acara, countdown tabung reaksi & RSVP hasil uji COCOK',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#e8e3d0,#cfd4ba 55%,#9caf88)',
+    ring: '#5c7350', ring2: '#96613a', font: "'Dancing Script', cursive", orn: '❦', shape: 'orbs',
+    swatch: ['#e8e3d0', '#5c7350', '#96613a', '#8c2f39'],
+    warna: WARNA['ramuan-cinta'],
+    feats: [
+      'Kisah cinta ditulis sebagai daftar bahan terukur Formula No. 12',
+      'Acara tampil sebagai Label Botol I (Akad) & Label Botol II (Resepsi)',
+      'Countdown tabung reaksi — cairan terisi perlahan menuju hari-H',
+      'RSVP hasil uji laboratorium terstempel "COCOK" (demo lokal)',
+      'Amplop digital berupa resep & musik latar sintesis WebAudio'
+    ],
+    preview: 'ramuan-cinta?to=Tamu%20Undangan',
+    order: 'checkout?tema=ramuan-cinta',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'radio-cinta', name: 'Radio Cinta',
+    tagline: 'Radio yang disetel sendiri oleh tamu — geser kenop melewati desis ke 98.6 FM sampai ON AIR menyala & penyiar menyapa namamu',
+    cat: 'interaktif',
+    bg: 'linear-gradient(170deg,#241610,#3a2317 55%,#17100b)',
+    ring: '#c9973f', ring2: '#e3c26e', font: "'Great Vibes', cursive", orn: '✦', shape: 'orbs',
+    swatch: ['#3a2317', '#c9973f', '#b3402e', '#f3ead8'],
+    warna: WARNA['radio-cinta'],
+    feats: [
+      'Kenop frekuensi digeser tamu — desis statis memudar sampai terkunci di 98.6 FM',
+      'Panel ON AIR menyala & penyiar menyapa nama tamu saat sinyal jernih',
+      'Isi sebagai jadwal program siaran + galeri album request dengan lightbox',
+      'RSVP telepon masuk ke studio — "Terhubung — Kehadiran Tercatat" (demo lokal)',
+      'Musik & suara radio sintesis WebAudio setelah sinyal ditemukan'
+    ].concat(WEB_FEATS),
+    preview: 'radio-cinta?to=Tamu%20Undangan',
+    order: 'checkout?tema=radio-cinta&paket=platinum',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'observatorium', name: 'Observatorium',
+    tagline: 'Di bawah bintang yang sama — rasi M·F terlukis saat dibuka, countdown teleskop & galeri planet kenangan',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#0b1026,#1c2a4a 55%,#0b1026)',
+    ring: '#c9973f', ring2: '#7a9cc6', font: "'Parisienne', cursive", orn: '✦', shape: 'crystals',
+    swatch: ['#0b1026', '#c9973f', '#2e4057', '#f3ead8'],
+    warna: WARNA['observatorium'],
+    feats: [
+      'Rasi bintang "M·F" terlukis bintang demi bintang saat undangan dibuka',
+      'Countdown teleskop dengan Pembacaan Astronom',
+      'Galeri Planet Kenangan — ketuk planet untuk membaca kisahnya',
+      'RSVP tiket misi terstempel "SIAP MELUNCUR" (demo lokal)',
+      'Musik latar sintesis WebAudio setelah undangan dibuka'
+    ],
+    preview: 'observatorium?to=Tamu%20Undangan',
+    order: 'checkout?tema=observatorium',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'kedai-kopi', name: 'Kedai Kopi',
+    tagline: 'Menu kafe artisan — racikan kisah berharga momen & tanggal, RSVP struk tercetak & kartu stempel loyalitas',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f1e6d2,#e2cdb0 55%,#c8a97e)',
+    ring: '#96613a', ring2: '#c08b57', font: "'Dancing Script', cursive", orn: '❦', shape: 'orbs',
+    swatch: ['#f1e6d2', '#96613a', '#5e4028', '#8c2f39'],
+    warna: WARNA['kedai-kopi'],
+    feats: [
+      'Cover cangkir mengepul dengan uap beranimasi',
+      'Kisah cinta sebagai menu racikan — kolom harga diganti momen & tanggal',
+      'RSVP tercetak keluar sebagai struk kasir berisi pesanan tamu (demo lokal)',
+      'Amplop digital kartu stempel loyalitas (demo lokal)',
+      'Musik latar sintesis WebAudio setelah undangan dibuka'
+    ],
+    preview: 'kedai-kopi?to=Tamu%20Undangan',
+    order: 'checkout?tema=kedai-kopi',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'papan-permainan', name: 'Papan Permainan',
+    tagline: 'Board game kisah cinta — lempar dadu sungguhan, bidak melompat petak demi petak membuka babak sampai finish AKAD',
+    cat: 'interaktif',
+    bg: 'linear-gradient(170deg,#f6ecdc,#e9d9ae 55%,#c9b083)',
+    ring: '#c9973f', ring2: '#5c7350', font: "'Great Vibes', cursive", orn: '✦', shape: 'crystals',
+    swatch: ['#f6ecdc', '#c9973f', '#5c7350', '#8c2f39'],
+    warna: WARNA['papan-permainan'],
+    feats: [
+      'Dadu digital sungguhan — lempar & bidak melompat petak demi petak',
+      '12 petak papan, tiap petak membuka Kartu Babak kisah',
+      'Finish AKAD memicu perayaan bintang emas',
+      'Jalan pintas elegan ke info acara + RSVP Kartu Kesempatan terbalik 3D (demo lokal)',
+      'Musik latar sintesis WebAudio setelah undangan dibuka'
+    ].concat(WEB_FEATS),
+    preview: 'papan-permainan?to=Tamu%20Undangan',
+    order: 'checkout?tema=papan-permainan&paket=platinum',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'oceanarium', name: 'Oceanarium',
+    tagline: 'Tiket oceanarium — menyelam dari permukaan 0 m sampai penutup bioluminesensi di 40 m, amplop pesan dalam botol',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#0a2e4a,#0e4a66 55%,#04182b)',
+    ring: '#1f7a72', ring2: '#c9973f', font: "'Parisienne', cursive", orn: '✦', shape: 'orbs',
+    swatch: ['#0a2e4a', '#1f7a72', '#c9973f', '#eaf6f6'],
+    warna: WARNA['oceanarium'],
+    feats: [
+      'Pengalaman menyelam — pengukur kedalaman tetap berubah 0 sampai 40 m mengikuti scroll',
+      'Jendela akuarium berbingkai dengan ikan berenang, gelembung & cahaya caustics',
+      'Amplop pesan dalam botol — gabus terlempar & gulungan terbuka (demo lokal)',
+      'RSVP tiket terstempel "PENYELAM TERCATAT" (demo lokal)',
+      'Penutup bioluminesensi bercahaya & musik WebAudio setelah undangan dibuka'
+    ],
+    preview: 'oceanarium?to=Tamu%20Undangan',
+    order: 'checkout?tema=oceanarium',
+    rec: '<b>Rekomendasi paket:</b> tema ilustrasi premium termasuk mulai <b>Paket Gold</b> (Rp299.000).'
+  });
+
+  ENTRIES.push({
+    slug: 'pasar-malam', name: 'Pasar Malam',
+    tagline: 'Festival malam burgundy-emas — gerbang marquee menyala huruf demi huruf & bianglala galeri yang bisa digeser',
+    cat: 'interaktif',
+    bg: 'linear-gradient(170deg,#1d0710,#57182a 55%,#12060b)',
+    ring: '#c9973f', ring2: '#e3c26e', font: "'Great Vibes', cursive", orn: '✦', shape: 'crystals',
+    swatch: ['#57182a', '#c9973f', '#e3a0b0', '#f8f1e6'],
+    warna: WARNA['pasar-malam'],
+    feats: [
+      'Gerbang marquee "PASAR MALAM CINTA" menyala huruf demi huruf',
+      'Bianglala galeri berputar otomatis & bisa digeser — ketuk kabin untuk foto besar',
+      'Mempelai di komidi putar & set medali AI per wahana',
+      'RSVP tiket wahana terstempel "SUDAH NAIK" (demo lokal)',
+      'Musik latar sintesis WebAudio setelah undangan dibuka'
+    ].concat(WEB_FEATS),
+    preview: 'pasar-malam?to=Tamu%20Undangan',
+    order: 'checkout?tema=pasar-malam&paket=platinum',
+    rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Platinum</b> (Rp399.000).'
+  });
+
   ENTRIES.forEach(function (e) { bySlug[e.slug] = e; });
 
   /* ---------- Katalog: filter + grid ---------- */

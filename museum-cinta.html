@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Museum Cinta — Meyzsa &amp; Fahrezzi | Pameran Satu Hari, Sabtu 12 Juni 2027</title>
+<meta name="description" content="Undangan pernikahan digital bergaya museum seni: Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234a1220'/%3E%3Crect x='6' y='6' width='20' height='20' fill='none' stroke='%23c9a45c' stroke-width='2.4'/%3E%3Cpath d='M16 21s-5.2-3.4-5.2-6.6c0-1.7 1.2-2.8 2.6-2.8 1 0 2 .6 2.6 1.5.6-.9 1.6-1.5 2.6-1.5 1.4 0 2.6 1.1 2.6 2.8C21.2 17.6 16 21 16 21z' fill='%23eed9a4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c9a45c; --gold-l:#eed9a4; --gold-d:#8f7136;
+  --burg:#7e1f2e; --burg-d:#4a1220; --burg-wall:#5e1a26;
+  --ink:#171009; --wall:#221812; --wall2:#2c1e14;
+  --ivory:#f6eeda; --paper:#f3e9d2; --mut:#c2b08a; --mut2:#a68f66;
+  --line:rgba(201,164,92,.34);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0705;font-family:'Inter',system-ui,sans-serif;color:var(--ivory);-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.corm{font-family:'Cormorant Garamond',serif}
+.phone{max-width:430px;margin:0 auto;position:relative;min-height:100dvh;overflow:clip;box-shadow:0 0 80px rgba(0,0,0,.95);
+  background:
+    radial-gradient(130% 46% at 50% -4%,rgba(238,217,164,.16) 0%,transparent 55%),
+    radial-gradient(90% 30% at 12% 22%,rgba(126,31,46,.28) 0%,transparent 60%),
+    radial-gradient(90% 30% at 88% 58%,rgba(126,31,46,.22) 0%,transparent 60%),
+    repeating-linear-gradient(0deg,rgba(238,217,164,.025) 0 1px,transparent 1px 74px),
+    repeating-linear-gradient(90deg,rgba(238,217,164,.02) 0 1px,transparent 1px 74px),
+    linear-gradient(180deg,#2a1c11 0%,#1d130c 38%,#241812 72%,#180f09 100%);
+}
+/* layered wall pattern: subtle damask dots via svg + grain + vignette */
+.wall-pattern{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:60;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Cg fill='none' stroke='%23eed9a4' stroke-width='1'%3E%3Cpath d='M36 8 L64 36 L36 64 L8 36 Z'/%3E%3Ccircle cx='36' cy='36' r='5'/%3E%3C/g%3E%3C/svg%3E")}
+.grain{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:61;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.vignette{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:59;background:radial-gradient(115% 88% at 50% 44%,transparent 60%,rgba(0,0,0,.52) 100%)}
+.dust{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;pointer-events:none;z-index:58;overflow:hidden}
+.dust i{position:absolute;bottom:-12px;border-radius:50%;background:radial-gradient(circle,#ffeec2 0%,rgba(238,217,164,0) 70%);opacity:.5;animation:rise linear infinite}
+@keyframes rise{from{transform:translateY(0) translateX(0)}to{transform:translateY(-105dvh) translateX(18px)}}
+/* ============ COVER ============ */
+#cover{min-height:100dvh;display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 22px 34px;position:relative;
+  background:radial-gradient(120% 52% at 50% 0%,rgba(238,217,164,.20),transparent 55%),linear-gradient(180deg,#3a1420 0%,#5e1a26 30%,#3d1220 58%,#1c100a 100%)}
+#cover::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(0,0,0,.10) 0 2px,transparent 2px 86px);pointer-events:none}
+.museum-kicker{font-size:10px;letter-spacing:.46em;color:var(--gold-l);text-transform:uppercase;position:relative}
+.museum-kicker b{color:#fff3d6}
+.cover-icons{display:flex;gap:14px;justify-content:center;margin-top:16px;position:relative}
+.cover-icons figure{width:58px;text-align:center}
+.cover-icons img{width:52px;height:52px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);box-shadow:0 6px 18px rgba(0,0,0,.5);display:block;margin:0 auto}
+.cover-icons figcaption{font-size:8px;letter-spacing:.22em;color:var(--gold-l);text-transform:uppercase;margin-top:6px}
+.exhibit-no{margin-top:18px;font-size:9.5px;letter-spacing:.38em;color:var(--mut);text-transform:uppercase;position:relative}
+.cover-title{font-family:'Playfair Display',serif;font-weight:900;font-size:44px;line-height:1.04;color:#fdf6e3;margin-top:8px;text-shadow:0 4px 30px rgba(0,0,0,.6);position:relative}
+.cover-title span{display:block;font-size:17px;font-weight:500;font-style:italic;letter-spacing:.34em;color:var(--gold-l);margin:8px 0;font-family:'Cormorant Garamond',serif}
+.cover-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17.5px;color:#eadfc2;margin-top:10px;max-width:320px;line-height:1.55;position:relative}
+/* LIVING PAINTING */
+.painting-wrap{margin-top:22px;position:relative;width:100%;max-width:342px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.painting-wrap:focus-visible{outline:2px solid var(--gold-l);outline-offset:6px;border-radius:6px}
+.gold-frame{position:relative;padding:13px;background:linear-gradient(145deg,#e8cf8b 0%,#a97f35 22%,#f0d99a 40%,#8f7136 62%,#d9ba6d 82%,#7c5f27 100%);border-radius:8px;box-shadow:0 24px 54px rgba(0,0,0,.65),inset 0 2px 3px #fff3c4,inset 0 -3px 6px rgba(60,40,5,.7)}
+.gold-frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(70,48,8,.55);border-radius:5px;pointer-events:none;z-index:3}
+.gold-frame::after{content:"";position:absolute;inset:9px;border:1px solid rgba(255,240,190,.5);border-radius:4px;pointer-events:none;z-index:3}
+.living-painting{position:relative;overflow:hidden;border-radius:3px;background:#2a1410;aspect-ratio:720/880}
+.living-painting img.paint{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;transform:scale(1.02)}
+.living-painting.is-living img.paint{animation:breath 11s ease-in-out infinite alternate}
+@keyframes breath{from{transform:scale(1.02)}to{transform:scale(1.075)}}
+.living-painting .sheen{position:absolute;inset:-30%;background:linear-gradient(115deg,transparent 42%,rgba(255,238,190,.20) 50%,transparent 58%);transform:translateX(-46%);pointer-events:none}
+.living-painting.is-living .sheen{animation:sheenMove 7.5s ease-in-out infinite}
+@keyframes sheenMove{0%,100%{transform:translateX(-46%)}50%{transform:translateX(46%)}}
+.living-painting .glow{position:absolute;inset:0;background:radial-gradient(80% 46% at 50% 8%,rgba(255,232,170,.22),transparent 60%);pointer-events:none;animation:glowPulse 6s ease-in-out infinite alternate}
+@keyframes glowPulse{from{opacity:.55}to{opacity:1}}
+.petal{position:absolute;border-radius:70% 6px 70% 6px;background:linear-gradient(135deg,#f6cdd2,#d98a96);opacity:0;pointer-events:none;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.living-painting.is-living .petal{animation:petalFloat linear infinite}
+.petal.p1{width:13px;height:10px;left:16%;top:64%}
+.petal.p2{width:10px;height:8px;left:72%;top:58%;animation-delay:-3s!important}
+.petal.p3{width:12px;height:9px;left:52%;top:76%;animation-delay:-6s!important}
+.petal.p4{width:9px;height:7px;left:32%;top:48%;animation-delay:-9s!important}
+@keyframes petalFloat{0%{opacity:0;transform:translateY(14px) rotate(0deg)}18%{opacity:.9}78%{opacity:.85}100%{opacity:0;transform:translateY(-92px) rotate(150deg) translateX(14px)}}
+.petal{animation-duration:9s}
+.p2{animation-duration:11s}.p3{animation-duration:10s}.p4{animation-duration:12s}
+.painting-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:4;background:rgba(18,9,4,.72);border:1px solid var(--line);color:var(--gold-l);font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;padding:7px 14px;border-radius:999px;white-space:nowrap;backdrop-filter:blur(2px)}
+.wall-label{margin:16px auto 0;max-width:300px;background:var(--paper);color:#2c1c0d;border-radius:4px;padding:13px 18px 11px;box-shadow:0 10px 26px rgba(0,0,0,.5);text-align:left;position:relative}
+.wall-label::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff0b8,#8f7136);box-shadow:0 1px 3px rgba(0,0,0,.5)}
+.wall-label h3{font-family:'Playfair Display',serif;font-size:16.5px;font-weight:700;margin-top:6px}
+.wall-label p{font-size:11px;line-height:1.65;color:#6b543a;margin-top:3px}
+.wall-label .medium{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13.5px;color:#8a6a35}
+/* ticket */
+.ticket{margin-top:20px;width:100%;max-width:342px;display:flex;background:linear-gradient(120deg,#f8f0da,#eadbb6 58%,#dfc78f);color:#2a1d0e;border-radius:14px;box-shadow:0 18px 42px rgba(0,0,0,.6);overflow:visible;position:relative;text-align:left}
+.ticket-main{flex:1;padding:17px 16px 15px;min-width:0}
+.ticket-main small{font-size:8.5px;letter-spacing:.32em;text-transform:uppercase;color:#8a6a35}
+.ticket-main .t-names{font-family:'Playfair Display',serif;font-weight:700;font-size:19px;line-height:1.2;margin-top:5px}
+.ticket-main .t-when{font-size:11px;color:#6b543a;margin-top:5px;line-height:1.6}
+.ticket-stub{width:92px;flex:0 0 92px;border-left:2px dashed rgba(42,29,14,.45);padding:15px 8px 12px;text-align:center;position:relative}
+.ticket-stub::before,.ticket-stub::after{content:"";position:absolute;left:-11px;width:22px;height:22px;border-radius:50%;background:#31131d}
+.ticket-stub::before{top:-12px}.ticket-stub::after{bottom:-12px}
+.ticket-stub img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1.5px solid #a97f35;display:block;margin:0 auto}
+.ticket-stub b{display:block;font-size:8px;letter-spacing:.24em;margin-top:7px;text-transform:uppercase}
+.ticket-stub span{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12.5px;color:#6b543a}
+.guest-box{margin-top:20px;background:rgba(14,8,4,.62);border:1px solid var(--line);border-radius:14px;padding:14px 20px 13px;width:100%;max-width:342px;position:relative;backdrop-filter:blur(3px)}
+.guest-box small{display:block;font-size:9px;letter-spacing:.3em;color:var(--mut);text-transform:uppercase}
+.guest-box .gname{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#fdf6e3;margin-top:4px;line-height:1.15}
+#btnOpen{margin-top:18px;display:inline-flex;align-items:center;gap:10px;background:linear-gradient(180deg,#dcbd72,#a9823a);color:#221503;border:none;border-radius:999px;padding:15px 30px;font-family:'Inter',sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.2em;cursor:pointer;box-shadow:0 12px 30px rgba(201,164,92,.35),inset 0 1px 0 #ffeec2;position:relative}
+#btnOpen:active{transform:scale(.97)}
+.cover-note{margin-top:12px;font-size:10.5px;color:var(--mut);letter-spacing:.06em;position:relative}
+/* ============ CONTENT ============ */
+#content{display:none;padding-bottom:110px}
+#content.open{display:block}
+section{padding:54px 22px 6px;position:relative}
+.room-head{text-align:center;margin-bottom:24px}
+.room-no{font-size:9.5px;letter-spacing:.48em;color:var(--gold);text-transform:uppercase}
+.room-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fdf6e3;margin-top:7px}
+.room-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--mut);margin-top:5px}
+.rule{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:13px}
+.rule::before,.rule::after{content:"";height:1px;width:50px;background:linear-gradient(90deg,transparent,var(--gold))}
+.rule::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.rule i{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);display:block}
+p.body-txt{font-size:14.5px;line-height:1.85;color:#e2d5b8;text-align:center}
+.opening-quote{font-family:'Cormorant Garamond',serif;font-size:19.5px;font-style:italic;line-height:1.65;text-align:center;color:#f0e3c2}
+.frame-card{background:linear-gradient(180deg,#2e2013,#1e140c);border:1px solid var(--line);border-radius:16px;padding:22px 19px;position:relative;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.frame-card::before{content:"";position:absolute;inset:6px;border:1px solid rgba(201,164,92,.16);border-radius:11px;pointer-events:none}
+.icon-medal{width:76px;height:76px;margin:0 auto 12px;display:block;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 8px 22px rgba(0,0,0,.5)}
+/* mempelai */
+.artist-card{text-align:center;margin-bottom:20px;overflow:hidden;padding:0 0 24px}
+.artist-photo{position:relative;padding:11px 11px 0}
+.artist-photo .gold-frame{padding:9px}
+.artist-photo img.portrait{width:100%;height:308px;object-fit:cover;object-position:center 22%;display:block;border-radius:3px}
+.artist-role{font-size:9.5px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-top:16px}
+.artist-name{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;color:#fdf6e3;margin-top:7px;padding:0 16px;line-height:1.28}
+.artist-parents{font-size:13px;line-height:1.75;color:var(--mut);margin-top:8px;padding:0 20px}
+.mini-label{margin:14px 20px 0;background:var(--paper);color:#2c1c0d;border-radius:4px;padding:10px 14px 9px;text-align:left}
+.mini-label b{font-family:'Playfair Display',serif;font-size:13.5px}
+.mini-label span{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#8a6a35;margin-top:2px}
+.ig-link{display:inline-block;margin-top:13px;font-size:12px;letter-spacing:.05em;color:var(--gold-l);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 15px}
+/* acara */
+.event-card{margin-bottom:18px;text-align:center}
+.event-tag{display:inline-block;background:var(--burg);color:#ffe9c9;font-size:9.5px;letter-spacing:.32em;padding:6px 14px;border-radius:999px;text-transform:uppercase}
+.event-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-top:13px;color:#fdf6e3}
+.event-when{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold-l);margin-top:5px}
+.event-where{font-size:13.5px;color:var(--mut);line-height:1.7;margin-top:7px}
+.btn-row{display:flex;gap:9px;justify-content:center;margin-top:15px;flex-wrap:wrap;position:relative;z-index:2}
+.btn{display:inline-block;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;padding:11px 17px;border-radius:999px;border:1px solid var(--gold);color:var(--gold-l);background:transparent;cursor:pointer;font-family:'Inter',sans-serif}
+.btn.fill{background:linear-gradient(180deg,#dcbd72,#a9823a);color:#221503;border:none}
+.countdown{display:flex;gap:9px;justify-content:center;margin:4px 0 22px}
+.cd-box{width:70px;background:linear-gradient(180deg,#2d2012,#17100a);border:1px solid var(--line);border-radius:12px;padding:12px 0 9px;text-align:center}
+.cd-box b{display:block;font-family:'Playfair Display',serif;font-size:26px;color:var(--gold-l);line-height:1}
+.cd-box span{font-size:9px;letter-spacing:.24em;color:var(--mut);text-transform:uppercase;display:block;margin-top:6px}
+/* galeri ruang pamer */
+.work{margin-bottom:26px}
+.work .gold-frame{padding:9px}
+.work img.art{width:100%;height:216px;object-fit:cover;display:block;border-radius:3px}
+.work-label{display:flex;gap:13px;margin-top:12px;background:var(--paper);color:#2c1c0d;border-radius:4px;padding:12px 15px 11px;box-shadow:0 8px 20px rgba(0,0,0,.4);text-align:left}
+.work-label .no{font-family:'Playfair Display',serif;font-weight:900;font-size:19px;color:var(--burg);line-height:1;padding-top:2px}
+.work-label h4{font-family:'Playfair Display',serif;font-size:15.5px;line-height:1.3}
+.work-label p{font-size:11px;line-height:1.6;color:#6b543a;margin-top:3px}
+.work-label .medium{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#8a6a35}
+/* RSVP buku tamu */
+.guestbook{background:linear-gradient(180deg,#f7efdb,#ecdFBd);background:linear-gradient(180deg,#f7efdb,#ecdfbd);color:#2c1c0d;border-radius:14px;padding:22px 19px;box-shadow:0 16px 36px rgba(0,0,0,.45);position:relative}
+.guestbook::before{content:"";position:absolute;top:0;bottom:0;left:26px;width:1px;background:rgba(126,31,46,.28)}
+.gb-head{text-align:center;margin-bottom:16px}
+.gb-head img{width:62px;height:62px;border-radius:50%;object-fit:cover;border:2px solid #a97f35;display:block;margin:0 auto 9px}
+.gb-head h3{font-family:'Playfair Display',serif;font-size:20px}
+.gb-head p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.5px;color:#8a6a35;margin-top:3px}
+.field{margin-bottom:12px;position:relative;z-index:1}
+.field label{display:block;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#8a6a35;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;border:1px solid #cbb27a;border-radius:9px;background:#fffaf0;padding:12px 13px;font-family:'Inter',sans-serif;font-size:14px;color:#2c1c0d}
+.field textarea{resize:vertical;min-height:74px}
+#btnRsvp{width:100%;background:linear-gradient(180deg,#8e2434,#5e1420);color:#ffe9c9;border:none;border-radius:999px;padding:14px;font-size:13px;font-weight:700;letter-spacing:.18em;cursor:pointer;font-family:'Inter',sans-serif}
+.demo-note{font-size:10.5px;color:#8a6a35;text-align:center;margin-top:11px;line-height:1.6}
+#rsvpDone{display:none;background:#efe3c2;border:1px dashed #a97f35;border-radius:10px;padding:13px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#5e1420;margin-bottom:13px}
+#rsvpDone.show{display:block}
+.gb-list{margin-top:18px;position:relative;z-index:1}
+.gb-entry{border-top:1px solid rgba(169,127,53,.35);padding:12px 2px 10px 12px}
+.gb-entry b{font-family:'Playfair Display',serif;font-size:14.5px}
+.gb-entry .att{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#8e2434;margin-left:7px}
+.gb-entry p{font-size:13px;line-height:1.65;color:#57432a;margin-top:3px;font-family:'Cormorant Garamond',serif;font-style:italic}
+.gb-sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:#5e1420;text-align:right;margin-top:2px}
+/* amplop */
+.gift-card{text-align:center;margin-bottom:16px}
+.gift-card .bank{font-size:10px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase}
+.gift-card .acc{font-family:'Playfair Display',serif;font-size:24px;letter-spacing:.06em;color:#fdf6e3;margin-top:9px}
+.gift-card .an{font-size:12.5px;color:var(--mut);margin-top:4px}
+/* penutup */
+.closing{text-align:center;padding-bottom:8px}
+.closing .big{font-family:'Playfair Display',serif;font-size:25px;font-weight:700;color:#fdf6e3;line-height:1.35;margin-top:12px}
+.credit{margin-top:26px;font-size:10px;letter-spacing:.24em;color:var(--mut2);text-transform:uppercase;line-height:2;text-align:center}
+.credit b{color:var(--gold-l)}
+/* bottom nav + music */
+#bottomNav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:80;display:none;background:rgba(16,10,5,.92);border-top:1px solid var(--line);backdrop-filter:blur(8px);padding:8px 6px calc(8px + env(safe-area-inset-bottom))}
+#bottomNav.show{display:flex}
+#bottomNav a{flex:1;text-align:center;text-decoration:none;color:var(--mut);font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 0}
+#bottomNav a img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(201,164,92,.5);display:block;margin:0 auto 4px}
+#bottomNav a.active{color:var(--gold-l)}
+#btnMusic{position:fixed;bottom:96px;right:max(14px,calc(50% - 201px));z-index:81;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold);background:rgba(16,10,5,.88);cursor:pointer;display:none;align-items:center;justify-content:center;padding:0}
+#btnMusic.show{display:flex}
+#btnMusic img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+#btnMusic.playing img{animation:spin 7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<link rel="canonical" href="https://undangya.web.id/museum-cinta">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Museum Cinta — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital bergaya galeri seni: lukisan pasangan yang hidup, ruang pameran per bab & buku tamu pameran — Museum Cinta">
+<meta property="og:url" content="https://undangya.web.id/museum-cinta">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/museum-cinta.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Museum Cinta — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital bergaya galeri seni: lukisan pasangan yang hidup, ruang pameran per bab & buku tamu pameran — Museum Cinta">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/museum-cinta.webp">
+</head>
+<body>
+<div class="wall-pattern" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="dust" id="dust" aria-hidden="true"></div>
+
+<div class="phone">
+
+  <!-- ================= SAMPUL ================= -->
+  <header id="cover">
+    <div class="museum-kicker">MUSEUM CINTA &nbsp;·&nbsp; <b>GALERI NASIONAL KASIH</b></div>
+    <div class="cover-icons" aria-hidden="true">
+      <figure><img src="assets/undangya/museum-cinta/icon-column.webp" alt=""><figcaption>Galeri</figcaption></figure>
+      <figure><img src="assets/undangya/museum-cinta/icon-frame.webp" alt=""><figcaption>Karya</figcaption></figure>
+      <figure><img src="assets/undangya/museum-cinta/icon-ticket.webp" alt=""><figcaption>Tiket</figcaption></figure>
+    </div>
+    <div class="exhibit-no">Pameran Khusus &nbsp;·&nbsp; Koleksi No. 12.06.2027</div>
+    <h1 class="cover-title">MUSEUM<span>C I N T A</span></h1>
+    <p class="cover-sub">Satu lukisan yang tak pernah selesai — karena kisahnya masih ditulis, setiap hari, oleh dua orang di dalamnya.</p>
+
+    <div class="painting-wrap" id="paintingWrap" role="button" tabindex="0" aria-label="Ketuk lukisan untuk membuka undangan">
+      <div class="gold-frame">
+        <div class="living-painting is-living" id="livingPainting">
+          <img class="paint" src="assets/undangya/museum-cinta/hero-painting.webp" alt="Lukisan hidup Meyzsa dan Fahrezzi dalam bingkai emas di galeri Museum Cinta">
+          <div class="glow" aria-hidden="true"></div>
+          <div class="sheen" aria-hidden="true"></div>
+          <i class="petal p1" aria-hidden="true"></i><i class="petal p2" aria-hidden="true"></i><i class="petal p3" aria-hidden="true"></i><i class="petal p4" aria-hidden="true"></i>
+          <div class="painting-hint">Ketuk lukisan untuk masuk</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wall-label" aria-label="Label karya lukisan utama">
+      <h3>&ldquo;Dua Hati, Satu Bingkai&rdquo;</h3>
+      <p class="medium">Cat minyak di atas kanvas &amp; cahaya galeri, 2027</p>
+      <p>Karya utama pameran ini. Perhatikan baik-baik: kelopak di dalam lukisan masih melayang, dan cahaya di atasnya masih bergerak. Lukisan ini hidup — sama seperti kisahnya.</p>
+    </div>
+
+    <div class="ticket" aria-label="Tiket masuk pameran">
+      <div class="ticket-main">
+        <small>Tiket Masuk · Satu Hari Saja</small>
+        <div class="t-names">Meyzsa &amp; Fahrezzi</div>
+        <div class="t-when">Sabtu, 12 Juni 2027 · Pameran dibuka pukul 08.00 WIB<br>Jakarta Selatan, Indonesia</div>
+      </div>
+      <div class="ticket-stub">
+        <img src="assets/undangya/museum-cinta/icon-ticket.webp" alt="">
+        <b>Admit Two</b>
+        <span>kursi untuk<br>Anda &amp; hati Anda</span>
+      </div>
+    </div>
+
+    <div class="guest-box">
+      <small>Kepada Yth. Tamu Pameran</small>
+      <div class="gname" id="guestName">Tamu Undangan</div>
+    </div>
+    <button id="btnOpen" type="button">MASUK GALERI</button>
+    <div class="cover-note">Ketuk lukisan di atas, tiket, atau tombol ini untuk membuka ruang pamer.</div>
+  </header>
+
+  <!-- ================= ISI ================= -->
+  <main id="content">
+
+    <section id="sambutan">
+      <div class="room-head reveal">
+        <div class="room-no">Ruang Pembuka</div>
+        <h2 class="room-title">Sambutan Kurator</h2>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="frame-card reveal">
+        <img class="icon-medal" src="assets/undangya/museum-cinta/icon-palette.webp" alt="Medali emas palet lukis Museum Cinta">
+        <p class="opening-quote">&ldquo;Setiap pameran besar dimulai dari satu karya kecil yang berani dipajang. Pameran ini dimulai dari satu pertemuan — lalu Tuhan yang melukis sisanya.&rdquo;</p>
+        <p class="body-txt" style="margin-top:14px">Bismillahirrahmanirrahim. Assalamu&rsquo;alaikum warahmatullahi wabarakatuh. Dengan memohon rahmat dan rida Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri pameran paling istimewa dalam hidup kami: hari pernikahan kami. Kehadiran Anda adalah karya penutup yang membuat galeri ini lengkap.</p>
+      </div>
+    </section>
+
+    <section id="mempelai">
+      <div class="room-head reveal">
+        <div class="room-no">Ruang Pamer I · Sang Seniman</div>
+        <h2 class="room-title">Mempelai</h2>
+        <p class="room-sub">Dua seniman, satu kanvas yang sama</p>
+        <div class="rule"><i></i></div>
+      </div>
+
+      <article class="frame-card artist-card reveal">
+        <div class="artist-photo"><div class="gold-frame"><img class="portrait" src="assets/undangya/museum-cinta/bride.webp" alt="Potret Meyzsa Putri Ananda di galeri seni"></div></div>
+        <div class="artist-role">Mempelai Wanita</div>
+        <h3 class="artist-name">Meyzsa Putri Ananda, S.Pd.</h3>
+        <p class="artist-parents">Putri Bapak H. Muhammad Ridwan<br>&amp; Ibu Hj. Siti Aminah</p>
+        <div class="mini-label"><b>&ldquo;Potret dalam Cahaya Lembut&rdquo;</b><span>Fotografi &amp; gaun ivory bersulam emas, 2027 — Koleksi Ruang I</span></div>
+        <a class="ig-link" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a>
+      </article>
+
+      <article class="frame-card artist-card reveal">
+        <div class="artist-photo"><div class="gold-frame"><img class="portrait" src="assets/undangya/museum-cinta/groom.webp" alt="Potret Ahmad Fahrezzi Pratama di galeri seni"></div></div>
+        <div class="artist-role">Mempelai Pria</div>
+        <h3 class="artist-name">Ahmad Fahrezzi Pratama, S.T.</h3>
+        <p class="artist-parents">Putra Bapak H. Bambang Sutrisno<br>&amp; Ibu Hj. Ratna Dewi</p>
+        <div class="mini-label"><b>&ldquo;Penjaga Kolom &amp; Janji&rdquo;</b><span>Fotografi &amp; jas burgundy di antara patung marmer, 2027 — Koleksi Ruang I</span></div>
+        <a class="ig-link" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a>
+      </article>
+    </section>
+
+    <section id="acara">
+      <div class="room-head reveal">
+        <div class="room-no">Ruang Pamer II · Hari Pembukaan</div>
+        <h2 class="room-title">Acara &amp; Hitung Mundur</h2>
+        <p class="room-sub">Pameran ini hanya dibuka satu hari — jangan sampai terlewat</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="countdown reveal" id="countdown" data-target="2027-06-12T08:00:00+07:00" aria-label="Hitung mundur menuju akad nikah">
+        <div class="cd-box"><b id="cdD">0</b><span>Hari</span></div>
+        <div class="cd-box"><b id="cdH">0</b><span>Jam</span></div>
+        <div class="cd-box"><b id="cdM">0</b><span>Menit</span></div>
+        <div class="cd-box"><b id="cdS">0</b><span>Detik</span></div>
+      </div>
+
+      <article class="frame-card event-card reveal">
+        <img class="icon-medal" src="assets/undangya/museum-cinta/icon-column.webp" alt="Medali emas kolom museum">
+        <span class="event-tag">Pembukaan Pameran</span>
+        <h3 class="event-name">Akad Nikah</h3>
+        <p class="event-when">Sabtu, 12 Juni 2027 · 08.00–10.00 WIB</p>
+        <p class="event-where">Masjid Agung Al-Azhar<br>Jakarta Selatan</p>
+        <div class="btn-row">
+          <a class="btn fill" href="https://www.google.com/maps/search/?api=1&amp;query=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener">Lihat Lokasi</a>
+          <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Akad+Nikah+Meyzsa+%26+Fahrezzi&amp;dates=20270612T010000Z/20270612T030000Z" target="_blank" rel="noopener">Simpan Tanggal</a>
+        </div>
+      </article>
+
+      <article class="frame-card event-card reveal">
+        <img class="icon-medal" src="assets/undangya/museum-cinta/icon-frame.webp" alt="Medali emas bingkai lukisan">
+        <span class="event-tag">Tur Galeri &amp; Jamuan</span>
+        <h3 class="event-name">Resepsi</h3>
+        <p class="event-when">Sabtu, 12 Juni 2027 · 11.00–13.00 WIB</p>
+        <p class="event-where">The Ritz-Carlton Jakarta, Pacific Place<br>Jakarta Selatan</p>
+        <div class="btn-row">
+          <a class="btn fill" href="https://www.google.com/maps/search/?api=1&amp;query=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">Lihat Lokasi</a>
+          <a class="btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi+Meyzsa+%26+Fahrezzi&amp;dates=20270612T040000Z/20270612T060000Z" target="_blank" rel="noopener">Simpan Tanggal</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="galeri">
+      <div class="room-head reveal">
+        <div class="room-no">Ruang Pamer III · Koleksi Tetap</div>
+        <h2 class="room-title">Galeri Karya</h2>
+        <p class="room-sub">Berjalanlah perlahan. Setiap karya punya labelnya — bacalah, seperti kurator membaca cinta.</p>
+        <div class="rule"><i></i></div>
+      </div>
+
+      <figure class="work reveal">
+        <div class="gold-frame"><img class="art" src="assets/undangya/museum-cinta/galeri-1.webp" alt="Meyzsa dan Fahrezzi memandang lukisan besar di galeri"></div>
+        <figcaption class="work-label"><span class="no">01</span><div><h4>&ldquo;Pandangan Pertama di Depan Kanvas Lama&rdquo;</h4><p class="medium">Fotografi di ruang lukisan klasik, 2027</p><p>Ia menjelaskan lukisannya; ia mendengarkan — lalu keduanya sadar, karya terbaik di ruangan itu bukan yang tergantung di dinding.</p></div></figcaption>
+      </figure>
+
+      <figure class="work reveal">
+        <div class="gold-frame"><img class="art" src="assets/undangya/museum-cinta/galeri-2.webp" alt="Meyzsa dan Fahrezzi berjalan di taman patung museum"></div>
+        <figcaption class="work-label"><span class="no">02</span><div><h4>&ldquo;Lorong Patung &amp; Mawar yang Mekar&rdquo;</h4><p class="medium">Fotografi taman patung marmer, 2027</p><p>Patung-patung itu diam selama ratusan tahun. Pasangan ini lewat sebentar saja — dan taman itu terasa jauh lebih hidup.</p></div></figcaption>
+      </figure>
+
+      <figure class="work reveal">
+        <div class="gold-frame"><img class="art" src="assets/undangya/museum-cinta/galeri-3.webp" alt="Meyzsa dan Fahrezzi di kafe museum"></div>
+        <figcaption class="work-label"><span class="no">03</span><div><h4>&ldquo;Rehat Sejenak di Kafe Museum&rdquo;</h4><p class="medium">Fotografi interior kafe galeri, 2027</p><p>Di antara dua ruang pamer, ada kopi yang dibagi dua dan rencana masa depan yang digambar di atas serbet.</p></div></figcaption>
+      </figure>
+
+      <figure class="work reveal">
+        <div class="gold-frame"><img class="art" src="assets/undangya/museum-cinta/galeri-4.webp" alt="Meyzsa dan Fahrezzi di atrium besar museum"></div>
+        <figcaption class="work-label"><span class="no">04</span><div><h4>&ldquo;Dansa Pelan di Atrium Agung&rdquo;</h4><p class="medium">Fotografi atrium &amp; kolom marmer, 2027</p><p>Musiknya hanya terdengar oleh mereka berdua. Kolom-kolom tinggi menjadi saksi: inilah karya yang akan dipamerkan seumur hidup.</p></div></figcaption>
+      </figure>
+    </section>
+
+    <section id="rsvp">
+      <div class="room-head reveal">
+        <div class="room-no">Ruang Pamer IV · Buku Tamu</div>
+        <h2 class="room-title">Buku Tamu Pameran</h2>
+        <p class="room-sub">Setiap pengunjung yang baik meninggalkan tanda tangan &amp; kesan</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="guestbook reveal">
+        <div class="gb-head">
+          <img src="assets/undangya/museum-cinta/icon-ticket.webp" alt="Medali emas tiket museum">
+          <h3>Silakan Mengisi Buku Tamu</h3>
+          <p>Konfirmasi kehadiran &amp; titipkan doa terbaik Anda</p>
+        </div>
+        <div id="rsvpDone" role="status">Terima kasih — tanda tangan Anda sudah tercatat di buku tamu pameran ini.</div>
+        <form id="rsvpForm" novalidate>
+          <div class="field"><label for="rsvpName">Nama Tamu</label><input id="rsvpName" name="nama" type="text" placeholder="Nama Anda" autocomplete="name"></div>
+          <div class="field"><label for="rsvpAttend">Konfirmasi Kehadiran</label>
+            <select id="rsvpAttend" name="kehadiran">
+              <option value="Hadir">Hadir, insya Allah</option>
+              <option value="Berhalangan">Berhalangan hadir</option>
+              <option value="Masih Ragu">Masih mempertimbangkan</option>
+            </select></div>
+          <div class="field"><label for="rsvpMsg">Kesan &amp; Doa</label><textarea id="rsvpMsg" name="pesan" placeholder="Tuliskan doa &amp; kesan Anda untuk kedua mempelai..."></textarea></div>
+          <button id="btnRsvp" type="submit">TANDA TANGANI BUKU TAMU</button>
+          <p class="demo-note">RSVP demo — data hanya tersimpan di perangkat ini (client-side) dan tidak terkirim ke server. Contoh untuk keperluan pratinjau UndangYa!.</p>
+        </form>
+        <div class="gb-list" id="guestbookList" aria-live="polite">
+          <div class="gb-entry"><b>Keluarga Besar Ridwan</b><span class="att">Hadir</span><p>&ldquo;Pameran terindah yang pernah kami kunjungi. Selamat menempuh hidup baru, nak.&rdquo;</p><div class="gb-sign">— Ridwan</div></div>
+          <div class="gb-entry"><b>Sahabat Galeri</b><span class="att">Hadir</span><p>&ldquo;Akhirnya karya ini dipamerkan juga. Kami datang paling pagi!&rdquo;</p><div class="gb-sign">— Sahabat</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="amplop">
+      <div class="room-head reveal">
+        <div class="room-no">Meja Informasi · Tanda Kasih</div>
+        <h2 class="room-title">Amplop Digital</h2>
+        <p class="room-sub">Kehadiran Anda sudah lebih dari cukup — namun bila berkenan memberi tanda kasih:</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <article class="frame-card gift-card reveal">
+        <img class="icon-medal" src="assets/undangya/museum-cinta/icon-frame.webp" alt="Medali emas bingkai Museum Cinta">
+        <div class="bank">BCA · Contoh / Demo</div>
+        <div class="acc" id="accBca">1234567890</div>
+        <p class="an">a.n. Meyzsa Putri Ananda</p>
+        <div class="btn-row"><button class="btn fill copy-btn" type="button" data-copy="1234567890">Salin Nomor</button></div>
+      </article>
+      <article class="frame-card gift-card reveal">
+        <img class="icon-medal" src="assets/undangya/museum-cinta/icon-palette.webp" alt="Medali emas palet Museum Cinta">
+        <div class="bank">DANA · Contoh / Demo</div>
+        <div class="acc" id="accDana">0812-3456-7890</div>
+        <p class="an">a.n. Meyzsa Putri Ananda</p>
+        <div class="btn-row"><button class="btn fill copy-btn" type="button" data-copy="0812-3456-7890">Salin Nomor</button></div>
+      </article>
+      <p class="demo-note" style="color:var(--mut)">Nomor di atas adalah CONTOH/DEMO untuk pratinjau — bukan nomor asli mempelai.</p>
+    </section>
+
+    <section id="penutup">
+      <div class="room-head reveal">
+        <div class="room-no">Akhir Tur · Pintu Keluar Galeri</div>
+        <h2 class="room-title">Penutup</h2>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="frame-card closing reveal">
+        <img class="icon-medal" src="assets/undangya/museum-cinta/icon-column.webp" alt="Medali emas kolom Museum Cinta">
+        <p class="body-txt">Merupakan kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih yang sebesar-besarnya.</p>
+        <p class="body-txt" style="margin-top:12px">Wassalamu&rsquo;alaikum warahmatullahi wabarakatuh.</p>
+        <div class="big">Meyzsa &amp; Fahrezzi</div>
+        <p class="room-sub">— seniman &amp; kurator dari pameran ini —</p>
+      </div>
+      <p class="credit">Undangan digital dibuat dengan <b>UndangYa!</b><br>Museum Cinta · Koleksi No. 12.06.2027 · Jakarta</p>
+    </section>
+  </main>
+</div>
+
+<button id="btnMusic" type="button" aria-label="Putar atau hentikan musik galeri"><img src="assets/undangya/museum-cinta/icon-palette.webp" alt=""></button>
+
+<nav id="bottomNav" aria-label="Navigasi undangan">
+  <a href="#cover" data-nav="cover"><img src="assets/undangya/museum-cinta/icon-column.webp" alt="">Beranda</a>
+  <a href="#mempelai" data-nav="mempelai"><img src="assets/undangya/museum-cinta/icon-frame.webp" alt="">Mempelai</a>
+  <a href="#acara" data-nav="acara"><img src="assets/undangya/museum-cinta/icon-ticket.webp" alt="">Acara</a>
+  <a href="#galeri" data-nav="galeri"><img src="assets/undangya/museum-cinta/icon-palette.webp" alt="">Galeri</a>
+  <a href="#rsvp" data-nav="rsvp"><img src="assets/undangya/museum-cinta/icon-ticket.webp" alt="">RSVP</a>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+  /* --- nama tamu dari ?to= --- */
+  var params=new URLSearchParams(window.location.search);
+  var guest=(params.get("to")||"").trim();
+  var guestEl=document.getElementById("guestName");
+  if(guestEl) guestEl.textContent=guest?guest:"Tamu Undangan";
+  var rsvpName=document.getElementById("rsvpName");
+  if(rsvpName&&guest) rsvpName.value=guest;
+
+  /* --- debu cahaya melayang (lapisan background) --- */
+  var dust=document.getElementById("dust");
+  if(dust){
+    for(var i=0;i<14;i++){
+      var s=document.createElement("i");
+      var sz=3+(i%4)*2;
+      s.style.width=sz+"px";s.style.height=sz+"px";
+      s.style.left=((i*67)%96+2)+"%";
+      s.style.animationDuration=(16+(i%7)*4)+"s";
+      s.style.animationDelay=(-(i*3.7))+"s";
+      dust.appendChild(s);
+    }
+  }
+
+  /* --- musik WebAudio orisinal: piano + string lembut ala galeri --- */
+  var audioCtx=null,musicOn=false,musicTimer=null,btnMusic=document.getElementById("btnMusic");
+  function note(freq,t,dur,type,vol){
+    if(!audioCtx) return;
+    var o=audioCtx.createOscillator(),g=audioCtx.createGain();
+    o.type=type||"sine";o.frequency.value=freq;
+    g.gain.setValueAtTime(0.0001,t);
+    g.gain.exponentialRampToValueAtTime(vol,t+0.08);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+    o.connect(g);g.connect(audioCtx.destination);o.start(t);o.stop(t+dur+0.1);
+  }
+  var melody=[523.25,587.33,659.25,783.99,659.25,587.33,523.25,440.00,493.88,523.25,587.33,523.25];
+  var bass=[130.81,196.00,164.81,174.61];
+  var step=0;
+  function playStep(){
+    if(!audioCtx||!musicOn) return;
+    var t=audioCtx.currentTime+0.05;
+    note(melody[step%melody.length],t,1.6,"sine",0.055);
+    note(melody[step%melody.length]/2,t,1.6,"triangle",0.018);
+    if(step%3===0) note(bass[(step/3)%bass.length|0],t,2.8,"sine",0.035);
+    step++;
+  }
+  function startMusic(){
+    try{
+      if(!audioCtx){var AC=window.AudioContext||window.webkitAudioContext;if(!AC) return;audioCtx=new AC();}
+      if(audioCtx.state==="suspended") audioCtx.resume();
+      if(musicOn) return;
+      musicOn=true;playStep();
+      musicTimer=setInterval(playStep,950);
+      if(btnMusic) btnMusic.classList.add("playing");
+    }catch(e){/* musik opsional */}
+  }
+  function stopMusic(){
+    musicOn=false;
+    if(musicTimer){clearInterval(musicTimer);musicTimer=null;}
+    if(btnMusic) btnMusic.classList.remove("playing");
+  }
+  if(btnMusic) btnMusic.addEventListener("click",function(){musicOn?stopMusic():startMusic();});
+
+  /* --- buka undangan: ketuk lukisan / tiket / tombol --- */
+  var opened=false;
+  function openInvitation(){
+    if(opened) return; opened=true;
+    var c=document.getElementById("content"),nav=document.getElementById("bottomNav");
+    if(c) c.classList.add("open");
+    if(nav) nav.classList.add("show");
+    if(btnMusic) btnMusic.classList.add("show");
+    startMusic();
+    var target=document.getElementById("sambutan");
+    if(target&&target.scrollIntoView){try{target.scrollIntoView({behavior:"smooth"});}catch(e){target.scrollIntoView();}}
+    initReveal();
+  }
+  var btnOpen=document.getElementById("btnOpen");
+  if(btnOpen) btnOpen.addEventListener("click",openInvitation);
+  var wrap=document.getElementById("paintingWrap");
+  if(wrap){
+    wrap.addEventListener("click",openInvitation);
+    wrap.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();openInvitation();}});
+  }
+  var ticket=document.querySelector(".ticket");
+  if(ticket){ticket.style.cursor="pointer";ticket.addEventListener("click",openInvitation);}
+
+  /* --- countdown --- */
+  var targetMs=new Date("2027-06-12T08:00:00+07:00").getTime();
+  function pad(n){return String(n).padStart(2,"0");}
+  function tick(){
+    var diff=Math.max(0,targetMs-Date.now());
+    var d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+    var set=function(id,v){var el=document.getElementById(id);if(el)el.textContent=v;};
+    set("cdD",d);set("cdH",pad(h));set("cdM",pad(m));set("cdS",pad(s));
+  }
+  tick();setInterval(tick,1000);
+
+  /* --- reveal on scroll --- */
+  var revealInit=false;
+  function initReveal(){
+    if(revealInit) return; revealInit=true;
+    var els=document.querySelectorAll(".reveal");
+    if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});
+    },{threshold:0.12});
+    els.forEach(function(e){io.observe(e);});
+  }
+
+  /* --- RSVP buku tamu (demo client-side) --- */
+  var form=document.getElementById("rsvpForm");
+  if(form) form.addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var name=(document.getElementById("rsvpName").value||"").trim()||"Tamu Undangan";
+    var att=document.getElementById("rsvpAttend").value;
+    var msg=(document.getElementById("rsvpMsg").value||"").trim()||"Selamat untuk kedua mempelai. Semoga samawa.";
+    var list=document.getElementById("guestbookList");
+    var div=document.createElement("div");div.className="gb-entry";
+    var b=document.createElement("b");b.textContent=name;
+    var sp=document.createElement("span");sp.className="att";sp.textContent=att;
+    var p=document.createElement("p");p.textContent="\u201C"+msg+"\u201D";
+    var sign=document.createElement("div");sign.className="gb-sign";sign.textContent="— "+name.split(" ")[0];
+    div.appendChild(b);div.appendChild(sp);div.appendChild(p);div.appendChild(sign);
+    if(list) list.insertBefore(div,list.firstChild);
+    var done=document.getElementById("rsvpDone");if(done)done.classList.add("show");
+    try{localStorage.setItem("museum-cinta-rsvp",JSON.stringify({name:name,att:att,msg:msg}));}catch(e){}
+  });
+
+  /* --- salin nomor amplop --- */
+  document.querySelectorAll(".copy-btn").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var txt=btn.getAttribute("data-copy")||"";
+      var done=function(){var old=btn.textContent;btn.textContent="Tersalin";setTimeout(function(){btn.textContent=old;},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(done);}
+      else done();
+    });
+  });
+
+  /* --- bottom nav aktif --- */
+  document.querySelectorAll("#bottomNav a").forEach(function(a){
+    a.addEventListener("click",function(){
+      document.querySelectorAll("#bottomNav a").forEach(function(x){x.classList.remove("active");});
+      a.classList.add("active");
+    });
+  });
+})();
+</script>
+</body>
+</html>

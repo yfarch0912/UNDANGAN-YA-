@@ -192,6 +192,16 @@ themes.push({ slug: "piringan-hitam", name: "Piringan Hitam — Album Vinyl Retr
 themes.push({ slug: "perjalanan-kereta", name: "Perjalanan Kereta — KRL Modern Geser" });
 themes.push({ slug: "surat-hidup", name: "Surat Hidup — Amplop Segel Lilin" });
 themes.push({ slug: "paspor-cinta", name: "Paspor Cinta — Buku Paspor & Visa" });
+themes.push({ slug: "museum-cinta", name: "Museum Cinta — Galeri Seni & Lukisan Hidup" });
+themes.push({ slug: "koran-cinta", name: "Koran Cinta — Surat Kabar Harian Bahagia" });
+themes.push({ slug: "peta-ekspedisi", name: "Peta Ekspedisi — Peta Petualangan Interaktif" });
+themes.push({ slug: "ramuan-cinta", name: "Ramuan Cinta — Apotek & Formula Cinta" });
+themes.push({ slug: "radio-cinta", name: "Radio Cinta — Tuning 98.6 FM Interaktif" });
+themes.push({ slug: "observatorium", name: "Observatorium — Rasi Bintang & Teleskop" });
+themes.push({ slug: "kedai-kopi", name: "Kedai Kopi — Menu Kafe & Struk RSVP" });
+themes.push({ slug: "papan-permainan", name: "Papan Permainan — Dadu & Board Game" });
+themes.push({ slug: "oceanarium", name: "Oceanarium — Menyelam 0–40 m" });
+themes.push({ slug: "pasar-malam", name: "Pasar Malam — Bianglala & Marquee Festival" });
 themeSel.innerHTML = themes.map(function (t) { return '<option value="' + t.slug + '">' + t.name + "</option>"; }).join("");
 var preTheme = new URLSearchParams(location.search).get("tema");
 if (preTheme && themes.some(function (t) { return t.slug === preTheme; })) themeSel.value = preTheme;

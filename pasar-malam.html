@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pasar Malam Cinta — Meyzsa &amp; Fahrezzi</title>
+<style>
+:root{--burg:#4a0e1c;--burg2:#6d1428;--burg3:#2a0710;--gold:#c7a166;--gold2:#e8cf9a;--cream:#f7ecd7;--ink:#2b0d14}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#12040a;font-family:Georgia,'Times New Roman',serif;color:var(--cream)}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(600px 300px at 50% -50px,rgba(199,161,102,.25),transparent 70%),radial-gradient(2px 2px at 12% 20%,rgba(232,207,154,.7),transparent),radial-gradient(2px 2px at 84% 14%,rgba(232,207,154,.6),transparent),radial-gradient(3px 3px at 68% 32%,rgba(232,207,154,.35),transparent),#12040a;pointer-events:none}
+.phone{max-width:430px;margin:0 auto;position:relative;background:linear-gradient(180deg,#2a0710,#4a0e1c 30%,#380a18 60%,#2a0710);box-shadow:0 0 60px rgba(0,0,0,.8);overflow:hidden;padding-bottom:86px}
+.phone::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background:radial-gradient(120px 60px at 15% 8%,rgba(232,207,154,.12),transparent),radial-gradient(160px 80px at 85% 22%,rgba(232,207,154,.10),transparent),radial-gradient(140px 70px at 20% 55%,rgba(232,207,154,.09),transparent),radial-gradient(180px 90px at 80% 78%,rgba(232,207,154,.10),transparent);z-index:0}
+section{position:relative;z-index:1;padding:34px 20px;margin:14px 12px;border:2px solid rgba(199,161,102,.65);outline:1px solid rgba(199,161,102,.3);outline-offset:5px;border-radius:14px;background:linear-gradient(180deg,rgba(42,7,16,.88),rgba(74,14,28,.82));text-align:center}
+section::before{content:"";position:absolute;top:-12px;left:8px;right:8px;height:18px;background:radial-gradient(circle at 8px 9px,#ffe9b0 0 3px,#c7a166 4px,transparent 5px) repeat-x;background-size:26px 18px;filter:drop-shadow(0 0 5px rgba(255,210,120,.8));opacity:.9}
+h1,h2{font-variant:small-caps;letter-spacing:.06em;color:var(--gold2);font-weight:600}
+h2{font-size:26px;margin-bottom:10px}
+.smallcaps{font-variant:small-caps;letter-spacing:.22em;font-size:11px;color:var(--gold)}
+p{font-size:14.5px;line-height:1.65;color:#f3e6cd}
+img.photo{width:100%;border-radius:10px;border:2px solid var(--gold);display:block}
+.medallion{width:92px;height:92px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);margin:0 auto 10px;display:block}
+.btn{display:inline-block;margin-top:14px;background:linear-gradient(180deg,#7d1a33,#4a0e1c);color:var(--gold2);border:1.5px solid var(--gold);padding:12px 26px;border-radius:999px;font-family:inherit;font-variant:small-caps;letter-spacing:.12em;font-size:15px;cursor:pointer}
+.btn:active{transform:scale(.97)}
+/* COVER */
+#cover{min-height:100dvh;margin:0;border:none;outline:none;border-radius:0;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,rgba(42,7,16,.55),rgba(42,7,16,.88)),url('assets/undangya/pasar-malam/gate.webp') center/cover}
+.gate-board{background:rgba(35,5,12,.92);border:3px solid var(--gold);border-radius:14px;padding:20px 12px 16px;position:relative;margin-top:8px}
+.gate-board::before,.gate-board::after{content:"";position:absolute;left:6px;right:6px;height:10px;background:radial-gradient(circle at 5px 5px,#fff3c4 0 2.5px,#c7a166 3.5px,transparent 4.5px) repeat-x;background-size:22px 10px;filter:drop-shadow(0 0 4px rgba(255,215,130,.9))}
+.gate-board::before{top:4px}.gate-board::after{bottom:4px}
+#marquee{display:flex;flex-wrap:wrap;justify-content:center;gap:2px;padding:12px 2px}
+#marquee .sp{width:12px}
+#marquee .ch{font-size:27px;font-weight:700;font-variant:small-caps;color:#5a2a33;text-shadow:none;transition:all .25s}
+#marquee .ch.lit{color:#ffe9b0;text-shadow:0 0 10px rgba(255,210,110,.95),0 0 22px rgba(255,180,80,.55)}
+.marquee-complete .ch.lit{animation:softblink 2.4s ease-in-out infinite alternate}
+.marquee-complete .ch.lit:nth-child(even){animation-delay:1.2s}
+@keyframes softblink{from{opacity:1}to{opacity:.72}}
+.names{font-size:31px;color:var(--gold2);font-variant:small-caps;line-height:1.25;margin:10px 0 2px}
+.guestbox{margin-top:16px;background:rgba(247,236,215,.08);border:1px dashed rgba(199,161,102,.7);border-radius:10px;padding:12px}
+.guestbox b{color:var(--gold2)}
+/* carousel couple */
+.orbit{width:252px;height:252px;margin:14px auto;position:relative}
+.orbit .ring{position:absolute;inset:0;border-radius:50%;border:3px dashed var(--gold);animation:spin 60s linear infinite}
+.orbit .ring::before{content:"";position:absolute;inset:10px;border-radius:50%;border:1.5px solid rgba(199,161,102,.5)}
+.orbit img{position:absolute;inset:26px;width:200px;height:200px;object-fit:cover;border-radius:50%;border:3px solid var(--gold)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.person{margin:18px 0}.person h3{color:var(--gold2);font-variant:small-caps;font-size:20px;margin:8px 0 4px}
+.ig{color:var(--gold);font-size:13px}
+/* countdown */
+.cd{display:flex;gap:8px;justify-content:center;margin:14px 0}
+.cd div{background:#2a0710;border:1.5px solid var(--gold);border-radius:10px;min-width:64px;padding:10px 4px}
+.cd b{font-size:23px;color:var(--gold2);display:block}.cd span{font-size:10px;letter-spacing:.15em;color:var(--gold);font-variant:small-caps}
+.event{background:rgba(247,236,215,.06);border:1px solid rgba(199,161,102,.5);border-radius:10px;padding:14px;margin:10px 0}
+/* ferris wheel */
+#wheelWrap{position:relative;width:330px;height:330px;margin:8px auto;touch-action:none;cursor:grab}
+#wheel{position:absolute;inset:0;will-change:transform}
+#wheel .rim{position:absolute;inset:14px;border-radius:50%;border:4px solid var(--gold);box-shadow:0 0 0 2px rgba(199,161,102,.3),inset 0 0 30px rgba(199,161,102,.15)}
+#wheel .rim::before,#wheel .rim::after{content:"";position:absolute;inset:44px;border-radius:50%;border:2px solid rgba(199,161,102,.55)}
+#wheel .rim::after{inset:0;border:none;background:radial-gradient(circle,#e8cf9a 0 5px,#c7a166 6px,transparent 8px) center/16px 16px no-repeat}
+.spoke{position:absolute;left:50%;top:50%;width:2px;height:136px;background:rgba(199,161,102,.55);transform-origin:top center}
+.cabin{position:absolute;width:74px;height:88px;margin:-44px 0 0 -37px;background:none;border:none;cursor:pointer;padding:0}
+.cabin .gond{position:absolute;inset:0}
+.cabin img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);display:block;margin:12px auto 0;box-shadow:0 4px 14px rgba(0,0,0,.6);pointer-events:none;-webkit-user-drag:none;user-select:none}
+.cabin::before{content:"";position:absolute;top:0;left:50%;width:2px;height:14px;background:var(--gold);transform:translateX(-50%)}
+.cabin::after{content:"";position:absolute;top:8px;left:8px;right:8px;height:10px;border:2px solid var(--gold);border-bottom:none;border-radius:10px 10px 0 0}
+.stand{position:absolute;left:50%;bottom:-24px;transform:translateX(-50%);width:0;height:0;border-left:70px solid transparent;border-right:70px solid transparent;border-bottom:0}
+.hint{font-size:12px;color:var(--gold);font-style:italic}
+/* modal */
+#modal{position:fixed;inset:0;background:rgba(10,2,5,.9);display:none;z-index:60;align-items:center;justify-content:center;padding:20px}
+#modal.open{display:flex}
+#modal .card{max-width:400px;width:100%;background:#380a18;border:2px solid var(--gold);border-radius:14px;padding:16px;text-align:center}
+#modal img{width:100%;border-radius:10px;border:2px solid var(--gold)}
+/* forms */
+label{display:block;text-align:left;font-size:12px;letter-spacing:.12em;font-variant:small-caps;color:var(--gold);margin:12px 0 5px}
+input,select,textarea{width:100%;padding:11px;border-radius:8px;border:1px solid var(--gold);background:#2a0710;color:var(--cream);font-family:inherit;font-size:14px}
+#ticket{display:none;margin-top:16px;background:linear-gradient(90deg,#f7ecd7,#efe0bd);color:var(--ink);border-radius:10px;padding:16px;position:relative;border:2px dashed #8a6a35}
+#ticket.show{display:block}
+#stamp{position:absolute;right:10px;top:10px;transform:rotate(-14deg) scale(2.4);opacity:0;border:3px solid #8c1d30;color:#8c1d30;font-weight:700;padding:3px 8px;border-radius:6px;font-size:13px;letter-spacing:.08em}
+#stamp.on{animation:stampin .35s forwards}
+@keyframes stampin{to{transform:rotate(-14deg) scale(1);opacity:1}}
+.tag{font-size:11px;color:#c9a86a;font-style:italic;margin-top:8px}
+/* envelope ring toss */
+#ringStage{position:relative;height:190px;margin:10px 0}
+#bottle{width:90px;height:130px;object-fit:cover;border-radius:10px;border:2px solid var(--gold);position:absolute;left:50%;transform:translateX(-50%);bottom:0}
+#ring{position:absolute;left:24px;bottom:16px;width:52px;height:52px;border:6px solid var(--gold2);border-radius:50%;box-shadow:0 0 12px rgba(232,207,154,.6)}
+#ring.thrown{transition:all .8s cubic-bezier(.3,1.4,.5,1);left:calc(50% - 26px);bottom:96px;transform:rotate(320deg) scale(.82)}
+#accounts{display:none;margin-top:12px}
+#accounts.show{display:block}
+.acct{background:rgba(247,236,215,.07);border:1px solid var(--gold);border-radius:10px;padding:12px;margin:8px 0;font-size:15px}
+/* bottom nav */
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(30,4,10,.97);border-top:2px solid var(--gold);display:flex;z-index:50}
+nav a,nav button{flex:1;background:none;border:none;color:var(--gold2);text-decoration:none;font-family:inherit;font-size:10.5px;font-variant:small-caps;letter-spacing:.06em;padding:9px 2px 11px;text-align:center;cursor:pointer}
+nav .dot{display:block;width:9px;height:9px;border-radius:50%;background:var(--gold);margin:0 auto 4px;box-shadow:0 0 6px rgba(255,210,120,.9)}
+footer{text-align:center;padding:10px;font-size:11.5px;color:#c9a86a;position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important;scroll-behavior:auto!important}}
+</style><link rel="canonical" href="https://undangya.web.id/pasar-malam">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Pasar Malam — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital bergaya pasar malam premium: gerbang marquee menyala & bianglala galeri yang bisa digeser — Pasar Malam">
+<meta property="og:url" content="https://undangya.web.id/pasar-malam">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/pasar-malam.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pasar Malam — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital bergaya pasar malam premium: gerbang marquee menyala & bianglala galeri yang bisa digeser — Pasar Malam">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/pasar-malam.webp">
+</head>
+<body><div class="phone">
+
+<section id="cover">
+<div class="smallcaps">Undangan Pernikahan</div>
+<div class="gate-board" id="gateBoard"><div id="marquee" aria-label="Pasar Malam Cinta"></div>
+<div class="names">Meyzsa<br>&amp;<br>Fahrezzi</div>
+<p>Sabtu, 12 Juni 2027</p></div>
+<div class="guestbox"><p>Kepada Yth.<br>Bapak/Ibu/Saudara/i</p><b id="guestName">Tamu Undangan</b></div>
+<button class="btn" id="openBtn">Buka Gerbang Undangan</button>
+</section>
+
+<section id="sambutan">
+<img class="medallion" src="assets/undangya/pasar-malam/medallion.webp" alt="Medali bianglala emas">
+<h2>Papan Selamat Datang</h2>
+<p><i>Assalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
+<p>Selamat datang di Pasar Malam Cinta kami. Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami — sebuah malam perayaan yang hangat, diterangi lentera dan cahaya bianglala.</p>
+</section>
+
+<section id="mempelai">
+<img class="medallion" src="assets/undangya/pasar-malam/medali-komidi.webp" alt="Medali komidi putar emas">
+<div class="smallcaps">Komidi Putar Cinta</div><h2>Kedua Mempelai</h2>
+<div class="orbit"><div class="ring"></div><img src="assets/undangya/pasar-malam/carousel.webp" alt="Mempelai di komidi putar"></div>
+<div class="person"><img class="medallion" src="assets/undangya/pasar-malam/bride.webp" alt="Mempelai wanita">
+<h3>Meyzsa Putri Ananda, S.Pd.</h3><p>Putri Bapak H. Muhammad Ridwan<br>&amp; Ibu Hj. Siti Aminah</p><div class="ig">@meyzsa.contoh</div></div>
+<div class="person"><img class="medallion" src="assets/undangya/pasar-malam/groom.webp" alt="Mempelai pria">
+<h3>Ahmad Fahrezzi Pratama, S.T.</h3><p>Putra Bapak H. Bambang Sutrisno<br>&amp; Ibu Hj. Ratna Dewi</p><div class="ig">@fahrezzi.contoh</div></div>
+</section>
+
+<section id="acara">
+<div class="smallcaps">Papan Jadwal Pertunjukan</div><h2>Save the Date</h2>
+<div class="cd" id="countdown"><div><b id="cd-d">0</b><span>Hari</span></div><div><b id="cd-h">0</b><span>Jam</span></div><div><b id="cd-m">0</b><span>Menit</span></div><div><b id="cd-s">0</b><span>Detik</span></div></div>
+<div class="event"><h3 style="color:var(--gold2);font-variant:small-caps">Akad Nikah</h3><p>Sabtu, 12 Juni 2027<br>08.00 – 10.00 WIB<br>Masjid Agung Al-Azhar, Jakarta Selatan</p></div>
+<div class="event"><h3 style="color:var(--gold2);font-variant:small-caps">Resepsi</h3><p>Sabtu, 12 Juni 2027<br>11.00 – 13.00 WIB<br>The Ritz-Carlton Jakarta, Pacific Place</p></div>
+</section>
+
+<section id="galeri">
+<img class="medallion" src="assets/undangya/pasar-malam/medali-lentera.webp" alt="Medali lentera festival emas">
+<div class="smallcaps">Galeri Wahana</div><h2>Bianglala Kenangan</h2>
+<p class="hint">Geser bianglala untuk memutarnya — ketuk kabin untuk melihat foto besar &amp; ceritanya.</p>
+<div id="wheelWrap"><div id="wheel"><div class="rim"></div></div></div>
+<p class="hint">Bianglala berputar pelan dengan sendirinya, seperti malam yang tak ingin cepat berlalu.</p>
+</section>
+
+<section id="rsvp">
+<img class="medallion" src="assets/undangya/pasar-malam/medali-tiket.webp" alt="Medali tiket emas">
+<div class="smallcaps">Konfirmasi Kehadiran</div><h2>Tiket Wahana RSVP</h2>
+<p class="tag">RSVP demo — data hanya diproses di perangkat Anda, tidak dikirim ke server.</p>
+<form id="rsvpForm">
+<label>Nama</label><input id="rsvpName" required placeholder="Nama Anda">
+<label>Kehadiran</label><select id="rsvpAttend"><option value="Hadir">Hadir, tentu saja</option><option value="Berhalangan">Berhalangan hadir</option></select>
+<label>Jumlah Tamu</label><select id="rsvpGuests"><option>1</option><option>2</option></select>
+<button class="btn" type="submit">Ambil Tiket</button></form>
+<div id="ticket"><div id="stamp">SUDAH NAIK</div><b style="font-variant:small-caps;letter-spacing:.1em">Tiket Wahana Cinta</b><p style="color:#5a4020;font-size:13.5px">Nama: <span id="tName"></span><br>Status: <span id="tAttend"></span> · <span id="tGuests"></span> tamu<br>Meyzsa &amp; Fahrezzi · 12 Juni 2027</p></div>
+</section>
+
+<section id="amplop">
+<img class="medallion" src="assets/undangya/pasar-malam/medali-stan.webp" alt="Medali stan lempar gelang emas">
+<div class="smallcaps">Stan Lempar Gelang</div><h2>Amplop Digital</h2>
+<p>Lempar gelang ke botol hadiah untuk membuka nomor amplop.</p>
+<div id="ringStage"><img id="bottle" src="assets/undangya/pasar-malam/stall.webp" alt="Stan lempar gelang"><div id="ring"></div></div>
+<button class="btn" id="throwBtn">Lempar Gelang</button>
+<div id="accounts">
+<p class="tag">Contoh / DEMO — nomor contoh untuk keperluan demo tema.</p>
+<div class="acct">BCA · <span id="accBca">1234567890</span><br>a.n. Meyzsa Putri Ananda <button class="btn copyBtn" data-copy="accBca" style="padding:5px 14px;font-size:12px;margin-top:6px">Salin</button></div>
+<div class="acct">DANA · <span id="accDana">0812-3456-7890</span><br>a.n. Meyzsa Putri Ananda <button class="btn copyBtn" data-copy="accDana" style="padding:5px 14px;font-size:12px;margin-top:6px">Salin</button></div>
+</div>
+</section>
+
+<section id="penutup">
+<h2>Terima Kasih</h2>
+<p>Merupakan kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Sampai jumpa di bawah cahaya bianglala.</p>
+<p style="margin-top:10px"><i>Wassalamu’alaikum Warahmatullahi Wabarakatuh</i></p>
+<p style="margin-top:12px;color:var(--gold2);font-variant:small-caps">Meyzsa &amp; Fahrezzi</p>
+</section>
+<footer>Dibuat dengan ♥ untuk UndangYa! · Tema Pasar Malam — contoh/demo</footer>
+</div>
+
+<div id="modal" role="dialog"><div class="card"><img id="modalImg" src="" alt="Foto galeri besar"><h3 id="modalTitle" style="color:var(--gold2);font-variant:small-caps;margin:10px 0 4px"></h3><p id="modalStory"></p><button class="btn" id="modalClose">Tutup</button></div></div>
+
+<nav>
+<a href="#cover"><span class="dot"></span>Gerbang</a>
+<a href="#mempelai"><span class="dot"></span>Mempelai</a>
+<a href="#acara"><span class="dot"></span>Acara</a>
+<a href="#galeri"><span class="dot"></span>Bianglala</a>
+<a href="#rsvp"><span class="dot"></span>RSVP</a>
+<button id="musicBtn"><span class="dot"></span><span id="musicLabel">Musik</span></button>
+</nav>
+
+<script>
+(function(){
+"use strict";
+var qs=function(s){return document.querySelector(s)};
+/* guest */
+var to=new URLSearchParams(location.search).get('to');
+if(to) qs('#guestName').textContent=to;
+/* marquee sequential */
+var text="PASAR MALAM CINTA", mq=qs('#marquee'), letters=[];
+text.split('').forEach(function(c){ if(c===' '){var sp=document.createElement('span');sp.className='sp';mq.appendChild(sp);letters.push(null);} else {var s=document.createElement('span');s.className='ch';s.textContent=c;mq.appendChild(s);letters.push(s);} });
+var litCount=0;
+var mTimer=setInterval(function(){ while(litCount<letters.length && !letters[litCount]) litCount++; if(litCount>=letters.length){clearInterval(mTimer);qs('#gateBoard').classList.add('marquee-complete');return;} letters[litCount].classList.add('lit'); litCount++; },140);
+/* open */
+qs('#openBtn').addEventListener('click',function(){ qs('#sambutan').scrollIntoView({behavior:'smooth'}); startMusic(); });
+/* countdown */
+var target=new Date('2027-06-12T08:00:00+07:00').getTime();
+function cd(){ var d=Math.max(0,target-Date.now()); var dd=Math.floor(d/864e5),hh=Math.floor(d/36e5)%24,mm=Math.floor(d/6e4)%60,ss=Math.floor(d/1e3)%60;
+qs('#cd-d').textContent=dd;qs('#cd-h').textContent=hh;qs('#cd-m').textContent=mm;qs('#cd-s').textContent=ss; }
+cd(); setInterval(cd,1000);
+/* ferris wheel */
+var photos=[
+ {img:'assets/undangya/pasar-malam/hero.webp',t:'Di Depan Bianglala',s:'Pertama kali kami berdiri di bawah roda raksasa ini, kota terasa berhenti sejenak — hanya ada cahaya hangat dan janji yang pelan-pelan menyala.'},
+ {img:'assets/undangya/pasar-malam/carousel.webp',t:'Komidi Putar Pertama',s:'Satu putaran komidi, dua tawa. Sejak sore itu kami tahu: hidup yang baik adalah hidup yang berani berputar bersama.'},
+ {img:'assets/undangya/pasar-malam/lantern.webp',t:'Lorong Lentera',s:'Di lorong lentera burgundy-emas, langkah kami menyatu. Setiap lampu seperti doa kecil yang digantung untuk masa depan.'},
+ {img:'assets/undangya/pasar-malam/stall.webp',t:'Stan Lempar Gelang',s:'Tiga kali gagal, sekali berhasil. Gelang terakhir mendarat tepat — katanya, itu tanda restu dari semesta.'},
+ {img:'assets/undangya/pasar-malam/bride.webp',t:'Senyum di Kabin Lima',s:'Kabin nomor lima berhenti tepat di puncak. Di sana, di atas semua lampu, sebuah lamaran sederhana diucapkan.'},
+ {img:'assets/undangya/pasar-malam/groom.webp',t:'Penjaga Malam Itu',s:'Ia menunggu di gerbang dengan tiket kedua di saku — tiket yang kini kami bagikan kepada Anda semua.'}];
+var wheel=qs('#wheel'), wrap=qs('#wheelWrap'), angle=0, cabins=[];
+var R=128, CX=165, CY=165;
+for(var i=0;i<6;i++){ var sp=document.createElement('div'); sp.className='spoke'; sp.style.transform='rotate('+(i*60)+'deg)'; wheel.appendChild(sp); }
+photos.forEach(function(p,i){ var b=document.createElement('button'); b.className='cabin'; b.setAttribute('aria-label',p.t); b.innerHTML='<span class="gond"><img src="'+p.img+'" alt="'+p.t+'"></span>'; b.addEventListener('click',function(){ if(movedDist>8) return; openModal(i); }); wheel.appendChild(b); cabins.push(b); });
+function render(){ wheel.style.transform='rotate('+angle+'deg)'; cabins.forEach(function(b,i){ var rad=(i*60-90)*Math.PI/180; b.style.left=(CX+Math.cos(rad)*R)+'px'; b.style.top=(CY+Math.sin(rad)*R)+'px'; b.style.transform='rotate('+(-angle)+'deg)'; }); }
+var reduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var dragging=false,lastA=0,movedDist=0,downX=0,downY=0;
+function ptAngle(e){ var r=wrap.getBoundingClientRect(); return Math.atan2(e.clientY-(r.top+r.height/2), e.clientX-(r.left+r.width/2))*180/Math.PI; }
+wrap.addEventListener('pointerdown',function(e){ dragging=true; movedDist=0; downX=e.clientX; downY=e.clientY; lastA=ptAngle(e); });
+wrap.addEventListener('pointermove',function(e){ if(!dragging) return; var a=ptAngle(e); var d=a-lastA; if(d>180)d-=360; if(d<-180)d+=360; angle+=d; lastA=a; movedDist=Math.max(movedDist,Math.hypot(e.clientX-downX,e.clientY-downY)); render(); });
+['pointerup','pointercancel'].forEach(function(ev){ wrap.addEventListener(ev,function(){ dragging=false; setTimeout(function(){movedDist=0;},80); }); });
+function tick(){ if(!dragging && !reduced){ angle+=0.06; render(); } requestAnimationFrame(tick); }
+render(); if(window.requestAnimationFrame) requestAnimationFrame(tick);
+/* modal */
+function openModal(i){ var p=photos[i]; qs('#modalImg').src=p.img; qs('#modalTitle').textContent=p.t; qs('#modalStory').textContent=p.s; qs('#modal').classList.add('open'); }
+qs('#modalClose').addEventListener('click',function(){ qs('#modal').classList.remove('open'); });
+/* RSVP */
+qs('#rsvpForm').addEventListener('submit',function(e){ e.preventDefault(); qs('#tName').textContent=qs('#rsvpName').value||'Tamu'; qs('#tAttend').textContent=qs('#rsvpAttend').value; qs('#tGuests').textContent=qs('#rsvpGuests').value; var t=qs('#ticket'); t.classList.add('show'); var st=qs('#stamp'); st.classList.remove('on'); void st.offsetWidth; st.classList.add('on'); });
+/* envelope ring toss */
+qs('#throwBtn').addEventListener('click',function(){ var r=qs('#ring'); r.classList.remove('thrown'); void r.offsetWidth; r.classList.add('thrown'); setTimeout(function(){ qs('#accounts').classList.add('show'); },750); });
+document.querySelectorAll('.copyBtn').forEach(function(b){ b.addEventListener('click',function(){ var v=qs('#'+b.getAttribute('data-copy')).textContent; if(navigator.clipboard) navigator.clipboard.writeText(v); b.textContent='Tersalin'; setTimeout(function(){b.textContent='Salin'},1500); }); });
+/* music: original music-box WebAudio */
+var actx=null,playing=false,mTimer2=null,notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,783.99,1046.5,987.77,880,783.99,659.25],ni=0;
+function tone(f,t){ if(!actx) return; var o=actx.createOscillator(),g=actx.createGain(); o.type='sine'; o.frequency.value=f; g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.14,t+0.02); g.gain.exponentialRampToValueAtTime(0.0001,t+0.9); o.connect(g); g.connect(actx.destination); o.start(t); o.stop(t+1); }
+function startMusic(){ try{ if(!window.AudioContext && !window.webkitAudioContext) return; if(!actx) actx=new (window.AudioContext||window.webkitAudioContext)(); if(playing) return; playing=true; qs('#musicLabel').textContent='Musik On'; var step=function(){ if(!playing) return; tone(notes[ni%notes.length], actx.currentTime); ni++; mTimer2=setTimeout(step,420); }; step(); }catch(e){} }
+function stopMusic(){ playing=false; if(mTimer2) clearTimeout(mTimer2); qs('#musicLabel').textContent='Musik'; }
+qs('#musicBtn').addEventListener('click',function(){ playing?stopMusic():startMusic(); });
+window.__pm={ getAngle:function(){return angle}, rotateBy:function(d){angle+=d;render();}, litCount:function(){return document.querySelectorAll('#marquee .ch.lit').length}, openModal:openModal };
+})();
+</script>
+</body></html>

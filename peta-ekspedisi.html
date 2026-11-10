@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Peta Ekspedisi — Meyzsa &amp; Fahrezzi | 12 Juni 2027</title>
+<link rel="icon" type="image/webp" href="assets/undangya/peta-ekspedisi/ikon-pin.webp">
+<meta name="description" content="Undangan pernikahan digital berbentuk peta ekspedisi: Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--brass:#b98e3e;--brass-l:#dcb96e;--brass-p:#eed9a4;--burg:#7e1f2e;--burg-d:#4a0e17;--green:#2f5d3a;--green-d:#1c3a24;--green-m:#3a6b4f;--paper:#f3ead3;--paper2:#eadfc2;--ink:#2e2a1e;--mut:#756c55}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0d120c;font-family:'Inter',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}.corm{font-family:'Cormorant Garamond',serif}.mono{font-family:'Courier Prime',monospace}
+.phone{max-width:430px;margin:0 auto;position:relative;min-height:100dvh;overflow:clip;box-shadow:0 0 70px rgba(0,0,0,.85);background:#141a12}
+/* ---- layered map background (topography + grid + paper) ---- */
+.mapbg{background-color:var(--paper);
+background-image:
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='%232f5d3a' stroke-opacity='.13'%3E%3Cpath d='M-20 80 Q70 30 150 80 T320 70'/%3E%3Cpath d='M-20 105 Q70 55 150 105 T320 95'/%3E%3Cpath d='M-20 55 Q70 5 150 55 T320 45'/%3E%3Cpath d='M-20 220 Q80 170 160 220 T320 210'/%3E%3Cpath d='M-20 245 Q80 195 160 245 T320 235'/%3E%3Ccircle cx='238' cy='238' r='26'/%3E%3Ccircle cx='238' cy='238' r='42'/%3E%3Ccircle cx='238' cy='238' r='58'/%3E%3C/g%3E%3C/svg%3E"),
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='86' height='86' viewBox='0 0 86 86'%3E%3Cpath d='M0 0H86M0 0V86' fill='none' stroke='%232f5d3a' stroke-opacity='.10'/%3E%3C/svg%3E"),
+linear-gradient(168deg,#f6efdb 0%,var(--paper) 55%,var(--paper2) 100%)}
+.coord-frame{position:relative;border:1.5px solid rgba(47,93,58,.45);outline:1px solid rgba(185,142,62,.6);outline-offset:5px;border-radius:6px}
+.coord-tag{position:absolute;top:-10px;left:14px;background:var(--green-d);color:var(--brass-p);font-family:'Courier Prime',monospace;font-size:8.5px;letter-spacing:.26em;padding:4px 10px;text-transform:uppercase;z-index:2}
+.lat{position:absolute;font-family:'Courier Prime',monospace;font-size:8px;letter-spacing:.14em;color:rgba(47,93,58,.65)}
+/* ---- COVER: folded map ---- */
+#cover{min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:24px 18px;position:relative;background:radial-gradient(120% 60% at 50% 0%,#2a3d24 0%,#10160e 62%)}
+#cover::before{content:"";position:absolute;inset:0;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Cg fill='none' stroke='%23dcb96e'%3E%3Cpath d='M-20 80 Q70 30 150 80 T320 70'/%3E%3Cpath d='M-20 130 Q70 80 150 130 T320 120'/%3E%3Ccircle cx='80' cy='230' r='30'/%3E%3Ccircle cx='80' cy='230' r='48'/%3E%3C/g%3E%3C/svg%3E")}
+.foldmap{width:100%;max-width:378px;position:relative;border-radius:8px;padding:26px 22px 22px;box-shadow:0 30px 60px rgba(0,0,0,.65),inset 0 0 60px rgba(185,142,62,.12);transition:transform 1s cubic-bezier(.5,.05,.3,1),opacity .8s;transform-origin:top center}
+.foldmap::before,.foldmap::after{content:"";position:absolute;top:0;bottom:0;width:1.5px;background:linear-gradient(180deg,transparent,rgba(47,93,58,.35),transparent)}
+.foldmap::before{left:33%}.foldmap::after{left:66%}
+.foldmap.opening{transform:rotateX(58deg) translateY(-24px);opacity:0}
+.cv-kicker{text-align:center;font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.38em;color:var(--green);text-transform:uppercase;line-height:2}
+.cv-title{font-family:'Playfair Display',serif;font-weight:900;font-size:31px;text-align:center;color:var(--green-d);line-height:1.15;margin-top:6px}
+.cv-title em{color:var(--burg);font-style:normal}
+.cv-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--mut);margin-top:5px}
+.cv-hero{margin-top:16px;position:relative}
+.cv-hero img{width:100%;height:300px;object-fit:cover;object-position:center 22%;display:block;border-radius:4px;border:1.5px solid rgba(47,93,58,.5)}
+.cv-x{position:absolute;right:12px;bottom:10px;font-family:'Playfair Display',serif;font-weight:900;font-size:44px;color:var(--burg);text-shadow:0 2px 0 rgba(243,234,211,.8);line-height:1;transform:rotate(-8deg)}
+.cv-route{margin-top:12px}
+.cv-route svg{width:100%;height:52px;display:block}
+.route-path{fill:none;stroke:var(--burg);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;transition:stroke-dashoffset 2.6s ease .2s}
+.route-path.drawn,.drawn .route-path{stroke-dashoffset:0}
+.route-dot{fill:var(--green-d);stroke:var(--paper);stroke-width:2}
+.cv-names{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;text-align:center;color:var(--green-d);margin-top:10px;line-height:1.3}
+.cv-date{text-align:center;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:.22em;color:var(--burg);margin-top:6px}
+.cv-guest{margin-top:16px;border:1.5px dashed rgba(126,31,46,.55);border-radius:8px;padding:12px 14px;text-align:center;background:rgba(255,255,255,.35)}
+.cv-guest small{display:block;font-size:8.5px;letter-spacing:.3em;color:var(--mut);text-transform:uppercase;line-height:1.9}
+.cv-guest .gname{font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:var(--green-d)}
+#btnOpen{margin:18px auto 0;display:flex;align-items:center;gap:10px;background:linear-gradient(180deg,#e3c478,#b98e3e);color:#2c1c02;border:none;border-radius:999px;padding:14px 30px;font-size:13px;font-weight:700;letter-spacing:.2em;cursor:pointer;font-family:'Inter',sans-serif;box-shadow:0 10px 26px rgba(0,0,0,.4)}
+#btnOpen img{width:22px;height:22px;border-radius:50%;object-fit:cover}
+.cv-note{text-align:center;margin-top:12px;font-size:10.5px;color:var(--mut);line-height:1.7}
+/* ---- CONTENT ---- */
+#content{display:none;padding:20px 14px 108px;background:radial-gradient(120% 40% at 50% 0%,#24351e,#10160e 55%)}
+#content.open{display:block}
+.sheet{border-radius:8px;padding:32px 20px 28px;position:relative;margin-bottom:20px;box-shadow:0 14px 34px rgba(0,0,0,.5);overflow:hidden}
+.sheet::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 70px rgba(120,90,30,.14);pointer-events:none}
+.sheet>*{position:relative;z-index:1}
+.sec-head{text-align:center;margin-bottom:20px}
+.sec-no{font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.36em;color:var(--burg);text-transform:uppercase}
+.sec-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:800;color:var(--green-d);margin-top:6px;line-height:1.25}
+.sec-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--mut);margin-top:4px}
+.rule{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:12px}
+.rule::before,.rule::after{content:"";height:1px;width:46px;background:linear-gradient(90deg,transparent,var(--brass))}
+.rule::after{background:linear-gradient(90deg,var(--brass),transparent)}
+.rule i{width:7px;height:7px;background:var(--burg);transform:rotate(45deg);display:block}
+p.txt{font-size:14px;line-height:1.85;color:#453f30;text-align:center}
+.quote{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;line-height:1.65;text-align:center;color:var(--green-d)}
+.icon-row{display:flex;justify-content:space-between;gap:6px;margin-top:22px}
+.icon-cell{flex:1;text-align:center}
+.icon-cell img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:1.5px solid var(--brass);box-shadow:0 5px 12px rgba(60,45,10,.25);background:#fff}
+.icon-cell span{display:block;font-family:'Courier Prime',monospace;font-size:7.5px;letter-spacing:.14em;color:var(--mut);text-transform:uppercase;margin-top:6px;line-height:1.5}
+.route-map{margin-top:20px;padding:14px 10px 8px}
+.route-map svg{width:100%;height:150px;display:block}
+.route-cap{text-align:center;font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:.24em;color:var(--green);text-transform:uppercase;padding-bottom:8px}
+/* mempelai */
+.explorer-card{margin-bottom:20px;padding:18px 16px;text-align:center}
+.explorer-card .ph{width:172px;height:216px;object-fit:cover;object-position:center 18%;border-radius:4px;border:1.5px solid rgba(47,93,58,.5);display:block;margin:4px auto 0;box-shadow:0 10px 22px rgba(40,35,15,.25)}
+.explorer-card h3{font-family:'Playfair Display',serif;font-size:21px;color:var(--green-d);margin-top:14px;line-height:1.35}
+.explorer-card .role{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:.3em;color:var(--burg);text-transform:uppercase}
+.explorer-card p{font-size:13.5px;line-height:1.8;color:#453f30;margin-top:8px}
+.ig-link{display:inline-block;margin-top:10px;font-size:11.5px;color:var(--burg);text-decoration:none;border:1px solid rgba(126,31,46,.45);border-radius:999px;padding:6px 14px}
+.medal{width:64px;height:64px;border-radius:50%;object-fit:cover;border:1.5px solid var(--brass);margin:0 auto;display:block;background:#fff}
+/* acara + compass */
+.compass-wrap{display:flex;flex-direction:column;align-items:center;margin:6px 0 20px}
+.compass{position:relative;width:238px;height:238px;border-radius:50%;background:radial-gradient(circle at 50% 42%,#fdf8e6 0%,#f0e3ba 58%,#ddc98c 100%);border:3px solid var(--brass);box-shadow:inset 0 0 0 6px rgba(185,142,62,.35),inset 0 0 34px rgba(120,90,30,.25),0 12px 26px rgba(40,35,15,.3)}
+.compass .tick{position:absolute;inset:8px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(47,93,58,.55) 0deg 1.2deg,transparent 1.2deg 30deg);-webkit-mask:radial-gradient(circle,transparent 62%,#000 63%,#000 78%,transparent 79%);mask:radial-gradient(circle,transparent 62%,#000 63%,#000 78%,transparent 79%)}
+.compass .dir{position:absolute;font-family:'Playfair Display',serif;font-weight:900;font-size:15px;color:var(--green-d)}
+.compass .dir.n{top:12px;left:50%;transform:translateX(-50%);color:var(--burg)}
+.compass .dir.s{bottom:12px;left:50%;transform:translateX(-50%)}
+.compass .dir.e{right:14px;top:50%;transform:translateY(-50%)}
+.compass .dir.w{left:14px;top:50%;transform:translateY(-50%)}
+#needle{position:absolute;left:50%;top:50%;width:6px;height:158px;margin:-79px 0 0 -3px;transition:transform 1.4s cubic-bezier(.3,1.4,.4,1);z-index:2}
+#needle::before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);border:7px solid transparent;border-bottom:72px solid var(--burg)}
+#needle::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);border:7px solid transparent;border-top:72px solid var(--green-d)}
+.compass .hub{position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:radial-gradient(circle at 38% 34%,#f4e2a8,var(--brass) 70%);border:1.5px solid #8a6a24;z-index:3}
+.compass-nums{position:absolute;left:0;right:0;bottom:34px;display:flex;justify-content:center;gap:6px;z-index:2}
+.cnum{background:rgba(28,58,36,.92);color:#f6efdb;border-radius:7px;padding:6px 0;width:48px;text-align:center}
+.cnum b{display:block;font-family:'Courier Prime',monospace;font-size:16px;line-height:1}
+.cnum span{font-size:7px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass-p)}
+.compass-cap{font-family:'Courier Prime',monospace;font-size:9px;letter-spacing:.26em;color:var(--green);text-transform:uppercase;text-align:center;margin-top:10px}
+.event-card{padding:20px 18px;margin-bottom:18px;position:relative}
+.event-card h3{font-family:'Playfair Display',serif;font-size:23px;color:var(--green-d)}
+.event-card .when{font-family:'Courier Prime',monospace;font-size:12px;color:var(--burg);margin-top:6px;line-height:1.7}
+.event-card p{font-size:13.5px;line-height:1.75;color:#453f30;margin-top:6px}
+.bigx{position:absolute;right:14px;top:8px;font-family:'Playfair Display',serif;font-weight:900;font-size:52px;color:var(--burg);opacity:.9;transform:rotate(-8deg);line-height:1}
+.btn-row{display:flex;gap:9px;margin-top:14px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-size:11.5px;font-weight:600;letter-spacing:.07em;padding:10px 16px;border-radius:999px;border:1.5px solid var(--green);color:var(--green-d);background:rgba(255,255,255,.4);cursor:pointer;font-family:'Inter',sans-serif}
+.btn.fill{background:linear-gradient(180deg,#e3c478,#b98e3e);color:#2c1c02;border:none}
+.mini-map{margin-top:14px;padding:10px}
+.mini-map svg{width:100%;height:120px;display:block}
+/* galeri pins */
+.pin-map{position:relative;padding:16px 12px 12px;min-height:300px}
+.pin-map svg.river{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;width:46px;height:46px;border:none;background:none;cursor:pointer;z-index:3;padding:0;transform:translate(-50%,-88%)}
+.pin img{width:46px;height:46px;border-radius:50% 50% 50% 4px;object-fit:cover;border:2px solid var(--burg);transform:rotate(-45deg);box-shadow:0 8px 16px rgba(60,10,20,.35);background:#fff}
+.pin span{position:absolute;left:50%;top:52px;transform:translateX(-50%);font-family:'Courier Prime',monospace;font-size:8px;letter-spacing:.12em;background:var(--green-d);color:var(--brass-p);padding:3px 7px;white-space:nowrap}
+.pin.active img{border-color:var(--brass);outline:3px solid rgba(185,142,62,.5)}
+#pinDetail{margin-top:16px;display:none;padding:14px}
+#pinDetail.show{display:block}
+#pinDetail img{width:100%;height:230px;object-fit:cover;display:block;border-radius:4px;border:1.5px solid rgba(47,93,58,.5)}
+#pinDetail h4{font-family:'Playfair Display',serif;font-size:19px;color:var(--green-d);margin-top:12px}
+#pinDetail .coord{font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.18em;color:var(--burg);margin-top:3px}
+#pinDetail p{font-size:13.5px;line-height:1.8;color:#453f30;margin-top:7px}
+/* rsvp */
+form.rsvp{margin-top:4px}
+label.flabel{display:block;font-family:'Courier Prime',monospace;font-size:9.5px;letter-spacing:.24em;color:var(--burg);text-transform:uppercase;margin:15px 0 7px}
+input[type=text],textarea,select{width:100%;background:rgba(255,255,255,.55);border:1.5px solid rgba(47,93,58,.4);border-radius:9px;color:var(--green-d);padding:12px 13px;font-size:14px;font-family:'Inter',sans-serif;outline:none}
+.radio-row{display:flex;gap:9px}
+.radio-pill{flex:1;position:relative}
+.radio-pill input{position:absolute;opacity:0;pointer-events:none}
+.radio-pill span{display:block;text-align:center;padding:12px 5px;border:1.5px solid rgba(47,93,58,.4);border-radius:9px;font-size:12.5px;cursor:pointer;color:#5b5340;background:rgba(255,255,255,.4)}
+.radio-pill input:checked+span{background:var(--green);border-color:var(--green);color:#eef7ea;font-weight:600}
+.radio-pill.no input:checked+span{background:#5d5648;border-color:#5d5648;color:#f3eede}
+#btnRsvp{width:100%;margin-top:20px;background:linear-gradient(180deg,#a32c40,var(--burg-d));color:#ffe9c9;border:none;border-radius:999px;padding:14px;font-size:13px;font-weight:700;letter-spacing:.15em;cursor:pointer;font-family:'Inter',sans-serif}
+.demo-note{margin-top:11px;font-size:11px;color:var(--mut);text-align:center;line-height:1.6}
+.passport-card{position:relative;margin-top:18px;padding:18px 16px;min-height:150px}
+#stampRsvp{position:absolute;right:12px;bottom:12px;width:132px;height:132px;border:3.5px solid var(--burg);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--burg);font-family:'Courier Prime',monospace;font-weight:700;font-size:10px;letter-spacing:.1em;line-height:1.55;padding:12px;opacity:0;transform:scale(2.4) rotate(-14deg);pointer-events:none;box-shadow:inset 0 0 0 2px var(--paper),inset 0 0 0 4.5px var(--burg);mix-blend-mode:multiply;background:rgba(255,255,255,.05)}
+#stampRsvp b{font-size:11px}
+#stampRsvp span{font-size:9px;letter-spacing:.06em}
+#stampRsvp.show,#stampRsvp.stamped{animation:stampIn .55s cubic-bezier(.25,2.2,.45,1) forwards}
+@keyframes stampIn{0%{opacity:0;transform:scale(2.4) rotate(-14deg)}62%{opacity:1;transform:scale(.93) rotate(-14deg)}100%{opacity:.92;transform:scale(1) rotate(-14deg)}}
+#rsvpDone{display:none;margin-top:14px;background:rgba(47,93,58,.1);border:1.5px solid rgba(47,93,58,.45);border-radius:11px;padding:14px;text-align:center;font-size:13.5px;line-height:1.75;color:#274b2f}
+#rsvpDone.show{display:block}
+#wishList{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.wish{background:rgba(255,255,255,.5);border:1px solid rgba(47,93,58,.3);border-radius:10px;padding:12px 14px;text-align:left}
+.wish b{font-size:13px;color:var(--green-d)}
+.wish .st{font-size:8.5px;letter-spacing:.1em;background:var(--green);color:#eef7ea;border-radius:999px;padding:3px 8px;margin-left:7px;text-transform:uppercase}
+.wish .st.no{background:#5d5648}
+.wish p{font-size:13px;color:#4d4636;line-height:1.65;margin-top:5px}
+/* amplop */
+.pouch{background:linear-gradient(150deg,#33523a,var(--green-d) 72%);border:1px solid var(--brass);border-radius:14px;padding:22px 18px;color:#f3e9cd;position:relative;overflow:hidden}
+.pouch .pb2{text-align:center;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:.32em;color:var(--brass-p);text-transform:uppercase}
+.pouch p{font-size:12.5px;color:#d8cfa8;line-height:1.75;text-align:center;margin-top:9px}
+.acct{background:rgba(0,0,0,.28);border:1px solid rgba(220,185,110,.4);border-radius:11px;padding:14px;margin-top:13px;text-align:center;position:relative;z-index:1}
+.acct small{font-size:8.5px;letter-spacing:.28em;color:var(--brass-p);text-transform:uppercase}
+.acct .num{font-family:'Courier Prime',monospace;font-weight:700;font-size:19px;color:#fff6da;margin-top:5px}
+.acct .an{font-size:11.5px;color:#cfc49c;margin-top:3px}
+.acct button{margin-top:10px;background:none;border:1px solid var(--brass-l);color:var(--brass-p);border-radius:999px;padding:7px 16px;font-size:11px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
+footer.site{text-align:center;padding:4px 24px;font-size:10.5px;color:#93a58c;line-height:1.9}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+/* bottom nav */
+#bottomNav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;z-index:80;background:rgba(16,24,14,.95);backdrop-filter:blur(10px);border-top:1px solid rgba(220,185,110,.35);display:none;grid-template-columns:repeat(6,1fr);padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
+#bottomNav.show{display:grid}
+#bottomNav a,#bottomNav button{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:#9db294;font-size:9px;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;padding:4px 0}
+#bottomNav svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#bottomNav a.active{color:var(--brass-p)}
+#btnMusic.on{color:var(--brass-p)}
+#lb{position:fixed;inset:0;background:rgba(5,8,5,.94);z-index:95;display:none;align-items:center;justify-content:center;padding:22px}
+#lb.show{display:flex}
+#lb img{max-width:min(430px,100%);max-height:82dvh;border:4px solid #fffdf6;border-radius:4px}
+#lbCap{position:absolute;bottom:36px;left:0;right:0;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--brass-p);font-size:16px;padding:0 20px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}.reveal{opacity:1;transform:none}.route-path{stroke-dashoffset:0}#stampRsvp{opacity:.92;transform:scale(1) rotate(-14deg)}}
+</style>
+<link rel="canonical" href="https://undangya.web.id/peta-ekspedisi">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Peta Ekspedisi — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital bergaya peta petualangan interaktif: rute terlukis menganimasi, pin koordinat kenangan & kompas countdown — Peta Ekspedisi">
+<meta property="og:url" content="https://undangya.web.id/peta-ekspedisi">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/peta-ekspedisi.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Peta Ekspedisi — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital bergaya peta petualangan interaktif: rute terlukis menganimasi, pin koordinat kenangan & kompas countdown — Peta Ekspedisi">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/peta-ekspedisi.webp">
+</head>
+<body>
+<div class="phone" id="phone">
+  <!-- COVER -->
+  <div id="cover">
+    <div class="foldmap mapbg" id="foldMap">
+      <div class="cv-kicker">Atlas Cinta • Ekspedisi No. 1206<br>Undangan Pernikahan</div>
+      <h1 class="cv-title">Peta <em>Ekspedisi</em><br>Dua Hati</h1>
+      <p class="cv-sub">satu rute, satu tujuan: seumur hidup</p>
+      <div class="cv-hero coord-frame">
+        <span class="coord-tag">Peta 01 — Titik Tujuan</span>
+        <img src="assets/undangya/peta-ekspedisi/hero.webp" alt="Meyzsa dan Fahrezzi, pasangan penjelajah dengan peta dan kompas">
+        <div class="cv-x" aria-hidden="true">X</div>
+      </div>
+      <div class="cv-route" aria-hidden="true">
+        <svg viewBox="0 0 340 52" preserveAspectRatio="none">
+          <path class="route-path" id="coverRoute" d="M8 40 C70 8, 130 46, 185 22 S300 12, 332 26"/>
+          <circle class="route-dot" cx="8" cy="40" r="5"/><circle class="route-dot" cx="185" cy="22" r="5"/>
+          <path d="M322 16 l14 10-14 10 4-10z" fill="#7e1f2e"/>
+        </svg>
+      </div>
+      <div class="cv-names">Meyzsa &amp; Fahrezzi</div>
+      <div class="cv-date">SABTU • 12 JUNI 2027 • JAKARTA</div>
+      <div class="cv-guest">
+        <small>Kepada Yth. Penjelajah Undangan</small>
+        <div class="gname" id="guestName">Tamu Undangan</div>
+        <small id="guestCoord">KOORDINAT TUJUAN: MASJID AGUNG AL-AZHAR</small>
+      </div>
+      <button id="btnOpen" type="button"><img src="assets/undangya/peta-ekspedisi/ikon-kompas.webp" alt="">BUKA PETA</button>
+      <p class="cv-note">Gulungan peta ini menyimpan rute lengkap kisah kami —<br>dari titik pertama bertemu hingga tanda X di hari bahagia.</p>
+    </div>
+  </div>
+
+  <main id="content">
+    <!-- SAMBUTAN -->
+    <section class="sheet mapbg" id="beranda">
+      <span class="lat" style="bottom:8px;right:14px">6°12′S — 106°49′E</span>
+      <div class="sec-head reveal">
+        <div class="sec-no">Lembar 01 — Catatan Penjelajah</div>
+        <h2 class="sec-title">Catatan di Halaman Pertama Peta</h2>
+        <div class="rule"><i></i></div>
+      </div>
+      <p class="quote reveal">&ldquo;Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya.&rdquo;</p>
+      <p class="txt reveal" style="margin-top:12px;font-size:12px;color:var(--mut)">— QS. Ar-Rūm: 21 —</p>
+      <p class="txt reveal" style="margin-top:18px">Assalamu&rsquo;alaikum warahmatullahi wabarakatuh.<br><br>Dengan memohon rahmat dan ridha Allah SWT, kami membuka peta ini untuk mengundang Bapak/Ibu/Saudara/i mengikuti rute perjalanan cinta kami — setiap penanda adalah kenangan, dan tanda <b style="color:var(--burg)">X</b> terbesar menanti di lokasi akad.</p>
+      <div class="icon-row reveal" id="iconRow"></div>
+      <div class="route-map coord-frame reveal">
+        <span class="coord-tag">Rute Kisah — Terlukis Saat Anda Menjelajah</span>
+        <svg viewBox="0 0 340 150" aria-hidden="true">
+          <path d="M0 118 Q80 96 160 112 T340 100" fill="none" stroke="#3a6b4f" stroke-opacity=".35" stroke-width="10"/>
+          <path d="M0 30 Q120 12 340 34" fill="none" stroke="#3a6b4f" stroke-opacity=".2" stroke-width="2" stroke-dasharray="3 6"/>
+          <path class="route-path route-main" d="M18 122 C80 60, 120 128, 172 74 S272 40, 318 52"/>
+          <circle class="route-dot" cx="18" cy="122" r="6"/><circle class="route-dot" cx="172" cy="74" r="6"/>
+          <path d="M304 38 l26 14-26 14 6-14z" fill="#7e1f2e"/>
+          <text x="18" y="142" font-family="Courier Prime" font-size="9" fill="#2f5d3a">BERTEMU</text>
+          <text x="140" y="60" font-family="Courier Prime" font-size="9" fill="#2f5d3a">MELAMAR</text>
+          <text x="272" y="30" font-family="Courier Prime" font-size="9" fill="#7e1f2e">X • AKAD</text>
+        </svg>
+        <div class="route-cap">Garis rute akan terlukis titik demi titik mengikuti perjalanan Anda</div>
+      </div>
+    </section>
+
+    <!-- MEMPELAI -->
+    <section class="sheet mapbg" id="mempelai">
+      <div class="sec-head reveal">
+        <div class="sec-no">Lembar 02 — Dua Penjelajah Utama</div>
+        <h2 class="sec-title">Penjelajah Utama Ekspedisi Ini</h2>
+        <p class="sec-sub">dua pemegang peta, satu kompas yang sama</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div id="coupleList"></div>
+    </section>
+
+    <!-- ACARA + KOMPAS -->
+    <section class="sheet mapbg" id="acara">
+      <div class="sec-head reveal">
+        <div class="sec-no">Lembar 03 — Tanda X &amp; Kompas Waktu</div>
+        <h2 class="sec-title">Tanda X di Peta Kami</h2>
+        <p class="sec-sub">jarum kompas berputar mengarah ke tanggal bahagia</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="compass-wrap reveal">
+        <div class="compass" role="timer" aria-label="Hitung mundur menuju akad nikah">
+          <div class="tick"></div>
+          <span class="dir n">U</span><span class="dir s">S</span><span class="dir e">T</span><span class="dir w">B</span>
+          <div id="needle"></div><div class="hub"></div>
+          <div class="compass-nums">
+            <div class="cnum"><b id="cdD">00</b><span>Hari</span></div>
+            <div class="cnum"><b id="cdH">00</b><span>Jam</span></div>
+            <div class="cnum"><b id="cdM">00</b><span>Menit</span></div>
+            <div class="cnum"><b id="cdS">00</b><span>Detik</span></div>
+          </div>
+        </div>
+        <div class="compass-cap">Kompas Ekspedisi • Mengarah ke 12 . 06 . 2027</div>
+      </div>
+      <div id="eventList"></div>
+      <div class="mini-map coord-frame reveal">
+        <span class="coord-tag">Peta Lokasi — Jakarta Selatan</span>
+        <svg viewBox="0 0 340 120" aria-hidden="true">
+          <path d="M0 84 Q90 60 180 78 T340 64" fill="none" stroke="#3a6b4f" stroke-opacity=".4" stroke-width="9"/>
+          <path class="route-path route-main" d="M16 100 C90 40, 170 104, 236 58 S310 30, 326 36"/>
+          <circle class="route-dot" cx="16" cy="100" r="5"/>
+          <text x="222" y="46" font-family="Playfair Display" font-weight="900" font-size="26" fill="#7e1f2e">X</text>
+          <text x="196" y="112" font-family="Courier Prime" font-size="8.5" fill="#2f5d3a">AL-AZHAR → RITZ-CARLTON</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- GALERI PIN -->
+    <section class="sheet mapbg" id="galeri">
+      <div class="sec-head reveal">
+        <div class="sec-no">Lembar 04 — Pin Koordinat Kenangan</div>
+        <h2 class="sec-title">Pin-Pin di Peta Kenangan</h2>
+        <p class="sec-sub">ketuk setiap pin — foto &amp; cerita lokasinya akan terbuka</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="pin-map coord-frame reveal" id="pinMap">
+        <span class="coord-tag">Peta Kenangan — 4 Koordinat</span>
+        <svg class="river" viewBox="0 0 360 300" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M-10 210 C80 170, 150 240, 240 190 S340 150, 380 170" fill="none" stroke="#3a6b4f" stroke-opacity=".28" stroke-width="16"/>
+          <path d="M-10 60 C90 30, 200 80, 380 44" fill="none" stroke="#b98e3e" stroke-opacity=".3" stroke-width="2" stroke-dasharray="4 6"/>
+          <path class="route-path route-main" d="M52 238 C110 150, 160 210, 208 128 S292 66, 322 78"/>
+        </svg>
+      </div>
+      <div id="pinDetail" class="coord-frame"></div>
+      <p class="txt reveal" style="margin-top:14px;font-size:12px;color:var(--mut)">Empat koordinat, empat babak — gunung, danau, kota tua, dan pantai. Semuanya bermuara ke satu tanda X: Jakarta, 12 Juni 2027.</p>
+    </section>
+
+    <!-- RSVP -->
+    <section class="sheet mapbg" id="rsvp">
+      <div class="sec-head reveal">
+        <div class="sec-no">Lembar 05 — Stempel Ekspedisi</div>
+        <h2 class="sec-title">Catatkan Nama Anda</h2>
+        <p class="sec-sub">isi manifest, dan stempel ekspedisi akan jatuh di peta Anda</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <form class="rsvp reveal" id="rsvpForm" novalidate>
+        <label class="flabel" for="fNama">Nama Penjelajah</label>
+        <input type="text" id="fNama" placeholder="Nama Anda" autocomplete="name">
+        <label class="flabel">Konfirmasi Ikut Ekspedisi</label>
+        <div class="radio-row">
+          <label class="radio-pill"><input type="radio" name="hadir" value="Hadir" checked><span>Ikut Berangkat / Hadir</span></label>
+          <label class="radio-pill no"><input type="radio" name="hadir" value="Berhalangan"><span>Berhalangan</span></label>
+        </div>
+        <label class="flabel" for="fJumlah">Jumlah Rombongan</label>
+        <select id="fJumlah"><option value="1">1 orang</option><option value="2">2 orang</option><option value="3">3 orang</option><option value="4">4 orang</option></select>
+        <label class="flabel" for="fUcapan">Catatan Lapangan (Ucapan &amp; Doa)</label>
+        <textarea id="fUcapan" rows="3" placeholder="Tulis ucapan &amp; doa terbaik Anda…"></textarea>
+        <button id="btnRsvp" type="submit">STEMPEL KEHADIRAN SAYA</button>
+        <p class="demo-note">Mode demo: RSVP &amp; ucapan tersimpan hanya di halaman ini (contoh tampilan, belum terkirim ke server).</p>
+      </form>
+      <div class="passport-card coord-frame reveal">
+        <span class="coord-tag">Paspor Tamu — Lembar Stempel</span>
+        <p style="font-size:13.5px;line-height:1.8;color:#453f30;max-width:190px">Nama: <b id="ppName">Tamu Undangan</b><br>Status: <b id="ppStatus">Menunggu stempel</b><br><span style="font-family:'Courier Prime',monospace;font-size:10.5px;color:var(--mut)">EKSPEDISI M·F — 12.06.2027 — JKT</span></p>
+        <img class="medal" src="assets/undangya/peta-ekspedisi/ikon-segel.webp" alt="Segel ekspedisi" style="margin:12px 0 0">
+        <div id="stampRsvp" aria-hidden="true"><span>✦ EKSPEDISI M·F ✦</span><b>TERCATAT<br>DALAM<br>EKSPEDISI</b><span>12 . 06 . 2027</span></div>
+      </div>
+      <div id="rsvpDone" role="status"></div>
+      <div id="wishList"></div>
+    </section>
+
+    <!-- AMPLOP -->
+    <section class="sheet mapbg" id="amplop">
+      <div class="sec-head reveal">
+        <div class="sec-no">Lembar 06 — Kantong Ekspedisi</div>
+        <h2 class="sec-title">Isi Kantong Ekspedisi</h2>
+        <p class="sec-sub">tanda kasih untuk bekal perjalanan kedua penjelajah</p>
+        <div class="rule"><i></i></div>
+      </div>
+      <div class="pouch reveal">
+        <div class="pb2">Kantong Ekspedisi • Bekal Perjalanan</div>
+        <p>Kehadiran Anda adalah bekal terindah. Namun bila berkenan menambah bekal perjalanan kami, silakan melalui:</p>
+        <div id="acctList"></div>
+        <p class="demo-note" style="color:#cfc49c">Nomor di atas adalah contoh/demo tampilan.</p>
+      </div>
+    </section>
+
+    <!-- PENUTUP -->
+    <section class="sheet mapbg" id="penutup">
+      <div class="sec-head reveal">
+        <div class="sec-no">Lembar Terakhir — Akhir Peta, Awal Perjalanan</div>
+        <h2 class="sec-title">Sampai Jumpa di Tanda X</h2>
+        <div class="rule"><i></i></div>
+      </div>
+      <img src="assets/undangya/peta-ekspedisi/ikon-sheet.webp" alt="Set medali ikon ekspedisi: kompas, teropong, ransel, tenda, segel, dan pin peta" class="reveal" style="width:100%;height:180px;object-fit:cover;border-radius:6px;border:1.5px solid rgba(47,93,58,.5);display:block">
+      <p class="txt reveal" style="margin-top:18px">Merupakan kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih yang sebesar-besarnya.<br><br>Wassalamu&rsquo;alaikum warahmatullahi wabarakatuh.</p>
+      <p class="txt reveal" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17.5px;color:var(--green-d);margin-top:16px">Kami yang berbahagia,<br><b style="font-family:'Playfair Display',serif;font-style:normal;font-size:20px">Meyzsa &amp; Fahrezzi</b><br>beserta keluarga besar kedua mempelai.</p>
+    </section>
+    <footer class="site">© 2027 Meyzsa &amp; Fahrezzi — Peta Ekspedisi via UndangYa!<br>Undangan digital tema &ldquo;Peta Ekspedisi&rdquo; • Sampel contoh</footer>
+  </main>
+
+  <nav id="bottomNav" aria-label="Navigasi undangan">
+    <a href="#beranda" data-nav="beranda" class="active"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z"/></svg>Beranda</a>
+    <a href="#mempelai" data-nav="mempelai"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M15.8 8.2 13.6 13.6 8.2 15.8 10.4 10.4z"/></svg>Mempelai</a>
+    <a href="#acara" data-nav="acara"><svg viewBox="0 0 24 24"><path d="M12 21s-6.3-5.4-6.3-10.2A6.3 6.3 0 0 1 12 4.6a6.3 6.3 0 0 1 6.3 6.1C18.3 15.6 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.3"/></svg>Acara</a>
+    <a href="#galeri" data-nav="galeri"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="11" rx="2"/><circle cx="12" cy="13.5" r="3.4"/><path d="M8.6 8l1.1-2.4h4.6L15.4 8"/></svg>Galeri</a>
+    <a href="#rsvp" data-nav="rsvp"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="1" stroke-dasharray="3 2.4"/><circle cx="12" cy="12" r="3.4"/></svg>RSVP</a>
+    <button id="btnMusic" type="button" aria-label="Musik latar"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v11"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="15" r="2.5"/></svg>Musik</button>
+  </nav>
+  <div id="lb" aria-hidden="true"><img id="lbImg" alt="Foto kenangan diperbesar"><div id="lbCap"></div></div>
+</div>
+<script>
+"use strict";
+const CONFIG={
+ bride:{name:"Meyzsa Putri Ananda, S.Pd.",short:"Meyzsa",photo:"assets/undangya/peta-ekspedisi/mempelai-wanita.webp",role:"Mempelai Wanita — Penjelajah Peta Hati",father:"H. Muhammad Ridwan",mother:"Hj. Siti Aminah",instagram:"meyzsa.contoh",desc:"Guru sekaligus penjelajah rasa: Meyzsa yang pertama kali menggambar rute ini — dari perpustakaan kota, menuju pelaminan."},
+ groom:{name:"Ahmad Fahrezzi Pratama, S.T.",short:"Fahrezzi",photo:"assets/undangya/peta-ekspedisi/mempelai-pria.webp",role:"Mempelai Pria — Penjaga Kompas",father:"H. Bambang Sutrisno",mother:"Hj. Ratna Dewi",instagram:"fahrezzi.contoh",desc:"Insinyur penjaga arah: Fahrezzi memastikan jarum kompas ekspedisi ini tak pernah kehilangan utara — Meyzsa."},
+ events:[
+  {name:"Akad Nikah",day:"Sabtu",date:"12 Juni 2027",time:"08.00 – 10.00 WIB",venue:"Masjid Agung Al-Azhar",area:"Jakarta Selatan",maps:"https://www.google.com/maps/search/?api=1&query=Masjid+Agung+Al-Azhar+Jakarta+Selatan",gcal:"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Meyzsa+%26+Fahrezzi&dates=20270612T010000Z/20270612T030000Z&details=Akad+Nikah+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&location=Masjid+Agung+Al-Azhar,+Jakarta+Selatan"},
+  {name:"Resepsi",day:"Sabtu",date:"12 Juni 2027",time:"11.00 – 13.00 WIB",venue:"The Ritz-Carlton Jakarta, Pacific Place",area:"Jakarta Selatan",maps:"https://www.google.com/maps/search/?api=1&query=The+Ritz-Carlton+Jakarta+Pacific+Place",gcal:"https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Meyzsa+%26+Fahrezzi&dates=20270612T040000Z/20270612T060000Z&details=Resepsi+Pernikahan+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&location=The+Ritz-Carlton+Jakarta,+Pacific+Place"}
+ ],
+ countdownTo:"2027-06-12T08:00:00+07:00",
+ pins:[
+  {src:"assets/undangya/peta-ekspedisi/galeri-gunung.webp",pin:"assets/undangya/peta-ekspedisi/ikon-kompas.webp",title:"Koordinat 01 — Puncak Gunung",coord:"7°15′S — 110°24′E • KETINGGIAN 1.800 MDPL",story:"Babak pertama yang teruji: pendakian fajar berdua. Di puncak inilah Fahrezzi berjanji — setiap rute sulit akan selalu ditempuh berdua, tak pernah sendiri.",x:"16%",y:"82%"},
+  {src:"assets/undangya/peta-ekspedisi/galeri-danau.webp",pin:"assets/undangya/peta-ekspedisi/ikon-teropong.webp",title:"Koordinat 02 — Tepi Danau",coord:"8°16′S — 115°09′E • DANAU GUNUNG",story:"Di tepi danau yang tenang, peta dibuka dan masa depan digambar: rumah kecil, perpustakaan, dan perjalanan yang tak perlu buru-buru.",x:"40%",y:"48%"},
+  {src:"assets/undangya/peta-ekspedisi/galeri-kota.webp",pin:"assets/undangya/peta-ekspedisi/ikon-ransel.webp",title:"Koordinat 03 — Kota Tua",coord:"6°08′S — 106°48′E • KAWASAN HERITAGE",story:"Menyusuri kota tua dengan ransel dan kamera: di gang inilah lamaran sederhana itu terjadi — tanpa panggung, hanya restu langit sore.",x:"64%",y:"66%"},
+  {src:"assets/undangya/peta-ekspedisi/galeri-pantai.webp",pin:"assets/undangya/peta-ekspedisi/ikon-tenda.webp",title:"Koordinat 04 — Pantai Senja",coord:"8°46′S — 115°10′E • GARIS PANTAI SELATAN",story:"Tenda terakhir sebelum pulang: di pantai ini tanggal bahagia dipilih, dan koordinatnya ditandai dengan X besar — Jakarta, 12 Juni 2027.",x:"86%",y:"30%"}
+ ],
+ icons:[
+  {src:"assets/undangya/peta-ekspedisi/ikon-kompas.webp",label:"Kompas<br>Kuningan"},
+  {src:"assets/undangya/peta-ekspedisi/ikon-teropong.webp",label:"Teropong<br>Penjelajah"},
+  {src:"assets/undangya/peta-ekspedisi/ikon-ransel.webp",label:"Ransel<br>Kulit"},
+  {src:"assets/undangya/peta-ekspedisi/ikon-tenda.webp",label:"Tenda<br>Ekspedisi"},
+  {src:"assets/undangya/peta-ekspedisi/ikon-segel.webp",label:"Segel<br>Ekspedisi"},
+  {src:"assets/undangya/peta-ekspedisi/ikon-pin.webp",label:"Pin<br>Peta"}
+ ],
+ accounts:[{bank:"BCA",number:"1234567890",holder:"Meyzsa Putri Ananda"},{bank:"DANA",number:"0812-3456-7890",holder:"Meyzsa Putri Ananda"}]
+};
+const $=(s,c)=>(c||document).querySelector(s), $$=(s,c)=>Array.from((c||document).querySelectorAll(s));
+const esc=s=>String(s).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+const reduceMotion=(window.matchMedia?window.matchMedia("(prefers-reduced-motion: reduce)").matches:false);
+const params=new URLSearchParams(location.search);
+const guest=((params.get("to")||"Tamu Undangan").trim().slice(0,60)||"Tamu Undangan");
+$("#guestName").textContent=guest; $("#ppName").textContent=guest;
+$("#fNama").value=guest==="Tamu Undangan"?"":guest;
+/* icons */
+$("#iconRow").innerHTML=CONFIG.icons.map(i=>'<div class="icon-cell"><img src="'+i.src+'" alt="'+i.label.replace(/<br>/g," ")+'"><span>'+i.label+'</span></div>').join("");
+/* couple */
+function coupleCard(p){return '<article class="explorer-card coord-frame reveal"><span class="coord-tag">'+esc(p.role)+'</span><img class="ph" src="'+p.photo+'" alt="Foto penjelajah '+esc(p.short)+'"><h3>'+esc(p.name)+'</h3><p>Putri/putra tercinta dari<br>Bapak '+esc(p.father)+' &amp; Ibu '+esc(p.mother)+'</p><p>'+esc(p.desc)+'</p><a class="ig-link" href="https://instagram.com/'+p.instagram+'" target="_blank" rel="noopener">@'+p.instagram+'</a></article>'}
+$("#coupleList").innerHTML=coupleCard(Object.assign({},CONFIG.bride,{_x:1})).replace("Putri/putra","Putri")+coupleCard(CONFIG.groom).replace("Putri/putra","Putra");
+/* events */
+$("#eventList").innerHTML=CONFIG.events.map(ev=>'<article class="event-card coord-frame reveal"><span class="coord-tag">Penanda Lokasi</span><div class="bigx" aria-hidden="true">X</div><h3>'+ev.name+'</h3><div class="when">'+ev.day+', '+ev.date+'<br>'+ev.time+'</div><p><b>'+ev.venue+'</b><br>'+ev.area+'</p><div class="btn-row"><a class="btn fill" href="'+ev.gcal+'" target="_blank" rel="noopener">Simpan Tanggal</a><a class="btn" href="'+ev.maps+'" target="_blank" rel="noopener">Lihat Lokasi</a></div></article>').join("");
+/* accounts */
+$("#acctList").innerHTML=CONFIG.accounts.map((a,i)=>'<div class="acct"><small>'+a.bank+' — Contoh / Demo</small><div class="num">'+a.number+'</div><div class="an">a.n. '+a.holder+'</div><button type="button" data-copy="'+a.number+'">Salin Nomor</button></div>').join("");
+$$("[data-copy]").forEach(b=>b.addEventListener("click",()=>{const t=b.getAttribute("data-copy"); if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).catch(()=>{})} b.textContent="Tersalin ✓".replace(" ✓",""); setTimeout(()=>{b.textContent="Salin Nomor"},1600)}));
+/* pins */
+const pinMap=$("#pinMap");
+CONFIG.pins.forEach((p,i)=>{const btn=document.createElement("button");btn.type="button";btn.className="pin";btn.style.left=p.x;btn.style.top=p.y;btn.setAttribute("aria-label",p.title);btn.innerHTML='<img src="'+p.pin+'" alt=""><span>PIN 0'+(i+1)+'</span>';btn.addEventListener("click",()=>openPin(i));pinMap.appendChild(btn)});
+function openPin(i){const p=CONFIG.pins[i];$$(".pin").forEach((el,j)=>el.classList.toggle("active",j===i));const d=$("#pinDetail");d.innerHTML='<img src="'+p.src+'" alt="Foto '+esc(p.title)+'"><h4>'+esc(p.title)+'</h4><div class="coord">'+esc(p.coord)+'</div><p>'+esc(p.story)+'</p>';d.classList.add("show");if(d.scrollIntoView)d.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"nearest"})}
+window.openPin=openPin;
+/* route drawing */
+function drawRoute(el){if(!el)return; try{const L=el.getTotalLength?el.getTotalLength():1000; el.style.strokeDasharray=String(L); el.style.strokeDashoffset=String(L); void el.getBoundingClientRect(); el.style.strokeDashoffset="0";}catch(e){el.style.strokeDashoffset="0"} el.classList.add("drawn")}
+function activateRoutes(scope){$$(".route-path",scope||document).forEach(drawRoute)}
+window.__drawRoutes=activateRoutes;
+/* countdown + needle */
+const target=new Date(CONFIG.countdownTo).getTime();
+function tick(){const now=Date.now();let diff=Math.max(0,target-now);const d=Math.floor(diff/864e5),h=Math.floor(diff%864e5/36e5),m=Math.floor(diff%36e5/6e4),s=Math.floor(diff%6e4/1e3);const pad=n=>String(n).padStart(2,"0");$("#cdD").textContent=pad(d);$("#cdH").textContent=pad(h);$("#cdM").textContent=pad(m);$("#cdS").textContent=pad(s);const total=Math.max(1,(target-new Date("2026-01-01T00:00:00+07:00").getTime()));const prog=1-(diff/Math.max(diff,total));const ang=Math.round(-38+(Math.min(1,Math.max(0,(Date.now()%60000)/60000))*14)+(d%24));const n=$("#needle"); if(n) n.style.transform="rotate("+ang+"deg)"; window.__countdown={d:d,h:h,m:m,s:s}}
+tick(); setInterval(tick,1000);
+/* cover open */
+let opened=false;
+$("#btnOpen").addEventListener("click",()=>{if(opened)return;opened=true;$("#foldMap").classList.add("opening");drawRoute($("#coverRoute"));setTimeout(()=>{$("#cover").style.display="none";$("#content").classList.add("open");$("#bottomNav").classList.add("show");window.scrollTo(0,0);initReveal();activateRoutes();setTimeout(()=>openPin(0),600);startMusic()},reduceMotion?60:650)});
+/* reveal + route on scroll */
+let io=null;
+function initReveal(){const els=$$(".reveal"); if(!("IntersectionObserver" in window)){els.forEach(e=>e.classList.add("in"));activateRoutes();return} io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");$$(".route-path",en.target.parentElement||document).forEach(drawRoute); if(io)io.unobserve(en.target)}})},{threshold:.18}); els.forEach(e=>io.observe(e));}
+/* nav active */
+$$("#bottomNav a").forEach(a=>a.addEventListener("click",()=>{$$("#bottomNav a").forEach(x=>x.classList.remove("active"));a.classList.add("active")}));
+/* lightbox (pin photos also enlarge) */
+document.addEventListener("click",e=>{const img=e.target.closest?e.target.closest("#pinDetail img"):null; if(img){$("#lbImg").src=img.src;$("#lbCap").textContent=img.alt;$("#lb").classList.add("show")}});
+$("#lb").addEventListener("click",()=>$("#lb").classList.remove("show"));
+/* RSVP stamp */
+$("#rsvpForm").addEventListener("submit",e=>{e.preventDefault();const name=($("#fNama").value||guest).trim()||"Tamu Undangan";const hadir=($('input[name="hadir"]:checked')||{}).value||"Hadir";const jml=$("#fJumlah").value;const ucapan=$("#fUcapan").value.trim();$("#ppName").textContent=name;$("#ppStatus").textContent=hadir+" • "+jml+" orang";const st=$("#stampRsvp");st.classList.remove("show","stamped");void st.offsetWidth;st.classList.add("show","stamped");const done=$("#rsvpDone");done.innerHTML="<b>Stempel jatuh!</b> Terima kasih, "+esc(name)+". Kehadiran Anda ("+esc(hadir)+", "+esc(jml)+" orang) telah <b>tercatat dalam ekspedisi</b> ini. (Mode demo)";done.classList.add("show");if(ucapan){const w=document.createElement("div");w.className="wish";w.innerHTML="<b>"+esc(name)+'</b><span class="st'+(hadir==="Hadir"?"":" no")+'">'+esc(hadir)+"</span><p>"+esc(ucapan)+"</p>";$("#wishList").prepend(w)} if(st.scrollIntoView)st.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"center"})});
+/* music: original WebAudio plucked adventure motif */
+let actx=null,master=null,playing=false,timer=null,step=0;
+const NOTES=[392,440,523.25,587.33,523.25,440,392,329.63];
+function pluck(f,t){if(!actx)return;const o=actx.createOscillator(),o2=actx.createOscillator(),g=actx.createGain();o.type="triangle";o.frequency.value=f;o2.type="sine";o2.frequency.value=f*2;const g2=actx.createGain();g2.gain.value=.18;o.connect(g);o2.connect(g2);g2.connect(g);g.connect(master);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.5,t+.02);g.gain.exponentialRampToValueAtTime(.001,t+1.1);o.start(t);o2.start(t);o.stop(t+1.2);o2.stop(t+1.2)}
+function loop(){if(!playing)return;pluck(NOTES[step%NOTES.length],actx.currentTime+.05);if(step%4===0)pluck(NOTES[step%NOTES.length]/2,actx.currentTime+.05);step++;timer=setTimeout(loop,620)}
+function startMusic(){if(playing||!window.AudioContext)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();master=actx.createGain();master.gain.value=.35;master.connect(actx.destination);if(actx.state==="suspended")actx.resume();playing=true;$("#btnMusic").classList.add("on");loop()}catch(e){}}
+function stopMusic(){playing=false;if(timer)clearTimeout(timer);$("#btnMusic").classList.remove("on")}
+$("#btnMusic").addEventListener("click",()=>{if(!opened)return; playing?stopMusic():startMusic()});
+</script>
+</body>
+</html>

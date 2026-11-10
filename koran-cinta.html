@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Koran Cinta — Harian Bahagia | Meyzsa &amp; Fahrezzi</title>
+<link rel="icon" type="image/webp" href="assets/undangya/koran-cinta/ikon-segel.webp">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital@0;1&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}body{background:#1a1512;font-family:'Libre Baskerville',serif;color:#1c1710}
+.phone{max-width:430px;margin:0 auto;background:#f3ead6;min-height:100vh;position:relative;overflow:hidden;
+background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.025) 0 1px,transparent 1px 26px),radial-gradient(ellipse at 20% 10%,rgba(122,31,43,.07),transparent 55%),radial-gradient(ellipse at 85% 90%,rgba(160,120,40,.10),transparent 50%),linear-gradient(#f6eeda,#efe3c8)}
+.phone::before{content:"KISAH NYATA • EDISI KHUSUS • BERITA BAHAGIA • KISAH NYATA • EDISI KHUSUS •";position:absolute;inset:0;font-size:11px;letter-spacing:3px;color:rgba(0,0,0,.045);line-height:3.2;word-break:break-all;pointer-events:none;z-index:0}
+section,header,footer{position:relative;z-index:1;padding:22px 18px}
+.masthead{text-align:center;border-bottom:4px double #1c1710;padding-bottom:10px}
+.masthead h1{font-family:'Playfair Display',serif;font-weight:900;font-size:42px;letter-spacing:-1px}
+.smallcaps{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:2.5px;font-size:11px}
+.rule{border-top:2px solid #1c1710;border-bottom:1px solid #1c1710;height:5px;margin:8px 0}
+.box{border:2px solid #1c1710;padding:14px;background:rgba(255,252,240,.65);box-shadow:4px 4px 0 rgba(28,23,16,.18)}
+.box.burg{border-color:#7a1f2b}.gold{color:#8a6a1f}.burg{color:#7a1f2b}
+h2.head{font-family:'Playfair Display',serif;font-size:34px;line-height:1.02;text-align:center}
+h3{font-family:'Playfair Display',serif;font-size:22px}
+p{font-size:13.5px;line-height:1.75;text-align:justify}
+.center{text-align:center}.cols{columns:2;column-gap:16px;column-rule:1px solid rgba(0,0,0,.3);font-size:12px}
+img.photo{width:100%;display:block;border:2px solid #1c1710;filter:sepia(.25) contrast(1.05)}
+.caption{font-size:10.5px;font-style:italic;text-align:center;padding:6px;border-bottom:1px solid #1c1710}
+.icon{width:84px;height:84px;object-fit:cover;border-radius:50%;border:2px solid #1c1710;display:block;margin:0 auto 8px}
+/* folded cover */
+#cover{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;background:#14100d}
+#coverInner{width:min(430px,94vw);perspective:1200px}
+.fold{background:#f3ead6;border:3px solid #1c1710;padding:26px 20px;text-align:center;transform-origin:left center;transition:transform 1.1s ease,opacity 1.1s;box-shadow:10px 14px 30px #000;background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0 1px,transparent 1px 24px)}
+#cover.open .fold{transform:rotateY(-102deg);opacity:0}
+#cover.done{display:none}
+button,.btn{background:#7a1f2b;color:#fff;border:2px solid #1c1710;padding:12px 18px;font-family:Oswald;letter-spacing:2px;text-transform:uppercase;cursor:pointer;box-shadow:3px 3px 0 #1c1710}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.count div{border:2px solid #1c1710;padding:10px 2px;background:#fffdf2}.count b{font-size:24px;font-family:'Playfair Display'}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input,select,textarea{width:100%;padding:10px;border:1.5px solid #1c1710;background:#fffdf4;font-family:inherit;margin:5px 0 10px}
+/* RSVP coupon tear */
+#coupon{border:2px dashed #1c1710;padding:16px;background:#fff8e2;position:relative;transition:all .8s}
+#coupon::before{content:"";position:absolute;left:0;right:0;top:-2px;border-top:3px dotted #7a1f2b}
+#coupon.torn{transform:rotate(-4deg) translateY(10px);opacity:.55;clip-path:polygon(0 4%,8% 0,20% 5%,35% 1%,50% 5%,65% 0,80% 4%,100% 1%,100% 100%,0 100%)}
+.tts{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;max-width:300px;margin:10px auto}
+.tts input{text-align:center;text-transform:uppercase;font-weight:bold;padding:8px 2px;margin:0}
+nav.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(430px,100%);background:#1c1710;color:#f3ead6;display:flex;justify-content:space-around;padding:10px 4px;z-index:40;font-family:Oswald;font-size:10px;letter-spacing:1px}
+nav.bottom a{color:#f3ead6;text-decoration:none;text-align:center}
+main{padding-bottom:70px}.weather{display:flex;justify-content:space-between;text-align:center}
+.hidden{display:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style><link rel="canonical" href="https://undangya.web.id/koran-cinta">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Koran Cinta — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital bergaya surat kabar: headline "AKHIRNYA MENIKAH!", kolom kisah & RSVP kupon disobek — Koran Cinta">
+<meta property="og:url" content="https://undangya.web.id/koran-cinta">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/koran-cinta.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Koran Cinta — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital bergaya surat kabar: headline "AKHIRNYA MENIKAH!", kolom kisah & RSVP kupon disobek — Koran Cinta">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/koran-cinta.webp">
+</head><body>
+<div id="cover"><div id="coverInner"><div class="fold">
+<div class="smallcaps">Edisi Khusus • Sabtu, 12 Juni 2027 • No. 1206</div><div class="rule"></div>
+<div style="font-family:'Playfair Display';font-size:40px;font-weight:900">HARIAN<br>BAHAGIA</div>
+<img class="icon" src="assets/undangya/koran-cinta/ikon-segel.webp" alt="Segel redaksi">
+<p class="center">Koran ini terlipat rapi untuk Anda.<br>Kepada Yth.<br><b id="guestCover">Tamu Undangan</b></p><br>
+<button id="openBtn">Buka Lipatan Koran</button>
+<div class="smallcaps" style="margin-top:12px">Ketuk untuk membuka edisi cinta</div>
+</div></div></div>
+
+<div class="phone"><main>
+<header class="masthead" id="beranda">
+<div class="smallcaps">Vol. I — Edisi Pernikahan • Harga: Seumur Bahagia</div>
+<h1>HARIAN BAHAGIA</h1><div class="smallcaps">Sabtu, 12 Juni 2027 • Jakarta • Terbit Sejak Kisah Ini Dimulai</div><div class="rule"></div>
+<img class="icon" src="assets/undangya/koran-cinta/ikon-cetak.webp" alt="Mesin cetak">
+<h2 class="head">AKHIRNYA<br>MENIKAH!</h2>
+<p class="center"><b>Meyzsa &amp; Fahrezzi</b> — Setelah sekian lama menjadi berita utama di hati masing-masing, keduanya resmi mengumumkan hari bahagia.</p>
+<img class="photo" src="assets/undangya/koran-cinta/hero.webp" alt="Pasangan membaca koran raksasa"><div class="caption">FOTO PERS — Pasangan membaca koran raksasa berisi kabar bahagia mereka. (Dok. Redaksi)</div>
+<p style="margin-top:12px">Assalamu’alaikum Warahmatullahi Wabarakatuh. Dengan memohon rahmat dan ridha Allah SWT, redaksi dengan bangga menyampaikan kabar gembira ini kepada <b id="guestName">Tamu Undangan</b>. Kehadiran Anda adalah berita terbaik bagi kami.</p>
+</header>
+
+<section id="mempelai"><div class="smallcaps center burg">Rubrik Utama • Profil Tokoh</div><h3 class="center">MEMPELAI DALAM BERITA</h3><div class="rule"></div>
+<article class="box"><img class="icon" src="assets/undangya/koran-cinta/ikon-pena.webp" alt="Pena bulu"><img class="photo" src="assets/undangya/koran-cinta/bride.webp" alt="Meyzsa"><h3 class="center">Meyzsa Putri Ananda, S.Pd.</h3><p class="center">Putri Bapak H. Muhammad Ridwan &amp; Ibu Hj. Siti Aminah</p><p class="center smallcaps">@meyzsa.contoh</p></article><br>
+<article class="box burg"><img class="photo" src="assets/undangya/koran-cinta/groom.webp" alt="Fahrezzi"><h3 class="center">Ahmad Fahrezzi Pratama, S.T.</h3><p class="center">Putra Bapak H. Bambang Sutrisno &amp; Ibu Hj. Ratna Dewi</p><p class="center smallcaps">@fahrezzi.contoh</p></article>
+<div class="cols" style="margin-top:14px"><p>Kisah bermula di ruang redaksi kehidupan — sebuah pertemuan sederhana yang berubah menjadi tajuk utama. Hari berganti, kolom demi kolom terisi tawa, doa, dan kesabaran.</p><p>Kini kisah itu dicetak permanen: bukan lagi wacana, melainkan janji suci yang siap dibaca dunia. Seluruh redaksi turut berbahagia.</p></div>
+</section>
+
+<section id="acara"><div class="box"><img class="icon" src="assets/undangya/koran-cinta/ikon-lonceng.webp" alt="Lonceng berita"><div class="smallcaps center">Kolom Pengumuman • Catat Tanggalnya</div><h3 class="center">AKAD NIKAH</h3><p class="center">Sabtu, 12 Juni 2027<br>08.00–10.00 WIB<br><b>Masjid Agung Al-Azhar</b><br>Jakarta Selatan</p><div class="rule"></div><h3 class="center">RESEPSI</h3><p class="center">11.00–13.00 WIB<br><b>The Ritz-Carlton Jakarta Pacific Place</b></p></div>
+<h3 class="center" style="margin:16px 0 8px">HITUNG MUNDUR TERBIT</h3>
+<div class="count"><div><b id="cd-d">0</b><br><span class="smallcaps">Hari</span></div><div><b id="cd-h">0</b><br><span class="smallcaps">Jam</span></div><div><b id="cd-m">0</b><br><span class="smallcaps">Menit</span></div><div><b id="cd-s">0</b><br><span class="smallcaps">Detik</span></div></div>
+<div class="box" style="margin-top:14px"><div class="smallcaps center">Ramalan Cuaca Hari-H • 12 Juni 2027</div><div class="weather"><div><b>Jakarta</b><br>31°C<br><span class="smallcaps">Cerah Berawan</span></div><div><b>Angin</b><br>12 km/j<br><span class="smallcaps">Sepoi Bahagia</span></div><div><b>Hujan</b><br>10%<br><span class="smallcaps">Doa 100%</span></div></div><p class="center" style="font-size:11px">*Ramalan bergaya koran untuk ilustrasi suasana, bukan prakiraan resmi BMKG.</p></div>
+</section>
+
+<section id="galeri"><div class="smallcaps center">Halaman Foto Pers</div><h3 class="center">GALERI REDAKSI</h3><div class="rule"></div>
+<img class="photo" src="assets/undangya/koran-cinta/galeri-1.webp" alt="Galeri 1"><div class="caption">Di ruang redaksi vintage — tempat kisah ditulis bersama.</div><br>
+<div class="grid"><div><img class="photo" src="assets/undangya/koran-cinta/galeri-2.webp" alt="Galeri 2"><div class="caption">Di depan mesin cetak tua.</div></div><div><img class="photo" src="assets/undangya/koran-cinta/galeri-3.webp" alt="Galeri 3"><div class="caption">Liputan jalanan ala pers klasik.</div></div></div>
+<div class="box" style="margin-top:16px"><div class="smallcaps center">Hiburan • TTS Mini Harian Bahagia</div><p class="center">Petunjuk mendatar: kata untuk janji suci 12 Juni 2027 (7 huruf: NIKAHAN? coba: <b>MENIKAH</b> — isi hurufnya!)</p>
+<div class="tts"><input maxlength="1" value="M"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1" style="grid-column:span 1"></div><p class="center" style="font-size:11px">Isi: M-E-N-I-K-A-H • Sekadar hiburan pembaca.</p></div>
+</section>
+
+<section id="rsvp"><div id="coupon"><div class="smallcaps center burg">Kupon RSVP — Sobek Di Garis Ini</div><h3 class="center">KONFIRMASI KEHADIRAN</h3><p class="center" style="font-size:11px">RSVP DEMO — client-side, data tidak dikirim ke server.</p>
+<label class="smallcaps">Nama</label><input id="rsvpName" placeholder="Nama Anda">
+<label class="smallcaps">Kehadiran</label><select id="rsvpAttend"><option value="hadir">Hadir</option><option value="tidak">Tidak dapat hadir</option></select>
+<label class="smallcaps">Ucapan</label><textarea id="rsvpMsg" rows="2" placeholder="Tulis ucapan..."></textarea>
+<button id="rsvpBtn" style="width:100%">Konfirmasi &amp; Sobek Kupon</button>
+<p id="rsvpResult" class="center hidden" style="margin-top:10px"><b>TERIMA KASIH!</b> Kupon telah disobek — konfirmasi demo Anda tercatat di halaman ini.</p></div>
+<div id="wishes" style="margin-top:12px"></div></section>
+
+<section id="amplop"><div class="smallcaps center">Iklan Baris • Amplop Digital</div><h3 class="center">TANDA KASIH</h3><div class="rule"></div>
+<div class="box"><p class="center"><b>CONTOH / DEMO</b><br>BCA 1234567890<br>a.n. Meyzsa Putri Ananda</p><button onclick="navigator.clipboard&&navigator.clipboard.writeText('1234567890')" style="width:100%">Salin Nomor</button></div><br>
+<div class="box burg"><p class="center"><b>CONTOH / DEMO</b><br>DANA 0812-3456-7890<br>a.n. Meyzsa Putri Ananda</p><button onclick="navigator.clipboard&&navigator.clipboard.writeText('081234567890')" style="width:100%">Salin Nomor</button></div></section>
+
+<footer class="center"><img class="icon" src="assets/undangya/koran-cinta/ikon-segel.webp" alt="Segel"><p class="center">Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir. Wassalamu’alaikum Warahmatullahi Wabarakatuh.</p><h3>Meyzsa &amp; Fahrezzi</h3><div class="smallcaps">— Akhir Edisi — Dicetak oleh Redaksi Harian Bahagia • UndangYa!</div>
+<button id="musicBtn" style="margin-top:14px">Putar Musik Redaksi</button></footer>
+</main></div>
+<nav class="bottom"><a href="#beranda">BERANDA</a><a href="#mempelai">MEMPELAI</a><a href="#acara">ACARA</a><a href="#galeri">GALERI</a><a href="#rsvp">RSVP</a><a href="#amplop">AMPLOP</a></nav>
+<script>
+(function(){
+var q=new URLSearchParams(location.search);var guest=q.get('to')||'Tamu Undangan';
+document.getElementById('guestName').textContent=guest;document.getElementById('guestCover').textContent=guest;
+document.getElementById('rsvpName').value=guest==='Tamu Undangan'?'':guest;
+document.getElementById('openBtn').addEventListener('click',function(){var c=document.getElementById('cover');c.classList.add('open');setTimeout(function(){c.classList.add('done')},900);});
+var target=new Date('2027-06-12T08:00:00+07:00').getTime();
+function tick(){var d=Math.max(0,target-Date.now());var dd=Math.floor(d/864e5),hh=Math.floor(d/36e5)%24,mm=Math.floor(d/6e4)%60,ss=Math.floor(d/1e3)%60;
+document.getElementById('cd-d').textContent=dd;document.getElementById('cd-h').textContent=hh;document.getElementById('cd-m').textContent=mm;document.getElementById('cd-s').textContent=ss;}
+tick();setInterval(tick,1000);
+document.getElementById('rsvpBtn').addEventListener('click',function(){
+ document.getElementById('coupon').classList.add('torn');document.getElementById('rsvpResult').classList.remove('hidden');
+ var n=document.getElementById('rsvpName').value||'Tamu',m=document.getElementById('rsvpMsg').value;
+ var div=document.createElement('div');div.className='box';div.style.marginTop='8px';div.innerHTML='<b></b><p></p>';div.querySelector('b').textContent=n;div.querySelector('p').textContent=m||'Selamat!';document.getElementById('wishes').prepend(div);});
+var ctx=null,playing=false,timer=null;
+document.getElementById('musicBtn').addEventListener('click',function(){
+ if(playing){clearInterval(timer);playing=false;this.textContent='Putar Musik Redaksi';return;}
+ ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();playing=true;this.textContent='Hentikan Musik';
+ var notes=[523.25,587.33,659.25,783.99,698.46,659.25,587.33,523.25],i=0;
+ function note(){if(!playing)return;var o=ctx.createOscillator(),g=ctx.createGain();o.type='sine';o.frequency.value=notes[i%notes.length];g.gain.setValueAtTime(.12,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+.9);o.connect(g);g.connect(ctx.destination);o.start();o.stop(ctx.currentTime+1);i++;}
+ note();timer=setInterval(note,650);});
+})();
+</script></body></html>

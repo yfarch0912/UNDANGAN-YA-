@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papan Permainan — Meyzsa &amp; Fahrezzi</title>
+<style>
+:root{--burg:#5e1220;--burg2:#7a1e2e;--gold:#c7a166;--gold2:#e8cf9a;--cream:#f7efdd;--paper:#fffaf0;--green:#1e4636;--ink:#2b1d16}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#17100d;font-family:Georgia,'Times New Roman',serif;color:var(--ink)}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(600px 400px at 20% 0%,rgba(199,161,102,.18),transparent),radial-gradient(600px 400px at 80% 100%,rgba(94,18,32,.35),transparent)}
+.stage{position:relative;max-width:430px;margin:0 auto;background:
+ repeating-conic-gradient(rgba(94,18,32,.045) 0% 25%, rgba(199,161,102,.05) 0% 50%) 0 0/56px 56px,
+ linear-gradient(180deg,#fbf3df,#f3e6c8 40%,#efe0bd);
+ box-shadow:0 0 60px rgba(0,0,0,.7);overflow:hidden;padding-bottom:86px}
+.stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 60% at 50% 0%,transparent 60%,rgba(94,18,32,.12));z-index:0}
+section{position:relative;z-index:1;padding:30px 20px}
+.kicker{text-align:center;letter-spacing:.32em;font-size:11px;text-transform:uppercase;color:var(--burg2);font-variant:small-caps}
+h1,h2{font-variant:small-caps;text-align:center;color:var(--burg);line-height:1.15}
+h2{font-size:27px;margin:8px 0 6px}
+.sub{text-align:center;font-style:italic;color:#6b5844;font-size:14px;line-height:1.6}
+.card{background:var(--paper);border:2px solid var(--gold);outline:1px solid rgba(94,18,32,.35);outline-offset:4px;border-radius:14px;padding:20px 16px;margin-top:16px;box-shadow:0 10px 24px rgba(94,18,32,.15)}
+.card img{width:100%;border-radius:10px;display:block;border:3px solid var(--gold)}
+.btn{display:inline-block;background:linear-gradient(180deg,var(--burg2),var(--burg));color:var(--gold2);border:1px solid var(--gold);padding:13px 22px;border-radius:999px;font-family:inherit;font-size:15px;letter-spacing:.06em;cursor:pointer;text-decoration:none;font-variant:small-caps}
+.btn.gold{background:linear-gradient(180deg,#e8cf9a,#c7a166);color:var(--burg)}
+.btn:active{transform:scale(.97)}
+.center{text-align:center}
+/* COVER */
+#sampul{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,rgba(30,70,54,.92),rgba(94,18,32,.94)),repeating-conic-gradient(rgba(255,255,255,.05) 0% 25%,transparent 0% 50%) 0 0/48px 48px;color:var(--cream);text-align:center}
+#sampul h1{color:var(--gold2);font-size:40px}
+#sampul .kicker{color:var(--gold2)}
+.heroimg{border:3px solid var(--gold);border-radius:16px;overflow:hidden;margin:16px 0;box-shadow:0 14px 30px rgba(0,0,0,.45)}
+.heroimg img{width:100%;display:block}
+.starttile{display:inline-block;background:var(--cream);color:var(--burg);border:2px dashed var(--gold);border-radius:10px;padding:8px 18px;font-variant:small-caps;letter-spacing:.2em;margin-bottom:10px}
+.guest{background:rgba(255,250,240,.1);border:1px solid var(--gold);border-radius:12px;padding:12px;margin:12px 0}
+.guest b{color:var(--gold2)}
+.skip{display:block;margin-top:12px;color:var(--cream);font-size:13px;text-decoration:underline}
+/* BOARD */
+.board{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:16px}
+.tile{position:relative;aspect-ratio:1;border-radius:10px;border:2px solid rgba(94,18,32,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;font-variant:small-caps;letter-spacing:.04em;text-align:center;padding:3px;background:#efe3c2;color:#7a6a4d}
+.tile:nth-child(odd){background:#e9d3ae}
+.tile.special{background:#f3dfba;border-color:var(--gold);color:var(--burg)}
+.tile.start{background:var(--green);color:#e8cf9a;border-color:var(--gold)}
+.tile.finish{background:linear-gradient(160deg,var(--burg2),var(--burg));color:var(--gold2);border-color:var(--gold)}
+.tile.unlocked{background:#fff3d0;color:var(--burg);border-color:var(--gold);box-shadow:inset 0 0 0 2px rgba(199,161,102,.5)}
+.tile .num{font-size:9px;opacity:.7}
+#pawn{position:absolute;top:-14px;right:-4px;width:30px;height:30px;border-radius:50% 50% 50% 4px;background:radial-gradient(circle at 35% 30%,#f3dfba,var(--gold) 55%,#8a6a34);border:2px solid var(--burg);box-shadow:0 4px 8px rgba(0,0,0,.35);transition:transform .3s;z-index:3}
+.tile.here{box-shadow:0 0 0 3px var(--burg)}
+.dicewrap{display:flex;gap:16px;align-items:center;justify-content:center;margin-top:18px}
+#dice{width:74px;height:74px;background:linear-gradient(145deg,#fffaf0,#eadfc2);border:3px solid var(--gold);border-radius:16px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:9px;box-shadow:0 8px 18px rgba(94,18,32,.3)}
+#dice i{border-radius:50%;background:transparent}
+#dice i.on{background:radial-gradient(circle at 35% 30%,#a33,#5e1220)}
+#dice.rolling{animation:roll .5s ease}
+@keyframes roll{0%{transform:rotate(0)}30%{transform:rotate(140deg) scale(1.12)}60%{transform:rotate(-90deg)}100%{transform:rotate(0)}}
+.pawnjump{animation:jump .32s ease}
+@keyframes jump{50%{transform:translateY(-12px) scale(1.1)}}
+#chapterCard{display:none}
+#chapterCard.show{display:block;animation:pop .4s ease}
+@keyframes pop{from{transform:scale(.92);opacity:0}}
+.chaplist{list-style:none;margin-top:10px}
+.chaplist li{padding:8px 10px;border:1px dashed rgba(94,18,32,.35);border-radius:8px;margin-bottom:6px;font-size:13px;color:#9a8a70;background:rgba(255,255,255,.5)}
+.chaplist li.open{color:var(--burg);border-style:solid;border-color:var(--gold);background:#fff3d0}
+#finishArea{display:none;text-align:center}
+#finishArea.show{display:block}
+.confetti{position:absolute;font-size:18px;pointer-events:none;animation:fall 2.2s ease forwards;color:var(--gold)}
+@keyframes fall{to{transform:translateY(160px) rotate(300deg);opacity:0}}
+/* COUNTDOWN */
+.count{display:flex;gap:8px;justify-content:center;margin-top:12px}
+.count div{background:var(--burg);color:var(--gold2);border:1px solid var(--gold);border-radius:10px;min-width:64px;padding:10px 4px;text-align:center}
+.count b{display:block;font-size:22px}
+.count span{font-size:10px;letter-spacing:.15em;text-transform:uppercase}
+.event{text-align:center;margin-top:14px;line-height:1.7;font-size:15px}
+.event b{color:var(--burg);font-variant:small-caps}
+/* GALLERY */
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.gal figure{border:2px solid var(--gold);border-radius:12px;overflow:hidden;background:var(--paper)}
+.gal img{width:100%;height:170px;object-fit:cover;display:block}
+.gal figcaption{font-size:11px;text-align:center;padding:6px;font-variant:small-caps;color:var(--burg)}
+/* RSVP */
+.chance{perspective:800px;margin-top:14px}
+.chance-inner{position:relative;transition:transform .7s;transform-style:preserve-3d}
+.chance.flipped .chance-inner{transform:rotateY(180deg)}
+.face{backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid var(--gold);border-radius:14px;padding:22px 16px;background:linear-gradient(160deg,#fff8e8,#f3dfba);text-align:center}
+.face.back{position:absolute;inset:0;transform:rotateY(180deg);overflow:auto;text-align:left}
+.chance:not(.flipped) .face.back{position:absolute}
+.face.back label{font-size:12px;font-variant:small-caps;color:var(--burg);display:block;margin-top:10px}
+.face.back input,.face.back select{width:100%;padding:10px;border:1px solid var(--gold);border-radius:8px;font-family:inherit;margin-top:4px;background:#fff}
+#rsvpDone{display:none;text-align:center;color:var(--green);font-weight:bold;margin-top:10px}
+/* NAV */
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(43,20,14,.97);border-top:2px solid var(--gold);display:flex;z-index:50}
+nav a{flex:1;color:var(--gold2);text-decoration:none;font-size:10px;text-align:center;padding:10px 2px 12px;font-variant:small-caps;letter-spacing:.05em}
+nav a span{display:block;font-size:15px;margin-bottom:2px;color:var(--gold)}
+#musicBtn{position:fixed;top:12px;right:calc(50% - 203px);z-index:60;width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);background:var(--burg);color:var(--gold2);cursor:pointer;font-size:17px}
+.demo{font-size:11px;background:#efe3c2;border:1px dashed var(--burg2);border-radius:8px;padding:8px;text-align:center;margin-top:10px;color:#6b5844}
+.copybtn{margin-top:6px;font-size:12px;padding:8px 14px}
+footer{text-align:center;font-size:12px;color:#6b5844;line-height:1.7;padding-bottom:10px}
+.iconsheet{width:100%;border-radius:12px;border:2px solid var(--gold);display:block}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<link rel="canonical" href="https://undangya.web.id/papan-permainan">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Papan Permainan — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan digital bergaya board game interaktif: lempar dadu sungguhan & majukan bidak menuju finish AKAD — Papan Permainan">
+<meta property="og:url" content="https://undangya.web.id/papan-permainan">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/papan-permainan.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Papan Permainan — Meyzsa &amp; Fahrezzi | UndangYa!">
+<meta name="twitter:description" content="Undangan digital bergaya board game interaktif: lempar dadu sungguhan & majukan bidak menuju finish AKAD — Papan Permainan">
+<meta name="twitter:image" content="https://undangya.web.id/assets/katalog/papan-permainan.webp">
+</head>
+<body>
+<button id="musicBtn" aria-label="Musik" title="Musik kotak musik orisinal">♪</button>
+<div class="stage" id="stage">
+
+<section id="sampul">
+  <p class="kicker">Undangan Permainan Kisah Cinta</p>
+  <div class="starttile">★ Petak Start ★</div>
+  <h1>Meyzsa<br>&amp;<br>Fahrezzi</h1>
+  <p class="sub" style="color:#e8cf9a">Satu papan, satu kisah, satu tujuan: Akad.<br>Sabtu, 12 Juni 2027</p>
+  <div class="heroimg"><img src="assets/undangya/papan-permainan/hero.webp" alt="Meyzsa dan Fahrezzi di atas papan permainan raksasa"></div>
+  <div class="guest">Kepada Yth.<br><b id="guestName">Tamu Undangan</b><br><span style="font-size:13px">Anda diundang bergabung dalam permainan ini.</span></div>
+  <div class="center">
+    <button class="btn gold" id="enterBtn">Lempar Dadu &amp; Mulai Bermain</button>
+    <a class="skip" href="#acara" id="skipBtn">Lewati Permainan — Lihat Info Acara</a>
+  </div>
+</section>
+
+<section id="sambutan">
+  <p class="kicker">Sambutan</p><h2>Selamat Datang, Para Pemain</h2>
+  <p class="sub">Assalamu’alaikum Warahmatullahi Wabarakatuh. Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menyaksikan babak final kisah kami. Lempar dadunya, jalankan bidaknya — setiap petak adalah babak perjalanan kami.</p>
+  <div class="card"><img src="assets/undangya/papan-permainan/ikon-medali.webp" alt="Set medali ikon permainan emas: dadu, bidak, kartu kesempatan, piala dan kunci"><p class="sub" style="margin-top:10px">Medali permainan kami: dadu penentu langkah, bidak penanda perjalanan, kartu kesempatan, kunci petak kisah, dan piala di petak finish.</p></div>
+</section>
+
+<section id="mempelai">
+  <p class="kicker">Dua Pemain Utama</p><h2>Mempelai</h2>
+  <div class="card"><img src="assets/undangya/papan-permainan/bride.webp" alt="Meyzsa Putri Ananda"><h2 style="font-size:23px">Meyzsa Putri Ananda, S.Pd.</h2><p class="sub">Putri Bapak H. Muhammad Ridwan<br>&amp; Ibu Hj. Siti Aminah</p><p class="center" style="margin-top:8px"><a class="btn" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a></p></div>
+  <div class="card"><img src="assets/undangya/papan-permainan/groom.webp" alt="Ahmad Fahrezzi Pratama"><h2 style="font-size:23px">Ahmad Fahrezzi Pratama, S.T.</h2><p class="sub">Putra Bapak H. Bambang Sutrisno<br>&amp; Ibu Hj. Ratna Dewi</p><p class="center" style="margin-top:8px"><a class="btn" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a></p></div>
+</section>
+
+<section id="papan">
+  <p class="kicker">Papan Permainan Kisah</p><h2>Jalankan Bidaknya</h2>
+  <p class="sub">Lempar dadu digital — bidak pasangan maju petak demi petak. Setiap petak istimewa yang terinjak membuka kartu babak kisah. Petak terakhir adalah <b>FINISH — AKAD</b>.</p>
+  <div class="board" id="board" aria-label="Papan permainan 12 petak"></div>
+  <div class="dicewrap">
+    <div id="dice" aria-label="Dadu digital"></div>
+    <div><button class="btn" id="rollBtn">Lempar Dadu</button><p id="rollInfo" style="font-size:13px;margin-top:8px;color:#6b5844">Posisi bidak: petak START</p></div>
+  </div>
+  <div class="card" id="chapterCard"><p class="kicker">Kartu Babak Terbuka</p><h2 id="chapTitle" style="font-size:22px"></h2><p class="sub" id="chapText"></p></div>
+  <div class="card"><p class="kicker">Babak Kisah</p><ul class="chaplist" id="chapList"></ul></div>
+  <div class="card" id="finishArea"><p class="kicker">★ Finish ★</p><h2>FINISH — AKAD!</h2><p class="sub">Bidak tiba di petak finish. Perjalanan permainan selesai — perjalanan sesungguhnya baru dimulai. Sampai jumpa di hari akad, Sabtu 12 Juni 2027.</p><p style="font-size:26px;color:var(--gold)">★ ★ ★</p></div>
+</section>
+
+<section id="acara">
+  <p class="kicker">Papan Pengumuman · Area Finish</p><h2>Info Acara</h2>
+  <p class="sub">Bagian ini selalu dapat dibuka langsung — tidak perlu menyelesaikan permainan.</p>
+  <div class="count" id="countdown"><div><b id="cd-d">0</b><span>Hari</span></div><div><b id="cd-h">0</b><span>Jam</span></div><div><b id="cd-m">0</b><span>Menit</span></div><div><b id="cd-s">0</b><span>Detik</span></div></div>
+  <div class="card"><div class="event"><b>Akad Nikah</b><br>Sabtu, 12 Juni 2027<br>08.00–10.00 WIB<br>Masjid Agung Al-Azhar, Jakarta Selatan</div></div>
+  <div class="card"><div class="event"><b>Resepsi</b><br>Sabtu, 12 Juni 2027<br>11.00–13.00 WIB<br>The Ritz-Carlton Jakarta, Pacific Place</div></div>
+</section>
+
+<section id="galeri">
+  <p class="kicker">Album Kartu Koleksi</p><h2>Galeri Petak Istimewa</h2>
+  <div class="gal">
+    <figure><img src="assets/undangya/papan-permainan/galeri-1.webp" alt="Pasangan melempar dadu raksasa"><figcaption>Petak Dadu Raksasa</figcaption></figure>
+    <figure><img src="assets/undangya/papan-permainan/galeri-2.webp" alt="Pasangan memegang kartu kesempatan emas"><figcaption>Petak Kartu Kesempatan</figcaption></figure>
+    <figure><img src="assets/undangya/papan-permainan/galeri-3.webp" alt="Pasangan merayakan di gerbang finish"><figcaption>Petak Finish</figcaption></figure>
+    <figure><img src="assets/undangya/papan-permainan/galeri-4.webp" alt="Pasangan berjalan di jalur papan berkelok"><figcaption>Petak Perjalanan</figcaption></figure>
+  </div>
+</section>
+
+<section id="rsvp">
+  <p class="kicker">Konfirmasi Kehadiran</p><h2>Ambil Kartu Kesempatan</h2>
+  <p class="sub">Ketuk kartu untuk membaliknya dan mengisi jawaban Anda.</p>
+  <div class="chance" id="chanceCard">
+    <div class="chance-inner">
+      <div class="face front"><p class="kicker">Kartu Kesempatan</p><h2 style="font-size:24px">?</h2><p class="sub">“Kesempatan tidak datang dua kali —<br>konfirmasikan kehadiran Anda.”</p><button class="btn gold" id="flipBtn" type="button">Balik Kartu &amp; Isi RSVP</button></div>
+      <div class="face back"><form id="rsvpForm"><label>Nama</label><input id="rsvpName" required placeholder="Nama Anda"><label>Kehadiran</label><select id="rsvpAttend"><option value="Hadir">Hadir</option><option value="Tidak Hadir">Tidak Hadir</option><option value="Masih Ragu">Masih Ragu</option></select><label>Jumlah Tamu</label><select id="rsvpCount"><option>1</option><option>2</option></select><label>Ucapan</label><input id="rsvpMsg" placeholder="Selamat untuk kedua mempelai"><p class="center" style="margin-top:14px"><button class="btn" type="submit">Kirim Kartu</button></p></form><p id="rsvpDone">Terima kasih! Kartu kesempatan Anda telah tercatat. (RSVP demo — contoh tampilan)</p></div>
+    </div>
+  </div>
+  <p class="demo">RSVP ini adalah DEMO client-side untuk contoh undangan — data tidak dikirim ke server.</p>
+</section>
+
+<section id="amplop">
+  <p class="kicker">Petak Bank Permainan</p><h2>Amplop Digital</h2>
+  <p class="sub">Tanda kasih dapat dititipkan melalui petak bank berikut.</p>
+  <div class="card"><div class="event"><b>BCA — CONTOH/DEMO</b><br><span id="accBca">1234567890</span><br>a.n. Meyzsa Putri Ananda</div><p class="center"><button class="btn copybtn" data-copy="accBca">Salin Nomor</button></p></div>
+  <div class="card"><div class="event"><b>DANA — CONTOH/DEMO</b><br><span id="accDana">0812-3456-7890</span><br>a.n. Meyzsa Putri Ananda</div><p class="center"><button class="btn copybtn" data-copy="accDana">Salin Nomor</button></p></div>
+  <p class="demo">Nomor di atas adalah CONTOH/DEMO untuk contoh undangan, bukan nomor asli.</p>
+</section>
+
+<section id="penutup">
+  <p class="kicker">Penutup</p><h2>Terima Kasih</h2>
+  <p class="sub">Merupakan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Wassalamu’alaikum Warahmatullahi Wabarakatuh.</p>
+  <p class="sub" style="margin-top:10px">Kami yang berbahagia,<br><b style="color:var(--burg)">Meyzsa &amp; Fahrezzi</b></p>
+</section>
+<footer>Undangan digital contoh oleh <b>UndangYa!</b> — Tema Papan Permainan.<br>Seluruh nama, tanggal, tempat &amp; nomor adalah contoh/demo.</footer>
+</div>
+
+<nav aria-label="Navigasi bawah">
+  <a href="#sampul"><span>◆</span>Sampul</a>
+  <a href="#mempelai"><span>●</span>Mempelai</a>
+  <a href="#papan"><span>■</span>Papan</a>
+  <a href="#acara"><span>★</span>Acara</a>
+  <a href="#galeri"><span>▣</span>Galeri</a>
+  <a href="#rsvp"><span>?</span>RSVP</a>
+</nav>
+
+<script>
+(function(){
+"use strict";
+var qs=new URLSearchParams(location.search);
+document.getElementById('guestName').textContent=qs.get('to')||'Tamu Undangan';
+/* BOARD */
+var CHAPTERS={0:{t:'Petak Start — Awal Permainan',x:'Dua bidak berdiri di petak START. Permainan kisah cinta Meyzsa & Fahrezzi resmi dimulai.'},
+2:{t:'Babak 1 — Pertemuan Pertama',x:'Di sebuah acara kampus, langkah pertama yang tak direncanakan mempertemukan dua pemain yang kelak berjalan satu papan.'},
+4:{t:'Babak 2 — Pendekatan',x:'Petak demi petak dilalui dengan percakapan, tawa, dan keberanian untuk saling mengenal lebih dekat.'},
+6:{t:'Babak 3 — Semakin Serius',x:'Dadu kehidupan membawa keduanya ke petak komitmen: dua keluarga mulai saling menyapa.'},
+8:{t:'Babak 4 — Lamaran',x:'Di petak lamaran, satu pertanyaan besar diajukan — dan dijawab dengan air mata bahagia: ya.'},
+10:{t:'Babak 5 — Menuju Akad',x:'Dua petak terakhir. Persiapan, doa, dan restu mengantar bidak menuju garis finish.'},
+11:{t:'FINISH — AKAD',x:'Bidak tiba di petak AKAD. Babak permainan berakhir, babak kehidupan sesungguhnya dimulai.'}};
+var LABELS=['START','Jalan','Pertemuan','Jalan','Pendekatan','Jalan','Serius','Jalan','Lamaran','Jalan','Menuju Akad','FINISH AKAD'];
+var board=document.getElementById('board'),tiles=[],pos=0,unlocked={},celebrated=false,busy=false;
+for(var i=0;i<12;i++){var d=document.createElement('div');d.className='tile'+(i===0?' start':i===11?' finish':CHAPTERS[i]?' special':'');d.innerHTML='<span class="num">Petak '+(i)+'</span>'+LABELS[i];if(i===0){var p=document.createElement('div');p.id='pawn';d.appendChild(p);}board.appendChild(d);tiles.push(d);}
+tiles[0].classList.add('here');
+var list=document.getElementById('chapList');
+Object.keys(CHAPTERS).forEach(function(k){var li=document.createElement('li');li.id='chap-li-'+k;li.textContent='[Terkunci] '+CHAPTERS[k].t;if(k==='0'){li.textContent=CHAPTERS[k].t;li.classList.add('open');}list.appendChild(li);});
+unlocked[0]=true;
+function showChapter(i){if(!CHAPTERS[i])return;var c=document.getElementById('chapterCard');c.classList.add('show');document.getElementById('chapTitle').textContent=CHAPTERS[i].t;document.getElementById('chapText').textContent=CHAPTERS[i].x;var li=document.getElementById('chap-li-'+i);if(li){li.classList.add('open');li.textContent=CHAPTERS[i].t;}}
+function celebrate(){if(celebrated)return;celebrated=true;document.getElementById('finishArea').classList.add('show');document.body.dataset.celebrated='1';var st=document.getElementById('stage');for(var s=0;s<14;s++){var sp=document.createElement('span');sp.className='confetti';sp.textContent='★';sp.style.left=(10+Math.random()*80)+'%';sp.style.top='0';sp.style.color=['#c7a166','#e8cf9a','#7a1e2e'][s%3];document.getElementById('papan').appendChild(sp);}}
+function moveTo(target){pos=Math.min(target,11);tiles.forEach(function(t){t.classList.remove('here')});var pawn=document.getElementById('pawn');if(pawn)pawn.remove();var np=document.createElement('div');np.id='pawn';np.className='pawnjump';tiles[pos].appendChild(np);tiles[pos].classList.add('here');for(var k=0;k<=pos;k++){tiles[k].classList.add('unlocked');if(CHAPTERS[k])unlocked[k]=true;}showChapter(pos);document.getElementById('rollInfo').textContent='Posisi bidak: petak '+pos+(pos===11?' — FINISH!':' — '+LABELS[pos]);if(pos>=11)celebrate();}
+/* DICE */
+var PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
+var diceEl=document.getElementById('dice');
+function drawDice(n){diceEl.innerHTML='';for(var j=0;j<9;j++){var it=document.createElement('i');if(PIPS[n].indexOf(j)>=0)it.className='on';diceEl.appendChild(it);}diceEl.dataset.value=String(n);}
+drawDice(6);
+function rollDice(forced){if(busy)return null;busy=true;var val=(typeof forced==='number'&&forced>=1&&forced<=6)?forced:(1+Math.floor(Math.random()*6));diceEl.classList.add('rolling');var ticks=0;var iv=setInterval(function(){drawDice(1+Math.floor(Math.random()*6));ticks++;if(ticks>5){clearInterval(iv);drawDice(val);diceEl.classList.remove('rolling');var step=0;var mv=setInterval(function(){if(step<val&&pos<11){moveTo(pos+1);step++;}else{clearInterval(mv);busy=false;}},260);if(val===0){busy=false;}}},90);return val;}
+document.getElementById('rollBtn').addEventListener('click',function(){rollDice();});
+document.getElementById('enterBtn').addEventListener('click',function(){document.getElementById('papan').scrollIntoView({behavior:'smooth'});setTimeout(function(){rollDice();},450);startMusic();});
+window.__game={roll:rollDice,getPos:function(){return pos;},getUnlocked:function(){return Object.keys(unlocked);},forceFinish:function(){moveTo(11);},isCelebrated:function(){return celebrated;},diceValue:function(){return diceEl.dataset.value;}};
+/* COUNTDOWN */
+var target=new Date('2027-06-12T08:00:00+07:00').getTime();
+function tick(){var diff=Math.max(0,target-Date.now());var dd=Math.floor(diff/864e5),hh=Math.floor(diff/36e5)%24,mm=Math.floor(diff/6e4)%60,ss=Math.floor(diff/1e3)%60;document.getElementById('cd-d').textContent=dd;document.getElementById('cd-h').textContent=hh;document.getElementById('cd-m').textContent=mm;document.getElementById('cd-s').textContent=ss;}
+tick();setInterval(tick,1000);
+/* RSVP */
+document.getElementById('flipBtn').addEventListener('click',function(){document.getElementById('chanceCard').classList.add('flipped');});
+document.getElementById('rsvpForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('rsvpDone').style.display='block';});
+/* COPY */
+document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent;if(navigator.clipboard)navigator.clipboard.writeText(t);b.textContent='Tersalin ✓';setTimeout(function(){b.textContent='Salin Nomor';},1500);});});
+/* MUSIC WebAudio original music-box */
+var actx=null,playing=false,timer=null,notes=[523.25,587.33,659.25,783.99,659.25,587.33,523.25,440,493.88,523.25,587.33,659.25,783.99,880,783.99,659.25],ni=0;
+function beep(f){var o=actx.createOscillator(),g=actx.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.14,actx.currentTime);g.gain.exponentialRampToValueAtTime(.001,actx.currentTime+.7);o.connect(g);g.connect(actx.destination);o.start();o.stop(actx.currentTime+.75);}
+function startMusic(){if(playing)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();playing=true;timer=setInterval(function(){beep(notes[ni%notes.length]);ni++;},420);document.getElementById('musicBtn').textContent='♫';}catch(e){}}
+function stopMusic(){playing=false;if(timer)clearInterval(timer);document.getElementById('musicBtn').textContent='♪';}
+document.getElementById('musicBtn').addEventListener('click',function(){playing?stopMusic():startMusic();});
+})();
+</script>
+</body>
+</html>
