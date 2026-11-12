@@ -68,9 +68,10 @@
 
 .katalog-page .count-line{margin-top:26px;text-align:center;color:#71869a;font-size:.9rem}
 
-/* ---------- Grid katalog: desktop 2 kolom / HP 1 kolom ---------- */
-.kgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:16px}
-@media (max-width:900px){.kgrid{grid-template-columns:1fr}}
+/* ---------- Grid katalog: kelompok diperkecil (user 2026-11-13) — desktop 3 kolom, tablet & HP 2 kolom ---------- */
+.kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:16px}
+@media (max-width:1150px){.kgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.kgrid{grid-template-columns:1fr 1fr;gap:12px}}
 
 /* ---------- Kartu tema ---------- */
 .kcard{
@@ -380,4 +381,29 @@ body.pv-lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   .fchip{animation:none}
   .kcard,.chip-filter{transition:none}
+}
+
+/* ---------- Mode kompak kartu (kelompok diperkecil, user 2026-11-13) ---------- */
+@media (max-width:1150px){
+  .kcard{padding:16px 16px 18px}
+  .card-foot h2{font-size:1.5rem}
+}
+@media (max-width:640px){
+  .kcard{padding:10px 10px 12px;border-radius:18px}
+  .kcard .num{width:26px;height:26px;font-size:.68rem;top:10px;left:10px}
+  .stage{border-radius:14px;margin-top:4px}
+  .fchip{padding:4px 8px 4px 5px;font-size:.6rem;gap:4px}
+  .fchip .ic{width:16px;height:16px}
+  .fchip .ic svg{width:9px;height:9px}
+  .card-foot{padding-top:10px}
+  .card-foot h2{font-size:1.02rem}
+  .k-tagline{display:none}
+  .meta{gap:8px}
+  .badge{font-size:.58rem;padding:4px 8px}
+  .price{font-size:.92rem}
+  .card-btns{flex-direction:column;gap:8px;margin-top:10px}
+  .card-btns .btn{min-height:38px;width:100%}
+}
+@media (max-width:480px){
+  .pos-ml,.pos-mr{display:none}
 }
