@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Misi Rahasia — Meyzsa &amp; Fahrezzi | MISI: MENIKAH · Sabtu 12 Juni 2027</title>
+<meta name="description" content="Undangan pernikahan digital bertema berkas misi generik: MISI: MENIKAH — Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232b2118'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23c9a45c' stroke-width='2'/%3E%3Cpath d='M16 10l1.8 3.7 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z' fill='%23a52a24'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'Playfair Display';src:url('assets/undangya/misi-rahasia/font-title.woff2') format('woff2');font-weight:600 800;font-style:normal;font-display:swap}
+@font-face{font-family:'Special Elite';src:url('assets/undangya/misi-rahasia/font-type.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Misi Display';src:url('assets/undangya/misi-rahasia/font-hero-display.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Misi Kicker';src:url('assets/undangya/misi-rahasia/font-hero-kicker.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+:root{--kraft:#a97f46;--kraft-d:#7d5c2c;--paper:#f6ecd4;--paper2:#efe0bd;--card:#fbf4df;--ink:#241a10;--ink2:#4a3a26;--mut:#6d5940;--red:#a52a24;--red-d:#7e1f1a;--navy:#26324a;--gold:#c9a45c;--gold-l:#eed9a4;--line:rgba(125,92,44,.5);--dark:#1d150c}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#120d07;font-family:system-ui,'Segoe UI',Roboto,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}.type{font-family:'Special Elite',monospace}
+.phone{max-width:430px;margin:0 auto;position:relative;min-height:100dvh;overflow:clip;box-shadow:0 0 90px rgba(0,0,0,.9);background:repeating-linear-gradient(0deg,rgba(125,92,44,.06) 0 1px,transparent 1px 72px),linear-gradient(180deg,#f6ecd4,#f1e3c0 45%,#ecd9ae 80%,#e7d0a0)}
+img{max-width:100%;display:block}button{font-family:inherit;cursor:pointer}
+a{color:inherit}
+/* ===== gerak dasar ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes microFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes stampSlam{0%{opacity:0;transform:rotate(-26deg) scale(2.7)}55%{opacity:1;transform:rotate(-5deg) scale(.92)}75%{transform:rotate(-8deg) scale(1.05)}100%{opacity:1;transform:rotate(-7deg) scale(1)}}
+@keyframes scanMove{0%{transform:translateY(-80px)}100%{transform:translateY(112dvh)}}
+@keyframes reticleSpin{to{transform:rotate(360deg)}}
+@keyframes recBlink{0%,55%{opacity:1}56%,100%{opacity:.12}}
+@keyframes fingerPulse{0%,100%{filter:drop-shadow(0 0 2px rgba(165,42,36,.25));transform:scale(1)}50%{filter:drop-shadow(0 0 10px rgba(165,42,36,.75));transform:scale(1.06)}}
+@keyframes waxSheen{0%,60%{transform:translateX(-170%) rotate(18deg)}95%,100%{transform:translateX(320%) rotate(18deg)}}
+@keyframes stringSway{from{transform:rotate(-1.1deg)}to{transform:rotate(1.1deg)}}
+@keyframes breathZoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+@keyframes popNum{0%{transform:scale(1.25)}100%{transform:scale(1)}}
+.pop{animation:popNum .3s ease}
+@keyframes sheenBtn{0%,55%{transform:translateX(-160%)}90%,100%{transform:translateX(300%)}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+@keyframes dustFloat{0%{transform:translateY(0);opacity:0}12%{opacity:.8}88%{opacity:.6}100%{transform:translateY(-46vh);opacity:0}}
+@keyframes scrapDrift{0%{transform:translate3d(-60px,0,0) rotate(0deg);opacity:0}7%{opacity:.75}25%{transform:translate3d(120px,var(--y25,10px),0) rotate(80deg)}50%{transform:translate3d(245px,var(--y50,20px),0) rotate(168deg)}75%{transform:translate3d(368px,var(--y75,32px),0) rotate(252deg)}93%{opacity:.75}100%{transform:translate3d(500px,var(--ye,46px),0) rotate(338deg);opacity:0}}
+@keyframes flyXA{0%{transform:translateX(-14%);opacity:0}7%{opacity:1}93%{opacity:1}100%{transform:translateX(106%);opacity:0}}
+@keyframes flyYA{0%{transform:translateY(0)}50%{transform:translateY(-9dvh)}100%{transform:translateY(-3dvh)}}
+@keyframes tiltA{0%{transform:rotate(6deg)}50%{transform:rotate(-8deg) translateY(-12px)}100%{transform:rotate(5deg)}}
+@keyframes livePulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.55}}
+/* reveal bervariasi */
+.rv{opacity:0}
+.rv-up.in{animation:fadeUp .8s cubic-bezier(.22,.8,.3,1) both}
+.rv-drop{transform:translateY(-34px)}.rv-drop.in{animation:dropIn .85s cubic-bezier(.22,.8,.3,1) both}
+@keyframes dropIn{from{opacity:0;transform:translateY(-34px)}to{opacity:1;transform:translateY(0)}}
+.rv-left{transform:translateX(-38px)}.rv-left.in{animation:leftIn .85s cubic-bezier(.22,.8,.3,1) both}
+@keyframes leftIn{from{opacity:0;transform:translateX(-38px)}to{opacity:1;transform:translateX(0)}}
+.rv-right{transform:translateX(38px)}.rv-right.in{animation:rightIn .85s cubic-bezier(.22,.8,.3,1) both}
+@keyframes rightIn{from{opacity:0;transform:translateX(38px)}to{opacity:1;transform:translateX(0)}}
+.rv-zoom{transform:scale(.9)}.rv-zoom.in{animation:zoomIn .85s cubic-bezier(.22,.8,.3,1) both}
+@keyframes zoomIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+.rv-pop{transform:scale(.8)}.rv-pop.in{animation:popIn .7s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes popIn{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+.rv-flip{transform:perspective(700px) rotateX(9deg);transform-origin:50% 0}.rv-flip.in{animation:flipIn .9s cubic-bezier(.22,.8,.3,1) both}
+@keyframes flipIn{from{opacity:0;transform:perspective(700px) rotateX(14deg) translateY(14px)}to{opacity:1;transform:perspective(700px) rotateX(0)}}
+.rv-clip{clip-path:inset(0 0 100% 0)}.rv-clip.in{animation:clipIn 1s cubic-bezier(.22,.8,.3,1) both}
+@keyframes clipIn{from{opacity:0;clip-path:inset(0 0 100% 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
+.rv-stamp{opacity:0}.rv-stamp.in{animation:stampSlam .55s cubic-bezier(.2,1.6,.4,1) both}
+/* ===== stempel & elemen berkas ===== */
+.stamp{display:inline-block;border:3px double var(--red);color:var(--red);font-family:'Special Elite',monospace;letter-spacing:.2em;padding:6px 13px 4px 15px;border-radius:5px;background:rgba(246,236,212,.6);text-transform:uppercase;font-size:11.5px;transform:rotate(-7deg)}
+.stamp.navy{border-color:var(--navy);color:var(--navy)}.stamp.big{font-size:16px;padding:9px 18px 7px 20px;border-width:4px}
+.stamp-live{animation:stampSlam .6s .9s cubic-bezier(.2,1.6,.4,1) both}
+.redact{display:inline-block;background:#241a10;color:transparent;border-radius:2px;padding:0 8px;user-select:none}
+.hole{width:13px;height:13px;border-radius:50%;background:#d9c48d;box-shadow:inset 0 2px 4px rgba(60,40,10,.55),0 1px 0 rgba(255,252,240,.8);display:inline-block}
+.clip{width:15px;height:38px;border:3px solid #8d9299;border-bottom-width:5px;border-radius:8px;background:linear-gradient(180deg,#e8eaec,#b9bec4);box-shadow:0 3px 6px rgba(40,26,8,.35)}
+.pin{width:17px;height:17px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9a8f,#c22f26 55%,#7e1f1a);box-shadow:0 4px 7px rgba(30,10,5,.5);display:inline-block}
+/* ===== SAMPUL: MAP TERSEGEL ===== */
+#cover{position:relative;height:100dvh;min-height:660px;overflow:hidden;background:#241a10}
+.folder{position:absolute;inset:0;z-index:1;background:linear-gradient(165deg,rgba(185,141,78,.80),rgba(169,127,70,.74) 40%,rgba(138,101,49,.82) 78%,rgba(119,87,42,.88))}
+.cover-bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.cv-deco{position:absolute;z-index:4;pointer-events:none}
+.folder::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(60,38,10,.10) 0 1px,transparent 1px 5px),radial-gradient(90% 40% at 50% 0%,rgba(255,240,200,.25),transparent 60%)}
+.folder-tab{position:absolute;top:0;left:0;width:46%;height:34px;background:linear-gradient(180deg,#c49a58,#b08644);border-radius:0 0 14px 0;box-shadow:0 3px 8px rgba(50,32,8,.4);display:flex;align-items:center;padding:0 14px;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.22em;color:#3a2a12}
+.folder-scan{position:absolute;left:0;right:0;height:70px;top:0;z-index:6;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(255,238,190,.16),transparent);animation:scanMove 8.5s linear 1.2s infinite}
+.flap{position:absolute;left:-4%;right:-4%;top:-46%;height:52%;z-index:7;background:linear-gradient(180deg,#c79e5c,#a97f46 70%,#8a6531);border-bottom:3px solid rgba(70,48,16,.55);box-shadow:0 14px 30px rgba(30,18,4,.5);transform-origin:50% 0;pointer-events:none}
+body.ritual .flap{animation:flapOpen 1.05s cubic-bezier(.5,0,.8,.4) both}
+@keyframes flapOpen{to{transform:perspective(600px) rotateX(-72deg) translateY(-6%);opacity:.92}}
+.sealwrap{position:absolute;left:19.5%;top:36%;transform:translate(-50%,-50%);z-index:9;width:80px;height:80px}
+.seal-half{position:absolute;inset:0;border-radius:50%;overflow:hidden;pointer-events:none}
+.seal-half .seal-disc{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 36% 30%,#c94a41,#a52a24 55%,#7e1f1a);box-shadow:inset 0 3px 8px rgba(255,200,180,.5),inset 0 -6px 12px rgba(60,5,2,.55),0 10px 22px rgba(20,8,2,.55);display:flex;align-items:center;justify-content:center}
+.seal-disc svg{width:62%}
+.seal-l{clip-path:inset(0 50% 0 0)}.seal-r{clip-path:inset(0 0 0 50%)}
+body.ritual .seal-l{animation:sealL .8s cubic-bezier(.4,0,.7,.4) both}
+body.ritual .seal-r{animation:sealR .8s cubic-bezier(.4,0,.7,.4) both}
+@keyframes sealL{to{transform:translate(-26px,10px) rotate(-16deg);opacity:.9}}
+@keyframes sealR{to{transform:translate(26px,14px) rotate(14deg);opacity:.9}}
+.seal-shine{position:absolute;top:0;bottom:0;width:34%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);animation:waxSheen 3.2s ease-in-out infinite;pointer-events:none}
+.doc-peek{position:absolute;left:50%;top:33%;width:47%;max-width:205px;height:208px;object-fit:cover;object-position:50% 22%;transform:translate(-50%,16px) rotate(-2deg);z-index:5;border:5px solid #fbf4df;box-shadow:0 16px 30px rgba(25,14,2,.55);opacity:.97}
+body.ritual .doc-peek{animation:peekUp 1s .25s cubic-bezier(.22,.8,.3,1) both}
+@keyframes peekUp{from{transform:translate(-50%,46px) rotate(-2deg)}to{transform:translate(-50%,-4px) rotate(-2deg)}}
+.mission-stamp{position:absolute;right:3%;bottom:26%;z-index:10;opacity:0}
+body.ritual .mission-stamp{animation:stampSlam .55s .55s cubic-bezier(.2,1.6,.4,1) both}
+.cover-ui{position:absolute;inset:0;z-index:11;display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 22px 26px;pointer-events:none}
+.cover-ui>*{pointer-events:auto}
+.cover-filetab{margin-top:46px;font-family:'Misi Kicker',sans-serif;font-size:11px;letter-spacing:.24em;color:#ffeec2;background:rgba(36,24,12,.82);border:1px solid rgba(238,217,164,.65);padding:6px 13px 4px;border-radius:4px;animation:fadeUp 1s .3s ease both,microFloat 5s 1.5s ease-in-out infinite}
+.cover-kicker{margin-top:12px;font-family:'Misi Kicker',sans-serif;font-size:12.5px;letter-spacing:.3em;color:#fff;text-shadow:0 2px 12px rgba(20,12,4,.95);animation:fadeUp 1s .5s ease both}
+.cover-names{font-family:'Misi Display','Special Elite',monospace;font-weight:400;margin-top:8px;font-size:47px;line-height:1.14;letter-spacing:.01em;color:#fffaf0;text-shadow:0 2px 10px rgba(30,18,4,.7),0 4px 24px rgba(20,12,4,.65);animation:fadeUp 1.1s .7s ease both}
+.cover-names .amp{display:block;font-size:27px;line-height:1.1;color:var(--gold-l)}
+.cover-mission{margin-top:10px;animation:fadeUp 1s .95s ease both}
+.cover-date{margin-top:11px;font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.24em;color:#ffeec2;background:rgba(36,24,12,.85);padding:7px 14px 5px;border-radius:999px;border:1px solid rgba(238,217,164,.7);animation:fadeUp 1s 1.1s ease both,microFloat 6s 2s ease-in-out infinite}
+.cover-spacer{flex:1}
+.cover-guest{color:#fff;font-size:11.5px;letter-spacing:.13em;text-shadow:0 2px 10px rgba(20,12,4,.95);background:rgba(36,24,12,.6);padding:5px 12px;border-radius:999px;animation:fadeUp 1s 1.3s ease both}
+.gname{margin-top:7px;font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:#fff;text-shadow:0 2px 12px rgba(20,12,4,.95);animation:fadeUp 1s 1.45s ease both}
+#btnOpen{margin-top:13px;padding:13px 26px;border-radius:6px;border:1px solid var(--gold-l);background:linear-gradient(135deg,#6d1f1a,var(--red) 45%,#7e1f1a);color:#fff3da;font-weight:700;font-size:12.5px;letter-spacing:.18em;font-family:'Special Elite',monospace;box-shadow:0 10px 28px rgba(20,12,4,.55),inset 0 1px 0 rgba(255,255,255,.35);position:relative;overflow:hidden;animation:fadeUp 1s 1.6s ease both}
+#btnOpen::after{content:"";position:absolute;top:0;left:0;transform:translateX(-160%);width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);animation:sheenBtn 2.8s ease-in-out infinite}
+body.opening #cover{animation:pushZoom 1.15s cubic-bezier(.6,0,.8,.4) both}
+@keyframes pushZoom{to{transform:scale(1.5);opacity:0}}
+.flyx{position:absolute;left:0;width:100%;pointer-events:none;opacity:0;z-index:8}
+.fx-a{animation:flyXA 19s 3s infinite}.fy-a{animation:flyYA 19s 3s infinite}.fi-a{width:14%;animation:tiltA 19s 3s infinite}
+.scrap-field{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:8}
+.scrap{position:absolute;left:0;top:var(--pt,10%);pointer-events:none;opacity:0;animation:scrapDrift var(--pd,20s) linear infinite;animation-delay:var(--pdl,0s)}
+.deco-corner{position:absolute;font-family:'Special Elite',monospace;font-size:9.5px;letter-spacing:.2em;color:#ffeec2;background:rgba(36,24,12,.74);padding:3px 8px 2px;border-radius:3px;text-shadow:0 1px 4px rgba(30,18,4,.8)}
+/* ===== KONTEN: DOKUMEN BERKAS ===== */
+#content{display:none}body.opened #content{display:block}
+.world-bg{position:sticky;top:0;height:100dvh;margin-bottom:-100dvh;overflow:hidden;pointer-events:none;z-index:0;background:#e9d6a8}
+.world-stack{position:absolute;left:0;top:0;width:100%}.world-stack img{width:100%;height:auto}
+.world-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(88% 62% at 50% 42%,rgba(246,236,212,.4),rgba(246,236,212,.14) 58%,transparent 82%),linear-gradient(180deg,rgba(246,236,212,.32),rgba(246,236,212,.1) 34%,rgba(246,236,212,.1) 66%,rgba(246,236,212,.36))}
+.bg-tint{position:relative;z-index:1}
+section{position:relative;padding:56px 22px 48px}
+.doc{background:linear-gradient(180deg,rgba(251,244,223,.97),rgba(246,236,212,.95));border:1px solid var(--line);border-radius:6px;box-shadow:0 16px 34px rgba(80,58,20,.22);padding:0 18px 24px;position:relative}
+.doc::before{content:"";position:absolute;inset:7px;border:1px dashed rgba(125,92,44,.38);border-radius:4px;pointer-events:none}
+.doc-head{display:flex;align-items:flex-start;gap:10px;padding:27px 2px 12px;border-bottom:2px solid rgba(125,92,44,.35);position:relative;margin-bottom:18px}
+.doc-head .clip{flex:none;margin-top:-35px}
+.doc-meta{flex:1;min-width:0}
+.doc-no{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.26em;color:var(--red-d)}
+.doc-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:800;line-height:1.15;margin-top:3px}
+.doc-sub{font-size:13.5px;font-style:italic;color:var(--ink2);margin-top:3px;line-height:1.5}
+.doc-holes{display:flex;flex-direction:column;gap:7px;padding-top:4px}
+.doc-stamp{position:absolute;right:14px;top:-15px;z-index:2}
+.perf{display:flex;align-items:center;gap:10px;padding:4px 26px;position:relative;z-index:1}
+.perf .line{flex:1;border-top:2px dashed rgba(90,64,28,.5)}
+.perf .str{height:14px;flex:none}
+.kicker-chip{display:inline-block;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.3em;color:#ffeec2;background:var(--ink);padding:6px 12px 4px 14px;border-radius:4px;animation:microFloat 5.5s ease-in-out infinite}
+.card{background:linear-gradient(180deg,rgba(251,244,223,.96),rgba(246,236,212,.94));border:1px solid var(--line);border-radius:8px;padding:22px 19px;box-shadow:0 12px 28px rgba(80,58,20,.18);position:relative}
+.btn{display:inline-block;margin-top:12px;padding:11px 20px;border-radius:6px;border:1px solid var(--gold-l);background:linear-gradient(135deg,#5d4630,var(--ink));color:#fff3da;font-weight:700;font-size:11.5px;letter-spacing:.16em;font-family:'Special Elite',monospace;text-decoration:none;box-shadow:0 8px 20px rgba(40,26,8,.35)}
+.btn-alt{background:linear-gradient(135deg,#7d5c2c,#a97f46);color:#fffaf0}
+.btn-row{margin-top:6px;text-align:center}
+.demo-note{font-size:11px;line-height:1.6;color:var(--mut);margin-top:12px;text-align:center}
+.note-panel{background:rgba(246,236,212,.88);border:1px dashed var(--line);border-radius:8px;padding:9px 12px}
+.sub-h{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;text-align:center;margin-top:26px}
+.sub-sub{font-size:13px;font-style:italic;color:var(--ink2);text-align:center;margin-top:4px}
+.paper-dust{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(255,246,214,.95),rgba(255,226,150,.4) 45%,transparent 72%);pointer-events:none;opacity:0;animation:dustFloat var(--dd,12s) linear infinite;animation-delay:var(--ddl,0s);z-index:0}
+.sec-decor{position:absolute;pointer-events:none;z-index:1}
+.finger{animation:fingerPulse 3.4s ease-in-out infinite;transform-origin:50% 50%}
+/* mempelai: kartu identitas */
+.id-card{background:linear-gradient(165deg,#fdf8e7,#f3e6c2);border:1.5px solid var(--kraft-d);border-radius:10px;overflow:hidden;box-shadow:0 14px 30px rgba(80,58,20,.25);margin-bottom:20px;position:relative}
+.id-top{display:flex;justify-content:space-between;align-items:center;background:var(--navy);color:#ffeec2;font-family:'Special Elite',monospace;font-size:9.5px;letter-spacing:.22em;padding:8px 13px 6px}
+.id-body{display:flex;gap:13px;padding:14px 14px 6px}
+.id-photo{flex:none;width:104px;height:130px;object-fit:cover;border:3px solid #fff;box-shadow:0 6px 14px rgba(60,40,10,.3);transform:rotate(-1.6deg)}
+.id-info{flex:1;min-width:0}
+.id-info h3{font-family:'Misi Display','Special Elite',monospace;font-weight:400;font-size:19.5px;line-height:1.25}
+.gelar{font-family:'Special Elite',monospace;font-size:9.5px;letter-spacing:.14em;color:var(--red-d);margin-top:3px}
+.id-info p{font-size:12.5px;line-height:1.6;color:var(--ink2);margin-top:6px}
+.codename{display:inline-block;font-family:'Special Elite',monospace;font-size:9.5px;letter-spacing:.16em;background:var(--ink);color:#ffeec2;padding:4px 9px 2px;border-radius:3px;margin-top:7px;animation:microFloat 6s ease-in-out infinite}
+.ig-btn{display:inline-block;margin-top:9px;font-family:'Special Elite',monospace;font-size:11px;color:var(--navy);border:1.5px solid var(--navy);padding:5px 12px 3px;border-radius:999px;text-decoration:none}
+.id-status{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.14em;color:var(--red-d);padding:0 14px}
+.barcode{padding:8px 14px 12px}
+/* kisah: linimasa operasi */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:3px;background:repeating-linear-gradient(180deg,var(--red) 0 9px,transparent 9px 16px);opacity:.75}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-pin{position:absolute;left:-26px;top:14px;z-index:1}
+.tl-card{background:rgba(251,244,223,.95);border:1px solid var(--line);border-radius:8px;padding:15px 15px 13px;box-shadow:0 10px 22px rgba(80,58,20,.16)}
+.tl-card .op{display:flex;align-items:center;gap:9px}
+.tl-card .op svg{flex:none}
+.tl-year{font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.2em;color:var(--red-d)}
+.tl-title{font-family:'Playfair Display',serif;font-size:17.5px;font-weight:800;margin-top:2px}
+.tl-card p{font-size:13.5px;line-height:1.7;color:var(--ink2);margin-top:7px}
+.tl-thumb{width:100%;height:130px;object-fit:cover;object-position:50% 18%;border-radius:5px;margin-top:10px;border:3px solid #fff;box-shadow:0 5px 12px rgba(60,40,10,.25)}
+/* countdown jam misi */
+.mission-clock{background:linear-gradient(170deg,#2b2013,#1d150c 60%,#150e06);border:2px solid #57431f;border-radius:14px;padding:20px 14px 16px;box-shadow:0 18px 36px rgba(30,18,4,.45),inset 0 1px 0 rgba(238,217,164,.25);position:relative;overflow:hidden;text-align:center}
+.reticle{position:absolute;left:50%;top:44%;width:230px;height:230px;transform:translate(-50%,-50%);opacity:.5;pointer-events:none}
+.reticle svg{width:100%;height:100%;animation:reticleSpin 46s linear infinite;transform-origin:50% 50%}
+.rec{position:absolute;top:11px;right:13px;font-family:'Special Elite',monospace;font-size:10.5px;letter-spacing:.18em;color:#ff6d64;display:flex;align-items:center;gap:6px}
+.rec i{width:9px;height:9px;border-radius:50%;background:#e03327;display:inline-block;animation:recBlink 1.6s steps(1) infinite}
+.tminus{font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.42em;color:var(--gold-l);position:relative}
+.cd-row{display:flex;gap:8px;justify-content:center;margin-top:13px;position:relative}
+.cd-box{flex:1;max-width:82px;background:linear-gradient(180deg,#3a2c17,#241a10);border:1px solid rgba(238,217,164,.4);border-radius:9px;padding:11px 2px 8px}
+.cd-box b{display:block;font-family:'Special Elite',monospace;font-size:27px;color:#ffeec2;line-height:1}
+.cd-box span{display:block;font-size:9.5px;letter-spacing:.24em;color:#cbb27a;margin-top:5px;font-family:'Special Elite',monospace}
+.event{text-align:center;margin-top:20px}
+.event h3{font-family:'Playfair Display',serif;font-size:23px;font-weight:800}
+.event .when{font-family:'Special Elite',monospace;font-size:12px;letter-spacing:.1em;color:var(--red-d);margin:7px 0}
+.event p{font-size:14.5px;line-height:1.65;color:var(--ink2)}
+.dc-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.dc-chip{display:inline-flex;align-items:center;gap:7px;font-size:12px;background:rgba(255,252,240,.8);border:1px solid var(--line);border-radius:999px;padding:6px 12px;animation:microFloat 6s ease-in-out infinite}
+.dc-dot{width:13px;height:13px;border-radius:50%;border:1px solid rgba(60,40,10,.35)}
+.info-card h4{font-family:'Playfair Display',serif;font-size:16.5px;margin-bottom:7px}
+.info-card p{font-size:13.5px;line-height:1.7;color:var(--ink2)}
+.info-card{margin-top:14px}
+/* galeri papan bukti */
+.board{background:linear-gradient(170deg,#4a3520,#3a2b18 55%,#2c1f10);background-color:#3a2b18;border:3px solid #5d4630;border-radius:12px;padding:18px 0 14px;box-shadow:inset 0 0 40px rgba(0,0,0,.45),0 16px 32px rgba(40,24,4,.4);position:relative;overflow:hidden}
+.board-head{display:flex;justify-content:space-between;align-items:center;padding:0 16px;color:#ffeec2;font-family:'Special Elite',monospace;font-size:10px;letter-spacing:.24em}
+.gal-rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 16px 8px;scrollbar-width:none;position:relative}
+.gal-rail::-webkit-scrollbar{display:none}
+.gal-slide{flex:0 0 76%;scroll-snap-align:center;position:relative}
+.ev-card{background:#fdfaf0;padding:9px 9px 7px;box-shadow:0 12px 24px rgba(0,0,0,.5);position:relative}
+.gal-slide:nth-child(odd) .ev-card{transform:rotate(-1.3deg)}.gal-slide:nth-child(even) .ev-card{transform:rotate(1.2deg)}
+.ev-card img{width:100%;height:270px;object-fit:cover}
+.ev-card{animation:cardGlow 5.2s ease-in-out infinite alternate}
+@keyframes cardGlow{from{box-shadow:0 12px 24px rgba(0,0,0,.5)}to{box-shadow:0 12px 30px rgba(201,164,92,.45),0 12px 24px rgba(0,0,0,.5)}}
+.ev-pin{position:absolute;left:50%;top:-9px;transform:translateX(-50%);z-index:3}
+.ev-label{display:flex;justify-content:space-between;align-items:center;margin-top:8px;position:relative;z-index:2;font-family:'Special Elite',monospace;font-size:9.5px;letter-spacing:.14em;color:#7e1f1a}
+.ev-note{font-family:'Special Elite',monospace;font-size:11px;color:#4a3a26;margin-top:3px}
+.string-svg{position:absolute;left:0;top:26px;width:100%;height:44px;pointer-events:none;z-index:2;overflow:visible}
+.string-sway{transform-origin:8% 0;animation:stringSway 7s ease-in-out infinite alternate}
+.gal-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px}
+.gal-dots{display:flex;gap:7px}.gal-dots i{width:9px;height:9px;border-radius:50%;background:rgba(125,92,44,.4);display:block}
+.gal-dots i.on{background:var(--red);transform:scale(1.3)}
+.gal-count{font-family:'Special Elite',monospace;font-size:10.5px;letter-spacing:.2em;color:#ffeec2;background:var(--ink);padding:5px 11px 3px;border-radius:4px}
+/* video */
+.vid-wrap{position:relative;border-radius:8px;overflow:hidden;background:#000}
+.vid-stage{position:relative}.vid-stage video{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;background:#000}
+.vid-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;border:2px solid var(--gold-l);background:rgba(29,21,12,.78);color:#ffeec2;font-size:21px;z-index:2}
+.vid-wrap.playing .vid-btn{opacity:0;pointer-events:none}
+.live-badge{display:inline-flex;align-items:center;gap:7px;font-family:'Special Elite',monospace;font-size:10.5px;letter-spacing:.2em;background:#3d0f0c;color:#ffb3ac;padding:6px 13px 4px;border-radius:999px}
+.live-dot{width:8px;height:8px;border-radius:50%;background:#ff5044;animation:livePulse 1.5s ease-in-out infinite}
+.tag-big{font-family:'Playfair Display',serif;font-size:27px;font-weight:800;color:var(--red-d)}
+.salin-btn{display:inline-block;margin-top:11px;padding:9px 18px;border-radius:999px;border:1.5px solid var(--kraft-d);background:rgba(255,252,240,.85);font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.14em;color:var(--ink)}
+.gt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.gt-item{position:relative;border-radius:6px;overflow:hidden;border:2px solid #fff;box-shadow:0 5px 12px rgba(60,40,10,.25)}
+.gt-item img{width:100%;height:86px;object-fit:cover}
+.gt-del{position:absolute;top:3px;right:3px;width:21px;height:21px;border-radius:50%;border:none;background:rgba(29,21,12,.8);color:#fff;font-size:13px;line-height:1}
+.gt-empty{font-size:12.5px;color:var(--mut);margin-top:12px}
+/* form */
+.field{margin-bottom:13px;text-align:left}
+.field label{display:block;font-family:'Special Elite',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--ink2);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:6px;background:rgba(255,253,246,.95);font-family:inherit;font-size:14px;color:var(--ink)}
+.field textarea{min-height:84px;resize:vertical}
+.gb-list{margin-top:16px;text-align:left}
+.gb-item{background:rgba(255,252,240,.85);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:6px;padding:11px 13px;margin-bottom:9px}
+.gb-item b{font-size:13.5px}.gb-item .st{font-family:'Special Elite',monospace;font-size:10px;color:var(--red-d);margin-left:6px}
+.gb-item p{font-size:13px;line-height:1.6;color:var(--ink2);margin-top:4px}
+#rsvpStamp{display:none;text-align:center;margin-top:14px}
+#rsvpStamp.on{display:block;animation:stampSlam .55s cubic-bezier(.2,1.6,.4,1) both}
+.qr-box{display:inline-block;background:#fff;padding:12px;border:2px solid var(--kraft-d);border-radius:8px;box-shadow:0 10px 22px rgba(60,40,10,.25)}
+.qr-box img{width:172px;height:172px}
+.acc-card{text-align:center;margin-top:14px}
+.bank{font-family:'Special Elite',monospace;font-size:19px;letter-spacing:.3em;color:var(--navy)}
+.acc-num{font-family:'Special Elite',monospace;font-size:24px;letter-spacing:.12em;margin-top:8px}
+.acc-name{font-size:13px;color:var(--ink2);margin-top:4px}
+.copy-btn{margin-top:11px;padding:9px 18px;border-radius:999px;border:1.5px solid var(--kraft-d);background:rgba(255,252,240,.9);font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.13em}
+.turut-card h4{font-family:'Playfair Display',serif;font-size:16px;margin-bottom:7px;text-align:center}
+.turut-card p{font-size:13.5px;line-height:1.75;color:var(--ink2);text-align:center}
+.turut-card{margin-bottom:14px}
+.penutup-names{font-family:'Misi Display','Special Elite',monospace;font-size:31px;font-weight:400;line-height:1.2}
+.foot-note{position:relative;z-index:1;text-align:center;font-size:11px;line-height:1.7;color:#e8d5a8;background:rgba(29,21,12,.9);border:1px solid rgba(201,164,92,.45);border-radius:10px;margin:2px 14px 96px;padding:13px 18px 15px}
+#btnMusic{position:fixed;right:16px;bottom:16px;width:50px;height:50px;border-radius:50%;border:1.5px solid var(--gold-l);background:rgba(29,21,12,.88);z-index:60;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.45)}
+#btnMusic svg{width:24px;height:24px}
+#btnMusic.playing svg{animation:spinSlow 5s linear infinite}
+#lightbox{position:fixed;inset:0;background:rgba(12,8,3,.93);z-index:80;display:none;align-items:center;justify-content:center;padding:20px}
+#lightbox.on{display:flex}#lightbox img{max-height:86dvh;border:5px solid #fdfaf0;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+/* ===== Program Detail: background unik per section ===== */
+section{background-size:cover;background-position:center;background-repeat:no-repeat}
+#sambutan{background-image:linear-gradient(rgba(246,236,212,.30),rgba(246,236,212,.30)),url('assets/undangya/misi-rahasia/bg-world-1.webp')}
+#mempelai{background-image:linear-gradient(rgba(246,236,212,.34),rgba(246,236,212,.34)),url('assets/undangya/misi-rahasia/misi-bg-mempelai.webp')}
+#kisah{background-image:linear-gradient(rgba(246,236,212,.30),rgba(246,236,212,.30)),url('assets/undangya/misi-rahasia/bg-world-2.webp')}
+#acara{background-image:linear-gradient(rgba(246,236,212,.30),rgba(246,236,212,.30)),url('assets/undangya/misi-rahasia/misi-bg-acara.webp')}
+#galeri{background-image:linear-gradient(rgba(246,236,212,.16),rgba(246,236,212,.16)),url('assets/undangya/misi-rahasia/misi-bg-galeri.webp')}
+#cuplikan{background-image:linear-gradient(rgba(246,236,212,.30),rgba(246,236,212,.30)),url('assets/undangya/misi-rahasia/misi-bg-cuplikan.webp')}
+#live{background-image:linear-gradient(rgba(246,236,212,.30),rgba(246,236,212,.30)),url('assets/undangya/misi-rahasia/misi-bg-live.webp')}
+#rsvp{background-image:linear-gradient(rgba(246,236,212,.34),rgba(246,236,212,.34)),url('assets/undangya/misi-rahasia/misi-bg-rsvp.webp')}
+#bukutamu{background-image:linear-gradient(rgba(246,236,212,.34),rgba(246,236,212,.34)),url('assets/undangya/misi-rahasia/misi-bg-bukutamu.webp')}
+#amplop{background-image:linear-gradient(rgba(246,236,212,.34),rgba(246,236,212,.34)),url('assets/undangya/misi-rahasia/misi-bg-amplop.webp')}
+#turut{background-image:linear-gradient(rgba(246,236,212,.34),rgba(246,236,212,.34)),url('assets/undangya/misi-rahasia/misi-bg-turut.webp')}
+#penutup{background-image:linear-gradient(rgba(246,236,212,.26),rgba(246,236,212,.26)),url('assets/undangya/misi-rahasia/bg-world-3.webp')}
+/* ===== Program Detail: sway berjangkar 2,8-5,5 dtk ===== */
+@keyframes swayAnchor{from{transform:rotate(-2.4deg)}to{transform:rotate(2.4deg)}}
+.sw-tegak{transform-origin:50% 100%;animation:swayAnchor var(--swd,4.2s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
+.sw-gantung{transform-origin:50% 0;animation:swayAnchor var(--swd,4.2s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
+.fx-b{animation:flyXA 24s 8s infinite}.fy-b{animation:flyYA 24s 8s infinite}.fi-b{width:11%;animation:tiltA 24s 8s infinite}
+.cb-center{position:absolute;left:50%;top:66.5%;transform:translateX(-50%);width:29%;z-index:4;pointer-events:none}
+.cb-center img{width:100%}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important;clip-path:none!important}.mission-stamp{opacity:1!important}#rsvpStamp.on{display:block}}
+/* ===== Program Detail: RETUNE periode gerak lama (menimpa aturan di atas) ===== */
+.string-sway{animation:stringSway 4.6s cubic-bezier(.37,.02,.63,.98) infinite alternate}
+.cover-filetab{animation-duration:1s,4.3s}
+.cover-date{animation-duration:1s,4.8s}
+.kicker-chip{animation-duration:4.4s}
+.codename{animation-duration:5.1s}
+.dc-chip{animation-duration:4.2s}
+.dc-chip:nth-child(2){animation-duration:3.5s}.dc-chip:nth-child(3){animation-duration:4.9s}.dc-chip:nth-child(4){animation-duration:3.9s}.dc-chip:nth-child(5){animation-duration:5.3s}.dc-chip:nth-child(6){animation-duration:4.5s}
+</style>
+</head>
+<body>
+<div class="phone">
+  <header id="cover" aria-label="Sampul map berkas misi tersegel — undangan Misi Rahasia">
+    <img class="cover-bgimg" data-deco src="assets/undangya/misi-rahasia/cover-bg.webp" alt="" width="640" height="1280">
+    <div class="folder" data-deco aria-hidden="true"></div>
+    <div class="folder-tab" data-deco>BERKAS No. 0612</div>
+    <img data-deco class="doc-peek" src="assets/undangya/misi-rahasia/hero.webp" alt="" width="640" height="800">
+    <div class="flap" data-deco aria-hidden="true"></div>
+    <span data-deco style="position:absolute;left:6%;top:12%" class="hole"></span>
+    <span data-deco style="position:absolute;left:6%;top:20%" class="hole"></span>
+    <span data-deco style="position:absolute;right:6%;top:12%" class="hole"></span>
+    <span data-deco style="position:absolute;right:6%;top:20%" class="hole"></span>
+    <span data-deco style="position:absolute;left:9%;top:44%" class="clip"></span>
+    <span data-deco style="position:absolute;right:9%;top:44%" class="clip"></span>
+    <span data-deco style="position:absolute;left:23%;bottom:20.5%" class="pin"></span>
+    <span data-deco style="position:absolute;right:23%;bottom:20.5%" class="pin"></span>
+    <img data-deco class="cv-deco sw-gantung" style="left:3.5%;top:15.5%;width:11.5%;--swd:4.7s" src="assets/undangya/misi-rahasia/badge.webp" alt="">
+    <img data-deco class="cv-deco sw-gantung" style="right:3.5%;top:15.5%;width:11.5%;--swd:3.9s" src="assets/undangya/misi-rahasia/decor-envelope.webp" alt="">
+    <img data-deco class="cv-deco sw-gantung" style="left:2%;top:24.5%;width:10.5%;--swd:5.2s" src="assets/undangya/misi-rahasia/decor-envelope.webp" alt="">
+    <img data-deco class="cv-deco sw-tegak" style="right:2%;top:24%;width:9.5%;--swd:3.6s" src="assets/undangya/misi-rahasia/misi-kaca-pembesar.webp" alt="">
+    <img data-deco class="cv-deco sw-tegak" style="left:1.8%;top:38%;width:7.2%;--swd:4.1s" src="assets/undangya/misi-rahasia/icon-key.webp" alt="">
+    <img data-deco class="cv-deco sw-tegak" style="right:1.8%;top:38%;width:7.2%;--swd:4.8s" src="assets/undangya/misi-rahasia/icon-key.webp" alt="">
+    <img data-deco class="cv-deco sw-gantung" style="left:4%;top:49%;width:11%;--swd:4.5s" src="assets/undangya/misi-rahasia/decor-compass.webp" alt="">
+    <img data-deco class="cv-deco finger" style="right:5.5%;top:48.5%;width:9%" src="assets/undangya/misi-rahasia/misi-sidikjari.webp" alt="">
+    <img data-deco class="cv-deco sw-tegak" style="left:4%;top:57.5%;width:15%;--swd:4.6s" src="assets/undangya/misi-rahasia/misi-kamera.webp" alt="">
+    <img data-deco class="cv-deco sw-tegak" style="right:3%;top:57%;width:11.5%;--swd:3.8s" src="assets/undangya/misi-rahasia/misi-radio.webp" alt="">
+    <img data-deco class="cv-deco sw-tegak" style="left:5.5%;top:66.5%;width:12.5%;--swd:4.2s" src="assets/undangya/misi-rahasia/decor-stamp.webp" alt="">
+    <img data-deco class="cv-deco sw-gantung" style="right:5%;top:71.5%;width:12.5%;--swd:5s" src="assets/undangya/misi-rahasia/decor-compass.webp" alt="">
+    <img data-deco class="cv-deco sw-tegak" style="left:4%;top:73.5%;width:14.5%;--swd:5.3s" src="assets/undangya/misi-rahasia/misi-teropong.webp" alt="">
+    <img data-deco class="cv-deco sw-tegak" style="right:5%;top:74%;width:12%;--swd:4.4s" src="assets/undangya/misi-rahasia/decor-stamp.webp" alt="">
+    <span class="cb-center" data-deco><img class="sw-tegak" style="--swd:4.9s" src="assets/undangya/misi-rahasia/misi-map-berkas.webp" alt=""></span>
+    <img data-deco class="cv-deco sw-tegak" style="left:1.5%;bottom:5.5%;width:12%;--swd:3.3s" src="assets/undangya/misi-rahasia/decor-plant.webp" alt="">
+    <img data-deco class="cv-deco sw-tegak" style="right:1.5%;bottom:5.5%;width:12%;--swd:4s" src="assets/undangya/misi-rahasia/decor-plant.webp" alt="">
+    <span data-deco class="deco-corner" style="left:27%;top:58.5%">ARSIP · <span class="redact">████</span></span>
+    <span data-deco class="deco-corner" style="right:27%;top:58.5%">SALINAN · <span class="redact">██</span></span>
+    <span data-deco class="deco-corner" style="left:24%;top:77%">PRIORITAS · TINGGI</span>
+    <span data-deco class="deco-corner" style="right:24%;top:77%">HAL. 1 / 1</span>
+    <div class="folder-scan" data-deco aria-hidden="true"></div>
+    <div class="flyx fx-a" style="top:26%" data-deco><div class="fy-a"><img class="flyimg fi-a" src="assets/undangya/misi-rahasia/paper-plane.webp" alt=""></div></div>
+    <div class="flyx fx-b" style="top:71%" data-deco><div class="fy-b"><img class="flyimg fi-b" src="assets/undangya/misi-rahasia/paper-plane.webp" alt=""></div></div>
+    <div class="scrap-field" id="scrapCover" aria-hidden="true"></div>
+    <div class="sealwrap" data-deco aria-hidden="true">
+      <div class="seal-half seal-l"><div class="seal-disc"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="#ffd9d2" stroke-width="2"/><path d="M30 16l3.4 7 7.6 1.1-5.5 5.3 1.3 7.6L30 33.4 23.2 37l1.3-7.6L19 24.1 26.6 23z" fill="#ffd9d2"/></svg></div></div>
+      <div class="seal-half seal-r"><div class="seal-disc"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="24" fill="none" stroke="#ffd9d2" stroke-width="2"/><path d="M30 16l3.4 7 7.6 1.1-5.5 5.3 1.3 7.6L30 33.4 23.2 37l1.3-7.6L19 24.1 26.6 23z" fill="#ffd9d2"/></svg></div></div>
+      <div class="seal-shine"></div>
+    </div>
+    <div class="mission-stamp" data-deco aria-hidden="true"><span class="stamp big" style="background:rgba(246,236,212,.92);font-size:19px">MISI DISETUJUI</span></div>
+    <div class="cover-ui">
+      <div class="cover-filetab">BERKAS No. 0612 · DIBUKA UNTUK ANDA</div>
+      <div class="cover-kicker">RAHASIA — HANYA UNTUK TAMU UNDANGAN</div>
+      <h1 class="cover-names">Meyzsa<span class="amp">&amp;</span>Fahrezzi</h1>
+      <div class="cover-mission" data-deco><span class="stamp big stamp-live" style="background:rgba(246,236,212,.85)">MISI: MENIKAH</span></div>
+      <div class="cover-date" data-deco>SABTU · 12 JUNI 2027</div>
+      <div class="cover-spacer"></div>
+      <div class="cover-guest">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+      <div class="gname" id="guestName">Tamu Undangan</div>
+      <button id="btnOpen" type="button">BUKA BERKAS MISI</button>
+      <p style="margin-top:9px;font-family:'Special Elite',monospace;font-size:9.5px;letter-spacing:.18em;color:rgba(255,238,194,.85)">SEGEL AKAN RETAK · MAP AKAN TERBUKA</p>
+    </div>
+  </header>
+
+  <main id="content">
+    <section id="sambutan"><div class="bg-tint"><div class="doc rv rv-drop">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 01 — PEMBUKAAN BERKAS</div><h2 class="doc-title">Pembukaan Berkas</h2><p class="doc-sub">Dengan memohon rahmat Allah SWT</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp doc-stamp rv rv-stamp">RAHASIA</span></div>
+      <div style="text-align:center;padding:0 6px">
+        <img class="finger" src="assets/undangya/misi-rahasia/misi-sidikjari.webp" alt="" style="width:46px;margin:2px auto 10px" loading="lazy">
+        <p style="font-size:17px;line-height:1.75;font-style:italic">“Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”</p>
+        <p style="margin-top:11px;font-family:'Special Elite',monospace;font-size:11.5px;letter-spacing:.22em;color:var(--red-d)">QS. AR-RUM : 21</p>
+        <p style="margin-top:15px;font-size:14px;line-height:1.75;color:var(--ink2)">Setiap agen punya satu misi yang tidak tertulis di berkas mana pun: menemukan rumah untuk pulang. Setelah sekian lama bertugas sendiri, dua agen kami akhirnya menerima misi terpenting dalam hidup mereka — dan Anda termasuk orang terpilih yang mengetahuinya.</p>
+        <p style="margin-top:12px;font-size:11px;color:var(--mut)">Lampiran non-esensial: <span class="redact">████████</span> (coretan redaksi hanya dekorasi)</p>
+      </div>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 10 C30 2 60 12 118 5" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="mempelai"><div class="bg-tint"><div class="doc rv rv-left">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 02 — IDENTITAS AGEN</div><h2 class="doc-title">Dua Agen, Satu Misi</h2><p class="doc-sub">Kartu identitas kedua mempelai</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp doc-stamp rv rv-stamp">TERVERIFIKASI</span></div>
+      <div class="id-card rv rv-left">
+        <div class="id-top"><span>KARTU IDENTITAS AGEN</span><span>NO. M-0612</span></div>
+        <div class="id-body"><img class="id-photo" src="assets/undangya/misi-rahasia/bride.webp" alt="Mempelai wanita, Meyzsa Putri Ananda" loading="lazy"><div class="id-info"><h3>Meyzsa Putri Ananda</h3><div class="gelar">MEYZSA PUTRI ANANDA, S.Pd.</div><span class="codename">AGEN M</span><p>Putri dari<br><b>Bapak H. Muhammad Ridwan</b><br>&amp; <b>Ibu Hj. Siti Aminah</b></p><a class="ig-btn" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a></div></div>
+        <p class="id-status">STATUS: DITUGASKAN SEUMUR HIDUP</p>
+        <svg class="barcode" width="100%" height="34" viewBox="0 0 300 34" preserveAspectRatio="none" aria-hidden="true"><g fill="#241a10"><rect x="2" width="3" height="34"/><rect x="8" width="1.6" height="34"/><rect x="13" width="4" height="34"/><rect x="21" width="2" height="34"/><rect x="27" width="5" height="34"/><rect x="36" width="1.6" height="34"/><rect x="42" width="3" height="34"/><rect x="50" width="2" height="34"/><rect x="57" width="4.4" height="34"/><rect x="66" width="1.6" height="34"/><rect x="72" width="3" height="34"/><rect x="80" width="5" height="34"/><rect x="90" width="2" height="34"/><rect x="97" width="1.6" height="34"/><rect x="103" width="4" height="34"/><rect x="112" width="2.4" height="34"/><rect x="120" width="3" height="34"/><rect x="128" width="1.6" height="34"/><rect x="135" width="5" height="34"/><rect x="145" width="2" height="34"/><rect x="152" width="3.4" height="34"/><rect x="161" width="1.6" height="34"/><rect x="168" width="4" height="34"/><rect x="177" width="2" height="34"/><rect x="184" width="5" height="34"/><rect x="194" width="1.6" height="34"/><rect x="201" width="3" height="34"/><rect x="209" width="2.4" height="34"/><rect x="217" width="4" height="34"/><rect x="226" width="1.6" height="34"/><rect x="233" width="3" height="34"/><rect x="241" width="5" height="34"/><rect x="251" width="2" height="34"/><rect x="258" width="4.4" height="34"/><rect x="268" width="1.6" height="34"/><rect x="275" width="3" height="34"/><rect x="283" width="2" height="34"/><rect x="290" width="4" height="34"/></g></svg>
+      </div>
+      <div class="id-card rv rv-right">
+        <div class="id-top"><span>KARTU IDENTITAS AGEN</span><span>NO. F-0612</span></div>
+        <div class="id-body"><img class="id-photo" src="assets/undangya/misi-rahasia/groom.webp" alt="Mempelai pria, Ahmad Fahrezzi Pratama" loading="lazy"><div class="id-info"><h3>Ahmad Fahrezzi Pratama</h3><div class="gelar">AHMAD FAHREZZI PRATAMA, S.T.</div><span class="codename">AGEN F</span><p>Putra dari<br><b>Bapak H. Bambang Sutrisno</b><br>&amp; <b>Ibu Hj. Ratna Dewi</b></p><a class="ig-btn" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a></div></div>
+        <p class="id-status">STATUS: DITUGASKAN SEUMUR HIDUP</p>
+        <svg class="barcode" width="100%" height="34" viewBox="0 0 300 34" preserveAspectRatio="none" aria-hidden="true"><g fill="#241a10"><rect x="3" width="4" height="34"/><rect x="11" width="2" height="34"/><rect x="17" width="1.6" height="34"/><rect x="23" width="5" height="34"/><rect x="33" width="2.4" height="34"/><rect x="40" width="3" height="34"/><rect x="48" width="1.6" height="34"/><rect x="54" width="4.4" height="34"/><rect x="63" width="2" height="34"/><rect x="70" width="3" height="34"/><rect x="78" width="5" height="34"/><rect x="88" width="1.6" height="34"/><rect x="95" width="4" height="34"/><rect x="104" width="2" height="34"/><rect x="111" width="3.4" height="34"/><rect x="120" width="1.6" height="34"/><rect x="127" width="5" height="34"/><rect x="137" width="2.4" height="34"/><rect x="145" width="3" height="34"/><rect x="153" width="1.6" height="34"/><rect x="160" width="4" height="34"/><rect x="169" width="2" height="34"/><rect x="176" width="5" height="34"/><rect x="186" width="3" height="34"/><rect x="194" width="1.6" height="34"/><rect x="201" width="4.4" height="34"/><rect x="211" width="2" height="34"/><rect x="218" width="3" height="34"/><rect x="226" width="1.6" height="34"/><rect x="233" width="5" height="34"/><rect x="243" width="2.4" height="34"/><rect x="251" width="4" height="34"/><rect x="260" width="1.6" height="34"/><rect x="267" width="3" height="34"/><rect x="275" width="2" height="34"/><rect x="282" width="5" height="34"/><rect x="292" width="3" height="34"/></g></svg>
+      </div>
+      <div class="rv rv-zoom" style="border:5px solid #fff;box-shadow:0 12px 26px rgba(60,40,10,.3);transform:rotate(-.6deg)"><img src="assets/undangya/misi-rahasia/hero.webp" alt="Meyzsa dan Fahrezzi bersama" loading="lazy" style="width:100%;height:300px;object-fit:cover"></div>
+      <p style="text-align:center;font-family:'Special Elite',monospace;font-size:11px;color:var(--mut);margin-top:10px">Foto bersama pertama yang tidak lagi perlu dirahasiakan.</p>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 5 C30 12 60 2 118 10" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="kisah"><div class="bg-tint"><div class="doc rv rv-right">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 03 — LINIMASA OPERASI</div><h2 class="doc-title">Linimasa Operasi</h2><p class="doc-sub">Love story dalam laporan operasi</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp navy doc-stamp rv rv-stamp">ARSIP DIBUKA</span></div>
+      <div class="tl">
+        <div class="tl-item rv rv-left"><span class="tl-pin pin" aria-hidden="true"></span><div class="tl-card"><div class="op"><img src="assets/undangya/misi-rahasia/misi-sidikjari.webp" alt="" width="30" loading="lazy"><div><div class="tl-year">OPERASI 01 · 2019</div><div class="tl-title">Kontak Pertama</div></div></div><p>Sebuah pertemuan tak terencana di kafe kampus. Target awalnya hanya meminjam buku — hasil akhirnya: dua orang yang sulit berhenti mengobrol. Markas mencatat kejadian ini sebagai awal dari segalanya.</p><img class="tl-thumb" style="object-position:50% 28%" src="assets/undangya/misi-rahasia/galeri-2.webp" alt="Pasangan di kafe pada kontak pertama" loading="lazy"></div></div>
+        <div class="tl-item rv rv-right"><span class="tl-pin pin" aria-hidden="true"></span><div class="tl-card"><div class="op"><svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#26324a" stroke-width="2.4"><circle cx="17" cy="17" r="8"/><path d="M23 23l14 14M31 31l5-5M36 36l4-4"/></g></svg><div><div class="tl-year">OPERASI 02 · 2023</div><div class="tl-title">Pengawasan Berubah Sayang</div></div></div><p>Pengawasan jarak dekat berubah arah: semakin sering bertemu, semakin jelas sinyalnya. Kode-kode kecil terbentuk — dan keberanian pertama untuk berkata jujur tentang rasa akhirnya terkirim.</p><img class="tl-thumb" style="object-position:50% 42%" src="assets/undangya/misi-rahasia/galeri-6.webp" alt="Pasangan di perpustakaan lama" loading="lazy"></div></div>
+        <div class="tl-item rv rv-left"><span class="tl-pin pin" aria-hidden="true"></span><div class="tl-card"><div class="op"><svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#26324a" stroke-width="2.4"><rect x="7" y="15" width="34" height="24" rx="2"/><path d="M7 17l17 13 17-13M14 39l8-7M34 39l-8-7"/></g><circle cx="24" cy="11" r="3.4" fill="#a52a24"/></svg><div><div class="tl-year">OPERASI 03 · 2025</div><div class="tl-title">Lamaran Terenkripsi</div></div></div><p>Sebuah pesan tersegel disampaikan di hadapan keluarga: niat serius yang selama ini terenkripsi akhirnya terbuka. Jawabannya jelas — diterima. Dua keluarga resmi bergabung dalam satu jaringan.</p><img class="tl-thumb" style="object-position:50% 32%" src="assets/undangya/misi-rahasia/galeri-5.webp" alt="Pasangan di teras atap saat senja" loading="lazy"></div></div>
+        <div class="tl-item rv rv-right"><span class="tl-pin pin" aria-hidden="true"></span><div class="tl-card"><div class="op"><svg width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#26324a" stroke-width="2.4"><circle cx="19" cy="29" r="10"/><circle cx="30" cy="29" r="10"/><path d="M24 8l-4 6h8z" fill="#c9a45c" stroke="#c9a45c"/></g></svg><div><div class="tl-year">OPERASI FINAL · 2027</div><div class="tl-title">Menikah</div></div></div><p>Sabtu, 12 Juni 2027 — semua persiapan dinyatakan selesai. Tinggal satu langkah terakhir: mengucapkan akad, lalu menjalani misi seumur hidup bersama. Mohon doa restu dari seluruh jaringan.</p><img class="tl-thumb" style="object-position:50% 30%" src="assets/undangya/misi-rahasia/hero.webp" alt="Pasangan menjelang hari bahagia" loading="lazy"></div></div>
+      </div>
+      <p class="demo-note note-panel rv rv-up">Linimasa &amp; teks kisah di atas adalah contoh untuk tampilan tema.</p>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 10 C30 2 60 12 118 5" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+    <section id="acara"><div class="bg-tint"><div class="doc rv rv-pop">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 04 — TARGET WAKTU &amp; BRIEFING</div><h2 class="doc-title">Briefing Misi</h2><p class="doc-sub">Jam misi, waktu eksekusi &amp; titik temu</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp doc-stamp rv rv-stamp">PRIORITAS</span></div>
+      <div class="mission-clock rv rv-zoom" id="countdown" data-target="2027-06-12T08:00:00+07:00" aria-label="Hitung mundur misi menuju akad nikah">
+        <div class="reticle" aria-hidden="true"><svg viewBox="0 0 200 200"><g fill="none" stroke="#eed9a4" stroke-width="1.6"><circle cx="100" cy="100" r="88"/><circle cx="100" cy="100" r="58"/><path d="M100 2v34M100 164v34M2 100h34M164 100h34"/><circle cx="100" cy="100" r="4" fill="#eed9a4"/></g></svg></div>
+        <span class="rec" aria-hidden="true"><i></i>REC ●</span>
+        <div class="tminus">T-MINUS</div>
+        <div class="cd-row"><div class="cd-box"><b id="cdD">0</b><span>HARI</span></div><div class="cd-box"><b id="cdH">0</b><span>JAM</span></div><div class="cd-box"><b id="cdM">0</b><span>MENIT</span></div><div class="cd-box"><b id="cdS">0</b><span>DETIK</span></div></div>
+        <p style="position:relative;margin-top:12px;font-family:'Special Elite',monospace;font-size:10.5px;letter-spacing:.2em;color:#cbb27a">SABTU, 12 JUNI 2027 — JAKARTA</p>
+      </div>
+      <div class="card event rv rv-flip">
+        <span class="kicker-chip">WAKTU EKSEKUSI · 01</span><h3>Akad Nikah</h3>
+        <div class="when">Sabtu, 12 Juni 2027 · 08.00 – 10.00 WIB</div>
+        <p><b>Masjid Agung Al-Azhar</b><br>Jakarta Selatan<br><span style="font-size:12.5px">Titik temu: gerbang utama masjid</span></p>
+        <div style="margin-top:10px"><span class="stamp rv rv-stamp">DISETUJUI</span></div><br>
+        <a class="btn" href="https://maps.google.com/?q=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener">LIHAT LOKASI</a>
+        <a class="btn btn-alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Akad+Nikah+Meyzsa+%26+Fahrezzi&amp;dates=20270612T010000Z%2F20270612T030000Z&amp;details=Akad+Nikah+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=Masjid+Agung+Al-Azhar%2C+Kebayoran+Baru%2C+Jakarta+Selatan" target="_blank" rel="noopener">SIMPAN KE KALENDER</a>
+        <button class="btn btn-alt" type="button" data-ics data-file="akad-meyzsa-fahrezzi" data-title="Akad Nikah Meyzsa &amp; Fahrezzi" data-start="20270612T010000Z" data-end="20270612T030000Z" data-loc="Masjid Agung Al-Azhar, Kebayoran Baru, Jakarta Selatan" data-desc="Akad Nikah Meyzsa Putri Ananda &amp; Ahmad Fahrezzi Pratama">UNDUH .ICS</button>
+      </div>
+      <div class="card event rv rv-flip">
+        <span class="kicker-chip">WAKTU EKSEKUSI · 02</span><h3>Resepsi</h3>
+        <div class="when">Sabtu, 12 Juni 2027 · 11.00 – 13.00 WIB</div>
+        <p><b>The Ritz-Carlton Jakarta, Pacific Place</b><br>Jakarta Selatan<br><span style="font-size:12.5px">Titik temu: lobi utama hotel</span></p>
+        <div style="margin-top:10px"><span class="stamp rv rv-stamp">DISETUJUI</span></div><br>
+        <a class="btn" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">LIHAT LOKASI</a>
+        <a class="btn btn-alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi+Meyzsa+%26+Fahrezzi&amp;dates=20270612T040000Z%2F20270612T060000Z&amp;details=Resepsi+Pernikahan+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=The+Ritz-Carlton+Jakarta%2C+Pacific+Place%2C+Jakarta+Selatan" target="_blank" rel="noopener">SIMPAN KE KALENDER</a>
+        <button class="btn btn-alt" type="button" data-ics data-file="resepsi-meyzsa-fahrezzi" data-title="Resepsi Meyzsa &amp; Fahrezzi" data-start="20270612T040000Z" data-end="20270612T060000Z" data-loc="The Ritz-Carlton Jakarta, Pacific Place, Jakarta Selatan" data-desc="Resepsi Pernikahan Meyzsa Putri Ananda &amp; Ahmad Fahrezzi Pratama">UNDUH .ICS</button>
+      </div>
+      <div class="card rv rv-drop" style="margin-top:22px;text-align:center">
+        <h3 class="sub-h" style="margin-top:0">Dresscode Agen Tamu</h3><p class="sub-sub">Penyamaran elegan yang disarankan markas</p>
+        <div class="dc-chips"><span class="dc-chip"><span class="dc-dot" style="background:#5E1224"></span>Burgundy Marun</span><span class="dc-chip"><span class="dc-dot" style="background:#26324A"></span>Biru Markas</span><span class="dc-chip"><span class="dc-dot" style="background:#A97F46"></span>Cokelat Kraft</span><span class="dc-chip"><span class="dc-dot" style="background:#C9A45C"></span>Emas Antik</span><span class="dc-chip"><span class="dc-dot" style="background:#3E4A3A"></span>Hijau Zaitun</span><span class="dc-chip"><span class="dc-dot" style="background:#EFE0BD"></span>Krem Berkas</span></div>
+        <p style="font-size:12.5px;line-height:1.65;margin-top:13px;color:var(--ink2)">Panduan contoh: busana formal atau semi-formal dengan nuansa di atas. Mohon berkenan tidak memakai putih polos — warna khusus mempelai di hari pelaksanaan misi.</p>
+      </div>
+      <h3 class="sub-h rv rv-up">Denah &amp; Info Lokasi</h3><p class="sub-sub rv rv-up">Titik temu terverifikasi (contoh)</p>
+      <div class="card info-card rv rv-left"><h4>Titik Temu 01 — Masjid Agung Al-Azhar</h4><p>Jl. Sisingamangaraja No. 1, Kebayoran Baru, Jakarta Selatan.</p><p>Patokan: kompleks Al-Azhar di sisi jalan utama Sisingamangaraja. Area parkir tersedia di sekitar kompleks; agen tamu disarankan tiba ±30 menit sebelum misi dimulai.</p><div class="btn-row"><a class="btn" href="https://maps.google.com/?q=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener">BUKA PETA MISI</a></div>
+      <button class="salin-btn" type="button" data-copytext="Masjid Agung Al-Azhar, Jl. Sisingamangaraja No. 1, Kebayoran Baru, Jakarta Selatan">SALIN ALAMAT</button></div>
+      <div class="card info-card rv rv-right"><h4>Titik Temu 02 — The Ritz-Carlton Jakarta, Pacific Place</h4><p>Jl. Jend. Sudirman Kav. 52–53, SCBD, Senayan, Jakarta Selatan.</p><p>Patokan: kawasan SCBD, terhubung dengan Pacific Place Mall; masuk melalui lobi utama hotel. Agen tamu disarankan tiba ±30 menit lebih awal.</p><div class="btn-row"><a class="btn" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">BUKA PETA MISI</a></div>
+      <button class="salin-btn" type="button" data-copytext="The Ritz-Carlton Jakarta, Pacific Place, Jl. Jend. Sudirman Kav. 52-53, SCBD, Senayan, Jakarta Selatan">SALIN ALAMAT</button></div>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 5 C30 12 60 2 118 10" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="galeri"><div class="bg-tint"><div class="doc rv rv-zoom" style="background:linear-gradient(180deg,rgba(251,244,223,.97),rgba(246,236,212,.95))">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 05 — PAPAN BUKTI</div><h2 class="doc-title">Papan Bukti</h2><p class="doc-sub">Geser papan gabus — ketuk foto untuk memperbesar</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp doc-stamp rv rv-stamp">BUKTI SAH</span></div>
+      <div class="board">
+        <div class="board-head"><span>PAPAN BUKTI · KASUS 0612</span><span>8 FOTO</span></div>
+        <svg class="string-svg string-sway" viewBox="0 0 400 44" preserveAspectRatio="none" aria-hidden="true"><path d="M-10 8 C60 34 120 4 200 22 C280 40 340 8 410 20" fill="none" stroke="#c22f26" stroke-width="2.6"/></svg>
+        <div class="gal-rail" id="galRail">
+          <figure class="gal-slide"><div class="ev-card"><span class="ev-pin pin"></span><img src="assets/undangya/misi-rahasia/galeri-1.webp" alt="Pasangan berjalan di lobi hotel" loading="lazy"><div class="ev-label"><span>BUKTI A-01</span><span>TERVERIFIKASI</span></div><figcaption class="ev-note">Penyamaran di lobi hotel — saling menatap.</figcaption></div></figure>
+          <figure class="gal-slide"><div class="ev-card"><span class="ev-pin pin"></span><img src="assets/undangya/misi-rahasia/galeri-2.webp" alt="Pasangan berbincang di kafe" loading="lazy"><div class="ev-label"><span>BUKTI A-02</span><span>TERVERIFIKASI</span></div><figcaption class="ev-note">Rapat rahasia di kafe — kontak pertama.</figcaption></div></figure>
+          <figure class="gal-slide"><div class="ev-card"><span class="ev-pin pin"></span><img src="assets/undangya/misi-rahasia/galeri-3.webp" alt="Pasangan di samping mobil klasik" loading="lazy"><div class="ev-label"><span>BUKTI A-03</span><span>TERVERIFIKASI</span></div><figcaption class="ev-note">Kendaraan operasi klasik, malam kota.</figcaption></div></figure>
+          <figure class="gal-slide"><div class="ev-card"><span class="ev-pin pin"></span><img src="assets/undangya/misi-rahasia/galeri-4.webp" alt="Pasangan berdansa di ballroom" loading="lazy"><div class="ev-label"><span>BUKTI A-04</span><span>TERVERIFIKASI</span></div><figcaption class="ev-note">Dansa di ballroom — tanpa langkah salah.</figcaption></div></figure>
+          <figure class="gal-slide"><div class="ev-card"><span class="ev-pin pin"></span><img src="assets/undangya/misi-rahasia/galeri-5.webp" alt="Pasangan di teras atap senja" loading="lazy"><div class="ev-label"><span>BUKTI A-05</span><span>TERVERIFIKASI</span></div><figcaption class="ev-note">Pengintaian senja berubah pengakuan.</figcaption></div></figure>
+          <figure class="gal-slide"><div class="ev-card"><span class="ev-pin pin"></span><img src="assets/undangya/misi-rahasia/galeri-6.webp" alt="Pasangan di perpustakaan tua" loading="lazy"><div class="ev-label"><span>BUKTI A-06</span><span>TERVERIFIKASI</span></div><figcaption class="ev-note">Arsip perpustakaan — catatan di margin.</figcaption></div></figure>
+          <figure class="gal-slide"><div class="ev-card"><span class="ev-pin pin"></span><img src="assets/undangya/misi-rahasia/galeri-7.webp" alt="Pasangan di bawah satu payung" loading="lazy"><div class="ev-label"><span>BUKTI A-07</span><span>TERVERIFIKASI</span></div><figcaption class="ev-note">Satu payung, dua agen, hujan malam.</figcaption></div></figure>
+          <figure class="gal-slide"><div class="ev-card"><span class="ev-pin pin"></span><img src="assets/undangya/misi-rahasia/galeri-8.webp" alt="Pasangan di peron stasiun" loading="lazy"><div class="ev-label"><span>BUKTI A-08</span><span>TERVERIFIKASI</span></div><figcaption class="ev-note">Peron keberangkatan menuju selamanya.</figcaption></div></figure>
+        </div>
+        <div class="gal-nav"><div class="gal-dots" id="galDots" aria-hidden="true"></div><span class="gal-count" id="galCount">BERKAS 1 / 8</span></div>
+      </div>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 10 C30 2 60 12 118 5" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="cuplikan"><div class="bg-tint"><div class="doc rv rv-clip">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 06 — REKAMAN PENGAWASAN</div><h2 class="doc-title">Cuplikan Misi</h2><p class="doc-sub">Rekaman singkat yang berhasil diamankan</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp navy doc-stamp rv rv-stamp">PUTAR</span></div>
+      <div style="border:2px solid var(--kraft-d);border-radius:8px;padding:6px;background:linear-gradient(160deg,#fdf6e0,#eedcae);box-shadow:0 14px 30px rgba(80,58,20,.26)">
+        <div class="vid-wrap" id="vidWrap"><div class="vid-stage"><video id="teaserVideo" src="assets/undangya/misi-rahasia/teaser.mp4" poster="assets/undangya/misi-rahasia/teaser-poster.webp" preload="none" playsinline controls aria-label="Video teaser Meyzsa dan Fahrezzi"></video><button class="vid-btn" id="vidBtn" type="button" aria-label="Putar atau jeda video teaser">▶</button></div></div>
+      </div>
+      <p class="demo-note note-panel rv rv-up">Video teaser — contoh (dirender dari foto pasangan tema ini; pada undangan asli dapat diganti video prewedding mempelai).</p>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 5 C30 12 60 2 118 10" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="live"><div class="bg-tint"><div class="doc rv rv-up">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 07 — SALURAN AMAN</div><h2 class="doc-title">Siaran Langsung Misi</h2><p class="doc-sub">Untuk keluarga &amp; sahabat yang berhalangan hadir</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp doc-stamp rv rv-stamp">LIVE</span></div>
+      <div class="card" style="text-align:center">
+        <span class="live-badge"><span class="live-dot" aria-hidden="true"></span>LIVE · CONTOH</span>
+        <h3 class="sub-h">Resepsi Pernikahan</h3>
+        <p style="font-size:13.5px;line-height:1.7;color:var(--ink2)"><b>Sabtu, 12 Juni 2027 · mulai 11.00 WIB</b><br>The Ritz-Carlton Jakarta, Pacific Place</p>
+        <a class="btn" href="#" onclick="return false" aria-disabled="true">▶ TONTON LIVE</a>
+        <p class="demo-note">Tautan contoh (demo) — pada undangan asli, tombol ini mengarah ke siaran langsung mempelai dan aktif menjelang acara.</p>
+        <div class="tag-big" style="margin-top:16px">#MeyzsaFahrezzi</div>
+        <p style="font-size:12.5px;line-height:1.65;margin-top:4px;color:var(--ink2)">Abadikan momen bahagia Anda dan tandai dengan tagar resmi misi kami.</p>
+        <button class="salin-btn" type="button" data-copytext="#MeyzsaFahrezzi">SALIN TAGAR</button>
+      </div>
+      <div class="card rv rv-pop" style="text-align:center;margin-top:16px">
+        <div><span class="kicker-chip">GALERI TAMU</span></div><h3 class="sub-h">Laporan Lapangan Tamu</h3>
+        <p style="font-size:13px;line-height:1.7;color:var(--ink2)">Bagikan momen bahagia Anda selama acara — unggah foto Anda di sini dan tandai juga dengan tagar <b>#MeyzsaFahrezzi</b>.</p>
+        <label class="salin-btn" for="gtInput">＋ UNGGAH FOTO</label>
+        <input id="gtInput" type="file" accept="image/*" multiple hidden>
+        <div class="gt-grid" id="gtGrid" aria-live="polite"></div>
+        <p class="gt-empty" id="gtEmpty">Jadilah agen pertama yang melapor — ketuk tombol unggah.</p>
+        <p class="demo-note">Contoh — foto tersimpan di perangkat ini saja (penyimpanan lokal peramban), tidak diunggah ke server.</p>
+      </div>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 10 C30 2 60 12 118 5" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="rsvp"><div class="bg-tint"><div class="doc rv rv-flip">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 08 — KONFIRMASI AGEN</div><h2 class="doc-title">Konfirmasi Agen</h2><p class="doc-sub">RSVP &amp; ucapan di saluran aman</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp doc-stamp rv rv-stamp">SALURAN AMAN</span></div>
+      <form id="rsvpForm" novalidate>
+        <div class="field"><label for="rsvpName">NAMA AGEN TAMU</label><input id="rsvpName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
+        <div class="field"><label for="rsvpAttend">KONFIRMASI KEHADIRAN</label><select id="rsvpAttend"><option value="Siap Hadir">Siap hadir, insya Allah</option><option value="Berhalangan">Berhalangan hadir</option><option value="Masih Ragu">Masih ragu</option></select></div>
+        <div class="field"><label for="rsvpMsg">PESAN TERENKRIPSI (DOA &amp; UCAPAN)</label><textarea id="rsvpMsg" placeholder="Tuliskan doa untuk kedua mempelai..."></textarea></div>
+        <button class="btn" type="submit" style="width:100%">KIRIM KONFIRMASI</button>
+      </form>
+      <div id="rsvpStamp" aria-live="polite"><span class="stamp big">KONFIRMASI DITERIMA</span></div>
+      <p class="demo-note">Fitur demo pada contoh undangan ini — laporan tersimpan hanya di perangkat Anda dan tidak terkirim ke server.</p>
+      <div style="text-align:center;margin-top:14px"><span class="kicker-chip">DINDING UCAPAN</span></div>
+      <div class="gb-list" id="guestbookList" aria-live="polite"></div>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 5 C30 12 60 2 118 10" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="bukutamu"><div class="bg-tint"><div class="doc rv rv-zoom">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 09 — BUKU TAMU &amp; QR</div><h2 class="doc-title">Check-In di Pos Jaga</h2><p class="doc-sub">Pindai QR atau isi buku tamu saat tiba</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp navy doc-stamp rv rv-stamp">POS JAGA</span></div>
+      <div style="text-align:center">
+        <div class="qr-box"><img src="assets/undangya/misi-rahasia/qr-undangan.webp" alt="Kode QR menuju halaman undangan ini" loading="lazy"></div>
+        <p style="font-size:12.5px;line-height:1.65;color:var(--ink2);margin-top:10px">Kode QR membuka halaman undangan ini — tunjukkan kepada penerima tamu saat check-in.</p>
+      </div>
+      <form id="ciForm" novalidate style="margin-top:18px">
+        <div class="field"><label for="ciName">NAMA AGEN TAMU</label><input id="ciName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
+        <div class="field"><label for="ciSesi">SESI KEHADIRAN</label><select id="ciSesi"><option value="Akad Nikah">Akad Nikah</option><option value="Resepsi">Resepsi</option></select></div>
+        <button class="btn" type="submit" style="width:100%">CHECK-IN (DEMO)</button>
+      </form>
+      <p class="demo-note">Fitur demo — data check-in tersimpan hanya di perangkat Anda.</p>
+      <div class="gb-list" id="ciList" aria-live="polite"></div>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 10 C30 2 60 12 118 5" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="amplop"><div class="bg-tint"><div class="doc rv rv-left">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 10 — PAKET TANDA KASIH</div><h2 class="doc-title">Tanda Kasih</h2><p class="doc-sub">Doa restu adalah hadiah terindah; bagi yang berkenan:</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp doc-stamp rv rv-stamp">PAKET AMAN</span></div>
+      <div class="card acc-card rv rv-left"><div class="bank">BCA</div><div class="acc-num" id="accBca">1234567890</div><div class="acc-name">a.n. Meyzsa Putri Ananda</div><button class="copy-btn" type="button" data-copy="accBca">SALIN NOMOR</button></div>
+      <div class="card acc-card rv rv-right"><div class="bank">DANA</div><div class="acc-num" id="accDana">0812-3456-7890</div><div class="acc-name">a.n. Meyzsa Putri Ananda</div><button class="copy-btn" type="button" data-copy="accDana">SALIN NOMOR</button></div>
+      <p class="demo-note note-panel rv rv-up">Nomor di atas adalah contoh untuk keperluan demo tampilan undangan.</p>
+      <div class="card acc-card rv rv-drop" style="margin-top:18px"><div class="bank" style="font-size:15px">KIRIM KADO FISIK</div><p style="font-size:13.5px;line-height:1.75;margin-top:8px;color:var(--ink2)">Kediaman Mempelai Wanita<br>Jl. Melati Indah No. 12, Kebayoran Baru,<br>Jakarta Selatan 12120 <span style="opacity:.65">(alamat contoh)</span></p><button class="salin-btn" type="button" data-copytext="Kediaman Mempelai Wanita — Jl. Melati Indah No. 12, Kebayoran Baru, Jakarta Selatan 12120 (alamat contoh)">SALIN ALAMAT</button></div>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 5 C30 12 60 2 118 10" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="turut"><div class="bg-tint"><div class="doc rv rv-up">
+      <div class="doc-head"><span class="clip" aria-hidden="true"></span><div class="doc-meta"><div class="doc-no">DOK. 11 — TURUT MENGUNDANG</div><h2 class="doc-title">Jaringan Keluarga Besar</h2><p class="doc-sub">Segenap keluarga besar kedua mempelai</p></div><div class="doc-holes"><span class="hole"></span><span class="hole"></span></div><span class="stamp navy doc-stamp rv rv-stamp">JARINGAN</span></div>
+      <div class="card turut-card rv rv-left"><h4>Keluarga Mempelai Wanita</h4><p>Keluarga Besar Ridwan — Jakarta<br>Keluarga Besar Aminah — Bogor<br>Beserta segenap kerabat &amp; handai tolan</p></div>
+      <div class="card turut-card rv rv-right"><h4>Keluarga Mempelai Pria</h4><p>Keluarga Besar Sutrisno — Jakarta<br>Keluarga Besar Dewi — Tangerang<br>Beserta segenap kerabat &amp; handai tolan</p></div>
+      <p class="demo-note note-panel rv rv-up">Susunan keluarga di atas adalah contoh untuk tampilan tema.</p>
+    </div></div></section>
+    <div class="perf" aria-hidden="true"><span class="line"></span><svg class="str" width="120" height="14" viewBox="0 0 120 14"><path d="M2 10 C30 2 60 12 118 5" fill="none" stroke="#a52a24" stroke-width="2.4"/></svg><span class="line"></span></div>
+
+    <section id="penutup" style="text-align:center"><div class="bg-tint"><div class="doc rv rv-zoom" style="padding-top:22px;text-align:center">
+      <img src="assets/undangya/misi-rahasia/badge.webp" alt="" style="width:72px;height:72px;margin:0 auto" loading="lazy">
+      <p style="font-size:14.5px;line-height:1.8;color:var(--ink2);max-width:320px;margin:12px auto 0">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai.</p>
+      <div style="margin-top:18px"><span class="stamp big rv rv-stamp">MISI SELESAI · TERIMA KASIH</span></div>
+      <p style="margin-top:18px;font-family:'Special Elite',monospace;font-size:11px;letter-spacing:.3em;color:var(--red-d)">KAMI YANG BERBAHAGIA</p>
+      <div class="penutup-names" style="margin-top:6px">Meyzsa &amp; Fahrezzi</div>
+      <p style="margin-top:12px;font-style:italic;font-size:15.5px;color:var(--mut)">Berkas ini akan tetap terbuka — sebagai awal kisah seumur hidup kami.</p>
+      <p style="margin-top:10px;font-size:11px;color:var(--mut)">Dokumen penutup · Berkas No. 0612 · <span class="redact">████</span> arsip keluarga</p>
+    </div></div></section>
+    <p class="foot-note">Undangan digital contoh “Misi Rahasia” oleh UndangYa! — seluruh nama, tanggal, dan nomor adalah data contoh; seluruh istilah &amp; lencana adalah rancangan generik original tema ini.<br>Musik latar: “Petals on the Stone Floor”.</p>
+  </main>
+</div>
+<button id="btnMusic" type="button" aria-label="Putar atau hentikan musik latar"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18.5V6l10-2v11.5" stroke="#eed9a4" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.8" cy="18.5" r="2.6" fill="#eed9a4"/><circle cx="16.8" cy="15.5" r="2.6" fill="#eed9a4"/></svg></button>
+<div id="lightbox" role="dialog" aria-label="Foto galeri diperbesar"><img id="lbImg" src="" alt="Foto galeri diperbesar"></div>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+<script>
+(function(){var b=document.getElementById("btnOpen");if(b)b.addEventListener("click",function(){document.body.classList.add("ritual");},{once:true});
+var f=document.getElementById("rsvpForm");if(f)f.addEventListener("submit",function(){var s=document.getElementById("rsvpStamp");if(s){s.classList.remove("on");void s.offsetWidth;s.classList.add("on");}});
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+  var params=new URLSearchParams(window.location.search);
+  var guest=(params.get("to")||"").trim();
+  if(guest){document.getElementById("guestName").textContent=guest;}
+  var reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* --- sobekan berkas melayang CSS (kompositor murni, TANPA rAF/canvas) --- */
+  var SCRAPIMG="assets/undangya/misi-rahasia/paper-scrap.webp";
+  function makeScraps(field,count){
+    if(reduced||!field)return;
+    for(var i=0;i<count;i++){
+      var img=document.createElement("img");
+      img.className="scrap"; img.src=SCRAPIMG; img.alt="";
+      var dur=15+Math.random()*13, drop=24+Math.random()*58, bob=8+Math.random()*11;
+      img.style.width=(15+Math.random()*13).toFixed(0)+"px";
+      img.style.setProperty("--pt",(4+Math.random()*58).toFixed(1)+"%");
+      img.style.setProperty("--pd",dur.toFixed(1)+"s");
+      img.style.setProperty("--pdl",(-Math.random()*dur).toFixed(1)+"s");
+      img.style.setProperty("--y25",(drop*.25+bob).toFixed(0)+"px");
+      img.style.setProperty("--y50",(drop*.5-bob*.4).toFixed(0)+"px");
+      img.style.setProperty("--y75",(drop*.75+bob).toFixed(0)+"px");
+      img.style.setProperty("--ye",drop.toFixed(0)+"px");
+      field.appendChild(img);
+    }
+  }
+  makeScraps(document.getElementById("scrapCover"),14);
+
+  /* --- debu kertas mengambang di tiap section (elemen CSS, dibuat sekali) --- */
+  if(!reduced){
+    document.querySelectorAll("section").forEach(function(sec){
+      for(var i=0;i<3;i++){
+        var d=document.createElement("span"); d.className="paper-dust";
+        var sz=(6+Math.random()*8).toFixed(0);
+        d.style.cssText="left:"+(6+Math.random()*86).toFixed(1)+"%;bottom:"+(4+Math.random()*22).toFixed(1)+"%;width:"+sz+"px;height:"+sz+"px";
+        d.style.setProperty("--dd",(9+Math.random()*7).toFixed(1)+"s");
+        d.style.setProperty("--ddl",(-Math.random()*12).toFixed(1)+"s");
+        sec.appendChild(d);
+      }
+    });
+  }
+
+  /* --- buka undangan --- */
+  var audio=document.getElementById("bgmShared"), btnMusic=document.getElementById("btnMusic"), opened=false;
+  function tryPlay(){var pr=audio.play(); if(pr&&pr.catch)pr.catch(function(){}); btnMusic.classList.add("playing");}
+  document.getElementById("btnOpen").addEventListener("click",function(){
+    if(opened)return; opened=true;
+    document.body.classList.add("opening"); tryPlay();
+    setTimeout(function(){
+      document.body.classList.remove("opening"); document.body.classList.add("opened");
+      document.getElementById("cover").style.display="none";
+      window.scrollTo(0,0); initReveal();
+    }, reduced?60:1120);
+  });
+  btnMusic.addEventListener("click",function(){
+    if(audio.paused){tryPlay();}else{audio.pause();btnMusic.classList.remove("playing");}
+  });
+
+  /* --- countdown misi --- */
+  var target=new Date("2027-06-12T08:00:00+07:00").getTime();
+  var els={d:document.getElementById("cdD"),h:document.getElementById("cdH"),m:document.getElementById("cdM"),s:document.getElementById("cdS")};
+  function setNum(el,v){if(el.textContent!==String(v)){el.textContent=v;el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop");}}
+  function cd(){
+    var diff=Math.max(0,target-Date.now()), d=Math.floor(diff/864e5), h=Math.floor(diff/36e5)%24, m=Math.floor(diff/6e4)%60, s=Math.floor(diff/1e3)%60;
+    setNum(els.d,d);setNum(els.h,String(h).padStart(2,"0"));setNum(els.m,String(m).padStart(2,"0"));setNum(els.s,String(s).padStart(2,"0"));
+  }
+  cd(); setInterval(cd,1000);
+
+  /* --- reveal --- */
+  var io=null;
+  function initReveal(){
+    var items=document.querySelectorAll(".rv");
+    if(!("IntersectionObserver" in window)||reduced){items.forEach(function(e){e.classList.add("in")});return;}
+    io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.13});
+    items.forEach(function(e){io.observe(e);});
+    /* rv-clip: clip-path membuat IO membaca irisan 0 untuk elemen & anaknya —
+       amati pembungkus section-nya, buka clip saat pembungkus terlihat. */
+    var clips=document.querySelectorAll(".rv-clip");
+    if(clips.length){
+      var io2=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){var c=en.target.querySelector(".rv-clip");if(c)c.classList.add("in");io2.unobserve(en.target);}});},{threshold:.05});
+      clips.forEach(function(c){if(c.parentElement)io2.observe(c.parentElement);});
+    }
+  }
+
+  /* --- galeri rel geser: indikator titik + hitungan berkas + lightbox --- */
+  var rail=document.getElementById("galRail"), dotsBox=document.getElementById("galDots"), countEl=document.getElementById("galCount");
+  var slides=rail?Array.prototype.slice.call(rail.querySelectorAll(".gal-slide")):[];
+  slides.forEach(function(){var i=document.createElement("i");dotsBox.appendChild(i);});
+  var dots=dotsBox?Array.prototype.slice.call(dotsBox.children):[];
+  function galSync(){
+    if(!rail||!slides.length)return;
+    var idx=Math.round(rail.scrollLeft/(slides[0].offsetWidth+14));
+    idx=Math.max(0,Math.min(slides.length-1,idx));
+    dots.forEach(function(d,i){d.classList.toggle("on",i===idx);});
+    if(countEl)countEl.textContent="BERKAS "+(idx+1)+" / "+slides.length;
+  }
+  if(rail){rail.addEventListener("scroll",function(){window.requestAnimationFrame(galSync);},{passive:true}); galSync();}
+  var lb=document.getElementById("lightbox"), lbImg=document.getElementById("lbImg");
+  if(rail)rail.addEventListener("click",function(e){
+    var img=e.target.closest("img"); if(!img)return;
+    lbImg.src=img.src; lb.classList.add("on");
+  });
+  lb.addEventListener("click",function(){lb.classList.remove("on");lbImg.src="";});
+
+  /* --- salin --- */
+  function bindCopy(sel,getter){
+    document.querySelectorAll(sel).forEach(function(b){
+      b.addEventListener("click",function(){
+        var txt=getter(b);
+        function done(){var o=b.textContent;b.textContent="TERSALIN ✓";setTimeout(function(){b.textContent=o;},1600);}
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(done);}else{done();}
+      });
+    });
+  }
+  bindCopy(".copy-btn",function(b){return document.getElementById(b.getAttribute("data-copy")).textContent.trim();});
+  bindCopy("[data-copytext]",function(b){return b.getAttribute("data-copytext");});
+
+  /* --- .ics --- */
+  function icsEsc(s){return String(s).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n");}
+  document.querySelectorAll("[data-ics]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var pad=function(n){return String(n).padStart(2,"0");}, now=new Date();
+      var stamp=now.getUTCFullYear()+pad(now.getUTCMonth()+1)+pad(now.getUTCDate())+"T"+pad(now.getUTCHours())+pad(now.getUTCMinutes())+pad(now.getUTCSeconds())+"Z";
+      var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//UndangYa//MisiRahasia//ID","BEGIN:VEVENT",
+        "UID:"+Date.now()+"@undangya.web.id","DTSTAMP:"+stamp,
+        "DTSTART:"+b.getAttribute("data-start"),"DTEND:"+b.getAttribute("data-end"),
+        "SUMMARY:"+icsEsc(b.getAttribute("data-title")||""),
+        "LOCATION:"+icsEsc(b.getAttribute("data-loc")||""),
+        "DESCRIPTION:"+icsEsc(b.getAttribute("data-desc")||""),
+        "END:VEVENT","END:VCALENDAR"].join("\r\n");
+      var blob=new Blob([ics],{type:"text/calendar"}), u=URL.createObjectURL(blob);
+      var a=document.createElement("a"); a.href=u; a.download=(b.getAttribute("data-file")||"acara")+".ics";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){URL.revokeObjectURL(u);},4000);
+    });
+  });
+
+  /* --- video teaser --- */
+  (function(){
+    var wrap=document.getElementById("vidWrap"); if(!wrap)return;
+    var v=document.getElementById("teaserVideo"), btn=document.getElementById("vidBtn");
+    if(!v||!btn)return;
+    function sync(){var playing=!v.paused&&!v.ended; wrap.classList.toggle("playing",playing); btn.textContent=playing?"❚❚":"▶";}
+    btn.addEventListener("click",function(){ if(v.paused||v.ended){v.play();}else{v.pause();} });
+    v.addEventListener("play",sync); v.addEventListener("pause",sync); v.addEventListener("ended",sync); sync();
+    if("IntersectionObserver" in window){ new IntersectionObserver(function(es){es.forEach(function(en){ if(!en.isIntersecting&&!v.paused){v.pause();} });},{threshold:.15}).observe(v); }
+  })();
+
+  /* --- galeri tamu (localStorage) --- */
+  var GTKEY="misi-rahasia-galeri-tamu-v1", gtGrid=document.getElementById("gtGrid"), gtEmpty=document.getElementById("gtEmpty"), gtInput=document.getElementById("gtInput");
+  function gtLoad(){try{var v=JSON.parse(localStorage.getItem(GTKEY));if(Array.isArray(v))return v;}catch(e){} return [];}
+  function gtSave(items){try{localStorage.setItem(GTKEY,JSON.stringify(items));return true;}catch(e){return false;}}
+  function gtRender(items){ if(!gtGrid)return; gtGrid.innerHTML="";
+    items.forEach(function(src,i){ var d=document.createElement("div");d.className="gt-item";
+      var im=document.createElement("img");im.src=src;im.alt="Foto galeri tamu "+(i+1);im.loading="lazy";
+      var b=document.createElement("button");b.className="gt-del";b.type="button";b.setAttribute("data-i",i);b.setAttribute("aria-label","Hapus foto");b.textContent="×";
+      d.appendChild(im);d.appendChild(b);gtGrid.appendChild(d);});
+    if(gtEmpty)gtEmpty.style.display=items.length?"none":""; }
+  var gtItems=gtLoad(); gtRender(gtItems);
+  if(gtGrid)gtGrid.addEventListener("click",function(e){ var b=e.target.closest(".gt-del"); if(!b)return;
+    gtItems.splice(parseInt(b.getAttribute("data-i"),10),1); gtSave(gtItems); gtRender(gtItems); });
+  if(gtInput)gtInput.addEventListener("change",function(){
+    var files=Array.prototype.slice.call(gtInput.files||[]).filter(function(f){return f.type.indexOf("image/")===0;});
+    if(!files.length)return;
+    var pending=files.length;
+    function done(){ if(--pending===0){ gtRender(gtItems); gtInput.value=""; } }
+    files.forEach(function(f){
+      var url=URL.createObjectURL(f), img=new Image();
+      img.onload=function(){ URL.revokeObjectURL(url);
+        var max=900, sc=Math.min(1,max/Math.max(img.naturalWidth||max,img.naturalHeight||max));
+        var cv=document.createElement("canvas");
+        cv.width=Math.max(1,Math.round(img.naturalWidth*sc)); cv.height=Math.max(1,Math.round(img.naturalHeight*sc));
+        cv.getContext("2d").drawImage(img,0,0,cv.width,cv.height);
+        gtItems.unshift(cv.toDataURL("image/jpeg",0.82));
+        if(gtItems.length>24)gtItems.length=24;
+        if(!gtSave(gtItems)){ gtItems=gtItems.slice(0,8); if(!gtSave(gtItems)){alert("Penyimpanan perangkat penuh — sebagian foto tidak dapat disimpan.");} }
+        done(); };
+      img.onerror=function(){ URL.revokeObjectURL(url); done(); };
+      img.src=url;
+    });
+  });
+
+  /* --- check-in demo (localStorage) --- */
+  var CIKEY="misi-rahasia-checkin-v1", ciList=document.getElementById("ciList");
+  var ciSeed=[{n:"Keluarga Besar Pratama",s:"Resepsi",w:"11.02 WIB (contoh)"},{n:"Sahabat Meyzsa",s:"Akad Nikah",w:"07.58 WIB (contoh)"}];
+  function ciLoad(){try{var v=JSON.parse(localStorage.getItem(CIKEY));if(Array.isArray(v))return v;}catch(e){} return ciSeed.slice();}
+  function ciRender(items){ if(!ciList)return; ciList.innerHTML="";
+    items.forEach(function(it){ var d=document.createElement("div");d.className="gb-item";
+      var b=document.createElement("b");b.textContent=it.n;
+      var st=document.createElement("span");st.className="st";st.textContent="· Check-in "+it.s;
+      var p=document.createElement("p");p.textContent="Tercatat pukul "+it.w;
+      d.appendChild(b);d.appendChild(st);d.appendChild(p);ciList.appendChild(d);});}
+  var ciItems=ciLoad(); ciRender(ciItems);
+  var ciForm=document.getElementById("ciForm");
+  if(ciForm)ciForm.addEventListener("submit",function(e){ e.preventDefault();
+    var n=document.getElementById("ciName").value.trim();
+    if(!n){alert("Mohon isi nama untuk check-in.");return;}
+    var s=document.getElementById("ciSesi").value, now=new Date();
+    var w=String(now.getHours()).padStart(2,"0")+"."+String(now.getMinutes()).padStart(2,"0")+" WIB (demo)";
+    ciItems.unshift({n:n,s:s,w:w});
+    try{localStorage.setItem(CIKEY,JSON.stringify(ciItems.slice(0,30)));}catch(err){}
+    ciRender(ciItems); e.target.reset();
+  });
+
+  /* --- RSVP demo (localStorage) --- */
+  var KEY="misi-rahasia-guestbook-v1", list=document.getElementById("guestbookList");
+  var seed=[
+    {n:"Keluarga Besar Ridwan",a:"Siap Hadir",m:"Barakallahu lakuma wa baraka 'alaikuma. Misi terakhir yang paling membahagiakan — selamat, Meyzsa & Fahrezzi! (contoh ucapan)"},
+    {n:"Sahabat Kampus Fahrezzi",a:"Siap Hadir",m:"Akhirnya Agen Kompas menemukan markas permanennya. Samawa selamanya! (contoh ucapan)"}
+  ];
+  function load(){try{var v=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(v))return v;}catch(e){} return seed.slice();}
+  function render(items){
+    list.innerHTML="";
+    items.forEach(function(it){
+      var d=document.createElement("div");d.className="gb-item";
+      var b=document.createElement("b");b.textContent=it.n;
+      var st=document.createElement("span");st.className="st";st.textContent="· "+it.a;
+      var p=document.createElement("p");p.textContent=it.m;
+      d.appendChild(b);d.appendChild(st);d.appendChild(p);list.appendChild(d);
+    });
+  }
+  var items=load(); render(items);
+  document.getElementById("rsvpForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    var n=document.getElementById("rsvpName").value.trim(), m=document.getElementById("rsvpMsg").value.trim(),
+        a=document.getElementById("rsvpAttend").value;
+    if(!n||!m){alert("Mohon isi nama dan ucapan terlebih dahulu.");return;}
+    items.unshift({n:n,a:a,m:m});
+    try{localStorage.setItem(KEY,JSON.stringify(items.slice(0,30)));}catch(err){}
+    render(items); e.target.reset();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Flora Raya — Meyzsa &amp; Fahrezzi · 12 Juni 2027</title>
+<meta name="description" content="Undangan pernikahan digital Flora Raya: taman botani tropis Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta Selatan.">
+<style>
+@font-face{font-family:'Flora Display';src:url('assets/undangya/flora-raya/font-hero-display.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Flora Kicker';src:url('assets/undangya/flora-raya/font-hero-kicker.woff2') format('woff2');font-weight:600;font-display:swap}
+:root{
+  --emerald:#07301f; --emerald2:#0b3d2e; --leaf:#14532d; --fuchsia:#e64980; --fuchsia2:#d6336c;
+  --orange:#f76707; --gold:#e9c46a; --cream:#fff7e6; --ink:#fdf6e3;
+  --glass:rgba(5,38,25,.82); --glass2:rgba(7,48,31,.68);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#04150d;color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+.phone{max-width:430px;margin:0 auto;position:relative;background:var(--emerald);min-height:100dvh;box-shadow:0 0 60px rgba(0,0,0,.8);overflow:hidden}
+/* ---------- background per section: lukisan taman unik tiap section ---------- */
+main{position:relative;z-index:1}
+section{position:relative;padding:64px 22px 56px;text-align:center;background-size:cover;background-position:center;background-repeat:no-repeat}
+#sambutan{background-image:url('assets/undangya/flora-raya/bg-world-1.webp')}
+#mempelai{background-image:url('assets/undangya/flora-raya/bg-world-2.webp')}
+#kisah{background-image:url('assets/undangya/flora-raya/bg-world-3.webp')}
+#acara{background-image:url('assets/undangya/flora-raya/bg-sec-acara.webp')}
+#galeri{background-image:url('assets/undangya/flora-raya/bg-sec-galeri.webp')}
+#cuplikan{background-image:url('assets/undangya/flora-raya/bg-sec-cuplikan.webp')}
+#dresscode{background-image:url('assets/undangya/flora-raya/bg-sec-dresscode.webp')}
+#denah{background-image:url('assets/undangya/flora-raya/bg-sec-denah.webp')}
+#live{background-image:url('assets/undangya/flora-raya/bg-sec-live.webp')}
+#tamu{background-image:url('assets/undangya/flora-raya/bg-sec-tamu.webp')}
+#rsvp{background-image:url('assets/undangya/flora-raya/bg-sec-rsvp.webp')}
+#bukutamu{background-image:url('assets/undangya/flora-raya/bg-sec-bukutamu.webp')}
+#amplop{background-image:url('assets/undangya/flora-raya/bg-sec-amplop.webp')}
+#turut{background-image:url('assets/undangya/flora-raya/bg-sec-turut.webp')}
+#penutup{background-image:url('assets/undangya/flora-raya/bg-sec-penutup.webp')}
+section::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,26,17,.55),rgba(4,26,17,.28) 40%,rgba(4,26,17,.55));z-index:-0}
+.sec-inner{position:relative;z-index:2}
+.glass{background:var(--glass);border:1px solid rgba(233,196,106,.45);border-radius:22px;padding:26px 20px;backdrop-filter:blur(3px);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+.glass-soft{background:var(--glass2);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:20px 16px;backdrop-filter:blur(3px)}
+h1,h2.script{font-family:'Flora Display',Georgia,serif;font-weight:600;color:var(--gold);line-height:1.18}
+h2.script{font-size:2.05rem;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.kicker{letter-spacing:.32em;font-size:.68rem;text-transform:uppercase;color:#ffd8a8;font-family:'Flora Kicker',Verdana,sans-serif;font-weight:600}
+.chip{display:inline-block;background:var(--fuchsia2);color:#fff;border-radius:999px;padding:5px 14px;font-size:.72rem;letter-spacing:.14em;font-family:Verdana,sans-serif;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.chip.or{background:var(--orange)} .chip.em{background:#1d7a4f}
+p{line-height:1.75;font-size:.96rem;color:var(--cream)}
+.small{font-size:.82rem;opacity:.92}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--fuchsia),var(--orange));color:#fff;border:none;border-radius:999px;padding:12px 26px;font-size:.8rem;letter-spacing:.16em;text-decoration:none;font-family:Verdana,sans-serif;box-shadow:0 8px 20px rgba(0,0,0,.45);transition:transform .25s}
+.btn:active{transform:scale(.96)}
+.btn-alt{background:rgba(255,247,230,.12);border:1px solid var(--gold);color:var(--gold)}
+.btn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.decor{width:86px;margin:0 auto 8px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+.leaf-corner{position:absolute;width:110px;opacity:.95;pointer-events:none;z-index:1;filter:drop-shadow(0 8px 12px rgba(0,0,0,.45))}
+.lc-tl{top:6px;left:-24px}.lc-tr{top:6px;right:-24px;transform:scaleX(-1)}.lc-bl{bottom:6px;left:-24px}.lc-br{bottom:6px;right:-24px;transform:scaleX(-1)}
+/* ---------- animations: reveal variants ---------- */
+.rv{opacity:0;transition:opacity .9s cubic-bezier(.22,.8,.3,1),transform .9s cubic-bezier(.22,.8,.3,1)}
+.rv-up{transform:translateY(38px)} .rv-left{transform:translateX(-44px)} .rv-right{transform:translateX(44px)}
+.rv-zoom{transform:scale(.86)} .rv-flip{transform:perspective(700px) rotateX(38deg) translateY(20px)}
+.rv-drop{transform:translateY(-42px)} .rv-pop{transform:scale(.6) translateY(16px)}
+.rv.in{opacity:1;transform:none}
+[data-d="1"]{transition-delay:.1s}[data-d="2"]{transition-delay:.22s}[data-d="3"]{transition-delay:.34s}[data-d="4"]{transition-delay:.46s}
+/* micro animations for small text */
+@keyframes chipPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.chip{animation:chipPulse 3.2s ease-in-out infinite}
+@keyframes kickerGlow{0%,100%{opacity:.85}50%{opacity:1;text-shadow:0 0 12px rgba(233,196,106,.8)}}
+.kicker{animation:kickerGlow 4s ease-in-out infinite}
+@keyframes numPop{0%{transform:scale(1)}40%{transform:scale(1.22)}100%{transform:scale(1)}}
+.pop{animation:numPop .45s ease}
+/* ambient CSS-only sway, anchor classified */
+@keyframes swayTegak{0%,100%{transform:rotate(-2.4deg)}50%{transform:rotate(2.6deg)}}
+.tegak{transform-origin:50% 100%;animation:swayTegak 3.4s cubic-bezier(.37,.02,.63,.98) infinite}
+.tegak.s2{animation-duration:4.3s;animation-delay:-1.7s}.tegak.s3{animation-duration:5.2s;animation-delay:-3.1s}
+.tegak.s4{animation-duration:2.9s;animation-delay:-.9s}.tegak.s5{animation-duration:4.8s;animation-delay:-2.4s}
+@keyframes swayGantung{0%,100%{transform:rotate(2.8deg)}50%{transform:rotate(-3deg)}}
+.gantung{transform-origin:50% 0;animation:swayGantung 3.8s cubic-bezier(.37,.02,.63,.98) infinite}
+.gantung.s2{animation-duration:4.6s;animation-delay:-1.9s}.gantung.s3{animation-duration:5.4s;animation-delay:-2.8s}
+.gantung.s4{animation-duration:3.1s;animation-delay:-1.2s}
+@keyframes floaty{0%{transform:translate(0,0) rotate(-6deg)}25%{transform:translate(26px,-34px) rotate(8deg)}55%{transform:translate(-14px,-64px) rotate(-10deg)}80%{transform:translate(18px,-30px) rotate(6deg)}100%{transform:translate(0,0) rotate(-6deg)}}
+.melayang{animation:floaty 11s ease-in-out infinite}
+.melayang.f2{animation-duration:14s;animation-delay:-6s}.melayang.f3{animation-duration:9s;animation-delay:-3s}
+@keyframes petalFall{0%{transform:translate3d(0,-6vh,0) rotate(0deg);opacity:0}8%{opacity:.95}92%{opacity:.9}100%{transform:translate3d(7vw,104vh,0) rotate(300deg);opacity:0}}
+.petal{position:absolute;top:0;width:20px;pointer-events:none;animation:petalFall linear infinite;z-index:3}
+@keyframes drift{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+.drift{animation:drift 9s ease-in-out infinite}
+/* ---------- cover living scene ---------- */
+#cover{position:relative;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:0 20px 44px;overflow:hidden}
+#cover .cover-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+#cover .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,26,17,.18) 30%,rgba(4,26,17,.88) 82%);z-index:1}
+#cover .scene{position:absolute;inset:0;z-index:2;pointer-events:none}
+#cover .fg{position:absolute;bottom:-6px;width:34%;max-width:170px}
+#cover .fg.l{left:-14px}#cover .fg.r{right:-14px}
+#cover .fg2{position:absolute;bottom:-4px;width:24%;max-width:120px}
+#cover .fg2.l{left:16%}#cover .fg2.r{right:16%}
+#cover .hang{position:absolute;top:-8px;width:22%;max-width:105px}
+#cover .hang.l{left:2%}#cover .hang.r{right:2%}
+#cover .bfly{position:absolute;width:52px;z-index:3}
+#cover .garland{position:absolute;top:-16px;left:-3%;width:106%;max-width:500px;opacity:.97}
+#cover .hang2{position:absolute;top:-6px;width:11.5%;max-width:52px}
+#cover .hangc{position:absolute;top:-6px;width:27%;max-width:120px}
+#cover .hangc.l{left:-12px}#cover .hangc.r{right:-12px}
+#cover .side{position:absolute;width:29%;max-width:132px}
+#cover .side.l{left:-18px}#cover .side.r{right:-18px}
+#cover .side2{position:absolute;width:21%;max-width:96px}
+#cover .side2.l{left:-8px}#cover .side2.r{right:-8px}
+#cover .bed{position:absolute;bottom:-12px;width:18%;max-width:82px}
+#cover .bedm{position:absolute;bottom:-8px;width:20.5%;max-width:94px}
+#cover .bedf{position:absolute;bottom:-16px;width:29%;max-width:132px}
+#cover .bedf.l{left:-16px}#cover .bedf.r{right:-16px}
+#cover .scene-fg{position:absolute;inset:0;z-index:6;pointer-events:none}
+#cover .ffc{position:absolute;top:-22px;width:15.5%;max-width:70px}
+#cover .ffc.l{left:-14px}#cover .ffc.r{right:-14px}
+#cover .fside{position:absolute;width:19.5%;max-width:88px}
+#cover .fside.l{left:-10px}#cover .fside.r{right:-10px}
+#cover .fside2{position:absolute;width:15.5%;max-width:70px}
+#cover .fside2.l{left:-6px}#cover .fside2.r{right:-6px}
+#cover .fbot{position:absolute;bottom:-12px;width:26%;max-width:118px}
+#cover .fbot.l{left:-14px}#cover .fbot.r{right:-14px}
+#cover .fbot2{position:absolute;bottom:-14px;width:17.5%;max-width:80px}
+#cover .cover-in{position:relative;z-index:5;width:100%}
+.cover-card{background:var(--glass);border:1px solid rgba(233,196,106,.55);border-radius:26px;padding:28px 20px 24px;backdrop-filter:blur(3px);box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.cover-names{font-family:'Flora Display',Georgia,serif;font-weight:600;font-size:2.35rem;letter-spacing:.015em;color:#fff;line-height:1.15;text-shadow:0 3px 14px rgba(0,0,0,.7)}
+.gname{display:inline-block;margin-top:8px;background:#fff7e6;color:#07301f;font-weight:bold;border-radius:12px;padding:8px 18px;font-size:1rem}
+#btnOpen{margin-top:16px;background:linear-gradient(135deg,var(--fuchsia),var(--orange));color:#fff;border:none;border-radius:999px;padding:14px 32px;letter-spacing:.18em;font-size:.82rem;font-family:Verdana,sans-serif;box-shadow:0 10px 26px rgba(0,0,0,.5);animation:chipPulse 2.8s ease-in-out infinite}
+#content{display:none} body.opened #content{display:block} body.opened #cover{min-height:92dvh}
+/* mempelai */
+.couple-photo{width:210px;height:262px;object-fit:cover;border-radius:120px 120px 18px 18px;border:4px solid var(--gold);box-shadow:0 14px 30px rgba(0,0,0,.5);margin:0 auto}
+.hero-photo{width:100%;border-radius:22px;border:3px solid rgba(233,196,106,.7);box-shadow:0 16px 36px rgba(0,0,0,.55)}
+.name-big{font-family:'Flora Display',Georgia,serif;font-weight:600;font-size:1.8rem;letter-spacing:.01em;color:var(--gold);text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.ig{color:#ffd8a8;text-decoration:none;font-family:Verdana,sans-serif;font-size:.8rem}
+/* countdown */
+.countdown{display:flex;gap:9px;justify-content:center;margin:14px 0 6px;flex-wrap:wrap}
+.cd-box{background:linear-gradient(160deg,var(--fuchsia2),#8f1d4e);border:1px solid rgba(255,255,255,.35);border-radius:16px;min-width:68px;padding:12px 6px;box-shadow:0 10px 22px rgba(0,0,0,.45)}
+.cd-box:nth-child(2){background:linear-gradient(160deg,var(--orange),#a63e02)}
+.cd-box:nth-child(3){background:linear-gradient(160deg,#1d7a4f,#0b3d2e)}
+.cd-box:nth-child(4){background:linear-gradient(160deg,#7b2d8b,#4a145a)}
+.cd-box b{display:block;font-size:1.55rem;color:#fff;font-family:Verdana,sans-serif}
+.cd-box span{font-size:.64rem;letter-spacing:.18em;color:#ffe9f2;font-family:Verdana,sans-serif;text-transform:uppercase}
+/* event cards */
+.ev-card{margin-top:18px;text-align:center}
+.ev-card h3{font-family:'Flora Display',Georgia,serif;font-size:1.65rem;color:var(--gold);font-weight:600;letter-spacing:.01em}
+.ev-time{font-family:Verdana,sans-serif;letter-spacing:.1em;color:#ffd8a8;font-size:.86rem}
+/* gallery rail */
+.gal-rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 16px;scrollbar-width:none}
+.gal-rail::-webkit-scrollbar{display:none}
+.gal-item{flex:0 0 76%;scroll-snap-align:center;border-radius:20px;overflow:hidden;border:3px solid rgba(233,196,106,.65);box-shadow:0 14px 30px rgba(0,0,0,.5);background:#000}
+.gal-item img{width:100%;height:340px;object-fit:cover}
+.gal-cap{background:var(--glass);padding:9px;font-size:.78rem;font-family:Verdana,sans-serif;color:var(--cream)}
+.gal-dots{display:flex;gap:7px;justify-content:center;margin-top:2px}
+.gal-dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,247,230,.35);transition:all .3s}
+.gal-dots i.on{background:var(--fuchsia);transform:scale(1.35)}
+.gal-count{font-family:Verdana,sans-serif;font-size:.78rem;color:#ffd8a8;margin-top:6px}
+/* love story */
+.story{text-align:left}
+.story .step{display:flex;gap:14px;margin-top:18px;align-items:flex-start}
+.story .n{flex:0 0 44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--fuchsia),var(--orange));color:#fff;display:flex;align-items:center;justify-content:center;font-family:Verdana,sans-serif;font-weight:bold;box-shadow:0 8px 18px rgba(0,0,0,.45)}
+.story h4{color:var(--gold);font-size:1.05rem;margin-bottom:4px}
+/* dresscode swatches */
+.swatches{display:flex;gap:12px;justify-content:center;margin:14px 0;flex-wrap:wrap}
+.sw{width:52px;height:52px;border-radius:50%;border:3px solid #fff7e6;box-shadow:0 8px 18px rgba(0,0,0,.45)}
+.sw-l{font-size:.7rem;font-family:Verdana,sans-serif;margin-top:5px;color:var(--cream)}
+/* forms */
+.field{text-align:left;margin-top:12px}
+.field label{display:block;font-size:.78rem;letter-spacing:.12em;font-family:Verdana,sans-serif;color:#ffd8a8;margin-bottom:6px;text-transform:uppercase}
+.field input,.field select,.field textarea{width:100%;background:rgba(255,247,230,.1);border:1px solid rgba(233,196,106,.5);border-radius:12px;padding:12px;color:#fff;font-family:Georgia,serif;font-size:.95rem}
+.field textarea{min-height:84px;resize:vertical}
+.field option{color:#07301f}
+.gb-list{margin-top:18px;text-align:left;display:flex;flex-direction:column;gap:10px}
+.gb-item{background:rgba(255,247,230,.09);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:12px 14px}
+.gb-item b{color:var(--gold)}
+.gb-item .st{float:right;font-size:.68rem;background:#1d7a4f;color:#fff;border-radius:999px;padding:3px 10px;font-family:Verdana,sans-serif}
+.gb-item .st.no{background:#8f1d4e}.gb-item .st.mid{background:#a63e02}
+.demo-note{margin-top:12px;font-size:.74rem;color:#ffd8a8;font-family:Verdana,sans-serif}
+/* amplop */
+.acc{background:rgba(255,247,230,.1);border:1px solid rgba(233,196,106,.55);border-radius:18px;padding:18px;margin-top:14px}
+.acc-num{font-family:Verdana,sans-serif;font-size:1.3rem;letter-spacing:.12em;color:#fff;margin:6px 0}
+/* guest gallery */
+.gt-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.gt-grid img{width:100%;height:150px;object-fit:cover;border-radius:14px;border:2px solid rgba(233,196,106,.6)}
+.gt-empty{font-size:.85rem;color:#ffd8a8}
+/* video */
+.vid-wrap{position:relative;border-radius:20px;overflow:hidden;border:3px solid rgba(233,196,106,.65);box-shadow:0 16px 34px rgba(0,0,0,.55)}
+.vid-wrap video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#000}
+.vid-btn{position:absolute;inset:0;margin:auto;width:74px;height:74px;border-radius:50%;border:2px solid var(--gold);background:rgba(5,38,25,.75);color:#fff;font-size:1.4rem}
+.vid-wrap.playing .vid-btn{opacity:0;pointer-events:none}
+/* qr */
+.qr-img{width:190px;height:190px;object-fit:contain;margin:14px auto;border-radius:16px;border:4px solid #fff7e6;background:#fff;padding:6px}
+
+/* ===== BESPOKE: RUMAH KACA / KONSERVATORI BOTANI ===== */
+.glass{border:1px solid rgba(140,190,150,.55);box-shadow:0 14px 34px rgba(0,0,0,.45),inset 0 0 0 3px rgba(7,48,31,.85),inset 0 0 0 4px rgba(233,196,106,.35),inset 0 0 42px rgba(120,220,160,.07);position:relative}
+.glass::before{content:"";position:absolute;inset:7px;border:1px solid rgba(160,220,175,.22);border-radius:15px;pointer-events:none;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.055) 50%,transparent 58%)}
+.specimen{display:inline-block;margin-top:10px;background:linear-gradient(180deg,#f8efdb,#ecdcae);color:#173d27;border:1px solid #b99b57;border-radius:4px;padding:5px 12px 6px;font-family:Verdana,sans-serif;font-size:.66rem;letter-spacing:.08em;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+.specimen i{font-family:Georgia,serif;text-transform:none;letter-spacing:0;font-size:.74rem;color:#5a4310}
+.specimen b{color:#0b3d2e;letter-spacing:.14em}
+@keyframes bobY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.bob{animation:bobY 5.4s ease-in-out infinite}.bob.d1{animation-delay:-1.8s}.bob.d2{animation-delay:-3.4s}
+@keyframes breathZ{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+.breath{animation:breathZ 11s ease-in-out infinite}
+@keyframes twinkleDot{0%,100%{opacity:.12;transform:scale(.7)}50%{opacity:.95;transform:scale(1.25)}}
+.ffly{position:absolute;width:7px;height:7px;border-radius:50%;background:#ffe9a8;box-shadow:0 0 12px 4px rgba(255,220,130,.55);pointer-events:none;animation:twinkleDot 3.8s ease-in-out infinite;z-index:3}
+@keyframes lampFlicker{0%,100%{opacity:.92;box-shadow:0 0 22px 9px rgba(255,196,86,.5)}42%{opacity:.75;box-shadow:0 0 14px 6px rgba(255,196,86,.35)}55%{opacity:1;box-shadow:0 0 26px 11px rgba(255,205,100,.6)}70%{opacity:.82;box-shadow:0 0 16px 7px rgba(255,196,86,.4)}}
+.lamp{position:absolute;width:13px;height:13px;border-radius:50%;background:#ffd98a;border:2px solid rgba(233,196,106,.8);pointer-events:none;animation:lampFlicker 4.6s ease-in-out infinite;z-index:3}
+@keyframes dewPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.22)}}
+.dew{animation:dewPulse 5s ease-in-out infinite}
+/* countdown: medali kaca embun konservatori */
+.cd-box{border-radius:50%!important;width:78px;height:78px;min-width:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;border:2px solid rgba(255,255,255,.5)!important}
+.cd-box::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.38) 50%,transparent 70%);transform:translateX(-130%);animation:glassSweep 4.8s ease-in-out infinite}
+.cd-box:nth-child(2)::after{animation-delay:-1.2s}.cd-box:nth-child(3)::after{animation-delay:-2.4s}.cd-box:nth-child(4)::after{animation-delay:-3.6s}
+@keyframes glassSweep{0%,55%{transform:translateX(-130%)}85%,100%{transform:translateX(130%)}}
+.cd-box b{font-size:1.4rem;line-height:1.05}
+/* mempelai: busur kaca konservatori */
+.arch-card{border-radius:200px 200px 22px 22px!important;padding-top:34px;overflow:hidden}
+.arch-card .couple-photo{border-radius:170px 170px 14px 14px}
+/* galeri herbarium hidup */
+.gal-item.herb{background:#f6ecd2;border:1px solid #c9ab63;border-radius:6px;padding:10px 10px 0;box-shadow:0 14px 30px rgba(0,0,0,.5),inset 0 0 0 4px #f6ecd2,inset 0 0 0 5px rgba(160,125,55,.5)}
+.gal-item.herb img{height:282px;border-radius:3px}
+.gal-item.herb .gal-cap{background:transparent;color:#274435;font-family:Georgia,serif;padding:10px 4px 12px}
+.gal-item.herb .gal-cap b{display:block;font-family:Verdana,sans-serif;font-size:.62rem;letter-spacing:.2em;color:#7a5c14}
+.gal-item.herb .gal-cap i{color:#5a4310;font-size:.8rem}
+.gal-item.full .gal-cap i{display:block;color:#ffd8a8;font-size:.74rem}
+/* dresscode: kelopak contoh kain */
+.sw{border-radius:78% 6px 78% 6px!important;transform:rotate(-45deg);border:3px solid rgba(255,247,230,.9)}
+.swatch-cell{animation:bobY 5.6s ease-in-out infinite}
+.swatch-cell:nth-child(2){animation-delay:-1.1s}.swatch-cell:nth-child(3){animation-delay:-2.2s}.swatch-cell:nth-child(4){animation-delay:-3.3s}.swatch-cell:nth-child(5){animation-delay:-4.4s}
+.swatch-cell .sw-l{margin-top:9px}
+/* kupu-kupu hinggap: lintasan multi-titik dengan jeda hinggap */
+@keyframes perchFly{0%{transform:translate(0,0) rotate(-8deg)}10%{transform:translate(52px,26px) rotate(6deg)}16%,26%{transform:translate(96px,64px) rotate(-3deg) scale(1)}31%{transform:translate(70px,110px) rotate(10deg)}42%,52%{transform:translate(18px,150px) rotate(2deg)}58%{transform:translate(-38px,108px) rotate(-10deg)}69%,79%{transform:translate(-64px,52px) rotate(-2deg)}86%{transform:translate(-30px,16px) rotate(7deg)}100%{transform:translate(0,0) rotate(-8deg)}}
+.hinggap{animation:perchFly 26s ease-in-out infinite}
+@keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.spin-slow{animation:spinSlow 46s linear infinite}
+
+/* bottom nav + music */
+#bottomNav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(430px,100%);z-index:50;display:none;background:rgba(5,32,20,.92);backdrop-filter:blur(6px);border-top:1px solid rgba(233,196,106,.4);padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
+body.opened #bottomNav{display:flex}
+#bottomNav a{flex:1;text-align:center;color:var(--cream);text-decoration:none;font-size:.6rem;font-family:Verdana,sans-serif;letter-spacing:.06em}
+#bottomNav a span{display:block;font-size:1.05rem;margin-bottom:2px}
+#btnMusic{position:fixed;right:max(14px,calc(50% - 201px));bottom:86px;z-index:60;width:52px;height:52px;border-radius:50%;border:2px solid var(--gold);background:var(--glass);color:var(--gold);font-size:1.2rem;display:none;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,.5)}
+body.opened #btnMusic{display:flex}
+#btnMusic.playing{animation:swayTegak 3s cubic-bezier(.37,.02,.63,.98) infinite;background:var(--fuchsia2);color:#fff}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}
+#lightbox.open{display:flex} #lightbox img{max-height:88dvh;border-radius:16px;border:3px solid var(--gold)}
+footer{padding:30px 20px 110px;text-align:center;position:relative;z-index:1}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="phone" id="phone">
+
+  <!-- 1. SAMPUL LIVING SCENE -->
+  <header id="cover" aria-label="Sampul undangan Flora Raya">
+    <img class="cover-bg" src="assets/undangya/flora-raya/cover-bg.webp" alt="Lukisan taman botani tropis Flora Raya" width="430" height="860">
+    <div class="scrim"></div>
+    <div class="scene" aria-hidden="true">
+      <img class="garland gantung s2" src="assets/undangya/flora-raya/frame-bunga-atas.webp" alt="">
+      <img class="hang l gantung" src="assets/undangya/flora-raya/flower-anggrek.webp" alt="">
+      <img class="hang r gantung" style="animation-delay:-4s" src="assets/undangya/flora-raya/flower-bougenville.webp" alt="">
+      <img class="hang2 gantung" style="left:14%;animation-delay:-2s" src="assets/undangya/flora-raya/flower-anggrek-juntai.webp" alt="">
+      <img class="hang2 gantung s3" style="right:14%;animation-delay:-5.5s" src="assets/undangya/flora-raya/flower-anggrek-juntai.webp" alt="">
+      <img class="hangc l gantung s4" style="animation-delay:-1.5s" src="assets/undangya/flora-raya/flower-sakura.webp" alt="">
+      <img class="hangc r gantung s2" style="animation-delay:-6s" src="assets/undangya/flora-raya/flower-sakura.webp" alt="">
+      <img class="side l tegak s2" style="top:35%" src="assets/undangya/flora-raya/semak.webp" alt="">
+      <img class="side r tegak s3" style="top:33%" src="assets/undangya/flora-raya/leaf-palem.webp" alt="">
+      <img class="side2 l tegak" style="top:53%" src="assets/undangya/flora-raya/flower-heliconia.webp" alt="">
+      <img class="side2 r tegak s2" style="top:51%" src="assets/undangya/flora-raya/flower-ixora.webp" alt="">
+      <img class="bed tegak s3" style="left:3%" src="assets/undangya/flora-raya/flower-melati.webp" alt="">
+      <img class="bed tegak" style="left:21.5%" src="assets/undangya/flora-raya/flower-anyelir.webp" alt="">
+      <img class="bed tegak s2" style="left:40%" src="assets/undangya/flora-raya/flower-lavender.webp" alt="">
+      <img class="bed tegak s3" style="left:58.5%" src="assets/undangya/flora-raya/flower-mawar-krem.webp" alt="">
+      <img class="bed tegak" style="left:77%" src="assets/undangya/flora-raya/flower-anemone.webp" alt="">
+      <img class="fg l tegak" src="assets/undangya/flora-raya/leaf-monstera.webp" alt="">
+      <img class="fg r tegak s2" src="assets/undangya/flora-raya/leaf-pakis.webp" alt="">
+      <img class="fg2 l tegak s4" src="assets/undangya/flora-raya/flower-flamboyan.webp" alt="">
+      <img class="fg2 r tegak s2" src="assets/undangya/flora-raya/flower-kamboja.webp" alt="">
+      <img class="bedm tegak s2" style="left:25%" src="assets/undangya/flora-raya/flower-kamboja-kuning.webp" alt="">
+      <img class="bedm tegak" style="right:24%" src="assets/undangya/flora-raya/flower-sepatu.webp" alt="">
+      <img class="bedm tegak s5" style="left:44%;bottom:-16px" src="assets/undangya/flora-raya/flower-peony.webp" alt="">
+      <img class="bedf l tegak s2" src="assets/undangya/flora-raya/flower-matahari.webp" alt="">
+      <img class="bedf r tegak s3" src="assets/undangya/flora-raya/flower-krisan.webp" alt="">
+      <img class="bfly melayang" style="top:16%;left:12%" src="assets/undangya/flora-raya/butterfly.webp" alt="">
+      <img class="bfly melayang f2" style="top:26%;right:10%" src="assets/undangya/flora-raya/butterfly.webp" alt="">
+      <img class="bfly hinggap" style="top:10%;left:38%;width:40px" src="assets/undangya/flora-raya/butterfly.webp" alt="">
+      <img class="petal" style="left:8%;animation-duration:11s" src="assets/undangya/flora-raya/petal.webp" alt="">
+      <img class="petal" style="left:22%;animation-duration:14s;animation-delay:-5s;width:15px" src="assets/undangya/flora-raya/petal.webp" alt="">
+      <img class="petal" style="left:36%;animation-duration:12s;animation-delay:-8s" src="assets/undangya/flora-raya/petal.webp" alt="">
+      <img class="petal" style="left:49%;animation-duration:16s;animation-delay:-2s;width:14px" src="assets/undangya/flora-raya/petal.webp" alt="">
+      <img class="petal" style="left:61%;animation-duration:13s;animation-delay:-9s" src="assets/undangya/flora-raya/petal.webp" alt="">
+      <img class="petal" style="left:72%;animation-duration:15s;animation-delay:-4s;width:16px" src="assets/undangya/flora-raya/petal.webp" alt="">
+      <img class="petal" style="left:83%;animation-duration:11.5s;animation-delay:-6.5s" src="assets/undangya/flora-raya/petal.webp" alt="">
+      <img class="petal" style="left:93%;animation-duration:14.5s;animation-delay:-1.5s;width:15px" src="assets/undangya/flora-raya/petal.webp" alt="">
+    </div>
+    <div class="cover-in">
+      <div class="cover-card rv rv-drop in">
+        <p class="kicker">Undangan Pernikahan · Flora Raya</p>
+        <h1 style="font-size:2.25rem;margin-top:8px">Taman Cinta<br>Meyzsa &amp; Fahrezzi</h1>
+        <img class="hero-photo" style="margin:16px 0" src="assets/undangya/flora-raya/hero.webp" alt="Meyzsa dan Fahrezzi di taman tropis" width="720" height="1080">
+        <p class="cover-names">Meyzsa &amp; Fahrezzi</p>
+        <p class="ev-time" style="margin-top:6px">SABTU · 12 JUNI 2027 · JAKARTA SELATAN</p>
+        <p class="small" style="margin-top:14px">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <span class="gname" id="guestName">Tamu Undangan</span>
+        <br><button id="btnOpen" type="button">✿ BUKA UNDANGAN</button>
+      </div>
+    </div>
+    <div class="scene-fg" aria-hidden="true">
+      <img class="ffc l gantung" src="assets/undangya/flora-raya/flower-bougenville.webp" alt="">
+      <img class="ffc r gantung s2" style="animation-delay:-3.5s" src="assets/undangya/flora-raya/flower-anggrek.webp" alt="">
+      <img class="fside l tegak" style="top:32%" src="assets/undangya/flora-raya/flower-heliconia.webp" alt="">
+      <img class="fside r tegak s2" style="top:29%" src="assets/undangya/flora-raya/flower-sepatu.webp" alt="">
+      <img class="fside2 l tegak s5" style="top:56%" src="assets/undangya/flora-raya/flower-kamboja.webp" alt="">
+      <img class="fside2 r tegak s2" style="top:53%" src="assets/undangya/flora-raya/flower-ixora.webp" alt="">
+      <img class="fbot2 tegak" style="left:11.5%" src="assets/undangya/flora-raya/flower-mawar-putih.webp" alt="">
+      <img class="fbot2 tegak s2" style="right:11.5%" src="assets/undangya/flora-raya/flower-lily.webp" alt="">
+      <img class="fbot l tegak s2" src="assets/undangya/flora-raya/flower-matahari.webp" alt="">
+      <img class="fbot r tegak s4" src="assets/undangya/flora-raya/flower-dahlia.webp" alt="">
+      <img class="petal" style="left:17%;animation-duration:13s;animation-delay:-7s;width:14px" src="assets/undangya/flora-raya/petal.webp" alt="">
+      <img class="petal" style="left:55%;animation-duration:15.5s;animation-delay:-11s;width:13px" src="assets/undangya/flora-raya/petal.webp" alt="">
+      <img class="petal" style="left:88%;animation-duration:12.5s;animation-delay:-3.5s;width:14px" src="assets/undangya/flora-raya/petal.webp" alt="">
+    </div>
+  </header>
+
+  <main id="content">
+
+    <!-- 2. PEMBUKA -->
+    <section id="sambutan">
+      <span class="ffly" style="top:16%;left:9%"></span><span class="ffly" style="top:24%;right:11%;animation-delay:-1.4s"></span><span class="ffly" style="bottom:18%;left:14%;animation-delay:-2.6s"></span>
+      <img class="leaf-corner lc-tl tegak" src="assets/undangya/flora-raya/leaf-pisang.webp" alt="" aria-hidden="true">
+      <div class="sec-inner glass rv rv-flip">
+        <img class="decor tegak" src="assets/undangya/flora-raya/flower-kamboja2.webp" alt="" aria-hidden="true">
+        <p class="kicker">Pembuka</p>
+        <h2 class="script">Assalamu’alaikum Wr. Wb.</h2>
+        <p style="margin-top:12px">Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada pernikahan kami yang akan diselenggarakan di tengah taman tropis Flora Raya — tempat bunga-bunga raksasa bermekaran menyambut hari bahagia.</p>
+        <span class="specimen rv rv-pop" data-d="2"><b>SPESIMEN No. 01</b> · <i>Plumeria rubra</i> — Kamboja, penjaga gerbang rumah kaca</span>
+        <p style="margin-top:10px"><i>“Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”</i><br><span class="small">— QS. Ar-Rum: 21</span></p>
+      </div>
+    </section>
+
+    <!-- 3. MEMPELAI -->
+    <section id="mempelai">
+      <img class="leaf-corner lc-tr tegak s2" src="assets/undangya/flora-raya/leaf-monstera.webp" alt="" aria-hidden="true">
+      <div class="sec-inner">
+        <div class="glass rv rv-zoom">
+          <img class="decor tegak s2" src="assets/undangya/flora-raya/flower-anggrek.webp" alt="" aria-hidden="true">
+          <p class="kicker">Mempelai</p>
+          <h2 class="script">Dua Hati, Satu Taman</h2>
+        </div>
+        <div class="glass arch-card rv rv-left" style="margin-top:18px">
+          <img class="couple-photo breath" src="assets/undangya/flora-raya/bride.webp" alt="Mempelai wanita Meyzsa Putri Ananda" width="540" height="720" loading="lazy">
+          <p class="name-big" style="margin-top:14px">Meyzsa Putri Ananda, S.Pd.</p>
+          <p>Putri dari Bapak H. Muhammad Ridwan<br>&amp; Ibu Hj. Siti Aminah</p>
+          <span class="specimen"><b>SPESIMEN · PENGANTIN WANITA</b> · <i>Phalaenopsis amabilis</i> — Anggrek Bulan</span>
+          <p style="margin-top:8px"><a class="ig" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a></p>
+        </div>
+        <div class="glass arch-card rv rv-right" data-d="1" style="margin-top:18px">
+          <img class="couple-photo breath" style="animation-delay:-5s" src="assets/undangya/flora-raya/groom.webp" alt="Mempelai pria Ahmad Fahrezzi Pratama" width="540" height="720" loading="lazy">
+          <p class="name-big" style="margin-top:14px">Ahmad Fahrezzi Pratama, S.T.</p>
+          <p>Putra dari Bapak H. Bambang Sutrisno<br>&amp; Ibu Hj. Ratna Dewi</p>
+          <span class="specimen"><b>SPESIMEN · PENGANTIN PRIA</b> · <i>Monstera deliciosa</i> — Monstera, daun raksasa</span>
+          <p style="margin-top:8px"><a class="ig" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. LOVE STORY -->
+    <section id="kisah">
+      <img class="leaf-corner lc-tl tegak s3" src="assets/undangya/flora-raya/leaf-palem.webp" alt="" aria-hidden="true">
+      <div class="sec-inner glass story rv rv-up">
+        <div style="text-align:center">
+          <img class="decor tegak" src="assets/undangya/flora-raya/flower-bougenville.webp" alt="" aria-hidden="true">
+          <p class="kicker">Love Story</p>
+          <h2 class="script">Kisah yang Tumbuh</h2>
+        </div>
+        <div class="step rv rv-left"><div class="n">1</div><div><h4>Benih — 2021</h4><p>Pertemuan pertama di sebuah pameran tanaman hias. Meyzsa memilih anggrek, Fahrezzi merekomendasikan monstera — percakapan tentang daun berubah menjadi percakapan tentang hidup.</p></div></div>
+        <div class="step rv rv-right" data-d="1"><div class="n">2</div><div><h4>Tunas — 2023</h4><p>Setelah dua tahun saling menyiram kabar, keduanya merawat taman kecil bersama di akhir pekan: kamboja, pakis, dan keberanian untuk berkata jujur tentang rasa.</p></div></div>
+        <div class="step rv rv-left" data-d="2"><div class="n">3</div><div><h4>Mekar — 2025</h4><p>Di bawah lengkung bougenville yang sedang berbunga lebat, Fahrezzi berlutut dengan cincin di dalam kotak kayu dan satu pertanyaan sederhana. Meyzsa menjawab di antara kupu-kupu.</p></div></div>
+        <div class="step rv rv-right" data-d="3"><div class="n">4</div><div><h4>Berbuah — 2027</h4><p>Kini taman itu bersiap untuk panen terbesarnya: sebuah pernikahan. Kami mengundang Anda menjadi saksi musim paling indah dalam hidup kami.</p></div></div>
+      </div>
+    </section>
+
+    <!-- 5. COUNTDOWN + ACARA -->
+    <section id="acara">
+      <span class="lamp" style="top:20px;left:16px"></span><span class="lamp" style="top:20px;right:16px;animation-delay:-2.2s"></span>
+      <img class="leaf-corner lc-br tegak" src="assets/undangya/flora-raya/leaf-pakis.webp" alt="" aria-hidden="true">
+      <div class="sec-inner">
+        <div class="glass rv rv-drop">
+          <img class="decor tegak s2" src="assets/undangya/flora-raya/flower-flamboyan.webp" alt="" aria-hidden="true">
+          <p class="kicker">Hitung Mundur</p>
+          <h2 class="script">Menuju Hari Mekar</h2>
+          <span class="specimen dew"><b>MEDALI KACA EMBUN</b> · <i>Victoria amazonica</i> — teratai raksasa penanda waktu</span>
+          <div class="countdown" id="countdown" data-target="2027-06-12T08:00:00+07:00" aria-label="Hitung mundur menuju akad nikah">
+            <div class="cd-box rv rv-pop"><b id="cdD">0</b><span>Hari</span></div>
+            <div class="cd-box rv rv-pop" data-d="1"><b id="cdH">0</b><span>Jam</span></div>
+            <div class="cd-box rv rv-pop" data-d="2"><b id="cdM">0</b><span>Menit</span></div>
+            <div class="cd-box rv rv-pop" data-d="3"><b id="cdS">0</b><span>Detik</span></div>
+          </div>
+        </div>
+        <div class="glass ev-card rv rv-left">
+          <span class="chip">Akad Nikah</span>
+          <h3 style="margin-top:10px">Ijab Kabul</h3>
+          <p class="ev-time">SABTU, 12 JUNI 2027 · 08.00–10.00 WIB</p>
+          <p style="margin-top:8px"><b>Masjid Agung Al-Azhar</b><br>Jakarta Selatan</p>
+          <div class="btn-row">
+            <a class="btn" href="https://maps.google.com/?q=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener">BUKA PETA</a>
+            <a class="btn btn-alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Akad+Nikah+Meyzsa+%26+Fahrezzi&amp;dates=20270612T010000Z%2F20270612T030000Z&amp;details=Akad+Nikah+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=Masjid+Agung+Al-Azhar%2C+Jakarta+Selatan" target="_blank" rel="noopener">SIMPAN KE KALENDER</a>
+            <button class="btn btn-alt" type="button" data-ics data-file="akad-meyzsa-fahrezzi" data-title="Akad Nikah Meyzsa &amp; Fahrezzi" data-start="20270612T010000Z" data-end="20270612T030000Z" data-loc="Masjid Agung Al-Azhar, Jakarta Selatan" data-desc="Akad Nikah Meyzsa Putri Ananda &amp; Ahmad Fahrezzi Pratama">UNDUH .ICS</button>
+          </div>
+        </div>
+        <div class="glass ev-card rv rv-right">
+          <span class="chip or">Resepsi</span>
+          <h3 style="margin-top:10px">Resepsi Flora Raya</h3>
+          <p class="ev-time">SABTU, 12 JUNI 2027 · 11.00–13.00 WIB</p>
+          <p style="margin-top:8px"><b>The Ritz-Carlton Jakarta, Pacific Place</b><br>Jakarta Selatan</p>
+          <div class="btn-row">
+            <a class="btn" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">BUKA PETA</a>
+            <a class="btn btn-alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi+Meyzsa+%26+Fahrezzi&amp;dates=20270612T040000Z%2F20270612T060000Z&amp;details=Resepsi+Pernikahan+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=The+Ritz-Carlton+Jakarta%2C+Pacific+Place%2C+Jakarta+Selatan" target="_blank" rel="noopener">SIMPAN KE KALENDER</a>
+            <button class="btn btn-alt" type="button" data-ics data-file="resepsi-meyzsa-fahrezzi" data-title="Resepsi Meyzsa &amp; Fahrezzi" data-start="20270612T040000Z" data-end="20270612T060000Z" data-loc="The Ritz-Carlton Jakarta, Pacific Place, Jakarta Selatan" data-desc="Resepsi Pernikahan Meyzsa Putri Ananda &amp; Ahmad Fahrezzi Pratama">UNDUH .ICS</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. GALERI REL GESER -->
+    <section id="galeri">
+      <div class="sec-inner">
+        <div class="glass rv rv-zoom">
+          <img class="decor tegak" src="assets/undangya/flora-raya/flower-teratai.webp" alt="" aria-hidden="true">
+          <p class="kicker">Galeri</p>
+          <h2 class="script">Taman Kenangan</h2>
+          <p class="small">Geser ke kanan–kiri untuk berjalan menyusuri taman kami. Ketuk foto untuk memperbesar.</p>
+        </div>
+        <div class="gal-rail rv rv-up" id="galRail" style="margin-top:16px">
+          <figure class="gal-item herb"><img src="assets/undangya/flora-raya/galeri-1.webp" alt="Pasangan berjalan di lorong bunga sepatu raksasa" loading="lazy"><figcaption class="gal-cap"><b>HERBARIUM · PLAT 01</b>Bunga Sepatu<br><i>Hibiscus rosa-sinensis</i></figcaption></figure>
+          <figure class="gal-item full"><img src="assets/undangya/flora-raya/galeri-2.webp" alt="Pasangan di taman tropis 2" loading="lazy"><figcaption class="gal-cap">Kolam Teratai<i>Nelumbo nucifera · Teratai Suci</i></figcaption></figure>
+          <figure class="gal-item herb"><img src="assets/undangya/flora-raya/galeri-3.webp" alt="Pasangan di taman tropis 3" loading="lazy"><figcaption class="gal-cap"><b>HERBARIUM · PLAT 03</b>Bougenville<br><i>Bougainvillea spectabilis</i></figcaption></figure>
+          <figure class="gal-item full"><img src="assets/undangya/flora-raya/galeri-4.webp" alt="Pasangan di taman tropis 4" loading="lazy"><figcaption class="gal-cap">Di Antara Heliconia<i>Heliconia psittacorum · Heliconia</i></figcaption></figure>
+          <figure class="gal-item herb"><img src="assets/undangya/flora-raya/galeri-5.webp" alt="Pasangan di taman tropis 5" loading="lazy"><figcaption class="gal-cap"><b>HERBARIUM · PLAT 05</b>Monstera<br><i>Monstera deliciosa</i></figcaption></figure>
+          <figure class="gal-item full"><img src="assets/undangya/flora-raya/galeri-6.webp" alt="Pasangan di taman tropis 6" loading="lazy"><figcaption class="gal-cap">Tari Daun Pakis<i>Nephrolepis exaltata · Pakis Boston</i></figcaption></figure>
+          <figure class="gal-item herb"><img src="assets/undangya/flora-raya/galeri-7.webp" alt="Pasangan di taman tropis 7" loading="lazy"><figcaption class="gal-cap"><b>HERBARIUM · PLAT 07</b>Kamboja Putih<br><i>Plumeria obtusa</i></figcaption></figure>
+          <figure class="gal-item full"><img src="assets/undangya/flora-raya/galeri-8.webp" alt="Pasangan di taman tropis 8" loading="lazy"><figcaption class="gal-cap">Pelukan Senja Taman<i>Delonix regia · Flamboyan</i></figcaption></figure>
+        </div>
+        <div class="gal-dots" id="galDots" aria-hidden="true"></div>
+        <p class="gal-count rv rv-pop" id="galCount">Foto 1 dari 8</p>
+      </div>
+    </section>
+
+    <!-- 7. VIDEO TEASER -->
+    <section id="cuplikan">
+      <span class="lamp" style="top:26px;left:12px;animation-delay:-1s"></span><span class="lamp" style="top:26px;right:12px;animation-delay:-3.1s"></span>
+      <div class="sec-inner glass rv rv-flip">
+        <img class="decor tegak s3" src="assets/undangya/flora-raya/flower-matahari.webp" alt="" aria-hidden="true">
+        <p class="kicker">Cuplikan Video</p>
+        <h2 class="script">Teaser Flora Raya</h2>
+        <div class="vid-wrap" id="vidWrap" style="margin-top:16px">
+          <video id="teaserVideo" src="assets/undangya/flora-raya/teaser.mp4" poster="assets/undangya/flora-raya/teaser-poster.webp" preload="none" playsinline controls aria-label="Video teaser Meyzsa dan Fahrezzi"></video>
+          <button class="vid-btn" id="vidBtn" type="button" aria-label="Putar atau jeda video teaser">▶</button>
+        </div>
+        <p class="small" style="margin-top:10px">Slideshow foto tema dengan musik “Petals on the Stone Floor”.</p>
+      </div>
+    </section>
+
+    <!-- 8. DRESSCODE -->
+    <section id="dresscode">
+      <img class="leaf-corner lc-bl tegak s2" src="assets/undangya/flora-raya/leaf-bambu.webp" alt="" aria-hidden="true">
+      <div class="sec-inner glass rv rv-left">
+        <img class="decor tegak" src="assets/undangya/flora-raya/flower-krisan.webp" alt="" aria-hidden="true">
+        <p class="kicker">Dresscode</p>
+        <h2 class="script">Palet Taman</h2>
+        <span class="specimen"><b>PALET KELOPAK</b> · <i>contoh kain sewarna kelopak spesimen</i></span>
+        <p style="margin-top:10px">Kami mengundang Anda tampil sewarna taman: fuchsia, oranye senja, hijau zamrud, atau krem gading. Hindari putih polos, ya.</p>
+        <div class="swatches">
+          <div class="swatch-cell"><div class="sw bob" style="background:#d6336c"></div><div class="sw-l">Fuchsia</div></div>
+          <div class="swatch-cell"><div class="sw bob" style="background:#f76707"></div><div class="sw-l">Oranye</div></div>
+          <div class="swatch-cell"><div class="sw bob" style="background:#14532d"></div><div class="sw-l">Zamrud</div></div>
+          <div class="swatch-cell"><div class="sw bob" style="background:#e9c46a"></div><div class="sw-l">Emas</div></div>
+          <div class="swatch-cell"><div class="sw bob" style="background:#f3e5c0"></div><div class="sw-l">Gading</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DENAH / INFO LOKASI -->
+    <section id="denah">
+      <div class="sec-inner glass rv rv-right">
+        <img class="decor tegak s2" src="assets/undangya/flora-raya/flower-kamboja.webp" alt="" aria-hidden="true">
+        <p class="kicker">Denah &amp; Info Lokasi</p>
+        <h2 class="script">Menuju Taman</h2>
+        <div class="glass-soft" style="margin-top:14px;text-align:left">
+          <p><b style="color:var(--gold)">Akad — Masjid Agung Al-Azhar, Jakarta Selatan.</b> Masuk melalui gerbang utama Jl. Sisingamangaraja; area parkir tersedia di sisi timur masjid. Tamu diharapkan hadir 30 menit sebelum akad.</p>
+        </div>
+        <div class="glass-soft" style="margin-top:12px;text-align:left">
+          <p><b style="color:var(--gold)">Resepsi — The Ritz-Carlton Jakarta, Pacific Place.</b> Akses melalui lobi Pacific Place, SCBD. Valet parking tersedia; stasiun MRT terdekat: Istora Mandiri (±7 menit berjalan kaki).</p>
+        </div>
+        <div class="btn-row"><a class="btn" href="https://maps.google.com/?q=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener">PETA AKAD</a><a class="btn btn-alt" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">PETA RESEPSI</a></div>
+      </div>
+    </section>
+
+    <!-- 10. LIVE STREAMING -->
+    <section id="live">
+      <div class="sec-inner glass rv rv-zoom">
+        <img class="decor melayang" style="width:64px" src="assets/undangya/flora-raya/butterfly.webp" alt="" aria-hidden="true">
+        <p class="kicker">Live Streaming</p>
+        <h2 class="script">Saksikan dari Jauh</h2>
+        <p>Bagi keluarga dan sahabat yang berhalangan hadir, akad nikah akan disiarkan langsung. Tautan di bawah adalah contoh demo tema.</p>
+        <span class="chip or" style="margin-top:12px">Demo — Tautan Contoh</span>
+        <div class="btn-row"><a class="btn" href="#" onclick="return false" aria-disabled="true">▶ TONTON LIVE (DEMO)</a></div>
+        <p class="demo-note">Sabtu, 12 Juni 2027 · mulai 07.45 WIB</p>
+      </div>
+    </section>
+
+    <!-- 11. HASHTAG + GALERI TAMU -->
+    <section id="tamu">
+      <img class="leaf-corner lc-tr tegak" src="assets/undangya/flora-raya/semak.webp" alt="" aria-hidden="true">
+      <div class="sec-inner glass rv rv-up">
+        <img class="decor tegak" src="assets/undangya/flora-raya/flower-hydrangea.webp" alt="" aria-hidden="true">
+        <p class="kicker">Hashtag &amp; Galeri Tamu</p>
+        <h2 class="script">#MeyzsaFahrezzi</h2>
+        <p>Abadikan momen Anda dengan tagar <b style="color:var(--gold)">#MeyzsaFahrezzi</b>, dan unggah foto terbaik Anda ke galeri tamu di perangkat ini.</p>
+        <div class="btn-row"><button class="btn btn-alt" type="button" data-copy="#MeyzsaFahrezzi">SALIN HASHTAG</button><button class="btn" type="button" id="gtBtn">UNGGAH FOTO</button></div>
+        <input id="gtInput" type="file" accept="image/*" multiple hidden>
+        <div class="gt-grid" id="gtGrid" aria-live="polite"></div>
+        <p class="gt-empty" id="gtEmpty">Jadilah yang pertama membagikan momen — ketuk tombol unggah.</p>
+        <p class="demo-note">Demo client-side: foto tersimpan hanya di perangkat ini (localStorage).</p>
+      </div>
+    </section>
+
+    <!-- 12. RSVP + DINDING UCAPAN -->
+    <section id="rsvp">
+      <div class="sec-inner glass rv rv-flip">
+        <img class="decor tegak s2" src="assets/undangya/flora-raya/flower-mawar-pink.webp" alt="" aria-hidden="true">
+        <p class="kicker">RSVP &amp; Dinding Ucapan</p>
+        <h2 class="script">Konfirmasi &amp; Doa</h2>
+        <form id="rsvpForm" novalidate>
+          <div class="field"><label for="rsvpName">Nama Tamu</label><input id="rsvpName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
+          <div class="field"><label for="rsvpAttend">Konfirmasi Kehadiran</label>
+            <select id="rsvpAttend"><option value="Hadir">Hadir, insya Allah</option><option value="Berhalangan">Berhalangan hadir</option><option value="Masih ragu">Masih ragu</option></select></div>
+          <div class="field"><label for="rsvpMsg">Doa &amp; Ucapan</label><textarea id="rsvpMsg" placeholder="Tuliskan doa untuk kedua mempelai..."></textarea></div>
+          <div class="btn-row"><button class="btn" type="submit">KIRIM UCAPAN</button></div>
+        </form>
+        <div class="gb-list" id="guestbookList" aria-live="polite"></div>
+        <p class="demo-note">Demo client-side: RSVP &amp; ucapan tersimpan hanya di perangkat ini (localStorage), tidak terkirim ke server.</p>
+      </div>
+    </section>
+
+    <!-- 13. BUKU TAMU & QR CHECK-IN -->
+    <section id="bukutamu">
+      <div class="sec-inner glass rv rv-left">
+        <img class="decor tegak" src="assets/undangya/flora-raya/flower-lily.webp" alt="" aria-hidden="true">
+        <p class="kicker">Buku Tamu &amp; Check-in</p>
+        <h2 class="script">QR Check-in</h2>
+        <p>Tunjukkan kode QR ini di meja penerima tamu untuk check-in cepat, atau isi buku tamu digital di bawah.</p>
+        <img class="qr-img rv rv-zoom" src="assets/undangya/flora-raya/qr-undangan.webp" alt="Kode QR menuju halaman undangan Flora Raya" width="360" height="360" loading="lazy">
+        <form id="ciForm" novalidate style="text-align:left">
+          <div class="field"><label for="ciName">Nama Tamu</label><input id="ciName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
+          <div class="field"><label for="ciSesi">Sesi Kehadiran</label>
+            <select id="ciSesi"><option value="Akad Nikah">Akad Nikah</option><option value="Resepsi">Resepsi</option></select></div>
+          <div class="btn-row"><button class="btn" type="submit">CHECK-IN</button></div>
+        </form>
+        <div class="gb-list" id="ciList" aria-live="polite"></div>
+        <p class="demo-note">Demo client-side: daftar check-in tersimpan hanya di perangkat ini (localStorage).</p>
+      </div>
+    </section>
+
+    <!-- 14. AMPLOP DIGITAL + KADO FISIK -->
+    <section id="amplop">
+      <img class="leaf-corner lc-tl tegak s3" src="assets/undangya/flora-raya/leaf-palem.webp" alt="" aria-hidden="true">
+      <div class="sec-inner glass rv rv-right">
+        <img class="decor tegak s2" src="assets/undangya/flora-raya/flower-dahlia.webp" alt="" aria-hidden="true">
+        <p class="kicker">Amplop Digital</p>
+        <h2 class="script">Tanda Kasih</h2>
+        <p>Doa restu Anda adalah hadiah terindah. Bagi yang berkenan memberikan tanda kasih, tersedia amplop digital demo berikut:</p>
+        <div class="acc rv rv-pop">
+          <span class="chip em">BCA · Demo</span>
+          <div class="acc-num" id="accBca">1234567890</div>
+          <p class="small">a.n. Meyzsa Putri Ananda</p>
+          <div class="btn-row"><button class="btn btn-alt" type="button" data-copy="1234567890">SALIN NOMOR</button></div>
+        </div>
+        <div class="acc rv rv-pop" data-d="1">
+          <span class="chip">DANA · Demo</span>
+          <div class="acc-num" id="accDana">0812-3456-7890</div>
+          <p class="small">a.n. Meyzsa Putri Ananda</p>
+          <div class="btn-row"><button class="btn btn-alt" type="button" data-copy="0812-3456-7890">SALIN NOMOR</button></div>
+        </div>
+        <div class="acc rv rv-pop" data-d="2">
+          <span class="chip or">Kado Fisik</span>
+          <p style="margin-top:10px">Kirim kado fisik ke:<br><b>Meyzsa Putri Ananda</b><br>Jl. Kenanga Raya No. 12, Kebayoran Baru, Jakarta Selatan 12120</p>
+          <div class="btn-row"><button class="btn btn-alt" type="button" data-copy="Meyzsa Putri Ananda, Jl. Kenanga Raya No. 12, Kebayoran Baru, Jakarta Selatan 12120">SALIN ALAMAT</button></div>
+        </div>
+        <p class="demo-note">Nomor rekening &amp; e-wallet di atas adalah contoh demo tema, bukan nomor aktif.</p>
+      </div>
+    </section>
+
+    <!-- 15. TURUT MENGUNDANG -->
+    <section id="turut">
+      <div class="sec-inner glass rv rv-up">
+        <img class="decor tegak" src="assets/undangya/flora-raya/flower-peony.webp" alt="" aria-hidden="true">
+        <p class="kicker">Turut Mengundang</p>
+        <h2 class="script">Keluarga Besar</h2>
+        <p style="margin-top:10px">Keluarga Besar H. Muhammad Ridwan<br>Keluarga Besar H. Bambang Sutrisno<br>Kel. Besar Alm. H. Abdul Ananda<br>Kel. Besar Alm. H. Soedarmadji<br>Seluruh kerabat &amp; sahabat kedua mempelai</p>
+      </div>
+    </section>
+
+    <!-- 16. PENUTUP -->
+    <section id="penutup" style="text-align:center">
+      <img class="leaf-corner lc-bl tegak" src="assets/undangya/flora-raya/leaf-monstera.webp" alt="" aria-hidden="true">
+      <img class="leaf-corner lc-br tegak s2" src="assets/undangya/flora-raya/leaf-pakis.webp" alt="" aria-hidden="true">
+      <div class="sec-inner glass rv rv-flip">
+        <img class="decor tegak" src="assets/undangya/flora-raya/flower-sakura.webp" alt="" aria-hidden="true">
+        <p class="kicker">Penutup</p>
+        <h2 class="script">Terima Kasih</h2>
+        <img class="hero-photo rv rv-zoom" style="margin:16px 0" src="assets/undangya/flora-raya/hero.webp" alt="Meyzsa dan Fahrezzi" loading="lazy">
+        <p>Merupakan kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas kehadiran serta doa yang tulus, kami mengucapkan terima kasih.</p>
+        <p style="margin-top:12px"><b>Wassalamu’alaikum Wr. Wb.</b></p>
+        <p class="name-big" style="margin-top:14px">Meyzsa &amp; Fahrezzi</p>
+        <p class="small">#MeyzsaFahrezzi · Flora Raya · 12 Juni 2027</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="small" style="color:#ffd8a8">Flora Raya — tema undangan digital UndangYa! · Karya original generik · Musik: “Petals on the Stone Floor”</p>
+  </footer>
+</div>
+
+<!-- 17. MUSIK + NAVIGASI BAWAH -->
+<nav id="bottomNav" aria-label="Navigasi undangan">
+  <a href="#mempelai"><span>❀</span>Mempelai</a>
+  <a href="#acara"><span>✿</span>Acara</a>
+  <a href="#galeri"><span>❁</span>Galeri</a>
+  <a href="#rsvp"><span>✉</span>RSVP</a>
+  <a href="#amplop"><span>🎁</span>Amplop</a>
+</nav>
+<button id="btnMusic" type="button" aria-label="Putar atau hentikan musik latar">♪</button>
+<div id="lightbox" role="dialog" aria-label="Foto galeri diperbesar"><img id="lbImg" src="" alt="Foto galeri diperbesar"></div>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+
+<script>
+(function(){
+"use strict";
+var $=function(s){return document.querySelector(s)}, $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+/* ?to= guest name */
+try{var to=new URLSearchParams(location.search).get("to"); if(to){$("#guestName").textContent=to.slice(0,60); var rn=$("#rsvpName"); if(rn&&!rn.value)rn.value=to.slice(0,60); var cn=$("#ciName"); if(cn&&!cn.value)cn.value=to.slice(0,60);}}catch(e){}
+/* open + music */
+var audio=$("#bgmShared"), btnMusic=$("#btnMusic"), opened=false;
+function tryPlay(){var p=audio.play(); if(p&&p.catch)p.catch(function(){}); btnMusic.classList.add("playing");}
+$("#btnOpen").addEventListener("click",function(){document.body.classList.add("opened"); opened=true; tryPlay(); setTimeout(function(){$("#sambutan").scrollIntoView({behavior:"smooth"});},350);});
+btnMusic.addEventListener("click",function(){ if(audio.paused){tryPlay();}else{audio.pause();btnMusic.classList.remove("playing");}});
+/* reveal on scroll — varied variants via CSS classes */
+var io=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in"); io.unobserve(en.target);}});},{threshold:.12}):null;
+$$(".rv").forEach(function(el){ if(io)io.observe(el); else el.classList.add("in"); });
+/* countdown */
+function pad(n){return (n<10?"0":"")+n}
+function setNum(el,v){if(el.textContent!==String(v)){el.textContent=v;el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop");}}
+var target=new Date($("#countdown").getAttribute("data-target")).getTime();
+function cd(){var d=Math.max(0,target-Date.now());setNum($("#cdD"),Math.floor(d/864e5));setNum($("#cdH"),pad(Math.floor(d/36e5)%24));setNum($("#cdM"),pad(Math.floor(d/6e4)%60));setNum($("#cdS"),pad(Math.floor(d/1e3)%60));}
+cd(); setInterval(cd,1000);
+/* copy buttons */
+$$("[data-copy]").forEach(function(b){b.addEventListener("click",function(){
+  var t=b.getAttribute("data-copy");
+  function done(){var o=b.textContent;b.textContent="TERSALIN ✓";setTimeout(function(){b.textContent=o;},1600);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done);}else{done();}
+});});
+/* .ics download */
+function icsEsc(s){return String(s).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n");}
+$$("[data-ics]").forEach(function(b){b.addEventListener("click",function(){
+  var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//UndangYa//FloraRaya//ID","BEGIN:VEVENT",
+  "UID:"+Date.now()+"@undangya","DTSTAMP:20261112T000000Z",
+  "DTSTART:"+b.getAttribute("data-start"),"DTEND:"+b.getAttribute("data-end"),
+  "SUMMARY:"+icsEsc(b.getAttribute("data-title")||""),"LOCATION:"+icsEsc(b.getAttribute("data-loc")||""),
+  "DESCRIPTION:"+icsEsc(b.getAttribute("data-desc")||""),"END:VEVENT","END:VCALENDAR"].join("\r\n");
+  var u=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));
+  var a=document.createElement("a");a.href=u;a.download=(b.getAttribute("data-file")||"acara")+".ics";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u);},2000);
+});});
+/* gallery rail: dots + counter + lightbox */
+var rail=$("#galRail"), items=$$("#galRail .gal-item"), dots=$("#galDots");
+items.forEach(function(_,i){var d=document.createElement("i"); if(i===0)d.className="on"; dots.appendChild(d);});
+function galSync(){ if(!rail)return; var i=Math.round(rail.scrollLeft/(rail.clientWidth*.76+14)); i=Math.max(0,Math.min(items.length-1,i));
+  $$("#galDots i").forEach(function(d,j){d.classList.toggle("on",j===i);}); $("#galCount").textContent="Foto "+(i+1)+" dari "+items.length; }
+rail.addEventListener("scroll",function(){window.requestAnimationFrame(galSync);},{passive:true});
+var lb=$("#lightbox"), lbImg=$("#lbImg");
+items.forEach(function(f){f.addEventListener("click",function(){var im=f.querySelector("img"); lbImg.src=im.src; lb.classList.add("open");});});
+lb.addEventListener("click",function(){lb.classList.remove("open"); lbImg.src="";});
+/* video teaser */
+var v=$("#teaserVideo"), vw=$("#vidWrap"), vb=$("#vidBtn");
+function vsync(){var pl=!v.paused&&!v.ended; vw.classList.toggle("playing",pl); vb.textContent=pl?"❚❚":"▶";}
+vb.addEventListener("click",function(){ if(v.paused)v.play(); else v.pause(); });
+v.addEventListener("play",vsync); v.addEventListener("pause",vsync); v.addEventListener("ended",vsync);
+/* guest gallery (localStorage) */
+var GTKEY="flora-raya-galeri-tamu-v1", gtGrid=$("#gtGrid"), gtEmpty=$("#gtEmpty"), gtInput=$("#gtInput"), gtItems=[];
+function gtLoad(){try{var x=JSON.parse(localStorage.getItem(GTKEY)); if(Array.isArray(x))return x;}catch(e){} return [];}
+function gtRender(){gtItems=gtLoad(); gtGrid.innerHTML=""; gtEmpty.style.display=gtItems.length?"none":"block";
+  gtItems.forEach(function(src){var im=document.createElement("img"); im.src=src; im.alt="Foto galeri tamu"; gtGrid.appendChild(im);});}
+$("#gtBtn").addEventListener("click",function(){gtInput.click();});
+gtInput.addEventListener("change",function(){
+  var files=Array.prototype.slice.call(gtInput.files||[]).slice(0,4), pending=files.length; if(!pending)return;
+  files.forEach(function(f){var r=new FileReader(); r.onload=function(){ gtItems.unshift(String(r.result)); gtItems=gtItems.slice(0,8);
+    try{localStorage.setItem(GTKEY,JSON.stringify(gtItems));}catch(e){}
+    if(--pending===0){gtRender(); gtInput.value="";} }; r.readAsDataURL(f);});
+});
+gtRender();
+/* RSVP + guestbook wall (localStorage) */
+var KEY="flora-raya-rsvp-v1", list=$("#guestbookList");
+var seed=[{n:"Keluarga Besar Ridwan",a:"Hadir",m:"Barakallah Meyzsa & Fahrezzi, semoga menjadi keluarga sakinah mawaddah warahmah."},
+{n:"Sahabat Taman",a:"Hadir",m:"Akhirnya mekar juga! Selamat untuk kalian berdua."},
+{n:"Tetangga Kenanga",a:"Masih ragu",m:"Semoga lancar sampai hari H, kami doakan yang terbaik."}];
+function load(){try{var x=JSON.parse(localStorage.getItem(KEY)); if(Array.isArray(x))return x;}catch(e){} return seed.slice();}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function render(items){list.innerHTML=""; items.forEach(function(it){var d=document.createElement("div"); d.className="gb-item";
+  var cls=it.a==="Hadir"?"":(it.a==="Berhalangan"?"no":"mid");
+  d.innerHTML='<span class="st '+cls+'">'+esc(it.a)+'</span><b>'+esc(it.n)+'</b><p style="margin-top:4px">'+esc(it.m)+'</p>'; list.appendChild(d);});}
+var itemsR=load(); render(itemsR);
+$("#rsvpForm").addEventListener("submit",function(ev){ev.preventDefault();
+  var n=$("#rsvpName").value.trim(), m=$("#rsvpMsg").value.trim(); if(!n||!m){alert("Mohon isi nama dan ucapan terlebih dahulu.");return;}
+  itemsR.unshift({n:n,a:$("#rsvpAttend").value,m:m}); itemsR=itemsR.slice(0,30);
+  try{localStorage.setItem(KEY,JSON.stringify(itemsR));}catch(e){}
+  render(itemsR); $("#rsvpMsg").value=""; alert("Terima kasih! Ucapan Anda tersimpan di perangkat ini (demo).");});
+/* check-in book (localStorage) */
+var CIKEY="flora-raya-checkin-v1", ciList=$("#ciList");
+var ciSeed=[{n:"Keluarga Besar Ridwan",s:"Akad Nikah"},{n:"Sahabat Taman",s:"Resepsi"}];
+function ciLoad(){try{var x=JSON.parse(localStorage.getItem(CIKEY)); if(Array.isArray(x))return x;}catch(e){} return ciSeed.slice();}
+function ciRender(items){ciList.innerHTML=""; items.forEach(function(it){var d=document.createElement("div"); d.className="gb-item";
+  d.innerHTML='<span class="st">'+esc(it.s)+'</span><b>'+esc(it.n)+'</b><p style="margin-top:4px">Sudah check-in · terima kasih sudah hadir.</p>'; ciList.appendChild(d);});}
+var ciItems=ciLoad(); ciRender(ciItems);
+$("#ciForm").addEventListener("submit",function(ev){ev.preventDefault();
+  var n=$("#ciName").value.trim(); if(!n){alert("Mohon isi nama tamu.");return;}
+  ciItems.unshift({n:n,s:$("#ciSesi").value}); ciItems=ciItems.slice(0,30);
+  try{localStorage.setItem(CIKEY,JSON.stringify(ciItems));}catch(e){}
+  ciRender(ciItems); alert("Check-in tercatat di perangkat ini (demo). Selamat datang!");});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Samudra Bajak — Meyzsa &amp; Fahrezzi | Sabtu 12 Juni 2027</title>
+<meta name="description" content="Undangan pernikahan digital bertema petualangan samudra & bajak laut klasik: Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314324a'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23c9a45c' stroke-width='2'/%3E%3Cpath d='M16 8 L19 16 L16 24 L13 16 Z' fill='%23e8833c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/undangya/samudra-bajak/font-hero-display.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/undangya/samudra-bajak/font-hero-kicker.woff2">
+<style>
+@font-face{font-family:'Samudra Display';src:url('assets/undangya/samudra-bajak/font-hero-display.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Samudra Kicker';src:url('assets/undangya/samudra-bajak/font-hero-kicker.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+:root{
+  --brass:#c9a45c; --brass-l:#eed9a4; --brass-d:#8f7136;
+  --navy:#14324a; --navy2:#0d2438; --deep:#081a29;
+  --teal:#2e8696; --sea:#7fc4bd; --sunset:#e8833c; --sunset2:#d95f43;
+  --ivory:#fdf6e3; --paper:#f7ecd4; --ink:#22303c; --mut:#5c6d78; --line:rgba(201,164,92,.45);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#050f18;font-family:'Inter',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.serif{font-family:'Playfair Display',serif}
+.corm{font-family:'Cormorant Garamond',serif}
+.script{font-family:'Samudra Display',serif}
+.phone{max-width:430px;margin:0 auto;position:relative;min-height:100dvh;overflow:clip;box-shadow:0 0 90px rgba(0,0,0,.9);
+  background:linear-gradient(180deg,#f3e9d2 0%,#efe3cb 45%,#e8dcc8 100%)}
+img{max-width:100%;height:auto;display:block}
+button{font-family:inherit;cursor:pointer}
+
+/* ===== SAMPUL LIVING SCENE ===== */
+#cover{position:relative;height:100dvh;min-height:620px;overflow:hidden;background:#0d2438}
+.scene{position:absolute;inset:0;transform-origin:50% 62%;animation:dolly 3.2s cubic-bezier(.22,.8,.3,1) both}
+@keyframes dolly{from{transform:scale(1.32)}to{transform:scale(1)}}
+.lyr{position:absolute;pointer-events:none}
+.lyr-coverbg{inset:0;width:100%;height:100%;object-fit:cover;animation:bgIn 1.8s ease both,bgDrift 36s ease-in-out 1.8s infinite alternate}
+@keyframes bgIn{from{opacity:0}to{opacity:1}}
+@keyframes bgDrift{from{transform:scale(1.05) translateY(0)}to{transform:scale(1.05) translateY(-10px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+/* kapal bergoyang: roll halus pivot bawah-tengah (di dalam lukisan tidak bisa dipisah;
+   gantinya seluruh lapisan kilau+gelombang bergerak — lihat .wave) */
+.waves{position:absolute;left:-10%;right:-10%;bottom:-6px;height:120px;z-index:5;pointer-events:none;overflow:hidden}
+.wave{position:absolute;left:0;width:200%;height:60px;background:radial-gradient(ellipse 60px 16px at 30px 30px,rgba(127,196,189,.5) 60%,transparent 62%);background-size:120px 60px;background-repeat:repeat-x}
+.wave.w1{bottom:34px;opacity:.55;animation:waveSlide 11s cubic-bezier(.37,0,.63,1) infinite alternate}
+.wave.w2{bottom:12px;opacity:.8;background-size:170px 70px;animation:waveSlide 8s cubic-bezier(.37,0,.63,1) infinite alternate-reverse}
+.wave.w3{bottom:-14px;opacity:1;background-size:230px 80px;animation:waveSlide 13s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes waveSlide{from{transform:translateX(0)}to{transform:translateX(-120px)}}
+.shiproll{animation:shipRoll 7s cubic-bezier(.37,0,.63,1) infinite;transform-origin:50% 100%}
+@keyframes shipRoll{0%,100%{transform:rotate(-1.1deg) translateY(0)}50%{transform:rotate(1.1deg) translateY(-5px)}}
+/* palem TEGAK: rotasi dari pangkal bawah, akar diam */
+.palm{transform-origin:50% 100%;animation:palmSway 3.6s cubic-bezier(.37,0,.63,1) infinite alternate;filter:saturate(1.35) brightness(.94) drop-shadow(0 4px 10px rgba(8,26,41,.35))}
+@keyframes palmSway{from{transform:rotate(-1.6deg)}to{transform:rotate(2deg)}}
+.palm2{animation-duration:4.4s;animation-delay:-1.7s}
+/* lentera GANTUNG: pivot titik atas */
+.lantern-hang{transform-origin:50% 0;animation:hangSway 4.1s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes hangSway{from{transform:rotate(2.6deg)}to{transform:rotate(-2.6deg)}}
+/* camar MELAYANG: lintasan transform murni */
+.flyx{position:absolute;left:0;width:100%;pointer-events:none;opacity:0;z-index:6}
+.fx-a{animation:flyXA 19s 3.5s infinite}
+@keyframes flyXA{0%{transform:translateX(-14%);opacity:0;animation-timing-function:cubic-bezier(.37,0,.63,1)}6%{opacity:1}94%{opacity:1}100%{transform:translateX(106%);opacity:0}}
+.fy-a{animation:flyYA 19s 3.5s infinite}
+@keyframes flyYA{0%{transform:translateY(0);animation-timing-function:cubic-bezier(.37,0,.63,1)}50%{transform:translateY(-9dvh);animation-timing-function:cubic-bezier(.37,0,.63,1)}100%{transform:translateY(-3dvh)}}
+.fx-b{animation:flyXB 26s 10s infinite}
+@keyframes flyXB{0%{transform:translateX(106%);opacity:0;animation-timing-function:cubic-bezier(.37,0,.63,1)}6%{opacity:.9}94%{opacity:.9}100%{transform:translateX(-14%);opacity:0}}
+.fy-b{animation:flyYB 26s 10s infinite}
+@keyframes flyYB{0%{transform:translateY(0);animation-timing-function:cubic-bezier(.37,0,.63,1)}50%{transform:translateY(-7dvh);animation-timing-function:cubic-bezier(.37,0,.63,1)}100%{transform:translateY(-2dvh)}}
+.kilau-field{position:absolute;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.kilau{position:absolute;opacity:0;animation:kilauTw var(--kd,3.4s) cubic-bezier(.37,0,.63,1) infinite alternate;animation-delay:var(--kdl,0s)}
+@keyframes kilauTw{from{opacity:.08;transform:scale(.65) rotate(0deg)}to{opacity:.95;transform:scale(1.15) rotate(24deg)}}
+.cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,26,41,.42) 0%,transparent 30%,transparent 52%,rgba(8,26,41,.55) 100%);z-index:4;pointer-events:none}
+.cover-ui{position:absolute;inset:0;z-index:8;display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 26px 34px}
+.cover-kicker{margin-top:21%;font-family:'Samudra Kicker',serif;font-weight:400;font-size:14px;letter-spacing:.34em;color:#fff;background:rgba(13,36,56,.55);padding:7px 14px 6px 18px;border-radius:999px;border:1px solid rgba(238,217,164,.55);backdrop-filter:blur(3px);animation:fadeUp 1s 3.3s ease both}
+.cover-names{font-family:'Samudra Display',serif;font-weight:400;margin-top:14px;font-size:60px;line-height:1.18;letter-spacing:.015em;color:#fffdf4;text-shadow:0 2px 8px rgba(8,26,41,.75),0 0 28px rgba(238,217,164,.5),0 3px 22px rgba(8,26,41,.7);animation:fadeUp 1.1s 3.6s ease both}
+.cover-names .nm-line{display:block}
+.cover-names .amp{display:block;font-size:34px;line-height:.95;margin:-4px 0 -8px;color:transparent;background:linear-gradient(115deg,#a87f2c 0%,#eed9a4 42%,#fff6d8 55%,#c9a45c 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 2px 7px rgba(8,26,41,.7))}
+.cover-date{margin-top:10px;font-size:12.5px;letter-spacing:.3em;color:#fff6d8;background:linear-gradient(135deg,rgba(20,50,74,.72),rgba(20,50,74,.55));padding:7px 15px;border-radius:999px;border:1px solid rgba(255,240,200,.75);box-shadow:0 6px 18px rgba(8,26,41,.4);backdrop-filter:blur(4px);animation:fadeUp 1s 3.9s ease both}
+.cover-spacer{flex:1}
+.cover-guest{color:#fff;font-size:12px;letter-spacing:.14em;background:rgba(13,36,56,.55);padding:6px 13px;border-radius:999px;animation:fadeUp 1s 4.2s ease both}
+.gname{margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#fff;text-shadow:0 2px 12px rgba(8,26,41,.9);animation:fadeUp 1s 4.35s ease both}
+#btnOpen{margin-top:14px;padding:13px 30px;border-radius:999px;border:1px solid var(--brass-l);background:linear-gradient(135deg,#7a5c22,#c9a45c 45%,#8f7136);color:#fff8e7;font-weight:700;font-size:13px;letter-spacing:.22em;box-shadow:0 10px 28px rgba(5,15,24,.6),inset 0 1px 0 rgba(255,255,255,.5);position:relative;overflow:hidden;animation:fadeUp 1s 4.5s ease both}
+#btnOpen::after{content:"";position:absolute;top:0;left:0;transform:translateX(-160%);width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);animation:sheen 2.8s ease-in-out infinite}
+@keyframes sheen{0%,55%{transform:translateX(-160%)}90%,100%{transform:translateX(300%)}}
+body.opening #cover{animation:pushZoom 1.15s cubic-bezier(.6,0,.8,.4) both}
+@keyframes pushZoom{to{transform:scale(1.55);opacity:0}}
+
+/* ===== KONTEN ===== */
+#content{display:none}
+body.opened #content{display:block}
+section{position:relative;padding:64px 26px}
+.sec-head{text-align:center;margin-bottom:30px;position:relative;z-index:2}
+.sec-icon{width:54px;height:54px;object-fit:contain;margin:0 auto 10px;filter:drop-shadow(0 4px 8px rgba(90,60,20,.35))}
+.sec-kicker{display:inline-block;font-size:10.5px;letter-spacing:.4em;color:#ffe9b8;font-weight:700;background:rgba(20,50,74,.88);padding:6px 12px 5px 16px;border-radius:999px;border:1px solid rgba(238,217,164,.5);box-shadow:0 4px 14px rgba(8,26,41,.3)}
+.sec-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--navy);margin-top:8px}
+.sec-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17.5px;color:#43586a;margin-top:6px}
+.head-glass{background:rgba(253,246,227,.9);border:1px solid rgba(201,164,92,.5);border-radius:20px;padding:20px 14px 16px;box-shadow:0 12px 26px rgba(8,26,41,.22);backdrop-filter:blur(3px)}
+.divider{width:170px;margin:12px auto 0;opacity:.95;filter:drop-shadow(0 3px 5px rgba(90,60,20,.3))}
+.card{background:linear-gradient(180deg,rgba(255,253,246,.96),rgba(250,240,218,.94));border:1px solid var(--line);border-radius:20px;padding:26px 22px;box-shadow:0 14px 34px rgba(20,50,74,.2);position:relative}
+.card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(201,164,92,.35);border-radius:14px;pointer-events:none}
+.world-bg{position:sticky;top:0;height:100dvh;margin-bottom:-100dvh;overflow:hidden;pointer-events:none;z-index:0;background:#e8dcc8}
+.world-stack{position:absolute;left:0;top:0;width:100%;will-change:transform}
+.world-stack img{width:100%;height:auto}
+.world-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(88% 62% at 50% 42%,rgba(253,246,227,.42) 0%,rgba(253,246,227,.16) 58%,rgba(253,246,227,0) 82%),linear-gradient(180deg,rgba(253,246,227,.34) 0%,rgba(253,246,227,.1) 34%,rgba(253,246,227,.1) 66%,rgba(253,246,227,.38) 100%)}
+.bg-tint{position:relative;z-index:1}
+.panel-glass{background:linear-gradient(180deg,rgba(255,253,247,.82),rgba(255,248,232,.7));border:1px solid rgba(201,164,92,.45);border-radius:24px;box-shadow:0 14px 30px rgba(20,50,74,.18);backdrop-filter:blur(3px)}
+.gal-cap{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.5px;color:#43586a;margin-top:7px;background:rgba(253,246,227,.85);display:inline-block;padding:2px 12px;border-radius:999px}
+.port-frame{border-radius:150px 150px 18px 18px;border:3px solid var(--brass);padding:7px;background:linear-gradient(160deg,#fdf3d8,#e9d29a);box-shadow:0 16px 36px rgba(20,50,74,.25)}
+.port-frame img{border-radius:142px 142px 12px 12px;width:100%;height:100%;object-fit:cover}
+.couple-grid{display:grid;grid-template-columns:1fr;gap:34px}
+.person{text-align:center;background:linear-gradient(180deg,rgba(255,253,247,.9),rgba(255,248,232,.82));border:1px solid rgba(201,164,92,.45);border-radius:24px;padding:24px 16px 22px;box-shadow:0 14px 30px rgba(20,50,74,.18)}
+.person .port-frame{height:340px;width:min(250px,74%);margin:0 auto}
+.person h3{font-family:'Samudra Display',serif;font-size:29px;line-height:1.3;color:var(--navy);margin-top:16px;font-weight:400}
+.person .gelar{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--mut)}
+.person p{font-size:13.5px;line-height:1.65;color:#43586a;margin-top:8px}
+.ig-btn{display:inline-block;margin-top:12px;padding:8px 18px;border-radius:999px;border:1px solid var(--brass);color:var(--brass-d);font-size:12px;font-weight:600;letter-spacing:.08em;text-decoration:none;background:rgba(255,255,255,.7)}
+.countdown{display:flex;gap:9px;justify-content:center;margin:6px 0 4px}
+.cd-box{flex:1;max-width:76px;background:linear-gradient(180deg,rgba(20,50,74,.92),rgba(13,36,56,.96));border:1px solid rgba(238,217,164,.75);border-radius:19px;padding:12px 2px 9px;text-align:center;box-shadow:0 10px 22px rgba(8,26,41,.35),inset 0 0 0 3px rgba(238,217,164,.13)}
+.cd-box b{display:block;font-family:'Playfair Display',serif;font-size:25px;color:var(--brass-l)}
+.cd-box span{font-size:9.5px;letter-spacing:.22em;color:#bcd6dd;text-transform:uppercase}
+.cd-box b.pop{animation:cdpop .45s ease}
+@keyframes cdpop{40%{transform:scale(1.28);color:#fff}}
+.event{margin-bottom:22px;text-align:center}
+.event h3{font-family:'Playfair Display',serif;font-size:23px;margin:8px 0 4px;color:var(--navy)}
+.event .when{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--sunset2);font-weight:600}
+.event p{font-size:13.5px;line-height:1.65;color:#43586a;margin-top:6px}
+.card.event{border:1.5px solid rgba(201,164,92,.9)}
+.btn{display:inline-block;margin-top:14px;padding:11px 22px;border-radius:999px;background:linear-gradient(135deg,#7a5c22,#c9a45c 45%,#8f7136);color:#fff8e7;font-weight:700;font-size:12px;letter-spacing:.14em;text-decoration:none;box-shadow:0 8px 20px rgba(90,60,20,.35);position:relative;overflow:hidden;border:none}
+.btn::after{content:"";position:absolute;top:0;left:0;transform:translateX(-160%);width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);animation:sheen 3.4s ease-in-out infinite}
+.btn-alt{background:transparent;color:var(--navy);border:1.5px solid var(--brass);box-shadow:none}
+/* galeri rel geser */
+.gal-rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 16px;scrollbar-width:none}
+.gal-rail::-webkit-scrollbar{display:none}
+.gal-rail figure{flex:0 0 68%;scroll-snap-align:center;cursor:zoom-in;text-align:center}
+.gal-rail .port-frame{height:305px;padding:5px;border-width:2px}
+.gal-dots{display:flex;gap:6px;justify-content:center;margin-top:2px}
+.gal-dots i{width:7px;height:7px;border-radius:99px;background:rgba(20,50,74,.3);transition:all .4s ease}
+.gal-dots i.on{width:22px;background:var(--brass-d)}
+.gal-count{text-align:center;font-size:11px;letter-spacing:.24em;color:#43586a;margin-top:7px;font-weight:700}
+#galeri{padding-bottom:120px}
+.field{margin-bottom:14px;text-align:left}
+.field label{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--brass-d);margin-bottom:6px;text-transform:uppercase}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fffdf8;font-family:inherit;font-size:14px;color:var(--ink)}
+.field textarea{min-height:84px;resize:vertical}
+.demo-note{font-size:11.5px;color:#54687a;text-align:center;margin-top:10px;line-height:1.6;background:rgba(253,246,227,.85);border-radius:10px;padding:6px 10px}
+.gb-list{margin-top:20px;display:grid;gap:10px}
+.gb-item{background:#fffdf8;border:1px solid rgba(201,164,92,.32);border-radius:14px;padding:12px 15px;text-align:left}
+.gb-item b{font-size:13.5px}
+.gb-item .st{font-size:10.5px;color:var(--sunset2);font-weight:700;letter-spacing:.06em;margin-left:6px}
+.gb-item p{font-size:13px;color:#43586a;line-height:1.55;margin-top:3px}
+.acc-card{text-align:center;margin-bottom:18px}
+.acc-card .bank{font-family:'Playfair Display',serif;font-weight:900;font-size:19px;letter-spacing:.14em;color:var(--navy)}
+.acc-num{font-size:21px;font-weight:700;letter-spacing:.1em;margin:8px 0 2px}
+.acc-name{font-size:12.5px;color:var(--mut)}
+.copy-btn,.salin-btn{margin-top:12px;padding:9px 20px;border-radius:999px;border:1px solid var(--brass);background:#fffdf8;color:var(--brass-d);font-weight:700;font-size:12px;letter-spacing:.1em}
+.penutup-names{font-size:38px;color:var(--navy);line-height:1.2}
+.foot-note{text-align:center;font-size:11px;color:#d7e4ea;padding:0 30px 110px;line-height:1.7;background:var(--navy2)}
+#btnMusic{position:fixed;right:calc(50% - 215px + 14px);bottom:86px;z-index:70;width:50px;height:50px;border-radius:50%;border:1px solid var(--brass-l);background:radial-gradient(circle at 32% 28%,#2e5a74,#0d2438 70%);box-shadow:0 10px 24px rgba(5,15,24,.55);display:none;align-items:center;justify-content:center}
+body.opened #btnMusic{display:flex}
+#btnMusic svg{width:22px;height:22px}
+#btnMusic.playing svg{animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:460px){#btnMusic{right:14px}}
+#lightbox{position:fixed;inset:0;z-index:90;background:rgba(5,15,24,.95);display:none;align-items:center;justify-content:center;padding:22px}
+#lightbox.on{display:flex}
+#lightbox img{max-height:82dvh;border-radius:140px 140px 14px 14px;border:3px solid var(--brass)}
+.btn-row{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.sub-h{font-family:'Playfair Display',serif;font-size:20px;text-align:center;margin:24px 0 4px;color:var(--navy)}
+.sub-sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;opacity:.9;margin-bottom:12px}
+.tl{position:relative;margin-top:4px}
+.tl:before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:2px;margin-left:-1px;background:linear-gradient(180deg,transparent,var(--brass) 10%,var(--brass) 90%,transparent);opacity:.55}
+.tl-item{position:relative;padding:0 0 22px 30px}
+.tl-item:last-child{padding-bottom:4px}
+.tl-dot{position:absolute;top:9px;left:1px;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--brass-l),var(--brass) 70%);border:2px solid rgba(255,250,235,.95);box-shadow:0 3px 9px rgba(80,55,10,.35);z-index:2}
+.tl-card{border:1px solid var(--line);border-radius:16px;padding:13px 15px;box-shadow:0 10px 22px rgba(20,50,74,.15);background:linear-gradient(180deg,rgba(255,253,247,.95),rgba(250,240,218,.92))}
+.tl-year{font-family:'Playfair Display',serif;font-weight:900;font-size:18px;color:var(--brass-d);letter-spacing:.05em}
+.tl-title{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:17.5px;margin:1px 0 3px;color:var(--navy)}
+.tl-card p{font-size:12.8px;line-height:1.65;color:#43586a}
+.tl-thumb{width:100%;height:104px;object-fit:cover;object-position:50% 30%;border-radius:11px;margin-bottom:9px;border:1px solid var(--line)}
+.dc-chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:10px}
+.dc-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 13px 6px 7px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.75);font-size:12px;font-weight:600}
+.dc-dot{width:17px;height:17px;border-radius:50%;border:1px solid rgba(90,70,40,.35);flex:none}
+.info-card{text-align:left;margin-bottom:14px}
+.info-card h4{font-family:'Playfair Display',serif;font-size:17px;margin-bottom:2px;color:var(--navy)}
+.info-card p{font-size:13px;line-height:1.65;margin-top:4px;color:#43586a}
+.vid-stage{position:relative;height:452px;overflow:hidden;background:#0d2438;border-radius:12px}
+.vid-stage video{width:100%;height:100%;object-fit:cover;object-position:50% 32%;display:block;background:#081a29}
+.vid-wrap{position:relative}
+.vid-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:62px;height:62px;border-radius:50%;border:1.5px solid var(--brass-l);background:rgba(13,36,56,.6);color:#fff6d8;font-size:19px;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease;padding:0}
+.vid-wrap.playing .vid-btn{opacity:0;pointer-events:none}
+.gt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px;text-align:left}
+.gt-item{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:1;background:rgba(20,50,74,.08)}
+.gt-item img{width:100%;height:100%;object-fit:cover;display:block}
+.gt-del{position:absolute;top:5px;right:5px;width:24px;height:24px;border-radius:50%;border:1px solid var(--brass-l);background:rgba(8,26,41,.7);color:#fff6d8;font-size:14px;line-height:1;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;z-index:2}
+.gt-empty{font-size:12.5px;line-height:1.65;margin-top:14px;opacity:.9}
+.gt-up{display:inline-block;cursor:pointer;margin-top:14px}
+.live-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);font-size:11px;font-weight:800;letter-spacing:.22em;background:rgba(253,246,227,.9)}
+.live-dot{width:9px;height:9px;border-radius:50%;background:#d84a4a;animation:livePulse 1.7s cubic-bezier(.37,0,.63,1) infinite}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.72)}}
+.tag-big{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:27px;color:var(--brass-d)}
+.qr-box{width:196px;margin:14px auto 6px;padding:13px;background:#fffdf8;border:2px solid var(--brass);border-radius:18px;box-shadow:0 12px 26px rgba(20,50,74,.22)}
+.qr-box img{width:100%;border-radius:8px}
+.turut-grid{display:grid;gap:14px}
+.turut-card{text-align:center}
+.turut-card h4{font-family:'Playfair Display',serif;font-size:16.5px;margin-bottom:6px;color:var(--navy)}
+.turut-card p{font-size:13px;line-height:1.85;color:#43586a}
+.map-img{width:100%;border-radius:16px;border:2px solid var(--brass);box-shadow:0 14px 30px rgba(20,50,74,.22)}
+.sec-deco{position:absolute;pointer-events:none;z-index:1;opacity:.95}
+/* background UNIK per section (Program Detail 2026-11-12): world-stack bersama dimatikan */
+.world-bg{display:none}
+section{background-size:cover;background-position:center}
+#sambutan{background-image:linear-gradient(180deg,rgba(253,246,227,.34),rgba(253,246,227,.2)),url('assets/undangya/samudra-bajak/bg-world-1.webp')}
+#mempelai{background-image:linear-gradient(180deg,rgba(253,246,227,.34),rgba(253,246,227,.2)),url('assets/undangya/samudra-bajak/bg-world-2.webp')}
+#kisah{background-image:linear-gradient(180deg,rgba(253,246,227,.26),rgba(253,246,227,.14)),url('assets/undangya/samudra-bajak/bg-sec-kisah.webp')}
+#acara{background-image:linear-gradient(180deg,rgba(253,246,227,.3),rgba(253,246,227,.18)),url('assets/undangya/samudra-bajak/bg-world-3.webp')}
+#galeri{background-image:linear-gradient(180deg,rgba(253,246,227,.3),rgba(253,246,227,.18)),url('assets/undangya/samudra-bajak/bg-world-4.webp')}
+#cuplikan{background-image:linear-gradient(180deg,rgba(253,246,227,.36),rgba(253,246,227,.22)),url('assets/undangya/samudra-bajak/bg-sec-cuplikan.webp')}
+#live{background-image:linear-gradient(180deg,rgba(253,246,227,.36),rgba(253,246,227,.22)),url('assets/undangya/samudra-bajak/bg-sec-live.webp')}
+#rsvp{background-image:linear-gradient(180deg,rgba(253,246,227,.34),rgba(253,246,227,.2)),url('assets/undangya/samudra-bajak/bg-world-5.webp')}
+#bukutamu{background-image:linear-gradient(180deg,rgba(253,246,227,.42),rgba(253,246,227,.28)),url('assets/undangya/samudra-bajak/bg-sec-bukutamu.webp')}
+#amplop{background-image:linear-gradient(180deg,rgba(253,246,227,.34),rgba(253,246,227,.2)),url('assets/undangya/samudra-bajak/bg-sec-amplop.webp')}
+#turut{background-image:linear-gradient(180deg,rgba(253,246,227,.34),rgba(253,246,227,.2)),url('assets/undangya/samudra-bajak/bg-sec-turut.webp')}
+#penutup{background-image:linear-gradient(180deg,rgba(253,246,227,.3),rgba(253,246,227,.18)),url('assets/undangya/samudra-bajak/bg-sec-penutup.webp')}
+/* reveal BERVARIASI */
+.rv{opacity:0}
+.rv.in{opacity:1;transition:opacity .9s ease,transform .95s cubic-bezier(.22,.8,.3,1)}
+.rv-up{transform:translateY(44px)}.rv-zoom{transform:scale(.86)}
+.rv-left{transform:translateX(-46px)}.rv-right{transform:translateX(46px)}
+.rv-flip{transform:perspective(700px) rotateX(38deg) translateY(24px)}
+.rv-drop{transform:translateY(-38px)}
+.rv-pop{transform:scale(.6)}
+.rv.in.rv-up,.rv.in.rv-zoom,.rv.in.rv-left,.rv.in.rv-right,.rv.in.rv-flip,.rv.in.rv-drop,.rv.in.rv-pop{transform:none}
+/* mikro-animasi teks kecil */
+@keyframes kickFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.sec-kicker{animation:kickFloat 5s cubic-bezier(.37,0,.63,1) infinite}
+@keyframes chipPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.dc-chip{animation:chipPulse 4.6s cubic-bezier(.37,0,.63,1) infinite}
+.dc-chip:nth-child(2n){animation-delay:-2.3s}
+@keyframes iconBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-5px) rotate(2deg)}}
+.sec-icon{animation:iconBob 5.1s cubic-bezier(.37,0,.63,1) infinite}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .rv{opacity:1;transform:none}
+}
+
+/* ===== BESPOKE: JURNAL KAPTEN & PETA HARTA (2026-11-12) ===== */
+.rock-bg{position:absolute;inset:-3% -2%;transform-origin:50% 88%;animation:sceneRock 9.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes sceneRock{from{transform:rotate(-.85deg) translateY(0)}to{transform:rotate(.85deg) translateY(-7px)}}
+.rock-fg{animation:counterRock 9.5s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes counterRock{from{transform:rotate(.55deg) translateY(-2px)}to{transform:rotate(-.55deg) translateY(3px)}}
+.cloud-drift{position:absolute;pointer-events:none;opacity:.5;filter:blur(.6px) saturate(.85);animation:cloudDrift 34s cubic-bezier(.37,0,.63,1) infinite alternate}
+.cloud-drift.cd2{animation-duration:44s;animation-delay:-18s;opacity:.38}
+.cloud-drift.cd3{animation-duration:27s;animation-delay:-9s;opacity:.3}
+@keyframes cloudDrift{from{transform:translateX(-16px)}to{transform:translateX(22px)}}
+.star-night{position:absolute;pointer-events:none;animation:starTwinkle var(--sd,3.2s) cubic-bezier(.37,0,.63,1) infinite alternate;animation-delay:var(--sdl,0s)}
+@keyframes starTwinkle{from{opacity:.25;transform:scale(.7) rotate(0deg)}to{opacity:1;transform:scale(1.12) rotate(20deg)}}
+.boat-bob{position:absolute;pointer-events:none;animation:boatBob 5.2s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes boatBob{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-9px) rotate(2.2deg)}}
+.coin-spin{position:absolute;pointer-events:none;animation:coinSway 4.8s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes coinSway{from{transform:rotate(-7deg) translateY(0)}to{transform:rotate(7deg) translateY(-5px)}}
+.treasure-map{position:relative;width:min(238px,72%);margin-top:16px;animation:fadeUp 1s 4.05s ease both}
+.treasure-map .map-unroll{animation:mapUnroll 1.9s cubic-bezier(.22,.8,.3,1) 4.7s both}
+@keyframes mapUnroll{from{clip-path:inset(4% 47% 4% 47%);transform:scale(.82);opacity:.4}to{clip-path:inset(0 0 0 0);transform:scale(1);opacity:1}}
+.treasure-map .map-unroll{background:rgba(247,236,212,.94);padding:7px;border-radius:14px;border:2px solid rgba(238,217,164,.9);box-shadow:0 14px 28px rgba(5,15,24,.5);transform:rotate(-1.4deg)}
+.treasure-map img{width:100%;border-radius:8px;filter:drop-shadow(0 4px 10px rgba(5,15,24,.35))}
+.x-pulse{position:absolute;left:71%;top:44%;width:30px;height:30px;margin:-15px -15px 0 0;color:#ffd968;font-family:'Playfair Display',serif;font-weight:900;font-size:30px;line-height:30px;text-align:center;text-shadow:0 0 12px rgba(255,190,60,.95),0 2px 6px rgba(90,40,0,.8);animation:xPulse 1.8s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes xPulse{from{transform:scale(.82);opacity:.75}to{transform:scale(1.22);opacity:1}}
+.map-cap{margin-top:5px;font-size:10px;letter-spacing:.3em;color:#ffe9b8;font-weight:700;background:rgba(13,36,56,.6);display:inline-block;padding:4px 11px;border-radius:999px;border:1px solid rgba(238,217,164,.5)}
+.log-stamp{display:inline-flex;align-items:center;gap:8px;font-size:9.5px;font-weight:800;letter-spacing:.26em;color:#fff6d8;background:linear-gradient(135deg,#7a3b1e,#a8542a);border:1.5px dashed rgba(255,230,180,.85);border-radius:8px;padding:6px 11px 5px;transform:rotate(-1.6deg);box-shadow:0 5px 14px rgba(90,40,10,.35);margin-bottom:10px;animation:stampSway 5.3s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes stampSway{from{transform:rotate(-2.1deg) translateY(0)}to{transform:rotate(-1.1deg) translateY(-2px)}}
+.rope-div{height:30px;margin:10px auto 0;width:min(240px,84%);background:url('assets/undangya/samudra-bajak/orn-rope-divider.webp') center/contain no-repeat;opacity:.97;filter:drop-shadow(0 3px 5px rgba(90,60,20,.35))}
+.journal-card{position:relative}
+.journal-card::after{content:"";position:absolute;top:12px;bottom:12px;left:9px;width:0;border-left:2px dashed rgba(143,113,54,.5);pointer-events:none}
+/* countdown roda kemudi */
+.wheel-wrap{position:relative;width:308px;max-width:88vw;height:308px;margin:2px auto 10px}
+.wheel-spin{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.96;filter:drop-shadow(0 16px 30px rgba(8,26,41,.4));animation:wheelSpin 72s linear infinite}
+@keyframes wheelSpin{to{transform:rotate(360deg)}}
+.wheel-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:104px;height:104px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2e5a74,#0d2438 72%);border:2px solid var(--brass-l);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--brass-l);box-shadow:inset 0 0 0 4px rgba(238,217,164,.18),0 8px 20px rgba(8,26,41,.4);animation:hubBreath 5s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes hubBreath{from{transform:translate(-50%,-50%) scale(1)}to{transform:translate(-50%,-50%) scale(1.045)}}
+.wheel-hub b{font-family:'Playfair Display',serif;font-size:19px;letter-spacing:.04em}
+.wheel-hub span{font-size:8px;letter-spacing:.24em;color:#bcd6dd}
+.wheel-wrap .countdown{position:absolute;inset:0;display:block;margin:0}
+.wheel-wrap .cd-box{position:absolute;width:64px;height:64px;max-width:none;border-radius:50%;padding:10px 0 0;flex:none}
+.wheel-wrap .cd-box b{font-size:21px}
+.wheel-wrap .cd-box span{font-size:8px}
+.cd-pos-t{left:50%;top:0;transform:translateX(-50%)}
+.cd-pos-r{right:0;top:50%;transform:translateY(-50%)}
+.cd-pos-b{left:50%;bottom:0;transform:translateX(-50%)}
+.cd-pos-l{left:0;top:50%;transform:translateY(-50%)}
+/* love story rute peta */
+.route-map{background:linear-gradient(180deg,#f3e5c3,#ecdcae);border:2px solid rgba(143,113,54,.75);border-radius:18px;padding:16px 14px 10px;margin-bottom:22px;box-shadow:0 14px 30px rgba(90,60,20,.3),inset 0 0 42px rgba(168,124,62,.28);position:relative;overflow:hidden}
+.route-map .rm-title{font-size:10px;font-weight:800;letter-spacing:.3em;color:#7a3b1e;text-align:center}
+.route-boat{position:absolute;top:34px;left:6%;width:52px;animation:routeSail 11s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes routeSail{from{transform:translateX(0) translateY(0) rotate(-2deg)}to{transform:translateX(215px) translateY(6px) rotate(2.5deg)}}
+.route-x{position:absolute;right:7%;bottom:16px;color:#c33d21;font-family:'Playfair Display',serif;font-weight:900;font-size:37px;text-shadow:0 0 14px rgba(255,170,60,.8);animation:xPulse 1.8s cubic-bezier(.37,0,.63,1) infinite alternate}
+.route-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:700;font-size:13.5px;color:#5c3a14}
+/* galeri fragmen & botol */
+.gal-rail figure.frag .port-frame{border-radius:14px 22px 12px 26px;border:2px solid #a87c3e;background:linear-gradient(160deg,#f7ecd4,#e8d5a5);transform:rotate(-1.2deg)}
+.gal-rail figure.frag:nth-child(3) .port-frame{transform:rotate(1.1deg)}
+.gal-rail figure.frag img{filter:sepia(.22) saturate(1.05)}
+.gal-rail figure.bottle .port-frame{border-radius:120px 120px 46% 46%/150px 150px 60px 60px;border:2.5px solid rgba(127,196,189,.9);background:linear-gradient(165deg,rgba(190,235,230,.55),rgba(110,180,190,.28) 55%,rgba(46,134,150,.35));animation:bottleBob 4.9s cubic-bezier(.37,0,.63,1) infinite alternate}
+.gal-rail figure.bottle:nth-child(4) .port-frame{animation-delay:-2.8s}
+.gal-rail figure.bottle img{border-radius:112px 112px 44% 44%/142px 142px 54px 54px;opacity:.94}
+@keyframes bottleBob{from{transform:translateY(0) rotate(-1.4deg)}to{transform:translateY(-8px) rotate(1.4deg)}}
+.frag-tag{display:inline-block;margin-top:8px;font-size:9.5px;font-weight:800;letter-spacing:.24em;color:#7a3b1e;background:rgba(247,236,212,.92);border:1px dashed rgba(143,113,54,.8);padding:4px 10px;border-radius:6px;transform:rotate(-1.4deg)}
+.bottle-tag{display:inline-block;margin-top:8px;font-size:9.5px;font-weight:800;letter-spacing:.24em;color:#fdf6e3;background:rgba(20,50,74,.88);border:1px solid rgba(127,196,189,.8);padding:4px 10px;border-radius:999px}
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- ===== SAMPUL: LIVING SCENE SAMUDRA ===== -->
+  <header id="cover" aria-label="Sampul undangan Samudra Bajak">
+    <div class="scene">
+    <div class="rock-bg">
+      <img class="lyr lyr-coverbg" src="assets/undangya/samudra-bajak/cover-bg.webp" alt="Lukisan satu kesatuan: kapal layar besar berlayar di laut tropis saat matahari terbenam oranye, pulau kelapa dan burung camar" width="860" height="1720">
+      <img class="lyr palm" style="left:-4%;bottom:6%;width:34%;z-index:5" src="assets/undangya/samudra-bajak/palem.webp" alt="">
+      <img class="lyr palm palm2" style="right:-5%;bottom:9%;width:27%;z-index:5" src="assets/undangya/samudra-bajak/palem.webp" alt="">
+      <img class="lyr lantern-hang" style="right:7%;top:0;width:13%;z-index:6" src="assets/undangya/samudra-bajak/lentera.webp" alt="">
+      <div class="flyx fx-a" style="top:16%"><img class="flyimg" style="width:15%" src="assets/undangya/samudra-bajak/icon-gull.webp" alt=""></div>
+      <div class="flyx fx-b" style="top:26%"><img class="flyimg" style="width:11%;margin-left:auto" src="assets/undangya/samudra-bajak/icon-gull.webp" alt=""></div>
+      <img class="cloud-drift" style="left:4%;top:9%;width:34%" src="assets/undangya/samudra-bajak/awan-laut.webp" alt="">
+      <img class="cloud-drift cd2" style="right:2%;top:15%;width:27%" src="assets/undangya/samudra-bajak/awan-laut.webp" alt="">
+      <img class="cloud-drift cd3" style="left:16%;top:26%;width:20%" src="assets/undangya/samudra-bajak/awan-laut.webp" alt="">
+      <img class="star-night" style="left:10%;top:5%;width:16px;--sd:2.8s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="star-night" style="left:30%;top:3%;width:11px;--sd:3.6s;--sdl:-1.4s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="star-night" style="right:26%;top:4%;width:13px;--sd:3.1s;--sdl:-.7s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="star-night" style="right:9%;top:8%;width:10px;--sd:2.5s;--sdl:-2s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="star-night" style="left:48%;top:7%;width:9px;--sd:4s;--sdl:-2.6s" src="assets/undangya/samudra-bajak/bintang-malam.webp" alt="">
+      <img class="lyr lantern-hang" style="left:5%;top:1.5%;width:11%;animation-duration:3.3s" src="assets/undangya/samudra-bajak/tali-simpul.webp" alt="">
+      <img class="boat-bob" style="left:6%;bottom:17%;width:21%" src="assets/undangya/samudra-bajak/perahu-kecil.webp" alt="">
+      <img class="coin-spin" style="right:8%;bottom:24%;width:11%" src="assets/undangya/samudra-bajak/koin-emas.webp" alt="">
+      <img class="coin-spin" style="left:12%;bottom:31%;width:8%;animation-delay:-3.4s" src="assets/undangya/samudra-bajak/koin-emas.webp" alt="">
+      <img class="coin-spin" style="left:2.5%;top:45%;width:10%;animation-duration:3.9s" src="assets/undangya/samudra-bajak/icon-anchor.webp" alt="">
+      <img class="coin-spin" style="right:3%;top:43%;width:10%;animation-duration:5.3s;animation-delay:-2s" src="assets/undangya/samudra-bajak/icon-compass.webp" alt="">
+      <img class="coin-spin" style="left:3%;top:33%;width:13%;animation-duration:4.6s;animation-delay:-1.2s;transform:rotate(-8deg)" src="assets/undangya/samudra-bajak/teropong.webp" alt="">
+      <img class="coin-spin" style="right:2.5%;bottom:35%;width:11%;animation-duration:5s;animation-delay:-3s" src="assets/undangya/samudra-bajak/icon-chest.webp" alt="">
+      <img class="coin-spin" style="left:17%;bottom:4.5%;width:7%;animation-duration:4.2s;animation-delay:-.8s" src="assets/undangya/samudra-bajak/icon-shell.webp" alt="">
+      <img class="coin-spin" style="right:16%;bottom:6%;width:8%;animation-duration:3.5s;animation-delay:-2.4s" src="assets/undangya/samudra-bajak/icon-starfish.webp" alt="">
+      <div class="kilau-field" id="kilauCover" aria-hidden="true"></div>
+      <div class="waves" aria-hidden="true"><div class="wave w1"></div><div class="wave w2"></div><div class="wave w3"></div></div>
+    </div>
+      <div class="cover-shade"></div>
+    </div>
+    <div class="cover-ui">
+      <div class="cover-kicker">THE WEDDING OF</div>
+      <h1 class="cover-names"><span class="nm-line">Meyzsa</span><span class="amp">&amp;</span><span class="nm-line">Fahrezzi</span></h1>
+      <div class="cover-date">SABTU · 12 JUNI 2027</div>
+      <div class="treasure-map rock-fg"><div class="map-unroll"><img src="assets/undangya/samudra-bajak/peta-gulung.webp" alt="Gulungan peta harta karun dengan rute putus-putus menuju tanda X emas"><span class="x-pulse" aria-hidden="true">✕</span></div><span class="map-cap">PETA HARTA · RUTE MENUJU HARI BAHAGIA</span></div>
+      <div class="cover-spacer"></div>
+      <div class="cover-guest">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+      <div class="gname" id="guestName">Tamu Undangan</div>
+      <button id="btnOpen" type="button">⚓ BUKA UNDANGAN</button>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="world-bg" aria-hidden="true"><div class="world-stack" id="worldStack"><img src="assets/undangya/samudra-bajak/bg-world-1.webp" alt="" width="720" height="475" decoding="async"><img src="assets/undangya/samudra-bajak/bg-world-2.webp" alt="" width="720" height="475" loading="lazy" decoding="async"><img src="assets/undangya/samudra-bajak/bg-world-3.webp" alt="" width="720" height="432" loading="lazy" decoding="async"><img src="assets/undangya/samudra-bajak/bg-world-4.webp" alt="" width="720" height="432" loading="lazy" decoding="async"><img src="assets/undangya/samudra-bajak/bg-world-5.webp" alt="" width="720" height="346" loading="lazy" decoding="async"></div></div>
+
+    <!-- PEMBUKA -->
+    <section id="sambutan">
+      <img class="sec-deco" style="right:10px;top:12px;width:52px" src="assets/undangya/samudra-bajak/icon-compass.webp" alt="">
+      <div class="bg-tint">
+        <div class="sec-head rv rv-drop head-glass">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-compass.webp" alt="">
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-1 · DERMAJA FAJAR</div><br><div class="sec-kicker">DENGAN MEMOHON RAHMAT ALLAH SWT</div>
+          <h2 class="sec-title serif">Pelayaran Dimulai</h2><div class="rope-div" aria-hidden="true"></div>
+        </div>
+        <div class="card rv rv-flip" style="text-align:center">
+          <p class="corm" style="font-size:19px;line-height:1.75;font-style:italic">“Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”</p>
+          <p style="margin-top:12px;font-size:12px;letter-spacing:.24em;color:var(--sunset2);font-weight:700">QS. AR-RUM : 21</p>
+          <p style="margin-top:16px;font-size:14px;line-height:1.75;color:#43586a">Seperti kapal yang akhirnya menemukan pelabuhannya, dua hati yang berlayar dari arah berbeda kini hendak berlabuh pada satu dermaga. Dengan penuh syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberi doa restu pada hari bahagia kami.</p>
+        </div>
+        <div class="rv rv-zoom" style="margin-top:22px"><img class="map-img" src="assets/undangya/samudra-bajak/peta-harta.webp" alt="Peta harta karun tua bergambar pulau tropis, rute berlayar putus-putus dan mawar kompas" loading="lazy" decoding="async"><p style="text-align:center;margin-top:8px"><span class="gal-cap">Peta pelayaran cinta kami — harta karunnya adalah hari bahagia ini.</span></p></div>
+      </div>
+    </section>
+
+    <!-- MEMPELAI -->
+    <section id="mempelai">
+      <img class="sec-deco" style="left:8px;top:14px;width:48px" src="assets/undangya/samudra-bajak/icon-anchor.webp" alt="">
+      <div class="bg-tint">
+      <div class="sec-head rv rv-up head-glass">
+        <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-wheel.webp" alt="">
+        <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-7 · MEMPERKENALKAN AWAK HATI</div><br><div class="sec-kicker">MEMPELAI</div>
+        <h2 class="sec-title serif">Nakhoda &amp; Penjaga Kompas</h2><div class="rope-div" aria-hidden="true"></div>
+        <p class="sec-sub">Dua mempelai yang berbahagia</p>
+      </div>
+      <div class="couple-grid">
+        <div class="person rv rv-left">
+          <div class="port-frame"><img src="assets/undangya/samudra-bajak/bride.webp" alt="Mempelai wanita, Meyzsa Putri Ananda, bergaun putih bersentuhan nautikal di dek kapal layar" loading="lazy" decoding="async"></div>
+          <h3>Meyzsa Putri Ananda</h3>
+          <div class="gelar">Meyzsa Putri Ananda, S.Pd.</div>
+          <p>Putri dari<br><b>Bapak H. Muhammad Ridwan</b><br>&amp; <b>Ibu Hj. Siti Aminah</b></p>
+          <a class="ig-btn" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a>
+        </div>
+        <div class="person rv rv-right">
+          <div class="port-frame"><img src="assets/undangya/samudra-bajak/groom.webp" alt="Mempelai pria, Ahmad Fahrezzi Pratama, berjas navy di roda kemudi kapal" loading="lazy" decoding="async"></div>
+          <h3>Ahmad Fahrezzi Pratama</h3>
+          <div class="gelar">Ahmad Fahrezzi Pratama, S.T.</div>
+          <p>Putra dari<br><b>Bapak H. Bambang Sutrisno</b><br>&amp; <b>Ibu Hj. Ratna Dewi</b></p>
+          <a class="ig-btn" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a>
+        </div>
+      </div>
+      <div class="rv rv-pop panel-glass" style="margin-top:36px;padding:20px 18px 14px;text-align:center">
+        <div class="port-frame" style="height:300px"><img src="assets/undangya/samudra-bajak/hero.webp" alt="Meyzsa dan Fahrezzi bergandengan tangan di haluan kapal saat matahari terbenam" loading="lazy" decoding="async"></div>
+        <p style="margin-top:10px"><span class="gal-cap">Di haluan kapal, menghadap samudra kehidupan bersama.</span></p>
+      </div>
+      </div>
+    </section>
+
+    <!-- LOVE STORY: BABAK PELAYARAN -->
+    <section id="kisah">
+      <img class="sec-deco" style="right:10px;top:12px;width:50px" src="assets/undangya/samudra-bajak/icon-bottle.webp" alt="">
+      <div class="bg-tint">
+        <div class="sec-head rv rv-up head-glass">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-bottle.webp" alt="">
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-40 · RUTE PETA HARTA</div><br><div class="sec-kicker">LOVE STORY</div>
+          <h2 class="sec-title serif">Empat Babak Pelayaran</h2><div class="rope-div" aria-hidden="true"></div>
+          <p class="sec-sub">Catatan perjalanan dua hati menuju satu pelabuhan</p>
+        </div>
+        <div class="route-map rv rv-flip" role="img" aria-label="Peta rute cinta: dari Pelabuhan Pertama melintasi babak-babak pelayaran menuju X besar Harta Terbesar Hari Bahagia">
+          <div class="rm-title">PETA RUTE · DARI PELABUHAN PERTAMA MENUJU HARTA TERBESAR</div>
+          <svg viewBox="0 0 340 118" style="width:100%;display:block;margin-top:6px" aria-hidden="true"><path d="M18 92 C 80 40, 130 104, 185 62 S 285 30, 316 44" fill="none" stroke="#c33d21" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="1 11"/><circle cx="18" cy="92" r="6" fill="#2e8696" stroke="#fdf6e3" stroke-width="2.5"/><circle cx="112" cy="76" r="5" fill="#c9a45c" stroke="#fdf6e3" stroke-width="2.5"/><circle cx="196" cy="58" r="5" fill="#c9a45c" stroke="#fdf6e3" stroke-width="2.5"/><circle cx="262" cy="38" r="5" fill="#c9a45c" stroke="#fdf6e3" stroke-width="2.5"/></svg>
+          <img class="route-boat" src="assets/undangya/samudra-bajak/perahu-kecil.webp" alt="" aria-hidden="true">
+          <span class="route-label" style="position:absolute;left:12px;bottom:8px">Pelabuhan Pertama · 2019</span>
+          <span class="route-label" style="position:absolute;right:70px;bottom:34px;font-size:12px">Harta Terbesar:</span>
+          <span class="route-x" aria-hidden="true">✕</span>
+          <span class="route-label" style="position:absolute;right:8px;bottom:2px;font-size:12.5px">Hari Bahagia · 2027</span>
+        </div>
+        <div class="tl">
+          <div class="tl-item rv rv-left"><span class="tl-dot"></span><div class="tl-card">
+            <img class="tl-thumb" src="assets/undangya/samudra-bajak/galeri-1.webp" alt="Pasangan di pantai saat babak pertama" loading="lazy" decoding="async">
+            <div class="tl-year">Babak I · 2019</div><div class="tl-title">Berlayar dari Dermaga yang Sama</div>
+            <p>Berawal dari pertemuan sederhana di perpustakaan kampus — dua kapal yang kebetulan berlabuh di dermaga yang sama, dan obrolan hari itu menjadi kompas pertama kisah kami.</p></div></div>
+          <div class="tl-item rv rv-right"><span class="tl-dot"></span><div class="tl-card">
+            <img class="tl-thumb" src="assets/undangya/samudra-bajak/galeri-3.webp" alt="Pasangan di dek kapal pada babak lamaran" loading="lazy" decoding="async">
+            <div class="tl-year">Babak II · 2023</div><div class="tl-title">Menambatkan Jangkar &amp; Restu</div>
+            <p>Di hadapan keluarga tercinta, Fahrezzi menyampaikan niat sucinya. Dengan restu kedua orang tua, Meyzsa menerimanya — jangkar pun ditambatkan dengan mantap.</p></div></div>
+          <div class="tl-item rv rv-left"><span class="tl-dot"></span><div class="tl-card">
+            <img class="tl-thumb" src="assets/undangya/samudra-bajak/galeri-4.webp" alt="Dua keluarga menyatu pada babak ketiga" loading="lazy" decoding="async">
+            <div class="tl-year">Babak III · 2025</div><div class="tl-title">Dua Armada Menjadi Satu</div>
+            <p>Persiapan demi persiapan kami jalani bersama — dua keluarga saling mengenal, menyatukan awak dan doa, hingga pelabuhan bahagia terasa kian dekat.</p></div></div>
+          <div class="tl-item rv rv-right"><span class="tl-dot"></span><div class="tl-card">
+            <img class="tl-thumb" src="assets/undangya/samudra-bajak/hero.webp" alt="Pasangan di hari bahagia" loading="lazy" decoding="async">
+            <div class="tl-year">Babak IV · 2027</div><div class="tl-title">Berlabuh di Hari Bahagia</div>
+            <p>Sabtu, 12 Juni 2027 — babak terindah pelayaran kami dimulai. Kami mohon doa restu agar pelayaran ini diberkahi hingga selamanya.</p></div></div>
+        </div>
+        <p class="demo-note rv rv-up">Linimasa &amp; teks kisah di atas adalah contoh untuk tampilan tema.</p>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN + ACARA -->
+    <section id="acara">
+      <img class="sec-deco" style="left:10px;top:12px;width:50px" src="assets/undangya/samudra-bajak/icon-lantern.webp" alt="">
+      <div class="bg-tint">
+        <div class="sec-head rv rv-up head-glass">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-compass.webp" alt="">
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-99 · TITIK X PENENTUAN</div><br><div class="sec-kicker">HITUNG MUNDUR</div>
+          <h2 class="sec-title serif">Menuju Hari Berlabuh</h2><div class="rope-div" aria-hidden="true"></div>
+        </div>
+        <div class="wheel-wrap rv rv-zoom">
+          <img class="wheel-spin" src="assets/undangya/samudra-bajak/icon-wheel-painterly.webp" alt="" aria-hidden="true">
+          <div class="wheel-hub"><b>12·06</b><span>2027 · TITIK X</span></div>
+          <div class="countdown" id="countdown" data-target="2027-06-12T08:00:00+07:00" aria-label="Hitung mundur menuju akad nikah">
+          <div class="cd-box cd-pos-t"><b id="cdD">0</b><span>Hari</span></div>
+          <div class="cd-box cd-pos-r"><b id="cdH">0</b><span>Jam</span></div>
+          <div class="cd-box cd-pos-b"><b id="cdM">0</b><span>Menit</span></div>
+          <div class="cd-box cd-pos-l"><b id="cdS">0</b><span>Detik</span></div>
+          </div>
+        </div>
+        <p class="demo-note rv rv-up" style="margin-bottom:26px">Sabtu, 12 Juni 2027 — Jakarta</p>
+
+        <div class="card event rv rv-left">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-anchor.webp" alt="">
+          <h3>Akad Nikah</h3>
+          <div class="when">Sabtu, 12 Juni 2027 · 08.00 – 10.00 WIB</div>
+          <p><b>Masjid Agung Al-Azhar</b><br>Jakarta Selatan</p>
+          <a class="btn" href="https://maps.google.com/?q=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener">LIHAT LOKASI</a>
+          <a class="btn btn-alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Akad+Nikah+Meyzsa+%26+Fahrezzi&amp;dates=20270612T010000Z%2F20270612T030000Z&amp;details=Akad+Nikah+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=Masjid+Agung+Al-Azhar%2C+Kebayoran+Baru%2C+Jakarta+Selatan" target="_blank" rel="noopener">SIMPAN KE KALENDER</a>
+          <button class="btn btn-alt" type="button" data-ics data-file="akad-meyzsa-fahrezzi" data-title="Akad Nikah Meyzsa &amp; Fahrezzi" data-start="20270612T010000Z" data-end="20270612T030000Z" data-loc="Masjid Agung Al-Azhar, Kebayoran Baru, Jakarta Selatan" data-desc="Akad Nikah Meyzsa Putri Ananda &amp; Ahmad Fahrezzi Pratama">UNDUH .ICS</button>
+        </div>
+        <div class="card event rv rv-right">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-wheel.webp" alt="">
+          <h3>Resepsi</h3>
+          <div class="when">Sabtu, 12 Juni 2027 · 11.00 – 13.00 WIB</div>
+          <p><b>The Ritz-Carlton Jakarta, Pacific Place</b><br>Jakarta Selatan</p>
+          <a class="btn" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">LIHAT LOKASI</a>
+          <a class="btn btn-alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi+Meyzsa+%26+Fahrezzi&amp;dates=20270612T040000Z%2F20270612T060000Z&amp;details=Resepsi+Pernikahan+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=The+Ritz-Carlton+Jakarta%2C+Pacific+Place%2C+Jakarta+Selatan" target="_blank" rel="noopener">SIMPAN KE KALENDER</a>
+          <button class="btn btn-alt" type="button" data-ics data-file="resepsi-meyzsa-fahrezzi" data-title="Resepsi Meyzsa &amp; Fahrezzi" data-start="20270612T040000Z" data-end="20270612T060000Z" data-loc="The Ritz-Carlton Jakarta, Pacific Place, Jakarta Selatan" data-desc="Resepsi Pernikahan Meyzsa Putri Ananda &amp; Ahmad Fahrezzi Pratama">UNDUH .ICS</button>
+        </div>
+
+        <div class="card rv rv-flip" style="margin-top:26px;text-align:center">
+          <h3 class="sub-h" style="margin-top:0">Dresscode Tamu</h3>
+          <p class="sub-sub">Berkenan hadir dengan nuansa warna berikut</p>
+          <div class="dc-chips"><span class="dc-chip"><span class="dc-dot" style="background:#14324A"></span>Navy Samudra</span><span class="dc-chip"><span class="dc-dot" style="background:#C9A45C"></span>Emas Kuningan</span><span class="dc-chip"><span class="dc-dot" style="background:#E8833C"></span>Oranye Senja</span><span class="dc-chip"><span class="dc-dot" style="background:#7FC4BD"></span>Toska Laut</span><span class="dc-chip"><span class="dc-dot" style="background:#E9DCBE"></span>Krem Pasir</span><span class="dc-chip"><span class="dc-dot" style="background:#8A5A3B"></span>Cokelat Kayu</span></div>
+          <p style="font-size:12.5px;line-height:1.65;margin-top:13px;color:#43586a">Panduan contoh: busana formal atau semi-formal dengan nuansa di atas akan menyatu indah dengan dekorasi acara. Mohon berkenan tidak memakai putih polos — warna khusus mempelai di hari bahagia.</p>
+        </div>
+        <h3 class="sub-h rv rv-up">Denah &amp; Info Lokasi</h3>
+        <p class="sub-sub rv rv-up">Koordinat &amp; patokan menuju pelabuhan acara (contoh)</p>
+        <div class="card info-card rv rv-left">
+          <h4>Akad Nikah — Masjid Agung Al-Azhar</h4>
+          <p>Jl. Sisingamangaraja No. 1, Kebayoran Baru, Jakarta Selatan.</p>
+          <p>Patokan: kompleks Al-Azhar di sisi jalan utama Sisingamangaraja, mudah dijangkau kendaraan pribadi maupun transportasi umum. Area parkir tersedia di sekitar kompleks; tamu disarankan tiba ±30 menit lebih awal.</p>
+          <div class="btn-row"><a class="btn" href="https://maps.google.com/?q=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener">BUKA PETA</a></div>
+        </div>
+        <div class="card info-card rv rv-right">
+          <h4>Resepsi — The Ritz-Carlton Jakarta, Pacific Place</h4>
+          <p>Jl. Jend. Sudirman Kav. 52–53, SCBD, Senayan, Jakarta Selatan.</p>
+          <p>Patokan: berada di kawasan SCBD, terhubung dengan Pacific Place Mall; masuk melalui lobi utama hotel. Area parkir tersedia di gedung mal; tamu disarankan tiba ±30 menit lebih awal.</p>
+          <div class="btn-row"><a class="btn" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">BUKA PETA</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI REL GESER -->
+    <section id="galeri">
+      <img class="sec-deco" style="right:10px;top:12px;width:48px" src="assets/undangya/samudra-bajak/icon-starfish.webp" alt="">
+      <div class="bg-tint">
+      <div class="sec-head rv rv-up head-glass">
+        <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-shell.webp" alt="">
+        <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-100 · FRAGMEN & BOTOL DITEMUKAN</div><br><div class="sec-kicker">GALERI</div>
+        <h2 class="sec-title serif">Jurnal Pelayaran Kami</h2><div class="rope-div" aria-hidden="true"></div>
+        <p class="sec-sub">Geser ke kanan-kiri menyusuri delapan potret samudra kami — ketuk untuk memperbesar</p>
+      </div>
+      <div class="gal-rail" id="galGrid">
+        <figure class="rv rv-pop frag"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-1.webp" alt="Pasangan berjalan di pantai tropis berpohon kelapa" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Pantai Kelapa</span></figcaption><br><span class="frag-tag">FRAGMEN PETA №1</span></figure>
+        <figure class="rv rv-pop bottle"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-2.webp" alt="Pasangan membawa lentera kuningan di dermaga kayu" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Dermaga Senja</span></figcaption><br><span class="bottle-tag">PESAN DALAM BOTOL №1</span></figure>
+        <figure class="rv rv-pop frag"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-3.webp" alt="Pasangan tertawa di dek kapal di samping tali-temali dan kompas" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Dek Kapal</span></figcaption><br><span class="frag-tag">FRAGMEN PETA №2</span></figure>
+        <figure class="rv rv-pop bottle"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-4.webp" alt="Pasangan di pulau kelapa memandang kapal layar" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Pulau Kelapa</span></figcaption><br><span class="bottle-tag">PESAN DALAM BOTOL №2</span></figure>
+        <figure class="rv rv-pop frag"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-5.webp" alt="Siluet pasangan di dek kapal saat matahari terbenam oranye" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Senja Oranye</span></figcaption><br><span class="frag-tag">FRAGMEN PETA №3</span></figure>
+        <figure class="rv rv-pop bottle"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-6.webp" alt="Pasangan membaca peta harta karun di pantai dekat peti kayu" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Peta Harta Karun</span></figcaption><br><span class="bottle-tag">PESAN DALAM BOTOL №3</span></figure>
+        <figure class="rv rv-pop frag"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-7.webp" alt="Pasangan berdansa di dermaga berlampu senja" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Dansa Dermaga</span></figcaption><br><span class="frag-tag">FRAGMEN PETA №4</span></figure>
+        <figure class="rv rv-pop bottle"><div class="port-frame"><img src="assets/undangya/samudra-bajak/galeri-8.webp" alt="Pasangan memegang botol pesan di tepi laut saat fajar" loading="lazy" decoding="async"></div><figcaption style="margin-top:8px"><span class="gal-cap">Botol Pesan</span></figcaption><br><span class="bottle-tag">PESAN DALAM BOTOL №4</span></figure>
+      </div>
+      <div class="gal-dots" id="galDots" aria-hidden="true"></div>
+      <div class="gal-count" id="galCount">1 / 8</div>
+      </div>
+    </section>
+
+    <!-- VIDEO TEASER -->
+    <section id="cuplikan">
+      <img class="sec-deco" style="right:10px;top:14px;width:76px;transform:rotate(-8deg)" src="assets/undangya/samudra-bajak/teropong.webp" alt="">
+      <div class="bg-tint">
+        <div class="sec-head rv rv-up head-glass">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-lantern.webp" alt="">
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-101 · ISYARAT CAHAYA</div><br><div class="sec-kicker">CUPLIKAN VIDEO</div>
+          <h2 class="sec-title serif">Teaser Pelayaran</h2><div class="rope-div" aria-hidden="true"></div>
+          <p class="sec-sub">Sepotong kisah kami dalam bingkai bergerak</p>
+        </div>
+        <div class="rv rv-zoom" style="border:3px solid var(--brass);border-radius:150px 150px 18px 18px;padding:6px;background:linear-gradient(160deg,#fdf3d8,#e9d29a);box-shadow:0 16px 36px rgba(20,50,74,.25)">
+          <div class="vid-wrap" id="vidWrap">
+            <div class="vid-stage" style="border-radius:142px 142px 12px 12px">
+              <video id="teaserVideo" src="assets/undangya/samudra-bajak/teaser.mp4" poster="assets/undangya/samudra-bajak/teaser-poster.webp" preload="none" playsinline controls aria-label="Video teaser Meyzsa dan Fahrezzi"></video>
+              <button class="vid-btn" id="vidBtn" type="button" aria-label="Putar atau jeda video teaser">▶</button>
+            </div>
+          </div>
+        </div>
+        <p class="demo-note rv rv-up">Video teaser — contoh (dirender dari foto pasangan tema ini dengan lagu pengiring; pada undangan asli dapat diganti video prewedding mempelai).</p>
+      </div>
+    </section>
+
+    <!-- LIVE STREAMING + TAGAR + GALERI TAMU -->
+    <section id="live">
+      <img class="sec-deco" style="left:10px;top:12px;width:50px" src="assets/undangya/samudra-bajak/icon-gull.webp" alt="">
+      <div class="bg-tint">
+        <div class="sec-head rv rv-up head-glass">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-gull.webp" alt="">
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-102 · SIARAN DARI PELABUHAN</div><br><div class="sec-kicker">LIVE STREAMING</div>
+          <h2 class="sec-title serif">Siaran dari Pelabuhan</h2><div class="rope-div" aria-hidden="true"></div>
+          <p class="sec-sub">Untuk keluarga &amp; sahabat yang berhalangan hadir langsung</p>
+        </div>
+        <div class="card rv rv-flip" style="text-align:center">
+          <span class="live-badge"><span class="live-dot"></span>LIVE · CONTOH</span>
+          <h3 class="sub-h">Resepsi Pernikahan</h3>
+          <p style="font-size:13.5px;line-height:1.7;color:#43586a"><b>Sabtu, 12 Juni 2027 · mulai 11.00 WIB</b><br>menyesuaikan jam resepsi — The Ritz-Carlton Jakarta, Pacific Place</p>
+          <a class="btn" href="#" onclick="return false" aria-disabled="true">▶ TONTON LIVE</a>
+          <p class="demo-note">Tautan contoh (demo) — pada undangan asli, tombol ini mengarah ke siaran langsung mempelai dan aktif menjelang acara.</p>
+          <img class="divider" src="assets/undangya/samudra-bajak/orn-rope-divider.webp" alt="" aria-hidden="true" style="margin:20px auto 14px">
+          <div class="tag-big">#MeyzsaFahrezzi</div>
+          <p style="font-size:12.5px;line-height:1.65;margin-top:4px;color:#43586a">Abadikan momen bahagia Anda dan tandai dengan tagar resmi kami.</p>
+          <button class="salin-btn" type="button" data-copytext="#MeyzsaFahrezzi">SALIN TAGAR</button>
+        </div>
+        <div class="card rv rv-zoom" style="text-align:center;margin-top:16px">
+          <div class="sec-kicker">GALERI TAMU</div>
+          <h3 class="sub-h">Galeri Tamu</h3>
+          <p style="font-size:13px;line-height:1.7;color:#43586a">Bagikan momen bahagia Anda selama acara — unggah foto Anda di sini dan tandai juga dengan tagar <b>#MeyzsaFahrezzi</b>.</p>
+          <label class="salin-btn gt-up" for="gtInput">＋ UNGGAH FOTO</label>
+          <input id="gtInput" type="file" accept="image/*" multiple hidden>
+          <div class="gt-grid" id="gtGrid" aria-live="polite"></div>
+          <p class="gt-empty" id="gtEmpty">Jadilah yang pertama membagikan momen — ketuk tombol unggah.</p>
+          <p class="demo-note">Contoh — foto tersimpan di perangkat ini saja (penyimpanan lokal peramban), tidak diunggah ke server.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+      <img class="sec-deco" style="right:10px;top:12px;width:48px" src="assets/undangya/samudra-bajak/icon-rings.webp" alt="">
+      <div class="bg-tint">
+        <div class="sec-head rv rv-up head-glass">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-rings.webp" alt="">
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-103 · DINDING AWAK KAPAL</div><br><div class="sec-kicker">RSVP &amp; UCAPAN</div>
+          <h2 class="sec-title serif">Dinding Ucapan Awak Kapal</h2><div class="rope-div" aria-hidden="true"></div>
+          <p class="sec-sub">Konfirmasi kehadiran &amp; tuliskan doa terbaik Anda</p>
+        </div>
+        <div class="card rv rv-zoom">
+          <form id="rsvpForm" novalidate>
+            <div class="field"><label for="rsvpName">Nama Tamu</label><input id="rsvpName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
+            <div class="field"><label for="rsvpAttend">Konfirmasi Kehadiran</label>
+              <select id="rsvpAttend"><option value="Hadir">Hadir, insya Allah</option><option value="Berhalangan">Berhalangan hadir</option><option value="Masih ragu">Masih ragu</option></select></div>
+            <div class="field"><label for="rsvpMsg">Doa &amp; Ucapan</label><textarea id="rsvpMsg" placeholder="Tuliskan doa untuk kedua mempelai..."></textarea></div>
+            <button class="btn" type="submit" style="width:100%">KIRIM UCAPAN</button>
+          </form>
+          <p class="demo-note">Fitur demo pada contoh undangan ini — ucapan tersimpan hanya di perangkat Anda dan tidak terkirim ke server.</p>
+          <div class="gb-list" id="guestbookList" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUKU TAMU & QR -->
+    <section id="bukutamu">
+      <img class="sec-deco coin-spin" style="left:12px;top:16px;width:44px" src="assets/undangya/samudra-bajak/koin-emas.webp" alt="">
+      <div class="bg-tint">
+        <div class="sec-head rv rv-up head-glass">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-anchor.webp" alt="">
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-104 · DAFTAR NAIK KAPAL</div><br><div class="sec-kicker">BUKU TAMU &amp; CHECK-IN</div>
+          <h2 class="sec-title serif">Daftar Naik Kapal</h2><div class="rope-div" aria-hidden="true"></div>
+          <p class="sec-sub">Pindai kode QR ini atau isi buku tamu saat tiba di lokasi</p>
+        </div>
+        <div class="card rv rv-drop" style="text-align:center">
+          <div class="qr-box"><img src="assets/undangya/samudra-bajak/qr-undangan.webp" alt="Kode QR menuju halaman undangan ini" loading="lazy" decoding="async"></div>
+          <p style="font-size:12.5px;line-height:1.65;color:#43586a">Kode QR membuka halaman undangan yang sedang Anda baca — tunjukkan kepada penerima tamu saat check-in.</p>
+          <form id="ciForm" novalidate style="text-align:left;margin-top:18px">
+            <div class="field"><label for="ciName">Nama Tamu</label><input id="ciName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
+            <div class="field"><label for="ciSesi">Sesi Kehadiran</label>
+              <select id="ciSesi"><option value="Akad Nikah">Akad Nikah</option><option value="Resepsi">Resepsi</option></select></div>
+            <button class="btn" type="submit" style="width:100%">CHECK-IN (DEMO)</button>
+          </form>
+          <p class="demo-note">Fitur demo pada contoh undangan ini — data check-in tersimpan hanya di perangkat Anda.</p>
+          <div class="gb-list" id="ciList" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AMPLOP + KADO FISIK -->
+    <section id="amplop">
+      <img class="sec-deco" style="left:10px;top:12px;width:52px" src="assets/undangya/samudra-bajak/icon-chest.webp" alt="">
+      <div class="bg-tint">
+      <div class="sec-head rv rv-up head-glass">
+        <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-chest.webp" alt="">
+        <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-105 · PETI TANDA KASIH</div><br><div class="sec-kicker">AMPLOP DIGITAL</div>
+        <h2 class="sec-title serif">Peti Tanda Kasih</h2><div class="rope-div" aria-hidden="true"></div>
+        <p class="sec-sub">Doa restu Anda adalah harta karun terindah. Bagi yang berkenan memberi tanda kasih:</p>
+      </div>
+      <div class="card acc-card rv rv-left">
+        <div class="bank">BCA</div>
+        <div class="acc-num" id="accBca">1234567890</div>
+        <div class="acc-name">a.n. Meyzsa Putri Ananda</div>
+        <button class="copy-btn" type="button" data-copy="accBca">SALIN NOMOR</button>
+      </div>
+      <div class="card acc-card rv rv-right">
+        <div class="bank">DANA</div>
+        <div class="acc-num" id="accDana">0812-3456-7890</div>
+        <div class="acc-name">a.n. Meyzsa Putri Ananda</div>
+        <button class="copy-btn" type="button" data-copy="accDana">SALIN NOMOR</button>
+      </div>
+      <p class="demo-note rv rv-up">Nomor di atas adalah contoh untuk keperluan demo tampilan undangan.</p>
+      <div class="card acc-card rv rv-zoom" style="margin-top:20px">
+        <div class="bank" style="font-size:16px;letter-spacing:.1em">KIRIM KADO FISIK</div>
+        <p style="font-size:13.5px;line-height:1.75;margin-top:8px;color:#43586a">Kediaman Mempelai Wanita<br>Jl. Melati Indah No. 12, Kebayoran Baru,<br>Jakarta Selatan 12120 <span style="opacity:.65">(alamat contoh)</span></p>
+        <button class="salin-btn" type="button" data-copytext="Kediaman Mempelai Wanita — Jl. Melati Indah No. 12, Kebayoran Baru, Jakarta Selatan 12120 (alamat contoh)">SALIN ALAMAT</button>
+      </div>
+      </div>
+    </section>
+
+    <!-- TURUT MENGUNDANG -->
+    <section id="turut">
+      <img class="sec-deco lantern-hang" style="right:12px;top:0;width:40px;animation-duration:4.9s" src="assets/undangya/samudra-bajak/tali-simpul.webp" alt="">
+      <div class="bg-tint">
+        <div class="sec-head rv rv-up head-glass">
+          <img class="sec-icon" src="assets/undangya/samudra-bajak/icon-compass.webp" alt="">
+          <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-106 · ARMADA KELUARGA</div><br><div class="sec-kicker">TURUT MENGUNDANG</div>
+          <h2 class="sec-title serif">Turut Mengundang</h2><div class="rope-div" aria-hidden="true"></div>
+          <p class="sec-sub">Segenap keluarga besar kedua mempelai</p>
+        </div>
+        <div class="turut-grid">
+          <div class="card turut-card rv rv-left"><h4>Keluarga Mempelai Wanita</h4><p>Keluarga Besar Ridwan — Jakarta<br>Keluarga Besar Aminah — Bogor<br>Beserta segenap kerabat &amp; handai tolan</p></div>
+          <div class="card turut-card rv rv-right"><h4>Keluarga Mempelai Pria</h4><p>Keluarga Besar Sutrisno — Jakarta<br>Keluarga Besar Dewi — Tangerang<br>Beserta segenap kerabat &amp; handai tolan</p></div>
+        </div>
+        <p class="demo-note rv rv-up">Susunan keluarga di atas adalah contoh untuk tampilan tema.</p>
+      </div>
+    </section>
+
+    <!-- PENUTUP -->
+    <section id="penutup" style="text-align:center">
+      <div class="bg-tint panel-glass rv rv-zoom" style="padding:30px 22px 26px">
+        <div class="log-stamp">⚓ CATATAN KAPTEN · HARI KE-107 · BERLAYAR SELAMANYA</div><br><img class="sec-icon" src="assets/undangya/samudra-bajak/icon-wheel.webp" alt="" style="width:74px;height:74px">
+        <p style="font-size:14.5px;line-height:1.8;color:#43586a;max-width:320px;margin:6px auto 0">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai.</p>
+        <p style="margin-top:16px;font-size:12px;letter-spacing:.3em;color:var(--sunset2);font-weight:700">KAMI YANG BERBAHAGIA</p>
+        <div class="penutup-names script" style="margin-top:6px">Meyzsa &amp; Fahrezzi</div>
+        <p style="margin-top:12px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16.5px;color:var(--mut)">…dan mereka pun berlayar bahagia selamanya.</p>
+      </div>
+    </section>
+    <p class="foot-note">Undangan digital contoh “Samudra Bajak” oleh UndangYa! — seluruh nama, tanggal, dan nomor adalah data contoh.<br>Musik latar: “Petals on the Stone Floor”.</p>
+  </main>
+</div>
+
+<button id="btnMusic" type="button" aria-label="Putar atau hentikan musik latar">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18.5V6l10-2v11.5" stroke="#eed9a4" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.8" cy="18.5" r="2.6" fill="#eed9a4"/><circle cx="16.8" cy="15.5" r="2.6" fill="#eed9a4"/></svg>
+</button>
+<div id="lightbox" role="dialog" aria-label="Foto galeri diperbesar"><img id="lbImg" src="" alt="Foto galeri diperbesar"></div>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+
+<script>
+(function(){
+  "use strict";
+  var params=new URLSearchParams(window.location.search);
+  var guest=(params.get("to")||"").trim();
+  if(guest){document.getElementById("guestName").textContent=guest;}
+  var reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* kilau laut CSS murni (kompositor, tanpa canvas/rAF) */
+  if(!reduced){
+    var kf=document.getElementById("kilauCover");
+    if(kf){for(var i=0;i<16;i++){var s=document.createElement("img");s.src="assets/undangya/samudra-bajak/kilau.webp";s.alt="";s.className="kilau";
+      var sz=(10+Math.random()*16).toFixed(0);
+      s.style.cssText="left:"+(3+Math.random()*92).toFixed(1)+"%;top:"+(52+Math.random()*40).toFixed(1)+"%;width:"+sz+"px;height:"+sz+"px";
+      s.style.setProperty("--kd",(2.4+Math.random()*2.6).toFixed(1)+"s");
+      s.style.setProperty("--kdl",(-Math.random()*4).toFixed(1)+"s");
+      kf.appendChild(s);}}
+  }
+
+  var audio=document.getElementById("bgmShared"), btnMusic=document.getElementById("btnMusic"), opened=false;
+  function tryPlay(){var pr=audio.play(); if(pr&&pr.catch)pr.catch(function(){}); btnMusic.classList.add("playing");}
+  document.getElementById("btnOpen").addEventListener("click",function(){
+    if(opened)return; opened=true;
+    document.body.classList.add("opening"); tryPlay();
+    setTimeout(function(){
+      document.body.classList.remove("opening"); document.body.classList.add("opened");
+      document.getElementById("cover").style.display="none";
+      window.scrollTo(0,0); initReveal();
+    }, reduced?60:1120);
+  });
+  btnMusic.addEventListener("click",function(){ if(audio.paused){tryPlay();}else{audio.pause();btnMusic.classList.remove("playing");} });
+
+  var target=new Date("2027-06-12T08:00:00+07:00").getTime();
+  var els={d:document.getElementById("cdD"),h:document.getElementById("cdH"),m:document.getElementById("cdM"),s:document.getElementById("cdS")};
+  function setNum(el,v){if(el.textContent!==String(v)){el.textContent=v;el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop");}}
+  function cd(){var diff=Math.max(0,target-Date.now()), d=Math.floor(diff/864e5), h=Math.floor(diff/36e5)%24, m=Math.floor(diff/6e4)%60, s=Math.floor(diff/1e3)%60;
+    setNum(els.d,d);setNum(els.h,String(h).padStart(2,"0"));setNum(els.m,String(m).padStart(2,"0"));setNum(els.s,String(s).padStart(2,"0"));}
+  cd(); setInterval(cd,1000);
+
+  var io=null;
+  function initReveal(){
+    var items=document.querySelectorAll(".rv");
+    if(!("IntersectionObserver" in window)||reduced){items.forEach(function(e){e.classList.add("in")});return;}
+    io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.12});
+    items.forEach(function(e){io.observe(e);});
+  }
+
+  /* galeri rel: lightbox + indikator titik & hitungan */
+  var lb=document.getElementById("lightbox"), lbImg=document.getElementById("lbImg"), rail=document.getElementById("galGrid");
+  rail.addEventListener("click",function(e){var img=e.target.closest("img"); if(!img)return; lbImg.src=img.src; lb.classList.add("on");});
+  lb.addEventListener("click",function(){lb.classList.remove("on");lbImg.src="";});
+  var figs=rail.querySelectorAll("figure"), dotsBox=document.getElementById("galDots"), cnt=document.getElementById("galCount");
+  figs.forEach(function(){var i=document.createElement("i");dotsBox.appendChild(i);});
+  var dots=dotsBox.querySelectorAll("i");
+  function galSync(){var w=rail.clientWidth*0.68; var idx=w>0?Math.round(rail.scrollLeft/w):0; idx=Math.max(0,Math.min(figs.length-1,idx));
+    dots.forEach(function(d,i){d.classList.toggle("on",i===idx);}); cnt.textContent=(idx+1)+" / "+figs.length;}
+  rail.addEventListener("scroll",function(){window.requestAnimationFrame(galSync);},{passive:true}); galSync();
+  window.addEventListener("resize",galSync);
+  var galObs=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){galSync(); figs.forEach(function(f){f.classList.add("in");});}});},{threshold:.2}); galObs.observe(rail);
+
+  document.querySelectorAll(".copy-btn").forEach(function(b){
+    b.addEventListener("click",function(){
+      var txt=document.getElementById(b.getAttribute("data-copy")).textContent.trim();
+      function done(){var o=b.textContent;b.textContent="TERSALIN ✓";setTimeout(function(){b.textContent=o;},1600);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(done);}else{done();}
+    });
+  });
+  document.querySelectorAll("[data-copytext]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var txt=b.getAttribute("data-copytext");
+      function done(){var o=b.textContent;b.textContent="TERSALIN ✓";setTimeout(function(){b.textContent=o;},1600);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(done);}else{done();}
+    });
+  });
+  function icsEsc(s){return String(s).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n");}
+  document.querySelectorAll("[data-ics]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var pad=function(n){return String(n).padStart(2,"0");}, now=new Date();
+      var stamp=now.getUTCFullYear()+pad(now.getUTCMonth()+1)+pad(now.getUTCDate())+"T"+pad(now.getUTCHours())+pad(now.getUTCMinutes())+pad(now.getUTCSeconds())+"Z";
+      var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//UndangYa//SamudraBajak//ID","BEGIN:VEVENT",
+        "UID:"+Date.now()+"@undangya.web.id","DTSTAMP:"+stamp,
+        "DTSTART:"+b.getAttribute("data-start"),"DTEND:"+b.getAttribute("data-end"),
+        "SUMMARY:"+icsEsc(b.getAttribute("data-title")||""),
+        "LOCATION:"+icsEsc(b.getAttribute("data-loc")||""),
+        "DESCRIPTION:"+icsEsc(b.getAttribute("data-desc")||""),
+        "END:VEVENT","END:VCALENDAR"].join("\r\n");
+      var blob=new Blob([ics],{type:"text/calendar"}), u=URL.createObjectURL(blob);
+      var a=document.createElement("a"); a.href=u; a.download=(b.getAttribute("data-file")||"acara")+".ics";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){URL.revokeObjectURL(u);},4000);
+    });
+  });
+
+  (function(){
+    var wrap=document.getElementById("vidWrap"); if(!wrap)return;
+    var v=document.getElementById("teaserVideo"), btn=document.getElementById("vidBtn");
+    if(!v||!btn)return;
+    function sync(){var playing=!v.paused&&!v.ended; wrap.classList.toggle("playing",playing); btn.textContent=playing?"❚❚":"▶";}
+    btn.addEventListener("click",function(){ if(v.paused||v.ended){v.play();}else{v.pause();} });
+    v.addEventListener("play",sync); v.addEventListener("pause",sync); v.addEventListener("ended",sync); sync();
+    if("IntersectionObserver" in window){ new IntersectionObserver(function(es){es.forEach(function(en){ if(!en.isIntersecting&&!v.paused){v.pause();} });},{threshold:.15}).observe(v); }
+  })();
+
+  var GTKEY="samudra-bajak-galeri-tamu-v1", gtGrid=document.getElementById("gtGrid"), gtEmpty=document.getElementById("gtEmpty"), gtInput=document.getElementById("gtInput");
+  function gtLoad(){try{var v=JSON.parse(localStorage.getItem(GTKEY));if(Array.isArray(v))return v;}catch(e){} return [];}
+  function gtSave(items){try{localStorage.setItem(GTKEY,JSON.stringify(items));return true;}catch(e){return false;}}
+  function gtRender(items){ if(!gtGrid)return; gtGrid.innerHTML="";
+    items.forEach(function(src,i){ var d=document.createElement("div");d.className="gt-item";
+      var im=document.createElement("img");im.src=src;im.alt="Foto galeri tamu "+(i+1);im.loading="lazy";
+      var b=document.createElement("button");b.className="gt-del";b.type="button";b.setAttribute("data-i",i);b.setAttribute("aria-label","Hapus foto");b.textContent="×";
+      d.appendChild(im);d.appendChild(b);gtGrid.appendChild(d);});
+    if(gtEmpty)gtEmpty.style.display=items.length?"none":""; }
+  var gtItems=gtLoad(); gtRender(gtItems);
+  if(gtGrid)gtGrid.addEventListener("click",function(e){ var b=e.target.closest(".gt-del"); if(!b)return;
+    gtItems.splice(parseInt(b.getAttribute("data-i"),10),1); gtSave(gtItems); gtRender(gtItems); });
+  if(gtInput)gtInput.addEventListener("change",function(){
+    var files=Array.prototype.slice.call(gtInput.files||[]).filter(function(f){return f.type.indexOf("image/")===0;});
+    if(!files.length)return;
+    var pending=files.length;
+    function done(){ if(--pending===0){ gtRender(gtItems); gtInput.value=""; } }
+    files.forEach(function(f){
+      var url=URL.createObjectURL(f), img=new Image();
+      img.onload=function(){ URL.revokeObjectURL(url);
+        var max=900, sc=Math.min(1,max/Math.max(img.naturalWidth||max,img.naturalHeight||max));
+        var cv=document.createElement("canvas");
+        cv.width=Math.max(1,Math.round(img.naturalWidth*sc)); cv.height=Math.max(1,Math.round(img.naturalHeight*sc));
+        cv.getContext("2d").drawImage(img,0,0,cv.width,cv.height);
+        gtItems.unshift(cv.toDataURL("image/jpeg",0.82));
+        if(gtItems.length>24)gtItems.length=24;
+        if(!gtSave(gtItems)){ gtItems=gtItems.slice(0,8); if(!gtSave(gtItems)){alert("Penyimpanan perangkat penuh — sebagian foto tidak dapat disimpan.");} }
+        done(); };
+      img.onerror=function(){ URL.revokeObjectURL(url); done(); };
+      img.src=url;
+    });
+  });
+
+  var CIKEY="samudra-bajak-checkin-v1", ciList=document.getElementById("ciList");
+  var ciSeed=[{n:"Keluarga Besar Pratama",s:"Resepsi",w:"11.02 WIB (contoh)"},{n:"Sahabat Meyzsa",s:"Akad Nikah",w:"07.58 WIB (contoh)"}];
+  function ciLoad(){try{var v=JSON.parse(localStorage.getItem(CIKEY));if(Array.isArray(v))return v;}catch(e){} return ciSeed.slice();}
+  function ciRender(items){ if(!ciList)return; ciList.innerHTML="";
+    items.forEach(function(it){ var d=document.createElement("div");d.className="gb-item";
+      var b=document.createElement("b");b.textContent=it.n;
+      var st=document.createElement("span");st.className="st";st.textContent="· Check-in "+it.s;
+      var p=document.createElement("p");p.textContent="Tercatat pukul "+it.w;
+      d.appendChild(b);d.appendChild(st);d.appendChild(p);ciList.appendChild(d);});}
+  var ciItems=ciLoad(); ciRender(ciItems);
+  var ciForm=document.getElementById("ciForm");
+  if(ciForm)ciForm.addEventListener("submit",function(e){ e.preventDefault();
+    var n=document.getElementById("ciName").value.trim();
+    if(!n){alert("Mohon isi nama untuk check-in.");return;}
+    var s=document.getElementById("ciSesi").value, now=new Date();
+    var w=String(now.getHours()).padStart(2,"0")+"."+String(now.getMinutes()).padStart(2,"0")+" WIB (demo)";
+    ciItems.unshift({n:n,s:s,w:w});
+    try{localStorage.setItem(CIKEY,JSON.stringify(ciItems.slice(0,30)));}catch(err){}
+    ciRender(ciItems); e.target.reset();
+  });
+
+  var KEY="samudra-bajak-guestbook-v1", list=document.getElementById("guestbookList");
+  var seed=[
+    {n:"Keluarga Besar Ridwan",a:"Hadir",m:"Barakallahu lakuma wa baraka 'alaikuma. Selamat berlayar menempuh hidup baru, Meyzsa & Fahrezzi! (contoh ucapan)"},
+    {n:"Sahabat Kampus Fahrezzi",a:"Hadir",m:"Akhirnya sang nakhoda menemukan penjaga kompasnya. Samawa selamanya! (contoh ucapan)"}
+  ];
+  function load(){try{var v=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(v))return v;}catch(e){} return seed.slice();}
+  function render(items){ list.innerHTML="";
+    items.forEach(function(it){ var d=document.createElement("div");d.className="gb-item";
+      var b=document.createElement("b");b.textContent=it.n;
+      var st=document.createElement("span");st.className="st";st.textContent="· "+it.a;
+      var p=document.createElement("p");p.textContent=it.m;
+      d.appendChild(b);d.appendChild(st);d.appendChild(p);list.appendChild(d); }); }
+  var items=load(); render(items);
+  document.getElementById("rsvpForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    var n=document.getElementById("rsvpName").value.trim(), m=document.getElementById("rsvpMsg").value.trim(), a=document.getElementById("rsvpAttend").value;
+    if(!n||!m){alert("Mohon isi nama dan ucapan terlebih dahulu.");return;}
+    items.unshift({n:n,a:a,m:m});
+    try{localStorage.setItem(KEY,JSON.stringify(items.slice(0,30)));}catch(err){}
+    render(items); e.target.reset();
+  });
+})();
+</script>
+<script>
+(function(){
+  var stack=document.getElementById("worldStack"), main=document.getElementById("content");
+  if(!stack||!main)return;
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  var ticking=false;
+  function move(){ ticking=false;
+    var vh=window.innerHeight||0, r=main.getBoundingClientRect();
+    var total=r.height-vh; if(total<=0)return;
+    var p=-r.top/total; p=p<0?0:(p>1?1:p);
+    var over=stack.offsetHeight-vh; if(over<0)over=0;
+    stack.style.transform="translate3d(0,"+(-p*over).toFixed(1)+"px,0)"; }
+  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(move);}}
+  window.addEventListener("scroll",onScroll,{passive:true});
+  window.addEventListener("resize",onScroll);
+  window.addEventListener("load",move);
+  move();
+})();
+</script>
+</body>
+</html>

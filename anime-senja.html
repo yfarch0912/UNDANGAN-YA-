@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Anime Senja — Meyzsa &amp; Fahrezzi | Sabtu 12 Juni 2027</title>
+<meta name="description" content="Undangan pernikahan digital bergaya ilustrasi anime orisinal: Meyzsa & Fahrezzi, Sabtu 12 Juni 2027, Jakarta.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b2340'/%3E%3Ccircle cx='16' cy='19' r='7' fill='%23f2a65a'/%3E%3Cpath d='M4 26h24v3H4z' fill='%235b3a7a'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'Anime Display';src:url('assets/undangya/anime-senja/font-hero-display.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Anime Kicker';src:url('assets/undangya/anime-senja/font-hero-kicker.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+:root{--sun:#e8734a;--sun-l:#f2a65a;--plum:#3b2340;--plum2:#5b3a7a;--violet:#8d6bb5;--sakura:#f4a7b9;--sakura-d:#c96f8e;--cream:#fff6ec;--paper:#fdf0e2;--ink:#33203d;--mut:#7d6488;--line:rgba(232,115,74,.4)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#17101f;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.script{font-family:'Anime Display',Georgia,serif}
+.serif{font-family:Georgia,'Times New Roman',serif}
+.phone{max-width:430px;margin:0 auto;position:relative;min-height:100dvh;overflow:clip;box-shadow:0 0 90px rgba(0,0,0,.9);background:radial-gradient(120% 30% at 50% -2%,rgba(244,167,185,.3),transparent 55%),radial-gradient(80% 20% at 8% 32%,rgba(141,107,181,.22),transparent 60%),linear-gradient(180deg,#fdeeda 0%,#fbe3d3 38%,#f3d9e8 72%,#e6d6f2 100%)}
+img{max-width:100%;display:block;height:auto}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit}
+/* ===== COVER living scene ===== */
+#cover{position:relative;height:100dvh;min-height:620px;overflow:hidden;background:var(--plum)}
+.scene{position:absolute;inset:0;animation:dolly 3s cubic-bezier(.22,.8,.3,1) both}
+@keyframes dolly{from{transform:scale(1.3)}to{transform:scale(1)}}
+.lyr{position:absolute;pointer-events:none}
+.lyr-coverbg{inset:0;width:100%;height:100%;object-fit:cover;animation:bgIn 1.6s ease both,bgDrift 30s ease-in-out 1.6s infinite alternate}
+@keyframes bgIn{from{opacity:0}to{opacity:1}}
+@keyframes bgDrift{from{transform:scale(1.05) translateY(0)}to{transform:scale(1.05) translateY(-9px)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+/* kereta sampul = sprite lukis generate (kereta-lukis.webp) melintas di atas rel-jembatan */
+/* sakura tegak: pivot pangkal bawah, tanpa geser akar */
+.sakura-b{position:absolute;bottom:-6px;z-index:5;pointer-events:none;transform-origin:50% 100%;animation:swayB var(--sw,3.6s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
+.sakura-b img{width:100%}
+@keyframes swayB{from{transform:rotate(-1.8deg)}to{transform:rotate(2.4deg)}}
+/* sakura gantung: pivot titik atas */
+.sakura-t{position:absolute;top:-8px;z-index:5;pointer-events:none;transform-origin:50% 0;animation:swayT var(--sw,4.3s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
+@keyframes swayT{from{transform:rotate(2.2deg)}to{transform:rotate(-2.8deg)}}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle 2.8s ease-in-out infinite alternate;pointer-events:none;z-index:2}
+@keyframes twinkle{from{opacity:.15;transform:scale(.7)}to{opacity:1;transform:scale(1.25)}}
+.petal-field,.sec-petals{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:6}
+.petal{position:absolute;left:0;top:var(--pt,10%);width:16px;pointer-events:none;opacity:0;animation:petalDrift var(--pd,17s) linear infinite;animation-delay:var(--pdl,0s)}
+@keyframes petalDrift{0%{transform:translate3d(-60px,0,0) rotate(0deg);opacity:0}7%{opacity:.9}50%{transform:translate3d(240px,var(--y50,26px),0) rotate(180deg)}93%{opacity:.85}100%{transform:translate3d(500px,var(--ye,58px),0) rotate(350deg);opacity:0}}
+.cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,22,54,.3),transparent 28%,transparent 55%,rgba(43,22,54,.42));z-index:4;pointer-events:none}
+.cover-ui{position:absolute;inset:0;z-index:8;display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 26px 30px}
+.cover-kicker{font-family:'Anime Kicker',sans-serif;margin-top:21%;font-size:11px;letter-spacing:.42em;font-weight:700;color:#fff;text-shadow:0 2px 14px rgba(43,22,54,.85);animation:fadeUp 1s 3.2s ease both}
+.cover-names{font-family:'Anime Display',Georgia,serif;font-size:55px;letter-spacing:.015em;line-height:1.15;color:#fffdf6;text-shadow:0 2px 8px rgba(90,40,110,.5),0 0 28px rgba(242,166,90,.6),0 3px 22px rgba(43,22,54,.55);animation:fadeUp 1.1s 3.5s ease both}
+.cover-names .amp{display:block;font-size:34px;color:var(--sun-l)}
+.cover-date{margin-top:8px;font-size:12px;letter-spacing:.28em;color:#fff3df;background:linear-gradient(135deg,rgba(232,115,74,.5),rgba(141,107,181,.4));padding:6px 14px;border-radius:999px;border:1px solid rgba(255,240,210,.8);animation:fadeUp 1s 3.8s ease both}
+.cover-spacer{flex:1}
+.cover-guest{color:#fff;font-size:12px;letter-spacing:.14em;text-shadow:0 1px 3px rgba(43,22,54,1),0 2px 12px rgba(43,22,54,.95);background:rgba(43,22,54,.3);padding:4px 14px;border-radius:999px;animation:fadeUp 1s 4.1s ease both}
+.gname{margin-top:7px;font-family:Georgia,serif;font-size:22px;font-weight:600;color:#fff;text-shadow:0 1px 3px rgba(43,22,54,1),0 2px 12px rgba(43,22,54,.95);background:rgba(43,22,54,.38);padding:5px 18px;border-radius:999px;animation:fadeUp 1s 4.25s ease both}
+#btnOpen{margin-top:14px;padding:13px 30px;border-radius:999px;border:1px solid #ffd9a8;background:linear-gradient(135deg,#b34a26,var(--sun) 45%,var(--plum2));color:#fff8ec;font-weight:700;font-size:13px;letter-spacing:.2em;box-shadow:0 10px 28px rgba(20,10,35,.5);position:relative;overflow:hidden;animation:fadeUp 1s 4.4s ease both}
+#btnOpen::after{content:"";position:absolute;top:0;left:0;transform:translateX(-160%);width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.6),transparent);animation:sheen 2.8s ease-in-out infinite}
+@keyframes sheen{0%,55%{transform:translateX(-160%)}90%,100%{transform:translateX(300%)}}
+body.opening #cover{animation:pushZoom 1.1s cubic-bezier(.6,0,.8,.4) both}
+@keyframes pushZoom{to{transform:scale(1.5);opacity:0}}
+/* ===== CONTENT ===== */
+#content{display:none}
+body.opened #content{display:block}
+/* Background GAMBAR unik per section (Program Detail 2026-11-12) + kerudung terang kontras mutlak */
+section{background-size:cover;background-position:center;background-color:#f3d9e8;box-shadow:inset 0 0 0 9999px rgba(253,240,226,.52)}
+#sambutan{background-image:url('assets/undangya/anime-senja/bg-world-1.webp')}
+#mempelai{background-image:url('assets/undangya/anime-senja/bg-world-2.webp')}
+#kisah{background-image:url('assets/undangya/anime-senja/bg-sakura-senja.webp');box-shadow:inset 0 0 0 9999px rgba(253,240,226,.58)}
+#acara{background-image:url('assets/undangya/anime-senja/bg-world-3.webp')}
+#galeri{background-image:url('assets/undangya/anime-senja/bg-world-4.webp')}
+#cuplikan{background-image:url('assets/undangya/anime-senja/bg-world-5.webp')}
+#dresscode{background-image:url('assets/undangya/anime-senja/bg-langit-ungu.webp');box-shadow:inset 0 0 0 9999px rgba(253,240,226,.45)}
+#live{background-image:url('assets/undangya/anime-senja/bg-malam.webp');box-shadow:inset 0 0 0 9999px rgba(253,240,226,.74)}
+#rsvp{background-image:url('assets/undangya/anime-senja/bg-sakura.webp');box-shadow:inset 0 0 0 9999px rgba(253,240,226,.58)}
+#bukutamu{background-image:url('assets/undangya/anime-senja/bg-fajar.webp');box-shadow:inset 0 0 0 9999px rgba(253,240,226,.42)}
+#amplop{background-image:url('assets/undangya/anime-senja/bg-amplop.webp');box-shadow:inset 0 0 0 9999px rgba(253,240,226,.60)}
+#turut{background-image:url('assets/undangya/anime-senja/bg-turut.webp');box-shadow:inset 0 0 0 9999px rgba(253,240,226,.55)}
+#penutup{background-image:url('assets/undangya/anime-senja/bg-penutup.webp');box-shadow:inset 0 0 0 9999px rgba(253,240,226,.55)}
+section{position:relative;padding:60px 24px;z-index:1}
+.sec-head{text-align:center;margin-bottom:28px}
+.sec-kicker{font-family:'Anime Kicker',sans-serif;display:inline-block;font-size:10.5px;letter-spacing:.38em;color:#7c2d4e;font-weight:700;background:rgba(255,248,236,.85);padding:5px 12px 4px 16px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line)}
+.sec-title{font-family:'Anime Display',Georgia,serif;font-size:29px;font-weight:700;color:var(--ink);margin-top:8px}
+.sec-sub{font-style:italic;font-size:16.5px;color:var(--mut);margin-top:6px;font-family:Georgia,serif}
+.sec-icon{display:block;width:46px;height:46px;margin:0 auto 10px;color:var(--sun);background:rgba(255,248,236,.92);border-radius:50%;padding:9px;box-shadow:inset 0 0 0 1px var(--line),0 6px 16px rgba(91,58,122,.18)}
+.card{background:linear-gradient(180deg,rgba(255,253,247,.94),rgba(253,240,226,.92));border:1px solid var(--line);border-radius:20px;padding:26px 22px;box-shadow:0 14px 34px rgba(91,58,122,.16);position:relative}
+.card::before{content:"";position:absolute;inset:7px;border:1px solid rgba(232,115,74,.3);border-radius:14px;pointer-events:none}
+.panel{background:linear-gradient(180deg,rgba(255,253,247,.72),rgba(255,244,230,.58));border:1px solid rgba(232,115,74,.35);border-radius:24px;padding:22px 16px;box-shadow:0 14px 30px rgba(91,58,122,.14)}
+/* frame panel manga halus (motif orisinal tema) */
+.manga{border:2.5px solid var(--plum);border-radius:18px;padding:6px;background:#fffdf8;box-shadow:5px 6px 0 rgba(59,35,64,.85)}
+.manga img{border-radius:12px;width:100%;height:100%;object-fit:cover}
+.person{text-align:center}
+.person .manga{height:330px;width:min(248px,76%);margin:0 auto}
+.person h3{font-family:'Anime Display',Georgia,serif;font-size:26px;color:var(--ink);margin-top:14px;font-weight:700;line-height:1.35;letter-spacing:.01em}
+.person p{font-size:13.5px;line-height:1.65;color:#5d4568;margin-top:8px}
+.ig-btn{display:inline-block;margin-top:12px;padding:8px 18px;border-radius:999px;border:1px solid var(--sun);color:#b34a26;font-size:12px;font-weight:600;letter-spacing:.08em;text-decoration:none;background:rgba(255,255,255,.65)}
+.hero-frame{height:400px;width:min(290px,82%);margin:0 auto}
+.countdown{display:flex;gap:9px;justify-content:center;margin:6px 0 4px}
+.cd-box{flex:1;max-width:76px;background:linear-gradient(180deg,rgba(91,58,122,.8),rgba(59,35,64,.88));border:1px solid rgba(255,217,168,.7);border-radius:18px;padding:12px 2px 9px;text-align:center;box-shadow:0 10px 22px rgba(59,35,64,.3)}
+.cd-box b{display:block;font-family:Georgia,serif;font-size:25px;color:#ffd9a8}
+.cd-box span{font-size:9.5px;letter-spacing:.2em;color:#e3d2f2;text-transform:uppercase}
+.cd-box b.pop{animation:cdpop .45s ease}
+@keyframes cdpop{40%{transform:scale(1.25);color:#fff}}
+.event{margin-bottom:22px;text-align:center}
+.event h3{font-family:Georgia,serif;font-size:23px;margin:8px 0 4px}
+.event .when{font-size:17px;color:var(--sakura-d);font-weight:700;font-family:Georgia,serif}
+.event p{font-size:13.5px;line-height:1.65;color:#5d4568;margin-top:6px}
+.btn{display:inline-block;margin-top:13px;padding:11px 20px;border-radius:999px;background:linear-gradient(135deg,#b34a26,var(--sun) 45%,var(--plum2));color:#fff8ec;font-weight:700;font-size:12px;letter-spacing:.12em;text-decoration:none;border:0;box-shadow:0 8px 20px rgba(179,74,38,.3)}
+.btn-alt{background:transparent;color:#7c2d4e;border:1.5px solid var(--sun);box-shadow:none}
+.btn-row{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.field{margin-bottom:14px;text-align:left}
+.field label{display:block;font-size:11px;font-weight:700;letter-spacing:.15em;color:#b34a26;margin-bottom:6px;text-transform:uppercase}
+.field input,.field select,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fffdf8;font-family:inherit;font-size:14px;color:var(--ink)}
+.field textarea{min-height:84px;resize:vertical}
+.demo-note{font-size:11.5px;color:var(--mut);text-align:center;margin-top:10px;line-height:1.6}
+.gb-list{margin-top:20px;display:grid;gap:10px}
+.gb-item{background:#fffdf8;border:1px solid rgba(232,115,74,.3);border-radius:14px;padding:12px 15px;text-align:left}
+.gb-item b{font-size:13.5px}
+.gb-item .st{font-size:10.5px;color:var(--sakura-d);font-weight:700;margin-left:6px}
+.gb-item p{font-size:13px;color:#5d4568;line-height:1.55;margin-top:3px}
+.acc-card{text-align:center;margin-bottom:18px}
+.acc-card .bank{font-family:Georgia,serif;font-weight:700;font-size:19px;letter-spacing:.12em;color:var(--plum2)}
+.acc-num{font-size:21px;font-weight:700;letter-spacing:.08em;margin:8px 0 2px}
+.acc-name{font-size:12.5px;color:var(--mut)}
+.copy-btn{margin-top:12px;padding:9px 20px;border-radius:999px;border:1px solid var(--sun);background:#fffdf8;color:#b34a26;font-weight:700;font-size:12px;letter-spacing:.08em}
+/* galeri rel geser scroll-snap */
+.gal-rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 4px 14px;scrollbar-width:none}
+.gal-rail::-webkit-scrollbar{display:none}
+.gal-slide{flex:0 0 76%;scroll-snap-align:center;text-align:center}
+.gal-slide .manga{height:330px}
+.gal-cap{font-family:Georgia,serif;font-style:italic;font-size:14.5px;color:#5d4568;margin-top:9px}
+.gal-dots{display:flex;gap:7px;justify-content:center;margin-top:4px}
+.gal-dots i{width:8px;height:8px;border-radius:50%;background:rgba(91,58,122,.3);transition:all .3s}
+.gal-dots i.on{background:var(--sun);transform:scale(1.35)}
+.gal-count{text-align:center;font-size:12px;color:var(--mut);margin-top:7px;letter-spacing:.15em}
+/* love story */
+.tl{position:relative;margin-top:4px}
+.tl::before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,transparent,var(--sun) 10%,var(--sun) 90%,transparent);opacity:.55}
+.tl-item{position:relative;padding:0 0 24px 34px;text-align:left}
+.tl-item::before{content:"";position:absolute;left:3px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--sakura);border:2.5px solid var(--plum)}
+.tl-item h4{font-family:Georgia,serif;font-size:17px}
+.tl-item .yr{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--sakura-d)}
+.tl-item p{font-size:13.5px;line-height:1.65;color:#5d4568;margin-top:4px}
+.dress-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.dress{text-align:center;padding:18px 10px}
+.swatch{display:block;width:52px;height:52px;border-radius:50%;margin:0 auto 9px;border:3px solid #fff;box-shadow:0 6px 16px rgba(59,35,64,.25)}
+.dress b{font-size:13.5px;display:block}
+.dress span{font-size:12px;color:var(--mut)}
+.info-list{text-align:left;display:grid;gap:11px;font-size:13.5px;line-height:1.6;color:#5d4568}
+.info-list b{color:var(--ink)}
+.vid-wrap{position:relative;border-radius:18px;overflow:hidden;border:2.5px solid var(--plum);box-shadow:5px 6px 0 rgba(59,35,64,.85);background:#000}
+.vid-wrap video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
+.vid-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;border:1px solid #ffd9a8;background:rgba(59,35,64,.75);color:#fff;font-size:22px}
+.vid-wrap.playing .vid-btn{opacity:0;pointer-events:none}
+.gt-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:14px}
+.gt-grid figure{position:relative}
+.gt-grid img{width:100%;height:150px;object-fit:cover;border-radius:12px;border:2px solid var(--plum)}
+.gt-del{position:absolute;top:6px;right:6px;width:26px;height:26px;border-radius:50%;border:0;background:rgba(59,35,64,.85);color:#fff;font-size:13px}
+.gt-empty{text-align:center;font-size:13px;color:var(--mut);margin-top:12px}
+.qr-img{width:190px;height:190px;object-fit:contain;margin:14px auto;border:2.5px solid var(--plum);border-radius:16px;padding:8px;background:#fff}
+.hash{font-family:Georgia,serif;font-size:24px;font-weight:700;color:var(--plum2);text-align:center}
+.penutup-names{font-size:33px;color:var(--ink);line-height:1.3}
+.foot-note{text-align:center;font-size:11px;color:var(--mut);padding:0 30px 110px;line-height:1.7}
+#btnMusic{position:fixed;right:calc(50% - 215px + 14px);bottom:24px;z-index:70;width:50px;height:50px;border-radius:50%;border:1px solid #ffd9a8;background:radial-gradient(circle at 32% 28%,var(--plum2),var(--plum) 70%);box-shadow:0 10px 24px rgba(20,10,35,.5);display:none;align-items:center;justify-content:center;color:#ffd9a8}
+body.opened #btnMusic{display:flex}
+#btnMusic svg{width:22px;height:22px}
+#btnMusic.playing svg{animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:460px){#btnMusic{right:14px}}
+#lightbox{position:fixed;inset:0;z-index:90;background:rgba(23,13,30,.94);display:none;align-items:center;justify-content:center;padding:22px}
+#lightbox.on{display:flex}
+#lightbox img{max-height:82dvh;border-radius:14px;border:3px solid var(--sun-l)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,.8,.3,1)}
+.rv-zoom{transform:scale(.94)}
+.rv-left{transform:translateX(-26px)}
+.rv-right{transform:translateX(26px)}
+.rv.in{opacity:1;transform:none}
+
+/* ===== AMENDEMEN: reveal bervariasi + mikro-animasi teks kecil + kontras ===== */
+.rv-flip{transform:perspective(720px) rotateX(16deg) translateY(24px)}
+.rv-drop{transform:translateY(-28px) scale(.95)}
+.rv-pop{transform:scale(.82)}
+.rv-flip.in,.rv-drop.in,.rv-pop.in{transform:none}
+.tl-item.rv,.dress.rv,.gal-slide.rv{transition-delay:var(--d,0s)}
+.sec-kicker{animation:kickerBob 3.6s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes kickerBob{from{transform:translateY(0) rotate(-.6deg)}to{transform:translateY(-2.5px) rotate(.6deg)}}
+.sec-icon{animation:iconFloat 4.6s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes iconFloat{from{transform:translateY(0) scale(1)}to{transform:translateY(-4px) scale(1.06)}}
+.hash{animation:hashPulse 3.4s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes hashPulse{from{transform:scale(1)}to{transform:scale(1.035)}}
+.cd-box{animation:cdPulse 3s cubic-bezier(.37,0,.63,1) infinite alternate}
+.cd-box:nth-child(2){animation-delay:.5s}.cd-box:nth-child(3){animation-delay:1s}.cd-box:nth-child(4){animation-delay:1.5s}
+@keyframes cdPulse{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+.gal-cap{display:inline-block;background:rgba(255,248,236,.92);padding:3px 13px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(232,115,74,.28)}
+.gal-count{width:max-content;max-width:92%;margin:7px auto 0;background:rgba(255,248,236,.92);padding:4px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(232,115,74,.3);color:#54395f;font-weight:600}
+.hash{display:block;width:max-content;max-width:94%;margin:0 auto;background:rgba(255,248,236,.93);padding:8px 20px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(232,115,74,.35)}
+#dresscode .demo-note{background:rgba(255,248,236,.92);padding:9px 14px;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(232,115,74,.3)}
+.sec-title{text-shadow:0 1px 0 rgba(255,248,236,.95),0 0 18px rgba(255,248,236,.9)}
+.sec-sub{color:#54395f;text-shadow:0 1px 0 rgba(255,248,236,.95),0 0 14px rgba(255,248,236,.85)}
+.foot-note{color:#46304f;font-weight:600;text-shadow:0 1px 8px rgba(255,248,236,.95)}
+.panel{background:linear-gradient(180deg,rgba(255,253,247,.9),rgba(255,244,230,.84))}
+.demo-note{color:#54395f}
+.deco{position:absolute;pointer-events:none;z-index:2}
+.deco-tegak{transform-origin:50% 100%;animation:swayB var(--sw,3.8s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
+.deco-gantung{transform-origin:50% 0;animation:swayT var(--sw,4.1s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
+.deco-fly{animation:decoFly 19s cubic-bezier(.37,0,.63,1) infinite}
+@keyframes decoFly{0%{transform:translate3d(-12px,0,0) rotate(-4deg);opacity:0}8%{opacity:.95}50%{transform:translate3d(150px,-26px,0) rotate(5deg)}92%{opacity:.95}100%{transform:translate3d(320px,4px,0) rotate(-3deg);opacity:0}}
+.strip-img{width:100%;height:150px;object-fit:cover;border-radius:12px}
+.kafe-img{width:100%;height:290px;object-fit:cover;border-radius:12px}
+
+/* ===== BESPOKE ANIME SENJA: HALAMAN MANGA & VISUAL ANIME (2026-11-12) ===== */
+/* screentone halftone per section (aksen titik, beda kerapatan) */
+section.tone-a::before,section.tone-b::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:radial-gradient(rgba(91,58,122,.16) 1.3px,transparent 1.4px);background-size:15px 15px;mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent)}
+section.tone-b::before{background-image:radial-gradient(rgba(201,111,142,.20) 1.1px,transparent 1.2px);background-size:11px 11px}
+/* panel manga asimetris: miring halus + tumpang tindih */
+.gal-slide:nth-child(odd) .manga{transform:rotate(-.7deg)}
+.gal-slide:nth-child(even) .manga{transform:rotate(.6deg) translateY(7px)}
+.person .manga{transform:rotate(-.5deg)}
+.panel.person:nth-child(2) .manga{transform:rotate(.6deg)}
+.manga{border-width:3px;border-radius:6px 18px 6px 18px}
+.manga img{border-radius:3px 14px 3px 14px}
+/* garis kecepatan halus (transisi) */
+.speedlines{height:26px;margin:6px auto 0;max-width:300px;opacity:.5;background:repeating-linear-gradient(90deg,transparent 0 14px,rgba(59,35,64,.55) 14px 15.5px,transparent 15.5px 30px);mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);animation:speedPulse 3.8s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes speedPulse{from{opacity:.28;transform:scaleX(.94)}to{opacity:.55;transform:scaleX(1)}}
+/* SAMPUL key visual: bingkai panel tegas asimetris */
+.kv-frame{position:absolute;inset:12px;border:3px solid rgba(255,246,236,.92);border-radius:8px 26px 8px 26px;box-shadow:inset 0 0 0 2px rgba(59,35,64,.55),0 0 0 1px rgba(59,35,64,.4);z-index:7;pointer-events:none}
+.kv-frame::after{content:"KEY VISUAL · EP. TERAKHIR MUSIM SENJA";position:absolute;top:-11px;left:16px;background:var(--plum);color:#ffd9a8;font-size:8.5px;letter-spacing:.3em;padding:3px 10px;border-radius:3px;font-weight:700}
+/* jembatan + kereta berkala (lintasan lambat, jeda panjang) */
+.bridge{position:absolute;left:0;top:63.5%;width:100%;z-index:3;pointer-events:none;opacity:.95}
+.train2{position:absolute;left:0;top:61.3%;width:112%;z-index:4;pointer-events:none;opacity:0;animation:trainPass 42s linear infinite}
+.train2 img{width:33%;opacity:.94}
+.train2 .win-shimmer{position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:winShimmer 2.6s ease-in-out infinite}
+@keyframes trainPass{0%{transform:translateX(-52%);opacity:0}3%{opacity:1}20%{transform:translateX(96%);opacity:1}23%,100%{transform:translateX(110%);opacity:0}}
+@keyframes winShimmer{0%,55%{transform:translateX(-120%)}95%,100%{transform:translateX(120%)}}
+/* awan senja multi-kecepatan */
+.cloud{position:absolute;z-index:2;pointer-events:none;opacity:.9;animation:cloudDrift var(--cd,46s) cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes cloudDrift{from{transform:translate3d(-14px,0,0)}to{transform:translate3d(26px,-6px,0)}}
+.cloud-bob{animation:cloudBob var(--cd,9s) cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes cloudBob{from{transform:translateY(0)}to{transform:translateY(-9px)}}
+.spark{position:absolute;z-index:6;pointer-events:none;animation:sparkTw 3.2s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes sparkTw{from{opacity:.25;transform:scale(.65) rotate(0deg)}to{opacity:1;transform:scale(1.1) rotate(24deg)}}
+.hero-frame img,.person .manga img{animation:breathZoom 11s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes breathZoom{from{transform:scale(1)}to{transform:scale(1.045)}}
+.deco-pulse{animation:decoPulse 3.4s cubic-bezier(.37,0,.63,1) infinite alternate}
+@keyframes decoPulse{from{transform:scale(1);opacity:.85}to{transform:scale(1.09);opacity:1}}
+.deco-spin-slow{animation:spinSlow 46s linear infinite}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+/* COUNTDOWN = PAPAN JADWAL STASIUN */
+.tt-board{background:linear-gradient(180deg,#2c1a38,#3b2340);border:3px solid #1d1226;border-radius:10px 22px 10px 22px;box-shadow:6px 7px 0 rgba(59,35,64,.8);padding:16px 14px 14px;position:relative;overflow:hidden}
+.tt-board::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,217,168,.13) 1.2px,transparent 1.3px);background-size:13px 13px;pointer-events:none}
+.tt-head{display:flex;justify-content:space-between;align-items:center;gap:8px;white-space:nowrap;color:#ffd9a8;font-size:9.8px;letter-spacing:.17em;font-weight:700;border-bottom:2px dashed rgba(255,217,168,.5);padding-bottom:9px;margin-bottom:12px;position:relative}
+.tt-head .tt-live{color:#ff9d7a;animation:liveBlink 1.6s steps(2,start) infinite}
+@keyframes liveBlink{50%{opacity:.25}}
+.tt-board .countdown{margin:0;position:relative}
+.tt-board .cd-box{background:rgba(255,246,236,.07);border:1.5px solid rgba(255,217,168,.65);border-radius:6px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}
+.tt-rail{height:12px;margin-top:13px;position:relative;background:repeating-linear-gradient(90deg,rgba(255,217,168,.85) 0 16px,transparent 16px 30px);mask-image:linear-gradient(180deg,transparent 0 4px,#000 4px 8px,transparent 8px);-webkit-mask-image:linear-gradient(180deg,transparent 0 4px,#000 4px 8px,transparent 8px)}
+.tt-note{text-align:center;color:#e3d2f2;font-size:10.5px;letter-spacing:.22em;margin-top:9px;position:relative}
+/* LOVE STORY = RUTE KERETA: bantalan rel + papan stasiun */
+.tl::before{left:10px;width:14px;background:repeating-linear-gradient(180deg,var(--sun) 0 12px,transparent 12px 22px);opacity:.4;mask-image:linear-gradient(180deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 6%,#000 94%,transparent)}
+.tl-item{padding-left:42px}
+.tl-item::before{left:6px;top:2px;width:22px;height:22px;border-radius:50%;background:#fff6ec;border:3px solid var(--plum);box-shadow:0 0 0 3px var(--sakura)}
+.tl-item .yr{display:inline-block;background:var(--plum);color:#ffd9a8;padding:4px 11px;border-radius:3px 10px 3px 10px;letter-spacing:.18em;box-shadow:2.5px 3px 0 rgba(59,35,64,.45);animation:kickerBob 4.2s cubic-bezier(.37,0,.63,1) infinite alternate}
+/* GALERI = STRIP FILM / LEMBAR MANGA */
+.film-rail{position:relative;padding-top:20px;padding-bottom:26px}
+.film-rail::before,.film-rail::after{content:"";position:absolute;left:0;right:0;height:13px;background:repeating-linear-gradient(90deg,rgba(59,35,64,.9) 0 20px,transparent 20px 34px);opacity:.85}
+.film-rail::before{top:0}.film-rail::after{bottom:6px}
+.gal-wide{flex-basis:88%}
+.gal-wide .manga{height:300px}
+.gal-cap{border:1.5px solid rgba(59,35,64,.55);border-radius:3px 10px 3px 10px}
+/* reveal panel manga: geser halaman / clip */
+.rv-panelL{transform:translateX(-46px) rotate(-1.2deg)}
+.rv-panelR{transform:translateX(46px) rotate(1.2deg)}
+.rv-clip{clip-path:inset(0 100% 0 0);transform:none}
+.rv-clip.in{clip-path:inset(0 0 0 0)}
+.rv-panelL.in,.rv-panelR.in{transform:none}
+.rv{transition:opacity .85s ease,transform .85s cubic-bezier(.22,.8,.3,1),clip-path .9s cubic-bezier(.22,.8,.3,1)}
+
+@media (prefers-reduced-motion: reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .rv{opacity:1;transform:none}
+ .petal,.star{display:none}
+}
+</style>
+</head>
+<body>
+<div class="phone">
+  <!-- 1. SAMPUL LIVING SCENE -->
+  <header id="cover" aria-label="Sampul undangan Anime Senja">
+    <div class="scene">
+      <img class="lyr lyr-coverbg" src="assets/undangya/anime-senja/cover-bg.webp" alt="Ilustrasi anime orisinal pasangan di atap sekolah saat senja dengan kereta melintas di kejauhan" width="720" height="1279">
+      <span class="star" style="left:12%;top:9%;width:3px;height:3px"></span>
+      <span class="star" style="left:78%;top:7%;width:4px;height:4px;animation-delay:.7s"></span>
+      <span class="star" style="left:58%;top:14%;width:3px;height:3px;animation-delay:1.3s"></span>
+      <span class="star" style="left:30%;top:16%;width:2.5px;height:2.5px;animation-delay:1.9s"></span>
+      <img class="bridge" src="assets/undangya/anime-senja/rel-jembatan.webp" alt="" width="860" height="120" aria-hidden="true">
+      <div class="train2" aria-hidden="true"><img src="assets/undangya/anime-senja/kereta-lukis.webp" alt="" width="880" height="188"><span class="win-shimmer"></span></div>
+      <img class="cloud" style="left:-30px;top:11%;width:46%;--cd:52s" src="assets/undangya/anime-senja/awan-senja.webp" alt="" width="520" height="240" aria-hidden="true">
+      <img class="cloud cloud-bob" style="right:-36px;top:24%;width:38%;--cd:9.5s" src="assets/undangya/anime-senja/awan-senja.webp" alt="" width="520" height="240" aria-hidden="true">
+      <img class="cloud" style="left:16%;top:33%;width:30%;--cd:64s;opacity:.65" src="assets/undangya/anime-senja/awan-senja.webp" alt="" width="520" height="240" aria-hidden="true">
+      <img class="spark" style="left:20%;top:20%;width:26px" src="assets/undangya/anime-senja/kilau-senja.webp" alt="" width="240" height="240" aria-hidden="true">
+      <img class="spark" style="right:16%;top:38%;width:20px;animation-delay:1.1s" src="assets/undangya/anime-senja/kilau-senja.webp" alt="" width="240" height="240" aria-hidden="true">
+      <span class="star" style="left:44%;top:6%;width:3px;height:3px;animation-delay:.4s"></span>
+      <span class="star" style="left:88%;top:20%;width:2.5px;height:2.5px;animation-delay:2.2s"></span>
+      <span class="star" style="left:6%;top:30%;width:2.5px;height:2.5px;animation-delay:1.6s"></span>
+      <span class="star" style="left:66%;top:27%;width:3px;height:3px;animation-delay:.9s"></span>
+      <div class="kv-frame" aria-hidden="true"></div>
+      <div class="sakura-t" style="left:-14px;width:44%;--sw:5.2s" aria-hidden="true"><img src="assets/undangya/anime-senja/sakura-branch.webp" alt="" width="407" height="429"></div>
+      <div class="sakura-t" style="right:-18px;width:38%;--sw:3.9s;animation-delay:1.2s" aria-hidden="true"><img src="assets/undangya/anime-senja/sakura-branch.webp" alt="" width="407" height="429" style="transform:scaleX(-1)"></div>
+      <div class="sakura-b" style="left:-10px;width:36%;--sw:3.4s" aria-hidden="true"><img src="assets/undangya/anime-senja/sakura-tree.webp" alt="" width="486" height="443"></div>
+      <div class="sakura-b" style="right:-12px;width:30%;--sw:4.7s;animation-delay:1.6s" aria-hidden="true"><img src="assets/undangya/anime-senja/sakura-tree.webp" alt="" width="486" height="443" style="transform:scaleX(-1)"></div>
+      <img class="deco deco-tegak" style="left:-8px;bottom:148px;width:52px;--sw:4.2s" src="assets/undangya/anime-senja/deco-pampas.webp" alt="" width="428" height="485" aria-hidden="true">
+      <img class="deco deco-tegak" style="right:-6px;bottom:168px;width:46px;--sw:3.3s" src="assets/undangya/anime-senja/deco-lavender.webp" alt="" width="374" height="435" aria-hidden="true">
+      <img class="deco deco-tegak" style="left:6px;bottom:318px;width:40px;--sw:5.1s" src="assets/undangya/anime-senja/deco-kamboja.webp" alt="" width="392" height="381" aria-hidden="true">
+      <img class="deco deco-tegak" style="right:8px;bottom:336px;width:38px;--sw:4.6s" src="assets/undangya/anime-senja/deco-mawar.webp" alt="" width="312" height="381" aria-hidden="true">
+      <div class="petal-field" id="petalCover" aria-hidden="true"></div>
+      <div class="cover-shade"></div>
+      <div class="cover-ui">
+        <div class="cover-kicker">UNDANGAN PERNIKAHAN</div>
+        <h1 class="cover-names">Meyzsa<span class="amp">&amp;</span>Fahrezzi</h1>
+        <div class="cover-date">SABTU · 12 JUNI 2027</div>
+        <div class="cover-spacer"></div>
+        <div class="cover-guest">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+        <div class="gname" id="guestName">Tamu Undangan</div>
+        <button id="btnOpen" type="button">✿ BUKA UNDANGAN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+
+    <!-- 2. PEMBUKA -->
+    <section class="tone-a" id="sambutan">
+      <img class="deco deco-pulse" style="right:12px;top:16px;width:30px" src="assets/undangya/anime-senja/kilau-senja.webp" alt="" width="240" height="240" loading="lazy" aria-hidden="true">
+      <img class="deco deco-spin-slow" style="left:10px;bottom:14px;width:22px;opacity:.8" src="assets/undangya/anime-senja/kilau-senja.webp" alt="" width="240" height="240" loading="lazy" aria-hidden="true">
+      <div class="sec-petals" data-petals aria-hidden="true"></div>
+      <div class="sec-head rv">
+        <svg class="sec-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="24" cy="28" r="10" fill="#f2a65a" stroke="none" opacity=".85"/><path d="M4 40h40M8 40l4-9M40 40l-4-9M24 18V8M14 22l-6-6M34 22l6-6"/></svg>
+        <span class="sec-kicker">DENGAN MEMOHON RAHMAT</span>
+        <h2 class="sec-title">Assalamu’alaikum Warahmatullahi Wabarakatuh</h2>
+        <p class="sec-sub">Di bawah langit senja yang sama, dua hati akhirnya pulang ke satu cerita.</p>
+      </div>
+      <div class="card rv" style="text-align:center">
+        <p style="font-size:14px;line-height:1.75;color:#5d4568">Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Dengan memohon rahmat dan ridha-Nya, kami bermaksud menyempurnakan separuh agama dalam ikatan pernikahan. Ilustrasi pada undangan ini adalah karya anime orisinal yang diciptakan khusus untuk kisah kami — bukan tokoh dari karya mana pun.</p>
+        <div class="manga hero-frame" style="margin-top:20px"><img src="assets/undangya/anime-senja/hero.webp" alt="Ilustrasi anime orisinal Meyzsa dan Fahrezzi dalam busana pengantin saat senja" width="640" height="800"></div>
+        <p class="script" style="font-size:27px;margin-top:16px">Meyzsa &amp; Fahrezzi</p>
+      </div>
+    </section>
+
+    <!-- 3. MEMPELAI -->
+    <section class="tone-b" id="mempelai">
+      <img class="deco deco-tegak" style="left:2px;bottom:8px;width:62px;--sw:3.1s" src="assets/undangya/anime-senja/deco-kamboja.webp" alt="" width="392" height="381" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">DUA PEMERAN UTAMA</span>
+        <h2 class="sec-title">Mempelai</h2>
+        <p class="sec-sub">Bukan episode terakhir — ini awal musim baru kami.</p>
+      </div>
+      <div style="display:grid;gap:30px">
+        <div class="panel person rv rv-panelL">
+          <div class="manga"><img src="assets/undangya/anime-senja/bride.webp" alt="Ilustrasi anime orisinal mempelai wanita Meyzsa" width="560" height="700"></div>
+          <h3>Meyzsa Putri Ananda, S.Pd.</h3>
+          <p>Putri dari<br><b>Bapak H. Muhammad Ridwan</b><br>&amp;<br><b>Ibu Hj. Siti Aminah</b></p>
+          <a class="ig-btn" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a>
+        </div>
+        <div class="panel person rv rv-panelR">
+          <div class="manga"><img src="assets/undangya/anime-senja/groom.webp" alt="Ilustrasi anime orisinal mempelai pria Fahrezzi" width="560" height="700"></div>
+          <h3>Ahmad Fahrezzi Pratama, S.T.</h3>
+          <p>Putra dari<br><b>Bapak H. Bambang Sutrisno</b><br>&amp;<br><b>Ibu Hj. Ratna Dewi</b></p>
+          <a class="ig-btn" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. LOVE STORY -->
+    <section class="tone-a" id="kisah">
+      <img class="deco deco-fly" style="left:0;top:8px;width:46px;opacity:.92" src="assets/undangya/anime-senja/deco-kupu.webp" alt="" width="500" height="595" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">LOVE STORY · RUTE 4 STASIUN</span>
+        <h2 class="sec-title">Kisah Kami</h2>
+        <p class="sec-sub">Empat babak, satu senja yang tidak pernah benar-benar usai.</p>
+      </div>
+      <div class="card rv rv-flip">
+        <div class="tl">
+          <div class="tl-item rv" style="--d:0.00s"><span class="yr">STASIUN 01 · PERON KERETA — 2019</span><h4>Peron yang Sama</h4><p>Pertemuan pertama di peron kereta sepulang kuliah. Satu payung, hujan mendadak, dan percakapan canggung tentang jadwal keberangkatan yang ternyata menuju arah yang sama.</p></div>
+          <div class="tl-item rv" style="--d:0.08s"><span class="yr">STASIUN 02 · ATAP SEKOLAH — 2021</span><h4>Atap Sekolah &amp; Janji Kecil</h4><p>Saat membantu acara di sekolah tempat Meyzsa mengajar, Fahrezzi berjanji di atap sekolah: kelak ia akan kembali bukan sebagai relawan, melainkan sebagai pendamping hidup.</p></div>
+          <div class="tl-item rv" style="--d:0.16s"><span class="yr">STASIUN 03 · JEMBATAN SENJA — 2024</span><h4>Jembatan Senja</h4><p>Di jembatan sungai saat matahari terbenam, Fahrezzi melamar dengan cincin sederhana dan kalimat yang gemetar. Meyzsa menjawab ya sebelum kalimat itu selesai.</p></div>
+          <div class="tl-item rv" style="padding-bottom:2px;--d:.3s"><span class="yr">STASIUN AKHIR · PELAMINAN — 2027</span><h4>Musim Baru Dimulai</h4><p>Kini kami mengundang Anda menjadi saksi babak terindah: hari pernikahan kami, Sabtu 12 Juni 2027 di Jakarta.</p></div>
+        </div>
+      </div>
+      <div class="speedlines" aria-hidden="true"></div>
+      <div class="manga rv rv-clip" style="margin-top:20px"><img class="kafe-img" src="assets/undangya/anime-senja/bg-kafe.webp" alt="Ilustrasi anime interior kafe senja tempat kisah kami berlanjut" width="640" height="1280" loading="lazy"></div>
+    </section>
+
+    <!-- 4+5. COUNTDOWN & ACARA -->
+    <section class="tone-b" id="acara">
+      <div class="sec-head rv">
+        <span class="sec-kicker">HITUNG MUNDUR</span>
+        <h2 class="sec-title">Menuju Hari Bahagia</h2>
+      </div>
+      <div class="tt-board rv rv-panelL">
+        <div class="tt-head"><span> papan jadwal · STASIUN SENJA</span><span class="tt-live">● BERANGKAT</span></div>
+        <div class="countdown" id="countdown" data-target="2027-06-12T08:00:00+07:00" aria-label="Hitung mundur menuju akad nikah">
+        <div class="cd-box"><b id="cdD">0</b><span>Hari</span></div>
+        <div class="cd-box"><b id="cdH">0</b><span>Jam</span></div>
+        <div class="cd-box"><b id="cdM">0</b><span>Menit</span></div>
+        <div class="cd-box"><b id="cdS">0</b><span>Detik</span></div>
+        </div>
+        <div class="tt-rail" aria-hidden="true"></div>
+        <p class="tt-note">KERETA TERAKHIR MENUJU STASIUN BAHAGIA · PERON 12 . 06 . 2027</p>
+      </div>
+      <div class="speedlines" aria-hidden="true"></div>
+      <div class="manga rv rv-zoom" style="margin-top:26px;margin-bottom:20px"><img class="strip-img" src="assets/undangya/anime-senja/strip-senja.webp" alt="Panorama ilustrasi anime kota senja dengan kereta melintas" width="720" height="315" loading="lazy"></div>
+      <div class="card event rv rv-left">
+        <h3>Akad Nikah</h3>
+        <div class="when">Sabtu, 12 Juni 2027 · 08.00–10.00 WIB</div>
+        <p><b>Masjid Agung Al-Azhar</b><br>Jakarta Selatan</p>
+        <div class="btn-row">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener">GOOGLE MAPS</a>
+          <a class="btn btn-alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Akad+Nikah+Meyzsa+%26+Fahrezzi&amp;dates=20270612T010000Z/20270612T030000Z&amp;details=Akad+Nikah+Meyzsa+%26+Fahrezzi&amp;location=Masjid+Agung+Al-Azhar,+Jakarta+Selatan" target="_blank" rel="noopener">SIMPAN KALENDER</a>
+          <button class="btn btn-alt" type="button" data-ics="akad">UNDUH .ICS</button>
+        </div>
+      </div>
+      <div class="card event rv rv-right">
+        <h3>Resepsi</h3>
+        <div class="when">Sabtu, 12 Juni 2027 · 11.00–13.00 WIB</div>
+        <p><b>The Ritz-Carlton Jakarta, Pacific Place</b><br>Jakarta Selatan</p>
+        <div class="btn-row">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">GOOGLE MAPS</a>
+          <a class="btn btn-alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi+Meyzsa+%26+Fahrezzi&amp;dates=20270612T040000Z/20270612T060000Z&amp;details=Resepsi+Pernikahan+Meyzsa+%26+Fahrezzi&amp;location=The+Ritz-Carlton+Jakarta,+Pacific+Place" target="_blank" rel="noopener">SIMPAN KALENDER</a>
+          <button class="btn btn-alt" type="button" data-ics="resepsi">UNDUH .ICS</button>
+        </div>
+      </div>
+      <!-- 13. DENAH / INFO LOKASI -->
+      <div class="card rv" id="denah">
+        <h3 style="font-family:Georgia,serif;text-align:center;font-size:20px;margin-bottom:14px">Denah &amp; Info Lokasi</h3>
+        <div class="info-list">
+          <p><b>Akad — Masjid Agung Al-Azhar:</b> masuk melalui gerbang utama, area akad di aula utama lantai dasar. Parkir tersedia di halaman masjid; disarankan tiba 30 menit lebih awal.</p>
+          <p><b>Resepsi — The Ritz-Carlton Jakarta, Pacific Place:</b> ballroom dapat diakses dari lobi utama Pacific Place, lift menuju lantai ballroom. Valet &amp; parkir gedung tersedia.</p>
+          <p><b>Transportasi:</b> stasiun MRT/KRL terdekat memudahkan perjalanan — seperti kereta di sampul undangan ini, semoga perjalanan Anda lancar hingga tiba.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. GALERI REL GESER -->
+    <section class="tone-a" id="galeri">
+      <img class="deco deco-tegak" style="right:10px;top:120px;width:56px;--sw:4.4s" src="assets/undangya/anime-senja/deco-lavender.webp" alt="" width="374" height="435" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">GALERI · GESER KANAN–KIRI</span>
+        <h2 class="sec-title">Galeri Senja Kami</h2>
+        <p class="sec-sub">Delapan panel ilustrasi orisinal — ketuk untuk memperbesar.</p>
+      </div>
+      <div class="gal-rail film-rail rv rv-panelR" id="galRail">
+        <figure class="gal-slide rv" style="--d:0.00s"><div class="manga"><img src="assets/undangya/anime-senja/galeri-1.webp" alt="Galeri 1: pasangan di atap sekolah saat senja" width="560" height="700"></div><figcaption class="gal-cap">— sore itu, di atap sekolah, janji itu diucapkan</figcaption></figure>
+        <figure class="gal-slide rv" style="--d:0.05s"><div class="manga"><img src="assets/undangya/anime-senja/galeri-2.webp" alt="Galeri 2: pasangan di peron kereta" width="560" height="700" loading="lazy"></div><figcaption class="gal-cap">— sore itu, di peron yang sama, semua bermula</figcaption></figure>
+        <figure class="gal-slide gal-wide rv" style="--d:0.10s"><div class="manga"><img src="assets/undangya/anime-senja/galeri-3.webp" alt="Galeri 3: pasangan di taman sakura" width="560" height="700" loading="lazy"></div><figcaption class="gal-cap">— sore itu, sakura sedang mekar-mekarnya</figcaption></figure>
+        <figure class="gal-slide rv" style="--d:0.15s"><div class="manga"><img src="assets/undangya/anime-senja/galeri-4.webp" alt="Galeri 4: pasangan di kafe" width="560" height="700" loading="lazy"></div><figcaption class="gal-cap">— sore itu, kafe kecil &amp; kue untuk berdua</figcaption></figure>
+        <figure class="gal-slide rv" style="--d:0.20s"><div class="manga"><img src="assets/undangya/anime-senja/galeri-5.webp" alt="Galeri 5: pasangan di jembatan senja" width="560" height="700" loading="lazy"></div><figcaption class="gal-cap">— sore itu, di jembatan senja, ia melamar</figcaption></figure>
+        <figure class="gal-slide gal-wide rv" style="--d:0.25s"><div class="manga"><img src="assets/undangya/anime-senja/galeri-6.webp" alt="Galeri 6: pasangan di perpustakaan" width="560" height="700" loading="lazy"></div><figcaption class="gal-cap">— sore itu, perpustakaan yang tenang bersaksi</figcaption></figure>
+        <figure class="gal-slide rv" style="--d:0.30s"><div class="manga"><img src="assets/undangya/anime-senja/galeri-7.webp" alt="Galeri 7: pasangan di pelaminan taman" width="560" height="700" loading="lazy"></div><figcaption class="gal-cap">— sore itu, di bawah lengkung bunga</figcaption></figure>
+        <figure class="gal-slide rv" style="--d:0.35s"><div class="manga"><img src="assets/undangya/anime-senja/galeri-8.webp" alt="Galeri 8: pasangan di jalan malam berlampu" width="560" height="700" loading="lazy"></div><figcaption class="gal-cap">— malam itu, lampu kota jadi bintang kami</figcaption></figure>
+      </div>
+      <div class="gal-dots" id="galDots" aria-hidden="true"></div>
+      <div class="gal-count rv" id="galCount">1 / 8</div>
+    </section>
+
+    <!-- 18. VIDEO TEASER -->
+    <section class="tone-b" id="cuplikan">
+      <img class="deco deco-tegak" style="left:4px;top:60px;width:64px;--sw:5.4s" src="assets/undangya/anime-senja/sakura-tree.webp" alt="" width="486" height="443" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">VIDEO TEASER</span>
+        <h2 class="sec-title">Cuplikan Video</h2>
+        <p class="sec-sub">Slideshow ilustrasi tema dengan iringan lagu kami.</p>
+      </div>
+      <div class="vid-wrap rv rv-flip" id="vidWrap">
+        <video id="teaserVideo" src="assets/undangya/anime-senja/teaser.mp4" poster="assets/undangya/anime-senja/teaser-poster.webp" preload="none" playsinline controls aria-label="Video teaser Meyzsa dan Fahrezzi"></video>
+        <button class="vid-btn" id="vidBtn" type="button" aria-label="Putar atau jeda video teaser">▶</button>
+      </div>
+    </section>
+
+    <!-- 12. DRESSCODE -->
+    <section class="tone-a" id="dresscode">
+      <img class="deco deco-tegak" style="right:2px;top:70px;width:58px;--sw:3.7s" src="assets/undangya/anime-senja/sakura-branch.webp" alt="" width="407" height="429" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">DRESSCODE</span>
+        <h2 class="sec-title">Nuansa Senja</h2>
+        <p class="sec-sub">Mohon berkenan mengenakan warna-warna senja berikut.</p>
+      </div>
+      <div class="dress-grid rv rv-zoom">
+        <div class="card dress rv" style="--d:0.00s"><span class="swatch" style="background:#e8734a"></span><b>Terracotta Senja</b><span>Pilihan utama</span></div>
+        <div class="card dress rv" style="--d:0.09s"><span class="swatch" style="background:#5b3a7a"></span><b>Ungu Senja</b><span>Pilihan utama</span></div>
+        <div class="card dress rv" style="--d:0.18s"><span class="swatch" style="background:#f4a7b9"></span><b>Pink Sakura</b><span>Sentuhan lembut</span></div>
+        <div class="card dress rv" style="--d:0.27s"><span class="swatch" style="background:#f7e3c3"></span><b>Krem Hangat</b><span>Netral elegan</span></div>
+      </div>
+      <p class="demo-note rv">Mohon menghindari putih polos (khusus mempelai wanita) — terima kasih atas pengertiannya.</p>
+    </section>
+
+    <!-- 16+17. LIVE STREAMING + HASHTAG & GALERI TAMU -->
+    <section class="tone-b" id="live">
+      <img class="deco deco-gantung" style="right:6px;top:-4px;width:44px;--sw:3.5s" src="assets/undangya/anime-senja/deco-lentera.webp" alt="" width="222" height="340" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">LIVE STREAMING · DEMO</span>
+        <h2 class="sec-title">Saksikan dari Jauh</h2>
+        <p class="sec-sub">Tautan siaran langsung adalah demo — akan diperbarui menjelang hari H.</p>
+      </div>
+      <div class="card rv" style="text-align:center">
+        <p style="font-size:14px;line-height:1.7;color:#5d4568">Bagi keluarga dan sahabat yang berhalangan hadir, akad nikah direncanakan disiarkan langsung. Tombol di bawah ini masih berupa demo dan belum menuju siaran sungguhan.</p>
+        <button class="btn" type="button" id="btnLive">▶ TONTON LIVE (DEMO)</button>
+        <p class="demo-note" id="liveNote">Demo: siaran belum dimulai.</p>
+      </div>
+      <div style="margin-top:34px">
+        <div class="hash rv rv-pop">#MeyzsaFahrezzi</div>
+        <p class="sec-sub rv" style="text-align:center">Bagikan momen Anda dengan tagar kami.</p>
+        <div class="card rv" style="margin-top:16px;text-align:center">
+          <h3 style="font-family:Georgia,serif;font-size:19px">Galeri Tamu</h3>
+          <p style="font-size:13.5px;color:#5d4568;line-height:1.6;margin-top:6px">Unggah foto momen Anda — tersimpan lokal di perangkat ini saja (demo).</p>
+          <button class="btn" type="button" id="gtBtn">＋ UNGGAH FOTO</button>
+          <input id="gtInput" type="file" accept="image/*" multiple hidden>
+          <div class="gt-grid" id="gtGrid" aria-live="polite"></div>
+          <p class="gt-empty" id="gtEmpty">Jadilah yang pertama membagikan momen — ketuk tombol unggah.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. RSVP + DINDING UCAPAN -->
+    <section class="tone-a" id="rsvp">
+      <img class="deco deco-tegak" style="left:2px;bottom:10px;width:54px;--sw:4.9s" src="assets/undangya/anime-senja/deco-mawar.webp" alt="" width="312" height="381" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">RSVP &amp; UCAPAN</span>
+        <h2 class="sec-title">Konfirmasi &amp; Doa</h2>
+        <p class="sec-sub">Demo: data tersimpan lokal di perangkat Anda (localStorage).</p>
+      </div>
+      <div class="card rv rv-left">
+        <form id="rsvpForm" novalidate>
+          <div class="field"><label for="rsvpName">Nama Tamu</label><input id="rsvpName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
+          <div class="field"><label for="rsvpAttend">Konfirmasi Kehadiran</label>
+            <select id="rsvpAttend"><option value="Hadir">Hadir, insya Allah</option><option value="Berhalangan">Berhalangan hadir</option><option value="Masih ragu">Masih ragu</option></select></div>
+          <div class="field"><label for="rsvpMsg">Doa &amp; Ucapan</label><textarea id="rsvpMsg" placeholder="Tuliskan doa untuk kedua mempelai..."></textarea></div>
+          <button class="btn" type="submit" style="width:100%">KIRIM RSVP &amp; UCAPAN</button>
+        </form>
+        <p class="demo-note">Fitur demo client-side berlabel jujur — belum terhubung ke server.</p>
+        <div class="gb-list" id="guestbookList" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- 19. BUKU TAMU & QR CHECK-IN -->
+    <section class="tone-b" id="bukutamu">
+      <img class="deco cloud-bob" style="left:-14px;top:8px;width:34%" src="assets/undangya/anime-senja/awan-senja.webp" alt="" width="520" height="240" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">BUKU TAMU &amp; CHECK-IN</span>
+        <h2 class="sec-title">Buku Tamu Digital</h2>
+        <p class="sec-sub">Tunjukkan QR ini saat tiba di lokasi acara.</p>
+      </div>
+      <div class="card rv" style="text-align:center">
+        <img class="qr-img" src="assets/undangya/anime-senja/qr-undangan.webp" alt="Kode QR menuju halaman undangan Anime Senja" width="400" height="400">
+        <p style="font-size:13px;color:#5d4568;line-height:1.6">QR menuju halaman undangan ini.<br>Demo: daftar hadir tersimpan lokal di perangkat Anda.</p>
+        <form id="ciForm" novalidate style="text-align:left;margin-top:18px">
+          <div class="field"><label for="ciName">Nama Tamu</label><input id="ciName" type="text" placeholder="Nama Anda" autocomplete="name"></div>
+          <div class="field"><label for="ciSesi">Sesi Kehadiran</label>
+            <select id="ciSesi"><option value="Akad Nikah">Akad Nikah</option><option value="Resepsi">Resepsi</option></select></div>
+          <button class="btn" type="submit" style="width:100%">CHECK-IN KEHADIRAN</button>
+        </form>
+        <div class="gb-list" id="ciList" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- 7+15. AMPLOP DIGITAL & KADO FISIK -->
+    <section class="tone-a" id="amplop">
+      <img class="deco deco-pulse" style="right:16px;top:20px;width:20px;opacity:.9" src="assets/undangya/anime-senja/petal.webp" alt="" width="120" height="150" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">AMPLOP DIGITAL · DEMO</span>
+        <h2 class="sec-title">Tanda Kasih</h2>
+        <p class="sec-sub">Nomor berikut adalah contoh demo.</p>
+      </div>
+      <div class="card acc-card rv">
+        <div class="bank">BCA</div>
+        <div class="acc-num" id="accBca">1234567890</div>
+        <div class="acc-name">a.n. Meyzsa Putri Ananda</div>
+        <button class="copy-btn" type="button" data-copy="accBca">SALIN NOMOR</button>
+      </div>
+      <div class="card acc-card rv">
+        <div class="bank">DANA</div>
+        <div class="acc-num" id="accDana">0812-3456-7890</div>
+        <div class="acc-name">a.n. Meyzsa Putri Ananda</div>
+        <button class="copy-btn" type="button" data-copy="accDana">SALIN NOMOR</button>
+      </div>
+      <div class="card rv" style="text-align:center" id="kado">
+        <h3 style="font-family:Georgia,serif;font-size:20px">Kado Fisik</h3>
+        <p style="font-size:13.5px;line-height:1.65;color:#5d4568;margin-top:8px">Kirim kado fisik ke:<br><b id="kadoAddr">Kediaman Mempelai Wanita — Jakarta Selatan (alamat demo)</b></p>
+        <button class="copy-btn" type="button" data-copy="kadoAddr">SALIN ALAMAT</button>
+        <p class="demo-note">Alamat demo untuk contoh tampilan.</p>
+      </div>
+    </section>
+
+    <!-- 14. TURUT MENGUNDANG -->
+    <section class="tone-b" id="turut">
+      <div class="sec-head rv">
+        <span class="sec-kicker">TURUT MENGUNDANG</span>
+        <h2 class="sec-title">Keluarga Besar</h2>
+      </div>
+      <div class="card rv" style="text-align:center;font-size:14px;line-height:2;color:#5d4568">
+        <p>Keluarga Besar H. Muhammad Ridwan &amp; Hj. Siti Aminah<br>Keluarga Besar H. Bambang Sutrisno &amp; Hj. Ratna Dewi<br>Segenap kerabat &amp; sahabat kedua mempelai</p>
+      </div>
+    </section>
+
+    <!-- 8. PENUTUP -->
+    <section class="tone-a" id="penutup" style="text-align:center">
+      <img class="deco deco-tegak" style="right:10px;bottom:8px;width:60px;--sw:2.9s" src="assets/undangya/anime-senja/deco-pampas.webp" alt="" width="428" height="485" loading="lazy" aria-hidden="true">
+      <div class="sec-head rv">
+        <span class="sec-kicker">PENUTUP</span>
+        <h2 class="sec-title">Terima Kasih</h2>
+      </div>
+      <div class="card rv">
+        <p style="font-size:14px;line-height:1.75;color:#5d4568">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Seperti kereta yang akhirnya tiba di stasiun tujuan, semoga kita semua tiba di hari bahagia itu dengan selamat.</p>
+        <p style="font-size:14px;margin-top:14px;color:#5d4568">Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+        <p class="script penutup-names" style="margin-top:14px">Meyzsa &amp; Fahrezzi</p>
+        <p style="font-size:12.5px;color:var(--mut)">Beserta keluarga besar kedua mempelai</p>
+      </div>
+    </section>
+    <p class="foot-note">Undangan digital demo “Anime Senja” oleh UndangYa! · Seluruh karakter adalah ilustrasi anime orisinal ciptaan khusus tema ini, tidak berafiliasi dengan studio atau franchise mana pun. RSVP, buku tamu, galeri tamu &amp; amplop bersifat demo client-side.</p>
+  </main>
+</div>
+
+<!-- 9. MUSIK -->
+<button id="btnMusic" type="button" aria-label="Putar atau hentikan musik latar"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 18.5a3 3 0 1 1-2-2.83V5.2c0-.4.26-.76.64-.88l9-2.6A1 1 0 0 1 18 2.68v11.82a3 3 0 1 1-2-2.83V6.1L11 7.55v10.95z"/></svg></button>
+<div id="lightbox" role="dialog" aria-label="Foto galeri diperbesar"><img id="lbImg" src="" alt="Foto galeri diperbesar"></div>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+
+<script>
+(function(){
+"use strict";
+var reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* ?to= nama tamu */
+var to=new URLSearchParams(location.search).get("to");
+if(to){document.getElementById("guestName").textContent=to.slice(0,60);}
+/* kelopak sakura CSS murni */
+function makePetals(field,count){
+  if(!field||reduced)return;
+  var frag=document.createDocumentFragment();
+  for(var i=0;i<count;i++){
+    var img=document.createElement("img");
+    img.src="assets/undangya/anime-senja/petal.webp"; img.alt=""; img.className="petal";
+    img.style.setProperty("--pt",(4+Math.random()*70)+"%");
+    img.style.setProperty("--pd",(13+Math.random()*11)+"s");
+    img.style.setProperty("--pdl",(-Math.random()*16)+"s");
+    img.style.setProperty("--y50",(10+Math.random()*30)+"px");
+    img.style.setProperty("--ye",(34+Math.random()*46)+"px");
+    img.style.width=(10+Math.random()*9)+"px";
+    frag.appendChild(img);
+  }
+  field.appendChild(frag);
+}
+makePetals(document.getElementById("petalCover"),22);
+document.querySelectorAll("[data-petals]").forEach(function(f){makePetals(f,9);});
+/* buka undangan + musik */
+var audio=document.getElementById("bgmShared"), btnMusic=document.getElementById("btnMusic");
+function tryPlay(){var pr=audio.play(); if(pr&&pr.catch)pr.catch(function(){}); btnMusic.classList.add("playing");}
+document.getElementById("btnOpen").addEventListener("click",function(){
+  document.body.classList.add("opening");
+  setTimeout(function(){document.getElementById("cover").style.display="none";document.body.classList.add("opened");window.scrollTo(0,0);initReveal();},reduced?60:1050);
+  tryPlay();
+});
+btnMusic.addEventListener("click",function(){
+  if(audio.paused){tryPlay();}else{audio.pause();btnMusic.classList.remove("playing");}
+});
+/* countdown */
+function setNum(el,v){if(el.textContent!==String(v)){el.textContent=v;el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop");}}
+var target=new Date(document.getElementById("countdown").dataset.target).getTime();
+var cdD=document.getElementById("cdD"),cdH=document.getElementById("cdH"),cdM=document.getElementById("cdM"),cdS=document.getElementById("cdS");
+function cd(){var d=Math.max(0,target-Date.now());setNum(cdD,Math.floor(d/864e5));setNum(cdH,Math.floor(d/36e5)%24);setNum(cdM,Math.floor(d/6e4)%60);setNum(cdS,Math.floor(d/1e3)%60);}
+cd(); setInterval(cd,1000);
+/* reveal */
+function initReveal(){
+  var items=document.querySelectorAll(".rv");
+  if(!("IntersectionObserver" in window)||reduced){items.forEach(function(e){e.classList.add("in")});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.12});
+  items.forEach(function(e){io.observe(e);});
+}
+/* background per section = gambar unik via CSS — ambient 100% CSS kompositor, tanpa JS per-frame */
+/* galeri rel geser: indikator + lightbox */
+var rail=document.getElementById("galRail"),dots=document.getElementById("galDots"),count=document.getElementById("galCount"),slides=rail?rail.children.length:0;
+if(rail){
+  for(var i=0;i<slides;i++){var d=document.createElement("i"); if(i===0)d.className="on"; dots.appendChild(d);}
+  rail.addEventListener("scroll",function(){
+    var idx=Math.round(rail.scrollLeft/(rail.clientWidth*.76+14)); idx=Math.max(0,Math.min(slides-1,idx));
+    count.textContent=(idx+1)+" / "+slides;
+    Array.prototype.forEach.call(dots.children,function(el,j){el.classList.toggle("on",j===idx);});
+  },{passive:true});
+  var lb=document.getElementById("lightbox"),lbImg=document.getElementById("lbImg");
+  rail.addEventListener("click",function(e){var im=e.target.closest("img"); if(!im)return; lbImg.src=im.src; lb.classList.add("on");});
+  lb.addEventListener("click",function(){lb.classList.remove("on");lbImg.src="";});
+}
+/* salin */
+document.querySelectorAll("[data-copy]").forEach(function(b){
+  b.addEventListener("click",function(){
+    var t=document.getElementById(b.dataset.copy).textContent.trim();
+    function done(){var o=b.textContent;b.textContent="TERSALIN ✓";setTimeout(function(){b.textContent=o;},1600);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done).catch(done);}else{done();}
+  });
+});
+/* ICS unduh */
+function icsEsc(s){return String(s).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n");}
+var EVENTS={
+  akad:{sum:"Akad Nikah Meyzsa & Fahrezzi",start:"20270612T010000Z",end:"20270612T030000Z",loc:"Masjid Agung Al-Azhar, Jakarta Selatan"},
+  resepsi:{sum:"Resepsi Pernikahan Meyzsa & Fahrezzi",start:"20270612T040000Z",end:"20270612T060000Z",loc:"The Ritz-Carlton Jakarta, Pacific Place"}
+};
+document.querySelectorAll("[data-ics]").forEach(function(b){
+  b.addEventListener("click",function(){
+    var e=EVENTS[b.dataset.ics]; if(!e)return;
+    var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//UndangYa//AnimeSenja//ID","BEGIN:VEVENT","UID:"+b.dataset.ics+"-anime-senja@undangya","DTSTAMP:20261112T000000Z","DTSTART:"+e.start,"DTEND:"+e.end,"SUMMARY:"+icsEsc(e.sum),"LOCATION:"+icsEsc(e.loc),"END:VEVENT","END:VCALENDAR"].join("\r\n");
+    var a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"})); a.download=b.dataset.ics+"-meyzsa-fahrezzi.ics"; a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);},2000);
+  });
+});
+/* live demo */
+document.getElementById("btnLive").addEventListener("click",function(){document.getElementById("liveNote").textContent="Demo: siaran belum dimulai — tautan resmi menyusul menjelang hari H.";});
+/* video teaser */
+(function(){
+  var v=document.getElementById("teaserVideo"),wrap=document.getElementById("vidWrap"),btn=document.getElementById("vidBtn"); if(!v)return;
+  function sync(){var p=!v.paused&&!v.ended; wrap.classList.toggle("playing",p); btn.textContent=p?"❚❚":"▶";}
+  btn.addEventListener("click",function(){if(v.paused||v.ended){v.play();}else{v.pause();}});
+  v.addEventListener("play",sync); v.addEventListener("pause",sync); v.addEventListener("ended",sync); sync();
+  if("IntersectionObserver" in window){new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting&&!v.paused){v.pause();}});},{threshold:.15}).observe(v);}
+})();
+/* galeri tamu localStorage */
+(function(){
+  var KEY="anime-senja-galeri-tamu-v1",grid=document.getElementById("gtGrid"),empty=document.getElementById("gtEmpty"),input=document.getElementById("gtInput");
+  function load(){try{var v=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(v))return v;}catch(e){} return [];}
+  function save(it){try{localStorage.setItem(KEY,JSON.stringify(it));return true;}catch(e){return false;}}
+  var items=load();
+  function render(){grid.innerHTML=""; items.forEach(function(src,idx){var f=document.createElement("figure");var im=document.createElement("img");im.src=src;im.alt="Foto galeri tamu";var del=document.createElement("button");del.className="gt-del";del.type="button";del.textContent="×";del.dataset.idx=idx;f.appendChild(im);f.appendChild(del);grid.appendChild(f);}); empty.style.display=items.length?"none":"block";}
+  render();
+  document.getElementById("gtBtn").addEventListener("click",function(){input.click();});
+  grid.addEventListener("click",function(e){var b=e.target.closest(".gt-del"); if(!b)return; items.splice(+b.dataset.idx,1); save(items); render();});
+  input.addEventListener("change",function(){
+    var files=Array.prototype.slice.call(input.files||[]); if(!files.length)return; var pending=files.length;
+    files.forEach(function(file){var r=new FileReader(); r.onload=function(){items.push(r.result); if(--pending===0){save(items);render();input.value="";}}; r.onerror=function(){if(--pending===0){input.value="";}}; r.readAsDataURL(file);});
+  });
+})();
+/* RSVP + dinding ucapan localStorage */
+(function(){
+  var KEY="anime-senja-rsvp-v1",list=document.getElementById("guestbookList");
+  var seed=[{n:"Keluarga Besar Ridwan",s:"Hadir",m:"Barakallahu lakuma wa baraka alaikuma — selamat menempuh musim baru, Nak."},{n:"Sahabat Kampus",s:"Hadir",m:"Akhirnya peron itu jadi saksi beneran. Lancar sampai hari H!"}];
+  function load(){try{var v=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(v))return v;}catch(e){} return seed.slice();}
+  function render(items){list.innerHTML=""; items.slice().reverse().forEach(function(it){var d=document.createElement("div");d.className="gb-item";var b=document.createElement("b");b.textContent=it.n;var s=document.createElement("span");s.className="st";s.textContent=it.s;var p=document.createElement("p");p.textContent=it.m;d.appendChild(b);d.appendChild(s);d.appendChild(p);list.appendChild(d);});}
+  var items=load(); render(items);
+  document.getElementById("rsvpForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    var n=document.getElementById("rsvpName").value.trim()||"Tamu Undangan";
+    var s=document.getElementById("rsvpAttend").value;
+    var m=document.getElementById("rsvpMsg").value.trim()||"Selamat untuk kedua mempelai!";
+    items.push({n:n,s:s,m:m}); try{localStorage.setItem(KEY,JSON.stringify(items));}catch(err){}
+    render(items); e.target.reset();
+  });
+})();
+/* buku tamu & check-in localStorage */
+(function(){
+  var KEY="anime-senja-checkin-v1",list=document.getElementById("ciList"),form=document.getElementById("ciForm"); if(!form)return;
+  function load(){try{var v=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(v))return v;}catch(e){} return [];}
+  function render(items){list.innerHTML=""; items.slice().reverse().forEach(function(it){var d=document.createElement("div");d.className="gb-item";var b=document.createElement("b");b.textContent=it.n;var s=document.createElement("span");s.className="st";s.textContent="✓ "+it.s;d.appendChild(b);d.appendChild(s);list.appendChild(d);});}
+  var items=load(); render(items);
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var n=document.getElementById("ciName").value.trim()||"Tamu Undangan";
+    items.push({n:n,s:document.getElementById("ciSesi").value}); try{localStorage.setItem(KEY,JSON.stringify(items));}catch(err){}
+    render(items); form.reset();
+  });
+})();
+})();
+</script>
+</body>
+</html>
