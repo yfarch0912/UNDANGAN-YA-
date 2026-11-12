@@ -180,32 +180,85 @@ function renderPackages() {
 
 /* ---------- Tema ---------- */
 var themeSel = document.getElementById("fTheme");
-var themes = (window.THEMES || []).map(function (t) { return { slug: t.slug, name: t.name }; });
-themes.push({ slug: "taman-rahasia", name: "Taman Rahasia — Interaktif" });
-themes.push({ slug: "javanese-illustrated", name: "Javanese Illustrated — Ilustrasi Jawa 2D" });
-themes.push({ slug: "masjid-bunga", name: "Masjid Bunga — Masjid Cat Air 2D" });
-themes.push({ slug: "pink-garden-fountain", name: "Pink Garden Fountain — Taman Pink 2D" });
-themes.push({ slug: "bali-pastel", name: "Bali Pastel Romance — Ilustrasi Bali 2D" });
-themes.push({ slug: "burgundy-palace", name: "Burgundy Royal Palace — Istana Burgundy 2D" });
-themes.push({ slug: "palace-garden-gate", name: "Palace Garden Gate — Gerbang Istana 2D" });
-themes.push({ slug: "engraved-highland", name: "Engraved Highland — Ukiran Klasik 2D" });
-themes.push({ slug: "ivory-botanical", name: "Ivory Botanical — Botani Ivory 2D" });
-themes.push({ slug: "emerald-luxe", name: "Emerald Luxe 3D — Taman Emerald Three.js" });
-themes.push({ slug: "bioskop-mini", name: "Bioskop Mini — Premier Film Sinematik" });
-themes.push({ slug: "piringan-hitam", name: "Piringan Hitam — Album Vinyl Retro" });
-themes.push({ slug: "perjalanan-kereta", name: "Perjalanan Kereta — KRL Modern Geser" });
-themes.push({ slug: "surat-hidup", name: "Surat Hidup — Amplop Segel Lilin" });
-themes.push({ slug: "paspor-cinta", name: "Paspor Cinta — Buku Paspor & Visa" });
-themes.push({ slug: "museum-cinta", name: "Museum Cinta — Galeri Seni & Lukisan Hidup" });
-themes.push({ slug: "koran-cinta", name: "Koran Cinta — Surat Kabar Harian Bahagia" });
-themes.push({ slug: "peta-ekspedisi", name: "Peta Ekspedisi — Peta Petualangan Interaktif" });
-themes.push({ slug: "ramuan-cinta", name: "Ramuan Cinta — Apotek & Formula Cinta" });
-themes.push({ slug: "radio-cinta", name: "Radio Cinta — Tuning 98.6 FM Interaktif" });
-themes.push({ slug: "observatorium", name: "Observatorium — Rasi Bintang & Teleskop" });
-themes.push({ slug: "kedai-kopi", name: "Kedai Kopi — Menu Kafe & Struk RSVP" });
-themes.push({ slug: "papan-permainan", name: "Papan Permainan — Dadu & Board Game" });
-themes.push({ slug: "oceanarium", name: "Oceanarium — Menyelam 0–40 m" });
-themes.push({ slug: "pasar-malam", name: "Pasar Malam — Bianglala & Marquee Festival" });
+var themes = [
+  { slug: "taman-rahasia", name: "Taman Rahasia — Interaktif" },
+  { slug: "javanese-illustrated", name: "Javanese Illustrated — Ilustrasi Jawa 2D" },
+  { slug: "masjid-bunga", name: "Masjid Bunga — Masjid Cat Air 2D" },
+  { slug: "pink-garden-fountain", name: "Pink Garden Fountain — Taman Pink 2D" },
+  { slug: "bali-pastel", name: "Bali Pastel Romance — Ilustrasi Bali 2D" },
+  { slug: "burgundy-palace", name: "Burgundy Royal Palace — Istana Burgundy 2D" },
+  { slug: "palace-garden-gate", name: "Palace Garden Gate — Gerbang Istana 2D" },
+  { slug: "engraved-highland", name: "Engraved Highland — Ukiran Klasik 2D" },
+  { slug: "ivory-botanical", name: "Ivory Botanical — Botani Ivory 2D" },
+  { slug: "emerald-luxe", name: "Emerald Luxe 3D — Taman Emerald Three.js" },
+  { slug: "bioskop-mini", name: "Bioskop Mini — Premier Film Sinematik" },
+  { slug: "piringan-hitam", name: "Piringan Hitam — Album Vinyl Retro" },
+  { slug: "perjalanan-kereta", name: "Perjalanan Kereta — KRL Modern Geser" },
+  { slug: "surat-hidup", name: "Surat Hidup — Amplop Segel Lilin" },
+  { slug: "paspor-cinta", name: "Paspor Cinta — Buku Paspor & Visa" },
+  { slug: "museum-cinta", name: "Museum Cinta — Galeri Seni & Lukisan Hidup" },
+  { slug: "koran-cinta", name: "Koran Cinta — Surat Kabar Harian Bahagia" },
+  { slug: "peta-ekspedisi", name: "Peta Ekspedisi — Peta Petualangan Interaktif" },
+  { slug: "ramuan-cinta", name: "Ramuan Cinta — Apotek & Formula Cinta" },
+  { slug: "radio-cinta", name: "Radio Cinta — Tuning 98.6 FM Interaktif" },
+  { slug: "observatorium", name: "Observatorium — Rasi Bintang & Teleskop" },
+  { slug: "kedai-kopi", name: "Kedai Kopi — Menu Kafe & Struk RSVP" },
+  { slug: "papan-permainan", name: "Papan Permainan — Dadu & Board Game" },
+  { slug: "oceanarium", name: "Oceanarium — Menyelam 0–40 m" },
+  { slug: "pasar-malam", name: "Pasar Malam — Bianglala & Marquee Festival" },
+  { slug: "kastil-dongeng", name: "Kastil Dongeng — Kastil Cat Air Dongeng" },
+  { slug: "joglo-pusaka", name: "Joglo Pusaka — Joglo Adat Jawa" },
+  { slug: "pusaka-sogan", name: "Pusaka Sogan — Jawa Sogan Klasik" },
+  { slug: "flora-raya", name: "Flora Raya — Taman Bunga Raya" },
+  { slug: "maple-gugur", name: "Maple Gugur — Maple Musim Gugur" },
+  { slug: "negeri-awan", name: "Negeri Awan — Istana di Atas Awan" },
+  { slug: "anime-senja", name: "Anime Senja — Senja Gaya Anime" },
+  { slug: "pinus-rimba", name: "Pinus Rimba — Hutan Pinus Pegunungan" },
+  { slug: "samudra-bajak", name: "Samudra Bajak — Bajak Laut Samudra" },
+  { slug: "sakura-hana", name: "Sakura Hana — Sakura Jepang" },
+  { slug: "balon-fajar", name: "Balon Fajar — Balon Udara Fajar" },
+  { slug: "lentera-ajaib", name: "Lentera Ajaib — Lentera Terbang Ajaib" },
+  { slug: "onyx-luxury", name: "Onyx Luxury — Onyx Hitam Emas" },
+  { slug: "monokrom-noir", name: "Monokrom Noir — Noir Hitam Putih" },
+  { slug: "rimba-jungle", name: "Rimba Jungle — Rimba Tropis" },
+  { slug: "galaksi-jauh", name: "Galaksi Jauh — Galaksi & Nebula" },
+  { slug: "paris-romansa", name: "Paris Romansa — Romansa Paris" },
+  { slug: "gadang-pusako", name: "Gadang Pusako — Rumah Gadang Minang" },
+  { slug: "tongkonan-pusaka", name: "Tongkonan Pusaka — Tongkonan Toraja" },
+  { slug: "kebun-teh", name: "Kebun Teh Pegunungan — Kebun Teh Pegunungan" },
+  { slug: "mercusuar-cinta", name: "Mercusuar Cinta — Mercusuar Tepi Laut" },
+  { slug: "oasis-malam", name: "Oasis Malam — Oasis Malam Gurun" },
+  { slug: "kerajaan-laut", name: "Kerajaan Laut — Kerajaan Bawah Laut" },
+  { slug: "peri-lembah", name: "Peri Lembah — Lembah Peri" },
+  { slug: "pustaka-cinta", name: "Pustaka Cinta — Perpustakaan Klasik" },
+  { slug: "istana-joseon", name: "Istana Joseon — Istana Joseon Korea" },
+  { slug: "premiere-glam", name: "Premiere Glam — Premiere Hollywood" },
+  { slug: "istana-salju", name: "Istana Salju — Istana Salju" },
+  { slug: "misi-rahasia", name: "Misi Rahasia — Misi Agen Rahasia" },
+  { slug: "pahlawan-kota", name: "Pahlawan Kota — Pahlawan Kota" },
+  { slug: "kertas-tinta", name: "Kertas & Tinta — Kertas & Tinta Tonal" },
+  { slug: "terakota-senja", name: "Terakota Senja — Terakota Senja Tonal" },
+  { slug: "linen-sage", name: "Linen & Sage — Linen Sage Tonal" },
+  { slug: "pesisir-putih", name: "Pesisir Putih — Pesisir Putih Tonal" },
+  { slug: "ladang-lavender", name: "Ladang Lavender — Lavender Tonal" },
+  { slug: "blush-krem", name: "Blush & Krem — Blush Krem Tonal" },
+  { slug: "washi-indigo", name: "Washi Indigo — Washi Indigo Tonal" },
+  { slug: "garis-emas", name: "Garis Emas — Garis Emas Tonal" },
+  { slug: "senja-pastel", name: "Senja Pastel — Senja Pastel Tonal" },
+  { slug: "anyaman-rotan", name: "Anyaman Rotan — Anyaman Rotan Tonal" },
+  { slug: "gading-klasik", name: "Gading Klasik — Slide Klasik Simetris" },
+  { slug: "anggur-maroon", name: "Anggur Maroon — Slide Foto Penuh Maroon" },
+  { slug: "lumut-lembut", name: "Lumut Lembut — Slide Split Lumut" },
+  { slug: "langit-powder", name: "Langit Powder — Slide Kartu Melayang" },
+  { slug: "peach-susu", name: "Peach Susu — Slide Lengkung Peach" },
+  { slug: "abu-mutiara", name: "Abu Mutiara — Slide Editorial Zigzag" },
+  { slug: "kopi-susu", name: "Kopi Susu — Slide Tipografi Polaroid" },
+  { slug: "ungu-taro", name: "Ungu Taro — Slide Melingkar Taro" },
+  { slug: "kuning-mentega", name: "Kuning Mentega — Slide Majalah Mentega" },
+  { slug: "putih-hitam-minim", name: "Putih Hitam Minim — Slide Tipografi B/W" },
+  { slug: "tinta-navy", name: "Tinta Navy — Gratis Dua Warna Navy" },
+  { slug: "daun-krem", name: "Daun Krem — Gratis Dua Warna Krem" },
+];
 themeSel.innerHTML = themes.map(function (t) { return '<option value="' + t.slug + '">' + t.name + "</option>"; }).join("");
 var preTheme = new URLSearchParams(location.search).get("tema");
 if (preTheme && themes.some(function (t) { return t.slug === preTheme; })) themeSel.value = preTheme;

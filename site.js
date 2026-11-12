@@ -606,6 +606,992 @@
     rec: '<b>Rekomendasi paket:</b> tema interaktif termasuk di <b>Paket Luxury</b> (Rp280.000).'
   });
 
+  ENTRIES.push({
+    slug: 'kastil-dongeng', name: 'Kastil Dongeng',
+    tagline: 'Kastil dongeng cat air tujuh menara — adegan hidup berlapis, bunga menari tertiup angin',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7e8f2,#f3d9e8 55%,#dfe9f7)',
+    ring: '#b45a8c', ring2: '#7d9cc4', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b45a8c", "#7d9cc4", "#f3d9e8", "#fff7fb"],
+    warna: ["Pink", "Biru"],
+    feats: [
+      'Kastil dongeng cat air tujuh menara — adegan hidup berlapis, bunga menari tertiup angin',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'kastil-dongeng?to=Tamu%20Undangan',
+    order: 'checkout?tema=kastil-dongeng',
+    rec: '<b>Kelas SIGNATURE:</b> tema aset padat ini mulai <b>Rp149.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'joglo-pusaka', name: 'Joglo Pusaka',
+    tagline: 'Joglo Jawa megah — scene hidup pusaka dengan gerak sepoi-sepoi',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#2e1b0d,#4a2e1b 55%,#5c1622)',
+    ring: '#c9a24b', ring2: '#e9c979', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#4a2e1b", "#c9a24b", "#7c1f2e", "#f8f1e6"],
+    warna: ["Cokelat", "Emas"],
+    feats: [
+      'Joglo Jawa megah — scene hidup pusaka dengan gerak sepoi-sepoi',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'joglo-pusaka?to=Tamu%20Undangan',
+    order: 'checkout?tema=joglo-pusaka',
+    rec: '<b>Kelas SIGNATURE:</b> tema aset padat ini mulai <b>Rp149.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'pusaka-sogan', name: 'Pusaka Sogan',
+    tagline: 'Jawa sogan gelap — joglo jati berlampu damar, gebyok, batik parang & gunungan wayang',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#1c1108,#33200f 55%,#120a04)',
+    ring: '#c9973f', ring2: '#8a5a2b', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#33200f", "#c9973f", "#8a5a2b", "#f3e6cf"],
+    warna: ["Cokelat", "Emas"],
+    feats: [
+      'Jawa sogan gelap — joglo jati berlampu damar, gebyok, batik parang & gunungan wayang',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'pusaka-sogan?to=Tamu%20Undangan',
+    order: 'checkout?tema=pusaka-sogan',
+    rec: '<b>Kelas SIGNATURE:</b> tema aset padat ini mulai <b>Rp149.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'flora-raya', name: 'Flora Raya',
+    tagline: 'Taman flora raya super padat — hamparan bunga hidup di setiap section',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#fdf0f3,#f9dfe4 55%,#e7f0dc)',
+    ring: '#c2607e', ring2: '#7d8b6f', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#c2607e", "#7d8b6f", "#f6ccd6", "#fff8f2"],
+    warna: ["Pink", "Hijau"],
+    feats: [
+      'Taman flora raya super padat — hamparan bunga hidup di setiap section',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'flora-raya?to=Tamu%20Undangan',
+    order: 'checkout?tema=flora-raya',
+    rec: '<b>Kelas SIGNATURE:</b> tema aset padat ini mulai <b>Rp149.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'maple-gugur', name: 'Maple Gugur',
+    tagline: 'Musim gugur maple — daun berguguran melayang di atas taman senja',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#fbeedd,#f6d9b8 55%,#e8b07e)',
+    ring: '#b45a2d', ring2: '#c9973f', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b45a2d", "#c9973f", "#f6d9b8", "#fff7ec"],
+    warna: ["Oranye", "Emas"],
+    feats: [
+      'Musim gugur maple — daun berguguran melayang di atas taman senja',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'maple-gugur?to=Tamu%20Undangan',
+    order: 'checkout?tema=maple-gugur',
+    rec: '<b>Kelas SIGNATURE:</b> tema aset padat ini mulai <b>Rp149.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'negeri-awan', name: 'Negeri Awan',
+    tagline: 'Negeri di atas awan — istana melayang dan awan bergerak perlahan',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#eef4fc,#dbe9fa 55%,#c3d9f5)',
+    ring: '#5b84b8', ring2: '#c9a24b', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#5b84b8", "#c9a24b", "#dbe9fa", "#ffffff"],
+    warna: ["Biru", "Putih"],
+    feats: [
+      'Negeri di atas awan — istana melayang dan awan bergerak perlahan',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'negeri-awan?to=Tamu%20Undangan',
+    order: 'checkout?tema=negeri-awan',
+    rec: '<b>Kelas SIGNATURE:</b> tema aset padat ini mulai <b>Rp149.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'anime-senja', name: 'Anime Senja',
+    tagline: 'Senja bergaya anime — langit gradasi dramatis dan siluet pasangan',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#2c1e4f,#6b3062 55%,#e2703a)',
+    ring: '#e2703a', ring2: '#f2b879', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#2c1e4f", "#e2703a", "#f2b879", "#ffe9d6"],
+    warna: ["Ungu", "Oranye"],
+    feats: [
+      'Senja bergaya anime — langit gradasi dramatis dan siluet pasangan',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'anime-senja?to=Tamu%20Undangan',
+    order: 'checkout?tema=anime-senja',
+    rec: '<b>Kelas SIGNATURE:</b> tema aset padat ini mulai <b>Rp149.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'pinus-rimba', name: 'Pinus Rimba',
+    tagline: 'Hutan pinus pegunungan — kabut tipis dan cahaya sela kanopi',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Hutan pinus pegunungan — kabut tipis dan cahaya sela kanopi',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'pinus-rimba?to=Tamu%20Undangan',
+    order: 'checkout?tema=pinus-rimba',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'samudra-bajak', name: 'Samudra Bajak',
+    tagline: 'Petualangan bajak laut — kapal, peta harta, dan ombak samudra',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Petualangan bajak laut — kapal, peta harta, dan ombak samudra',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'samudra-bajak?to=Tamu%20Undangan',
+    order: 'checkout?tema=samudra-bajak',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'sakura-hana', name: 'Sakura Hana',
+    tagline: 'Sakura bermekaran — kelopak pink melayang di taman Jepang',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Sakura bermekaran — kelopak pink melayang di taman Jepang',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'sakura-hana?to=Tamu%20Undangan',
+    order: 'checkout?tema=sakura-hana',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'balon-fajar', name: 'Balon Fajar',
+    tagline: 'Balon udara saat fajar — langit keemasan dan lembah berkabut',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Balon udara saat fajar — langit keemasan dan lembah berkabut',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'balon-fajar?to=Tamu%20Undangan',
+    order: 'checkout?tema=balon-fajar',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'lentera-ajaib', name: 'Lentera Ajaib',
+    tagline: 'Lentera terbang ajaib — malam berbintang penuh cahaya hangat',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Lentera terbang ajaib — malam berbintang penuh cahaya hangat',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'lentera-ajaib?to=Tamu%20Undangan',
+    order: 'checkout?tema=lentera-ajaib',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'onyx-luxury', name: 'Onyx Luxury',
+    tagline: 'Kemewahan onyx hitam & emas — elegan, gelap, berkelas',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Kemewahan onyx hitam & emas — elegan, gelap, berkelas',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'onyx-luxury?to=Tamu%20Undangan',
+    order: 'checkout?tema=onyx-luxury',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'monokrom-noir', name: 'Monokrom Noir',
+    tagline: 'Noir hitam-putih sinematik — kontras tegas bergaya film klasik',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Noir hitam-putih sinematik — kontras tegas bergaya film klasik',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'monokrom-noir?to=Tamu%20Undangan',
+    order: 'checkout?tema=monokrom-noir',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'rimba-jungle', name: 'Rimba Jungle',
+    tagline: 'Rimba tropis lebat — dedaunan besar dan cahaya hutan hujan',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Rimba tropis lebat — dedaunan besar dan cahaya hutan hujan',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'rimba-jungle?to=Tamu%20Undangan',
+    order: 'checkout?tema=rimba-jungle',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'galaksi-jauh', name: 'Galaksi Jauh',
+    tagline: 'Galaksi jauh — nebula, planet, dan bintang jatuh',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Galaksi jauh — nebula, planet, dan bintang jatuh',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'galaksi-jauh?to=Tamu%20Undangan',
+    order: 'checkout?tema=galaksi-jauh',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'paris-romansa', name: 'Paris Romansa',
+    tagline: 'Romansa Paris — menara Eiffel, kafe, dan senja keemasan',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Romansa Paris — menara Eiffel, kafe, dan senja keemasan',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'paris-romansa?to=Tamu%20Undangan',
+    order: 'checkout?tema=paris-romansa',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'gadang-pusako', name: 'Gadang Pusako',
+    tagline: 'Rumah Gadang Minangkabau — gonjong megah & ukiran pusako',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Rumah Gadang Minangkabau — gonjong megah & ukiran pusako',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'gadang-pusako?to=Tamu%20Undangan',
+    order: 'checkout?tema=gadang-pusako',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'tongkonan-pusaka', name: 'Tongkonan Pusaka',
+    tagline: 'Tongkonan Toraja — rumah adat beratap perahu & ukiran pusaka',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Tongkonan Toraja — rumah adat beratap perahu & ukiran pusaka',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'tongkonan-pusaka?to=Tamu%20Undangan',
+    order: 'checkout?tema=tongkonan-pusaka',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'kebun-teh', name: 'Kebun Teh Pegunungan',
+    tagline: 'Kebun teh pegunungan — hamparan hijau berundak sejuk berkabut',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Kebun teh pegunungan — hamparan hijau berundak sejuk berkabut',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'kebun-teh?to=Tamu%20Undangan',
+    order: 'checkout?tema=kebun-teh',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'mercusuar-cinta', name: 'Mercusuar Cinta',
+    tagline: 'Mercusuar di tepi laut — cahaya penuntun di senja pantai',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Mercusuar di tepi laut — cahaya penuntun di senja pantai',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'mercusuar-cinta?to=Tamu%20Undangan',
+    order: 'checkout?tema=mercusuar-cinta',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'oasis-malam', name: 'Oasis Malam',
+    tagline: 'Oasis di malam gurun — bulan purnama, palem, dan bintang',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Oasis di malam gurun — bulan purnama, palem, dan bintang',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'oasis-malam?to=Tamu%20Undangan',
+    order: 'checkout?tema=oasis-malam',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'kerajaan-laut', name: 'Kerajaan Laut',
+    tagline: 'Kerajaan bawah laut — istana karang, gelembung, dan cahaya biru',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Kerajaan bawah laut — istana karang, gelembung, dan cahaya biru',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'kerajaan-laut?to=Tamu%20Undangan',
+    order: 'checkout?tema=kerajaan-laut',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'peri-lembah', name: 'Peri Lembah',
+    tagline: 'Lembah peri — jamur bercahaya, kunang-kunang, dan bunga ajaib',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Lembah peri — jamur bercahaya, kunang-kunang, dan bunga ajaib',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'peri-lembah?to=Tamu%20Undangan',
+    order: 'checkout?tema=peri-lembah',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'pustaka-cinta', name: 'Pustaka Cinta',
+    tagline: 'Perpustakaan klasik — rak buku menjulang & cahaya lampu hangat',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Perpustakaan klasik — rak buku menjulang & cahaya lampu hangat',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'pustaka-cinta?to=Tamu%20Undangan',
+    order: 'checkout?tema=pustaka-cinta',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'istana-joseon', name: 'Istana Joseon',
+    tagline: 'Istana Joseon Korea — hanbok, gerbang istana, dan bunga persik',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Istana Joseon Korea — hanbok, gerbang istana, dan bunga persik',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'istana-joseon?to=Tamu%20Undangan',
+    order: 'checkout?tema=istana-joseon',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'premiere-glam', name: 'Premiere Glam',
+    tagline: 'Premiere glam Hollywood — karpet merah, lampu sorot, dan kilau emas',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Premiere glam Hollywood — karpet merah, lampu sorot, dan kilau emas',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'premiere-glam?to=Tamu%20Undangan',
+    order: 'checkout?tema=premiere-glam',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'istana-salju', name: 'Istana Salju',
+    tagline: 'Istana salju — kristal es, aurora, dan putih berkilau',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Istana salju — kristal es, aurora, dan putih berkilau',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'istana-salju?to=Tamu%20Undangan',
+    order: 'checkout?tema=istana-salju',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'misi-rahasia', name: 'Misi Rahasia',
+    tagline: 'Misi rahasia agen — berkas rahasia, kode sandi, dan target: menikah',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Misi rahasia agen — berkas rahasia, kode sandi, dan target: menikah',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'misi-rahasia?to=Tamu%20Undangan',
+    order: 'checkout?tema=misi-rahasia',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'pahlawan-kota', name: 'Pahlawan Kota',
+    tagline: 'Pahlawan kota — skyline malam, lampu kota, dan aksi heroik',
+    cat: 'ilustrasi',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Pahlawan kota — skyline malam, lampu kota, dan aksi heroik',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'pahlawan-kota?to=Tamu%20Undangan',
+    order: 'checkout?tema=pahlawan-kota',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'kertas-tinta', name: 'Kertas & Tinta',
+    tagline: 'Kertas & tinta — bersih tonal, foto sebagai bintang utama',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Kertas & tinta — bersih tonal, foto sebagai bintang utama',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'kertas-tinta?to=Tamu%20Undangan',
+    order: 'checkout?tema=kertas-tinta',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'terakota-senja', name: 'Terakota Senja',
+    tagline: 'Terakota senja — hangat tanah liat dan cahaya sore',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Terakota senja — hangat tanah liat dan cahaya sore',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'terakota-senja?to=Tamu%20Undangan',
+    order: 'checkout?tema=terakota-senja',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'linen-sage', name: 'Linen & Sage',
+    tagline: 'Linen & sage — lembut natural bernapas tenang',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Linen & sage — lembut natural bernapas tenang',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'linen-sage?to=Tamu%20Undangan',
+    order: 'checkout?tema=linen-sage',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'pesisir-putih', name: 'Pesisir Putih',
+    tagline: 'Pesisir putih — terang pantai dan semilir laut',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Pesisir putih — terang pantai dan semilir laut',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'pesisir-putih?to=Tamu%20Undangan',
+    order: 'checkout?tema=pesisir-putih',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'ladang-lavender', name: 'Ladang Lavender',
+    tagline: 'Ladang lavender — ungu lembut sejauh mata memandang',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Ladang lavender — ungu lembut sejauh mata memandang',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'ladang-lavender?to=Tamu%20Undangan',
+    order: 'checkout?tema=ladang-lavender',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'blush-krem', name: 'Blush & Krem',
+    tagline: 'Blush & krem — manis pucat dengan sentuhan romantis',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Blush & krem — manis pucat dengan sentuhan romantis',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'blush-krem?to=Tamu%20Undangan',
+    order: 'checkout?tema=blush-krem',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'washi-indigo', name: 'Washi Indigo',
+    tagline: 'Washi indigo — kertas Jepang biru nila bertekstur',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Washi indigo — kertas Jepang biru nila bertekstur',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'washi-indigo?to=Tamu%20Undangan',
+    order: 'checkout?tema=washi-indigo',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'garis-emas', name: 'Garis Emas',
+    tagline: 'Garis emas — minimalis mewah beraksen garis emas',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Garis emas — minimalis mewah beraksen garis emas',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'garis-emas?to=Tamu%20Undangan',
+    order: 'checkout?tema=garis-emas',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'senja-pastel', name: 'Senja Pastel',
+    tagline: 'Senja pastel — gradasi lembut jingga ke ungu muda',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Senja pastel — gradasi lembut jingga ke ungu muda',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'senja-pastel?to=Tamu%20Undangan',
+    order: 'checkout?tema=senja-pastel',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'anyaman-rotan', name: 'Anyaman Rotan',
+    tagline: 'Anyaman rotan — tekstur alami hangat bernuansa tropis',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Anyaman rotan — tekstur alami hangat bernuansa tropis',
+      'Galeri foto geser & lightbox, love story, dresscode, denah lokasi',
+      'Countdown real-time & kalender (Google Calendar + .ICS)',
+      'Musik latar Petals on the Stone Floor'
+    ].concat(WEB_FEATS),
+    preview: 'anyaman-rotan?to=Tamu%20Undangan',
+    order: 'checkout?tema=anyaman-rotan',
+    rec: '<b>Kelas ESSENTIAL:</b> tema fitur lengkap ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'gading-klasik', name: 'Gading Klasik',
+    tagline: 'Slide klasik simetris — foto oval, nuansa gading elegan',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'gading-klasik?to=Tamu%20Undangan',
+    order: 'checkout?tema=gading-klasik',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'anggur-maroon', name: 'Anggur Maroon',
+    tagline: 'Slide foto penuh + panel maroon — warna berganti tiap layar',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'anggur-maroon?to=Tamu%20Undangan',
+    order: 'checkout?tema=anggur-maroon',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'lumut-lembut', name: 'Lumut Lembut',
+    tagline: 'Slide split foto atas & konten bawah — hijau lumut lembut',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'lumut-lembut?to=Tamu%20Undangan',
+    order: 'checkout?tema=lumut-lembut',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'langit-powder', name: 'Langit Powder',
+    tagline: 'Kartu melayang di atas foto penuh — biru langit powder',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'langit-powder?to=Tamu%20Undangan',
+    order: 'checkout?tema=langit-powder',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'peach-susu', name: 'Peach Susu',
+    tagline: 'Bingkai lengkung raksasa konsisten — peach susu manis',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'peach-susu?to=Tamu%20Undangan',
+    order: 'checkout?tema=peach-susu',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'abu-mutiara', name: 'Abu Mutiara',
+    tagline: 'Editorial zig-zag kiri-kanan — abu mutiara modern',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'abu-mutiara?to=Tamu%20Undangan',
+    order: 'checkout?tema=abu-mutiara',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'kopi-susu', name: 'Kopi Susu',
+    tagline: 'Tipografi raksasa + strip polaroid — kopi susu hangat',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'kopi-susu?to=Tamu%20Undangan',
+    order: 'checkout?tema=kopi-susu',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'ungu-taro', name: 'Ungu Taro',
+    tagline: 'Komposisi melingkar — foto bulat besar ungu taro',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'ungu-taro?to=Tamu%20Undangan',
+    order: 'checkout?tema=ungu-taro',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'kuning-mentega', name: 'Kuning Mentega',
+    tagline: 'Slide majalah — judul raksasa, foto kecil rapi, lega',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'kuning-mentega?to=Tamu%20Undangan',
+    order: 'checkout?tema=kuning-mentega',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'putih-hitam-minim', name: 'Putih Hitam Minim',
+    tagline: 'Tipografi murni hitam-putih — satu foto B/W per slide',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Slide layar penuh bergaya presentasi — tiap bagian satu layar',
+      'Galeri 6 foto, RSVP & dinding ucapan (demo lokal)',
+      'Countdown, acara + Google Maps & simpan kalender (.ICS)',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'putih-hitam-minim?to=Tamu%20Undangan',
+    order: 'checkout?tema=putih-hitam-minim',
+    rec: '<b>Kelas BASIC:</b> tema slide simple ini mulai <b>Rp49.000</b>.'
+  });
+
+  ENTRIES.push({
+    slug: 'tinta-navy', name: 'Tinta Navy',
+    tagline: 'Dua warna navy & putih kertas — klasik garis tipis, maks 2 foto',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Dua warna saja, bersih & ringan — maksimal 2 foto',
+      'Countdown & acara + tombol Google Maps',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'tinta-navy?to=Tamu%20Undangan',
+    order: 'checkout?tema=tinta-navy',
+    rec: 'Tema <b>GRATIS</b> (Rp0) — fitur inti, maksimal 2 foto.'
+  });
+
+  ENTRIES.push({
+    slug: 'daun-krem', name: 'Daun Krem',
+    tagline: 'Dua warna hijau botol & krem — aksen daun gambar tangan, maks 2 foto',
+    cat: 'simple',
+    bg: 'linear-gradient(170deg,#f7efe0,#efe3cb 55%,#e9dcbf)',
+    ring: '#b98a2f', ring2: '#d9b45c', font: "'Great Vibes', cursive", orn: '✦', shape: 'hearts',
+    swatch: ["#b98a2f", "#d9b45c", "#7d8b6f", "#faf6ee"],
+    warna: ["Emas", "Krem"],
+    feats: [
+      'Dua warna saja, bersih & ringan — maksimal 2 foto',
+      'Countdown & acara + tombol Google Maps',
+      'Amplop digital & musik latar Petals on the Stone Floor'
+    ],
+    preview: 'daun-krem?to=Tamu%20Undangan',
+    order: 'checkout?tema=daun-krem',
+    rec: 'Tema <b>GRATIS</b> (Rp0) — fitur inti, maksimal 2 foto.'
+  });
+
   ENTRIES.forEach(function (e) { bySlug[e.slug] = e; });
 
   /* ---------- Katalog: filter + grid ---------- */

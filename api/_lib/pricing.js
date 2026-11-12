@@ -46,8 +46,8 @@ function resolvePackage(id) {
   return mapped ? PACKAGES[mapped] : null;
 }
 
-/* Slug tema yang boleh dipesan: tema warisan themes.js + 25 tema katalog
-   saat ini (samakan dengan checkout.html). */
+/* Slug tema yang boleh dipesan: tema warisan themes.js + 77 tema katalog
+   (samakan dengan checkout.html; diperluas 2026-11-13 dengan 52 tema baru). */
 const THEME_SLUGS = [
   "senja-emas", "royal-navy", "rose-blush", "forest-botanical", "lavender-dream",
   "monochrome-luxe", "rustic-kayu", "ocean-teal", "crimson-royal", "sakura",
@@ -58,6 +58,7 @@ const THEME_SLUGS = [
   "surat-hidup", "paspor-cinta", "museum-cinta", "koran-cinta", "peta-ekspedisi",
   "ramuan-cinta", "radio-cinta", "observatorium", "kedai-kopi", "papan-permainan",
   "oceanarium", "pasar-malam",
+  "kastil-dongeng", "joglo-pusaka", "pusaka-sogan", "flora-raya", "maple-gugur", "negeri-awan", "anime-senja", "pinus-rimba", "samudra-bajak", "sakura-hana", "balon-fajar", "lentera-ajaib", "onyx-luxury", "monokrom-noir", "rimba-jungle", "galaksi-jauh", "paris-romansa", "gadang-pusako", "tongkonan-pusaka", "kebun-teh", "mercusuar-cinta", "oasis-malam", "kerajaan-laut", "peri-lembah", "pustaka-cinta", "istana-joseon", "premiere-glam", "istana-salju", "misi-rahasia", "pahlawan-kota", "kertas-tinta", "terakota-senja", "linen-sage", "pesisir-putih", "ladang-lavender", "blush-krem", "washi-indigo", "garis-emas", "senja-pastel", "anyaman-rotan", "gading-klasik", "anggur-maroon", "lumut-lembut", "langit-powder", "peach-susu", "abu-mutiara", "kopi-susu", "ungu-taro", "kuning-mentega", "putih-hitam-minim", "tinta-navy", "daun-krem",
 ];
 
 module.exports = { PACKAGES, THEME_SLUGS, LEGACY_PACKAGE_ALIASES, resolvePackage };
