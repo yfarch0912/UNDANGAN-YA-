@@ -12,8 +12,8 @@
 <link rel="icon" type="image/png" href="assets/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Great+Vibes&family=Parisienne&family=Dancing+Script:wght@500;700&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="landing.css">
 <link rel="canonical" href="https://undangya.web.id/">
 <meta property="og:site_name" content="UNDANGYA!">
 <meta property="og:url" content="https://undangya.web.id/">
@@ -24,435 +24,387 @@
 </head>
 <body>
 
-<!-- ================= S01 · HERO ================= -->
-<section class="hero" id="beranda">
-  <img class="hero-bg" src="assets/hero-envelope.webp" alt="Amplop champagne-gold bersegel lilin berisi kartu undangan ivory berlogo UndangYA! bertuliskan Wedding Invitation, dikelilingi bunga putih dan frangipani" width="1920" height="1085" fetchpriority="high">
-  <div class="hero-shade" aria-hidden="true"></div>
-
-  <header class="site-head">
-    <div class="wrap head-in">
-      <a class="brand-plaque" href="#beranda" aria-label="UNDANGYA! — kembali ke beranda">
-        <img class="brand-full" src="assets/logo-undangya-horizontal.webp" alt="UndangYA!" width="1800" height="466">
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Buka menu navigasi">☰</button>
-      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
-        <a href="#beranda">Beranda</a>
-        <a href="katalog">Katalog</a>
-        <a href="#harga">Harga</a>
-        <a href="login">Masuk</a>
-      </nav>
-      <a class="btn btn-gold btn-sm head-cta" href="#harga">Buat Undangan</a>
+<header class="navbar">
+  <div class="wrap nav-in">
+    <a class="logo" href="#beranda" aria-label="UndangYa! — beranda">
+      <img src="assets/logo-undangya-horizontal.webp" alt="UndangYa!" width="1800" height="466">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Buka menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="navLinks" aria-label="Navigasi utama">
+      <a href="katalog">Katalog</a>
+      <a href="#kelas-harga">Kelas Harga</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#cara-kerja">Cara Kerja</a>
+      <a href="custom">Custom</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-ghost-nav" href="login">Masuk</a>
+      <a class="btn btn-gold btn-nav-cta" href="login?next=app">Daftar Gratis</a>
     </div>
-  </header>
+  </div>
+</header>
 
+<main id="beranda">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <p class="micro gold">Undangan Digital Premium</p>
-      <h1>Undangan yang bukan sekadar undangan, <em>tapi pengalaman.</em></h1>
-      <p class="lead">Wujudkan undangan impianmu dengan desain eksklusif, fitur lengkap, dan pengalaman interaktif yang memukau. Semua dalam satu platform.</p>
+      <span class="eyebrow"><i aria-hidden="true"></i>Undangan Pernikahan Digital</span>
+      <h1>Undangan Digital yang <span class="alive">Hidup</span>, untuk Hari Sekali Seumur Hidup.</h1>
+      <p class="hero-sub">Pilih dari 75+ tema — dari tema FREE dua warna sampai living-scene yang bergerak sepoi-sepoi. Isi data, bayar, dan undanganmu langsung siap dibagikan dengan nama tiap tamu.</p>
       <div class="hero-ctas">
-        <a class="btn btn-gold" href="login?next=app">Buat Undangan Gratis <span aria-hidden="true">→</span></a>
-        <a class="btn btn-outline-light" href="undangan?to=Tamu%20Undangan">Lihat Contoh</a>
+        <a class="btn btn-gold" href="login?next=app">Buat Undangan Gratis
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="katalog">Lihat Katalog</a>
       </div>
-      <p class="hero-free-note">Gratis untuk memulai · Tanpa kartu kredit · Bayar hanya saat publikasi</p>
-      <ul class="benefits">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l2.1 5.2L19.5 9l-4 3.9 1.1 5.6L12 15.7l-4.6 2.8L8.5 12.9 4.5 9l5.4-.8z"/></svg>
-          <span>Desain<br>Eksklusif</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21c-4.5-3.2-8-6.6-8-10.6A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8 3.4C20 14.4 16.5 17.8 12 21z" transform="scale(.92) translate(1 1)"/><path d="M9.5 12.2l2 2 3.4-3.8"/></svg>
-          <span>Mudah<br>Digunakan</span>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4.5" width="13" height="9" rx="1.5"/><rect x="16.8" y="9" width="4.4" height="9.5" rx="1.2"/><path d="M7 17.5h6"/></svg>
-          <span>Bisa di Semua<br>Perangkat</span>
-        </li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="6" cy="12" r="2.6"/><circle cx="17.5" cy="5.8" r="2.6"/><circle cx="17.5" cy="18.2" r="2.6"/><path d="M8.3 10.8l6.7-3.7M8.3 13.2l6.7 3.7"/></svg><span>Unlimited Share</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="8" r="3.4"/><path d="M3.8 20c.7-3.4 3.2-5.2 6.2-5.2 1.5 0 2.9.5 4 1.3M15.5 20.2l4.6-4.6 1.7 1.7-4.6 4.6-2.4.7z"/></svg><span>Unlimited Custom Nama Tamu</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12.5" r="8"/><path d="M12 8v4.6l3.2 2M9 2.8h6"/></svg><span>Countdown Acara</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg><span>Amplop Digital</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H20v12.5H5.7A1.7 1.7 0 0 0 4 18.2z"/><path d="M12 15.2s-3-1.9-3-3.9c0-1 .8-1.8 1.7-1.8.6 0 1 .3 1.3.7.3-.4.7-.7 1.3-.7.9 0 1.7.8 1.7 1.8 0 2-3 3.9-3 3.9z"/></svg><span>Ucapan dan Doa</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="9" cy="14.5" r="5.2"/><circle cx="15" cy="14.5" r="5.2"/><path d="M9 9.3L12 5l3 4.3"/></svg><span>Love Story</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 18.4V7l11-2.2V16"/><circle cx="6.6" cy="18.4" r="2.6"/><circle cx="17.6" cy="16" r="2.6"/><path d="M18.6 2.4l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/></svg><span>Free Request Backsound</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M10.2 9.3l4.8 2.7-4.8 2.7zM8 21h8"/></svg><span>Live Streaming</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 6.5C10 4.8 7 4.2 4 4.8v13c3-.6 6 0 8 1.7 2-1.7 5-2.3 8-1.7v-13c-3-.6-6 0-8 1.7z"/><path d="M12 6.5v13M18.2 2.6l.5 1.2 1.2.5-1.2.5-.5 1.2-.5-1.2-1.2-.5 1.2-.5z"/></svg><span>Ayat Pernikahan</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 3.8v4h-4"/></svg><span>Free Revisi</span></li>
-      </ul>
+      <p class="hero-note">Gratis untuk memulai · <b>tanpa kartu kredit</b> · bayar hanya saat undangan diterbitkan</p>
+
+      <div class="hero-count" aria-label="Hitung mundur ke contoh hari pernikahan">
+        <p class="hero-count-label">Menghitung mundur ke hari bahagia contoh — Sabtu, 12 Juni 2027</p>
+        <div class="countdown">
+          <div><b id="cd-d">–</b><span>Hari</span></div>
+          <div><b id="cd-h">–</b><span>Jam</span></div>
+          <div><b id="cd-m">–</b><span>Menit</span></div>
+          <div><b id="cd-s">–</b><span>Detik</span></div>
+        </div>
+      </div>
+
+      <div class="trust" aria-label="Ringkasan UndangYa!">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/></svg>75+ Tema</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-8M21 19H3"/></svg>4 Kelas Harga</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M17 6.5c-.8-1.2-2.7-2-5-2-2.8 0-5 1.3-5 3.2 0 4.4 10 2.4 10 6.6 0 1.9-2.2 3.2-5 3.2-2.3 0-4.2-.8-5-2"/></svg>Mulai Rp0</span>
+      </div>
+      <p class="trust-line">75+ Tema · 4 Kelas Harga · Mulai Rp0</p>
+    </div>
+
+    <div class="phone-scene" aria-label="Pratinjau tema undangan di ponsel">
+      <svg class="sparkle" style="left:12%;top:6px" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2 7 7 3-7 3-2 7-2-7-7-3 7-3z"/></svg>
+      <svg class="sparkle" style="right:10%;top:52px;animation-delay:1.2s" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2 7 7 3-7 3-2 7-2-7-7-3 7-3z"/></svg>
+
+      <figure class="float-card fc-1">
+        <img src="assets/katalog/pusaka-sogan.webp" alt="Tema Pusaka Sogan — joglo adat Jawa sogan" width="640" height="800" loading="lazy">
+        <figcaption><b>Pusaka Sogan</b><small class="fc-sig">Signature · Adat Jawa</small></figcaption>
+      </figure>
+      <figure class="float-card fc-2">
+        <img src="assets/katalog/flora-raya.webp" alt="Tema Flora Raya — taman bunga" width="640" height="800" loading="lazy">
+        <figcaption><b>Flora Raya</b><small class="fc-sage">Signature · Taman Bunga</small></figcaption>
+      </figure>
+      <figure class="float-card fc-3">
+        <img src="assets/katalog/emerald-luxe.webp" alt="Tema Emerald Luxe 3D — emerald dan emas" width="640" height="800" loading="lazy">
+        <figcaption><b>Emerald Luxe 3D</b><small class="fc-gold">3D Interaktif</small></figcaption>
+      </figure>
+      <figure class="float-card fc-4">
+        <img src="assets/katalog/tinta-navy.webp" alt="Tema Tinta Navy — navy dan putih kertas" width="640" height="800" loading="lazy">
+        <figcaption><b>Tinta Navy</b><small class="fc-navy">FREE · 2 Warna</small></figcaption>
+      </figure>
+
+      <div class="phone" id="heroPhone">
+        <span class="phone-btn phone-btn-l1" aria-hidden="true"></span>
+        <span class="phone-btn phone-btn-l2" aria-hidden="true"></span>
+        <span class="phone-btn phone-btn-r" aria-hidden="true"></span>
+        <div class="phone-screen">
+          <span class="phone-island" aria-hidden="true"></span>
+          <div class="phone-status" aria-hidden="true"><span>09.41</span><span class="phone-status-ic">5G&nbsp;▰</span></div>
+          <iframe src="kastil-dongeng?to=Tamu%20Undangan" loading="lazy" title="Pratinjau tema Kastil Dongeng"></iframe>
+          <a class="phone-hit" href="kastil-dongeng?to=Tamu%20Undangan" aria-label="Buka tema Kastil Dongeng secara penuh"></a>
+        </div>
+      </div>
+      <p class="phone-cap">Tema Kastil Dongeng — ketuk HP untuk membuka tema aslinya</p>
     </div>
   </div>
-  <a class="scroll-cue" href="#koleksi" aria-label="Gulir ke koleksi tema">
-    <span>Scroll</span>
-    <i aria-hidden="true"></i>
-  </a>
 </section>
 
-<main>
-<!-- ================= S02 · KOLEKSI ================= -->
-<section class="section ivory has-botanical" id="koleksi">
-  <img class="botanical bl" src="assets/botanical-line-art.svg" alt="" aria-hidden="true" width="320" height="320" loading="lazy">
+<!-- ================= CARA KERJA ================= -->
+<section class="section" id="cara-kerja">
   <div class="wrap">
-    <div class="col-head rv">
-      <div>
-        <p class="micro">Koleksi Tema</p>
-        <h2>Pilih Tema Favoritmu</h2>
-        <p class="script-accent">Ceritakan kisahmu dengan gaya yang unik</p>
-      </div>
-      <div class="col-side">
-        <p>Dari yang klasik hingga modern, semua tema kami dirancang dengan detail dan estetika yang memikat. Pilih yang paling sesuai dengan momen spesialmu.</p>
-        <div class="arrow-row">
-          <button type="button" class="arrow-btn" id="showPrev" aria-label="Geser showcase ke kiri">←</button>
-          <button type="button" class="arrow-btn" id="showNext" aria-label="Geser showcase ke kanan">→</button>
-        </div>
-      </div>
+    <div class="sec-head rv">
+      <p class="kicker">Cara Kerja</p>
+      <h2>Tiga Langkah, Undanganmu Jadi</h2>
+      <p>Alurnya sederhana dan sama untuk semua kelas — dari FREE sampai SIGNATURE.</p>
     </div>
-
-    <div class="showcase-row rv" id="showcaseRow">
-      <article class="show-card">
-        <button type="button" class="show-hit" data-showcase="search" data-value="jawa" aria-label="Lihat tema Jawa Tradisional di koleksi">
-          <span class="show-media"><img src="assets/theme-jawa-tradisional.webp" alt="Pendopo Joglo kayu dengan pilar soko guru, lentera hangat, dan bunga ivory di taman tropis" width="1200" height="900" loading="lazy"></span>
-          <span class="show-body"><span class="show-name">Jawa Tradisional</span><span class="show-desc">Elegan &amp; Berbudaya</span><span class="show-arrow" aria-hidden="true">→</span></span>
-        </button>
+    <div class="steps">
+      <article class="step rv">
+        <span class="step-num" aria-hidden="true">01</span>
+        <div class="step-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="8" r="3.6"/><path d="M4 20c.8-3.6 3.4-5.4 6.5-5.4 1.4 0 2.7.4 3.8 1.1M16.5 12.5l4.8 4.8M21.3 12.5l-2.2 2.2M19 15l-2.3 2.3"/></svg></div>
+        <h3>Daftar / Login</h3>
+        <p>Buat akun gratis dalam semenit. Tanpa kartu kredit — akunmu cukup untuk mulai mendesain dan pratinjau.</p>
+        <a class="step-link" href="login?next=app">Daftar gratis <span aria-hidden="true">→</span></a>
       </article>
-      <article class="show-card">
-        <button type="button" class="show-hit" data-showcase="search" data-value="taman" aria-label="Lihat tema Garden Wedding di koleksi">
-          <span class="show-media art-garden" aria-hidden="true">
-            <img class="art-botanical" src="assets/botanical-line-art.svg" alt="" width="320" height="320" loading="lazy">
-            <span class="art-script">Garden Wedding</span>
-          </span>
-          <span class="show-body"><span class="show-name">Garden Wedding</span><span class="show-desc">Natural &amp; Romantic</span><span class="show-arrow" aria-hidden="true">→</span></span>
-        </button>
+      <article class="step rv">
+        <span class="step-num" aria-hidden="true">02</span>
+        <div class="step-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4" width="8" height="10" rx="1.6"/><rect x="13" y="4" width="8" height="7" rx="1.6"/><rect x="13" y="13" width="8" height="7" rx="1.6"/><rect x="3" y="16" width="8" height="4" rx="1.6"/></svg></div>
+        <h3>Pilih Template</h3>
+        <p>Telusuri katalog, pratinjau langsung di HP, pilih yang cocok. Isi nama, tanggal, foto, dan detail acaramu di editor.</p>
+        <a class="step-link" href="katalog">Lihat katalog <span aria-hidden="true">→</span></a>
       </article>
-      <article class="show-card">
-        <button type="button" class="show-hit" data-showcase="search" data-value="ilustrasi" aria-label="Lihat tema Luxury Cinematic di koleksi">
-          <span class="show-media"><img src="assets/theme-luxury-cinematic.webp" alt="Meja perayaan malam dengan kain burgundy, bunga ivory, lilin, dan aksen emas champagne" width="1200" height="900" loading="lazy"></span>
-          <span class="show-body"><span class="show-name">Luxury Cinematic</span><span class="show-desc">Mewah &amp; Berkelas</span><span class="show-arrow" aria-hidden="true">→</span></span>
-        </button>
+      <article class="step rv">
+        <span class="step-num" aria-hidden="true">03</span>
+        <div class="step-ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.4"/><path d="M3 10h18M7 15h4"/></svg></div>
+        <h3>Pembayaran</h3>
+        <p>Bayar sesuai kelas yang kamu pilih — undangan langsung aktif dan siap dibagikan ke semua tamu.</p>
+        <a class="step-link" href="#kelas-harga">Lihat kelas harga <span aria-hidden="true">→</span></a>
       </article>
-    </div>
-
-    <div id="koleksi-grid" class="grid-anchor">
-      <div class="filter-bar rv">
-        <div class="chips" role="group" aria-label="Filter kategori" id="catChips">
-          <button type="button" class="chip" data-cat="semua" aria-pressed="true">Semua</button>
-          <button type="button" class="chip" data-cat="ilustrasi" aria-pressed="false">Ilustrasi</button>
-          <button type="button" class="chip" data-cat="interaktif" aria-pressed="false">Interaktif</button>
-          <button type="button" class="chip" data-cat="video" aria-pressed="false">Video</button>
-        </div>
-        <div class="dots-filter" id="colorDots" role="group" aria-label="Filter warna palet">
-          <span class="df-label" aria-hidden="true">Warna</span>
-          <!-- dirender site.js -->
-        </div>
-        <div class="search-box">
-          <label class="micro ink" for="q">Cari desain</label><br>
-          <input id="q" type="search" placeholder="mis. sakura, jawa, emas…" autocomplete="off">
-        </div>
-      </div>
-
-      <p class="count-line" id="count" role="status"></p>
-      <div class="grid" id="grid"><!-- dirender site.js --></div>
-      <div class="empty" id="empty" hidden>
-        <h3>Tidak ada desain yang cocok.</h3>
-        <p>Coba longgarkan filter kategori, warna, atau kata kunci pencarianmu.</p>
-        <button type="button" class="btn btn-line" id="resetBtn">Atur Ulang Filter</button>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= S03 · FITUR ================= -->
-<section class="section dark" id="fitur">
-  <div class="wrap feat-grid-layout">
-    <div class="rv">
-      <p class="micro gold">Fitur Lengkap</p>
-      <h2>Semua yang Kamu Butuhkan dalam Satu Tautan</h2>
-      <p class="dark-lead">Bukan hanya cantik. UndangYA! juga dilengkapi dengan fitur lengkap untuk memudahkan kamu dan para tamu.</p>
-      <ul class="feat-list">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Detail Acara</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M8 12.5l2.7 2.7L16.5 9"/></svg><span>Konfirmasi Kehadiran (RSVP)</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-6.8-5.4-6.8-10.7a6.8 6.8 0 0 1 13.6 0C18.8 15.6 12 21 12 21z"/><circle cx="12" cy="10.2" r="2.5"/></svg><span>Navigasi Maps</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.7"/><path d="M4 18.5L10 13l3 2.7 3-2.7 4 3.8"/></svg><span>Galeri Foto &amp; Video</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="10" width="16" height="4"/><path d="M6 14v6.5h12V14M12 10v10.5M12 10s-4.7.2-4.7-2.4C7.3 5.4 10 5 11 6.3c.8 1 .9 2 .9 3.7zm0 0s4.7.2 4.7-2.4c0-2.2-2.7-2.6-3.7-1.3-.8 1-.9 2-.9 3.7z"/></svg><span>Hadiah &amp; Kado</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H20v15H6.7A1.7 1.7 0 0 0 5 19.7z"/><path d="M5 18.5V4.5M20 18H6.7A1.7 1.7 0 0 0 5 19.7"/></svg><span>Buku Tamu</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M8 15h3M14 15h3"/></svg><span>Google Calendar</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 18.2V6.5l10-2v11.7"/><circle cx="6.6" cy="18.2" r="2.6"/><circle cx="16.6" cy="16.2" r="2.6"/></svg><span>Musik &amp; Animasi</span></li>
-      </ul>
-    </div>
-    <div class="phone-zone rv">
-      <div class="phone" role="img" aria-label="Pratinjau undangan digital UndangYA! di layar ponsel — contoh nyata yang dapat dibuka dari tautan di bawah bingkai">
-        <span class="phone-notch" aria-hidden="true"></span>
-        <iframe src="kastil-dongeng?to=Tamu%20Undangan" title="Contoh undangan digital UndangYA! tema Kastil Dongeng — Meyzsa dan Fahrezzi" loading="lazy"></iframe>
-      </div>
-      <p class="phone-cap">Contoh nyata — bisa diklik &amp; dibuka</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= S04 · PENGALAMAN ================= -->
-<section class="section ivory has-botanical" id="pengalaman">
-  <img class="botanical tr" src="assets/botanical-line-art.svg" alt="" aria-hidden="true" width="320" height="320" loading="lazy">
-  <div class="wrap exp-grid">
-    <div class="fan rv" aria-hidden="true">
-      <div class="fan-card fan-1">
-        <span class="fan-orn">✦</span>
-        <div class="fan-frame">
-          <p class="fan-the">The Wedding Of</p>
-          <p class="fan-names script-gv">Senja Emas</p>
-          <p class="fan-date">SABTU · 12 · 06 · 2027</p>
-        </div>
-      </div>
-      <div class="fan-card fan-2">
-        <span class="fan-orn gold">❖</span>
-        <div class="fan-frame gold-frame">
-          <p class="fan-the">The Wedding Of</p>
-          <p class="fan-names fan-serif">Crimson Royal</p>
-          <p class="fan-date">SABTU · 12 · 06 · 2027</p>
-        </div>
-      </div>
-      <div class="fan-card fan-3">
-        <img class="fan-botanical" src="assets/botanical-line-art.svg" alt="" width="320" height="320" loading="lazy">
-        <div class="fan-frame plain">
-          <p class="fan-the dark">Undangan Pernikahan</p>
-          <p class="fan-names script-gv green">Botanical</p>
-          <p class="fan-date dark">SABTU · 12 · 06 · 2027</p>
-        </div>
-      </div>
-      <a class="fan-badge" href="undangan?to=Tamu%20Undangan" aria-label="Buka contoh undangan 3D">
-        <span class="fb-3d">3D</span><span class="fb-play" aria-hidden="true">▶</span>
-      </a>
-    </div>
-    <div class="rv">
-      <p class="micro">Pengalaman Interaktif</p>
-      <h2>Lebih dari Sekadar Tampilan</h2>
-      <p class="script-accent">Rasakan keajaiban di setiap scroll</p>
-      <p class="body-copy">Nikmati pengalaman undangan yang hidup dengan animasi halus, efek sinematik, dan elemen interaktif yang memukau. Desain yang tidak hanya terlihat indah, tetapi juga terasa spesial di setiap detiknya.</p>
-      <a class="btn btn-gold-outline" href="undangan?to=Tamu%20Undangan">Jelajahi Contoh <span aria-hidden="true">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= S05 · HARGA ================= -->
-<section class="section pricing" id="harga">
-  <img class="botanical bl gold-dim" src="assets/botanical-line-art.svg" alt="" aria-hidden="true" width="320" height="320" loading="lazy">
-  <img class="botanical tr gold-dim" src="assets/botanical-line-art.svg" alt="" aria-hidden="true" width="320" height="320" loading="lazy">
+<!-- ================= KELAS HARGA ================= -->
+<section class="section cream" id="kelas-harga">
   <div class="wrap">
-    <div class="sec-head center rv">
-      <p class="micro gold">Paket Undangan</p>
-      <h2>Pilih Paket yang Sesuai dengan Kebutuhanmu</h2>
-      <p class="dark-lead center">Harga transparan, kualitas premium, tanpa biaya tersembunyi.</p>
+    <div class="sec-head rv">
+      <p class="kicker">Kelas Harga</p>
+      <h2>Empat Kelas, Satu untuk Setiap Cerita</h2>
+      <p class="script-note">yang membedakan bukan cuma fitur — tapi juga rasa &amp; geraknya</p>
+      <p>Semua kelas berisi Google Maps di acara dan nama tamu tanpa batas. Naik kelas berarti galeri lebih besar, menu lebih lengkap, dan animasi lebih hidup.</p>
     </div>
-    <div class="free-strip rv">
-      <div class="free-strip-txt">
-        <p class="p-name">Mulai Gratis <span class="free-strip-amount">Rp0</span></p>
-        <p>Buat akun gratis, desain <strong>1 undangan pertamamu</strong> dengan semua fitur editor, dan pratinjau hasilnya sepuasnya. Bayar hanya saat kamu siap mempublikasikan — tanpa kartu kredit.</p>
-      </div>
-      <a class="btn btn-gold" href="login?mode=register&amp;next=app">Daftar &amp; Mulai Gratis <span aria-hidden="true">→</span></a>
-    </div>
-    <div class="price-grid">
+    <div class="price-scroll">
       <article class="price-card rv">
-        <p class="p-name">Basic</p>
-        <p class="p-sub">Undangan Digital UndangYa!</p>
-        <p class="p-amount">Rp50.000</p>
-        <p class="p-per">sekali bayar · aktif s/d H+30</p>
+        <p class="pc-class">Kelas 01</p><h3>FREE</h3><p class="pc-mulai">&nbsp;</p>
+        <p class="pc-amount">Gratis Rp0</p>
+        <p class="pc-desc">Simple dua warna, untuk yang penting jadi.</p>
         <ul>
-          <li>Pilihan desain standar</li>
-          <li>Galeri 4 foto · kuota 50 tamu</li>
-          <li>RSVP kehadiran</li>
-          <li>Jadwal acara tanpa batas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>2 warna saja, bersih</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Maks. 2 foto</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>8 fitur inti</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Google Maps di acara</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Musik latar</li>
         </ul>
-        <a class="btn btn-outline-light btn-block" href="checkout?paket=basic">Pilih Basic</a>
+        <a class="btn btn-line" href="katalog">Mulai Gratis</a>
       </article>
       <article class="price-card rv">
-        <p class="p-name">Premium</p>
-        <p class="p-sub">Undangan Digital UndangYa!</p>
-        <p class="p-amount">Rp110.000</p>
-        <p class="p-per">sekali bayar · aktif s/d H+30</p>
+        <p class="pc-class">Kelas 02</p><h3>BASIC</h3><p class="pc-mulai"><small>Mulai</small></p>
+        <p class="pc-amount">Rp49rb</p>
+        <p class="pc-desc">Slide layar penuh seperti presentasi, bentuk beda tiap tema.</p>
         <ul>
-          <li>Semua fitur Basic</li>
-          <li>Galeri 10 foto · kuota 100 tamu</li>
-          <li>Amplop digital</li>
-          <li>Ucapan &amp; doa + cerita cinta</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>11 fitur inti + RSVP</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Galeri 6 foto</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Amplop digital</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Google Maps + kalender</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Animasi reveal lembut</li>
         </ul>
-        <a class="btn btn-outline-light btn-block" href="checkout?paket=premium">Pilih Premium</a>
-      </article>
-      <article class="price-card featured rv">
-        <span class="price-badge">Pilihan Kami</span>
-        <p class="p-name">Eksklusif</p>
-        <p class="p-sub">Undangan Digital UndangYa!</p>
-        <p class="p-amount">Rp180.000</p>
-        <p class="p-per">sekali bayar · aktif s/d H+60</p>
-        <ul>
-          <li>Semua fitur Premium</li>
-          <li>Galeri 20 foto · tamu tanpa batas + impor CSV</li>
-          <li>Desain Eksklusif</li>
-          <li>Live streaming</li>
-        </ul>
-        <a class="btn btn-solid btn-block" href="checkout?paket=eksklusif">Pilih Eksklusif</a>
+        <a class="btn btn-line" href="katalog">Pilih Basic</a>
       </article>
       <article class="price-card rv">
-        <p class="p-name">Luxury</p>
-        <p class="p-sub">Undangan Digital UndangYa!</p>
-        <p class="p-amount">Rp280.000</p>
-        <p class="p-per">sekali bayar · aktif s/d H+90</p>
+        <p class="pc-class">Kelas 03</p><h3>ESSENTIAL</h3><p class="pc-mulai"><small>Mulai</small></p>
+        <p class="pc-amount">Rp49rb</p>
+        <p class="pc-desc">Fitur paling lengkap — background tonal lembut, foto jadi pemeran utama.</p>
         <ul>
-          <li>Semua fitur Eksklusif</li>
-          <li>Galeri 50 foto · tamu tanpa batas</li>
-          <li>Semua desain termasuk tier Luxury + sampul video</li>
-          <li>Video undangan MP4 &amp; alamat link rapi</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Menu lengkap</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Galeri ≥ 8 foto, geser kanan–kiri</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Love story, dresscode &amp; kado fisik</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Denah lokasi, live streaming, video &amp; QR check-in</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Animasi hidup khas tema</li>
         </ul>
-        <a class="btn btn-outline-light btn-block" href="checkout?paket=luxury">Pilih Luxury</a>
+        <a class="btn btn-line" href="katalog">Pilih Essential</a>
+      </article>
+      <article class="price-card hot rv">
+        <span class="hot-badge">Paling Hidup</span>
+        <p class="pc-class">Kelas 04</p><h3>SIGNATURE</h3><p class="pc-mulai"><small>Mulai</small></p>
+        <p class="pc-amount">Rp149rb</p>
+        <p class="pc-desc">Aset paling padat, undangan terasa seperti dunia kecil.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Semua fitur Essential</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Living-scene bergerak</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Tanaman &amp; bunga goyang sepoi-sepoi</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Sampul ≥ 20 aset gambar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>Font hero unik per tema</li>
+        </ul>
+        <a class="btn btn-gold" href="katalog">Pilih Signature</a>
       </article>
     </div>
-    <p class="price-note rv"><strong>Catatan jujur:</strong> checkout saat ini berjalan dalam mode demo <strong>Midtrans Sandbox</strong> — pembayaran yang dilakukan di sana adalah simulasi dan tidak ada uang asli yang berpindah.</p>
+    <p class="price-note">Sekali bayar per undangan. Harga final mengikuti tema yang dipilih di dalam kelasnya — BASIC &amp; ESSENTIAL mulai Rp49rb, SIGNATURE mulai Rp149rb, FREE Rp0.</p>
   </div>
 </section>
 
-<!-- ================= S06 · INSPIRASI ================= -->
-<section class="section ivory" id="inspirasi">
+<!-- ================= TEMA PILIHAN ================= -->
+<section class="section" id="tema-pilihan">
   <div class="wrap">
-    <div class="col-head rv">
-      <div>
-        <p class="micro">Template Terbaru</p>
-        <h2>Inspirasi Undangan Pilihan</h2>
-        <p class="script-accent">Dari berbagai tema eksklusif untuk momen spesialmu</p>
-      </div>
-      <div class="col-side end">
-        <a class="text-link" href="#koleksi-grid">Lihat Semua Template <span aria-hidden="true">→</span></a>
-      </div>
+    <div class="sec-head rv">
+      <p class="kicker">Tema Pilihan</p>
+      <h2>Sampul yang Bercerita Duluan</h2>
+      <p>Tujuh contoh dari 75+ tema — setiap tema punya layout, tipografi, dan bahasa geraknya sendiri.</p>
     </div>
-    <div class="insp-grid">
-      <article class="insp-card rv">
-        <div class="insp-media"><img src="assets/katalog/bioskop-mini.webp" alt="Poster film sinematik Meyzsa &amp; Fahrezzi dalam frame marquee lampu bioskop" width="640" height="800" loading="lazy"></div>
-        <div class="insp-body">
-          <h3>Bioskop Mini</h3>
-          <p>Sinematik &amp; Interaktif</p>
-          <div class="insp-actions">
-            <button type="button" class="btn btn-ghost" data-qv-open="bioskop-mini">Preview</button>
-            <a class="pesan" href="checkout?tema=bioskop-mini">Pilih Template</a>
-          </div>
-        </div>
+    <div class="theme-filters rv" role="group" aria-label="Saring tema menurut kelas">
+      <button type="button" class="chip" data-filter="semua" aria-pressed="true">Semua</button>
+      <button type="button" class="chip" data-filter="free" aria-pressed="false">FREE</button>
+      <button type="button" class="chip" data-filter="basic" aria-pressed="false">BASIC</button>
+      <button type="button" class="chip" data-filter="essential" aria-pressed="false">ESSENTIAL</button>
+      <button type="button" class="chip" data-filter="signature" aria-pressed="false">SIGNATURE</button>
+    </div>
+    <div class="theme-grid" id="themeGrid">
+      <article class="theme-card wide rv" data-class="signature">
+        <div class="tc-cover"><img src="assets/katalog/kastil-dongeng.webp" alt="Tema Kastil Dongeng — istana watercolor dongeng" width="640" height="800" loading="lazy"><span class="tc-class">SIGNATURE</span></div>
+        <div class="tc-body"><h3>Kastil Dongeng</h3><p>Istana watercolor tujuh menara, bunga melayang, dan scene sampul yang hidup seperti lukisan dongeng.</p>
+          <div class="tc-foot"><span class="tc-price"><small>Mulai</small>Rp149rb</span></div>
+          <div class="tc-actions"><a class="btn btn-line btn-sm" href="kastil-dongeng?to=Tamu%20Undangan">Preview</a><a class="btn btn-gold btn-sm" href="checkout?tema=kastil-dongeng">Gunakan Template</a></div></div>
       </article>
-      <article class="insp-card rv">
-        <div class="insp-media"><img src="assets/katalog/piringan-hitam.webp" alt="Sampul album vinyl retro Meyzsa &amp; Fahrezzi memegang piringan hitam di toko rekaman" width="640" height="800" loading="lazy"></div>
-        <div class="insp-body">
-          <h3>Piringan Hitam</h3>
-          <p>Retro &amp; Musikal</p>
-          <div class="insp-actions">
-            <button type="button" class="btn btn-ghost" data-qv-open="piringan-hitam">Preview</button>
-            <a class="pesan" href="checkout?tema=piringan-hitam">Pilih Template</a>
-          </div>
-        </div>
+      <article class="theme-card rv" data-class="signature">
+        <div class="tc-cover"><img src="assets/katalog/pusaka-sogan.webp" alt="Tema Pusaka Sogan — joglo adat Jawa sogan" width="640" height="800" loading="lazy"><span class="tc-class">SIGNATURE</span></div>
+        <div class="tc-body"><h3>Pusaka Sogan</h3><p>Joglo jati gelap berlampu damar, gebyok, batik parang &amp; kawung, gunungan wayang.</p>
+          <div class="tc-foot"><span class="tc-price"><small>Mulai</small>Rp149rb</span></div>
+          <div class="tc-actions"><a class="btn btn-line btn-sm" href="pusaka-sogan?to=Tamu%20Undangan">Preview</a><a class="btn btn-gold btn-sm" href="checkout?tema=pusaka-sogan">Gunakan Template</a></div></div>
       </article>
-      <article class="insp-card rv">
-        <div class="insp-media"><img src="assets/katalog/perjalanan-kereta.webp" alt="Kereta KRL modern dan peta rute stasiun kisah Meyzsa &amp; Fahrezzi" width="640" height="800" loading="lazy"></div>
-        <div class="insp-body">
-          <h3>Perjalanan Kereta</h3>
-          <p>Modern &amp; Interaktif</p>
-          <div class="insp-actions">
-            <button type="button" class="btn btn-ghost" data-qv-open="perjalanan-kereta">Preview</button>
-            <a class="pesan" href="checkout?tema=perjalanan-kereta">Pilih Template</a>
-          </div>
-        </div>
+      <article class="theme-card rv" data-class="signature">
+        <div class="tc-cover"><img src="assets/katalog/flora-raya.webp" alt="Tema Flora Raya — taman bunga raya" width="640" height="800" loading="lazy"><span class="tc-class">SIGNATURE</span></div>
+        <div class="tc-body"><h3>Flora Raya</h3><p>Taman bunga raya yang rimbun — dekorasi padat di setiap section, warna segar sepanjang scroll.</p>
+          <div class="tc-foot"><span class="tc-price"><small>Mulai</small>Rp149rb</span></div>
+          <div class="tc-actions"><a class="btn btn-line btn-sm" href="flora-raya?to=Tamu%20Undangan">Preview</a><a class="btn btn-gold btn-sm" href="checkout?tema=flora-raya">Gunakan Template</a></div></div>
       </article>
-      <article class="insp-card rv">
-        <div class="insp-media"><img src="assets/katalog/surat-hidup.webp" alt="Amplop kertas bersegel lilin dan taman kertas yang tumbuh untuk Meyzsa &amp; Fahrezzi" width="640" height="800" loading="lazy"></div>
-        <div class="insp-body">
-          <h3>Surat Hidup</h3>
-          <p>Romantis &amp; Puitis</p>
-          <div class="insp-actions">
-            <button type="button" class="btn btn-ghost" data-qv-open="surat-hidup">Preview</button>
-            <a class="pesan" href="checkout?tema=surat-hidup">Pilih Template</a>
-          </div>
-        </div>
+      <article class="theme-card rv" data-class="signature">
+        <div class="tc-cover"><img src="assets/katalog/emerald-luxe.webp" alt="Tema Emerald Luxe 3D — emerald dan emas tiga dimensi" width="640" height="800" loading="lazy"><span class="tc-class">SIGNATURE</span></div>
+        <div class="tc-body"><h3>Emerald Luxe 3D</h3><p>Cincin emas tiga dimensi dan partikel melayang di atas emerald pekat — mewah dan interaktif.</p>
+          <div class="tc-foot"><span class="tc-price">Rp299rb</span></div>
+          <div class="tc-actions"><a class="btn btn-line btn-sm" href="emerald-luxe?to=Tamu%20Undangan">Preview</a><a class="btn btn-gold btn-sm" href="checkout?tema=emerald-luxe">Gunakan Template</a></div></div>
       </article>
-      <article class="insp-card rv">
-        <div class="insp-media"><img src="assets/katalog/paspor-cinta.webp" alt="Buku paspor burgundy Republic of Love dengan foto ID Meyzsa &amp; Fahrezzi" width="640" height="800" loading="lazy"></div>
-        <div class="insp-body">
-          <h3>Paspor Cinta</h3>
-          <p>Petualangan &amp; Unik</p>
-          <div class="insp-actions">
-            <button type="button" class="btn btn-ghost" data-qv-open="paspor-cinta">Preview</button>
-            <a class="pesan" href="checkout?tema=paspor-cinta">Pilih Template</a>
-          </div>
-        </div>
+      <article class="theme-card rv" data-class="essential">
+        <div class="tc-cover"><img src="assets/katalog/kertas-tinta.webp" alt="Tema Kertas &amp; Tinta — kertas surat dan tinta" width="640" height="800" loading="lazy"><span class="tc-class">ESSENTIAL</span></div>
+        <div class="tc-body"><h3>Kertas &amp; Tinta</h3><p>Nuansa kertas surat dan tinta — background tonal lembut, foto mempelai jadi pemeran utama.</p>
+          <div class="tc-foot"><span class="tc-price"><small>Mulai</small>Rp49rb</span></div>
+          <div class="tc-actions"><a class="btn btn-line btn-sm" href="kertas-tinta?to=Tamu%20Undangan">Preview</a><a class="btn btn-gold btn-sm" href="checkout?tema=kertas-tinta">Gunakan Template</a></div></div>
       </article>
-      <article class="insp-card rv">
-        <div class="insp-media"><img src="assets/katalog/emerald-luxe.webp" alt="Istana taman emerald dan emas tiga dimensi Meyzsa &amp; Fahrezzi" width="640" height="800" loading="lazy"></div>
-        <div class="insp-body">
-          <h3>Emerald Luxe 3D</h3>
-          <p>3D Interaktif &amp; Mewah</p>
-          <div class="insp-actions">
-            <button type="button" class="btn btn-ghost" data-qv-open="emerald-luxe">Preview</button>
-            <a class="pesan" href="checkout?tema=emerald-luxe">Pilih Template</a>
-          </div>
-        </div>
+      <article class="theme-card rv" data-class="basic">
+        <div class="tc-cover"><img src="assets/katalog/anggur-maroon.webp" alt="Tema Anggur Maroon — maroon dan emas" width="640" height="800" loading="lazy"><span class="tc-class">BASIC</span></div>
+        <div class="tc-body"><h3>Anggur Maroon</h3><p>Satu warna kuat, foto besar full-bleed, slide layar penuh — simple tapi berani.</p>
+          <div class="tc-foot"><span class="tc-price"><small>Mulai</small>Rp49rb</span></div>
+          <div class="tc-actions"><a class="btn btn-line btn-sm" href="anggur-maroon?to=Tamu%20Undangan">Preview</a><a class="btn btn-gold btn-sm" href="checkout?tema=anggur-maroon">Gunakan Template</a></div></div>
       </article>
+      <article class="theme-card rv" data-class="free">
+        <div class="tc-cover"><img src="assets/katalog/tinta-navy.webp" alt="Tema Tinta Navy — navy dan putih kertas" width="640" height="800" loading="lazy"><span class="tc-class">FREE</span></div>
+        <div class="tc-body"><h3>Tinta Navy</h3><p>Klasik garis tipis dua warna. Maksimal 2 foto, 8 fitur inti — dan tetap ada Google Maps.</p>
+          <div class="tc-foot"><span class="tc-price">Gratis</span></div>
+          <div class="tc-actions"><a class="btn btn-line btn-sm" href="tinta-navy?to=Tamu%20Undangan">Preview</a><a class="btn btn-gold btn-sm" href="checkout?tema=tinta-navy">Gunakan Template</a></div></div>
+      </article>
+    </div>
+    <p class="themes-cta rv"><a class="btn btn-gold" href="katalog">Lihat Semua Tema
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ================= FITUR LENGKAP ================= -->
+<section class="section cream" id="fitur">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Fitur Lengkap</p>
+      <h2>Semua yang Tamu &amp; Kamu Butuhkan</h2>
+      <p>Delapan belas fitur dalam satu tautan. Kelas yang lebih tinggi membuka lebih banyak di antaranya — Google Maps dan nama tamu tanpa batas ada di semua kelas.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.6"/><circle cx="17.5" cy="5.8" r="2.6"/><circle cx="17.5" cy="18.2" r="2.6"/><path d="M8.3 10.8l6.7-3.7M8.3 13.2l6.7 3.7"/></svg></div><b>Unlimited Share</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.4"/><path d="M3.8 20c.7-3.4 3.2-5.2 6.2-5.2 1.5 0 2.9.5 4 1.3M15.5 20.2l4.6-4.6 1.7 1.7-4.6 4.6-2.4.7z"/></svg></div><b>Unlimited Custom Nama Tamu</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M8 12.5l2.7 2.7L16.5 9"/></svg></div><b>Konfirmasi Kehadiran (RSVP)</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.7"/><path d="M4 18.5L10 13l3 2.7 3-2.7 4 3.8"/></svg></div><b>Gallery Foto dan Video</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12.5" r="8"/><path d="M12 8v4.6l3.2 2M9 2.8h6"/></svg></div><b>Countdown Acara</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></div><b>Amplop Digital</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H20v12.5H5.7A1.7 1.7 0 0 0 4 18.2z"/><path d="M12 15.2s-3-1.9-3-3.9c0-1 .8-1.8 1.7-1.8.6 0 1 .3 1.3.7.3-.4.7-.7 1.3-.7.9 0 1.7.8 1.7 1.8 0 2-3 3.9-3 3.9z"/></svg></div><b>Ucapan dan Doa</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="14.5" r="5.2"/><circle cx="15" cy="14.5" r="5.2"/><path d="M9 9.3L12 5l3 4.3"/></svg></div><b>Love Story</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M12 21s-6.8-5.4-6.8-10.7a6.8 6.8 0 0 1 13.6 0C18.8 15.6 12 21 12 21z"/><circle cx="12" cy="10.2" r="2.5"/></svg></div><b>Navigasi Maps</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M9 18.4V7l11-2.2V16"/><circle cx="6.6" cy="18.4" r="2.6"/><circle cx="17.6" cy="16" r="2.6"/><path d="M18.6 2.4l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6z"/></svg></div><b>Free Request Backsound</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M10.2 9.3l4.8 2.7-4.8 2.7zM8 21h8"/></svg></div><b>Live Streaming</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M8 15h3M14 15h3"/></svg></div><b>Google Calendar</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M12 6.5C10 4.8 7 4.2 4 4.8v13c3-.6 6 0 8 1.7 2-1.7 5-2.3 8-1.7v-13c-3-.6-6 0-8 1.7z"/><path d="M12 6.5v13"/></svg></div><b>Ayat Pernikahan</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 3.8v4h-4"/></svg></div><b>Free Revisi</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M7.5 14.5h9M7.5 17.5h6"/></svg></div><b>Detail Acara</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="4"/><path d="M6 14v6.5h12V14M12 10v10.5M12 10s-4.7.2-4.7-2.4C7.3 5.4 10 5 11 6.3c.8 1 .9 2 .9 3.7zm0 0s4.7.2 4.7-2.4c0-2.2-2.7-2.6-3.7-1.3-.8 1-.9 2-.9 3.7z"/></svg></div><b>Hadiah &amp; Kado</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H20v15H6.7A1.7 1.7 0 0 0 5 19.7z"/><path d="M9 8h7M9 11.5h5"/></svg></div><b>Buku Tamu</b></div>
+      <div class="feat rv"><div class="feat-ic"><svg viewBox="0 0 24 24"><path d="M9 18.2V6.5l10-2v11.7"/><circle cx="6.6" cy="18.2" r="2.6"/><circle cx="16.6" cy="16.2" r="2.6"/></svg></div><b>Musik &amp; Animasi</b></div>
     </div>
   </div>
 </section>
 
-<!-- ================= S07 · CTA PENUTUP ================= -->
+<!-- ================= BANNER CUSTOM ================= -->
+<section class="section custom-sec">
+  <div class="wrap">
+    <div class="custom-panel rv">
+      <div class="custom-in">
+        <div>
+          <p class="kicker kicker-light">Menu Custom</p>
+          <h2>Tidak Menemukan yang Cocok?</h2>
+          <p>Minta dibuatkan undangan custom: ceritakan maumu sebebasnya — tema dari nol, modifikasi tema yang ada, atau fitur khusus. Permintaanmu langsung terkirim ke owner dan dibalas personal.</p>
+        </div>
+        <div class="custom-cta">
+          <p>Ceritakan warna, suasana, dan contoh yang kamu suka — tim kami yang mengerjakan sisanya.</p>
+          <a class="btn btn-cream" href="custom">Minta Custom <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Sering Ditanyakan</p>
+      <h2>Hal yang Paling Sering Ditanyakan</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq rv">
+        <summary>Apakah benar ada tema gratis?<span class="fx" aria-hidden="true">+</span></summary>
+        <div class="faq-body">Benar. Kelas FREE (Rp0) berisi tema dua warna seperti Tinta Navy dan Daun Krem — maksimal 2 foto dan 8 fitur inti, dan tetap termasuk Google Maps di acara serta musik. Kamu bisa mulai dan membagikannya tanpa membayar. Kelas berbayar mulai Rp49rb untuk BASIC dan ESSENTIAL, serta mulai Rp149rb untuk SIGNATURE.</div>
+      </details>
+      <details class="faq rv">
+        <summary>Bagaimana alur pembayarannya?<span class="fx" aria-hidden="true">+</span></summary>
+        <div class="faq-body">Alur resminya: daftar / login dulu, lalu pilih template di katalog, isi data undanganmu, kemudian pembayaran sesuai kelas tema yang dipilih (Rp0 untuk FREE, mulai Rp49rb untuk BASIC &amp; ESSENTIAL, mulai Rp149rb untuk SIGNATURE). Begitu pembayaran selesai, undangan langsung aktif dan tautannya siap dibagikan.</div>
+      </details>
+      <details class="faq rv">
+        <summary>Apakah bisa ganti nama tamu tanpa batas?<span class="fx" aria-hidden="true">+</span></summary>
+        <div class="faq-body">Bisa. Nama tamu bersifat unlimited di semua kelas — setiap tamu mendapat sapaan personal di sampul undangannya, sebanyak apa pun tamumu.</div>
+      </details>
+      <details class="faq rv">
+        <summary>Apakah bisa revisi setelah undangan jadi?<span class="fx" aria-hidden="true">+</span></summary>
+        <div class="faq-body">Bisa — revisi termasuk dalam layanan UndangYa!. Kamu juga bisa mengubah data undangan sendiri kapan pun dari dashboard, selama masa aktif undanganmu.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PENUTUP ================= -->
 <section class="closing">
-  <img class="closing-bg" src="assets/closing-landscape.webp" alt="Panorama pegunungan Indonesia berlapis kabut dengan pendopo tradisional saat matahari terbenam" width="1920" height="640" loading="lazy">
-  <div class="closing-shade" aria-hidden="true"></div>
-  <div class="wrap closing-in rv">
-    <div class="closing-copy">
-      <img class="cta-mark" src="assets/logo-icon.png" alt="" aria-hidden="true" width="512" height="561">
-      <p class="micro gold">Siap Memulai?</p>
-      <h2>Buat Undangan Impianmu Sekarang Juga</h2>
-      <p>Jangan biarkan momen spesialmu berlalu begitu saja. Bersama UndangYA!, wujudkan undangan digital yang personal, indah, dan berkesan.</p>
-    </div>
+  <div class="wrap rv">
+    <p class="kicker kicker-center">Siap Memulai?</p>
+    <h2>Mulai dari Rp0 — Buat Undanganmu Sekarang</h2>
+    <p>Daftar gratis, pilih tema favoritmu, dan kirim undangan yang hidup ke semua tamu — hari ini juga.</p>
     <div class="closing-ctas">
-      <a class="btn btn-gold" href="login?next=app">Buat Undangan Gratis <span aria-hidden="true">→</span></a>
-      <a class="text-link light" href="#koleksi-grid">Lihat Contoh Template <span aria-hidden="true">→</span></a>
+      <a class="btn btn-gold" href="login?next=app">Buat Undangan Gratis
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-line" href="custom">Minta Custom</a>
     </div>
   </div>
 </section>
 </main>
 
-<!-- ================= S08 · FOOTER ================= -->
-<footer class="site-foot">
+<footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand-plaque footer-logo" href="#beranda" aria-label="UNDANGYA! — kembali ke beranda">
-          <img src="assets/logo-undangya-horizontal.webp" alt="UndangYA!" width="1800" height="466">
+        <a class="logo" href="#beranda" aria-label="UndangYa! — beranda">
+          <img src="assets/logo-undangya-horizontal.webp" alt="UndangYa!" width="1800" height="466">
         </a>
         <p class="foot-tag">Undangan Digital, Lebih Mudah</p>
         <p class="foot-line">Galeri undangan digital premium — desain eksklusif, fitur lengkap, dan pengalaman interaktif untuk momen yang tak terlupakan.</p>
+        <p class="foot-legal"><a href="kebijakan-privasi">Kebijakan Privasi</a> · <a href="syarat-ketentuan">Syarat &amp; Ketentuan</a></p>
       </div>
-      <nav aria-label="Navigasi footer">
+      <nav class="foot-nav" aria-label="Navigasi footer">
         <h4>Navigasi</h4>
         <a href="#beranda">Beranda</a>
         <a href="katalog">Katalog</a>
-        <a href="#harga">Harga</a>
+        <a href="#kelas-harga">Kelas Harga</a>
+        <a href="#fitur">Fitur</a>
       </nav>
-      <nav aria-label="Produk">
-        <h4>Produk</h4>
-        <a href="undangan?to=Tamu%20Undangan">Demo Undangan</a>
-        <a href="taman-rahasia?to=Tamu%20Undangan">Taman Rahasia</a>
+      <nav class="foot-nav" aria-label="Layanan footer">
+        <h4>Layanan</h4>
+        <a href="custom">Custom</a>
         <a href="checkout">Checkout</a>
-      </nav>
-      <nav aria-label="Bantuan">
-        <h4>Bantuan</h4>
-        <a href="#fitur">Fitur Lengkap</a>
-        <a href="#pengalaman">Pengalaman Interaktif</a>
-        <a href="#inspirasi">Inspirasi Template</a>
+        <a href="login">Masuk</a>
       </nav>
     </div>
-    <p class="foot-legal"><a href="kebijakan-privasi">Kebijakan Privasi</a> · <a href="syarat-ketentuan">Syarat &amp; Ketentuan</a></p>
-    <p class="foot-bottom">© <span id="year">2026</span> UndangYA! — etalase demo. Semua nama pasangan, foto, dan data acara di situs ini adalah contoh fiktif untuk keperluan demo. Checkout berjalan di Midtrans Sandbox (mode test).</p>
+    <p class="foot-copy">© <span id="year">2026</span> UndangYA! — etalase demo. Semua nama pasangan, foto, dan data acara di situs ini adalah contoh fiktif untuk keperluan demo. Checkout berjalan di Midtrans Sandbox (mode test).</p>
   </div>
 </footer>
 
-<!-- ============ QUICK VIEW ============ -->
-<div class="qv-backdrop" id="qvBackdrop" hidden>
-  <div class="qv" role="dialog" aria-modal="true" aria-labelledby="qvName" id="qvDialog">
-    <div id="qvContent"><!-- dirender site.js --></div>
-  </div>
-</div>
-
-<script src="themes.js"></script>
-<script src="site.js"></script>
+<script src="landing.js"></script>
 </body>
 </html>
