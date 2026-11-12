@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Putih Hitam Minim — Meyzsa &amp; Fahrezzi</title>
+<meta name="description" content="Undangan digital contoh tema Putih Hitam Minim — Meyzsa Putri Ananda & Ahmad Fahrezzi Pratama, Sabtu 12 Juni 2027, Jakarta.">
+<style>
+@font-face{font-family:'Minim Display';src:url('assets/undangya/putih-hitam-minim/font-hero-display.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:'Minim Kicker';src:url('assets/undangya/putih-hitam-minim/font-hero-kicker.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+:root{--black:#000;--ink:#0d0d0d;--white:#fff;--paper:#fbfbf9;--paper2:#f4f4f0;--coal:#101010;--coal2:#181818}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#111;font-family:Georgia,'Times New Roman',serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.phone{max-width:430px;margin:0 auto;position:relative;min-height:100dvh;overflow:clip;box-shadow:0 0 90px rgba(0,0,0,.85);background:var(--white)}
+main{scroll-snap-type:y proximity}
+section.slide{position:relative;min-height:100dvh;scroll-snap-align:start;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:54px 24px 62px;overflow:hidden}
+.sec-bg{position:absolute;inset:0;z-index:0}
+.sec-bg img{width:100%;height:100%;object-fit:cover}
+.slide>*{position:relative;z-index:1}
+section.slide .sec-bg{position:absolute;inset:0;z-index:0}
+/* Slide berganti tegas: dasar PUTIH (teks hitam pekat) <-> dasar HITAM (teks putih pekat).
+   Kontras mutlak: teks isi TIDAK PERNAH abu-abu — hitam pekat di atas putih, putih pekat di atas hitam. */
+.wht{background:var(--paper);color:#000}
+.wht2{background:var(--paper2);color:#000}
+.blk{background:var(--coal);color:#fff}
+.blk2{background:var(--coal2);color:#fff}
+.kicker{font-family:'Minim Kicker','Courier New',monospace;font-size:11px;letter-spacing:.34em;text-transform:uppercase}
+.giant{font-family:'Minim Display',Arial,sans-serif;font-weight:800;text-transform:uppercase;line-height:.98;letter-spacing:-.01em;overflow-wrap:break-word;max-width:100%}
+.giant.xl{font-size:clamp(52px,16.5vw,72px)}
+.giant.lg{font-size:clamp(40px,12.5vw,56px)}
+.giant.md{font-size:clamp(32px,10vw,44px)}
+.giant .thin-line{display:block}
+p.body-txt{font-size:14.5px;line-height:1.8;max-width:330px;margin-top:18px}
+.wht p.body-txt,.wht2 p.body-txt{color:#000}
+.blk p.body-txt,.blk2 p.body-txt{color:#fff}
+.demo-note{font-family:'Minim Kicker','Courier New',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;margin-top:14px}
+.slide-photo{width:100%;max-width:330px;margin-top:24px;border:0;display:block}
+.slide-photo img{width:100%;height:auto;display:block;filter:grayscale(1)}
+.slide-photo.narrow{max-width:270px}
+/* reveal lembut saja */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+/*
+  ANIMASI — ATURAN KELAS MURAH (koreksi user 21:24, WAJIB):
+  Pola tanaman "tumbuh dari bawah -> membesar (scale dari pangkal) -> goyang sepoi-sepoi terus-menerus"
+  adalah milik kelas MAHAL (>= Rp100rb) dan DILARANG di tema Murah ini.
+  Tema ini memang TANPA tanaman/ornamen sama sekali — tipografi raksasa adalah satu-satunya dekorasi.
+  Animasi yang dipakai HANYA: reveal scroll lembut (fade + naik tipis 14px) + transisi antar-slide.
+  Murni CSS transisi, TANPA @keyframes, TANPA JS per-frame. Semua elemen animation-name = none.
+*/
+/* sampul — dasar HITAM */
+#cover{position:fixed;inset:0;z-index:60;display:flex;justify-content:center;background:#111}
+#cover .cover-inner{width:100%;max-width:430px;position:relative;background:var(--coal);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:46px 26px;overflow:hidden}
+#cover .cover-inner .sec-bg img{opacity:.16;filter:grayscale(1)}
+#cover>*{position:relative}
+.cover-photo{width:200px;margin-top:22px}
+.cover-photo img{width:100%;height:auto;display:block;filter:grayscale(1)}
+.cover-names{font-family:'Minim Display',Arial,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(30px,8.8vw,38px);line-height:1.08;margin-top:20px;overflow-wrap:break-word;max-width:100%}
+.cover-amp{display:block;font-size:26px;margin:4px 0}
+.cover-date{font-family:'Minim Kicker','Courier New',monospace;font-size:12px;letter-spacing:.3em;margin-top:16px}
+.guest-box{margin-top:26px}
+.guest-box .to{font-size:13px;font-style:italic}
+.gname{font-family:'Minim Display',Arial,sans-serif;font-weight:800;font-size:20px;margin-top:6px;text-transform:uppercase;overflow-wrap:break-word}
+.btn{display:inline-block;font-family:'Minim Kicker','Courier New',monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;padding:13px 24px;cursor:pointer;text-decoration:none;border:2px solid currentColor;transition:background .3s ease,color .3s ease;background:transparent}
+.wht .btn,.wht2 .btn{color:#000;background:#000;color:#fff;border-color:#000}
+.wht .btn.alt,.wht2 .btn.alt{background:transparent;color:#000}
+.wht .btn:hover,.wht2 .btn:hover{background:#fff;color:#000}
+.wht .btn.alt:hover,.wht2 .btn.alt:hover{background:#000;color:#fff}
+.blk .btn,.blk2 .btn{background:#fff;color:#000;border-color:#fff}
+.blk .btn.alt,.blk2 .btn.alt{background:transparent;color:#fff}
+.blk .btn:hover,.blk2 .btn:hover{background:#000;color:#fff}
+.blk .btn.alt:hover,.blk2 .btn.alt:hover{background:#fff;color:#000}
+#btnOpen{margin-top:18px;background:#fff;color:#000;border-color:#fff}
+#btnOpen:hover{background:#000;color:#fff}
+body:not(.opened){overflow:hidden}
+/* mempelai */
+.person{margin-top:10px;width:100%}
+.person .p-photo{width:168px;margin:0 auto}
+.person .p-photo img{width:100%;height:auto;display:block;filter:grayscale(1)}
+.person h3{font-family:'Minim Display',Arial,sans-serif;font-weight:800;font-size:clamp(24px,7.4vw,30px);text-transform:uppercase;line-height:1.15;margin-top:16px;overflow-wrap:break-word}
+.person .parents{font-size:13.5px;line-height:1.75;margin-top:8px}
+.ig{font-family:'Minim Kicker','Courier New',monospace;font-size:12px;letter-spacing:.1em;text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
+.wht .ig,.wht2 .ig{color:#000}.blk .ig,.blk2 .ig{color:#fff}
+.amp-mid{font-family:'Minim Display',Arial,sans-serif;font-weight:800;font-size:34px;margin:24px 0 2px}
+/* countdown + acara */
+.countdown{display:flex;gap:0;justify-content:center;margin-top:22px;border:2px solid #000}
+.cd-card{min-width:70px;padding:12px 4px 10px;border-right:2px solid #000}
+.cd-card:last-child{border-right:0}
+.cd-card b{font-family:'Minim Display',Arial,sans-serif;font-weight:800;font-size:27px;display:block}
+.cd-card span{font-family:'Minim Kicker','Courier New',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase}
+.event{border:2px solid #000;padding:24px 18px 20px;margin-top:20px;width:100%;max-width:344px;background:#fff;color:#000}
+.event h3{font-family:'Minim Display',Arial,sans-serif;font-weight:800;font-size:24px;text-transform:uppercase}
+.event .when{font-family:'Minim Kicker','Courier New',monospace;font-size:11px;letter-spacing:.12em;margin-top:9px;text-transform:uppercase}
+.event p{font-size:14px;line-height:1.65;margin-top:8px}
+.btn-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:15px}
+.btn-row .btn{padding:10px 14px;font-size:10px;background:#000;color:#fff;border-color:#000}
+.btn-row .btn.alt{background:transparent;color:#000}
+.btn-row .btn:hover{background:#fff;color:#000}
+.btn-row .btn.alt:hover{background:#000;color:#fff}
+/* galeri: grid ketat TEPAT 6, tanpa celah dekoratif */
+.gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;width:100%;max-width:344px;margin-top:22px;border:2px solid #fff}
+.gal-grid figure{aspect-ratio:3/4;overflow:hidden;background:#000}
+.gal-grid img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)}
+/* rsvp */
+form.rsvp{width:100%;max-width:344px;margin-top:20px;display:flex;flex-direction:column;gap:10px}
+form.rsvp input,form.rsvp select,form.rsvp textarea{font-family:Georgia,serif;font-size:14px;color:#000;background:#fff;border:2px solid #000;padding:12px 14px;width:100%;border-radius:0}
+form.rsvp textarea{resize:vertical;min-height:74px}
+form.rsvp .btn{background:#000;color:#fff;border-color:#000}
+form.rsvp .btn:hover{background:#fff;color:#000}
+.wall{width:100%;max-width:344px;margin-top:20px;display:flex;flex-direction:column;gap:9px;max-height:300px;overflow-y:auto;text-align:left}
+.wish{background:#fff;border:2px solid #000;padding:11px 14px}
+.wish b{font-family:'Minim Display',Arial,sans-serif;font-weight:800;font-size:14px;text-transform:uppercase}
+.wish .att{font-family:'Minim Kicker','Courier New',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;margin-left:7px}
+.wish p{font-size:13px;line-height:1.6;margin-top:3px}
+.wall-empty{font-size:13px;font-style:italic;text-align:center}
+/* amplop */
+.pay-card{border:2px solid #fff;padding:22px 18px 18px;width:100%;max-width:344px;margin-top:16px;background:#000;color:#fff}
+.pay-card .bank{font-family:'Minim Kicker','Courier New',monospace;font-size:12px;letter-spacing:.32em}
+.pay-num{font-family:'Minim Display',Arial,sans-serif;font-weight:800;font-size:clamp(24px,7.6vw,29px);letter-spacing:.04em;margin-top:9px;overflow-wrap:break-word}
+.pay-name{font-size:13px;margin-top:4px}
+/* penutup */
+.foot-note{position:relative;z-index:1;font-size:11px;line-height:1.7;text-align:center;padding:20px 30px 30px;background:#000;color:#fff;font-family:'Minim Kicker','Courier New',monospace;letter-spacing:.06em}
+/* navigasi titik slide */
+#dots{position:fixed;right:calc(50% - 215px + 10px);top:50%;transform:translateY(-50%);z-index:40;display:none;flex-direction:column;gap:9px}
+body.opened #dots{display:flex}
+#dots a{width:9px;height:9px;border:1px solid #000;outline:1px solid #fff;background:transparent;display:block}
+#dots a.on{background:#888;background:#000;box-shadow:inset 0 0 0 2px #fff}
+@media(max-width:430px){#dots{right:10px}}
+/* musik */
+#btnMusic{position:fixed;bottom:18px;right:calc(50% - 215px + 16px);z-index:50;width:46px;height:46px;border-radius:50%;border:2px solid #000;background:#fff;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 0 0 1px #fff,0 6px 18px rgba(0,0,0,.35)}
+body.opened #btnMusic{display:flex}
+@media(max-width:430px){#btnMusic{right:16px}}
+#btnMusic svg{width:22px;height:22px}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- SAMPUL — HITAM -->
+  <div id="cover" role="dialog" aria-label="Sampul undangan">
+    <div class="cover-inner">
+      <div class="sec-bg"><img src="assets/undangya/putih-hitam-minim/bg-hitam.webp" alt=""></div>
+      <div class="kicker" style="position:relative">Undangan Pernikahan</div>
+      <div class="cover-photo" style="position:relative"><img src="assets/undangya/putih-hitam-minim/hero.webp" alt="Foto hitam-putih Meyzsa dan Fahrezzi"></div>
+      <h1 class="cover-names" style="position:relative">Meyzsa<span class="cover-amp">&amp;</span>Fahrezzi</h1>
+      <div class="cover-date" style="position:relative">SABTU · 12 JUNI 2027 · JAKARTA</div>
+      <div class="guest-box" style="position:relative">
+        <div class="to">Kepada Yth. Bapak/Ibu/Saudara/i</div>
+        <div class="gname" id="guestName">Tamu Undangan</div>
+        <button class="btn" id="btnOpen" type="button">Buka Undangan</button>
+      </div>
+    </div>
+  </div>
+
+  <nav id="dots" aria-label="Navigasi slide">
+    <a href="#sambutan" data-sec="sambutan" aria-label="Sambutan"></a>
+    <a href="#mempelai" data-sec="mempelai" aria-label="Mempelai"></a>
+    <a href="#acara" data-sec="acara" aria-label="Acara"></a>
+    <a href="#galeri" data-sec="galeri" aria-label="Galeri"></a>
+    <a href="#rsvp" data-sec="rsvp" aria-label="RSVP"></a>
+    <a href="#amplop" data-sec="amplop" aria-label="Amplop digital"></a>
+    <a href="#penutup" data-sec="penutup" aria-label="Penutup"></a>
+  </nav>
+
+  <main id="mainSlides">
+
+    <!-- PEMBUKA / SAMBUTAN — PUTIH -->
+    <section class="slide wht" id="sambutan">
+      <div class="sec-bg"><img src="assets/undangya/putih-hitam-minim/bg-putih.webp" alt="" loading="lazy"></div>
+      <div class="kicker rv">01 — Pembuka</div>
+      <h2 class="giant lg rv" style="margin-top:14px">Assalamu&shy;’alaikum</h2>
+      <p class="body-txt rv" style="margin-top:10px;font-style:italic">Warahmatullahi Wabarakatuh</p>
+      <figure class="slide-photo narrow rv"><img src="assets/undangya/putih-hitam-minim/suasana-sambut.webp" alt="Foto hitam-putih Al-Qur'an di atas rehal kayu" loading="lazy"></figure>
+      <p class="body-txt rv">Dengan memohon rahmat dan ridha Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami. Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+      <p class="demo-note rv">Undangan contoh — data demo</p>
+    </section>
+
+    <!-- MEMPELAI — HITAM -->
+    <section class="slide blk" id="mempelai">
+      <div class="sec-bg"><img src="assets/undangya/putih-hitam-minim/bg-hitam.webp" alt="" loading="lazy"></div>
+      <div class="kicker rv">02 — Mempelai</div>
+      <h2 class="giant md rv" style="margin-top:12px">Dua Nama,<br>Satu Ikatan</h2>
+      <div class="person rv">
+        <div class="p-photo"><img src="assets/undangya/putih-hitam-minim/bride.webp" alt="Foto hitam-putih mempelai wanita, Meyzsa Putri Ananda" loading="lazy"></div>
+        <h3>Meyzsa Putri Ananda, S.Pd.</h3>
+        <p class="parents">Putri dari<br>Bapak H. Muhammad Ridwan<br>&amp; Ibu Hj. Siti Aminah</p>
+        <a class="ig" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a>
+      </div>
+      <div class="amp-mid rv">&amp;</div>
+      <div class="person rv">
+        <div class="p-photo"><img src="assets/undangya/putih-hitam-minim/groom.webp" alt="Foto hitam-putih mempelai pria, Ahmad Fahrezzi Pratama" loading="lazy"></div>
+        <h3>Ahmad Fahrezzi Pratama, S.T.</h3>
+        <p class="parents">Putra dari<br>Bapak H. Bambang Sutrisno<br>&amp; Ibu Hj. Ratna Dewi</p>
+        <a class="ig" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN + ACARA — PUTIH -->
+    <section class="slide wht2" id="acara">
+      <div class="sec-bg"><img src="assets/undangya/putih-hitam-minim/bg-putih-2.webp" alt="" loading="lazy"></div>
+      <div class="kicker rv">03 — Acara</div>
+      <h2 class="giant xl rv" style="margin-top:12px">12.06.27</h2>
+      <div class="countdown rv" id="countdown" aria-label="Hitung mundur menuju akad nikah">
+        <div class="cd-card"><b id="cdD">0</b><span>Hari</span></div>
+        <div class="cd-card"><b id="cdH">0</b><span>Jam</span></div>
+        <div class="cd-card"><b id="cdM">0</b><span>Menit</span></div>
+        <div class="cd-card"><b id="cdS">0</b><span>Detik</span></div>
+      </div>
+      <figure class="slide-photo rv"><img src="assets/undangya/putih-hitam-minim/suasana-acara.webp" alt="Foto hitam-putih aula pernikahan" loading="lazy"></figure>
+      <div class="event rv">
+        <div class="kicker">Acara Satu</div>
+        <h3>Akad Nikah</h3>
+        <div class="when">Sabtu, 12 Juni 2027 · 08.00 – 10.00 WIB</div>
+        <p><b>Masjid Agung Al-Azhar</b><br>Jakarta Selatan</p>
+        <div class="btn-row">
+          <a class="btn" href="https://maps.google.com/?q=Masjid+Agung+Al-Azhar+Jakarta+Selatan" target="_blank" rel="noopener">Lihat Lokasi</a>
+          <a class="btn alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Akad+Nikah+Meyzsa+%26+Fahrezzi&amp;dates=20270612T010000Z%2F20270612T030000Z&amp;details=Akad+Nikah+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=Masjid+Agung+Al-Azhar%2C+Kebayoran+Baru%2C+Jakarta+Selatan" target="_blank" rel="noopener">Simpan ke Kalender</a>
+          <button class="btn alt" type="button" data-ics data-file="akad-meyzsa-fahrezzi" data-title="Akad Nikah Meyzsa &amp; Fahrezzi" data-start="20270612T010000Z" data-end="20270612T030000Z" data-loc="Masjid Agung Al-Azhar, Kebayoran Baru, Jakarta Selatan" data-desc="Akad Nikah Meyzsa Putri Ananda &amp; Ahmad Fahrezzi Pratama">Unduh .ICS</button>
+        </div>
+      </div>
+      <div class="event rv">
+        <div class="kicker">Acara Dua</div>
+        <h3>Resepsi</h3>
+        <div class="when">Sabtu, 12 Juni 2027 · 11.00 – 13.00 WIB</div>
+        <p><b>The Ritz-Carlton Jakarta, Pacific Place</b><br>Jakarta Selatan</p>
+        <div class="btn-row">
+          <a class="btn" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">Lihat Lokasi</a>
+          <a class="btn alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi+Meyzsa+%26+Fahrezzi&amp;dates=20270612T040000Z%2F20270612T060000Z&amp;details=Resepsi+Pernikahan+Meyzsa+Putri+Ananda+%26+Ahmad+Fahrezzi+Pratama&amp;location=The+Ritz-Carlton+Jakarta%2C+Pacific+Place%2C+Jakarta+Selatan" target="_blank" rel="noopener">Simpan ke Kalender</a>
+          <button class="btn alt" type="button" data-ics data-file="resepsi-meyzsa-fahrezzi" data-title="Resepsi Meyzsa &amp; Fahrezzi" data-start="20270612T040000Z" data-end="20270612T060000Z" data-loc="The Ritz-Carlton Jakarta, Pacific Place, Jakarta Selatan" data-desc="Resepsi Pernikahan Meyzsa Putri Ananda &amp; Ahmad Fahrezzi Pratama">Unduh .ICS</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI — HITAM, grid ketat tepat 6 -->
+    <section class="slide blk2" id="galeri">
+      <div class="sec-bg"><img src="assets/undangya/putih-hitam-minim/bg-hitam-2.webp" alt="" loading="lazy"></div>
+      <div class="kicker rv">04 — Galeri</div>
+      <h2 class="giant lg rv" style="margin-top:12px">Enam<br>Foto</h2>
+      <div class="gal-grid rv">
+        <figure><img src="assets/undangya/putih-hitam-minim/galeri-1.webp" alt="Foto galeri hitam-putih 1 — pasangan berjalan bergandengan" loading="lazy"></figure>
+        <figure><img src="assets/undangya/putih-hitam-minim/galeri-2.webp" alt="Foto galeri hitam-putih 2 — pasangan duduk bersama" loading="lazy"></figure>
+        <figure><img src="assets/undangya/putih-hitam-minim/galeri-3.webp" alt="Foto galeri hitam-putih 3 — detail tangan dan cincin" loading="lazy"></figure>
+        <figure><img src="assets/undangya/putih-hitam-minim/galeri-4.webp" alt="Foto galeri hitam-putih 4 — pasangan di bawah lengkung bunga putih" loading="lazy"></figure>
+        <figure><img src="assets/undangya/putih-hitam-minim/galeri-5.webp" alt="Foto galeri hitam-putih 5 — momen candid pasangan tertawa" loading="lazy"></figure>
+        <figure><img src="assets/undangya/putih-hitam-minim/galeri-6.webp" alt="Foto galeri hitam-putih 6 — pasangan dari belakang memandang kota senja" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <!-- RSVP + DINDING UCAPAN — PUTIH (demo, localStorage) -->
+    <section class="slide wht" id="rsvp">
+      <div class="sec-bg"><img src="assets/undangya/putih-hitam-minim/bg-putih.webp" alt="" loading="lazy"></div>
+      <div class="kicker rv">05 — RSVP &amp; Ucapan</div>
+      <h2 class="giant lg rv" style="margin-top:12px">Kirim<br>Doa</h2>
+      <form class="rsvp rv" id="rsvpForm">
+        <input type="text" id="rsvpName" placeholder="Nama Anda" maxlength="60" required>
+        <select id="rsvpAtt" required>
+          <option value="">Konfirmasi kehadiran…</option>
+          <option value="Hadir">Hadir, insya Allah</option>
+          <option value="Belum pasti">Belum pasti</option>
+          <option value="Berhalangan">Berhalangan hadir</option>
+        </select>
+        <textarea id="rsvpMsg" placeholder="Tulis ucapan &amp; doa untuk kedua mempelai…" maxlength="300" required></textarea>
+        <button class="btn" type="submit">Kirim Ucapan</button>
+      </form>
+      <p class="demo-note rv">Demo — ucapan tersimpan lokal di perangkat ini (localStorage)</p>
+      <div class="wall rv" id="wall"><p class="wall-empty" id="wallEmpty">Belum ada ucapan. Jadilah yang pertama memberi doa.</p></div>
+    </section>
+
+    <!-- AMPLOP DIGITAL — HITAM -->
+    <section class="slide blk" id="amplop">
+      <div class="sec-bg"><img src="assets/undangya/putih-hitam-minim/bg-hitam.webp" alt="" loading="lazy"></div>
+      <div class="kicker rv">06 — Amplop Digital</div>
+      <h2 class="giant lg rv" style="margin-top:12px">Tanda<br>Kasih</h2>
+      <p class="body-txt rv">Doa restu Anda adalah hadiah terindah. Bagi yang berkenan memberi tanda kasih, kami sediakan dengan terima kasih:</p>
+      <div class="pay-card rv">
+        <div class="bank">BCA</div>
+        <div class="pay-num" id="numBca">1234567890</div>
+        <div class="pay-name">a.n. Meyzsa Putri Ananda</div>
+        <div class="btn-row"><button class="btn" type="button" data-copy="numBca" style="background:#fff;color:#000;border-color:#fff">Salin Nomor</button></div>
+      </div>
+      <div class="pay-card rv">
+        <div class="bank">DANA</div>
+        <div class="pay-num" id="numDana">0812-3456-7890</div>
+        <div class="pay-name">a.n. Meyzsa Putri Ananda</div>
+        <div class="btn-row"><button class="btn" type="button" data-copy="numDana" style="background:#fff;color:#000;border-color:#fff">Salin Nomor</button></div>
+      </div>
+      <p class="demo-note rv">Nomor contoh untuk demo</p>
+    </section>
+
+    <!-- PENUTUP — PUTIH -->
+    <section class="slide wht2" id="penutup">
+      <div class="sec-bg"><img src="assets/undangya/putih-hitam-minim/bg-putih-2.webp" alt="" loading="lazy"></div>
+      <div class="kicker rv">07 — Penutup</div>
+      <h2 class="giant lg rv" style="margin-top:12px">Terima<br>Kasih</h2>
+      <figure class="slide-photo narrow rv"><img src="assets/undangya/putih-hitam-minim/suasana-tutup.webp" alt="Foto hitam-putih pasangan bersentuhan dahi" loading="lazy"></figure>
+      <p class="body-txt rv">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai.</p>
+      <p class="body-txt rv" style="margin-top:14px">Wassalamu&rsquo;alaikum Warahmatullahi Wabarakatuh</p>
+      <h3 class="giant md rv" style="margin-top:22px">Meyzsa<br>&amp;<br>Fahrezzi</h3>
+    </section>
+
+    <p class="foot-note">Undangan digital contoh “Putih Hitam Minim” oleh UndangYa! — seluruh nama, tanggal, dan nomor adalah data contoh.<br>Musik latar: “Petals on the Stone Floor”.</p>
+  </main>
+</div>
+
+<button id="btnMusic" type="button" aria-label="Putar atau hentikan musik latar">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18.5V6l10-2v11.5" stroke="#000" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.8" cy="18.5" r="2.6" fill="#000"/><circle cx="16.8" cy="15.5" r="2.6" fill="#000"/></svg>
+</button>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+
+<script>
+(function(){
+  "use strict";
+  var params=new URLSearchParams(window.location.search);
+  var guest=(params.get("to")||"").trim();
+  if(guest){document.getElementById("guestName").textContent=guest;}
+  var reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var audio=document.getElementById("bgmShared"), btnMusic=document.getElementById("btnMusic"), opened=false;
+  function tryPlay(){var pr=audio.play(); if(pr&&pr.catch)pr.catch(function(){}); btnMusic.classList.add("playing");}
+  document.getElementById("btnOpen").addEventListener("click",function(){
+    if(opened)return; opened=true;
+    tryPlay();
+    document.body.classList.add("opened");
+    document.getElementById("cover").style.display="none";
+    window.scrollTo(0,0); initReveal(); initDots();
+  });
+  btnMusic.addEventListener("click",function(){ if(audio.paused){tryPlay();}else{audio.pause();btnMusic.classList.remove("playing");} });
+  var target=new Date("2027-06-12T08:00:00+07:00").getTime();
+  var els={d:document.getElementById("cdD"),h:document.getElementById("cdH"),m:document.getElementById("cdM"),s:document.getElementById("cdS")};
+  function cd(){var diff=Math.max(0,target-Date.now()),d=Math.floor(diff/864e5),h=Math.floor(diff/36e5)%24,m=Math.floor(diff/6e4)%60,s=Math.floor(diff/1e3)%60;
+    els.d.textContent=d; els.h.textContent=String(h).padStart(2,"0"); els.m.textContent=String(m).padStart(2,"0"); els.s.textContent=String(s).padStart(2,"0");}
+  cd(); setInterval(cd,1000);
+  function initReveal(){
+    var items=document.querySelectorAll(".rv");
+    var secs=document.querySelectorAll("section.slide");
+    if(!("IntersectionObserver" in window)||reduced){
+      items.forEach(function(e){e.classList.add("in")});
+      secs.forEach(function(e){e.classList.add("in")});
+      return;
+    }
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});},{threshold:.12});
+    items.forEach(function(e){io.observe(e);});
+    var io2=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");}});},{threshold:.25});
+    secs.forEach(function(e){io2.observe(e);});
+  }
+  function initDots(){
+    var links=document.querySelectorAll("#dots a");
+    if(!("IntersectionObserver" in window))return;
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("data-sec")===en.target.id);});}
+    });},{threshold:.4});
+    document.querySelectorAll("section.slide").forEach(function(s){io.observe(s);});
+  }
+  document.querySelectorAll("[data-copy]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var txt=document.getElementById(b.getAttribute("data-copy")).textContent.trim();
+      function done(){var o=b.textContent;b.textContent="Tersalin ✓";setTimeout(function(){b.textContent=o;},1600);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(done);}else{done();}
+    });
+  });
+  function icsEsc(s){return String(s).replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n");}
+  document.querySelectorAll("[data-ics]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var pad=function(n){return String(n).padStart(2,"0");}, now=new Date();
+      var stamp=now.getUTCFullYear()+pad(now.getUTCMonth()+1)+pad(now.getUTCDate())+"T"+pad(now.getUTCHours())+pad(now.getUTCMinutes())+pad(now.getUTCSeconds())+"Z";
+      var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//UndangYa//PutihHitamMinim//ID","BEGIN:VEVENT","UID:"+Date.now()+"@undangya.web.id","DTSTAMP:"+stamp,"DTSTART:"+b.getAttribute("data-start"),"DTEND:"+b.getAttribute("data-end"),"SUMMARY:"+icsEsc(b.getAttribute("data-title")||""),"LOCATION:"+icsEsc(b.getAttribute("data-loc")||""),"DESCRIPTION:"+icsEsc(b.getAttribute("data-desc")||""),"END:VEVENT","END:VCALENDAR"].join("\r\n");
+      var blob=new Blob([ics],{type:"text/calendar"}), u=URL.createObjectURL(blob);
+      var a=document.createElement("a"); a.href=u; a.download=(b.getAttribute("data-file")||"acara")+".ics";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){URL.revokeObjectURL(u);},4000);
+    });
+  });
+  var KEY="putih-hitam-minim-rsvp-v1", wall=document.getElementById("wall");
+  function load(){try{var v=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(v))return v;}catch(e){} return [];}
+  function save(items){try{localStorage.setItem(KEY,JSON.stringify(items));}catch(e){}}
+  function esc(s){var d=document.createElement("div");d.textContent=s;return d.innerHTML;}
+  function render(){
+    var items=load(); wall.innerHTML="";
+    if(!items.length){wall.innerHTML='<p class="wall-empty">Belum ada ucapan. Jadilah yang pertama memberi doa.</p>';return;}
+    items.slice().reverse().forEach(function(it){
+      var d=document.createElement("div"); d.className="wish";
+      d.innerHTML="<b>"+esc(it.n)+"</b><span class=\"att\">"+esc(it.a)+"</span><p>"+esc(it.m)+"</p>";
+      wall.appendChild(d);
+    });
+  }
+  render();
+  document.getElementById("rsvpForm").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var n=document.getElementById("rsvpName").value.trim(),
+        a=document.getElementById("rsvpAtt").value,
+        m=document.getElementById("rsvpMsg").value.trim();
+    if(!n||!a||!m)return;
+    var items=load(); items.push({n:n,a:a,m:m}); save(items); render();
+    ev.target.reset();
+  });
+})();
+</script>
+</body>
+</html>
