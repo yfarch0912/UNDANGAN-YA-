@@ -224,6 +224,15 @@ async function consumePasswordReset(token, newPasswordHash) {
   return user;
 }
 
+/* ---- Permintaan custom (menu Custom) ----
+   Satu berkas JSON per permintaan: custom/requests/<ref>.json.
+   Penulisannya menumpang fungsi yang ada agar tidak menambah fungsi
+   serverless baru; pembacaan/tindak lanjut oleh owner menyusul. */
+async function saveCustomRequest(record) {
+  await blobPut("custom/requests/" + record.ref + ".json", JSON.stringify(record));
+  return record;
+}
+
 module.exports = {
   configured, normalizeEmail, validEmail,
   getUser, putUser, createUser,
@@ -231,4 +240,5 @@ module.exports = {
   rateLimitCheck, rateLimitReset,
   revokeSession, isSessionRevoked,
   createPasswordReset, consumePasswordReset,
+  saveCustomRequest,
 };
