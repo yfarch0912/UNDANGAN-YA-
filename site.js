@@ -1594,6 +1594,16 @@
 
   ENTRIES.forEach(function (e) { bySlug[e.slug] = e; });
 
+  /* ---------- Landing: HANYA 5 template terbaik ----------
+     Perintah user 2026-11-13: grid koleksi di landing page hanya
+     menampilkan 5 template terbaik. Data ENTRIES lengkap tetap
+     dipertahankan (quick view & konsistensi slug); yang dibatasi
+     hanya yang DITAMPILKAN di grid landing. Katalog lengkap tetap
+     di halaman /katalog. */
+  var FEATURED = ['kastil-dongeng', 'pusaka-sogan', 'joglo-pusaka', 'flora-raya', 'negeri-awan'];
+  var LANDING = FEATURED.map(function (slug) { return bySlug[slug]; })
+    .filter(function (e) { return !!e; });
+
   /* ---------- Katalog: filter + grid ---------- */
   var state = { cat: 'semua', warna: null, q: '' };
   var grid = $('#grid'), countEl = $('#count'), emptyEl = $('#empty');
@@ -1672,18 +1682,12 @@
   }
 
   function render() {
-    var list = ENTRIES.filter(function (e) {
-      if (state.cat !== 'semua' && e.cat !== state.cat) return false;
-      if (state.warna && e.warna.indexOf(state.warna) === -1) return false;
-      if (state.q) {
-        var hay = (e.name + ' ' + e.tagline + ' ' + e.warna.join(' ') + ' ' + (SEARCH_EXTRA[e.slug] || '') + ' ' + CAT_LABEL[e.cat]).toLowerCase();
-        if (hay.indexOf(state.q) === -1) return false;
-      }
-      return true;
-    });
+    /* Grid landing kini hanya menampilkan 5 template terbaik
+       (LANDING) — filter kategori/warna/cari tidak lagi dipakai. */
+    var list = LANDING;
     grid.innerHTML = list.map(cardHTML).join('');
-    countEl.textContent = 'Menampilkan ' + list.length + ' dari ' + ENTRIES.length + ' desain';
-    emptyEl.hidden = list.length > 0;
+    countEl.textContent = 'Menampilkan ' + list.length + ' desain pilihan terbaik';
+    if (emptyEl) emptyEl.hidden = list.length > 0;
     grid.hidden = list.length === 0;
   }
   render();

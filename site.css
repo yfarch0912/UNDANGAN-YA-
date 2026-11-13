@@ -287,6 +287,7 @@ h2{font-size:clamp(2.1rem,4.4vw,3.4rem);letter-spacing:.005em}
 .search-box input::placeholder{color:var(--ink-faint)}
 .search-box input:focus{outline:none;border-color:var(--burgundy)}
 .count-line{font-size:.71rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin:18px 0 26px}
+.koleksi-all{margin:30px 0 4px;text-align:center}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:48px 24px}
 .card{

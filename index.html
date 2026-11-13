@@ -132,30 +132,13 @@
     </div>
 
     <div id="koleksi-grid" class="grid-anchor">
-      <div class="filter-bar rv">
-        <div class="chips" role="group" aria-label="Filter kategori" id="catChips">
-          <button type="button" class="chip" data-cat="semua" aria-pressed="true">Semua</button>
-          <button type="button" class="chip" data-cat="ilustrasi" aria-pressed="false">Ilustrasi</button>
-          <button type="button" class="chip" data-cat="interaktif" aria-pressed="false">Interaktif</button>
-          <button type="button" class="chip" data-cat="video" aria-pressed="false">Video</button>
-        </div>
-        <div class="dots-filter" id="colorDots" role="group" aria-label="Filter warna palet">
-          <span class="df-label" aria-hidden="true">Warna</span>
-          <!-- dirender site.js -->
-        </div>
-        <div class="search-box">
-          <label class="micro ink" for="q">Cari desain</label><br>
-          <input id="q" type="search" placeholder="mis. sakura, jawa, emas…" autocomplete="off">
-        </div>
-      </div>
-
+      <!-- Grid koleksi landing kini menampilkan HANYA 5 template
+           pilihan terbaik (perintah user 2026-11-13) — filter
+           kategori/warna/cari ditiadakan; koleksi lengkap ada
+           di halaman /katalog. -->
       <p class="count-line" id="count" role="status"></p>
       <div class="grid" id="grid"><!-- dirender site.js --></div>
-      <div class="empty" id="empty" hidden>
-        <h3>Tidak ada desain yang cocok.</h3>
-        <p>Coba longgarkan filter kategori, warna, atau kata kunci pencarianmu.</p>
-        <button type="button" class="btn btn-line" id="resetBtn">Atur Ulang Filter</button>
-      </div>
+      <p class="koleksi-all"><a class="btn btn-line" href="katalog">Lihat Semua Template di Katalog →</a></p>
     </div>
   </div>
 </section>
