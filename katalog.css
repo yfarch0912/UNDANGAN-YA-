@@ -112,27 +112,43 @@
 .flora.bl{left:-6px;bottom:2%;width:26cqw}
 .flora.tr{right:-4px;top:0;width:20cqw;transform:scale(-1,-1)}
 
+/* Frame HP = iPhone 18 Pro Max (tampak depan), mengikuti lembar
+   material kiriman user (iphone_18_pro_max_front_mockup.mtl):
+   Titanium_Frame Kd .55/.56/.60 Ks .80 Ns 120 · Bezel_Black_Glass
+   Kd .04/.04/.05 Ks .90 Ns 200 · Dynamic_Island_Black Kd .02 ·
+   Camera_Lens_Glass Kd .08/.16/.35 Ks .95 Ns 250 · Speaker_Mesh
+   Kd .12 Ns 40. */
 .phone{
-  position:absolute;aspect-ratio:9/18.2;
-  background:linear-gradient(150deg,#f2f3f5 0%,#c6c9cf 26%,#878b94 52%,#d8dade 78%,#9ea3ac 100%);
+  position:absolute;aspect-ratio:9/19;
+  background:linear-gradient(150deg,#e9eaed 0%,#b9bcc2 24%,#8c8f99 50%,#c9ccd1 76%,#83878f 100%);
   border-radius:4.6cqw;padding:1.15cqw;
   box-shadow:0 3.2cqw 6cqw -1.6cqw rgba(23,38,54,.45),
-    inset 0 .3cqw .5cqw rgba(255,255,255,.9),
+    inset 0 .3cqw .5cqw rgba(255,255,255,.95),
     inset 0 -.3cqw .6cqw rgba(20,24,32,.5),
-    inset .25cqw 0 .5cqw rgba(255,255,255,.4),
+    inset .25cqw 0 .5cqw rgba(255,255,255,.45),
     inset -.25cqw 0 .5cqw rgba(20,24,32,.35);
 }
 .phone .scr{
   position:relative;width:100%;height:100%;overflow:hidden;
   border-radius:3.6cqw;background:#fdfbf6;
   display:flex;flex-direction:column;
-  box-shadow:inset 0 0 0 .5cqw #101116;
+  box-shadow:inset 0 0 0 .55cqw #0a0a0d,
+    inset 0 0 0 .72cqw rgba(204,204,217,.38);
 }
 .phone .notch{
   position:absolute;top:1.5cqw;left:50%;transform:translateX(-50%);
-  width:27%;height:1.7cqw;min-height:6px;border-radius:999px;z-index:5;
-  background:radial-gradient(circle at 80% 50%,#3a4c5e 0,#1a2531 26%,#0a0b0f 52%) #0a0b0f;
+  width:24%;height:1.7cqw;min-height:6px;border-radius:999px;z-index:5;
+  background:radial-gradient(circle at 80% 50%,#f2f2ff 0%,#9db4dd 6%,#142959 22%,#050914 40%,#050505 65%) #050505;
   box-shadow:inset 0 0 .3cqw rgba(0,0,0,.8),0 0 .2cqw rgba(255,255,255,.25);
+}
+/* Speaker mesh: celah titik-titik matte di tepi atas kaca,
+   tepat di atas Dynamic Island (Speaker_Mesh Kd .12). */
+.phone .notch::before{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);
+  top:-.34cqw;width:150%;height:.4cqw;min-height:2px;border-radius:999px;
+  background-image:radial-gradient(circle,#2b2b2f 42%,rgba(43,43,47,0) 64%);
+  background-size:.58cqw .58cqw;background-position:center;background-repeat:repeat-x;
+  opacity:.9;
 }
 .hw{
   position:absolute;inset:0;z-index:4;pointer-events:none;border-radius:4.6cqw;
@@ -306,20 +322,27 @@ body.pv-lock{overflow:hidden}
 .pv-x:hover{background:rgba(255,255,255,.2)}
 .pv-phone{
   position:relative;flex:none;
-  width:min(400px,92vw);aspect-ratio:9/18.6;
+  width:min(400px,92vw);aspect-ratio:9/19.5;
   border-radius:54px;padding:12px;
-  background:linear-gradient(150deg,#f2f3f5 0%,#c6c9cf 26%,#878b94 52%,#d8dade 78%,#9ea3ac 100%);
+  background:linear-gradient(150deg,#e9eaed 0%,#b9bcc2 24%,#8c8f99 50%,#c9ccd1 76%,#83878f 100%);
   box-shadow:0 44px 90px -30px rgba(0,0,0,.85),
-    inset 0 2px 3px rgba(255,255,255,.9),
+    inset 0 2px 3px rgba(255,255,255,.95),
     inset 0 -2px 4px rgba(20,24,32,.5),
-    inset 2px 0 3px rgba(255,255,255,.4),
+    inset 2px 0 3px rgba(255,255,255,.45),
     inset -2px 0 3px rgba(20,24,32,.35);
 }
 .pv-notch{
   position:absolute;top:21px;left:50%;transform:translateX(-50%);
-  width:27%;height:24px;border-radius:999px;z-index:6;
-  background:radial-gradient(circle at 80% 50%,#3a4c5e 0,#1a2531 26%,#0a0b0f 52%) #0a0b0f;
+  width:24%;height:24px;border-radius:999px;z-index:6;
+  background:radial-gradient(circle at 80% 50%,#f2f2ff 0%,#9db4dd 6%,#142959 22%,#050914 40%,#050505 65%) #050505;
   box-shadow:inset 0 0 4px rgba(0,0,0,.8);
+}
+.pv-notch::before{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);
+  top:-6px;width:150%;height:3px;border-radius:999px;
+  background-image:radial-gradient(circle,#2b2b2f 42%,rgba(43,43,47,0) 64%);
+  background-size:4px 4px;background-position:center;background-repeat:repeat-x;
+  opacity:.9;
 }
 .pv-hw{position:absolute;inset:0;z-index:4;pointer-events:none;border-radius:54px;
   background:linear-gradient(112deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 47%,rgba(255,255,255,.05) 76%,rgba(255,255,255,0) 92%)}
@@ -338,7 +361,8 @@ body.pv-lock{overflow:hidden}
 .pv-screen{
   position:relative;width:100%;height:100%;
   border-radius:43px;overflow:hidden;background:#fdfbf6;
-  box-shadow:inset 0 0 0 4px #101116;
+  box-shadow:inset 0 0 0 5px #0a0a0d,
+    inset 0 0 0 6.5px rgba(204,204,217,.38);
   display:flex;flex-direction:column;
 }
 .pv-status{flex:none;display:flex;align-items:center;justify-content:space-between;padding:13px 26px 5px;color:#22303e}
