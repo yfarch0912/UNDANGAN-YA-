@@ -77,33 +77,11 @@
       </defs>
     </svg>
 
-    <div class="katalog-toolbar">
-      <div class="filters" role="group" aria-label="Filter kelas tema" id="kelasChips"><!-- dirender katalog.js --></div>
-      <div class="filters filters-acara" role="group" aria-label="Filter kategori acara" id="catChips"><!-- dirender katalog.js --></div>
-      <div class="katalog-tools">
-        <div class="search-box">
-          <label class="micro ink" for="q">Cari desain</label>
-          <input id="q" type="search" placeholder="mis. jawa, masjid, emerald…" autocomplete="off">
-        </div>
-        <div class="sort-box">
-          <label class="micro ink" for="sortBy">Urutkan</label>
-          <select id="sortBy" aria-label="Urutkan desain">
-            <option value="murah">Termurah → Termahal</option>
-            <option value="mahal">Termahal → Termurah</option>
-            <option value="nama">Nama A–Z</option>
-          </select>
-        </div>
-        <button type="button" class="btn btn-line" id="resetBtn">Reset</button>
-      </div>
-    </div>
-
+    <!-- Katalog kini menampilkan HANYA 5 template pilihan terbaik
+         (perintah user 2026-11-13) — toolbar filter/cari/urutkan
+         ditiadakan karena tidak lagi diperlukan. -->
     <p class="count-line" id="count" role="status"></p>
     <div class="kgrid" id="grid"><!-- dirender katalog.js --></div>
-    <div class="empty" id="empty" hidden>
-      <h3>Belum ada desain yang cocok.</h3>
-      <p>Coba longgarkan filter atau kata kuncimu.</p>
-      <button type="button" class="btn btn-line" id="emptyReset">Atur Ulang Filter</button>
-    </div>
   </div>
 </main>
 

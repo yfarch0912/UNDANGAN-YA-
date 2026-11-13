@@ -1356,6 +1356,18 @@
  }
 ];
 
+  /* ---------- Tampilan katalog: HANYA 5 template terbaik ----------
+     Perintah user 2026-11-13: halaman katalog menampilkan hanya
+     5 template terbaik (kelas SIGNATURE, living-scene). Data CATALOG
+     lengkap (78 entri) tetap dipertahankan agar konsisten dengan
+     site.js; yang dibatasi hanya yang DITAMPILKAN di katalog. */
+  var FEATURED = ['kastil-dongeng', 'pusaka-sogan', 'joglo-pusaka', 'flora-raya', 'negeri-awan'];
+  var DISPLAY = FEATURED.map(function (slug) {
+    var found = null;
+    CATALOG.forEach(function (e) { if (e.slug === slug) found = e; });
+    return found;
+  }).filter(function (e) { return !!e; });
+
   /* ---------- Label & ikon chip ---------- */
   var ACARA_LABEL = { pernikahan: 'Pernikahan' };
   var KELAS_LIST = ['FREE', 'BASIC', 'ESSENTIAL', 'SIGNATURE'];
@@ -1395,6 +1407,9 @@
     try { window.sessionStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* abaikan */ }
   }
   fromStorage();
+  /* Toolbar filter/cari/urutkan ditiadakan (katalog hanya 5 terbaik):
+     abaikan state lama dari sessionStorage agar katalog tidak kosong. */
+  state.kelas = 'semua'; state.acara = 'semua'; state.q = ''; state.sort = 'murah';
   if (state.kelas !== 'semua' && KELAS_LIST.indexOf(state.kelas) === -1) state.kelas = 'semua';
   if (!ACARA.some(function (a) { return a.id === state.acara; })) state.acara = 'semua';
   if (SORT_IDS.indexOf(state.sort) === -1) state.sort = 'murah';
@@ -1407,12 +1422,12 @@
       pvName = $('#pvName'), pvMeta = $('#pvMeta'),
       pvTagline = $('#pvTagline'), pvOrder = $('#pvOrder');
 
-  kelasEl.innerHTML = [{ id: 'semua', label: 'Semua' }].concat(KELAS_LIST.map(function (k) {
+  if (kelasEl) kelasEl.innerHTML = [{ id: 'semua', label: 'Semua' }].concat(KELAS_LIST.map(function (k) {
     return { id: k, label: k };
   })).map(function (k) {
     return '<button type="button" class="chip-filter" data-kelas="' + k.id + '" aria-pressed="false">' + k.label + '</button>';
   }).join('');
-  chipsEl.innerHTML = ACARA.map(function (a) {
+  if (chipsEl) chipsEl.innerHTML = ACARA.map(function (a) {
     return '<button type="button" class="chip-filter acara" data-acara="' + a.id + '" aria-pressed="false">' + a.label + '</button>';
   }).join('');
 
@@ -1547,10 +1562,13 @@
   }
 
   function render() {
-    var list = applySort(CATALOG.filter(matches));
+    /* Urutan kurasi FEATURED dipertahankan; sort hanya bila
+       kontrol Urutkan ada di halaman. */
+    var list = DISPLAY.filter(matches);
+    if (sortEl) list = applySort(list);
     grid.innerHTML = list.map(cardHTML).join('');
-    countEl.textContent = 'Menampilkan ' + list.length + ' dari ' + CATALOG.length + ' template';
-    emptyEl.hidden = list.length > 0;
+    countEl.textContent = 'Menampilkan ' + list.length + ' template pilihan terbaik';
+    if (emptyEl) emptyEl.hidden = list.length > 0;
     grid.hidden = list.length === 0;
     syncControls();
     save();
@@ -1593,13 +1611,13 @@
   });
 
   /* ---------- Peristiwa filter & sort ---------- */
-  kelasEl.addEventListener('click', function (ev) {
+  if (kelasEl) kelasEl.addEventListener('click', function (ev) {
     var b = ev.target.closest('button[data-kelas]');
     if (!b) return;
     state.kelas = b.dataset.kelas;
     render();
   });
-  chipsEl.addEventListener('click', function (ev) {
+  if (chipsEl) chipsEl.addEventListener('click', function (ev) {
     var b = ev.target.closest('button[data-acara]');
     if (!b) return;
     state.acara = b.dataset.acara;
@@ -1617,8 +1635,9 @@
     state = { kelas: DEFAULTS.kelas, acara: DEFAULTS.acara, q: DEFAULTS.q, sort: DEFAULTS.sort };
     render();
   }
-  $('#resetBtn').addEventListener('click', resetAll);
-  $('#emptyReset').addEventListener('click', resetAll);
+  var resetBtn = $('#resetBtn'), emptyResetBtn = $('#emptyReset');
+  if (resetBtn) resetBtn.addEventListener('click', resetAll);
+  if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetAll);
 
   render();
 })();
