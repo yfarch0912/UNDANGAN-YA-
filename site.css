@@ -898,7 +898,8 @@ h2{font-size:clamp(2.1rem,4.4vw,3.4rem);letter-spacing:.005em}
   #koleksi-grid .fchip{animation:none}
 }
 
-/* ---------- Overlay preview koleksi: satu HP realistis besar (pola katalog) ---------- */
+
+/* ---------- Overlay preview: satu HP realistis besar ---------- */
 body.pv-lock{overflow:hidden}
 .pv-overlay{
   position:fixed;inset:0;z-index:200;overflow-y:auto;
@@ -906,9 +907,11 @@ body.pv-lock{overflow:hidden}
   padding:30px 16px 40px;
 }
 .pv-overlay[hidden]{display:none}
+.pv-overlay{scrollbar-width:none}
+.pv-overlay::-webkit-scrollbar{display:none}
 .pv-backdrop{position:fixed;inset:0;background:rgba(8,13,19,.92);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
 .pv-panel{
-  position:relative;margin:auto;width:100%;max-width:1180px;
+  position:relative;margin:auto;width:100%;max-width:880px;
   display:flex;align-items:center;justify-content:center;gap:46px;flex-wrap:wrap;
 }
 .pv-x{
@@ -920,58 +923,67 @@ body.pv-lock{overflow:hidden}
   transition:background .18s ease;font:inherit;
 }
 .pv-x:hover{background:rgba(255,255,255,.2)}
-/* Frame HP preview = SVG kiriman user (mockup_hp_template.svg,
-   2026-11-14): assets/mockup-hp-frame.svg — bingkai titanium
-   ungu-grafit, tombol samping, Dynamic Island, bilah status
-   17.49, pantulan kaca. Area layar SVG transparan; layar situs
-   (.pv-screen) duduk tepat di celah layarnya: rect SVG
-   x24 y24 w392 h832 dari viewBox 440x880. */
 .pv-phone{
   position:relative;flex:none;
-  width:min(400px,92vw,calc((100vh - 200px)*440/880));
-  width:min(400px,92vw,calc((100dvh - 200px)*440/880));
-  aspect-ratio:440/880;
+  width:min(400px,92vw,calc((100vh - 150px)*9/19.5));
+  width:min(400px,92vw,calc((100dvh - 150px)*9/19.5));aspect-ratio:9/19.5;
+  border-radius:54px;padding:12px;
+  background:linear-gradient(150deg,#e9eaed 0%,#b9bcc2 24%,#8c8f99 50%,#c9ccd1 76%,#83878f 100%);
+  box-shadow:0 44px 90px -30px rgba(0,0,0,.85),
+    inset 0 2px 3px rgba(255,255,255,.95),
+    inset 0 -2px 4px rgba(20,24,32,.5),
+    inset 2px 0 3px rgba(255,255,255,.45),
+    inset -2px 0 3px rgba(20,24,32,.35);
 }
-.pv-overlay{scrollbar-width:none}
-.pv-overlay::-webkit-scrollbar{display:none}
-.pv-frame{
-  position:absolute;inset:0;width:100%;height:100%;z-index:7;
-  pointer-events:none;
-  filter:drop-shadow(0 44px 44px rgba(0,0,0,.55));
+.pv-notch{
+  position:absolute;top:21px;left:50%;transform:translateX(-50%);
+  width:24%;height:24px;border-radius:999px;z-index:6;
+  background:radial-gradient(circle at 80% 50%,#f2f2ff 0%,#9db4dd 6%,#142959 22%,#050914 40%,#050505 65%) #050505;
+  box-shadow:inset 0 0 4px rgba(0,0,0,.8);
+}
+.pv-notch::before{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);
+  top:-6px;width:150%;height:3px;border-radius:999px;
+  background-image:radial-gradient(circle,#2b2b2f 42%,rgba(43,43,47,0) 64%);
+  background-size:4px 4px;background-position:center;background-repeat:repeat-x;
+  opacity:.9;
+}
+.pv-hw{position:absolute;inset:0;z-index:4;pointer-events:none;border-radius:54px;
+  background:linear-gradient(112deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 47%,rgba(255,255,255,.05) 76%,rgba(255,255,255,0) 92%)}
+.pv-hw::before{
+  content:"";position:absolute;left:-3px;top:15.5%;
+  width:3px;height:118px;border-radius:3px 0 0 3px;
+  background:linear-gradient(180deg,#e3e5e9 0,#b9bdc4 12%,#787d87 13.5%,#787d87 15%,#dfe1e6 15%,#dfe1e6 42%,#787d87 43.5%,#787d87 45%,#d4d7dc 45%,#a9adb6 100%);
+  box-shadow:inset 0 0 2px rgba(255,255,255,.65);
+}
+.pv-hw::after{
+  content:"";position:absolute;right:-3px;top:20.5%;
+  width:3px;height:58px;border-radius:0 3px 3px 0;
+  background:linear-gradient(90deg,#83878f,#dde0e4);
+  box-shadow:inset 0 0 2px rgba(255,255,255,.6);
 }
 .pv-screen{
-  position:absolute;left:5.4545%;top:2.7273%;width:89.09%;height:94.545%;
-  border-radius:13.27%/6.25%;overflow:hidden;background:#fdfbf6;
-  display:flex;flex-direction:column;z-index:1;
+  position:relative;width:100%;height:100%;
+  border-radius:43px;overflow:hidden;background:#fdfbf6;
+  box-shadow:inset 0 0 0 5px #0a0a0d,
+    inset 0 0 0 6.5px rgba(204,204,217,.38);
+  display:flex;flex-direction:column;
 }
+.pv-status{flex:none;display:flex;align-items:center;justify-content:space-between;padding:13px 26px 5px;color:#22303e}
+.pv-status .ptime{font-size:.85rem;font-weight:700;letter-spacing:.03em}
+.pv-status svg{width:62px;height:16px;display:block}
 .pv-scroll{flex:1;overflow:hidden;position:relative;background:#fff}
 .pv-scroll iframe{width:100%;height:100%;border:0;display:block}
-.pv-modes{flex:0 0 100%;display:flex;justify-content:center}
-.pv-modes-pill{display:flex;gap:4px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px}
-.pv-mode{font:inherit;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;background:transparent;border:0;border-radius:999px;cursor:pointer;color:#cfe0ec;padding:8px 20px;transition:background .18s ease,color .18s ease}
-.pv-mode:hover{color:#fff}
-.pv-mode.on{background:#d9b877;color:#1c2733;font-weight:700}
-.pv-frame-tab,.pv-frame-lap{display:none}
-.pv-overlay[data-mode="tablet"] .pv-frame-hp,.pv-overlay[data-mode="laptop"] .pv-frame-hp{display:none}
-.pv-overlay[data-mode="tablet"] .pv-frame-tab{display:block}
-.pv-overlay[data-mode="laptop"] .pv-frame-lap{display:block}
-.pv-overlay[data-mode="tablet"] .pv-panel,.pv-overlay[data-mode="laptop"] .pv-panel{flex-direction:column;gap:22px}
-.pv-overlay[data-mode="tablet"] .pv-info,.pv-overlay[data-mode="laptop"] .pv-info{max-width:560px;text-align:center}
-.pv-overlay[data-mode="tablet"] .pv-info .meta,.pv-overlay[data-mode="laptop"] .pv-info .meta,.pv-overlay[data-mode="tablet"] .pv-actions,.pv-overlay[data-mode="laptop"] .pv-actions{justify-content:center}
-.pv-overlay[data-mode="tablet"] .pv-phone{width:min(600px,94vw,calc((100vh - 200px)*660/880));width:min(600px,94vw,calc((100dvh - 200px)*660/880));aspect-ratio:660/880}
-.pv-overlay[data-mode="tablet"] .pv-screen{left:4.5455%;top:3.4091%;width:90.909%;height:93.182%;border-radius:3.33%/2.44%}
-.pv-overlay[data-mode="laptop"] .pv-phone{width:min(920px,94vw,calc((100vh - 200px)*1040/604));width:min(920px,94vw,calc((100dvh - 200px)*1040/604));aspect-ratio:1040/604}
-.pv-overlay[data-mode="laptop"] .pv-screen{left:11.73%;top:6.95%;width:76.54%;height:81.79%;border-radius:1%/1.8%}
+.pv-home{
+  position:absolute;bottom:7px;left:50%;transform:translateX(-50%);
+  width:33%;height:5px;border-radius:999px;z-index:6;pointer-events:none;
+  background:rgba(34,48,62,.55);
+}
 .pv-info{max-width:330px;color:#dbe6ee}
 .pv-info h3{font-family:var(--serif);font-size:2.6rem;font-weight:600;margin:0 0 10px;color:#fff;line-height:1.1}
-.pv-info .meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.pv-info .price{font-size:1.15rem;font-weight:700;color:#f3e9cf}
-.pv-info .price small{font-size:.78rem;font-weight:600;color:#9db2c2;margin-right:4px}
-.pv-info .badge{
-  font-size:.7rem;font-weight:700;letter-spacing:.12em;
-  padding:5px 12px;border-radius:999px;text-transform:uppercase;
-}
-.pv-info .badge.signature{background:#f7ecd2;color:#7a5c1e;border:1px solid #e6cf96}
+.pv-info .meta{justify-content:flex-start}
+.pv-info .price{color:#f3e9cf}
+.pv-info .price small{color:#9db2c2}
 .pv-info p{line-height:1.65;font-size:.95rem;color:#aebfcd;margin:14px 0 0}
 .pv-actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
 .pv-close-btn{background:transparent;color:#eef3f7;border:1.5px solid #5f768a}
@@ -982,6 +994,23 @@ body.pv-lock{overflow:hidden}
   .pv-info .meta,.pv-actions{justify-content:center}
   .pv-x{top:-14px}
 }
+
+/* ---------- Preview dari HP: SATU frame iPhone penuh pas layar,
+   fokus HP saja: seluruh bodi HP terlihat sekali lihat tanpa
+   scroll overlay; panel info menyusut jadi baris tombol saja. */
+@media (max-width:760px){
+  .pv-overlay{padding:12px 8px 16px;align-items:center}
+  .pv-panel{gap:12px;flex-direction:column;flex-wrap:nowrap}
+  .pv-phone{
+    width:min(94vw,calc((100vh - 132px)*9/19.5));
+    width:min(94vw,calc((100dvh - 132px)*9/19.5));
+  }
+  .pv-info{max-width:none}
+  .pv-info h3,.pv-info .meta,.pv-info p{display:none}
+  .pv-info .pv-actions{margin-top:0;justify-content:center}
+  .pv-x{top:-6px;right:2px}
+}
+
 
 /* ---------- Preview dari HP: SATU frame iPhone penuh pas layar,
    fokus HP saja (perintah user 2026-11-14, mengikuti video
