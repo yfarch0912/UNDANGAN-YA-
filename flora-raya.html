@@ -729,5 +729,16 @@ $("#ciForm").addEventListener("submit",function(ev){ev.preventDefault();
   ciRender(ciItems); alert("Check-in tercatat di perangkat ini (demo). Selamat datang!");});
 })();
 </script>
+<style id="uy-devices">
+/* Dukungan perangkat tablet & laptop (perintah user 2026-11-14): kolom undangan melebar bertahap; mode HP tidak berubah. */
+@media (min-width:761px) and (max-width:1199px){
+.phone{max-width:680px}
+#bottomNav{width:min(680px,100%)}
+}
+@media (min-width:1200px){
+.phone{max-width:860px}
+#bottomNav{width:min(860px,100%)}
+}
+</style>
 </body>
 </html>

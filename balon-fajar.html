@@ -653,5 +653,18 @@ var items=load();render(items);
 document.getElementById("rsvpForm").addEventListener("submit",function(e){e.preventDefault();var n=document.getElementById("rsvpName").value.trim(),m=document.getElementById("rsvpMsg").value.trim(),a=document.getElementById("rsvpAttend").value;if(!n||!m){alert("Mohon isi nama dan ucapan terlebih dahulu.");return;}items.unshift({n:n,a:a,m:m});try{localStorage.setItem(KEY,JSON.stringify(items.slice(0,30)));}catch(err){}render(items);e.target.reset();});
 })();
 </script>
+<style id="uy-devices">
+/* Dukungan perangkat tablet & laptop (perintah user 2026-11-14): kolom undangan melebar bertahap; mode HP tidak berubah. */
+@media (min-width:761px) and (max-width:1199px){
+.phone{max-width:680px}
+.phone::before{width:min(680px,100%)}
+#btnMusic{right:calc(50% - 340px + 14px)}
+}
+@media (min-width:1200px){
+.phone{max-width:860px}
+.phone::before{width:min(860px,100%)}
+#btnMusic{right:calc(50% - 430px + 14px)}
+}
+</style>
 </body>
 </html>

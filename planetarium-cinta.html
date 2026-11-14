@@ -1,0 +1,1318 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Planetarium Cinta 3D — Meyzsa &amp; Fahrezzi | UndangYa!</title>
+<meta name="description" content="Undangan digital 3D interaktif: jelajahi kubah planetarium di bawah Bima Sakti — Planetarium Cinta, Meyzsa & Fahrezzi, Sabtu 12 Juni 2027.">
+<link rel="canonical" href="https://undangya.web.id/planetarium-cinta">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNDANGYA!">
+<meta property="og:title" content="Planetarium Cinta 3D — Meyzsa & Fahrezzi | UndangYa!">
+<meta property="og:description" content="Undangan yang dijelajahi, bukan digulir: kubah bintang 3D, teleskop kuningan, dan rasi berbentuk kisah kami.">
+<meta property="og:url" content="https://undangya.web.id/planetarium-cinta">
+<meta property="og:image" content="https://undangya.web.id/assets/katalog/planetarium-cinta.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230A1230'/%3E%3Cpath d='M16 5l2.1 6.4L25 13l-6.9 1.6L16 21l-2.1-6.4L7 13l6.9-1.6z' fill='%23D9A441'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Planetarium Display';src:url('assets/undangya/planetarium-cinta/font-hero-display.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Planetarium Kicker';src:url('assets/undangya/planetarium-cinta/font-hero-kicker.woff2') format('woff2');font-weight:400;font-display:swap}
+:root{
+ --abyss:#04060F;--navy:#0A1230;--deep:#0D173C;--panel:rgba(11,17,44,.78);--panel2:rgba(16,24,58,.88);
+ --violet:#6D5BD0;--lilac:#B7A6FF;--silver:#D9DEE8;--moon:#F2F4FA;--ink:#E9ECF5;--ink-dim:#AEB6CC;
+ --gold:#D9A441;--brass:#C9973F;--line:rgba(217,164,65,.38);--ease:cubic-bezier(.22,.75,.25,1);
+ --fd:'Planetarium Display','Cormorant Garamond',Georgia,serif;
+ --fk:'Planetarium Kicker','Jost',system-ui,sans-serif;
+ --fb:'Jost',system-ui,-apple-system,sans-serif;
+ --fs:'Cormorant Garamond',Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#01020A;color:var(--ink);font-family:var(--fb);font-weight:300;-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+.stage{max-width:430px;margin:0 auto;position:relative;background:var(--abyss);min-height:100dvh;box-shadow:0 0 80px rgba(0,0,0,.85);overflow:clip}
+img{max-width:100%}
+button{font:inherit}
+.serif{font-family:var(--fs)}
+.kicker{font-family:var(--fk);letter-spacing:.34em;text-transform:uppercase;font-size:.62rem;color:var(--gold);text-align:center;margin:0}
+.sec-kicker{font-family:var(--fk);letter-spacing:.3em;text-transform:uppercase;font-size:.6rem;color:var(--lilac);text-align:center;margin:0 0 6px}
+.sec-title{font-family:var(--fd);font-weight:400;font-size:2rem;line-height:1.08;text-align:center;margin:.15em 0 .3em;color:var(--moon);letter-spacing:.04em}
+.sec-sub{text-align:center;color:var(--ink-dim);font-size:.9rem;line-height:1.65;margin:0 auto;max-width:34ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(180deg,#E7BC63,var(--brass));color:#231603;border:0;border-radius:999px;padding:13px 24px;font-weight:600;font-size:.92rem;cursor:pointer;text-decoration:none;box-shadow:0 10px 26px rgba(201,151,63,.35);transition:transform .3s var(--ease),box-shadow .3s var(--ease);position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(201,151,63,.45)}
+.btn:active{transform:scale(.98)}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.4s ease-in-out infinite}
+@keyframes shine{0%,55%{left:-80%}85%,100%{left:135%}}
+.btn.ghost{background:rgba(10,16,40,.55);color:var(--moon);border:1px solid var(--line);box-shadow:none;backdrop-filter:blur(6px)}
+.btn.ghost::after{display:none}
+.btn.small{padding:9px 16px;font-size:.8rem}
+.btn[disabled]{opacity:.55;cursor:not-allowed;box-shadow:none}
+.chip{display:inline-block;padding:5px 12px;border:1px solid var(--line);border-radius:999px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--silver);background:rgba(10,16,40,.5)}
+.demo-tag{display:inline-block;font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#0A1230;background:var(--gold);border-radius:999px;padding:3px 9px;vertical-align:middle}
+
+/* ============ SAMPUL ============ */
+.cover{position:fixed;inset:0;max-width:430px;margin:0 auto;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:30px 24px calc(26px + env(safe-area-inset-bottom));color:#fff;background:#04060F url('assets/undangya/planetarium-cinta/cover-bg.webp') center/cover no-repeat;transition:opacity 1.1s var(--ease),transform 1.1s var(--ease),filter 1.1s var(--ease)}
+.cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,6,15,.34) 0%,rgba(4,6,15,0) 30%,rgba(4,6,15,.18) 55%,rgba(4,6,15,.88) 88%);pointer-events:none}
+.cover>*{position:relative}
+.cover.hide{opacity:0;pointer-events:none;transform:scale(1.06);filter:blur(5px)}
+.cover .tw{position:absolute;font-family:var(--fk);letter-spacing:.42em;font-size:.6rem;color:rgba(242,244,250,.85);text-transform:uppercase;top:calc(20px + env(safe-area-inset-top));left:0;right:0;text-align:center}
+.cover-names{font-family:var(--fd);font-size:2.9rem;line-height:1.04;margin:.18em 0 .1em;color:var(--moon);text-shadow:0 0 26px rgba(183,166,255,.55),0 2px 30px rgba(0,0,0,.6);letter-spacing:.05em}
+.cover-names .amp{color:var(--gold);font-size:.72em;vertical-align:.08em}
+.cover-date{font-family:var(--fk);letter-spacing:.3em;font-size:.68rem;color:var(--silver);text-transform:uppercase;margin:2px 0 14px}
+.guestbox{background:rgba(6,9,24,.55);border:1px solid rgba(217,164,65,.3);border-radius:16px;padding:12px 18px 13px;backdrop-filter:blur(7px);margin:0 auto 16px;max-width:320px;box-shadow:0 0 0 1px rgba(183,166,255,.06),0 12px 34px rgba(0,0,0,.45)}
+.guestbox small{display:block;color:var(--ink-dim);font-size:.72rem;letter-spacing:.08em;margin-bottom:3px}
+.guestbox strong{font-family:var(--fs);font-size:1.22rem;font-weight:600;color:#fff;letter-spacing:.02em}
+.guestbox .proj{display:block;margin-top:5px;font-size:.6rem;letter-spacing:.26em;text-transform:uppercase;color:var(--lilac)}
+.cover .btnrow{display:flex;flex-direction:column;gap:10px;align-items:center;width:100%}
+.cover .micro{margin-top:14px;font-size:.66rem;color:rgba(233,236,245,.66);letter-spacing:.06em}
+.cover .fade-item{animation:fadeUp 1s var(--ease) both}
+.cover .fade-item:nth-child(3){animation-delay:.1s}.cover .fade-item:nth-child(4){animation-delay:.2s}.cover .fade-item:nth-child(5){animation-delay:.3s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.twinkle{position:absolute;border-radius:50%;background:#fff;pointer-events:none;animation:tw 3.4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.12;transform:scale(.7)}50%{opacity:.95;transform:scale(1.25)}}
+
+/* ============ PANGGUNG 3D ============ */
+.glwrap{position:fixed;inset:0;max-width:430px;margin:0 auto;z-index:60;background:#04060F;display:none}
+.glwrap.on{display:block}
+.glwrap canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.gl-hud{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:calc(10px + env(safe-area-inset-top)) 12px 10px;background:linear-gradient(180deg,rgba(4,6,15,.72),transparent);pointer-events:none}
+.gl-hud>*{pointer-events:auto}
+.gl-title{font-family:var(--fk);letter-spacing:.26em;font-size:.58rem;color:var(--silver);text-transform:uppercase}
+.gl-title b{display:block;font-family:var(--fd);font-size:1.02rem;letter-spacing:.06em;color:#fff;text-transform:none;margin-top:2px}
+.hudbtns{display:flex;gap:7px}
+.hbtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(8,12,30,.66);color:var(--moon);font-size:16px;cursor:pointer;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center}
+.hbtn.wide{width:auto;border-radius:999px;padding:0 14px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-family:var(--fk)}
+.gl-hint{position:absolute;left:0;right:0;bottom:calc(14px + env(safe-area-inset-bottom));z-index:5;text-align:center;pointer-events:none;transition:opacity .8s}
+.gl-hint span{display:inline-block;background:rgba(6,9,24,.62);border:1px solid rgba(183,166,255,.28);color:var(--silver);font-size:.68rem;letter-spacing:.1em;padding:8px 14px;border-radius:999px;backdrop-filter:blur(6px)}
+.hotspot{position:absolute;z-index:4;transform:translate(-50%,-130%);background:rgba(8,12,30,.78);border:1px solid var(--line);color:#fff;border-radius:999px;padding:7px 12px 7px 9px;font-size:.7rem;letter-spacing:.05em;cursor:pointer;display:flex;align-items:center;gap:7px;backdrop-filter:blur(5px);white-space:nowrap;transition:opacity .3s;animation:hsFloat 4.4s ease-in-out infinite}
+.hotspot i{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px 2px rgba(217,164,65,.75);animation:hsPulse 2.2s ease-in-out infinite;flex:none}
+.hotspot.alt i{background:var(--lilac);box-shadow:0 0 10px 2px rgba(183,166,255,.75)}
+@keyframes hsPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.45)}}
+@keyframes hsFloat{0%,100%{margin-top:0}50%{margin-top:-5px}}
+.hotspot.behind{opacity:0;pointer-events:none}
+.projection{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;pointer-events:none;opacity:0;transition:opacity 1.2s var(--ease)}
+.projection.on{opacity:1}
+.projection .pk{font-family:var(--fk);letter-spacing:.4em;font-size:.62rem;color:var(--lilac);text-transform:uppercase}
+.projection .pn{font-family:var(--fd);font-size:3.1rem;line-height:1.05;color:#fff;letter-spacing:.05em;text-shadow:0 0 34px rgba(183,166,255,.85),0 0 90px rgba(109,91,208,.6);margin:.2em 0 .1em}
+.projection .pd{font-family:var(--fk);letter-spacing:.3em;font-size:.66rem;color:var(--silver);text-transform:uppercase}
+.skipbeam{position:absolute;right:12px;bottom:calc(64px + env(safe-area-inset-bottom));z-index:7}
+[hidden]{display:none!important}
+.toast{position:absolute;left:50%;transform:translateX(-50%) translateY(16px);bottom:calc(70px + env(safe-area-inset-bottom));z-index:9;background:rgba(8,12,30,.92);border:1px solid var(--line);color:var(--silver);font-size:.74rem;padding:10px 16px;border-radius:12px;opacity:0;pointer-events:none;transition:.5s var(--ease);max-width:86%;text-align:center}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ============ PANEL SECTION (bottom sheet) ============ */
+.sheet{position:absolute;left:0;right:0;bottom:0;z-index:8;max-height:82%;background:linear-gradient(180deg,rgba(13,20,48,.97),rgba(7,10,26,.99));border-top:1px solid var(--line);border-radius:24px 24px 0 0;transform:translateY(105%);transition:transform .55s var(--ease);overflow-y:auto;overscroll-behavior:contain;box-shadow:0 -18px 50px rgba(0,0,0,.6)}
+.sheet.on{transform:none}
+.sheet .grab{width:44px;height:4px;border-radius:4px;background:rgba(217,222,232,.35);margin:10px auto 2px}
+.sheet .x{position:sticky;top:8px;margin-left:calc(100% - 52px);z-index:3;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(8,12,30,.8);color:#fff;font-size:15px;cursor:pointer}
+.sheet .slot{padding:0 4px}
+.menuindex{padding:6px 22px 30px}
+.menuindex h3{font-family:var(--fd);font-weight:400;font-size:1.5rem;color:var(--moon);margin:.2em 0 .5em;text-align:center}
+.menuindex button{display:flex;width:100%;align-items:center;gap:12px;background:rgba(183,166,255,.06);border:1px solid rgba(183,166,255,.16);color:var(--ink);border-radius:14px;padding:13px 16px;margin:0 0 8px;cursor:pointer;text-align:left;font-size:.92rem}
+.menuindex button b{font-family:var(--fd);font-weight:400;color:var(--gold);font-size:1.05rem;min-width:30px}
+.menuindex button small{margin-left:auto;color:var(--ink-dim);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+
+/* ============ KONTEN DATAR ============ */
+.flat{display:none}
+.flat.on{display:block}
+.band{position:relative;height:190px;overflow:hidden}
+.band img{width:100%;height:100%;object-fit:cover;display:block}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--abyss) 0%,transparent 26%,transparent 62%,var(--abyss) 100%)}
+.band .cap{position:absolute;z-index:2;left:0;right:0;bottom:16px;text-align:center}
+.hero-flat{position:relative;padding:0 0 8px;text-align:center;background:linear-gradient(180deg,rgba(4,6,15,.15),rgba(4,6,15,.88) 78%),url('assets/undangya/planetarium-cinta/hero.webp') center 22%/cover no-repeat;min-height:92dvh;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-flat .inner{padding:20px 22px 26px;background:linear-gradient(180deg,transparent,rgba(4,6,15,.55) 30%,rgba(4,6,15,.9))}
+.hero-names{font-family:var(--fd);font-size:3rem;line-height:1.02;color:#fff;margin:.16em 0 .08em;letter-spacing:.05em;text-shadow:0 0 30px rgba(183,166,255,.6)}
+.hero-names .amp{color:var(--gold);font-size:.7em}
+.datepill{display:inline-block;background:rgba(217,164,65,.16);border:1px solid var(--line);color:var(--moon);padding:8px 16px;border-radius:999px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-family:var(--fk)}
+section.blk{padding:40px 22px 34px;position:relative}
+section.blk.tint{background:linear-gradient(180deg,rgba(109,91,208,.07),rgba(109,91,208,0) 55%)}
+.divider{display:flex;align-items:center;gap:10px;justify-content:center;margin:0 auto 14px;color:var(--gold)}
+.divider::before,.divider::after{content:"";height:1px;width:64px;background:linear-gradient(90deg,transparent,var(--line));display:block}
+.divider::after{background:linear-gradient(90deg,var(--line),transparent)}
+.card{background:var(--panel);border:1px solid rgba(183,166,255,.16);border-radius:20px;padding:22px 20px;margin:14px 0;backdrop-filter:blur(8px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.card.gold{border-color:var(--line)}
+.card h3{font-family:var(--fd);font-weight:400;font-size:1.45rem;margin:.1em 0 .35em;color:var(--moon);letter-spacing:.03em}
+.card p{color:var(--ink-dim);line-height:1.7;font-size:.92rem;margin:.4em 0}
+.card p b,.card p strong{color:var(--ink);font-weight:500}
+.portrait{width:158px;height:200px;object-fit:cover;border-radius:90px 90px 16px 16px;border:2px solid var(--line);box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.pname{font-family:var(--fd);font-size:1.7rem;color:#fff;margin:.35em 0 .05em;letter-spacing:.03em}
+.pdeg{color:var(--gold);font-size:.85rem;letter-spacing:.06em}
+.parents{color:var(--ink-dim);font-size:.88rem;line-height:1.65}
+.iglink{color:var(--lilac);text-decoration:none;font-size:.85rem;letter-spacing:.04em}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:18px 0 4px}
+.count span{background:var(--panel);border:1px solid rgba(183,166,255,.2);border-radius:16px;padding:12px 2px 9px;text-align:center;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim)}
+.count b{display:block;font-family:var(--fd);font-size:1.65rem;color:#fff;font-weight:400;letter-spacing:.02em;margin-bottom:2px}
+.btnrow2{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{flex:0 0 74%;scroll-snap-align:center;margin:0;border-radius:18px;overflow:hidden;border:1px solid rgba(183,166,255,.22);position:relative;cursor:pointer}
+.rail img{width:100%;height:340px;object-fit:cover;display:block}
+.rail figcaption{position:absolute;left:0;right:0;bottom:0;padding:20px 14px 10px;background:linear-gradient(180deg,transparent,rgba(4,6,15,.85));font-size:.74rem;letter-spacing:.08em;color:var(--silver)}
+.raildots{text-align:center;color:var(--ink-dim);font-size:.7rem;letter-spacing:.2em}
+.story{position:relative;margin:8px 0 0;padding-left:26px}
+.story::before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:1px;background:linear-gradient(180deg,var(--gold),rgba(183,166,255,.25))}
+.story article{position:relative;margin:0 0 22px}
+.story article::before{content:"";position:absolute;left:-23px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--abyss);border:2px solid var(--gold);box-shadow:0 0 12px rgba(217,164,65,.8)}
+.story .yr{font-family:var(--fk);color:var(--gold);letter-spacing:.26em;font-size:.66rem}
+.story h4{font-family:var(--fd);font-weight:400;font-size:1.3rem;color:#fff;margin:.25em 0 .3em;letter-spacing:.03em}
+.story p{color:var(--ink-dim);line-height:1.7;font-size:.9rem;margin:0}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid rgba(183,166,255,.3);border-radius:12px;margin:6px 0;font:inherit;background:rgba(6,9,24,.7);color:var(--ink)}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,164,65,.22);outline:0}
+::placeholder{color:#7C86A0}
+label.flabel{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);display:block;margin-top:8px}
+.wall{display:grid;gap:10px;margin-top:14px}
+.wall .w{background:rgba(183,166,255,.06);border:1px solid rgba(183,166,255,.16);border-radius:14px;padding:12px 14px;text-align:left}
+.wall .w b{color:#fff;font-weight:500}
+.wall .w .st{float:right;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.wall .w p{margin:.3em 0 0;color:var(--ink-dim);font-size:.88rem;line-height:1.6}
+.acct{display:flex;align-items:center;gap:14px;text-align:left}
+.acct .logo{width:52px;height:52px;flex:none;border-radius:14px;background:linear-gradient(140deg,#12245E,#2A4B9B);display:flex;align-items:center;justify-content:center;font-family:var(--fd);color:#fff;font-size:1.05rem;border:1px solid rgba(255,255,255,.25)}
+.acct .logo.dana{background:linear-gradient(140deg,#108EE9,#0B5FA5)}
+.acct .num{font-size:1.12rem;letter-spacing:.1em;color:#fff;font-weight:500}
+.acct .an{color:var(--ink-dim);font-size:.8rem}
+.swatches{display:flex;gap:12px;justify-content:center;margin:14px 0 4px}
+.swatches figure{margin:0;text-align:center}
+.swatches i{display:block;width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.25);margin:0 auto 6px}
+.swatches figcaption{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim)}
+.qrbox{background:#fff;border-radius:20px;padding:16px;width:216px;margin:14px auto;box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.qrbox svg{display:block;width:100%;height:auto}
+.guestgal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.guestgal img{width:100%;height:170px;object-fit:cover;border-radius:14px;border:1px solid rgba(183,166,255,.2)}
+.videowrap{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 44px rgba(0,0,0,.5)}
+.videowrap video{width:100%;display:block;background:#000}
+footer.blk{padding:44px 24px 120px;text-align:center;background:linear-gradient(180deg,transparent,rgba(13,20,48,.9))}
+footer .fnames{font-family:var(--fd);font-size:2rem;color:#fff;letter-spacing:.05em;margin:.2em 0}
+.mini{font-size:.7rem;color:var(--ink-dim);letter-spacing:.08em}
+.musicbtn{position:fixed;right:calc(50% - 203px);bottom:86px;z-index:55;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(8,12,30,.8);color:var(--gold);font-size:17px;cursor:pointer;backdrop-filter:blur(6px)}
+@media(max-width:460px){.musicbtn{right:12px}}
+.musicbtn.playing{animation:spinPulse 5s linear infinite}
+@keyframes spinPulse{0%{transform:rotate(0)}50%{transform:rotate(180deg) scale(1.07)}100%{transform:rotate(360deg)}}
+.flatbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));z-index:54;display:none;gap:8px;width:min(430px,100%);padding:0 12px;justify-content:center}
+.flatbar.on{display:flex}
+.flatbar .btn{flex:1;padding:12px 8px;font-size:.8rem}
+.lightbox{position:fixed;inset:0;z-index:90;background:rgba(2,3,10,.94);display:none;align-items:center;justify-content:center;padding:18px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:86dvh;border-radius:16px;border:2px solid var(--line)}
+.lightbox .lx{position:absolute;top:calc(14px + env(safe-area-inset-top));right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(8,12,30,.8);color:#fff;cursor:pointer;font-size:16px}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv[data-rv="left"]{transform:translateX(-28px)}
+.js .rv[data-rv="right"]{transform:translateX(28px)}
+.js .rv[data-rv="zoom"]{transform:scale(.93)}
+.js .rv.in{opacity:1;transform:none}
+.ambient{position:fixed;inset:0;max-width:430px;margin:0 auto;z-index:40;pointer-events:none;overflow:hidden}
+.ambient i{position:absolute;border-radius:50%;background:#fff;animation:tw 3.8s ease-in-out infinite}
+.deco-float{position:absolute;pointer-events:none;opacity:.85;animation:drift 11s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate3d(0,0,0) rotate(-2deg)}to{transform:translate3d(10px,-16px,0) rotate(2.5deg)}}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .js .rv{opacity:1;transform:none}
+ .ambient{display:none}
+}
+</style>
+</head>
+<body>
+<div class="stage" id="stage">
+
+  <!-- ================= SAMPUL ================= -->
+  <div class="cover" id="cover" role="dialog" aria-label="Sampul undangan">
+    <img class="deco-float" src="assets/undangya/planetarium-cinta/spiral-galaxy.webp" alt="" aria-hidden="true" style="width:124px;top:5%;right:-26px;border-radius:50%;mix-blend-mode:screen;animation-duration:13s">
+    <img class="deco-float" src="assets/undangya/planetarium-cinta/comet.webp" alt="" aria-hidden="true" style="width:96px;top:34%;right:3%;mix-blend-mode:screen;opacity:.65;animation-duration:15s">
+    <img class="deco-float" src="assets/undangya/planetarium-cinta/nebula-2.webp" alt="" aria-hidden="true" style="width:150px;top:11%;left:-38px;mix-blend-mode:screen;opacity:.5;animation-duration:17s">
+    <p class="tw">Planetarium Cinta · 3D Interactive</p>
+    <div class="fade-item">
+      <p class="kicker">The Wedding Of</p>
+      <h1 class="cover-names">Meyzsa<br><span class="amp">&amp;</span> Fahrezzi</h1>
+      <p class="cover-date">Sabtu · 12 Juni 2027</p>
+    </div>
+    <div class="guestbox fade-item">
+      <small>Kepada Yth. Bapak/Ibu/Saudara/i</small>
+      <strong id="guestName">Tamu Undangan</strong>
+      <span class="proj">✦ nama Anda terproyeksi di kubah bintang ✦</span>
+    </div>
+    <div class="btnrow fade-item">
+      <button class="btn" id="openBtn" type="button">✦ Buka Undangan</button>
+      <button class="btn ghost" id="openFlatBtn" type="button">Lihat Semua Info</button>
+    </div>
+    <p class="micro fade-item">Pengalaman 3D dijelajahi dengan seretan jari — atau baca semua info<br>dalam daftar biasa. Mode ringan tersedia kapan pun.</p>
+  </div>
+
+  <!-- ================= PANGGUNG 3D ================= -->
+  <div class="glwrap" id="glwrap" aria-hidden="true">
+    <canvas id="glcanvas"></canvas>
+    <div class="gl-hud">
+      <div class="gl-title">Planetarium Cinta<b>Meyzsa &amp; Fahrezzi</b></div>
+      <div class="hudbtns">
+        <button class="hbtn wide" id="hudMenu" type="button">☰ Menu</button>
+        <button class="hbtn wide" id="hudFlat" type="button">Semua Info</button>
+        <button class="hbtn" id="hudLite" type="button" title="Mode ringan" aria-label="Mode ringan">◐</button>
+      </div>
+    </div>
+    <div id="hotspots"></div>
+    <div class="projection" id="projection">
+      <p class="pk">The Wedding Of</p>
+      <p class="pn">Meyzsa<br>&amp; Fahrezzi</p>
+      <p class="pd">Sabtu · 12 Juni 2027</p>
+    </div>
+    <button class="btn small ghost skipbeam" id="skipBeam" type="button" hidden>Lewati ▸</button>
+    <div class="gl-hint" id="glHint"><span>Seret untuk menjelajah kubah · ketuk bintang bercahaya untuk membuka cerita</span></div>
+    <div class="toast" id="glToast" role="status"></div>
+
+    <!-- Panel section (bottom sheet) -->
+    <div class="sheet" id="sheet" aria-hidden="true">
+      <div class="grab"></div>
+      <button class="x" id="sheetX" type="button" aria-label="Tutup panel">✕</button>
+      <div id="sheetBody"></div>
+    </div>
+  </div>
+
+  <!-- ================= KONTEN DATAR (semua info) ================= -->
+  <main class="flat" id="flat">
+    <header class="hero-flat">
+      <div class="inner">
+        <p class="kicker">The Wedding Of</p>
+        <h2 class="hero-names">Meyzsa <span class="amp">&amp;</span> Fahrezzi</h2>
+        <span class="datepill">Sabtu · 12 Juni 2027</span>
+        <div style="height:14px"></div>
+        <p class="sec-sub" style="color:var(--silver)">Di bawah lengkung Bima Sakti, dua bintang menemukan orbit yang sama.</p>
+        <div class="count" id="countTop" aria-label="Hitung mundur"></div>
+      </div>
+    </header>
+
+    <div class="slot" data-slot="sambutan">
+    <section class="blk" id="sambutan" data-title="Sambutan">
+      <p class="sec-kicker">Pembuka</p>
+      <h2 class="sec-title">Assalamu’alaikum Warahmatullahi Wabarakatuh</h2>
+      <div class="divider">✦</div>
+      <p class="sec-sub serif" style="font-size:1.05rem;color:var(--silver)">“Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”</p>
+      <p class="sec-sub" style="margin-top:8px">— QS. Ar-Rūm: 21</p>
+      <p class="sec-sub" style="margin-top:14px">Dengan memohon rahmat dan rida Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada pernikahan kami — sebuah malam di bawah bintang-bintang yang telah lama tertulis di langit.</p>
+    </section>
+    </div>
+
+    <div class="band" aria-hidden="true"><img src="assets/undangya/planetarium-cinta/flat-hall.webp" alt="" loading="lazy"><p class="cap kicker" style="color:var(--silver)">Kubah Planetarium · Aula Bintang</p></div>
+
+    <div class="slot" data-slot="mempelai">
+    <section class="blk" id="mempelai" data-title="Dua Bintang Seorbit">
+      <p class="sec-kicker">Mempelai</p>
+      <h2 class="sec-title">Dua Bintang Seorbit</h2>
+      <div class="divider">✦</div>
+      <div class="card" style="text-align:center">
+        <img class="portrait" src="assets/undangya/planetarium-cinta/bride.webp" alt="Foto contoh mempelai wanita, Meyzsa Putri Ananda, bergaun perak di bawah kubah bintang" loading="lazy">
+        <p class="pname">Meyzsa Putri Ananda, S.Pd.</p>
+        <p class="parents">Putri dari<br><b style="color:var(--ink)">Bapak H. Muhammad Ridwan</b> &amp; <b style="color:var(--ink)">Ibu Hj. Siti Aminah</b></p>
+        <p><a class="iglink" href="https://instagram.com/meyzsa.contoh" target="_blank" rel="noopener">@meyzsa.contoh</a></p>
+      </div>
+      <div class="card" style="text-align:center">
+        <img class="portrait" src="assets/undangya/planetarium-cinta/groom.webp" alt="Foto contoh mempelai pria, Ahmad Fahrezzi Pratama, berjas biru malam di samping teleskop kuningan" loading="lazy">
+        <p class="pname">Ahmad Fahrezzi Pratama, S.T.</p>
+        <p class="parents">Putra dari<br><b style="color:var(--ink)">Bapak H. Bambang Sutrisno</b> &amp; <b style="color:var(--ink)">Ibu Hj. Ratna Dewi</b></p>
+        <p><a class="iglink" href="https://instagram.com/fahrezzi.contoh" target="_blank" rel="noopener">@fahrezzi.contoh</a></p>
+      </div>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="countdown">
+    <section class="blk tint" id="countdown" data-title="Menghitung Bintang">
+      <p class="sec-kicker">Countdown</p>
+      <h2 class="sec-title">Menghitung Bintang Jatuh</h2>
+      <div class="divider">✦</div>
+      <p class="sec-sub">Cincin zodiak terus berputar — dan setiap putarannya membawa kita lebih dekat ke hari ketika dua orbit menjadi satu.</p>
+      <div class="count" id="countMain"></div>
+      <div class="btnrow2">
+        <a class="btn small" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Akad%20Nikah%20Meyzsa%20%26%20Fahrezzi&amp;dates=20270612T010000Z/20270612T030000Z&amp;details=Akad%20Nikah%20Meyzsa%20Putri%20Ananda%20%26%20Ahmad%20Fahrezzi%20Pratama&amp;location=Masjid%20Agung%20Al-Azhar%2C%20Jakarta%20Selatan" target="_blank" rel="noopener">Simpan ke Kalender</a>
+        <button class="btn small ghost" type="button" data-ics="akad">Unduh .ICS Akad</button>
+      </div>
+    </section>
+    </div>
+
+    <div class="band" aria-hidden="true"><img src="assets/undangya/planetarium-cinta/zodiac-poster.webp" alt="" loading="lazy"><p class="cap kicker" style="color:var(--silver)">Peta Langit · Roda Zodiak</p></div>
+
+    <div class="slot" data-slot="acara">
+    <section class="blk" id="acara" data-title="Rangkaian Acara">
+      <p class="sec-kicker">Waktu &amp; Tempat</p>
+      <h2 class="sec-title">Ketika Bintang Sejajar</h2>
+      <div class="divider">✦</div>
+      <div class="card gold">
+        <p class="sec-kicker" style="text-align:left">Akad Nikah</p>
+        <h3>Sabtu, 12 Juni 2027</h3>
+        <p><b>08.00 – 10.00 WIB</b><br>Masjid Agung Al-Azhar<br>Kebayoran Baru, Jakarta Selatan</p>
+        <div class="btnrow2" style="justify-content:flex-start">
+          <a class="btn small" href="https://maps.google.com/?q=Masjid+Agung+Al-Azhar,+Jakarta+Selatan" target="_blank" rel="noopener">Buka Maps</a>
+          <a class="btn small ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Akad%20Nikah%20Meyzsa%20%26%20Fahrezzi&amp;dates=20270612T010000Z/20270612T030000Z&amp;details=Akad%20Nikah%20Meyzsa%20Putri%20Ananda%20%26%20Ahmad%20Fahrezzi%20Pratama&amp;location=Masjid%20Agung%20Al-Azhar%2C%20Jakarta%20Selatan" target="_blank" rel="noopener">Kalender</a>
+          <button class="btn small ghost" type="button" data-ics="akad">.ICS</button>
+        </div>
+      </div>
+      <div class="card gold">
+        <p class="sec-kicker" style="text-align:left">Resepsi</p>
+        <h3>Sabtu, 12 Juni 2027</h3>
+        <p><b>11.00 – 13.00 WIB</b><br>The Ritz-Carlton Jakarta, Pacific Place<br>SCBD, Jakarta Selatan</p>
+        <div class="btnrow2" style="justify-content:flex-start">
+          <a class="btn small" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta,+Pacific+Place" target="_blank" rel="noopener">Buka Maps</a>
+          <a class="btn small ghost" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Resepsi%20Meyzsa%20%26%20Fahrezzi&amp;dates=20270612T040000Z/20270612T060000Z&amp;details=Resepsi%20Pernikahan%20Meyzsa%20Putri%20Ananda%20%26%20Ahmad%20Fahrezzi%20Pratama&amp;location=The%20Ritz-Carlton%20Jakarta%2C%20Pacific%20Place" target="_blank" rel="noopener">Kalender</a>
+          <button class="btn small ghost" type="button" data-ics="resepsi">.ICS</button>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="galeri">
+    <section class="blk" id="galeri" data-title="Dinding Rasi">
+      <p class="sec-kicker">Galeri</p>
+      <h2 class="sec-title">Dinding Rasi Kami</h2>
+      <div class="divider">✦</div>
+      <p class="sec-sub">Delapan bintang, satu rasi. Geser untuk menyusuri kisah kami dalam cahaya. <span class="mini">(Foto contoh hasil generate AI.)</span></p>
+      <div class="rail" id="galeriRail">
+        <figure><img src="assets/undangya/planetarium-cinta/galeri-1.webp" alt="Berdua tertawa di kursi planetarium di bawah sorot bintang" loading="lazy"><figcaption>Bintang I · Kursi Bintang</figcaption></figure>
+        <figure><img src="assets/undangya/planetarium-cinta/galeri-2.webp" alt="Mempelai pria menyematkan jepit bintang di hijab mempelai wanita" loading="lazy"><figcaption>Bintang II · Jepit Bintang</figcaption></figure>
+        <figure><img src="assets/undangya/planetarium-cinta/galeri-3.webp" alt="Bergandengan tangan di bawah model planet bercincin" loading="lazy"><figcaption>Bintang III · Planet Cincin</figcaption></figure>
+        <figure><img src="assets/undangya/planetarium-cinta/galeri-4.webp" alt="Mempelai wanita mengintip teleskop kuningan" loading="lazy"><figcaption>Bintang IV · Teleskop</figcaption></figure>
+        <figure><img src="assets/undangya/planetarium-cinta/galeri-5.webp" alt="Dahi bersentuhan di depan rasi berbentuk hati" loading="lazy"><figcaption>Bintang V · Rasi Hati</figcaption></figure>
+        <figure><img src="assets/undangya/planetarium-cinta/galeri-6.webp" alt="Berdansa di lantai planetarium di bawah proyeksi planet" loading="lazy"><figcaption>Bintang VI · Dansa Orbit</figcaption></figure>
+        <figure><img src="assets/undangya/planetarium-cinta/galeri-7.webp" alt="Memegang lentera bintang yang menyala berdua" loading="lazy"><figcaption>Bintang VII · Lentera</figcaption></figure>
+        <figure><img src="assets/undangya/planetarium-cinta/galeri-8.webp" alt="Duduk berdampingan memandang bulan purnama di kubah" loading="lazy"><figcaption>Bintang VIII · Bulan Purnama</figcaption></figure>
+      </div>
+      <p class="raildots" id="railDots">✦ 1 / 8</p>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="kisah">
+    <section class="blk tint" id="kisah" data-title="Kisah dalam Rasi">
+      <p class="sec-kicker">Love Story</p>
+      <h2 class="sec-title">Kisah yang Tergambar di Langit</h2>
+      <div class="divider">✦</div>
+      <div class="story">
+        <article>
+          <p class="yr">2019 · BABAK I</p>
+          <h4>Bintang Pertama</h4>
+          <p>Di sebuah pertunjukan planetarium kampus, dua orang asing duduk bersebelahan dan sama-sama menunjuk bintang yang sama. Percakapan tentang Bima Sakti malam itu tidak pernah benar-benar selesai.</p>
+        </article>
+        <article>
+          <p class="yr">2023 · BABAK II</p>
+          <h4>Satu Orbit</h4>
+          <p>Setelah bertahun-tahun saling mengelilingi dari jauh, Fahrezzi memberanikan diri mengajak Meyzsa melihat hujan meteor Perseid. Di bawah 60 bintang jatuh per jam, kami resmi berjalan searah.</p>
+        </article>
+        <article>
+          <p class="yr">2025 · BABAK III</p>
+          <h4>Eklips &amp; Sebuah Janji</h4>
+          <p>Di malam gerhana bulan total, di tempat yang sama dengan babak pertama, sebuah cincin berpindah tangan. Langit menjadi saksi; bulan yang tertutup perlahan bersinar kembali — seperti jawaban yang akhirnya datang.</p>
+        </article>
+        <article>
+          <p class="yr">2027 · BABAK IV</p>
+          <h4>Konstelasi Selamanya</h4>
+          <p>Kini dua bintang itu menggambar rasi baru bersama — dan Anda, orang-orang tersayang kami, adalah bintang-bintang yang melengkapinya. Sampai jumpa di bawah kubah yang sama.</p>
+        </article>
+      </div>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="cuplikan">
+    <section class="blk" id="cuplikan" data-title="Cuplikan dari Kubah">
+      <p class="sec-kicker">Video Teaser</p>
+      <h2 class="sec-title">Cuplikan dari Kubah</h2>
+      <div class="divider">✦</div>
+      <div class="videowrap">
+        <video id="teaser" controls preload="none" poster="assets/undangya/planetarium-cinta/teaser-poster.webp" playsinline>
+          <source src="assets/undangya/planetarium-cinta/teaser.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="sec-sub" style="margin-top:10px">22 detik mengintip malam kami — dari kubah yang sama tempat semuanya bermula.</p>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="live">
+    <section class="blk" id="live" data-title="Siaran dari Kubah">
+      <p class="sec-kicker">Live Streaming</p>
+      <h2 class="sec-title">Siaran dari Kubah</h2>
+      <div class="divider">✦</div>
+      <div class="card" style="text-align:center">
+        <p>Bagi Bapak/Ibu/Saudara/i yang berhalangan hadir, akad nikah akan disiarkan langsung dari venue. <span class="demo-tag">Demo</span></p>
+        <p class="mini">Tautan siaran pada contoh ini nonaktif — pada undangan asli, tautan YouTube/Zoom aktif di sini menjelang acara.</p>
+        <div class="btnrow2"><button class="btn small" type="button" disabled>Tonton Live (Demo)</button></div>
+      </div>
+    </section>
+    </div>
+
+    <div class="band" aria-hidden="true"><img src="assets/undangya/planetarium-cinta/dome-sky.webp" alt="" loading="lazy"><p class="cap kicker" style="color:var(--silver)">Di Bawah Bima Sakti yang Sama</p></div>
+
+    <div class="slot" data-slot="rsvp">
+    <section class="blk" id="rsvp" data-title="RSVP & Ucapan">
+      <p class="sec-kicker">RSVP</p>
+      <h2 class="sec-title">Sinyal dari Bintang Anda</h2>
+      <div class="divider">✦</div>
+      <p class="sec-sub">Konfirmasikan kehadiran Anda dan titipkan doa — setiap ucapan adalah bintang baru di dinding langit kami. <span class="mini">(Tersimpan lokal di perangkat ini — demo.)</span></p>
+      <form id="rsvpForm">
+        <label class="flabel" for="rsvpNama">Nama</label>
+        <input id="rsvpNama" autocomplete="name" placeholder="Nama Anda" required>
+        <label class="flabel" for="rsvpHadir">Konfirmasi Kehadiran</label>
+        <select id="rsvpHadir">
+          <option value="Hadir">Hadir, insya Allah</option>
+          <option value="Belum pasti">Masih ragu</option>
+          <option value="Tidak hadir">Berhalangan hadir</option>
+        </select>
+        <label class="flabel" for="rsvpUcapan">Ucapan &amp; Doa</label>
+        <textarea id="rsvpUcapan" rows="3" placeholder="Tulis doa terbaik untuk kedua mempelai…"></textarea>
+        <button class="btn" type="submit" style="width:100%;margin-top:10px">Kirim Sinyal ✦</button>
+      </form>
+      <div class="wall" id="rsvpWall" aria-live="polite"></div>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="bukutamu">
+    <section class="blk tint" id="bukutamu" data-title="Buku Tamu & Check-In">
+      <p class="sec-kicker">Buku Tamu · Check-In</p>
+      <h2 class="sec-title">Pos Penerimaan Bintang</h2>
+      <div class="divider">✦</div>
+      <p class="sec-sub">Saat tiba di venue, tunjukkan kode QR ini kepada penerima tamu — kode ini membuka halaman undangan yang sedang Anda baca.</p>
+      <div class="qrbox" id="qrBox" role="img" aria-label="Kode QR menuju halaman undangan Planetarium Cinta"></div>
+      <form id="ciForm">
+        <label class="flabel" for="ciNama">Nama Tamu</label>
+        <input id="ciNama" placeholder="Nama sesuai undangan" required>
+        <label class="flabel" for="ciKota">Domisili / Instansi</label>
+        <input id="ciKota" placeholder="mis. Jakarta Selatan">
+        <button class="btn" type="submit" style="width:100%;margin-top:10px">Check-In ✦</button>
+      </form>
+      <div class="wall" id="ciList"></div>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="amplop">
+    <section class="blk" id="amplop" data-title="Amplop Digital">
+      <p class="sec-kicker">Tanda Kasih</p>
+      <h2 class="sec-title">Komet Tanda Kasih</h2>
+      <div class="divider">✦</div>
+      <p class="sec-sub">Doa restu Anda adalah hadiah terindah. Namun bila berkenan memberikan tanda kasih, komet kami singgah di sini: <span class="mini">(Nomor contoh untuk demo.)</span></p>
+      <div class="card">
+        <div class="acct">
+          <div class="logo">BCA</div>
+          <div><div class="num" id="rekBca">1234567890</div><div class="an">a.n. Meyzsa Putri Ananda</div></div>
+        </div>
+        <div class="btnrow2" style="justify-content:flex-start"><button class="btn small" type="button" data-copy="rekBca">Salin Nomor</button></div>
+      </div>
+      <div class="card">
+        <div class="acct">
+          <div class="logo dana">DANA</div>
+          <div><div class="num" id="rekDana">0812-3456-7890</div><div class="an">a.n. Meyzsa Putri Ananda</div></div>
+        </div>
+        <div class="btnrow2" style="justify-content:flex-start"><button class="btn small" type="button" data-copy="rekDana">Salin Nomor</button></div>
+      </div>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="kado">
+    <section class="blk" id="kado" data-title="Kirim Kado Fisik">
+      <p class="sec-kicker">Kado Fisik</p>
+      <h2 class="sec-title">Paket untuk Bintang Kami</h2>
+      <div class="divider">✦</div>
+      <div class="card">
+        <p><b>Kediaman Mempelai Wanita</b></p>
+        <p id="alamatKado">Jl. Melati Indah No. 12, Kebayoran Baru, Jakarta Selatan 12120 <span class="mini">(alamat contoh)</span></p>
+        <div class="btnrow2" style="justify-content:flex-start"><button class="btn small" type="button" data-copy="alamatKado">Salin Alamat</button></div>
+      </div>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="dresscode">
+    <section class="blk tint" id="dresscode" data-title="Dresscode">
+      <p class="sec-kicker">Dresscode</p>
+      <h2 class="sec-title">Berpakaian Seperti Langit Malam</h2>
+      <div class="divider">✦</div>
+      <p class="sec-sub">Agar menyatu dengan kubah kami, kenakan nuansa langit malam:</p>
+      <div class="swatches">
+        <figure><i style="background:#101E4A"></i><figcaption>Biru Malam</figcaption></figure>
+        <figure><i style="background:#C9CFDB"></i><figcaption>Perak</figcaption></figure>
+        <figure><i style="background:#6D5BD0"></i><figcaption>Ungu Nebula</figcaption></figure>
+        <figure><i style="background:#131313"></i><figcaption>Hitam</figcaption></figure>
+      </div>
+      <p class="sec-sub" style="margin-top:10px">Formal atau semi-formal. Hindari putih gading penuh agar mempelai tetap menjadi bintang paling terang malam itu.</p>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="denah">
+    <section class="blk" id="denah" data-title="Denah & Info Lokasi">
+      <p class="sec-kicker">Denah &amp; Info Lokasi</p>
+      <h2 class="sec-title">Peta Menuju Kubah</h2>
+      <div class="divider">✦</div>
+      <div class="card">
+        <h3>Akad — Masjid Agung Al-Azhar</h3>
+        <p>Jl. Sisingamangaraja No. 1, Kebayoran Baru, Jakarta Selatan. Parkir tersedia di area masjid &amp; gedung Al-Azhar. Dari Stasiun MRT Blok M BCA: ±7 menit berjalan kaki ke gerbang utama.</p>
+        <div class="btnrow2" style="justify-content:flex-start"><a class="btn small" href="https://maps.google.com/?q=Masjid+Agung+Al-Azhar,+Jakarta+Selatan" target="_blank" rel="noopener">Lihat Lokasi</a></div>
+      </div>
+      <div class="card">
+        <h3>Resepsi — The Ritz-Carlton, Pacific Place</h3>
+        <p>SCBD, Jl. Jend. Sudirman Kav. 52–53, Jakarta Selatan. Masuk melalui lobi utama Pacific Place; petugas kami menyambut di meja registrasi berlogo bintang emas. Valet &amp; parkir mal tersedia.</p>
+        <div class="btnrow2" style="justify-content:flex-start"><a class="btn small" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta,+Pacific+Place" target="_blank" rel="noopener">Lihat Lokasi</a></div>
+      </div>
+      <p class="sec-sub">Mohon hadir 30 menit lebih awal — pertunjukan kubah pembuka dimulai tepat saat acara dibuka.</p>
+    </section>
+    </div>
+
+    <div class="band" aria-hidden="true"><img src="assets/undangya/planetarium-cinta/flat-hall.webp" alt="" loading="lazy"><p class="cap kicker" style="color:var(--silver)">Sampai Jumpa di Aula Bintang</p></div>
+
+    <div class="slot" data-slot="turut">
+    <section class="blk" id="turut" data-title="Turut Mengundang">
+      <p class="sec-kicker">Turut Mengundang</p>
+      <h2 class="sec-title">Bintang-Bintang Keluarga</h2>
+      <div class="divider">✦</div>
+      <div class="card" style="text-align:center">
+        <p>Keluarga Besar H. Muhammad Ridwan &amp; Hj. Siti Aminah<br>Keluarga Besar H. Bambang Sutrisno &amp; Hj. Ratna Dewi<br>Keluarga Besar Al-Azhar Kebayoran<br>Rekan-rekan Planetarium &amp; Komunitas Astronomi Jakarta<br>Sahabat-sahabat kedua mempelai</p>
+        <p class="mini">Serta seluruh keluarga dan kerabat yang tidak dapat kami sebutkan satu per satu.</p>
+      </div>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="hashtag">
+    <section class="blk tint" id="hashtag" data-title="Hashtag & Galeri Tamu">
+      <p class="sec-kicker">Hashtag · Galeri Tamu</p>
+      <h2 class="sec-title">#MeyzsaFahrezzi</h2>
+      <div class="divider">✦</div>
+      <p class="sec-sub">Abadikan momen Anda malam itu dan gunakan tagar resmi kami agar menyatu dalam satu rasi kenangan.</p>
+      <div class="btnrow2"><button class="btn small" type="button" data-copy-text="#MeyzsaFahrezzi">Salin Hashtag</button></div>
+      <div class="card">
+        <p><b>Galeri Tamu</b> <span class="demo-tag">Demo Lokal</span></p>
+        <p>Unggah foto Anda di acara ini — tersimpan hanya di perangkat Anda pada demo ini.</p>
+        <label class="btn small ghost" for="ggFile" style="cursor:pointer">Unggah Foto</label>
+        <input id="ggFile" type="file" accept="image/*" hidden>
+        <div class="guestgal" id="ggGrid"></div>
+        <p class="mini" id="ggEmpty">Belum ada foto tamu. Jadilah bintang pertama yang bersinar di sini.</p>
+      </div>
+    </section>
+    </div>
+
+    <div class="slot" data-slot="penutup">
+    <footer class="blk" id="penutup" data-title="Penutup">
+      <p class="sec-kicker">Penutup</p>
+      <h2 class="sec-title">Wassalamu’alaikum Warahmatullahi Wabarakatuh</h2>
+      <div class="divider">✦</div>
+      <p class="sec-sub">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai. Terima kasih atas segala doa, perhatian, dan kasih sayang yang telah diberikan.</p>
+      <p class="fnames">Meyzsa &amp; Fahrezzi</p>
+      <p class="mini">Beserta keluarga besar kedua mempelai</p>
+      <div style="height:18px"></div>
+      <span class="chip">Planetarium Cinta · 3D Interactive</span>
+      <p class="mini" style="margin-top:14px">Undangan digital contoh oleh UndangYa! — nama, foto, dan data acara adalah contoh fiktif untuk keperluan demo.</p>
+    </footer>
+    </div>
+  </main>
+
+  <div class="flatbar" id="flatbar">
+    <button class="btn ghost" id="toGlBtn" type="button" hidden>✦ Jelajah 3D</button>
+    <button class="btn" id="toTopBtn" type="button">↑ Ke Atas</button>
+  </div>
+
+  <button class="musicbtn" id="musicBtn" type="button" title="Musik: Petals on the Stone Floor" aria-label="Putar atau hentikan musik">♪</button>
+  <div class="lightbox" id="lightbox"><button class="lx" id="lbX" type="button" aria-label="Tutup">✕</button><img id="lbImg" alt="Foto galeri diperbesar"></div>
+</div>
+<audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+
+<script>
+'use strict';
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var CONFIG={date:'2027-06-12T08:00:00+07:00',preview:'https://yfarch0912.github.io/planetarium-cinta-preview/planetarium-cinta.html'};
+var REDUCED=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Personalisasi ?to= ---------- */
+var guestParam=new URLSearchParams(location.search).get('to');
+if(guestParam){ $('#guestName').textContent=guestParam; }
+
+/* ---------- Musik bersama ---------- */
+var bgm=$('#bgmShared'), musicBtn=$('#musicBtn'), musicWanted=false;
+function startMusic(){ if(!bgm)return; musicWanted=true; var p=bgm.play(); if(p&&p.catch)p.catch(function(){}); }
+if(bgm){
+  bgm.addEventListener('play',function(){musicBtn.classList.add('playing')});
+  bgm.addEventListener('pause',function(){musicBtn.classList.remove('playing')});
+}
+musicBtn.addEventListener('click',function(){ if(bgm&&!bgm.paused){bgm.pause();musicWanted=false;} else startMusic(); });
+
+/* ---------- Countdown ---------- */
+function pad(n){return (n<10?'0':'')+n}
+function tickCount(){
+  var diff=new Date(CONFIG.date)-new Date(); if(diff<0)diff=0;
+  var d=Math.floor(diff/864e5),h=Math.floor(diff/36e5)%24,m=Math.floor(diff/6e4)%60,s=Math.floor(diff/1e3)%60;
+  var html=[[d,'Hari'],[h,'Jam'],[m,'Menit'],[s,'Detik']].map(function(x){return '<span><b>'+x[0]+'</b>'+x[1]+'</span>'}).join('');
+  ['countTop','countMain'].forEach(function(id){var el=document.getElementById(id); if(el)el.innerHTML=html;});
+}
+tickCount(); setInterval(tickCount,1000);
+
+/* ---------- Unduh .ICS ---------- */
+var ICS={
+ akad:{file:'akad-meyzsa-fahrezzi.ics',start:'20270612T010000Z',end:'20270612T030000Z',title:'Akad Nikah Meyzsa & Fahrezzi',loc:'Masjid Agung Al-Azhar, Jakarta Selatan',desc:'Akad Nikah Meyzsa Putri Ananda & Ahmad Fahrezzi Pratama'},
+ resepsi:{file:'resepsi-meyzsa-fahrezzi.ics',start:'20270612T040000Z',end:'20270612T060000Z',title:'Resepsi Meyzsa & Fahrezzi',loc:'The Ritz-Carlton Jakarta, Pacific Place',desc:'Resepsi Pernikahan Meyzsa Putri Ananda & Ahmad Fahrezzi Pratama'}
+};
+$$('[data-ics]').forEach(function(btn){ btn.addEventListener('click',function(){
+  var e=ICS[btn.getAttribute('data-ics')]; if(!e)return;
+  var body=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//UndangYa//Planetarium Cinta//ID','BEGIN:VEVENT','UID:'+e.start+'-planetarium@undangya.web.id','DTSTAMP:20261112T000000Z','DTSTART:'+e.start,'DTEND:'+e.end,'SUMMARY:'+e.title,'LOCATION:'+e.loc,'DESCRIPTION:'+e.desc,'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  var a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([body],{type:'text/calendar'})); a.download=e.file; document.body.appendChild(a); a.click(); setTimeout(function(){URL.revokeObjectURL(a.href); a.remove();},400);
+});});
+
+/* ---------- Salin ---------- */
+function copyText(txt,btn){
+  function done(){ if(btn){var o=btn.textContent; btn.textContent='Tersalin ✓'; setTimeout(function(){btn.textContent=o;},1600);} }
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done).catch(function(){fallback();}); } else fallback();
+  function fallback(){ var ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(e){} ta.remove(); done(); }
+}
+$$('[data-copy]').forEach(function(btn){ btn.addEventListener('click',function(){ var t=document.getElementById(btn.getAttribute('data-copy')); if(t)copyText(t.textContent.trim(),btn); }); });
+$$('[data-copy-text]').forEach(function(btn){ btn.addEventListener('click',function(){ copyText(btn.getAttribute('data-copy-text'),btn); }); });
+
+/* ---------- RSVP + dinding ucapan (demo lokal) ---------- */
+var RSVP_KEY='planetarium-rsvp';
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function loadJSON(k){ try{return JSON.parse(localStorage.getItem(k)||'[]')}catch(e){return[]} }
+function renderWall(){
+  var data=loadJSON(RSVP_KEY), wall=$('#rsvpWall'); if(!wall)return;
+  wall.innerHTML=data.length? data.map(function(x){return '<div class="w"><b>'+esc(x.nama)+'</b><span class="st">'+esc(x.hadir)+'</span><p>'+esc(x.ucapan||'—')+'</p></div>'}).join('')
+    : '<div class="w"><b>Langit masih sepi</b><p>Jadilah bintang pertama yang menitipkan doa di sini.</p></div>';
+}
+var rsvpForm=$('#rsvpForm');
+if(rsvpForm){ rsvpForm.addEventListener('submit',function(e){ e.preventDefault();
+  var data=loadJSON(RSVP_KEY);
+  data.unshift({nama:$('#rsvpNama').value.trim(),hadir:$('#rsvpHadir').value,ucapan:$('#rsvpUcapan').value.trim()});
+  try{localStorage.setItem(RSVP_KEY,JSON.stringify(data.slice(0,60)))}catch(err){}
+  rsvpForm.reset(); renderWall();
+});}
+renderWall();
+
+/* ---------- Buku tamu / check-in (demo lokal) ---------- */
+var CI_KEY='planetarium-checkin';
+function renderCI(){
+  var data=loadJSON(CI_KEY), el=$('#ciList'); if(!el)return;
+  el.innerHTML=data.length? data.map(function(x){return '<div class="w"><b>'+esc(x.nama)+'</b><span class="st">Check-In ✓</span><p>'+esc(x.kota||'—')+'</p></div>'}).join('') : '';
+}
+var ciForm=$('#ciForm');
+if(ciForm){ ciForm.addEventListener('submit',function(e){ e.preventDefault();
+  var data=loadJSON(CI_KEY);
+  data.unshift({nama:$('#ciNama').value.trim(),kota:$('#ciKota').value.trim()});
+  try{localStorage.setItem(CI_KEY,JSON.stringify(data.slice(0,60)))}catch(err){}
+  ciForm.reset(); renderCI();
+});}
+renderCI();
+
+/* ---------- Galeri tamu (demo lokal) ---------- */
+var GG_KEY='planetarium-galeritamu';
+function renderGG(){
+  var data=loadJSON(GG_KEY), grid=$('#ggGrid'), empty=$('#ggEmpty'); if(!grid)return;
+  grid.innerHTML=data.map(function(src){return '<img src="'+src+'" alt="Foto unggahan tamu">'}).join('');
+  if(empty)empty.style.display=data.length?'none':'block';
+}
+var ggFile=$('#ggFile');
+if(ggFile){ ggFile.addEventListener('change',function(){
+  var f=ggFile.files&&ggFile.files[0]; if(!f)return;
+  var rd=new FileReader();
+  rd.onload=function(){
+    var img=new Image();
+    img.onload=function(){
+      var cv=document.createElement('canvas'); var sc=Math.min(1,640/img.width); cv.width=Math.round(img.width*sc); cv.height=Math.round(img.height*sc);
+      cv.getContext('2d').drawImage(img,0,0,cv.width,cv.height);
+      var data=loadJSON(GG_KEY); data.unshift(cv.toDataURL('image/jpeg',.72));
+      try{localStorage.setItem(GG_KEY,JSON.stringify(data.slice(0,8)))}catch(err){ alert('Penyimpanan perangkat penuh — foto tidak tersimpan.'); }
+      renderGG();
+    };
+    img.src=rd.result;
+  };
+  rd.readAsDataURL(f);
+});}
+renderGG();
+
+/* ---------- Galeri utama: lightbox + indikator rel ---------- */
+var lb=$('#lightbox'), lbImg=$('#lbImg');
+$$('#galeriRail img').forEach(function(im){ im.addEventListener('click',function(){ lbImg.src=im.src; lb.classList.add('open'); }); });
+$('#lbX').addEventListener('click',function(){ lb.classList.remove('open'); });
+lb.addEventListener('click',function(e){ if(e.target===lb)lb.classList.remove('open'); });
+var rail=$('#galeriRail'), railDots=$('#railDots');
+if(rail){ rail.addEventListener('scroll',function(){
+  var idx=Math.round(rail.scrollLeft/(rail.clientWidth*.74+12))+1; idx=Math.max(1,Math.min(8,idx));
+  if(railDots)railDots.textContent='✦ '+idx+' / 8';
+},{passive:true}); }
+
+/* ---------- Reveal saat scroll (mode datar) ---------- */
+document.documentElement.classList.add('js');
+(function(){
+  var targets=[];
+  $$('#flat section, #flat footer').forEach(function(sec){
+    Array.prototype.forEach.call(sec.children,function(el,i){
+      if(el.classList&&(el.classList.contains('slot')||el.tagName==='DIV'&&el.classList.contains('story'))){}
+      el.classList.add('rv'); el.style.transitionDelay=Math.min(i*80,320)+'ms';
+      if(el.classList.contains('card'))el.setAttribute('data-rv',(targets.length%2?'right':'left'));
+      targets.push(el);
+    });
+  });
+  $$('#galeriRail figure').forEach(function(f,i){ f.classList.add('rv'); f.setAttribute('data-rv','zoom'); f.style.transitionDelay=(i*90)+'ms'; targets.push(f); });
+  if('IntersectionObserver' in window&&!REDUCED){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}})},{threshold:.1});
+    targets.forEach(function(t){io.observe(t)});
+  } else targets.forEach(function(t){t.classList.add('in')});
+})();
+
+/* ---------- Bintang ambient mode datar ---------- */
+(function(){
+  if(REDUCED)return;
+  var amb=document.createElement('div'); amb.className='ambient'; amb.setAttribute('aria-hidden','true');
+  for(var i=0;i<26;i++){ var s=document.createElement('i'); var sz=(Math.random()*2.4+1).toFixed(1);
+    s.style.width=sz+'px'; s.style.height=sz+'px'; s.style.left=(Math.random()*98)+'%'; s.style.top=(Math.random()*100)+'%';
+    s.style.animationDelay=(-Math.random()*4)+'s'; s.style.animationDuration=(2.8+Math.random()*2.6)+'s'; amb.appendChild(s); }
+  document.body.appendChild(amb);
+  document.addEventListener('visibilitychange',function(){ amb.style.display=document.hidden?'none':'block'; });
+})();
+
+/* ================================================================
+   MANAJEMEN MODE & PANEL
+   ================================================================ */
+var flat=$('#flat'), flatbar=$('#flatbar'), glwrap=$('#glwrap'), sheet=$('#sheet'), sheetBody=$('#sheetBody');
+var mode='cover'; // cover | gl | flat
+var glReady=false, glFailed=false;
+
+function showFlat(){
+  mode='flat';
+  glwrap.classList.remove('on'); glwrap.setAttribute('aria-hidden','true');
+  flat.classList.add('on'); flatbar.classList.add('on');
+  document.body.classList.remove('locked');
+  $('#toGlBtn').hidden=!(glReady&&!glFailed);
+  if(window.__glPause)window.__glPause();
+}
+function showGL(){
+  if(!glReady||glFailed){ showFlat(); return; }
+  mode='gl';
+  flat.classList.remove('on'); flatbar.classList.remove('on');
+  glwrap.classList.add('on'); glwrap.setAttribute('aria-hidden','false');
+  document.body.classList.add('locked');
+  if(window.__glResume)window.__glResume();
+}
+
+/* Panel: pindahkan node section ke sheet & kembalikan */
+var parked=null; // {node, slot}
+function parkBack(){
+  if(!parked)return;
+  parked.slot.appendChild(parked.node); parked=null;
+  sheetBody.innerHTML='';
+}
+function openSection(id){
+  var sec=document.getElementById(id); if(!sec)return;
+  parkBack();
+  var slot=sec.parentElement;
+  parked={node:sec,slot:slot};
+  sheetBody.innerHTML='';
+  var wrap=document.createElement('div'); wrap.className='slot'; wrap.appendChild(sec); sheetBody.appendChild(wrap);
+  sheet.classList.add('on'); sheet.setAttribute('aria-hidden','false');
+  sheet.scrollTop=0;
+  if(window.__glPause)window.__glPause();
+}
+function closeSheet(){
+  sheet.classList.remove('on'); sheet.setAttribute('aria-hidden','true');
+  setTimeout(parkBack,60);
+  if(mode==='gl'&&window.__glResume)window.__glResume();
+}
+$('#sheetX').addEventListener('click',closeSheet);
+
+var MENU=[
+ ['sambutan','Sambutan','Pembuka'],['mempelai','Mempelai','Dua bintang'],['countdown','Countdown','Zodiak'],
+ ['acara','Acara','Akad & resepsi'],['galeri','Galeri','Dinding rasi'],['kisah','Love Story','4 babak'],
+ ['cuplikan','Video Teaser','22 detik'],['live','Live Streaming','Demo'],['rsvp','RSVP & Ucapan','Dinding doa'],
+ ['bukutamu','Buku Tamu & QR','Check-in'],['amplop','Amplop Digital','Tanda kasih'],['kado','Kado Fisik','Kirim paket'],
+ ['dresscode','Dresscode','Langit malam'],['denah','Denah & Lokasi','Peta venue'],['turut','Turut Mengundang','Keluarga'],
+ ['hashtag','Hashtag & Galeri Tamu','#MeyzsaFahrezzi'],['penutup','Penutup','Terima kasih']
+];
+function openMenuIndex(){
+  parkBack();
+  sheetBody.innerHTML='';
+  var div=document.createElement('div'); div.className='menuindex';
+  div.innerHTML='<h3>Peta Bintang — Semua Menu</h3>'+MENU.map(function(m,i){
+    return '<button type="button" data-sec="'+m[0]+'"><b>'+(i+1)+'</b>'+m[1]+'<small>'+m[2]+'</small></button>';
+  }).join('')+'<button type="button" data-act="flat"><b>▤</b>Lihat Semua Info (daftar datar)<small>tanpa 3D</small></button>';
+  sheetBody.appendChild(div);
+  div.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    if(b.getAttribute('data-act')==='flat'){ closeSheet(); setTimeout(showFlat,80); return; }
+    openSection(b.getAttribute('data-sec'));
+  });
+  sheet.classList.add('on'); sheet.setAttribute('aria-hidden','false');
+  if(window.__glPause)window.__glPause();
+}
+$('#hudMenu').addEventListener('click',openMenuIndex);
+$('#hudFlat').addEventListener('click',function(){ closeSheet(); showFlat(); });
+$('#hudLite').addEventListener('click',function(){ glFailed=true; closeSheet(); showFlat(); toastFlat('Mode ringan aktif — semua info tetap lengkap.'); });
+$('#toGlBtn').addEventListener('click',function(){ showGL(); window.scrollTo(0,0); });
+$('#toTopBtn').addEventListener('click',function(){ window.scrollTo({top:0,behavior:REDUCED?'auto':'smooth'}); });
+
+function toastFlat(msg){
+  var t=document.createElement('div'); t.className='toast on'; t.style.cssText='position:fixed;left:50%;z-index:95';
+  t.textContent=msg; document.body.appendChild(t);
+  setTimeout(function(){ t.classList.remove('on'); setTimeout(function(){t.remove()},600); },3400);
+}
+</script>
+
+<script>
+/* ================= QR CHECK-IN (matriks v5 dari encoder segno; ter-decode ZXing + OpenCV ke URL preview) ================= */
+(function(){
+  var ROWS=["fecf3d4bf8","829a65aa08","ba543aeae8","baac51dae8","ba1e30d2e8","826db6aa08","feaaaaabf8","00ded3a000","b74d042a58","b0fd398910","aa00efa600","cc789ae460","1f4d434ff8","806fd497c8","f3441a6ab0","9149a6b780","ae87465168","c81e0ff238","e79c245718","4971eba790","3e31e40d88","c55a590840","bb24af0900","ec745adcf0","777a927ea0","480e56fbf8","6e3454a1f0","9df93e8e18","2a443cdfe8","009d0bc8a8","fef5a60ab8","82a0e91888","ba12952fc0","bad7d13ec8","bab5474280","821d3165e0","fed2caf4b8"];
+  var box=document.getElementById('qrBox'); if(!box)return;
+  var N=37,Q=4,U=8,cv=document.createElement('canvas'); cv.width=cv.height=(N+2*Q)*U;
+  cv.style.width='100%'; cv.style.height='auto'; cv.setAttribute('role','img');
+  var cx=cv.getContext('2d'); cx.fillStyle='#FFFFFF'; cx.fillRect(0,0,cv.width,cv.height); cx.fillStyle='#0A1230';
+  ROWS.forEach(function(hex,y){
+    var v=parseInt(hex,16);
+    for(var x=0;x<N;x++){ var bit=Math.floor(v/Math.pow(2,39-x))%2; if(bit)cx.fillRect((x+Q)*U,(y+Q)*U,U,U); }
+  });
+  box.appendChild(cv);
+})();
+
+/* ================================================================
+   PANGGUNG 3D — Planetarium (Three.js self-hosted, lazy-load)
+   Gagal WebGL / FPS rendah -> otomatis mode datar (syarat keras).
+   ================================================================ */
+(function(){
+  var A='assets/undangya/planetarium-cinta/';
+  var cover=$('#cover'), toast=$('#glToast');
+  function glToast(msg,ms){ toast.textContent=msg; toast.classList.add('on'); clearTimeout(toast.__t); toast.__t=setTimeout(function(){toast.classList.remove('on')},ms||3600); }
+
+  /* bungkus showGL/showFlat: tombol musik selalu terjangkau */
+  var _showGL=showGL, _showFlat=showFlat;
+  showGL=function(){ _showGL(); musicBtn.style.zIndex='70'; };
+  showFlat=function(){ _showFlat(); musicBtn.style.zIndex=''; };
+
+  function goFlat(reason){
+    glFailed=true; cover.classList.add('hide'); showFlat();
+    if(reason)toastFlat(reason);
+  }
+
+  /* ---------- muat three.js ---------- */
+  var threeState='idle', threeCbs=[];
+  function loadThree(cb){
+    if(window.THREE){ threeState='ok'; cb(true); return; }
+    if(threeState==='loading'){ threeCbs.push(cb); return; }
+    if(threeState==='fail'){ cb(false); return; }
+    threeState='loading'; threeCbs.push(cb);
+    var s=document.createElement('script'); s.src=A+'three.min.js'; s.async=true;
+    var to=setTimeout(function(){ if(threeState==='loading'){ threeState='fail'; flush(false);} },9000);
+    s.onload=function(){ clearTimeout(to); threeState=window.THREE?'ok':'fail'; flush(threeState==='ok'); };
+    s.onerror=function(){ clearTimeout(to); threeState='fail'; flush(false); };
+    document.head.appendChild(s);
+    function flush(ok){ threeCbs.splice(0).forEach(function(f){f(ok)}); }
+  }
+  setTimeout(function(){ if(!REDUCED) loadThree(function(){}); },1600); // panaskan setelah sampul tampil
+
+  /* ---------- alur buka ---------- */
+  var opening=false;
+  $('#openBtn').addEventListener('click',function(){
+    if(opening)return; opening=true;
+    startMusic();
+    if(REDUCED){ goFlat(); return; }
+    cover.classList.add('hide');
+    document.body.classList.add('locked');
+    loadThree(function(ok){
+      if(!ok){ goFlat(); return; }
+      var okInit=false;
+      try{ okInit=initGL(); }catch(e){ okInit=false; }
+      if(!okInit){ goFlat('Mode 3D tidak tersedia di perangkat ini — menampilkan semua info.'); return; }
+      glReady=true; showGL(); startRitual();
+    });
+  });
+  $('#openFlatBtn').addEventListener('click',function(){
+    startMusic(); cover.classList.add('hide'); showFlat();
+  });
+
+  /* ================================================================
+     SCENE
+     ================================================================ */
+  var renderer,scene,camera,clock,rafId=null,running=false;
+  var yaw=0,yawT=0,pitch=.34,pitchT=.34,camR=7.4;
+  var lookY=2.7,lookYT=2.7;
+  var hotspots=[],planets=[],anim={t:0,ritual:-1,beam:null,slit:null,scopeAim:null,comet:null,cometPath:0,lineMat:null,lineGeo:null,tw1:null,tw2:null,projShown:false};
+  var HSDEF=[
+    {id:'sambutan', label:'Sambutan', pos:[0,12.6,-12], alt:false},
+    {id:'mempelai', label:'Mempelai', pos:[-2.6,7.6,-14], alt:true},
+    {id:'countdown',label:'Countdown', pos:[0,9.4,-7], alt:false},
+    {id:'acara',    label:'Acara', pos:[10.5,6.6,-12], alt:true},
+    {id:'galeri',   label:'Galeri', pos:[-9.4,5.4,-10.6], alt:false},
+    {id:'kisah',    label:'Love Story', pos:[8.2,4.6,-14.6], alt:true},
+    {id:'cuplikan', label:'Video Teaser', pos:[-11,7.6,-13], alt:false},
+    {id:'rsvp',     label:'RSVP', pos:[-6,10.8,-15], alt:true},
+    {id:'amplop',   label:'Amplop', pos:[12,9,-9], alt:false, comet:true},
+    {id:'bukutamu', label:'Buku Tamu & QR', pos:[-13.5,4.4,-5], alt:true}
+  ];
+
+  function canvasTex(w,h,draw){
+    var c=document.createElement('canvas'); c.width=w; c.height=h; draw(c.getContext('2d'),w,h);
+    var t=new THREE.CanvasTexture(c); return t;
+  }
+  function glowTexture(){
+    return canvasTex(128,128,function(g){
+      var r=g.createRadialGradient(64,64,2,64,64,62);
+      r.addColorStop(0,'rgba(255,255,255,1)'); r.addColorStop(.25,'rgba(255,244,214,.85)');
+      r.addColorStop(.6,'rgba(217,164,65,.28)'); r.addColorStop(1,'rgba(217,164,65,0)');
+      g.fillStyle=r; g.fillRect(0,0,128,128);
+    });
+  }
+  function zodiacTexture(){
+    return canvasTex(1024,1024,function(g){
+      g.clearRect(0,0,1024,1024); g.translate(512,512);
+      g.strokeStyle='rgba(217,164,65,.9)'; g.fillStyle='rgba(217,164,65,.10)';
+      g.beginPath(); g.arc(0,0,498,0,7); g.arc(0,0,352,0,7,true); g.fill('evenodd');
+      g.lineWidth=3; g.beginPath(); g.arc(0,0,498,0,7); g.stroke();
+      g.lineWidth=2; g.beginPath(); g.arc(0,0,352,0,7); g.stroke();
+      var RN=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII'];
+      g.fillStyle='#E7BC63'; g.font='64px Georgia,serif'; g.textAlign='center'; g.textBaseline='middle';
+      for(var i=0;i<12;i++){
+        var a=i*Math.PI/6;
+        g.save(); g.rotate(a);
+        g.beginPath(); g.moveTo(0,-352); g.lineTo(0,-498); g.strokeStyle='rgba(217,164,65,.65)'; g.lineWidth=2; g.stroke();
+        g.translate(0,-425); g.fillText(RN[i],0,0); g.restore();
+        for(var k=1;k<5;k++){ var aa=a+k*Math.PI/30;
+          g.save(); g.rotate(aa); g.beginPath(); g.moveTo(0,-478); g.lineTo(0,-498); g.stroke(); g.restore(); }
+      }
+      for(var s=0;s<90;s++){ var sa=Math.random()*Math.PI*2, sr=60+Math.random()*270;
+        g.beginPath(); g.arc(Math.cos(sa)*sr,Math.sin(sa)*sr,Math.random()*2.2+.6,0,7); g.fillStyle='rgba(255,255,255,.75)'; g.fill(); }
+      g.beginPath(); g.arc(0,0,10,0,7); g.fillStyle='#FFF3D6'; g.fill();
+    });
+  }
+  function ringTexture(){
+    return canvasTex(512,512,function(g){
+      g.clearRect(0,0,512,512); g.translate(256,256);
+      for(var r=120;r<252;r+=4){
+        var a=.16+.5*Math.abs(Math.sin(r*.11))*(1-(r-120)/160);
+        g.beginPath(); g.arc(0,0,r,0,7); g.strokeStyle='rgba(230,214,255,'+a.toFixed(2)+')'; g.lineWidth=3; g.stroke();
+      }
+    });
+  }
+
+  function initGL(){
+    var cv=document.getElementById('glcanvas');
+    renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,powerPreference:'high-performance'});
+    if(!renderer||!renderer.getContext())return false;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.25));
+    scene=new THREE.Scene(); scene.background=new THREE.Color(0x04060f);
+    camera=new THREE.PerspectiveCamera(62,1,.1,120);
+    clock=new THREE.Clock();
+    var texLoader=new THREE.TextureLoader();
+    function tex(name){ var t=texLoader.load(A+name); t.colorSpace=THREE.SRGBColorSpace; return t; }
+
+    /* lampu */
+    scene.add(new THREE.AmbientLight(0x8fa3ff,.55));
+    var key=new THREE.PointLight(0xffd98a,60,60,1.6); key.position.set(0,3.4,2); scene.add(key);
+    var rim=new THREE.PointLight(0x6d5bd0,40,70,1.6); rim.position.set(-8,10,-10); scene.add(rim);
+
+    /* kubah */
+    var dome=new THREE.Mesh(new THREE.SphereGeometry(30,42,22,0,Math.PI*2,0,Math.PI*.62),
+      new THREE.MeshBasicMaterial({map:tex('dome-sky.webp'),side:THREE.BackSide}));
+    dome.position.y=-3.4; dome.rotation.y=Math.PI*.32; scene.add(dome);
+
+    /* lantai */
+    var floorTex=canvasTex(512,512,function(g){
+      var r=g.createRadialGradient(256,256,20,256,256,256);
+      r.addColorStop(0,'#141F4D'); r.addColorStop(.55,'#0A1230'); r.addColorStop(1,'#04060F');
+      g.fillStyle=r; g.fillRect(0,0,512,512);
+      g.strokeStyle='rgba(217,164,65,.5)'; g.lineWidth=3;
+      [120,190].forEach(function(rr){ g.beginPath(); g.arc(256,256,rr,0,7); g.stroke(); });
+    });
+    var floor=new THREE.Mesh(new THREE.CircleGeometry(29,48),new THREE.MeshStandardMaterial({map:floorTex,roughness:.92,metalness:.05}));
+    floor.rotation.x=-Math.PI/2; scene.add(floor);
+
+    /* bintang instans (points) */
+    var glow=glowTexture();
+    function starCloud(n,size,op){
+      var pos=new Float32Array(n*3), col=new Float32Array(n*3);
+      var palette=[[1,1,1],[.72,.78,1],[1,.87,.6],[1,1,1]];
+      for(var i=0;i<n;i++){
+        var th=Math.random()*Math.PI*2, ph=Math.acos(1-Math.random()*.92), r=28.2;
+        pos[i*3]=r*Math.sin(ph)*Math.cos(th); pos[i*3+1]=r*Math.cos(ph)-3.2; pos[i*3+2]=r*Math.sin(ph)*Math.sin(th);
+        var c=palette[(Math.random()*palette.length)|0];
+        col[i*3]=c[0]; col[i*3+1]=c[1]; col[i*3+2]=c[2];
+      }
+      var g=new THREE.BufferGeometry();
+      g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+      g.setAttribute('color',new THREE.BufferAttribute(col,3));
+      var mt=new THREE.PointsMaterial({size:size,map:glow,vertexColors:true,transparent:true,opacity:op,depthWrite:false,blending:THREE.AdditiveBlending,sizeAttenuation:true});
+      var p=new THREE.Points(g,mt); scene.add(p); return mt;
+    }
+    anim.tw1=starCloud(1500,.5,.95); anim.tw2=starCloud(700,.85,.8);
+
+    /* nebula sprite */
+    [['nebula-1.webp',-17,13,-19,34,.55,0x9a86ff],['nebula-1.webp',18,15,-16,28,.4,0xff9ad5],
+     ['nebula-2.webp',15,10,-21,30,.5,0x7fe7d2],['nebula-2.webp',-19,9,-14,24,.38,0xffd98a],
+     ['spiral-galaxy.webp',-6,16,-22,25,.55,0xffffff],['nebula-3.webp',5,17.5,-20,37,.48,0xffffff],
+     ['aurora.webp',-15,18,-17,30,.42,0xffffff],['asteroid.webp',14.5,13,-18,7,.85,0xffffff],
+     ['asteroid.webp',-16.5,4.5,-18,5.5,.8,0xffffff],['red-star.webp',19.5,11.5,-13,6.5,.92,0xffffff]].forEach(function(cfg){
+      var sm=new THREE.SpriteMaterial({map:tex(cfg[0]),transparent:true,opacity:cfg[5],color:cfg[6],depthWrite:false,blending:THREE.AdditiveBlending});
+      var sp=new THREE.Sprite(sm); sp.position.set(cfg[1],cfg[2],cfg[3]); sp.scale.set(cfg[4],cfg[4]*.72,1); scene.add(sp);
+    });
+
+    /* planet */
+    function planet(name,r,x,y,z,ring){
+      var grp=new THREE.Group(); grp.position.set(x,y,z);
+      var mesh=new THREE.Mesh(new THREE.SphereGeometry(r,30,20),new THREE.MeshStandardMaterial({map:tex(name),roughness:.85,metalness:.05}));
+      grp.add(mesh);
+      if(ring){
+        var rg=new THREE.Mesh(new THREE.RingGeometry(r*1.45,r*2.3,64),
+          new THREE.MeshBasicMaterial({map:ringTexture(),transparent:true,side:THREE.DoubleSide,depthWrite:false}));
+        rg.rotation.x=Math.PI/2.35; grp.add(rg); grp.userData.ring=rg;
+      }
+      grp.userData.mesh=mesh; grp.userData.y0=y; grp.userData.ph=Math.random()*7;
+      scene.add(grp); planets.push(grp); return grp;
+    }
+    planet('planet-gas.webp',2.6,-11,7.6,-13);
+    planet('planet-ring.webp',2.0,10.5,6.6,-12,true);
+    planet('planet-ice.webp',1.5,13.5,3.2,-4.5);
+    planet('planet-earth.webp',1.7,-13.5,4.4,-5);
+    planet('planet-rose.webp',1.35,6.5,9.8,-16.5);
+    planet('moon.webp',1.1,-6,10.8,-15);
+    planet('planet-lava.webp',1.2,-16.5,2.6,-9);
+    planet('planet-gold.webp',1.45,16.5,8.6,-9.5);
+
+    /* cincin zodiak */
+    var zod=new THREE.Group(); zod.position.set(0,9.4,-7); zod.rotation.x=1.12; zod.rotation.y=.2;
+    var band=new THREE.Mesh(new THREE.RingGeometry(3.4,5.4,72),
+      new THREE.MeshBasicMaterial({map:zodiacTexture(),transparent:true,side:THREE.DoubleSide,depthWrite:false}));
+    zod.add(band);
+    var tor=new THREE.Mesh(new THREE.TorusGeometry(4.4,.06,10,90),
+      new THREE.MeshStandardMaterial({color:0xC9973F,metalness:.95,roughness:.3}));
+    zod.add(tor); scene.add(zod); anim.zod=zod;
+
+    /* teleskop kuningan — poros panggung */
+    var brass=new THREE.MeshStandardMaterial({color:0xC9973F,metalness:.95,roughness:.32});
+    var brassD=new THREE.MeshStandardMaterial({color:0x7A5A22,metalness:.9,roughness:.45});
+    var iron=new THREE.MeshStandardMaterial({color:0x1B2340,metalness:.6,roughness:.6});
+    var scope=new THREE.Group(); scope.position.set(0,0,-1);
+    var base=new THREE.Mesh(new THREE.CylinderGeometry(.85,.95,.22,24),iron); base.position.y=.11; scope.add(base);
+    for(var li=0;li<3;li++){
+      var leg=new THREE.Mesh(new THREE.CylinderGeometry(.06,.08,1.7,8),brassD);
+      var la=li/3*Math.PI*2;
+      leg.position.set(Math.cos(la)*.55,.8,Math.sin(la)*.55); leg.rotation.z=Math.cos(la)*.42; leg.rotation.x=-Math.sin(la)*.42; scope.add(leg);
+    }
+    var col=new THREE.Mesh(new THREE.CylinderGeometry(.17,.22,1.15,14),brassD); col.position.y=1.35; scope.add(col);
+    var aim=new THREE.Group(); aim.position.y=1.95; scope.add(aim);
+    var tube=new THREE.Mesh(new THREE.CylinderGeometry(.30,.36,3.6,20),brass); tube.rotation.z=Math.PI/2; aim.add(tube);
+    var eye=new THREE.Mesh(new THREE.CylinderGeometry(.13,.16,1.1,12),brassD); eye.position.x=-2.2; eye.rotation.z=Math.PI/2; aim.add(eye);
+    var rimT=new THREE.Mesh(new THREE.TorusGeometry(.31,.045,10,28),brassD); rimT.position.x=1.8; rimT.rotation.y=Math.PI/2; aim.add(rimT);
+    var finder=new THREE.Mesh(new THREE.CylinderGeometry(.07,.07,1.5,10),brassD); finder.position.set(.3,.42,0); finder.rotation.z=Math.PI/2; aim.add(finder);
+    aim.rotation.z=.35; var lamp=new THREE.PointLight(0xffc873,7,7,1.8); scope.add(lamp);
+    scene.add(scope); anim.scopeAim=aim;
+
+    /* celah kubah (slit) + berkas cahaya */
+    var slit=new THREE.Mesh(new THREE.BoxGeometry(3.4,10.5,.3),
+      new THREE.MeshStandardMaterial({color:0x0D173C,roughness:.8,metalness:.3,emissive:0x111C46,emissiveIntensity:.6}));
+    slit.position.set(0,26.5,-13.5); slit.lookAt(0,0,-1); scene.add(slit); anim.slit=slit;
+    var beamMat=new THREE.MeshBasicMaterial({color:0xFFE9B8,transparent:true,opacity:0,depthWrite:false,blending:THREE.AdditiveBlending,side:THREE.DoubleSide});
+    var beam=new THREE.Mesh(new THREE.CylinderGeometry(.5,2.3,25,20,1,true),beamMat);
+    beam.position.set(0,14.2,-7.4); beam.rotation.x=.5; scene.add(beam); anim.beam=beamMat;
+
+    /* kursi planetarium (instanced) */
+    var seatGeo=new THREE.BoxGeometry(.95,.55,.95);
+    var seatMat=new THREE.MeshStandardMaterial({color:0x14235C,roughness:.85});
+    var seats=new THREE.InstancedMesh(seatGeo,seatMat,30);
+    var dummy=new THREE.Object3D(); var si=0;
+    [5.6,7.1,8.6].forEach(function(rad,row){
+      var cnt=8+row*2;
+      for(var i=0;i<cnt&&si<30;i++){
+        var an=Math.PI*(.18+.64*(i/(cnt-1)));
+        dummy.position.set(Math.cos(an)*rad,.28,Math.sin(an)*rad-1);
+        dummy.lookAt(0,.28,-1); dummy.updateMatrix();
+        seats.setMatrixAt(si++,dummy.matrix);
+      }
+    });
+    seats.count=si; scene.add(seats);
+
+    /* bintang kembar (mempelai) */
+    function glowSprite(scale,color,op){
+      var sm=new THREE.SpriteMaterial({map:glow,transparent:true,opacity:op||.95,color:color||0xffffff,depthWrite:false,blending:THREE.AdditiveBlending});
+      var sp=new THREE.Sprite(sm); sp.scale.set(scale,scale,1); return sp;
+    }
+    var tw1=glowSprite(2.1,0xFFF3D6); tw1.position.set(-3.6,7.7,-14); scene.add(tw1);
+    var tw2=glowSprite(1.5,0xB7A6FF); tw2.position.set(-1.5,7.2,-14); scene.add(tw2);
+    anim.twin=[tw1,tw2];
+    var zen=glowSprite(2.6,0xFFFFFF); zen.position.set(0,12.6,-12); scene.add(zen);
+
+    /* klaster galeri (Pleiades) */
+    anim.cluster=[];
+    [[-9.4,5.4,-10.6],[-8.6,5.9,-11],[-10.2,6,-10.8],[-9,4.7,-10.4],[-10.6,5.2,-11.2],[-8.2,5.1,-10.9],[-9.8,6.4,-11.4],[-8.8,6.6,-10.5]].forEach(function(p,i){
+      var s=glowSprite(.7+((i*37)%4)*.16, i%2?0xB7A6FF:0xFFF3D6); s.position.set(p[0],p[1],p[2]); scene.add(s); anim.cluster.push(s);
+    });
+
+    /* rasi cincin kawin (kisah) */
+    var pts=[];
+    for(var ci=0;ci<2;ci++){
+      var cx0=7.3+ci*1.9;
+      for(var k=0;k<=26;k++){ var aa=k/26*Math.PI*2; pts.push(new THREE.Vector3(cx0+Math.cos(aa)*1.25,5.1+Math.sin(aa)*1.25,-14.6)); }
+    }
+    var lg=new THREE.BufferGeometry().setFromPoints(pts);
+    var lm=new THREE.LineBasicMaterial({color:0xD9A441,transparent:true,opacity:.85});
+    var line=new THREE.Line(lg,lm); scene.add(line); anim.lineGeo=lg; anim.lineTotal=pts.length;
+    pts.forEach(function(p,i){ if(i%5===0){ var s=glowSprite(.5,0xFFE9B8,.9); s.position.copy(p); scene.add(s); } });
+
+    /* komet (amplop) */
+    var comet=new THREE.Sprite(new THREE.SpriteMaterial({map:tex('comet.webp'),transparent:true,opacity:.95,depthWrite:false,blending:THREE.AdditiveBlending}));
+    comet.scale.set(7.5,7.5,1); scene.add(comet); anim.comet=comet;
+
+    /* papan peta bintang berbingkai kuningan */
+    var chart=new THREE.Mesh(new THREE.PlaneGeometry(3.4,3.4),new THREE.MeshBasicMaterial({map:tex('star-chart.webp')}));
+    chart.position.set(5.4,2.7,-5.6); chart.lookAt(0,2.2,-1); scene.add(chart);
+    var chartF=new THREE.Mesh(new THREE.PlaneGeometry(3.64,3.64),new THREE.MeshBasicMaterial({color:0xC9973F}));
+    chartF.position.copy(chart.position); chartF.rotation.copy(chart.rotation); chartF.translateZ(-.03); scene.add(chartF);
+
+    /* tambalan kilau bintang di belakang rasi */
+    [[-2.6,7.5,-14.6,4.6,.32],[-9.4,5.6,-11.6,3.6,.38]].forEach(function(c){
+      var sm2=new THREE.SpriteMaterial({map:tex('sparkle.webp'),transparent:true,opacity:c[4],depthWrite:false,blending:THREE.AdditiveBlending});
+      var sp2=new THREE.Sprite(sm2); sp2.position.set(c[0],c[1],c[2]); sp2.scale.set(c[3],c[3],1); scene.add(sp2);
+    });
+
+    buildHotspots();
+    bindDrag(cv);
+    resize(); window.addEventListener('resize',resize);
+    document.addEventListener('visibilitychange',function(){ if(document.hidden)pauseGL(); else if(mode==='gl'&&sheetHidden())resumeGL(); });
+    return true;
+  }
+  function sheetHidden(){ return !sheet.classList.contains('on'); }
+
+  function resize(){
+    if(!renderer)return;
+    var w=glwrap.clientWidth||window.innerWidth, h=glwrap.clientHeight||window.innerHeight;
+    renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();
+  }
+
+  /* ---------- hotspot HTML ---------- */
+  var hsLayer=document.getElementById('hotspots');
+  function buildHotspots(){
+    hsLayer.innerHTML=''; hotspots=[];
+    HSDEF.forEach(function(def){
+      var el=document.createElement('button'); el.className='hotspot'+(def.alt?' alt':''); el.type='button';
+      el.innerHTML='<i></i>'+def.label; el.style.opacity='0'; el.style.pointerEvents='none';
+      el.addEventListener('click',function(){
+        flyTo(def); setTimeout(function(){ openSection(def.id); }, REDUCED?60:620);
+      });
+      hsLayer.appendChild(el);
+      hotspots.push({def:def,el:el,vec:new THREE.Vector3(def.pos[0],def.pos[1],def.pos[2])});
+    });
+  }
+  function showHotspots(){
+    hotspots.forEach(function(h,i){ setTimeout(function(){ h.el.style.opacity=''; h.el.style.pointerEvents='auto'; }, i*90); });
+  }
+  var _pv=null;
+  function projectHotspots(){
+    if(!_pv)_pv=new THREE.Vector3();
+    var w=glwrap.clientWidth, h=glwrap.clientHeight;
+    hotspots.forEach(function(hs){
+      if(hs.def.comet&&anim.comet)hs.vec.copy(anim.comet.position);
+      _pv.copy(hs.vec).project(camera);
+      var behind=_pv.z>1||_pv.z<-1;
+      hs.el.classList.toggle('behind',behind);
+      if(!behind){ hs.el.style.left=((_pv.x*.5+.5)*w)+'px'; hs.el.style.top=((-_pv.y*.5+.5)*h)+'px'; }
+    });
+  }
+
+  /* ---------- kendali jelajah ---------- */
+  function bindDrag(cv){
+    var drag=false,lx=0,ly=0,moved=0;
+    cv.addEventListener('pointerdown',function(e){ drag=true; moved=0; lx=e.clientX; ly=e.clientY; try{ cv.setPointerCapture(e.pointerId); }catch(_){} });
+    cv.addEventListener('pointermove',function(e){
+      if(!drag)return;
+      var dx=e.clientX-lx, dy=e.clientY-ly; lx=e.clientX; ly=e.clientY; moved+=Math.abs(dx)+Math.abs(dy);
+      yawT-=dx*.0052; pitchT=Math.max(.06,Math.min(1.25,pitchT+dy*.0038)); lookYT=2.7;
+    });
+    ['pointerup','pointercancel'].forEach(function(ev){ cv.addEventListener(ev,function(){ drag=false; }); });
+    if(window.DeviceOrientationEvent&&typeof DeviceOrientationEvent.requestPermission!=='function'){
+      window.addEventListener('deviceorientation',function(e){
+        if(e.gamma==null||mode!=='gl')return;
+        yawT+= (e.gamma*.00006);
+      });
+    }
+  }
+  function flyTo(def){
+    var p=def.pos;
+    if(def.comet&&anim.comet)p=[anim.comet.position.x,anim.comet.position.y,anim.comet.position.z];
+    // kamera mengorbit poros (0,-1) dan selalu menatap pusat: posisi kamera harus berlawanan arah dari objek
+    yawT=Math.atan2(-p[0],-(p[2]+1));
+    pitchT=Math.max(.12,Math.min(1.2,Math.atan2(p[1]-2.4,Math.hypot(p[0],p[2]+1))+.32));
+    lookYT=Math.max(2.7,Math.min(6.2,2.7+(p[1]-2.4)*.34));
+  }
+
+  /* ---------- ritual pembuka ---------- */
+  var ritualT0=0;
+  function startRitual(){
+    resize();
+    if(REDUCED){ anim.ritual=99; showHotspots(); return; }
+    anim.ritual=0; ritualT0=performance.now();
+    $('#skipBeam').hidden=false;
+    $('#skipBeam').onclick=function(){ finishRitual(); };
+    resumeGL();
+  }
+  function finishRitual(){
+    if(anim.ritual<0||anim.ritual>=90)return;
+    anim.ritual=90;
+    if(anim.slit)anim.slit.rotation.y=1.05;
+    if(anim.beam)anim.beam.opacity=.09;
+    if(anim.scopeAim)anim.scopeAim.rotation.z=.95;
+    $('#projection').classList.remove('on');
+    $('#skipBeam').hidden=true;
+    showHotspots(); glToast('Ketuk bintang bercahaya untuk membuka setiap cerita ✦');
+    startFpsWatch();
+  }
+
+  /* ---------- jaga FPS ---------- */
+  var fpsWatchOn=false;
+  function startFpsWatch(){
+    if(fpsWatchOn)return; fpsWatchOn=true;
+    var last=performance.now(),lastF=window.__glFrames||0,bad=0;
+    (function probe(){
+      if(!fpsWatchOn)return;
+      var now=performance.now(), f=window.__glFrames||0;
+      if(!running){ last=now; lastF=f; }
+      else if(now-last>=2000){
+        var fps=(f-lastF)/((now-last)/1000); last=now; lastF=f;
+        if(mode==='gl'&&fps<22){ bad++; if(bad>=2){ fpsWatchOn=false; goFlat('Perangkat beralih ke mode ringan demi kelancaran — semua info tetap lengkap.'); return; } }
+        else bad=0;
+      }
+      setTimeout(probe,500);
+    })();
+  }
+
+  /* ---------- loop ---------- */
+  function pauseGL(){ running=false; if(rafId)cancelAnimationFrame(rafId); rafId=null; }
+  function resumeGL(){
+    if(running||!renderer)return; running=true; clock.getDelta();
+    rafId=requestAnimationFrame(loop);
+  }
+  window.__glPause=pauseGL; window.__glResume=function(){ if(mode==='gl')resumeGL(); };
+
+  function loop(){
+    if(!running)return;
+    window.__glFrames=(window.__glFrames||0)+1;
+    rafId=requestAnimationFrame(loop);
+    var dt=Math.min(clock.getDelta(),.05), t=clock.elapsedTime; anim.t=t;
+    /* ritual */
+    if(anim.ritual>=0&&anim.ritual<90){
+      var rt=(performance.now()-ritualT0)/1000;
+      if(anim.slit)anim.slit.rotation.y=Math.min(1.05,Math.max(0,(rt-.3)/1.6)*1.05);
+      if(anim.scopeAim)anim.scopeAim.rotation.z=.35+Math.min(.6,Math.max(0,(rt-.5)/1.8)*.6);
+      if(anim.beam)anim.beam.opacity=Math.min(.09,Math.max(0,(rt-1.2)/1.4)*.09);
+      if(rt>1.9)$('#projection').classList.add('on');
+      if(rt>2.2)pitchT=.62;
+      if(rt>5.4)finishRitual();
+    }
+    /* kamera mengorbit poros teleskop dengan redaman */
+    yaw+=(yawT-yaw)*Math.min(1,dt*4.2); pitch+=(pitchT-pitch)*Math.min(1,dt*4.2);
+    var cx=Math.sin(yaw)*camR, cz=Math.cos(yaw)*camR-1, cy=1.4+pitch*4.6;
+    lookY+=(lookYT-lookY)*Math.min(1,dt*3);
+    camera.position.set(cx,cy,cz); camera.lookAt(0,lookY,-1);
+    /* animasi ambient */
+    planets.forEach(function(p,i){ p.userData.mesh.rotation.y=t*(.05+i*.013); p.position.y=p.userData.y0+Math.sin(t*.5+p.userData.ph)*.22; if(p.userData.ring)p.userData.ring.rotation.z=t*.05; });
+    if(anim.zod)anim.zod.rotation.z=t*.05;
+    if(anim.tw1)anim.tw1.opacity=.82+Math.sin(t*1.7)*.16;
+    if(anim.tw2)anim.tw2.opacity=.68+Math.cos(t*1.3)*.2;
+    if(anim.twin){ anim.twin[0].scale.setScalar(2.1+Math.sin(t*2.1)*.18); anim.twin[1].scale.setScalar(1.5+Math.cos(t*1.8)*.14); }
+    if(anim.cluster)anim.cluster.forEach(function(s,i){ s.material.opacity=.55+Math.abs(Math.sin(t*1.4+i*1.3))*.45; });
+    if(anim.lineGeo){ var n=Math.floor(((Math.sin(t*.24)+1)/2)*anim.lineTotal)+2; anim.lineGeo.setDrawRange(0,n); }
+    if(anim.comet){
+      anim.cometPath+=dt*.05;
+      var ca=anim.cometPath;
+      anim.comet.position.set(Math.cos(ca)*13.5,8.6+Math.sin(ca*1.7)*1.6,Math.sin(ca)*9-8);
+      anim.comet.material.rotation=-ca-.6;
+    }
+    if(anim.scopeAim&&anim.ritual<0)anim.scopeAim.rotation.z=.35+Math.sin(t*.3)*.05;
+    projectHotspots();
+    renderer.render(scene,camera);
+  }
+})();
+</script>
+</body>
+</html>

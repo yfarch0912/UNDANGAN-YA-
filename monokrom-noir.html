@@ -974,5 +974,18 @@ p,li,.cover-date,.cover-guest,#btnOpen,.sec-kicker,.person p,.ig-btn,.cd-box spa
   });
 })();
 </script>
+<style id="uy-devices">
+/* Dukungan perangkat tablet & laptop (perintah user 2026-11-14): kolom undangan melebar bertahap; mode HP tidak berubah. */
+@media (min-width:761px) and (max-width:1199px){
+.phone{max-width:680px}
+#btnMusic{right:calc(50% - 340px + 14px)}
+.phone::after{width:min(680px,100vw)}
+}
+@media (min-width:1200px){
+.phone{max-width:860px}
+#btnMusic{right:calc(50% - 430px + 14px)}
+.phone::after{width:min(860px,100vw)}
+}
+</style>
 </body>
 </html>

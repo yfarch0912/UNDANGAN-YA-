@@ -1172,5 +1172,16 @@ section[id]{background-size:cover;background-position:center;background-repeat:n
 })();
 </script>
 <script>(function(){var rail=document.getElementById("galGrid"),dots=document.getElementById("galDots");if(!rail||!dots)return;var n=rail.children.length;for(var i=0;i<n;i++){var d=document.createElement("i");if(i===0)d.className="on";dots.appendChild(d);}var tick=false;rail.addEventListener("scroll",function(){if(tick)return;tick=true;requestAnimationFrame(function(){var mx=rail.scrollWidth-rail.clientWidth;var idx=mx>0?Math.round(rail.scrollLeft/mx*(n-1)):0;idx=Math.max(0,Math.min(n-1,idx));for(var j=0;j<dots.children.length;j++)dots.children[j].className=j===idx?"on":"";tick=false;});},{passive:true});})();</script>
+<style id="uy-devices">
+/* Dukungan perangkat tablet & laptop (perintah user 2026-11-14): kolom undangan melebar bertahap; mode HP tidak berubah. */
+@media (min-width:761px) and (max-width:1199px){
+.phone{max-width:680px}
+#btnMusic{right:calc(50% - 340px + 14px)}
+}
+@media (min-width:1200px){
+.phone{max-width:860px}
+#btnMusic{right:calc(50% - 430px + 14px)}
+}
+</style>
 </body>
 </html>

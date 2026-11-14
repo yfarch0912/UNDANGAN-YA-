@@ -816,5 +816,24 @@ var io2=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isInt
 navMap.forEach(function(id){var el=document.getElementById(id); if(el)io2.observe(el);});
 })();
 </script>
+<style id="uy-devices">
+/* Dukungan perangkat tablet & laptop (perintah user 2026-11-14): kolom undangan melebar bertahap; mode HP tidak berubah. */
+@media (min-width:761px) and (max-width:1199px){
+.phone{max-width:680px}
+.worldbg{width:min(680px,100%)}
+.worldveil{width:min(680px,100%)}
+.cover-inner{width:min(680px,100%)}
+.bnav{width:min(680px,100%)}
+#lightbox img{max-width:min(680px,94vw)}
+}
+@media (min-width:1200px){
+.phone{max-width:860px}
+.worldbg{width:min(860px,100%)}
+.worldveil{width:min(860px,100%)}
+.cover-inner{width:min(860px,100%)}
+.bnav{width:min(860px,100%)}
+#lightbox img{max-width:min(860px,94vw)}
+}
+</style>
 </body>
 </html>

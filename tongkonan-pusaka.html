@@ -1036,5 +1036,20 @@ body.opened #bottomNav{display:flex}
   });
 })();
 </script>
+<style id="uy-devices">
+/* Dukungan perangkat tablet & laptop (perintah user 2026-11-14): kolom undangan melebar bertahap; mode HP tidak berubah. */
+@media (min-width:761px) and (max-width:1199px){
+.phone{max-width:680px}
+.world-fixed{width:min(680px,100%)}
+#btnMusic{right:calc(50% - 340px + 14px)}
+#bottomNav{max-width:680px}
+}
+@media (min-width:1200px){
+.phone{max-width:860px}
+.world-fixed{width:min(860px,100%)}
+#btnMusic{right:calc(50% - 430px + 14px)}
+#bottomNav{max-width:860px}
+}
+</style>
 </body>
 </html>

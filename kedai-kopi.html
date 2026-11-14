@@ -472,5 +472,16 @@ sampleAmbient2:function(){var el=document.querySelector(".menu-row img"); if(!el
 })();
 </script>
 <audio id="bgmShared" loop preload="none" src="assets/audio/petals-on-the-stone-floor.mp3"></audio>
+<style id="uy-devices">
+/* Dukungan perangkat tablet & laptop (perintah user 2026-11-14): kolom undangan melebar bertahap; mode HP tidak berubah. */
+@media (min-width:761px) and (max-width:1199px){
+.phone{max-width:680px}
+#bottomNav{width:min(680px,100%)}
+}
+@media (min-width:1200px){
+.phone{max-width:860px}
+#bottomNav{width:min(860px,100%)}
+}
+</style>
 </body>
 </html>
