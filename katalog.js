@@ -1558,6 +1558,20 @@
 
   /* ---------- Overlay preview: satu HP besar berisi iframe ---------- */
   var lastFocus = null;
+  /* Sembunyikan scrollbar di dalam layar preview — scroll tetap berfungsi
+     (perintah user 2026-11-14: "hilangkan scroll di preview") */
+  function pvHideBars() {
+    try {
+      var d = pvFrame.contentDocument;
+      if (d && !d.getElementById('pvNoScrollbar')) {
+        var st = d.createElement('style');
+        st.id = 'pvNoScrollbar';
+        st.textContent = '::-webkit-scrollbar{width:0!important;height:0!important;display:none!important}*{scrollbar-width:none!important;-ms-overflow-style:none!important}';
+        (d.head || d.documentElement).appendChild(st);
+      }
+    } catch (e) {}
+  }
+  pvFrame.addEventListener('load', pvHideBars);
   function openPreview(slug) {
     var e = null;
     CATALOG.forEach(function (x) { if (x.slug === slug) e = x; });
