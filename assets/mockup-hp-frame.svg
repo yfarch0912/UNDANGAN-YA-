@@ -1,4 +1,4 @@
-<!-- Frame HP preview UndangYa! — dari mockup_hp_template.svg kiriman user 2026-11-14 (placeholder & panduan dibuang; sasis & bezel dilubangi evenodd tepat di area layar 392x832 sehingga transparan untuk iframe) -->
+<!-- Frame HP preview UndangYa! — dari mockup_hp_template.svg kiriman user 2026-11-14 (placeholder placeholder & panduan dibuang; sasis & bezel dilubangi evenodd tepat di area layar 392x832 sehingga transparan untuk iframe panduan dibuang; sasis & bezel dilubangi evenodd tepat di area layar 392x832 sehingga transparan untuk iframe; bilah Safari situs dibuang atas perintah user (fullscreen tanpa menu browser)) -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 880" width="440" height="880" fill="none">
   <defs>
     <!-- Metallic Titanium Outer Rim Gradient (Dark Violet-Graphite matching reference) -->
@@ -106,6 +106,11 @@
         <rect x="2.5" y="2.5" width="17" height="7" rx="1.5"/>
         <path d="M24.5 4.2v3.6a1.4 1.4 0 0 0 0-3.6z" opacity="0.5"/>
       </g>
+    </g>
+
+    <!-- Bottom Home Indicator -->
+    <g id="home-indicator">
+      <rect x="150" y="841" width="140" height="5" rx="2.5" fill="#1C1924" opacity="0.85"/>
     </g>
 
     <!-- Subtle Screen Glass Glare (Optional) -->
