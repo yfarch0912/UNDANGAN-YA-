@@ -1660,23 +1660,94 @@
     return e.swatch.map(function (s) { return '<i style="background:' + s + '"></i>'; }).join('');
   }
 
+  /* ---------- Kartu koleksi landing: mockup 3 HP (pola katalog) ----------
+     Perintah user 2026-11-14: kartu grid koleksi landing diganti
+     preview mockup HP seperti di katalog — komposisi 3 HP realistis
+     per template (tengah sampul, kiri rangkaian acara, kanan galeri
+     + RSVP), chip fitur melayang, nomor urut, lencana kelas + harga,
+     tombol "Lihat Preview" (overlay satu HP besar berisi iframe
+     tema asli) dan "Gunakan Template" (checkout). Kelas, harga &
+     chip kelima template terbaik diselaraskan dengan data kanonis
+     katalog.js. */
+  var LP_CHIPS = ['Galeri Foto', 'RSVP', 'Countdown', 'Amplop Digital', 'Love Story', 'Musik'];
+  var LP_META = {
+    'kastil-dongeng': { kelas: 'SIGNATURE', price: 149000, chips: LP_CHIPS },
+    'pusaka-sogan': { kelas: 'SIGNATURE', price: 149000, chips: LP_CHIPS },
+    'joglo-pusaka': { kelas: 'SIGNATURE', price: 149000, chips: LP_CHIPS },
+    'flora-raya': { kelas: 'SIGNATURE', price: 149000, chips: LP_CHIPS },
+    'negeri-awan': { kelas: 'SIGNATURE', price: 149000, chips: LP_CHIPS }
+  };
+  var LP_CHIP_ICON = {
+    'Galeri Foto': 'ic-camera', 'RSVP': 'ic-check', 'Countdown': 'ic-clock',
+    'Amplop Digital': 'ic-gift', 'Love Story': 'ic-heart', 'Musik': 'ic-music',
+    'Maps': 'ic-pin'
+  };
+  var LP_CHIP_POS = ['pos-tl', 'pos-tr', 'pos-ml', 'pos-mr', 'pos-bl', 'pos-br'];
+  function lpEsc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function lpRupiah(n) { return 'Rp' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
+  function lpPriceHTML(m) {
+    return '<span class="price"><small>Mulai</small>' + lpRupiah(m.price) + '</span>';
+  }
+  function lpBadgeHTML(m) {
+    return '<span class="badge ' + m.kelas.toLowerCase() + '">' + m.kelas + '</span>';
+  }
+  function lpIcon(id) { return '<svg aria-hidden="true"><use href="#' + id + '"></use></svg>'; }
+  function lpPhoneOpen(cls) {
+    return '<div class="phone ' + cls + '"><span class="notch"></span><span class="hw" aria-hidden="true"></span>';
+  }
+  function lpStageHTML(e) {
+    var m = LP_META[e.slug];
+    var thumb = 'assets/katalog/' + e.slug + '.webp';
+    var alt = 'Cuplikan desain ' + lpEsc(e.name);
+    var chips = m.chips.slice(0, 6).map(function (c, i) {
+      var ic = LP_CHIP_ICON[c] || 'ic-heart';
+      return '<span class="fchip ' + LP_CHIP_POS[i % LP_CHIP_POS.length] + '" style="--dl:' + (i * 0.35).toFixed(2) + 's">' +
+        '<span class="ic">' + lpIcon(ic) + '</span><span class="tx">' + lpEsc(c) + '</span></span>';
+    }).join('');
+    return '<div class="stage">' +
+      '<svg class="flora bl" aria-hidden="true"><use href="#flora"></use></svg>' +
+      '<svg class="flora tr" aria-hidden="true"><use href="#flora"></use></svg>' +
+      lpPhoneOpen('ph-left') +
+        '<div class="scr sched">' +
+          '<div class="sched-img"><img src="' + thumb + '" alt="" loading="lazy"></div>' +
+          '<div class="sched-body"><h4>Rangkaian Acara</h4>' +
+            '<div class="ev"><h5>Akad Nikah</h5><p><b>08.00 – 10.00 WIB</b></p></div>' +
+            '<div class="ev"><h5>Resepsi</h5><p><b>11.00 – 13.00 WIB</b></p></div>' +
+            '<span class="loc-btn">' + lpIcon('ic-pin') + 'Lihat Lokasi</span>' +
+          '</div>' +
+        '</div></div>' +
+      lpPhoneOpen('ph-mid') +
+        '<div class="scr"><img class="cover-img" src="' + thumb + '" alt="' + alt + '" loading="lazy"></div></div>' +
+      lpPhoneOpen('ph-right') +
+        '<div class="scr gal"><h4>Galeri Kami</h4>' +
+          '<div class="tiles">' +
+            '<div class="tile"><img class="tp1" src="' + thumb + '" alt="" loading="lazy"></div>' +
+            '<div class="tile"><img class="tp2" src="' + thumb + '" alt="" loading="lazy"></div>' +
+            '<div class="tile"><img class="tp3" src="' + thumb + '" alt="" loading="lazy"></div>' +
+            '<div class="tile"><img class="tp4" src="' + thumb + '" alt="" loading="lazy"></div>' +
+          '</div>' +
+          '<div class="rsvp-mini"><h5>Konfirmasi Kehadiran</h5><span class="yes">Saya Hadir</span></div>' +
+        '</div></div>' +
+      chips +
+      '</div>';
+  }
+
   function cardHTML(e, i) {
+    var m = LP_META[e.slug] || { kelas: 'SIGNATURE', price: 149000, chips: LP_CHIPS };
     var num = ('0' + (i + 1)).slice(-2);
-    var artInner = e.cat === 'video'
-      ? '<span class="a-film" aria-hidden="true"><img src="assets/video-1.jpg" alt="" loading="lazy"><img src="assets/video-2.jpg" alt="" loading="lazy"><img src="assets/video-3.jpg" alt="" loading="lazy"></span>'
-      : '<img class="a-img" src="assets/katalog/' + e.slug + '.webp" alt="Cuplikan desain ' + e.name + '" width="640" height="800" loading="lazy"' + (e.pos ? ' style="object-position:' + e.pos + '"' : '') + '>';
-    return '<article class="card' + (i % 5 === 4 ? ' wide' : '') + '">' +
-      '<div><p class="c-num"><span>Nº ' + num + '</span><span class="c-cat">' + CAT_LABEL[e.cat] + '</span></p>' +
-      '<button type="button" class="card-art" data-qv="' + e.slug + '" style="background:' + e.bg + '" aria-label="Lihat detail ' + e.name + '">' + artInner + '</button></div>' +
-      '<div class="card-body">' +
-        '<button type="button" class="card-name" data-qv="' + e.slug + '" style="font-family:' + e.font + '">' + e.name + '</button>' +
-        '<p class="card-tag">' + e.tagline + '</p>' +
-        '<div class="palette" aria-hidden="true">' + dotsHTML(e) + '</div>' +
-        '<hr>' +
-        '<div class="card-actions">' +
-          '<button type="button" class="btn btn-ghost" data-qv="' + e.slug + '">Detail</button>' +
-          (e.preview ? '<a class="btn btn-ghost" href="' + e.preview + '">Preview</a>' : '') +
-          '<a class="pesan" href="' + e.order + '">Pesan</a>' +
+    return '<article class="kcard" data-slug="' + lpEsc(e.slug) + '" data-kelas="' + m.kelas + '">' +
+      '<span class="num">' + num + '</span>' +
+      lpStageHTML(e) +
+      '<div class="card-foot">' +
+        '<h2>' + lpEsc(e.name) + '</h2>' +
+        '<p class="k-tagline">' + lpEsc(e.tagline) + '</p>' +
+        '<div class="meta">' + lpBadgeHTML(m) + lpPriceHTML(m) + '</div>' +
+        '<div class="card-btns">' +
+          '<button type="button" class="btn btn-line" data-preview="' + lpEsc(e.slug) + '">Lihat Preview</button>' +
+          '<a class="btn btn-gold" href="' + e.order + '">Gunakan Template</a>' +
         '</div>' +
       '</div></article>';
   }
@@ -1787,6 +1858,44 @@
     });
     document.addEventListener('keydown', function (ev) {
       if (ev.key === 'Escape' && !backdrop.hidden) closeQV();
+    });
+  }
+
+  /* ---------- Overlay preview koleksi: satu HP besar (pola katalog) ---------- */
+  var pvOverlay = $('#pvOverlay'), pvFrame = $('#pvFrame'),
+      pvName = $('#pvName'), pvMeta = $('#pvMeta'),
+      pvTagline = $('#pvTagline'), pvOrder = $('#pvOrder'), pvLastFocus = null;
+  function openPreview(slug, opener) {
+    var e = bySlug[slug], m = LP_META[slug];
+    if (!e || !m || !pvOverlay) return;
+    pvLastFocus = opener || document.activeElement;
+    pvName.textContent = e.name;
+    pvMeta.innerHTML = lpBadgeHTML(m) + lpPriceHTML(m);
+    pvTagline.textContent = e.tagline;
+    pvOrder.setAttribute('href', e.order);
+    pvFrame.setAttribute('src', e.preview);
+    pvOverlay.hidden = false;
+    document.body.classList.add('pv-lock');
+    var x = $('.pv-x', pvOverlay);
+    if (x) x.focus();
+  }
+  function closePreview() {
+    if (!pvOverlay || pvOverlay.hidden) return;
+    pvOverlay.hidden = true;
+    pvFrame.setAttribute('src', 'about:blank');
+    document.body.classList.remove('pv-lock');
+    if (pvLastFocus && pvLastFocus.focus) pvLastFocus.focus();
+  }
+  if (grid) grid.addEventListener('click', function (ev) {
+    var b = ev.target.closest('[data-preview]');
+    if (b) openPreview(b.dataset.preview, b);
+  });
+  if (pvOverlay) {
+    $$('[data-close]', pvOverlay).forEach(function (el) {
+      el.addEventListener('click', closePreview);
+    });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape') closePreview();
     });
   }
 

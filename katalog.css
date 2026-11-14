@@ -391,6 +391,23 @@ body.pv-lock{overflow:hidden}
   .pv-x{top:-14px}
 }
 
+/* ---------- Preview dari HP: SATU frame iPhone penuh pas layar,
+   fokus HP saja (perintah user 2026-11-14, mengikuti video
+   referensi): seluruh bodi HP terlihat sekali lihat tanpa
+   scroll overlay; panel info menyusut jadi baris tombol saja. */
+@media (max-width:760px){
+  .pv-overlay{padding:12px 8px 16px;align-items:center}
+  .pv-panel{gap:12px;flex-direction:column;flex-wrap:nowrap}
+  .pv-phone{
+    width:min(94vw,calc((100vh - 118px)*9/19.5));
+    width:min(94vw,calc((100dvh - 118px)*9/19.5));
+  }
+  .pv-info{max-width:none}
+  .pv-info h3,.pv-info .meta,.pv-info p{display:none}
+  .pv-info .pv-actions{margin-top:0;justify-content:center}
+  .pv-x{top:-6px;right:2px}
+}
+
 /* ---------- Layar kecil ---------- */
 @media (max-width:560px){
   .fchip{font-size:.7rem;padding:5px 10px 5px 7px;gap:5px}

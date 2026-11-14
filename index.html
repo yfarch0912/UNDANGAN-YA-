@@ -131,13 +131,39 @@
       </article>
     </div>
 
+    <!-- Sprite ikon gambar tangan + ornamen flora (dipakai kartu mockup HP site.js, pola katalog) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <symbol id="flora" viewBox="0 0 130 96">
+          <path d="M6 92 C 30 70, 44 52, 58 30 C 66 18, 76 8, 92 3" fill="none" stroke="#7d9b6a" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M30 74 C 20 66, 12 66, 4 70 C 10 80, 20 82, 30 74 Z" fill="#8fae7c"/>
+          <path d="M46 56 C 38 46, 30 44, 21 47 C 26 58, 37 62, 46 56 Z" fill="#a3bf92"/>
+          <path d="M58 40 C 66 32, 76 31, 84 35 C 78 45, 66 47, 58 40 Z" fill="#8fae7c"/>
+          <g fill="currentColor">
+            <circle cx="97" cy="14" r="6"/><circle cx="108" cy="22" r="5"/><circle cx="90" cy="25" r="5"/><circle cx="101" cy="30" r="4.4"/>
+          </g>
+          <circle cx="99" cy="21" r="2.6" fill="#f6d67c"/>
+        </symbol>
+        <symbol id="ic-rings" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="14" r="5.2"/><circle cx="15.5" cy="10" r="5.2"/></g></symbol>
+        <symbol id="ic-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21 C12 21 5 15.4 5 9.8 A7 7 0 1 1 19 9.8 C19 15.4 12 21 12 21 Z"/><circle cx="12" cy="9.8" r="2.6"/></g></symbol>
+        <symbol id="ic-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="7.5" width="18" height="12.5" rx="2.4"/><path d="M8.5 7.5 L10.2 4.8 H13.8 L15.5 7.5"/><circle cx="12" cy="13.6" r="3.4"/></g></symbol>
+        <symbol id="ic-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="4" width="16" height="17" rx="2.4"/><path d="M8.4 12.4 L11.2 15.2 L15.8 9.6"/></g></symbol>
+        <symbol id="ic-gift" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="10" width="16" height="10" rx="1.4"/><path d="M12 10 V20 M4 14.4 H20"/><path d="M12 10 C9 10 6.8 8.4 7.2 6.2 C7.5 4.4 9.6 4 10.8 5.2 C12 6.4 12 10 12 10 Z M12 10 C15 10 17.2 8.4 16.8 6.2 C16.5 4.4 14.4 4 13.2 5.2 C12 6.4 12 10 12 10 Z"/></g></symbol>
+        <symbol id="ic-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8.4"/><path d="M12 7.4 V12 L15.4 14.2"/></g></symbol>
+        <symbol id="ic-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="5.6" width="18" height="13" rx="2"/><path d="M4 7.4 L12 13.4 L20 7.4"/></g></symbol>
+        <symbol id="ic-heart" viewBox="0 0 24 24"><path d="M12 20 C12 20 4.4 15.2 4.4 9.7 C4.4 6.9 6.5 5 9 5 C10.4 5 11.6 5.7 12 6.8 C12.4 5.7 13.6 5 15 5 C17.5 5 19.6 6.9 19.6 9.7 C19.6 15.2 12 20 12 20 Z" fill="none" stroke="currentColor" stroke-width="1.9"/></symbol>
+        <symbol id="ic-music" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9"><path d="M9 18.2 V6.4 L20 4.6 V16"/><circle cx="6.4" cy="18.2" r="2.8"/><circle cx="17.4" cy="16" r="2.8"/></g></symbol>
+        <symbol id="ic-play" viewBox="0 0 24 24"><path d="M8 5.4 L19 12 L8 18.6 Z" fill="currentColor"/></symbol>
+      </defs>
+    </svg>
+
     <div id="koleksi-grid" class="grid-anchor">
       <!-- Grid koleksi landing kini menampilkan HANYA 5 template
            pilihan terbaik (perintah user 2026-11-13) — filter
            kategori/warna/cari ditiadakan; koleksi lengkap ada
            di halaman /katalog. -->
       <p class="count-line" id="count" role="status"></p>
-      <div class="grid" id="grid"><!-- dirender site.js --></div>
+      <div class="grid kgrid" id="grid"><!-- dirender site.js: kartu mockup 3 HP pola katalog --></div>
       <p class="koleksi-all"><a class="btn btn-line" href="katalog">Lihat Semua Template di Katalog →</a></p>
     </div>
   </div>
@@ -427,6 +453,36 @@
     <p class="foot-bottom">© <span id="year">2026</span> UndangYA! — etalase demo. Semua nama pasangan, foto, dan data acara di situs ini adalah contoh fiktif untuk keperluan demo. Checkout berjalan di Midtrans Sandbox (mode test).</p>
   </div>
 </footer>
+
+<!-- ============ OVERLAY PREVIEW KOLEKSI: SATU HP realistis besar, fokus HP saja (pola katalog) ============ -->
+<div class="pv-overlay" id="pvOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="pvName">
+  <div class="pv-backdrop" data-close></div>
+  <div class="pv-panel">
+    <button type="button" class="pv-x" data-close aria-label="Tutup preview">&times;</button>
+    <div class="pv-phone">
+      <span class="pv-notch" aria-hidden="true"></span><span class="pv-hw" aria-hidden="true"></span>
+      <div class="pv-screen">
+        <div class="pv-status" aria-hidden="true">
+          <span class="ptime">09.41</span>
+          <svg viewBox="0 0 46 12" aria-hidden="true"><g fill="#22303e"><rect x="0" y="8.4" width="2.6" height="3.1" rx=".8"/><rect x="3.8" y="6.1" width="2.6" height="5.4" rx=".8"/><rect x="7.6" y="3.8" width="2.6" height="7.7" rx=".8"/><rect x="11.4" y="1.5" width="2.6" height="10" rx=".8"/></g><g fill="none" stroke="#22303e" stroke-width="1.5" stroke-linecap="round"><path d="M17.4 4.2 A6.4 6.4 0 0 1 27 4.2"/><path d="M19.3 6.9 A4 4 0 0 1 25.1 6.9"/></g><circle cx="22.2" cy="9.7" r="1.25" fill="#22303e"/><rect x="30" y="1.6" width="12" height="8.8" rx="2.4" fill="none" stroke="#22303e" stroke-opacity=".45" stroke-width="1.1"/><rect x="31.6" y="3.2" width="7" height="5.6" rx="1.2" fill="#22303e"/><rect x="43.2" y="4.4" width="1.9" height="3.2" rx=".9" fill="#22303e" fill-opacity=".45"/></svg>
+        </div>
+        <div class="pv-scroll">
+          <iframe id="pvFrame" title="Preview undangan" src="about:blank" loading="lazy"></iframe>
+        </div>
+        <span class="pv-home" aria-hidden="true"></span>
+      </div>
+    </div>
+    <div class="pv-info">
+      <h3 id="pvName">Preview</h3>
+      <div class="meta" id="pvMeta"></div>
+      <p id="pvTagline"></p>
+      <div class="pv-actions">
+        <a class="btn btn-gold" id="pvOrder" href="checkout">Gunakan Template</a>
+        <button type="button" class="btn pv-close-btn" data-close>Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ============ QUICK VIEW ============ -->
 <div class="qv-backdrop" id="qvBackdrop" hidden>

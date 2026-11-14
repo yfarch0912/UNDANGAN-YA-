@@ -653,3 +653,363 @@ h2{font-size:clamp(2.1rem,4.4vw,3.4rem);letter-spacing:.005em}
 
 .foot-legal{text-align:center;margin:0 0 10px;font-size:.85rem;color:#cbbd97}
 .foot-legal a{color:#e9d9ae;text-decoration:underline}
+
+
+/* ============================================================
+   KOLEKSI LANDING — kartu mockup 3 HP (pola katalog, perintah
+   user 2026-11-14): grid "Pilih Tema Favoritmu" memakai kartu
+   yang sama seperti /katalog — 3 HP realistis frame titanium
+   iPhone 18 Pro Max per template, chip fitur melayang, overlay
+   preview satu HP besar. Aturan kartu ter-scope ke
+   #koleksi-grid agar tidak mengganggu mockup HP section fitur
+   (.phone di S03); aturan overlay (.pv-*) khas halaman ini.
+   ============================================================ */
+
+/* ---------- Grid koleksi: 3 kolom desktop, 2 kolom tablet & HP ---------- */
+#koleksi-grid .kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:16px}
+@media (max-width:1150px){#koleksi-grid .kgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){#koleksi-grid .kgrid{grid-template-columns:1fr 1fr;gap:12px}}
+
+/* ---------- Kartu tema ---------- */
+#koleksi-grid .kcard{
+  --acc:#b98a2f;--halo:#eaf3fb;
+  background:rgba(255,255,255,.78);
+  border:1px solid #e0ebf2;border-radius:28px;
+  padding:22px 22px 24px;position:relative;overflow:hidden;
+  box-shadow:0 24px 50px -30px rgba(50,84,110,.35);
+  display:flex;flex-direction:column;
+}
+#koleksi-grid .kcard[data-kelas="FREE"]{--acc:#7a9a52;--halo:#eef4e4}
+#koleksi-grid .kcard[data-kelas="BASIC"]{--acc:#4a74a8;--halo:#e8f1fa}
+#koleksi-grid .kcard[data-kelas="ESSENTIAL"]{--acc:#2f7d6b;--halo:#e2f0ec}
+#koleksi-grid .kcard[data-kelas="SIGNATURE"]{--acc:#b98a2f;--halo:#f7ecd2}
+#koleksi-grid .kcard::before{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:
+    radial-gradient(180px 120px at 0% 0%,color-mix(in srgb,var(--acc) 16%,transparent) 0%,transparent 70%),
+    radial-gradient(200px 140px at 100% 100%,color-mix(in srgb,var(--acc) 12%,transparent) 0%,transparent 70%);
+}
+#koleksi-grid .kcard .num{
+  position:absolute;top:18px;left:18px;z-index:8;
+  width:44px;height:44px;border-radius:50%;
+  background:#fff;border:1px solid #e2ecf3;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.95rem;color:#33475c;
+  box-shadow:0 6px 16px -8px rgba(50,84,110,.4);
+}
+
+/* ---------- Panggung 3 HP ---------- */
+#koleksi-grid .stage{
+  position:relative;container-type:inline-size;
+  aspect-ratio:10/8.9;margin-top:8px;border-radius:20px;
+  background:radial-gradient(70% 55% at 50% 38%,var(--halo) 0%,rgba(255,255,255,0) 70%);
+}
+#koleksi-grid .flora{position:absolute;z-index:1;pointer-events:none;opacity:.9;color:var(--acc)}
+#koleksi-grid .flora.bl{left:-6px;bottom:2%;width:26cqw}
+#koleksi-grid .flora.tr{right:-4px;top:0;width:20cqw;transform:scale(-1,-1)}
+
+/* Frame HP = iPhone 18 Pro Max (tampak depan), mengikuti lembar
+   material kiriman user (iphone_18_pro_max_front_mockup.mtl) —
+   sama seperti katalog. */
+#koleksi-grid .phone{
+  position:absolute;aspect-ratio:9/19;
+  background:linear-gradient(150deg,#e9eaed 0%,#b9bcc2 24%,#8c8f99 50%,#c9ccd1 76%,#83878f 100%);
+  border-radius:4.6cqw;padding:1.15cqw;
+  box-shadow:0 3.2cqw 6cqw -1.6cqw rgba(23,38,54,.45),
+    inset 0 .3cqw .5cqw rgba(255,255,255,.95),
+    inset 0 -.3cqw .6cqw rgba(20,24,32,.5),
+    inset .25cqw 0 .5cqw rgba(255,255,255,.45),
+    inset -.25cqw 0 .5cqw rgba(20,24,32,.35);
+}
+#koleksi-grid .phone .scr{
+  position:relative;width:100%;height:100%;overflow:hidden;
+  border-radius:3.6cqw;background:#fdfbf6;
+  display:flex;flex-direction:column;
+  box-shadow:inset 0 0 0 .55cqw #0a0a0d,
+    inset 0 0 0 .72cqw rgba(204,204,217,.38);
+}
+#koleksi-grid .phone .notch{
+  position:absolute;top:1.5cqw;left:50%;transform:translateX(-50%);
+  width:24%;height:1.7cqw;min-height:6px;border-radius:999px;z-index:5;
+  background:radial-gradient(circle at 80% 50%,#f2f2ff 0%,#9db4dd 6%,#142959 22%,#050914 40%,#050505 65%) #050505;
+  box-shadow:inset 0 0 .3cqw rgba(0,0,0,.8),0 0 .2cqw rgba(255,255,255,.25);
+}
+#koleksi-grid .phone .notch::before{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);
+  top:-.34cqw;width:150%;height:.4cqw;min-height:2px;border-radius:999px;
+  background-image:radial-gradient(circle,#2b2b2f 42%,rgba(43,43,47,0) 64%);
+  background-size:.58cqw .58cqw;background-position:center;background-repeat:repeat-x;
+  opacity:.9;
+}
+#koleksi-grid .hw{
+  position:absolute;inset:0;z-index:4;pointer-events:none;border-radius:4.6cqw;
+  background:linear-gradient(112deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 47%,rgba(255,255,255,.05) 76%,rgba(255,255,255,0) 92%);
+}
+#koleksi-grid .hw::before{
+  content:"";position:absolute;left:-.8cqw;top:15.5%;
+  width:.62cqw;min-width:2px;height:17.5cqw;border-radius:.45cqw 0 0 .45cqw;
+  background:linear-gradient(180deg,#e3e5e9 0,#b9bdc4 12%,#787d87 13.5%,#787d87 15%,#dfe1e6 15%,#dfe1e6 42%,#787d87 43.5%,#787d87 45%,#d4d7dc 45%,#a9adb6 100%);
+  box-shadow:inset 0 0 .25cqw rgba(255,255,255,.65),-.1cqw .2cqw .4cqw rgba(20,24,32,.3);
+}
+#koleksi-grid .hw::after{
+  content:"";position:absolute;right:-.8cqw;top:20.5%;
+  width:.62cqw;min-width:2px;height:8.6cqw;border-radius:0 .45cqw .45cqw 0;
+  background:linear-gradient(90deg,#83878f,#dde0e4);
+  box-shadow:inset 0 0 .25cqw rgba(255,255,255,.6),.1cqw .2cqw .4cqw rgba(20,24,32,.3);
+}
+#koleksi-grid .phone .scr::before{
+  content:"09.41";
+  position:absolute;top:0;left:0;right:0;z-index:6;pointer-events:none;
+  padding:.4cqw 3.4cqw 0 3.8cqw;
+  font-size:max(6px,1.9cqw);font-weight:700;letter-spacing:.03em;
+  color:#22303e;text-align:left;line-height:2.3cqw;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='12' viewBox='0 0 46 12'%3E%3Cg fill='%2322303e'%3E%3Crect x='0' y='8.4' width='2.6' height='3.1' rx='.8'/%3E%3Crect x='3.8' y='6.1' width='2.6' height='5.4' rx='.8'/%3E%3Crect x='7.6' y='3.8' width='2.6' height='7.7' rx='.8'/%3E%3Crect x='11.4' y='1.5' width='2.6' height='10' rx='.8'/%3E%3C/g%3E%3Cg fill='none' stroke='%2322303e' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M17.4 4.2 A6.4 6.4 0 0 1 27 4.2'/%3E%3Cpath d='M19.3 6.9 A4 4 0 0 1 25.1 6.9'/%3E%3C/g%3E%3Ccircle cx='22.2' cy='9.7' r='1.25' fill='%2322303e'/%3E%3Crect x='30' y='1.6' width='12' height='8.8' rx='2.4' fill='none' stroke='%2322303e' stroke-opacity='.45' stroke-width='1.1'/%3E%3Crect x='31.6' y='3.2' width='7' height='5.6' rx='1.2' fill='%2322303e'/%3E%3Crect x='43.2' y='4.4' width='1.9' height='3.2' rx='.9' fill='%2322303e' fill-opacity='.45'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 3.3cqw top .55cqw;background-size:8.4cqw 2.2cqw;
+}
+#koleksi-grid .phone .scr::after{
+  content:"";position:absolute;bottom:.95cqw;left:50%;transform:translateX(-50%);
+  width:33%;height:.85cqw;min-height:3px;border-radius:999px;z-index:6;pointer-events:none;
+  background:rgba(34,48,62,.55);
+}
+#koleksi-grid .ph-left{width:28.5%;left:3.5%;top:13%;transform:rotate(-7deg);z-index:2}
+#koleksi-grid .ph-right{width:28.5%;right:3.5%;top:13%;transform:rotate(7deg);z-index:2}
+#koleksi-grid .ph-mid{width:35%;left:32.5%;top:1.5%;z-index:3}
+
+/* Layar sampul (HP tengah) */
+#koleksi-grid .cover-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+
+/* Layar rangkaian acara (HP kiri) */
+#koleksi-grid .sched{background:linear-gradient(175deg,#fffdf9 0%,#f3eee2 85%)}
+#koleksi-grid .sched-img{flex:none;height:34%;overflow:hidden}
+#koleksi-grid .sched-img img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+#koleksi-grid .sched-body{flex:1;display:flex;flex-direction:column;padding:2.2cqw 3cqw 3.4cqw;text-align:center}
+#koleksi-grid .sched-body h4{
+  font-family:var(--serif);font-weight:600;text-align:center;
+  font-size:max(9px,3.6cqw);margin:0 0 1cqw;color:#22303e;line-height:1.15;
+}
+#koleksi-grid .ev{border-top:1px solid rgba(185,138,47,.3);padding:1.4cqw 0 1cqw}
+#koleksi-grid .ev h5{font-family:var(--serif);text-align:center;font-size:max(8px,3cqw);margin:0 0 .3cqw;color:#22303e;line-height:1.15}
+#koleksi-grid .ev p{text-align:center;font-size:max(6px,1.85cqw);color:#71869a;margin:0;line-height:1.45}
+#koleksi-grid .ev p b{color:#22303e}
+#koleksi-grid .loc-btn{
+  margin-top:auto;align-self:center;border:1.5px solid var(--acc);color:#22303e;
+  font-size:max(6.5px,2cqw);font-weight:700;
+  padding:1.2cqw 3.2cqw;border-radius:999px;display:inline-flex;gap:1cqw;align-items:center;
+}
+#koleksi-grid .loc-btn svg{width:2.4cqw;height:2.4cqw;min-width:8px;min-height:8px}
+
+/* Layar galeri (HP kanan) */
+#koleksi-grid .gal{padding:5.8cqw 3cqw 3.4cqw;background:linear-gradient(175deg,#fffdf9 0%,#f3eee2 85%)}
+#koleksi-grid .gal h4{
+  font-family:var(--serif);font-weight:600;text-align:center;
+  font-size:max(9px,3.6cqw);margin:0 0 2cqw;color:#22303e;line-height:1.15;
+}
+#koleksi-grid .tiles{display:grid;grid-template-columns:1fr 1fr;gap:1.4cqw}
+#koleksi-grid .tile{border-radius:1.6cqw;aspect-ratio:4/4.4;overflow:hidden;border:1px solid rgba(185,138,47,.4);box-shadow:inset 0 0 0 1cqw rgba(255,255,255,.4)}
+#koleksi-grid .tile img{width:100%;height:100%;object-fit:cover;display:block}
+#koleksi-grid .tile .tp1{object-position:center top}
+#koleksi-grid .tile .tp2{object-position:center 38%}
+#koleksi-grid .tile .tp3{object-position:center 68%}
+#koleksi-grid .tile .tp4{object-position:center bottom}
+#koleksi-grid .gal .rsvp-mini{
+  border-top:1px solid rgba(185,138,47,.3);padding-top:1.8cqw;margin-top:2.2cqw;text-align:center;
+}
+#koleksi-grid .gal .rsvp-mini h5{font-family:var(--serif);font-size:max(8px,3.1cqw);margin:0 0 1.2cqw;color:#22303e}
+#koleksi-grid .gal .rsvp-mini .yes{
+  display:flex;align-items:center;justify-content:center;
+  font-size:max(7px,2.1cqw);font-weight:700;border-radius:999px;
+  padding:1.5cqw 2cqw;background:#22303e;color:#fdfcf7;
+}
+
+/* Chip fitur melayang */
+#koleksi-grid .fchip{
+  position:absolute;z-index:6;display:inline-flex;align-items:center;gap:7px;
+  background:#fff;border:1px solid #e4edf3;border-radius:999px;
+  padding:7px 13px 7px 9px;font-size:.8rem;font-weight:600;color:#33475c;
+  box-shadow:0 10px 22px -10px rgba(50,84,110,.45);
+  animation:floaty 4.6s ease-in-out infinite;animation-delay:var(--dl,0s);
+  white-space:nowrap;max-width:46%;
+}
+#koleksi-grid .fchip .ic{
+  width:24px;height:24px;border-radius:50%;flex:none;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--halo);color:var(--acc);
+}
+#koleksi-grid .fchip .ic svg{width:14px;height:14px}
+#koleksi-grid .fchip .tx{overflow:hidden;text-overflow:ellipsis}
+#koleksi-grid .pos-tl{top:3%;left:13%}
+#koleksi-grid .pos-tr{top:4%;right:0}
+#koleksi-grid .pos-ml{top:42%;left:-4px}
+#koleksi-grid .pos-mr{top:44%;right:-4px}
+#koleksi-grid .pos-bl{bottom:7%;left:2%}
+#koleksi-grid .pos-br{bottom:5%;right:2%}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* ---------- Kaki kartu ---------- */
+#koleksi-grid .card-foot{padding-top:16px;text-align:center;position:relative;z-index:2}
+#koleksi-grid .card-foot h2{font-family:var(--serif);font-size:1.85rem;font-weight:600;margin:0 0 6px;color:#1c2f28;line-height:1.12}
+#koleksi-grid .k-tagline{color:#54697b;font-size:.92rem;line-height:1.55;margin:0 auto 10px;max-width:52ch}
+#koleksi-grid .meta{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+#koleksi-grid .badge{
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;
+  padding:5px 12px;border-radius:999px;text-transform:uppercase;
+}
+#koleksi-grid .badge.signature{background:#f7ecd2;color:#7a5c1e;border:1px solid #e6cf96}
+#koleksi-grid .badge.essential{background:#e2f0ec;color:#245c50;border:1px solid #bcdcd2}
+#koleksi-grid .badge.basic{background:#e8edf3;color:#3c546e;border:1px solid #c8d5e2}
+#koleksi-grid .badge.free{background:#eaf2e2;color:#47632f;border:1px solid #cbdfb6}
+#koleksi-grid .price{font-size:1.15rem;font-weight:700;color:#22303e}
+#koleksi-grid .price small{font-size:.78rem;font-weight:600;color:#71869a;margin-right:4px}
+#koleksi-grid .card-btns{display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+#koleksi-grid .card-btns .btn{min-height:44px}
+
+/* ---------- Layar kecil (mode kompak, sama seperti katalog) ---------- */
+@media (max-width:1150px){
+  #koleksi-grid .kcard{padding:16px 16px 18px}
+  #koleksi-grid .card-foot h2{font-size:1.5rem}
+}
+@media (max-width:640px){
+  #koleksi-grid .kcard{padding:10px 10px 12px;border-radius:18px}
+  #koleksi-grid .kcard .num{width:26px;height:26px;font-size:.68rem;top:10px;left:10px}
+  #koleksi-grid .stage{border-radius:14px;margin-top:4px}
+  #koleksi-grid .fchip{padding:4px 8px 4px 5px;font-size:.6rem;gap:4px}
+  #koleksi-grid .fchip .ic{width:16px;height:16px}
+  #koleksi-grid .fchip .ic svg{width:9px;height:9px}
+  #koleksi-grid .card-foot{padding-top:10px}
+  #koleksi-grid .card-foot h2{font-size:1.02rem}
+  #koleksi-grid .k-tagline{display:none}
+  #koleksi-grid .meta{gap:8px}
+  #koleksi-grid .badge{font-size:.58rem;padding:4px 8px}
+  #koleksi-grid .price{font-size:.92rem}
+  #koleksi-grid .card-btns{flex-direction:column;gap:8px;margin-top:10px}
+  #koleksi-grid .card-btns .btn{min-height:38px;width:100%}
+}
+@media (max-width:560px){
+  #koleksi-grid .fchip{font-size:.7rem;padding:5px 10px 5px 7px;gap:5px}
+  #koleksi-grid .fchip .ic{width:20px;height:20px}
+  #koleksi-grid .fchip .ic svg{width:12px;height:12px}
+}
+@media (max-width:480px){
+  #koleksi-grid .pos-ml,#koleksi-grid .pos-mr{display:none}
+}
+
+/* ---------- Gerak halus ---------- */
+@media (prefers-reduced-motion:reduce){
+  #koleksi-grid .fchip{animation:none}
+}
+
+/* ---------- Overlay preview koleksi: satu HP realistis besar (pola katalog) ---------- */
+body.pv-lock{overflow:hidden}
+.pv-overlay{
+  position:fixed;inset:0;z-index:200;overflow-y:auto;
+  display:flex;align-items:flex-start;justify-content:center;
+  padding:30px 16px 40px;
+}
+.pv-overlay[hidden]{display:none}
+.pv-backdrop{position:fixed;inset:0;background:rgba(8,13,19,.92);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+.pv-panel{
+  position:relative;margin:auto;width:100%;max-width:880px;
+  display:flex;align-items:center;justify-content:center;gap:46px;flex-wrap:wrap;
+}
+.pv-x{
+  position:absolute;top:-8px;right:0;z-index:5;
+  width:44px;height:44px;border-radius:50%;cursor:pointer;
+  background:rgba(255,255,255,.08);color:#f2f6f9;
+  border:1px solid rgba(255,255,255,.35);font-size:21px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .18s ease;font:inherit;
+}
+.pv-x:hover{background:rgba(255,255,255,.2)}
+.pv-phone{
+  position:relative;flex:none;
+  width:min(400px,92vw);aspect-ratio:9/19.5;
+  border-radius:54px;padding:12px;
+  background:linear-gradient(150deg,#e9eaed 0%,#b9bcc2 24%,#8c8f99 50%,#c9ccd1 76%,#83878f 100%);
+  box-shadow:0 44px 90px -30px rgba(0,0,0,.85),
+    inset 0 2px 3px rgba(255,255,255,.95),
+    inset 0 -2px 4px rgba(20,24,32,.5),
+    inset 2px 0 3px rgba(255,255,255,.45),
+    inset -2px 0 3px rgba(20,24,32,.35);
+}
+.pv-notch{
+  position:absolute;top:21px;left:50%;transform:translateX(-50%);
+  width:24%;height:24px;border-radius:999px;z-index:6;
+  background:radial-gradient(circle at 80% 50%,#f2f2ff 0%,#9db4dd 6%,#142959 22%,#050914 40%,#050505 65%) #050505;
+  box-shadow:inset 0 0 4px rgba(0,0,0,.8);
+}
+.pv-notch::before{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);
+  top:-6px;width:150%;height:3px;border-radius:999px;
+  background-image:radial-gradient(circle,#2b2b2f 42%,rgba(43,43,47,0) 64%);
+  background-size:4px 4px;background-position:center;background-repeat:repeat-x;
+  opacity:.9;
+}
+.pv-hw{position:absolute;inset:0;z-index:4;pointer-events:none;border-radius:54px;
+  background:linear-gradient(112deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 47%,rgba(255,255,255,.05) 76%,rgba(255,255,255,0) 92%)}
+.pv-hw::before{
+  content:"";position:absolute;left:-3px;top:15.5%;
+  width:3px;height:118px;border-radius:3px 0 0 3px;
+  background:linear-gradient(180deg,#e3e5e9 0,#b9bdc4 12%,#787d87 13.5%,#787d87 15%,#dfe1e6 15%,#dfe1e6 42%,#787d87 43.5%,#787d87 45%,#d4d7dc 45%,#a9adb6 100%);
+  box-shadow:inset 0 0 2px rgba(255,255,255,.65);
+}
+.pv-hw::after{
+  content:"";position:absolute;right:-3px;top:20.5%;
+  width:3px;height:58px;border-radius:0 3px 3px 0;
+  background:linear-gradient(90deg,#83878f,#dde0e4);
+  box-shadow:inset 0 0 2px rgba(255,255,255,.6);
+}
+.pv-screen{
+  position:relative;width:100%;height:100%;
+  border-radius:43px;overflow:hidden;background:#fdfbf6;
+  box-shadow:inset 0 0 0 5px #0a0a0d,
+    inset 0 0 0 6.5px rgba(204,204,217,.38);
+  display:flex;flex-direction:column;
+}
+.pv-status{flex:none;display:flex;align-items:center;justify-content:space-between;padding:13px 26px 5px;color:#22303e}
+.pv-status .ptime{font-size:.85rem;font-weight:700;letter-spacing:.03em}
+.pv-status svg{width:62px;height:16px;display:block}
+.pv-scroll{flex:1;overflow:hidden;position:relative;background:#fff}
+.pv-scroll iframe{width:100%;height:100%;border:0;display:block}
+.pv-home{
+  position:absolute;bottom:7px;left:50%;transform:translateX(-50%);
+  width:33%;height:5px;border-radius:999px;z-index:6;pointer-events:none;
+  background:rgba(34,48,62,.55);
+}
+.pv-info{max-width:330px;color:#dbe6ee}
+.pv-info h3{font-family:var(--serif);font-size:2.6rem;font-weight:600;margin:0 0 10px;color:#fff;line-height:1.1}
+.pv-info .meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pv-info .price{font-size:1.15rem;font-weight:700;color:#f3e9cf}
+.pv-info .price small{font-size:.78rem;font-weight:600;color:#9db2c2;margin-right:4px}
+.pv-info .badge{
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;
+  padding:5px 12px;border-radius:999px;text-transform:uppercase;
+}
+.pv-info .badge.signature{background:#f7ecd2;color:#7a5c1e;border:1px solid #e6cf96}
+.pv-info p{line-height:1.65;font-size:.95rem;color:#aebfcd;margin:14px 0 0}
+.pv-actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.pv-close-btn{background:transparent;color:#eef3f7;border:1.5px solid #5f768a}
+.pv-close-btn:hover{border-color:#eef3f7;color:#fff}
+@media (max-width:760px){
+  .pv-panel{gap:28px}
+  .pv-info{text-align:center}
+  .pv-info .meta,.pv-actions{justify-content:center}
+  .pv-x{top:-14px}
+}
+
+/* ---------- Preview dari HP: SATU frame iPhone penuh pas layar,
+   fokus HP saja (perintah user 2026-11-14, mengikuti video
+   referensi): seluruh bodi HP terlihat sekali lihat tanpa
+   scroll overlay; panel info menyusut jadi baris tombol saja.
+   Sama seperti katalog.css. */
+@media (max-width:760px){
+  .pv-overlay{padding:12px 8px 16px;align-items:center}
+  .pv-panel{gap:12px;flex-direction:column;flex-wrap:nowrap}
+  .pv-phone{
+    width:min(94vw,calc((100vh - 118px)*9/19.5));
+    width:min(94vw,calc((100dvh - 118px)*9/19.5));
+  }
+  .pv-info{max-width:none}
+  .pv-info h3,.pv-info .meta,.pv-info p{display:none}
+  .pv-info .pv-actions{margin-top:0;justify-content:center}
+  .pv-x{top:-6px;right:2px}
+}
