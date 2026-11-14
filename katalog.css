@@ -320,54 +320,26 @@ body.pv-lock{overflow:hidden}
   transition:background .18s ease;font:inherit;
 }
 .pv-x:hover{background:rgba(255,255,255,.2)}
+/* Frame HP preview = SVG kiriman user (mockup_hp_template.svg,
+   2026-11-14): assets/mockup-hp-frame.svg — bingkai titanium
+   ungu-grafit, tombol samping, Dynamic Island, bilah status
+   17.49, pantulan kaca. Area layar SVG transparan; layar situs
+   (.pv-screen) duduk tepat di celah layarnya: rect SVG
+   x24 y24 w392 h832 dari viewBox 440x880. */
 .pv-phone{
   position:relative;flex:none;
-  width:min(400px,92vw);aspect-ratio:9/19.5;
-  border-radius:54px;padding:12px;
-  background:linear-gradient(150deg,#e9eaed 0%,#b9bcc2 24%,#8c8f99 50%,#c9ccd1 76%,#83878f 100%);
-  box-shadow:0 44px 90px -30px rgba(0,0,0,.85),
-    inset 0 2px 3px rgba(255,255,255,.95),
-    inset 0 -2px 4px rgba(20,24,32,.5),
-    inset 2px 0 3px rgba(255,255,255,.45),
-    inset -2px 0 3px rgba(20,24,32,.35);
+  width:min(400px,92vw);aspect-ratio:440/880;
 }
-.pv-notch{
-  position:absolute;top:21px;left:50%;transform:translateX(-50%);
-  width:24%;height:24px;border-radius:999px;z-index:6;
-  background:radial-gradient(circle at 80% 50%,#f2f2ff 0%,#9db4dd 6%,#142959 22%,#050914 40%,#050505 65%) #050505;
-  box-shadow:inset 0 0 4px rgba(0,0,0,.8);
-}
-.pv-notch::before{
-  content:"";position:absolute;left:50%;transform:translateX(-50%);
-  top:-6px;width:150%;height:3px;border-radius:999px;
-  background-image:radial-gradient(circle,#2b2b2f 42%,rgba(43,43,47,0) 64%);
-  background-size:4px 4px;background-position:center;background-repeat:repeat-x;
-  opacity:.9;
-}
-.pv-hw{position:absolute;inset:0;z-index:4;pointer-events:none;border-radius:54px;
-  background:linear-gradient(112deg,rgba(255,255,255,.20) 0%,rgba(255,255,255,.06) 30%,rgba(255,255,255,0) 47%,rgba(255,255,255,.05) 76%,rgba(255,255,255,0) 92%)}
-.pv-hw::before{
-  content:"";position:absolute;left:-3px;top:15.5%;
-  width:3px;height:118px;border-radius:3px 0 0 3px;
-  background:linear-gradient(180deg,#e3e5e9 0,#b9bdc4 12%,#787d87 13.5%,#787d87 15%,#dfe1e6 15%,#dfe1e6 42%,#787d87 43.5%,#787d87 45%,#d4d7dc 45%,#a9adb6 100%);
-  box-shadow:inset 0 0 2px rgba(255,255,255,.65);
-}
-.pv-hw::after{
-  content:"";position:absolute;right:-3px;top:20.5%;
-  width:3px;height:58px;border-radius:0 3px 3px 0;
-  background:linear-gradient(90deg,#83878f,#dde0e4);
-  box-shadow:inset 0 0 2px rgba(255,255,255,.6);
+.pv-frame{
+  position:absolute;inset:0;width:100%;height:100%;z-index:7;
+  pointer-events:none;
+  filter:drop-shadow(0 44px 44px rgba(0,0,0,.55));
 }
 .pv-screen{
-  position:relative;width:100%;height:100%;
-  border-radius:43px;overflow:hidden;background:#fdfbf6;
-  box-shadow:inset 0 0 0 5px #0a0a0d,
-    inset 0 0 0 6.5px rgba(204,204,217,.38);
-  display:flex;flex-direction:column;
+  position:absolute;left:5.4545%;top:2.7273%;width:89.09%;height:94.545%;
+  border-radius:13.27%/6.25%;overflow:hidden;background:#fdfbf6;
+  display:flex;flex-direction:column;z-index:1;
 }
-.pv-status{flex:none;display:flex;align-items:center;justify-content:space-between;padding:13px 26px 5px;color:#22303e}
-.pv-status .ptime{font-size:.85rem;font-weight:700;letter-spacing:.03em}
-.pv-status svg{width:62px;height:16px;display:block}
 .pv-scroll{flex:1;overflow:hidden;position:relative;background:#fff}
 .pv-scroll iframe{width:100%;height:100%;border:0;display:block}
 /* Bilah Safari iOS di dalam layar preview — persis tangkapan
@@ -424,8 +396,8 @@ body.pv-lock{overflow:hidden}
   .pv-overlay{padding:12px 8px 16px;align-items:center}
   .pv-panel{gap:12px;flex-direction:column;flex-wrap:nowrap}
   .pv-phone{
-    width:min(94vw,calc((100vh - 118px)*9/19.5));
-    width:min(94vw,calc((100dvh - 118px)*9/19.5));
+    width:min(94vw,calc((100vh - 118px)*440/880));
+    width:min(94vw,calc((100dvh - 118px)*440/880));
   }
   .pv-info{max-width:none}
   .pv-info h3,.pv-info .meta,.pv-info p{display:none}
