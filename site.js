@@ -1863,8 +1863,7 @@
 
   /* ---------- Overlay preview koleksi: satu HP besar (pola katalog) ---------- */
   var pvOverlay = $('#pvOverlay'), pvFrame = $('#pvFrame'),
-      pvName = $('#pvName'), pvMeta = $('#pvMeta'),
-      pvTagline = $('#pvTagline'), pvOrder = $('#pvOrder'), pvLastFocus = null;
+      pvDeco = $('#pvDeco'), pvLastFocus = null;
   /* Sembunyikan scrollbar di dalam layar preview — scroll tetap berfungsi
      (perintah user 2026-11-14: "hilangkan scroll di preview") */
   function pvHideBars() {
@@ -1879,14 +1878,27 @@
     } catch (e) {}
   }
   pvFrame.addEventListener('load', pvHideBars);
+  /* Warna aksen sisi preview diambil dari sampul tema itu sendiri */
+  function pvTint(slug) {
+    var img = new Image();
+    img.onload = function () {
+      try {
+        var c = document.createElement('canvas'); c.width = 8; c.height = 8;
+        var g = c.getContext('2d'); g.drawImage(img, 0, 0, 8, 8);
+        var d = g.getImageData(0, 0, 8, 8).data, r = 0, gg = 0, b = 0, n = 0, i;
+        for (i = 0; i < d.length; i += 4) { r += d[i]; gg += d[i + 1]; b += d[i + 2]; n++; }
+        var mix = function (v) { return Math.round((v / n) + (255 - v / n) * 0.62); };
+        pvOverlay.style.setProperty('--pv-tint', 'rgb(' + mix(r) + ',' + mix(gg) + ',' + mix(b) + ')');
+      } catch (e) {}
+    };
+    img.src = 'assets/katalog/' + slug + '.webp';
+  }
   function openPreview(slug, opener) {
     var e = bySlug[slug], m = LP_META[slug];
     if (!e || !m || !pvOverlay) return;
     pvLastFocus = opener || document.activeElement;
-    pvName.textContent = e.name;
-    pvMeta.innerHTML = lpBadgeHTML(m) + lpPriceHTML(m);
-    pvTagline.textContent = e.tagline;
-    pvOrder.setAttribute('href', e.order);
+    pvDeco.setAttribute('src', 'assets/katalog/' + slug + '.webp');
+    pvTint(slug);
     pvFrame.setAttribute('src', e.preview);
     pvOverlay.hidden = false;
     document.body.classList.add('pv-lock');

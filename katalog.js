@@ -1404,8 +1404,7 @@
       countEl = $('#count'), emptyEl = $('#empty'),
       searchEl = $('#q'), sortEl = $('#sortBy'),
       overlay = $('#pvOverlay'), pvFrame = $('#pvFrame'),
-      pvName = $('#pvName'), pvMeta = $('#pvMeta'),
-      pvTagline = $('#pvTagline'), pvOrder = $('#pvOrder');
+      pvDeco = $('#pvDeco');
 
   kelasEl.innerHTML = [{ id: 'semua', label: 'Semua' }].concat(KELAS_LIST.map(function (k) {
     return { id: k, label: k };
@@ -1572,15 +1571,28 @@
     } catch (e) {}
   }
   pvFrame.addEventListener('load', pvHideBars);
+  /* Warna aksen sisi preview diambil dari sampul tema itu sendiri */
+  function pvTint(slug) {
+    var img = new Image();
+    img.onload = function () {
+      try {
+        var c = document.createElement('canvas'); c.width = 8; c.height = 8;
+        var g = c.getContext('2d'); g.drawImage(img, 0, 0, 8, 8);
+        var d = g.getImageData(0, 0, 8, 8).data, r = 0, gg = 0, b = 0, n = 0, i;
+        for (i = 0; i < d.length; i += 4) { r += d[i]; gg += d[i + 1]; b += d[i + 2]; n++; }
+        var mix = function (v) { return Math.round((v / n) + (255 - v / n) * 0.62); };
+        overlay.style.setProperty('--pv-tint', 'rgb(' + mix(r) + ',' + mix(gg) + ',' + mix(b) + ')');
+      } catch (e) {}
+    };
+    img.src = 'assets/katalog/' + slug + '.webp';
+  }
   function openPreview(slug) {
     var e = null;
     CATALOG.forEach(function (x) { if (x.slug === slug) e = x; });
     if (!e || e.slug === 'video') return;
     lastFocus = document.activeElement;
-    pvName.textContent = e.name;
-    pvMeta.innerHTML = badgeHTML(e) + priceHTML(e);
-    pvTagline.textContent = e.tagline;
-    pvOrder.setAttribute('href', 'checkout?tema=' + e.slug);
+    pvDeco.setAttribute('src', 'assets/katalog/' + e.slug + '.webp');
+    pvTint(e.slug);
     pvFrame.setAttribute('src', e.slug + '?to=Tamu%20Undangan');
     overlay.hidden = false;
     document.body.classList.add('pv-lock');

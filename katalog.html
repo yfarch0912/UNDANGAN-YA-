@@ -108,23 +108,25 @@
 </main>
 
 <!-- Overlay preview: SATU HP realistis besar, fokus HP saja -->
-<div class="pv-overlay" id="pvOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="pvName">
+<div class="pv-overlay" id="pvOverlay" hidden role="dialog" aria-modal="true" aria-label="Preview undangan">
   <div class="pv-backdrop" data-close></div>
+  <img class="pv-deco" id="pvDeco" alt="" aria-hidden="true">
   <div class="pv-panel">
     <button type="button" class="pv-x" data-close aria-label="Tutup preview">&times;</button>
+    <div class="pv-side" aria-hidden="true">
+      <svg class="pv-orn" viewBox="0 0 24 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M12 6v30"/><circle cx="12" cy="44" r="1.7" fill="currentColor" stroke="none"/><path d="M12 50l6 8-6 8-6-8z"/><circle cx="12" cy="74" r="1.7" fill="currentColor" stroke="none"/><path d="M12 82v30"/><path d="M12 20c-4.5 2.5-4.5 7 0 9M12 20c4.5 2.5 4.5 7 0 9" opacity=".65"/></svg>
+      <span class="pv-wed">The Wedding</span>
+      <svg class="pv-orn" viewBox="0 0 24 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M12 6v30"/><circle cx="12" cy="44" r="1.7" fill="currentColor" stroke="none"/><path d="M12 50l6 8-6 8-6-8z"/><circle cx="12" cy="74" r="1.7" fill="currentColor" stroke="none"/><path d="M12 82v30"/><path d="M12 20c-4.5 2.5-4.5 7 0 9M12 20c4.5 2.5 4.5 7 0 9" opacity=".65"/></svg>
+    </div>
     <div class="pv-view">
         <div class="pv-scroll">
           <iframe id="pvFrame" title="Preview undangan" src="about:blank" loading="lazy"></iframe>
         </div>
       </div>
-    <div class="pv-info">
-      <h3 id="pvName">Preview</h3>
-      <div class="meta" id="pvMeta"></div>
-      <p id="pvTagline"></p>
-      <div class="pv-actions">
-        <a class="btn btn-gold" id="pvOrder" href="checkout">Gunakan Template</a>
-        <button type="button" class="btn pv-close-btn" data-close>Tutup</button>
-      </div>
+    <div class="pv-side" aria-hidden="true">
+      <svg class="pv-orn" viewBox="0 0 24 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M12 6v30"/><circle cx="12" cy="44" r="1.7" fill="currentColor" stroke="none"/><path d="M12 50l6 8-6 8-6-8z"/><circle cx="12" cy="74" r="1.7" fill="currentColor" stroke="none"/><path d="M12 82v30"/><path d="M12 20c-4.5 2.5-4.5 7 0 9M12 20c4.5 2.5 4.5 7 0 9" opacity=".65"/></svg>
+      <span class="pv-wed">The Wedding</span>
+      <svg class="pv-orn" viewBox="0 0 24 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" aria-hidden="true"><path d="M12 6v30"/><circle cx="12" cy="44" r="1.7" fill="currentColor" stroke="none"/><path d="M12 50l6 8-6 8-6-8z"/><circle cx="12" cy="74" r="1.7" fill="currentColor" stroke="none"/><path d="M12 82v30"/><path d="M12 20c-4.5 2.5-4.5 7 0 9M12 20c4.5 2.5 4.5 7 0 9" opacity=".65"/></svg>
     </div>
   </div>
 </div>
