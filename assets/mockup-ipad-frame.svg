@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 880" width="660" height="880" role="img" aria-label="iPad tablet frame">
+  <!-- Frame tablet gaya iPad untuk mode Tablet preview UndangYa!
+       (dibuat 2026-11-14 mengikuti gaya frame HP kiriman user:
+       bodi grafit-ungu gelap, bezel hitam, layar berlubang evenodd
+       x30 y30 w600 h820 rx20 agar iframe terlihat). -->
+  <defs>
+    <linearGradient id="tab-metal" x1="0" y1="0" x2="660" y2="880" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#585064"/>
+      <stop offset="55%" stop-color="#353140"/>
+      <stop offset="100%" stop-color="#23202B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Tombol atas & samping -->
+  <rect x="168" y="1" width="58" height="5" rx="2.5" fill="#3A3644"/>
+  <rect x="655" y="150" width="4" height="66" rx="2" fill="#3A3644"/>
+  <rect x="655" y="228" width="4" height="66" rx="2" fill="#3A3644"/>
+
+  <!-- Bodi + bezel, dilubangi tepat di area layar -->
+  <path fill-rule="evenodd" fill="url(#tab-metal)" d="
+    M46 6 H614 A40 40 0 0 1 654 46 V834 A40 40 0 0 1 614 874 H46 A40 40 0 0 1 6 834 V46 A40 40 0 0 1 46 6 Z
+    M50 30 H610 A20 20 0 0 1 630 50 V830 A20 20 0 0 1 610 850 H50 A20 20 0 0 1 30 830 V50 A20 20 0 0 1 50 30 Z"/>
+  <path fill-rule="evenodd" fill="#0A0A0C" d="
+    M48 12 H612 A34 34 0 0 1 646 46 V834 A34 34 0 0 1 612 868 H48 A34 34 0 0 1 14 834 V46 A34 34 0 0 1 48 12 Z
+    M50 30 H610 A20 20 0 0 1 630 50 V830 A20 20 0 0 1 610 850 H50 A20 20 0 0 1 30 830 V50 A20 20 0 0 1 50 30 Z"/>
+
+  <!-- Kamera depan di bezel atas -->
+  <circle cx="330" cy="19" r="4.6" fill="#101018"/>
+  <circle cx="330" cy="19" r="1.9" fill="#2A4D8F"/>
+</svg>

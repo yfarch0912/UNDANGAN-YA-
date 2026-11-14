@@ -41,8 +41,8 @@
 
     <!-- Subtle Glass Reflection Overlay -->
     <linearGradient id="glass-glare" x1="22" y1="22" x2="350" y2="520" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.09"/>
-      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.02"/>
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.035"/>
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0.008"/>
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
 

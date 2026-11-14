@@ -1879,6 +1879,12 @@
     } catch (e) {}
   }
   pvFrame.addEventListener('load', pvHideBars);
+  var pvModeBtns = document.querySelectorAll('[data-pvmode]');
+  function pvSetMode(m) {
+    pvOverlay.setAttribute('data-mode', m);
+    for (var i = 0; i < pvModeBtns.length; i++) pvModeBtns[i].classList.toggle('on', pvModeBtns[i].getAttribute('data-pvmode') === m);
+  }
+  for (var i = 0; i < pvModeBtns.length; i++) (function (b) { b.addEventListener('click', function () { pvSetMode(b.getAttribute('data-pvmode')); }); })(pvModeBtns[i]);
   function openPreview(slug, opener) {
     var e = bySlug[slug], m = LP_META[slug];
     if (!e || !m || !pvOverlay) return;

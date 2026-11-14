@@ -108,9 +108,14 @@
 </main>
 
 <!-- Overlay preview: SATU HP realistis besar, fokus HP saja -->
-<div class="pv-overlay" id="pvOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="pvName">
+<div class="pv-overlay" id="pvOverlay" data-mode="hp" hidden role="dialog" aria-modal="true" aria-labelledby="pvName">
   <div class="pv-backdrop" data-close></div>
   <div class="pv-panel">
+    <div class="pv-modes"><div class="pv-modes-pill" role="group" aria-label="Mode perangkat preview">
+      <button type="button" class="pv-mode on" data-pvmode="hp">HP</button>
+      <button type="button" class="pv-mode" data-pvmode="tablet">Tablet</button>
+      <button type="button" class="pv-mode" data-pvmode="laptop">Laptop</button>
+    </div></div>
     <button type="button" class="pv-x" data-close aria-label="Tutup preview">&times;</button>
     <div class="pv-phone">
       <div class="pv-screen">
@@ -118,7 +123,9 @@
           <iframe id="pvFrame" title="Preview undangan" src="about:blank" loading="lazy"></iframe>
         </div>
       </div>
-      <img class="pv-frame" src="assets/mockup-hp-frame.svg" alt="" aria-hidden="true">
+      <img class="pv-frame pv-frame-hp" src="assets/mockup-hp-frame.svg" alt="" aria-hidden="true">
+      <img class="pv-frame pv-frame-tab" src="assets/mockup-ipad-frame.svg" alt="" aria-hidden="true">
+      <img class="pv-frame pv-frame-lap" src="assets/frames/frame-laptop.webp" alt="" aria-hidden="true">
     </div>
     <div class="pv-info">
       <h3 id="pvName">Preview</h3>

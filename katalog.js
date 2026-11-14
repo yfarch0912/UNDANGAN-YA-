@@ -1572,6 +1572,12 @@
     } catch (e) {}
   }
   pvFrame.addEventListener('load', pvHideBars);
+  var pvModeBtns = document.querySelectorAll('[data-pvmode]');
+  function pvSetMode(m) {
+    overlay.setAttribute('data-mode', m);
+    for (var i = 0; i < pvModeBtns.length; i++) pvModeBtns[i].classList.toggle('on', pvModeBtns[i].getAttribute('data-pvmode') === m);
+  }
+  for (var i = 0; i < pvModeBtns.length; i++) (function (b) { b.addEventListener('click', function () { pvSetMode(b.getAttribute('data-pvmode')); }); })(pvModeBtns[i]);
   function openPreview(slug) {
     var e = null;
     CATALOG.forEach(function (x) { if (x.slug === slug) e = x; });
