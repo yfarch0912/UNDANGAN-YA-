@@ -340,7 +340,7 @@ body.pv-lock{overflow:hidden}
 .pv-view{
   position:relative;flex:none;
   height:100vh;height:100dvh;
-  aspect-ratio:9/19.5;
+  aspect-ratio:9/16;
   max-width:96vw;
   overflow:hidden;background:#fff;
   display:flex;flex-direction:column;
